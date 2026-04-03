@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Enoch Marketing | LA's #1 Gym Marketing Agency</title>
+    <meta name="description" content="Enoch Marketing is LA's only agency built from the ground up for gyms and fitness brands. Learn our story, our values, and why 150+ gyms trust us to grow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #AAAAAA;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.75rem 3rem;
+            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo img {
+            height: 170px;
+            width: auto;
+            transition: height 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled .nav-logo img {
+            height: 140px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-display) !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.1em !important;
+            padding: 0.7rem 1.8rem;
+            background: rgba(221, 205, 156, 0.08);
+            color: var(--gold) !important;
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta::after {
+            content: '' !important;
+            display: block !important;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta:hover {
+            background: rgba(221, 205, 156, 0.15);
+            border-color: rgba(221, 205, 156, 0.4);
+            box-shadow: 0 0 20px rgba(221, 205, 156, 0.15), inset 0 0 20px rgba(221, 205, 156, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta:hover::before { opacity: 1; }
+        .nav-cta:hover::after { opacity: 1; }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            padding: 5px;
+        }
+
+        .nav-hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           SHARED SECTION UTILITIES
+           ======================================== */
+        .section {
+            position: relative;
+            padding: 7rem 3rem;
+        }
+
+        .section-large {
+            padding: 9rem 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 550px;
+        }
+
+        .gold { color: var(--gold); }
+
+        .testimonials-badge {
+            display: inline-block;
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .about-hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .about-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 30%, rgba(221, 205, 156, 0.07) 0%, transparent 60%),
+                var(--black);
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(90deg, rgba(221, 205, 156, 0.6) 1px, transparent 1px),
+                linear-gradient(rgba(221, 205, 156, 0.6) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: grid-drift 30s linear infinite;
+        }
+
+        @keyframes grid-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Centered hero text */
+        .hero-text-center {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 12rem 3rem 6rem;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 1.2rem;
+            border-radius: 9999px;
+            background: rgba(221, 205, 156, 0.08);
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.3s forwards;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.7s forwards;
+        }
+
+        /* ========================================
+           OUR STORY SECTION
+           ======================================== */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .story-text p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .story-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Stats glass card */
+        .story-card {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            padding: 2.5rem;
+            background: #000;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 -10px 80px 5px rgba(221, 205, 156, 0.12), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            cursor: default;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 -10px 100px 10px rgba(221, 205, 156, 0.18), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Glass reflection */
+        .gcard-reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.04) 100%);
+            pointer-events: none;
+            z-index: 5;
+            border-radius: inherit;
+        }
+
+        /* Noise texture */
+        .gcard-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* Gold glow from bottom */
+        .gcard-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 65%;
+            z-index: 3;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom right, rgba(221, 205, 156, 0.45) -10%, transparent 65%),
+                radial-gradient(ellipse at bottom left, rgba(184, 167, 108, 0.4) -10%, transparent 65%);
+            filter: blur(35px);
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
+        }
+
+        .story-card:hover .gcard-glow {
+            opacity: 0.9;
+        }
+
+        /* Central gold glow */
+        .gcard-glow-center {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            z-index: 3;
+            pointer-events: none;
+            background: radial-gradient(circle at bottom center, rgba(221, 205, 156, 0.5) -20%, transparent 55%);
+            filter: blur(40px);
+            opacity: 0.65;
+            transition: opacity 0.4s ease;
+        }
+
+        .story-card:hover .gcard-glow-center {
+            opacity: 0.85;
+        }
+
+        /* Bottom edge glow line */
+        .gcard-edge-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.05) 100%);
+            box-shadow: 0 0 15px 3px rgba(221, 205, 156, 0.6), 0 0 30px 6px rgba(184, 167, 108, 0.4);
+        }
+
+        /* Left edge glow */
+        .gcard-edge-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+        }
+
+        /* Right edge glow */
+        .gcard-edge-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+        }
+
+        /* Card content */
+        .gcard-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .story-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .story-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-stat {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .story-stat:first-child {
+            border-top: none;
+        }
+
+        .story-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            letter-spacing: 0.02em;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .story-stat-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 0.35rem;
+        }
+
+        /* ========================================
+           WHAT MAKES US DIFFERENT
+           ======================================== */
+        .different {
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221, 205, 156, 0.06);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.06);
+        }
+
+        .different-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .different-item {
+            text-align: center;
+        }
+
+        .different-icon {
+            width: 56px;
+            height: 56px;
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transform: rotate(45deg);
+            margin: 0 auto 1.5rem;
+        }
+
+        .different-icon svg {
+            transform: rotate(-45deg);
+            width: 22px;
+            height: 22px;
+        }
+
+        .different-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+
+        .different-item p {
+            font-size: 0.88rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.65;
+        }
+
+        /* ========================================
+           OUR VALUES SECTION
+           ======================================== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .value-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 2px solid rgba(221, 205, 156, 0.08);
+            background: linear-gradient(165deg, rgba(221, 205, 156, 0.04) 0%, var(--black-card) 40%);
+            padding: 2.25rem;
+            transition: border-color 0.5s ease, box-shadow 0.5s ease;
+            /* Spotlight vars */
+            --spot-x: 50%;
+            --spot-y: 50%;
+            --spot-opacity: 0;
+        }
+
+        .value-card:hover {
+            border-color: rgba(221, 205, 156, 0.15);
+        }
+
+        /* Spotlight glow overlay */
+        .value-card .spotlight-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            background: radial-gradient(
+                600px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.10),
+                transparent 40%
+            );
+            transition: opacity 0.4s ease;
+        }
+
+        /* Spotlight border */
+        .value-card .spotlight-border {
+            position: absolute;
+            inset: -2px;
+            pointer-events: none;
+            z-index: 2;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            background: radial-gradient(
+                400px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.5),
+                transparent 40%
+            );
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            padding: 2px;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Outer soft bloom */
+        .value-card .spotlight-bloom {
+            position: absolute;
+            inset: -8px;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            filter: blur(18px);
+            background: radial-gradient(
+                350px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.12),
+                transparent 45%
+            );
+            transition: opacity 0.4s ease;
+        }
+
+        .value-card-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .value-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           BY THE NUMBERS SECTION
+           ======================================== */
+        .numbers-bar {
+            display: flex;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .number-stat {
+            flex: 1;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            border-right: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .number-stat:last-child {
+            border-right: none;
+        }
+
+        .number-stat-value {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            letter-spacing: 0.02em;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .number-stat-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 0.5rem;
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            padding: 1.1rem 2.5rem;
+            background: rgba(221, 205, 156, 0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow:
+                0 0 25px rgba(221, 205, 156, 0.2),
+                0 0 60px rgba(221, 205, 156, 0.08),
+                inset 0 0 25px rgba(221, 205, 156, 0.06);
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover::after { opacity: 1; }
+
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+        .final-cta {
+            position: relative;
+            padding: 10rem 3rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .final-cta-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(221, 205, 156, 0.08) 0%, transparent 60%),
+                var(--black);
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .final-cta .section-subtitle {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .final-cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--white-dim);
+        }
+
+        .guarantee svg {
+            color: var(--gold);
+        }
+
+        /* Floating diamonds */
+        .hero-geo {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-geo .diamond {
+            position: absolute;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            transform: rotate(45deg);
+            animation: float-diamond 20s ease-in-out infinite;
+        }
+
+        @keyframes float-diamond {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+            50% { transform: rotate(45deg) translateY(-20px); opacity: 0.6; }
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            position: relative;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            border-radius: 12px 12px 0 0;
+            padding: 5rem 3rem 2.5rem;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221, 205, 156, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221, 205, 156, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .footer-brand img {
+            height: 170px;
+            width: auto;
+            align-self: flex-start;
+            margin-left: -15px;
+            margin-top: -20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.7;
+            max-width: 340px;
+        }
+
+        .footer-email-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            max-width: 320px;
+        }
+
+        .footer-email-group input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-group input:focus { border-color: rgba(221, 205, 156, 0.4); }
+
+        .footer-email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            color: var(--black);
+            flex-shrink: 0;
+            transition: background 0.3s ease;
+        }
+
+        .footer-email-btn:hover { background: var(--gold-light); }
+
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .footer ul li a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer ul li a .link-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot {
+            background: var(--gold);
+            width: 14px;
+            border-radius: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            padding-right: 1.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-socials a {
+            color: var(--white-dim);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-socials a:hover { color: var(--white); }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .footer-status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .footer-status span {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(74, 222, 128, 0.7);
+        }
+
+        /* ========================================
+           LOADING SCREEN
+           ======================================== */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner { text-align: center; }
+
+        .loader-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto;
+            animation: loader-pulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes loader-pulse {
+            0%, 100% { transform: scaleX(0.3); opacity: 0.3; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+
+        /* ========================================
+           CURSOR GLOW
+           ======================================== */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(221, 205, 156, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        body:hover .cursor-glow { opacity: 1; }
+
+        /* ========================================
+           SMOOTH SCROLL OFFSET
+           ======================================== */
+        [id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .different-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .numbers-bar {
+                flex-wrap: wrap;
+            }
+            .number-stat {
+                flex: 1 1 50%;
+            }
+            .number-stat:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .section, .section-large { padding: 4rem 1.5rem; }
+
+            .hero-text-center {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .different-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+
+            .numbers-bar { flex-direction: column; }
+            .number-stat {
+                border-right: none;
+                border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+                padding: 2rem 1.5rem;
+            }
+            .number-stat:last-child { border-bottom: none; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .final-cta { padding: 6rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text-center {
+                padding: 7rem 1rem 3rem;
+            }
+
+            .different-grid { grid-template-columns: 1fr; }
+
+            .story-card { padding: 1.75rem; }
+            .story-stat-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="services.html" onclick="closeMobile()">Services</a>
+        <a href="about.html" onclick="closeMobile()">About Us</a>
+        <a href="index.html#process" onclick="closeMobile()">Process</a>
+        <a href="index.html#testimonials" onclick="closeMobile()">Testimonials</a>
+        <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="enoch logo 3.png" alt="Enoch Marketing">
+        </a>
+        <div class="nav-links">
+            <a href="services.html">Services</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="contact.html" class="nav-cta">Book Free Call</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="about-hero">
+        <div class="about-hero-bg"></div>
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-text-center">
+            <div class="hero-pill">
+                <span>About Enoch</span>
+            </div>
+            <h1 class="hero-title">
+                WE DON'T DO MARKETING.<br>WE BUILD <span class="gold">GROWTH ENGINES.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Enoch Marketing is LA's only agency built from the ground up for gyms and fitness brands. We live in this industry because we believe gym owners deserve a marketing partner who actually understands their business.
+            </p>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section section-large">
+        <div class="container">
+            <div class="testimonials-badge reveal">Our Story</div>
+            <h2 class="section-title reveal">BORN IN THE GYM.<br>BUILT FOR <span class="gold">GYM OWNERS.</span></h2>
+
+            <div class="story-grid">
+                <div class="story-text reveal">
+                    <p>Enoch Marketing started with a simple observation: gym owners were getting burned by agencies that didn't understand fitness. They'd hire a "marketing guy" who ran the same playbook they used for dentists and restaurants — and wonder why nobody was walking through the door.</p>
+                    <p>We knew there had to be a better way. So we built an agency that does one thing and does it obsessively: grow gyms. Every strategy, every campaign, every funnel we build is designed specifically for the way people find, evaluate, and join a gym.</p>
+                    <p>Based in Los Angeles, we've helped over 150 gyms across the city fill their floors, pack their classes, and build the kind of brand that turns first-timers into lifers.</p>
+                </div>
+
+                <div class="reveal reveal-delay-2">
+                    <div class="story-card" id="storyCard">
+                        <div class="gcard-noise"></div>
+                        <div class="gcard-glow"></div>
+                        <div class="gcard-glow-center"></div>
+                        <div class="gcard-reflection"></div>
+                        <div class="gcard-edge-bottom"></div>
+                        <div class="gcard-edge-left"></div>
+                        <div class="gcard-edge-right"></div>
+                        <div class="gcard-content">
+                            <div class="story-card-title">BY THE NUMBERS</div>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="story-stat-number">150+</div>
+                                    <div class="story-stat-label">Gyms Scaled</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="story-stat-number">$12M+</div>
+                                    <div class="story-stat-label">Revenue Generated</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="story-stat-number">94%</div>
+                                    <div class="story-stat-label">Client Retention</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT MAKES US DIFFERENT -->
+    <section class="section section-large different">
+        <div class="container">
+            <div style="text-align:center;">
+                <div class="testimonials-badge reveal">Why Enoch</div>
+                <h2 class="section-title reveal" style="margin-left:auto;margin-right:auto;">WHAT MAKES US <span class="gold">DIFFERENT</span></h2>
+            </div>
+
+            <div class="different-grid">
+                <div class="different-item reveal reveal-delay-1">
+                    <div class="different-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>100% GYM-FOCUSED</h3>
+                    <p>We don't work with dentists, lawyers, or restaurants. Every strategy is built for how people find and join gyms.</p>
+                </div>
+
+                <div class="different-item reveal reveal-delay-2">
+                    <div class="different-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>DATA-OBSESSED</h3>
+                    <p>Weekly reports, transparent dashboards, and constant optimization. You always know exactly what's working and why.</p>
+                </div>
+
+                <div class="different-item reveal reveal-delay-3">
+                    <div class="different-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>FULL-STACK TEAM</h3>
+                    <p>Ads, funnels, SEO, social, web design, and brand — all under one roof. No juggling five different vendors.</p>
+                </div>
+
+                <div class="different-item reveal reveal-delay-4">
+                    <div class="different-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>SKIN IN THE GAME</h3>
+                    <p>We structure partnerships so our success is tied to yours. If you don't grow, we don't grow. Simple as that.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+    <section class="section section-large">
+        <div class="container">
+            <div style="text-align:center;">
+                <div class="testimonials-badge reveal">Our Values</div>
+                <h2 class="section-title reveal" style="margin-left:auto;margin-right:auto;">THE PRINCIPLES THAT <span class="gold">DRIVE US</span></h2>
+            </div>
+
+            <div class="values-grid" id="valuesGrid">
+                <div class="value-card reveal reveal-delay-1">
+                    <div class="value-card-content">
+                        <h3>TRANSPARENCY</h3>
+                        <p>No vanity metrics, no fluff reports. We show you the real numbers — cost per lead, cost per member, actual ROI. If something isn't working, you'll hear it from us first.</p>
+                    </div>
+                </div>
+
+                <div class="value-card reveal reveal-delay-2">
+                    <div class="value-card-content">
+                        <h3>OWNERSHIP</h3>
+                        <p>Your gym is our gym. We don't hand off work to junior freelancers or outsource overseas. Every campaign is managed by senior strategists who know fitness inside and out.</p>
+                    </div>
+                </div>
+
+                <div class="value-card reveal reveal-delay-3">
+                    <div class="value-card-content">
+                        <h3>RELENTLESS IMPROVEMENT</h3>
+                        <p>Good enough isn't good enough. We test, iterate, and optimize every single week. The gym that was your competitor last month should be chasing you next month.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BY THE NUMBERS -->
+    <section class="section" style="padding:0;">
+        <div class="numbers-bar reveal">
+            <div class="number-stat">
+                <div class="number-stat-value" data-count="150" data-suffix="+">0</div>
+                <div class="number-stat-label">Gyms Scaled</div>
+            </div>
+            <div class="number-stat">
+                <div class="number-stat-value" data-count="12" data-prefix="$" data-suffix="M+">0</div>
+                <div class="number-stat-label">Revenue Generated</div>
+            </div>
+            <div class="number-stat">
+                <div class="number-stat-value" data-count="3" data-suffix=".2x">0</div>
+                <div class="number-stat-label">Avg. ROI</div>
+            </div>
+            <div class="number-stat">
+                <div class="number-stat-value" data-count="94" data-suffix="%">0</div>
+                <div class="number-stat-label">Client Retention</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="contact">
+        <div class="final-cta-bg"></div>
+
+        <div class="hero-geo" style="opacity:0.5;">
+            <div class="diamond" style="width:200px;height:200px;left:5%;top:10%;"></div>
+            <div class="diamond" style="width:150px;height:150px;right:8%;bottom:15%;border-color:rgba(221,205,156,0.12);"></div>
+            <div class="diamond" style="width:100px;height:100px;left:15%;bottom:20%;"></div>
+        </div>
+
+        <div class="container reveal">
+            <div class="section-tag" style="justify-content:center;">Ready to Grow?</div>
+            <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <div class="final-cta-actions">
+                <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
+                    <span>BOOK YOUR FREE STRATEGY CALL</span>
+                    <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="guarantee">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                No commitment required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Custom strategy for your gym
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid-bg"></div>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <p>Next-generation marketing for gyms and fitness brands in Los Angeles. Built for growth, designed to dominate.</p>
+                    <div class="footer-email-group">
+                        <input type="email" placeholder="Enter your email...">
+                        <a href="index.html#contact" class="footer-email-btn" aria-label="Subscribe">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                        <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                        <li><a href="index.html#process"><span class="link-dot"></span>Process</a></li>
+                        <li><a href="index.html#testimonials"><span class="link-dot"></span>Testimonials</a></li>
+                        <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                        <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                        <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                        <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                        <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><span class="link-dot"></span>Instagram</a></li>
+                        <li><a href="#"><span class="link-dot"></span>Facebook</a></li>
+                        <li><a href="#"><span class="link-dot"></span>LinkedIn</a></li>
+                        <li><a href="#"><span class="link-dot"></span>TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+                <div class="footer-bottom-right">
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+                        </a>
+                    </div>
+                    <div class="footer-status">
+                        <div class="footer-status-dot"></div>
+                        <span>Accepting New Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // LOADER
+        // ========================================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 600);
+        });
+
+        // ========================================
+        // NAV SCROLL
+        // ========================================
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMobile() {
+            mobileMenu.classList.remove('active');
+        }
+
+        // ========================================
+        // REVEAL ON SCROLL
+        // ========================================
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ========================================
+        // COUNTER ANIMATION
+        // ========================================
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    const prefix = el.dataset.prefix || '';
+                    const suffix = el.dataset.suffix || '';
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out quart
+                        const eased = 1 - Math.pow(1 - progress, 4);
+                        const current = Math.round(eased * target);
+
+                        if (target >= 1000) {
+                            el.textContent = prefix + current.toLocaleString() + suffix;
+                        } else {
+                            el.textContent = prefix + current + suffix;
+                        }
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    }
+
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(el => counterObserver.observe(el));
+
+        // ========================================
+        // VALUE CARD SPOTLIGHT EFFECT
+        // ========================================
+        (function() {
+            const cards = document.querySelectorAll('.value-card');
+
+            // Inject spotlight layers into each card
+            cards.forEach(card => {
+                const bloom = document.createElement('div');
+                bloom.className = 'spotlight-bloom';
+                const border = document.createElement('div');
+                border.className = 'spotlight-border';
+                const glow = document.createElement('div');
+                glow.className = 'spotlight-glow';
+                card.insertBefore(glow, card.firstChild);
+                card.insertBefore(border, card.firstChild);
+                card.insertBefore(bloom, card.firstChild);
+            });
+
+            // Track mouse across the values grid
+            const grid = document.getElementById('valuesGrid');
+            if (!grid) return;
+
+            grid.addEventListener('mousemove', (e) => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--spot-x', x + 'px');
+                    card.style.setProperty('--spot-y', y + 'px');
+                    card.style.setProperty('--spot-opacity', '1');
+                });
+            }, { passive: true });
+
+            grid.addEventListener('mouseleave', () => {
+                cards.forEach(card => {
+                    card.style.setProperty('--spot-opacity', '0');
+                });
+            });
+        })();
+
+        // ========================================
+        // STORY CARD 3D TILT (desktop only)
+        // ========================================
+        (function() {
+            const card = document.getElementById('storyCard');
+            if (!card || !window.matchMedia('(pointer: fine)').matches) return;
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / rect.height) * 6;
+                const rotateY = (x / rect.width) * 6;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            }, { passive: true });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        })();
+
+        // ========================================
+        // CURSOR GLOW (desktop only)
+        // ========================================
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const glow = document.getElementById('cursorGlow');
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            }, { passive: true });
+        }
+
+        // ========================================
+        // SMOOTH ANCHOR SCROLLING
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

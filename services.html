@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — Enoch Marketing | Full-Stack Gym Growth Engine</title>
+    <meta name="description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy — built exclusively for gyms and fitness brands in Los Angeles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #AAAAAA;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.75rem 3rem;
+            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo img {
+            height: 170px;
+            width: auto;
+            transition: height 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled .nav-logo img {
+            height: 140px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-display) !important;
+            font-size: 1rem !important;
+            letter-spacing: 0.1em !important;
+            padding: 0.7rem 1.8rem;
+            background: rgba(221, 205, 156, 0.08);
+            color: var(--gold) !important;
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta::after {
+            content: '' !important;
+            display: block !important;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta:hover {
+            background: rgba(221, 205, 156, 0.15);
+            border-color: rgba(221, 205, 156, 0.4);
+            box-shadow: 0 0 20px rgba(221, 205, 156, 0.15), inset 0 0 20px rgba(221, 205, 156, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta:hover::before { opacity: 1; }
+        .nav-cta:hover::after { opacity: 1; }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            padding: 5px;
+        }
+
+        .nav-hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           SHARED SECTION UTILITIES
+           ======================================== */
+        .section {
+            position: relative;
+            padding: 7rem 3rem;
+        }
+
+        .section-large {
+            padding: 9rem 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 550px;
+        }
+
+        .gold { color: var(--gold); }
+
+        .testimonials-badge {
+            display: inline-block;
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .services-hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .services-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 30%, rgba(221, 205, 156, 0.07) 0%, transparent 60%),
+                var(--black);
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(90deg, rgba(221, 205, 156, 0.6) 1px, transparent 1px),
+                linear-gradient(rgba(221, 205, 156, 0.6) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: grid-drift 30s linear infinite;
+        }
+
+        @keyframes grid-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Centered hero text */
+        .hero-text-center {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 12rem 3rem 2rem;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+            border-radius: 9999px;
+            background: rgba(221, 205, 156, 0.08);
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.3s forwards;
+        }
+
+        .hero-pill-dot {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: 600;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-pill-text {
+            padding: 0 0.5rem;
+        }
+
+        .hero-pill svg {
+            flex-shrink: 0;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.5s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 580px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.7s forwards;
+        }
+
+        /* Blocks grid */
+        .hero-blocks-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem 6rem;
+        }
+
+        /* ========================================
+           GRADIENT CARD BLOCKS
+           ======================================== */
+        .hero-block {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s var(--ease-out-expo), filter 0.6s var(--ease-out-expo);
+            box-shadow: 0 -10px 80px 5px rgba(221, 205, 156, 0.12), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(30px) scale(0.97);
+            filter: blur(8px);
+        }
+
+        .hero-block.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .hero-block:hover {
+            box-shadow: 0 -10px 100px 10px rgba(221, 205, 156, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Glass reflection overlay */
+        .gcard-reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.04) 100%);
+            pointer-events: none;
+            z-index: 5;
+            border-radius: inherit;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-reflection {
+            opacity: 0.9;
+        }
+
+        /* Noise texture */
+        .gcard-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* Smudge texture for realism */
+        .gcard-smudge {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+            z-index: 3;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.01' numOctaves='3' seed='5' stitchTiles='stitch'/%3E%3CfeGaussianBlur stdDeviation='10'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+        }
+
+        /* Gold glow from bottom */
+        .gcard-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 65%;
+            z-index: 3;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom right, rgba(221, 205, 156, 0.45) -10%, transparent 65%),
+                radial-gradient(ellipse at bottom left, rgba(184, 167, 108, 0.4) -10%, transparent 65%);
+            filter: blur(35px);
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-glow {
+            opacity: 0.9;
+        }
+
+        /* Central gold glow */
+        .gcard-glow-center {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            z-index: 3;
+            pointer-events: none;
+            background: radial-gradient(circle at bottom center, rgba(221, 205, 156, 0.5) -20%, transparent 55%);
+            filter: blur(40px);
+            opacity: 0.65;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-glow-center {
+            opacity: 0.85;
+        }
+
+        /* Bottom edge glow line */
+        .gcard-edge-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.05) 100%);
+            box-shadow: 0 0 15px 3px rgba(221, 205, 156, 0.6), 0 0 30px 6px rgba(184, 167, 108, 0.4);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-edge-bottom {
+            box-shadow: 0 0 20px 4px rgba(221, 205, 156, 0.8), 0 0 40px 8px rgba(184, 167, 108, 0.5);
+        }
+
+        /* Left edge glow */
+        .gcard-edge-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+            transition: height 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-edge-left {
+            height: 40%;
+            box-shadow: 0 0 18px 3px rgba(221, 205, 156, 0.7);
+        }
+
+        /* Right edge glow */
+        .gcard-edge-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+            transition: height 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-edge-right {
+            height: 40%;
+            box-shadow: 0 0 18px 3px rgba(221, 205, 156, 0.7);
+        }
+
+        /* Card content layer */
+        .gcard-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 1.75rem;
+        }
+
+        /* Icon circle with realistic lighting */
+        .gcard-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(225deg, #1a1a1a 0%, #0d0d0d 100%);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25), inset 1px 1px 3px rgba(255,255,255,0.1), inset -2px -2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1.25rem;
+            color: var(--gold);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-icon {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3), inset 2px 2px 5px rgba(255,255,255,0.15), inset -2px -2px 5px rgba(0,0,0,0.7);
+        }
+
+        /* Icon inner highlight */
+        .gcard-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 65%;
+            height: 65%;
+            background: radial-gradient(circle at top left, rgba(255,255,255,0.25), transparent 80%);
+            filter: blur(6px);
+            pointer-events: none;
+        }
+
+        .gcard-icon svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Text content */
+        .gcard-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            line-height: 1.15;
+        }
+
+        .gcard-content p {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            margin-bottom: auto;
+        }
+
+        /* Learn More link */
+        .gcard-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-top: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .gcard-link svg {
+            transition: transform 0.4s ease;
+        }
+
+        .hero-block:hover .gcard-link {
+            color: var(--gold-light);
+        }
+
+        .hero-block:hover .gcard-link svg {
+            transform: translateX(4px);
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            padding: 1.1rem 2.5rem;
+            background: rgba(221, 205, 156, 0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow:
+                0 0 25px rgba(221, 205, 156, 0.2),
+                0 0 60px rgba(221, 205, 156, 0.08),
+                inset 0 0 25px rgba(221, 205, 156, 0.06);
+        }
+
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover::after { opacity: 1; }
+
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        .btn-secondary {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .btn-secondary:hover { color: var(--gold); }
+
+        /* Strip section removed — merged into hero blocks grid */
+
+        /* ========================================
+           SERVICE DEEP-DIVE SECTIONS
+           ======================================== */
+        .service-section {
+            position: relative;
+            padding: 8rem 3rem;
+            overflow: hidden;
+        }
+
+        .service-section:nth-child(even) {
+            background: var(--black-soft);
+        }
+
+        .service-section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .service-section:nth-child(even) .service-section-inner {
+            direction: rtl;
+        }
+
+        .service-section:nth-child(even) .service-section-inner > * {
+            direction: ltr;
+        }
+
+        /* Service content side */
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-badge {
+            display: inline-block;
+            padding: 0.25rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(221, 205, 156, 0.06);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            margin-bottom: 1.25rem;
+        }
+
+        .service-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-content > p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .service-number {
+            display: none;
+        }
+
+        /* Deliverables grid */
+        .deliverables {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .deliverable-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            background: rgba(221, 205, 156, 0.02);
+            border: 1px solid rgba(221, 205, 156, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-item:hover {
+            border-color: rgba(221, 205, 156, 0.15);
+            background: rgba(221, 205, 156, 0.04);
+        }
+
+        .deliverable-diamond {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .deliverable-diamond::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            background: rgba(221, 205, 156, 0.15);
+        }
+
+        .deliverable-item span {
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--white-muted);
+            line-height: 1.5;
+        }
+
+        /* Service visual side — Glass card */
+        .service-visual-card {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            aspect-ratio: 1;
+            max-height: 480px;
+        }
+
+        /* Noise texture */
+        .svc-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* Grid pattern inside card */
+        .svc-card-grid {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+            background-image:
+                linear-gradient(90deg, rgba(221, 205, 156, 0.5) 1px, transparent 1px),
+                linear-gradient(rgba(221, 205, 156, 0.5) 1px, transparent 1px);
+            background-size: 24px 24px;
+            animation: svc-grid-drift 25s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes svc-grid-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(24px, 24px); }
+        }
+
+        /* Bottom glow */
+        .svc-card-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            z-index: 3;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom center, rgba(221, 205, 156, 0.25) -10%, transparent 60%);
+            filter: blur(30px);
+            opacity: 0.7;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-visual-card:hover .svc-card-glow {
+            opacity: 1;
+        }
+
+        /* Reflection */
+        .svc-card-reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.03) 100%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Edge glow */
+        .svc-card-edge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.03) 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.4), 0 0 25px 4px rgba(184, 167, 108, 0.2);
+        }
+
+        /* Center icon */
+        .svc-card-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+        }
+
+        .svc-card-icon-inner {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            background: rgba(221, 205, 156, 0.04);
+            border: 1px solid rgba(221, 205, 156, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            backdrop-filter: blur(12px);
+            animation: icon-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes icon-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(221, 205, 156, 0.1); }
+            50% { transform: scale(1.03); box-shadow: 0 0 40px 10px rgba(221, 205, 156, 0.08); }
+        }
+
+        /* Orbiting ring around icon */
+        .svc-orbit {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .svc-orbit-ring {
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(221, 205, 156, 0.06);
+            border-radius: 50%;
+            position: relative;
+            animation: orbit-spin 20s linear infinite;
+        }
+
+        .svc-orbit-dot {
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(221, 205, 156, 0.6);
+        }
+
+        @keyframes orbit-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Decorative corner diamonds */
+        .svc-corner-diamond {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 1px solid rgba(221, 205, 156, 0.12);
+            transform: rotate(45deg);
+            z-index: 6;
+        }
+
+        .svc-corner-diamond.tl { top: 24px; left: 24px; }
+        .svc-corner-diamond.tr { top: 24px; right: 24px; }
+        .svc-corner-diamond.bl { bottom: 24px; left: 24px; }
+        .svc-corner-diamond.br { bottom: 24px; right: 24px; }
+
+        /* ========================================
+           SECTION DIVIDER
+           ======================================== */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221, 205, 156, 0.15), transparent);
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+        .final-cta {
+            position: relative;
+            padding: 10rem 3rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .final-cta-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(221, 205, 156, 0.08) 0%, transparent 60%),
+                var(--black);
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .final-cta .section-subtitle {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .final-cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--white-dim);
+        }
+
+        .guarantee svg {
+            color: var(--gold);
+        }
+
+        /* Floating diamonds */
+        .hero-geo {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-geo .diamond {
+            position: absolute;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            transform: rotate(45deg);
+            animation: float-diamond 20s ease-in-out infinite;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            position: relative;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            border-radius: 12px 12px 0 0;
+            padding: 5rem 3rem 2.5rem;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221, 205, 156, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221, 205, 156, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .footer-brand img {
+            height: 170px;
+            width: auto;
+            align-self: flex-start;
+            margin-left: -15px;
+            margin-top: -20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.7;
+            max-width: 340px;
+        }
+
+        .footer-email-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            max-width: 320px;
+        }
+
+        .footer-email-group input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-group input:focus { border-color: rgba(221, 205, 156, 0.4); }
+
+        .footer-email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            color: var(--black);
+            flex-shrink: 0;
+            transition: background 0.3s ease;
+        }
+
+        .footer-email-btn:hover { background: var(--gold-light); }
+
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .footer ul li a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer ul li a .link-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot {
+            background: var(--gold);
+            width: 14px;
+            border-radius: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            padding-right: 1.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-socials a {
+            color: var(--white-dim);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-socials a:hover { color: var(--white); }
+
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .footer-status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .footer-status span {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(74, 222, 128, 0.7);
+        }
+
+        /* ========================================
+           LOADING SCREEN
+           ======================================== */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner { text-align: center; }
+
+        .loader-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto;
+            animation: loader-pulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes loader-pulse {
+            0%, 100% { transform: scaleX(0.3); opacity: 0.3; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+
+        /* ========================================
+           CURSOR GLOW
+           ======================================== */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(221, 205, 156, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        body:hover .cursor-glow { opacity: 1; }
+
+        /* ========================================
+           SMOOTH SCROLL OFFSET
+           ======================================== */
+        [id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .hero-blocks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .service-section-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .service-section:nth-child(even) .service-section-inner {
+                direction: ltr;
+            }
+            .service-visual-card {
+                max-height: 380px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .section, .section-large { padding: 4rem 1.5rem; }
+
+            .hero-text-center {
+                padding: 8rem 1.5rem 2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .hero-blocks-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 1.5rem 4rem;
+            }
+
+            .service-section { padding: 5rem 1.5rem; }
+            .service-section-inner { gap: 2.5rem; }
+
+            .deliverables { grid-template-columns: 1fr; }
+
+            .service-visual-card { max-height: 320px; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .final-cta { padding: 6rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-blocks-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+                padding: 0 1rem 3rem;
+            }
+
+            .hero-text-center {
+                padding: 7rem 1rem 1.5rem;
+            }
+
+            .gcard-content { padding: 1.25rem; }
+            .gcard-content h3 { font-size: 1.15rem; }
+            .gcard-content p { font-size: 0.7rem; }
+            .gcard-icon { width: 38px; height: 38px; margin-bottom: 0.75rem; }
+            .gcard-icon svg { width: 16px; height: 16px; }
+            .gcard-link { font-size: 0.65rem; margin-top: 0.75rem; }
+            .hero-block { border-radius: 1.25rem; }
+
+            .service-content h2 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="services.html" onclick="closeMobile()">Services</a>
+        <a href="about.html" onclick="closeMobile()">About Us</a>
+        <a href="index.html#process" onclick="closeMobile()">Process</a>
+        <a href="index.html#testimonials" onclick="closeMobile()">Testimonials</a>
+        <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="enoch logo 3.png" alt="Enoch Marketing">
+        </a>
+        <div class="nav-links">
+            <a href="services.html" class="active">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="contact.html" class="nav-cta">Book Free Call</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="services-hero">
+        <div class="services-hero-bg"></div>
+        <div class="hero-grid-bg"></div>
+
+        <!-- Centered hero text -->
+        <div class="hero-text-center">
+            <div class="hero-pill">
+                <span class="hero-pill-text">Full-Stack Gym Growth Engine</span>
+            </div>
+            <h1 class="hero-title">
+                EVERYTHING YOUR GYM<br>NEEDS TO <span class="gold">DOMINATE.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Six battle-tested services built exclusively for gyms and fitness brands. No cookie-cutter templates — only strategies proven to fill floors and pack classes in LA.
+            </p>
+        </div>
+
+        <!-- Service blocks grid -->
+        <div class="hero-blocks-grid">
+
+            <!-- Block 1: Paid Advertising -->
+            <a href="#paid-advertising" class="hero-block" data-delay="0">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>PAID ADVERTISING</h3>
+                    <p>Meta and Google campaigns engineered for gym membership sales. The exact hooks and audiences that drive sign-ups in LA.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 2: Lead Generation -->
+            <a href="#lead-generation" class="hero-block" data-delay="1">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>LEAD GENERATION</h3>
+                    <p>Custom funnels that turn cold traffic into booked tours and trial sessions. First click to front desk.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 3: Social Media -->
+            <a href="#social-media" class="hero-block" data-delay="2">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                    <h3>SOCIAL MEDIA</h3>
+                    <p>Scroll-stopping content that builds authority and makes your gym the go-to brand in your neighborhood.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 4: Local SEO -->
+            <a href="#local-seo" class="hero-block" data-delay="3">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3>LOCAL SEO</h3>
+                    <p>Dominate "gym near me" searches. Be the first gym people find when they search in Los Angeles.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 5: Web Design -->
+            <a href="#web-design" class="hero-block" data-delay="4">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>WEB DESIGN</h3>
+                    <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first, always.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 6: Brand Strategy -->
+            <a href="#brand-strategy" class="hero-block" data-delay="5">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>BRAND STRATEGY</h3>
+                    <p>Position your gym as the premium choice. Brand identities that command higher prices and fierce loyalty.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 1: PAID ADVERTISING
+         ============================================ -->
+    <section class="service-section" id="paid-advertising">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">01</div>
+                <div class="service-badge">Paid Media</div>
+                <h2>PAID <span class="gold">ADVERTISING</span></h2>
+                <p>Meta and Google ad campaigns engineered specifically for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups in LA — because that's all we do.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom ad creative design</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Audience research & targeting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>A/B split testing</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Campaign optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Weekly performance reports</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Dedicated ad strategist</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 2: LEAD GENERATION
+         ============================================ -->
+    <section class="service-section" id="lead-generation">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">02</div>
+                <div class="service-badge">Funnels</div>
+                <h2>LEAD <span class="gold">GENERATION</span></h2>
+                <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk — so every dollar you spend on ads actually produces members.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom landing pages</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Lead capture forms</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Automated email/SMS sequences</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>CRM integration</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Lead scoring & qualification</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Tour booking automation</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:18s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 3: SOCIAL MEDIA
+         ============================================ -->
+    <section class="service-section" id="social-media">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">03</div>
+                <div class="service-badge">Content</div>
+                <h2>SOCIAL <span class="gold">MEDIA</span></h2>
+                <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood — not another generic fitness page people scroll past.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Content strategy & calendar</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Professional photo/video shoots</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Post design & copywriting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Community management</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Instagram & TikTok Reels</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Monthly analytics reports</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:22s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 4: LOCAL SEO
+         ============================================ -->
+    <section class="service-section" id="local-seo">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">04</div>
+                <div class="service-badge">Search</div>
+                <h2>LOCAL <span class="gold">SEO</span></h2>
+                <p>Dominate "gym near me" searches in your area. We optimize your entire digital presence so you're the first gym people find when they search in Los Angeles — organically, without paying per click.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Google Business Profile optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Local keyword targeting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Citation building & cleanup</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Review generation strategy</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>On-page SEO optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Monthly ranking reports</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:24s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 5: WEB DESIGN
+         ============================================ -->
+    <section class="service-section" id="web-design">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">05</div>
+                <div class="service-badge">Design</div>
+                <h2>WEB <span class="gold">DESIGN</span></h2>
+                <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are — scrolling at midnight, deciding which gym to try tomorrow.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom responsive website</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Mobile-first design</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Speed optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>SEO-ready structure</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Membership signup integration</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Ongoing maintenance & updates</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:16s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 6: BRAND STRATEGY
+         ============================================ -->
+    <section class="service-section" id="brand-strategy">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">06</div>
+                <div class="service-badge">Branding</div>
+                <h2>BRAND <span class="gold">STRATEGY</span></h2>
+                <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships — turning your gym from a commodity into a destination.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Brand identity & guidelines</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Logo design & refinement</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Color & typography system</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Brand voice & messaging</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Competitive positioning</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Brand collateral templates</span>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:26s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="contact">
+        <div class="final-cta-bg"></div>
+
+        <div class="hero-geo" style="opacity:0.5;">
+            <div class="diamond" style="width:200px;height:200px;left:5%;top:10%;"></div>
+            <div class="diamond" style="width:150px;height:150px;right:8%;bottom:15%;border-color:rgba(221,205,156,0.12);"></div>
+            <div class="diamond" style="width:100px;height:100px;left:15%;bottom:20%;"></div>
+        </div>
+
+        <div class="container reveal">
+            <div class="section-tag" style="justify-content:center;">Ready to Grow?</div>
+            <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <div class="final-cta-actions">
+                <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
+                    <span>BOOK YOUR FREE STRATEGY CALL</span>
+                    <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="guarantee">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                No commitment required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Custom strategy for your gym
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid-bg"></div>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <p>Next-generation marketing for gyms and fitness brands in Los Angeles. Built for growth, designed to dominate.</p>
+                    <div class="footer-email-group">
+                        <input type="email" placeholder="Enter your email...">
+                        <a href="index.html#contact" class="footer-email-btn" aria-label="Subscribe">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                        <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                        <li><a href="index.html#process"><span class="link-dot"></span>Process</a></li>
+                        <li><a href="index.html#testimonials"><span class="link-dot"></span>Testimonials</a></li>
+                        <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                        <li><a href="#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                        <li><a href="#social-media"><span class="link-dot"></span>Social Media</a></li>
+                        <li><a href="#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                        <li><a href="#web-design"><span class="link-dot"></span>Web Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><span class="link-dot"></span>Instagram</a></li>
+                        <li><a href="#"><span class="link-dot"></span>Facebook</a></li>
+                        <li><a href="#"><span class="link-dot"></span>LinkedIn</a></li>
+                        <li><a href="#"><span class="link-dot"></span>TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+                <div class="footer-bottom-right">
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+                        </a>
+                    </div>
+                    <div class="footer-status">
+                        <div class="footer-status-dot"></div>
+                        <span>Accepting New Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // LOADER
+        // ========================================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 600);
+        });
+
+        // ========================================
+        // NAV SCROLL
+        // ========================================
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMobile() {
+            mobileMenu.classList.remove('active');
+        }
+
+        // ========================================
+        // REVEAL ON SCROLL
+        // ========================================
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ========================================
+        // HERO BLOCKS — staggered reveal
+        // ========================================
+        const heroBlocks = document.querySelectorAll('.hero-block');
+        const blockObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay || 0);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay * 150);
+                    blockObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        heroBlocks.forEach(el => blockObserver.observe(el));
+
+        // ========================================
+        // CURSOR GLOW (desktop only)
+        // ========================================
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const glow = document.getElementById('cursorGlow');
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            }, { passive: true });
+        }
+
+        // ========================================
+        // SMOOTH ANCHOR SCROLLING
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ========================================
+        // 3D TILT EFFECT (desktop only)
+        // ========================================
+        if (window.matchMedia('(pointer: fine)').matches) {
+            heroBlocks.forEach(block => {
+                let currentX = 0, currentY = 0, targetX = 0, targetY = 0;
+                let rafId = null;
+
+                function lerp(a, b, t) { return a + (b - a) * t; }
+
+                function animate() {
+                    currentX = lerp(currentX, targetX, 0.08);
+                    currentY = lerp(currentY, targetY, 0.08);
+                    block.style.transform = `translateY(-5px) perspective(1000px) rotateY(${currentX}deg) rotateX(${currentY}deg)`;
+
+                    // Shift glow with tilt
+                    const glow = block.querySelector('.gcard-glow');
+                    const glowCenter = block.querySelector('.gcard-glow-center');
+                    if (glow) glow.style.transform = `translateY(${-currentY * 0.5}px)`;
+                    if (glowCenter) glowCenter.style.transform = `translateY(${-currentY * 0.3}px)`;
+
+                    if (Math.abs(currentX - targetX) > 0.01 || Math.abs(currentY - targetY) > 0.01) {
+                        rafId = requestAnimationFrame(animate);
+                    } else {
+                        rafId = null;
+                    }
+                }
+
+                block.addEventListener('mousemove', (e) => {
+                    const rect = block.getBoundingClientRect();
+                    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+                    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+                    targetX = x * 5;
+                    targetY = -(y * 5);
+                    if (!rafId) rafId = requestAnimationFrame(animate);
+                }, { passive: true });
+
+                block.addEventListener('mouseleave', () => {
+                    targetX = 0;
+                    targetY = 0;
+                    if (!rafId) rafId = requestAnimationFrame(animate);
+                    // Reset glow position
+                    setTimeout(() => {
+                        const glow = block.querySelector('.gcard-glow');
+                        const glowCenter = block.querySelector('.gcard-glow-center');
+                        if (glow) glow.style.transform = '';
+                        if (glowCenter) glowCenter.style.transform = '';
+                        block.style.transform = '';
+                    }, 400);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enoch Marketing — LA's #1 Marketing Agency for Gyms & Fitness Brands</title>
+    <meta name="description" content="Enoch Marketing helps gyms and fitness brands in Los Angeles dominate their local market. Book a free strategy call today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           CSS VARIABLES & RESET
+           ======================================== */
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #AAAAAA;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        /* ========================================
+           GEOMETRIC BACKGROUND PATTERN (SVG)
+           ======================================== */
+        .geo-pattern {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.04;
+        }
+
+        /* ========================================
+           NAVIGATION
+           ======================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.75rem 3rem;
+            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo img {
+            height: 170px;
+            width: auto;
+            transition: height 0.5s var(--ease-out-expo);
+        }
+
+        .nav.scrolled .nav-logo img {
+            height: 140px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            padding: 0.7rem 1.8rem;
+            background: rgba(221, 205, 156, 0.08);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta::after {
+            content: '' !important;
+            display: block !important;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+
+        .nav-cta:hover {
+            background: rgba(221, 205, 156, 0.15);
+            border-color: rgba(221, 205, 156, 0.4);
+            box-shadow: 0 0 20px rgba(221, 205, 156, 0.15), inset 0 0 20px rgba(221, 205, 156, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta:hover::before {
+            opacity: 1;
+        }
+
+        .nav-cta:hover::after {
+            opacity: 1;
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            padding: 5px;
+        }
+
+        .nav-hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Particle canvas background */
+        .hero-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Floating diamonds (used in CTA section) */
+        .hero-geo {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-geo .diamond {
+            position: absolute;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            transform: rotate(45deg);
+            animation: float-diamond 20s ease-in-out infinite;
+        }
+
+        @keyframes float-diamond {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 1; }
+            50% { transform: rotate(45deg) translateY(-20px); opacity: 0.6; }
+        }
+
+        /* Gold accent line */
+        .hero-line {
+            position: absolute;
+            left: 4.5rem;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--gold-dark), transparent);
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 13rem 3rem 4rem 5.5rem;
+            max-width: 900px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.3s forwards;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.5s forwards;
+        }
+
+        .hero-title .gold {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.7s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 0.9s forwards;
+        }
+
+        @keyframes fade-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Primary CTA Button — Neon Glow */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            padding: 1.1rem 2.5rem;
+            background: rgba(221, 205, 156, 0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        /* Top neon line */
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Bottom neon line */
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35;
+            transition: opacity 0.5s ease;
+        }
+
+        .btn-primary:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow:
+                0 0 25px rgba(221, 205, 156, 0.2),
+                0 0 60px rgba(221, 205, 156, 0.08),
+                inset 0 0 25px rgba(221, 205, 156, 0.06);
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary .arrow {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        /* Secondary link */
+        .btn-secondary {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            color: var(--gold);
+        }
+
+        /* Hero bottom stats bar */
+        .hero-stats {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            display: flex;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            z-index: 2;
+            margin-top: auto;
+        }
+
+        .hero-stat {
+            flex: 1;
+            padding: 2rem 3rem;
+            border-right: 1px solid rgba(221, 205, 156, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.6s var(--ease-out-expo) forwards;
+        }
+
+        .hero-stat:nth-child(1) { animation-delay: 1.1s; }
+        .hero-stat:nth-child(2) { animation-delay: 1.25s; }
+        .hero-stat:nth-child(3) { animation-delay: 1.4s; }
+        .hero-stat:nth-child(4) { animation-delay: 1.55s; }
+
+        .hero-stat:last-child { border-right: none; }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            letter-spacing: 0.02em;
+            color: var(--gold);
+        }
+
+        .hero-stat-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           SECTION UTILITY
+           ======================================== */
+        .section {
+            position: relative;
+            padding: 7rem 3rem;
+        }
+
+        .section-large {
+            padding: 9rem 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 550px;
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ========================================
+           PROBLEM SECTION
+           ======================================== */
+        .problem {
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221, 205, 156, 0.06);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.06);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .problem-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .problem-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .problem-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            transform: rotate(45deg);
+        }
+
+        .problem-icon svg {
+            transform: rotate(-45deg);
+            width: 20px;
+            height: 20px;
+        }
+
+        .problem-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.35rem;
+        }
+
+        .problem-item p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.6;
+        }
+
+        .problem-cta-box {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            padding: 2.5rem;
+            background: #000;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 -10px 80px 5px rgba(221, 205, 156, 0.12), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+            cursor: default;
+        }
+
+        .problem-cta-box:hover {
+            box-shadow: 0 -10px 100px 10px rgba(221, 205, 156, 0.18), 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        /* Glass reflection */
+        .gcard-reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.04) 100%);
+            pointer-events: none;
+            z-index: 5;
+            border-radius: inherit;
+        }
+
+        /* Noise texture */
+        .gcard-noise {
+            position: absolute;
+            inset: 0;
+            opacity: 0.25;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* Gold glow from bottom */
+        .gcard-glow {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 65%;
+            z-index: 3;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom right, rgba(221, 205, 156, 0.45) -10%, transparent 65%),
+                radial-gradient(ellipse at bottom left, rgba(184, 167, 108, 0.4) -10%, transparent 65%);
+            filter: blur(35px);
+            opacity: 0.7;
+            transition: opacity 0.4s ease;
+        }
+
+        .problem-cta-box:hover .gcard-glow {
+            opacity: 0.9;
+        }
+
+        /* Central gold glow */
+        .gcard-glow-center {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            z-index: 3;
+            pointer-events: none;
+            background: radial-gradient(circle at bottom center, rgba(221, 205, 156, 0.5) -20%, transparent 55%);
+            filter: blur(40px);
+            opacity: 0.65;
+            transition: opacity 0.4s ease;
+        }
+
+        .problem-cta-box:hover .gcard-glow-center {
+            opacity: 0.85;
+        }
+
+        /* Bottom edge glow line */
+        .gcard-edge-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.05) 100%);
+            box-shadow: 0 0 15px 3px rgba(221, 205, 156, 0.6), 0 0 30px 6px rgba(184, 167, 108, 0.4);
+        }
+
+        /* Left edge glow */
+        .gcard-edge-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+        }
+
+        /* Right edge glow */
+        .gcard-edge-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 1px;
+            height: 30%;
+            z-index: 6;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
+            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
+        }
+
+        /* Content */
+        .gcard-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .gcard-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(225deg, #1a1a1a 0%, #0d0d0d 100%);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25), inset 1px 1px 3px rgba(255,255,255,0.1), inset -2px -2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .problem-cta-box h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+
+        .problem-cta-box p {
+            font-size: 0.92rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 1.75rem;
+        }
+
+        /* ========================================
+           SERVICES — Schema Cards
+           ======================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .service-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 2px solid rgba(221, 205, 156, 0.08);
+            background: linear-gradient(165deg, rgba(221, 205, 156, 0.04) 0%, var(--black-card) 40%);
+            transition: border-color 0.5s ease, box-shadow 0.5s ease;
+            animation: svc-float 6s ease-in-out infinite;
+            /* Spotlight vars — set by JS */
+            --spot-x: 50%;
+            --spot-y: 50%;
+            --spot-opacity: 0;
+        }
+
+        .service-card:nth-child(2) { animation-delay: -1s; }
+        .service-card:nth-child(3) { animation-delay: -2s; }
+        .service-card:nth-child(4) { animation-delay: -0.5s; }
+        .service-card:nth-child(5) { animation-delay: -1.5s; }
+        .service-card:nth-child(6) { animation-delay: -2.5s; }
+
+        @keyframes svc-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* Spotlight glow overlay — follows cursor */
+        .service-card .spotlight-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            background: radial-gradient(
+                600px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.10),
+                transparent 40%
+            );
+            transition: opacity 0.4s ease;
+        }
+
+        /* Spotlight border — glowing edge that follows cursor */
+        .service-card .spotlight-border {
+            position: absolute;
+            inset: -2px;
+            pointer-events: none;
+            z-index: 2;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            background: radial-gradient(
+                400px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.5),
+                transparent 40%
+            );
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            padding: 2px;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Outer soft bloom behind card */
+        .service-card .spotlight-bloom {
+            position: absolute;
+            inset: -8px;
+            pointer-events: none;
+            z-index: 0;
+            border-radius: inherit;
+            opacity: var(--spot-opacity);
+            filter: blur(18px);
+            background: radial-gradient(
+                350px circle at var(--spot-x) var(--spot-y),
+                rgba(221, 205, 156, 0.12),
+                transparent 45%
+            );
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(221, 205, 156, 0.15);
+        }
+
+        /* Visual preview area */
+        .service-visual {
+            padding: 1rem 1rem 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-visual-inner {
+            position: relative;
+            height: 160px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(221, 205, 156, 0.06);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animated grid inside visual */
+        .svc-grid-anim {
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image:
+                linear-gradient(90deg, rgba(221, 205, 156, 0.5) 1px, transparent 1px),
+                linear-gradient(rgba(221, 205, 156, 0.5) 1px, transparent 1px);
+            background-size: 18px 18px;
+            animation: svc-grid-drift 20s linear infinite;
+        }
+
+        @keyframes svc-grid-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(18px, 18px); }
+        }
+
+        /* Inner glow */
+        .service-visual-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 80%, rgba(221, 205, 156, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Service icon centered in visual */
+        .svc-icon-wrap {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .svc-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: rgba(221, 205, 156, 0.06);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            backdrop-filter: blur(8px);
+            animation: svc-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes svc-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.85; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+
+        /* Divider line */
+        .service-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221, 205, 156, 0.2), transparent);
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Text content */
+        .service-body {
+            padding: 1.25rem 1.25rem 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-badge {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--gold);
+            background: rgba(221, 205, 156, 0.06);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            margin-bottom: 0.85rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            padding: 0.35rem 0.85rem;
+            border-radius: 8px;
+            background: rgba(221, 205, 156, 0.06);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.3);
+        }
+
+        .service-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover svg {
+            transform: translateX(2px);
+        }
+
+        .service-status {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.35);
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* ========================================
+           RESULTS SECTION
+           ======================================== */
+        .results {
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221, 205, 156, 0.06);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.06);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .result-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.06);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .result-card:hover {
+            border-color: rgba(221, 205, 156, 0.2);
+        }
+
+        .result-number {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+
+        /* ========================================
+           TESTIMONIALS — Scrolling Columns
+           ======================================== */
+        .testimonials-header {
+            text-align: center;
+            max-width: 540px;
+            margin: 0 auto 3rem;
+        }
+
+        .testimonials-header .section-tag {
+            justify-content: center;
+        }
+
+        .testimonials-header .section-subtitle {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .testimonials-badge {
+            display: inline-block;
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 1.25rem;
+        }
+
+        .testimonials-columns {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-height: 740px;
+            overflow: hidden;
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        }
+
+        .testi-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 340px;
+        }
+
+        .testi-col-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: scroll-up var(--scroll-duration, 30s) linear infinite;
+        }
+
+        @keyframes scroll-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .testimonial-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: 0 4px 24px rgba(221, 205, 156, 0.04);
+            flex-shrink: 0;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--white-muted);
+            margin-bottom: 1.25rem;
+            font-style: normal;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .testimonial-role {
+            font-size: 0.72rem;
+            color: var(--white-dim);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-top: 0.1rem;
+        }
+
+        /* Hide 3rd column on tablet, 2nd+3rd on mobile */
+        .testi-col-3 { display: flex; }
+        @media (max-width: 1024px) {
+            .testi-col-3 { display: none; }
+        }
+        @media (max-width: 768px) {
+            .testi-col-2 { display: none; }
+            .testimonials-columns { max-height: 600px; }
+        }
+
+        /* ========================================
+           PROCESS SECTION
+           ======================================== */
+        .process {
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221, 205, 156, 0.06);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.06);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-dark), var(--gold-dark), transparent);
+            opacity: 0.3;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--gold);
+            transform: rotate(45deg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number span {
+            transform: rotate(-45deg);
+        }
+
+        .process-step h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+            color: var(--gold-light);
+        }
+
+        .process-step p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+        .final-cta {
+            position: relative;
+            padding: 10rem 3rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .final-cta-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 50%, rgba(221, 205, 156, 0.08) 0%, transparent 60%),
+                var(--black);
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta .section-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .final-cta .section-subtitle {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .final-cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--white-dim);
+        }
+
+        .guarantee svg {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           FOOTER — Neo Minimal
+           ======================================== */
+        .footer {
+            position: relative;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            border-radius: 12px 12px 0 0;
+            padding: 5rem 3rem 2.5rem;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Subtle grid pattern background */
+        .footer-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221, 205, 156, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221, 205, 156, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+
+        .footer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+
+        /* Brand column */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .footer-brand img {
+            height: 170px;
+            width: auto;
+            align-self: flex-start;
+            margin-left: -15px;
+            margin-top: -20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.7;
+            max-width: 340px;
+        }
+
+        /* Email input group */
+        .footer-email-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            max-width: 320px;
+        }
+
+        .footer-email-group input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(221, 205, 156, 0.15);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-email-group input::placeholder {
+            color: var(--white-dim);
+        }
+
+        .footer-email-group input:focus {
+            border-color: rgba(221, 205, 156, 0.4);
+        }
+
+        .footer-email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            color: var(--black);
+            flex-shrink: 0;
+            transition: background 0.3s ease;
+        }
+
+        .footer-email-btn:hover {
+            background: var(--gold-light);
+        }
+
+        /* Link columns */
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .footer ul li a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .footer ul li a .link-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .footer ul li a:hover {
+            color: var(--gold);
+        }
+
+        .footer ul li a:hover .link-dot {
+            background: var(--gold);
+            width: 14px;
+            border-radius: 4px;
+        }
+
+        /* Bottom bar */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+            padding-right: 1.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-socials a {
+            color: var(--white-dim);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-socials a:hover {
+            color: var(--white);
+        }
+
+        /* Status indicator */
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.1);
+        }
+
+        .footer-status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .footer-status span {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(74, 222, 128, 0.7);
+        }
+
+        /* ========================================
+           MARQUEE
+           ======================================== */
+        .marquee-section {
+            border-top: 1px solid rgba(221, 205, 156, 0.06);
+            border-bottom: 1px solid rgba(221, 205, 156, 0.06);
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: var(--black-soft);
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-item {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--white-dim);
+            white-space: nowrap;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .marquee-item .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .process-steps::before { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .section, .section-large { padding: 4rem 1.5rem; }
+
+            .hero-content { padding: 7rem 1.5rem 3rem; }
+            .hero-title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+            .hero-stats { flex-wrap: wrap; }
+            .hero-stat { flex: 1 1 50%; padding: 1.25rem 1.5rem; }
+            .hero-stat:nth-child(2) { border-right: none; }
+            .hero-line { left: 1.5rem; }
+            .hero-content { padding-left: 1.5rem !important; }
+
+            .problem-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+            .final-cta { padding: 6rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats { flex-direction: column; }
+            .hero-stat { border-right: none; border-bottom: 1px solid rgba(221, 205, 156, 0.1); }
+            .hero-stat:last-child { border-bottom: none; }
+            .results-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* ========================================
+           SMOOTH SCROLL OFFSET
+           ======================================== */
+        [id] {
+            scroll-margin-top: 80px;
+        }
+
+        /* ========================================
+           CUSTOM CURSOR GLOW (desktop)
+           ======================================== */
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(221, 205, 156, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        body:hover .cursor-glow {
+            opacity: 1;
+        }
+
+        /* ========================================
+           LOADING SCREEN
+           ======================================== */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner {
+            text-align: center;
+        }
+
+        .loader-line {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 0 auto;
+            animation: loader-pulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes loader-pulse {
+            0%, 100% { transform: scaleX(0.3); opacity: 0.3; }
+            50% { transform: scaleX(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="services.html" onclick="closeMobile()">Services</a>
+        <a href="about.html" onclick="closeMobile()">About Us</a>
+        <a href="#process" onclick="closeMobile()">Process</a>
+        <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+        <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">
+            <img src="enoch logo 3.png" alt="Enoch Marketing">
+        </a>
+        <div class="nav-links">
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="#process">Process</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="contact.html" class="nav-cta">Book Free Call</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-line"></div>
+
+        <div class="hero-content">
+            <div class="hero-tag">The Only Agency in LA Built Exclusively for Gyms</div>
+            <h1 class="hero-title">
+                PEOPLE IN YOUR NEIGHBORHOOD ARE<br>
+                <span class="gold">GOOGLING A NEW GYM.</span>
+            </h1>
+            <p class="hero-subtitle">
+                We have the marketing solutions to put you in front of them — before your competitors do. Get your free gym audit to get started.
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">
+                    <span>BOOK YOUR FREE GYM AUDIT</span>
+                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#process" class="btn-secondary">
+                    See How It Works
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-number">150+</div>
+                <div class="hero-stat-label">Gyms Scaled</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">$12M+</div>
+                <div class="hero-stat-label">Revenue Generated</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">3.2x</div>
+                <div class="hero-stat-label">Avg. ROI</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number">94%</div>
+                <div class="hero-stat-label">Client Retention</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item">META ADS <span class="dot"></span></div>
+            <div class="marquee-item">GOOGLE ADS <span class="dot"></span></div>
+            <div class="marquee-item">SEO <span class="dot"></span></div>
+            <div class="marquee-item">SOCIAL MEDIA <span class="dot"></span></div>
+            <div class="marquee-item">LEAD GENERATION <span class="dot"></span></div>
+            <div class="marquee-item">BRAND STRATEGY <span class="dot"></span></div>
+            <div class="marquee-item">WEB DESIGN <span class="dot"></span></div>
+            <div class="marquee-item">CONTENT CREATION <span class="dot"></span></div>
+            <div class="marquee-item">META ADS <span class="dot"></span></div>
+            <div class="marquee-item">GOOGLE ADS <span class="dot"></span></div>
+            <div class="marquee-item">SEO <span class="dot"></span></div>
+            <div class="marquee-item">SOCIAL MEDIA <span class="dot"></span></div>
+            <div class="marquee-item">LEAD GENERATION <span class="dot"></span></div>
+            <div class="marquee-item">BRAND STRATEGY <span class="dot"></span></div>
+            <div class="marquee-item">WEB DESIGN <span class="dot"></span></div>
+            <div class="marquee-item">CONTENT CREATION <span class="dot"></span></div>
+        </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="section section-large problem" id="why">
+        <div class="container">
+            <div class="reveal">
+                <div class="testimonials-badge">The Problem</div>
+                <h2 class="section-title">YOUR GYM IS LOSING MEMBERS<br>TO WORSE GYMS WITH <span class="gold">BETTER MARKETING.</span></h2>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-list">
+                    <div class="problem-item reveal reveal-delay-1">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        </div>
+                        <div>
+                            <h3>YOU'VE HIRED A "MARKETING GUY" AND GOT NOTHING</h3>
+                            <p>They ran the same playbook they use for dentists and lawyers. Your members aren't leads — they're a community. Generic agencies will never understand that.</p>
+                        </div>
+                    </div>
+                    <div class="problem-item reveal reveal-delay-2">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        </div>
+                        <div>
+                            <h3>YOU'RE SPENDING MONEY ON ADS THAT BRING CLICKS, NOT MEMBERS</h3>
+                            <p>Without a gym-specific funnel, you're paying for attention that never walks through your door. Clicks don't pay rent.</p>
+                        </div>
+                    </div>
+                    <div class="problem-item reveal reveal-delay-3">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                        </div>
+                        <div>
+                            <h3>YOU'RE THE COACH. NOT THE MARKETER.</h3>
+                            <p>You're spending hours trying to figure out ads instead of coaching members. That's not why you built this gym — and it's costing you both.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="problem-cta-box reveal reveal-delay-2" id="problemCard">
+                    <!-- Gradient card layers -->
+                    <div class="gcard-noise"></div>
+                    <div class="gcard-glow"></div>
+                    <div class="gcard-glow-center"></div>
+                    <div class="gcard-reflection"></div>
+                    <div class="gcard-edge-bottom"></div>
+                    <div class="gcard-edge-left"></div>
+                    <div class="gcard-edge-right"></div>
+
+                    <!-- Content -->
+                    <div class="gcard-content">
+                        <div class="gcard-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>SOUND FAMILIAR?</h3>
+                        <p>We audit your ads, website, and member funnel — then hand you a custom roadmap showing exactly where you're bleeding members and how to stop it.</p>
+                        <a href="#contact" class="btn-primary">
+                            <span>LET'S FIX THIS — FREE AUDIT</span>
+                            <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section-large" id="services">
+        <div class="container">
+            <div class="reveal">
+                <div class="testimonials-badge">What We Do</div>
+                <h2 class="section-title">FULL-STACK GYM<br><span class="gold">GROWTH ENGINE</span></h2>
+                <p class="section-subtitle">Every service is designed specifically for gyms and fitness brands. No cookie-cutter templates — only strategies proven in the fitness industry.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Card 1: Paid Advertising -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Paid Media</span>
+                        <h3>PAID ADVERTISING</h3>
+                        <p>Meta and Google campaigns engineered for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups in LA.</p>
+                        <div class="service-footer">
+                            <a href="services.html#paid-advertising" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Lead Generation -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Funnels</span>
+                        <h3>LEAD GENERATION</h3>
+                        <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk.</p>
+                        <div class="service-footer">
+                            <a href="services.html#lead-generation" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Social Media -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Content</span>
+                        <h3>SOCIAL MEDIA</h3>
+                        <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood.</p>
+                        <div class="service-footer">
+                            <a href="services.html#social-media" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Local SEO -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Search</span>
+                        <h3>LOCAL SEO</h3>
+                        <p>Dominate "gym near me" searches in your area. We optimize your digital presence so you're the first gym people find in Los Angeles.</p>
+                        <div class="service-footer">
+                            <a href="services.html#local-seo" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Web Design -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Design</span>
+                        <h3>WEB DESIGN</h3>
+                        <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are.</p>
+                        <div class="service-footer">
+                            <a href="services.html#web-design" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Brand Strategy -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-visual">
+                        <div class="service-visual-inner">
+                            <div class="svc-grid-anim"></div>
+                            <div class="svc-icon-wrap">
+                                <div class="svc-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-divider"></div>
+                    <div class="service-body">
+                        <span class="service-badge">Branding</span>
+                        <h3>BRAND STRATEGY</h3>
+                        <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships.</p>
+                        <div class="service-footer">
+                            <a href="services.html#brand-strategy" class="service-link">
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PROCESS -->
+    <section class="section section-large process" id="process">
+        <div class="container">
+            <div class="reveal" style="text-align:center; max-width:650px; margin:0 auto;">
+                <div class="testimonials-badge">Our Process</div>
+                <h2 class="section-title">OUR <span class="gold">PROCESS</span></h2>
+                <p class="section-subtitle" style="margin:0 auto;">We use a proven, four-step process built around your gym's growth — with full performance tracking so you always know what's working. If you win, we win.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="step-number"><span>01</span></div>
+                    <h3>AUDIT</h3>
+                    <p>Analyze. Evaluate. Research. We dig into your ads, website, and member funnel to find exactly where you're losing growth.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="step-number"><span>02</span></div>
+                    <h3>BUILD</h3>
+                    <p>Concept. Strategize. Design. We craft a custom growth playbook with channels, budget, and timeline built for your gym.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="step-number"><span>03</span></div>
+                    <h3>LAUNCH</h3>
+                    <p>Refine. Execute. Unleash. We launch campaigns fast, then obsess over data — testing, tweaking, and optimizing what works.</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="step-number"><span>04</span></div>
+                    <h3>SCALE</h3>
+                    <p>Adopt. Improve. Dominate. Once we find your winning formula, we pour fuel on the fire — more members, more revenue, more locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-large" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header reveal">
+                <div class="testimonials-badge">Client Success</div>
+                <h2 class="section-title">GYM OWNERS WHO<br><span class="gold">TRUSTED THE PROCESS</span></h2>
+                <p class="section-subtitle">See what gym owners across LA have to say about working with Enoch Marketing.</p>
+            </div>
+
+            <div class="testimonials-columns">
+                <!-- Column 1 -->
+                <div class="testi-col testi-col-1">
+                    <div class="testi-col-inner" style="--scroll-duration:28s;">
+                        <!-- Card set (duplicated for infinite loop) -->
+                        <div class="testimonial-card">
+                            <blockquote>Enoch took us from struggling to fill classes to having a waitlist within 3 months. They understand the fitness industry in a way no other agency we've worked with ever has. Our revenue is up 240% year-over-year.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MR</div>
+                                <div>
+                                    <div class="testimonial-name">Marcus Rodriguez</div>
+                                    <div class="testimonial-role">Owner, Iron Republic Fitness — West Hollywood</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>We opened our second location and Enoch had 200 founding members signed up before we even opened the doors. Their pre-sale strategy is unmatched.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">JT</div>
+                                <div>
+                                    <div class="testimonial-name">James Torres</div>
+                                    <div class="testimonial-role">CEO, Elevate Performance — Downtown LA</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Their Google Ads strategy alone brought in 90 new members in our first quarter. The ROI speaks for itself — we've already expanded our training floor.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">DW</div>
+                                <div>
+                                    <div class="testimonial-name">Derek Williams</div>
+                                    <div class="testimonial-role">Owner, Peak Athletics — Culver City</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="testimonial-card">
+                            <blockquote>Enoch took us from struggling to fill classes to having a waitlist within 3 months. They understand the fitness industry in a way no other agency we've worked with ever has. Our revenue is up 240% year-over-year.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MR</div>
+                                <div>
+                                    <div class="testimonial-name">Marcus Rodriguez</div>
+                                    <div class="testimonial-role">Owner, Iron Republic Fitness — West Hollywood</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>We opened our second location and Enoch had 200 founding members signed up before we even opened the doors. Their pre-sale strategy is unmatched.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">JT</div>
+                                <div>
+                                    <div class="testimonial-name">James Torres</div>
+                                    <div class="testimonial-role">CEO, Elevate Performance — Downtown LA</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Their Google Ads strategy alone brought in 90 new members in our first quarter. The ROI speaks for itself — we've already expanded our training floor.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">DW</div>
+                                <div>
+                                    <div class="testimonial-name">Derek Williams</div>
+                                    <div class="testimonial-role">Owner, Peak Athletics — Culver City</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="testi-col testi-col-2">
+                    <div class="testi-col-inner" style="--scroll-duration:34s;">
+                        <div class="testimonial-card">
+                            <blockquote>We were burning $8K/month on ads with nothing to show for it. Enoch rebuilt our entire funnel and within 6 weeks we were getting 40+ qualified leads per week. They paid for themselves in the first month.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">SK</div>
+                                <div>
+                                    <div class="testimonial-name">Sarah Kim</div>
+                                    <div class="testimonial-role">Founder, GRIT Boxing Studio — Santa Monica</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>What I love about Enoch is they actually care about our results. Weekly calls, transparent reporting, and they're always testing new ideas. It feels like they're part of our team, not just a vendor.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">AP</div>
+                                <div>
+                                    <div class="testimonial-name">Aisha Patel</div>
+                                    <div class="testimonial-role">Owner, FlowState Yoga & Fitness — Silver Lake</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Enoch's social media team transformed our Instagram from 800 followers to over 15K in 5 months. The content actually looks and feels like us — not generic fitness stock photos.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">NL</div>
+                                <div>
+                                    <div class="testimonial-name">Nina Lopez</div>
+                                    <div class="testimonial-role">Co-founder, Fuerza Fitness — East LA</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate -->
+                        <div class="testimonial-card">
+                            <blockquote>We were burning $8K/month on ads with nothing to show for it. Enoch rebuilt our entire funnel and within 6 weeks we were getting 40+ qualified leads per week. They paid for themselves in the first month.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">SK</div>
+                                <div>
+                                    <div class="testimonial-name">Sarah Kim</div>
+                                    <div class="testimonial-role">Founder, GRIT Boxing Studio — Santa Monica</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>What I love about Enoch is they actually care about our results. Weekly calls, transparent reporting, and they're always testing new ideas. It feels like they're part of our team, not just a vendor.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">AP</div>
+                                <div>
+                                    <div class="testimonial-name">Aisha Patel</div>
+                                    <div class="testimonial-role">Owner, FlowState Yoga & Fitness — Silver Lake</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Enoch's social media team transformed our Instagram from 800 followers to over 15K in 5 months. The content actually looks and feels like us — not generic fitness stock photos.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">NL</div>
+                                <div>
+                                    <div class="testimonial-name">Nina Lopez</div>
+                                    <div class="testimonial-role">Co-founder, Fuerza Fitness — East LA</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="testi-col testi-col-3">
+                    <div class="testi-col-inner" style="--scroll-duration:31s;">
+                        <div class="testimonial-card">
+                            <blockquote>I was skeptical about hiring another agency. Enoch proved me wrong in 30 days — our cost per lead dropped by 60% and close rate doubled. Wish I'd found them sooner.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">RJ</div>
+                                <div>
+                                    <div class="testimonial-name">Ryan Jackson</div>
+                                    <div class="testimonial-role">Owner, Westside Strength — Venice</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>They rebuilt our website and it went from a dead brochure to our #1 source of new members. The SEO work alone generates 30+ organic leads per month now.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MC</div>
+                                <div>
+                                    <div class="testimonial-name">Maria Chen</div>
+                                    <div class="testimonial-role">Director, CorePower Studio — Pasadena</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Enoch doesn't just bring leads — they bring the right leads. Our member retention is up 35% because the people walking through our door are actually a fit for our community.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">TN</div>
+                                <div>
+                                    <div class="testimonial-name">Tyler Nguyen</div>
+                                    <div class="testimonial-role">Owner, Iron Mind CrossFit — Long Beach</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicate -->
+                        <div class="testimonial-card">
+                            <blockquote>I was skeptical about hiring another agency. Enoch proved me wrong in 30 days — our cost per lead dropped by 60% and close rate doubled. Wish I'd found them sooner.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">RJ</div>
+                                <div>
+                                    <div class="testimonial-name">Ryan Jackson</div>
+                                    <div class="testimonial-role">Owner, Westside Strength — Venice</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>They rebuilt our website and it went from a dead brochure to our #1 source of new members. The SEO work alone generates 30+ organic leads per month now.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">MC</div>
+                                <div>
+                                    <div class="testimonial-name">Maria Chen</div>
+                                    <div class="testimonial-role">Director, CorePower Studio — Pasadena</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <blockquote>Enoch doesn't just bring leads — they bring the right leads. Our member retention is up 35% because the people walking through our door are actually a fit for our community.</blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">TN</div>
+                                <div>
+                                    <div class="testimonial-name">Tyler Nguyen</div>
+                                    <div class="testimonial-role">Owner, Iron Mind CrossFit — Long Beach</div>
+                                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="contact">
+        <div class="final-cta-bg"></div>
+
+        <!-- Geometric accents -->
+        <div class="hero-geo" style="opacity:0.5;">
+            <div class="diamond" style="width:200px;height:200px;left:5%;top:10%;"></div>
+            <div class="diamond" style="width:150px;height:150px;right:8%;bottom:15%;border-color:rgba(221,205,156,0.12);"></div>
+            <div class="diamond" style="width:100px;height:100px;left:15%;bottom:20%;"></div>
+        </div>
+
+        <div class="container reveal">
+            <div class="section-tag" style="justify-content:center;">Ready to Grow?</div>
+            <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <div class="final-cta-actions">
+                <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
+                    <span>BOOK YOUR FREE STRATEGY CALL</span>
+                    <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="guarantee">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                No commitment required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Custom strategy for your gym
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid-bg"></div>
+        <div class="footer-inner">
+            <div class="footer-grid">
+
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <p>Next-generation marketing for gyms and fitness brands in Los Angeles. Built for growth, designed to dominate.</p>
+                    <div class="footer-email-group">
+                        <input type="email" placeholder="Enter your email...">
+                        <a href="#contact" class="footer-email-btn" aria-label="Subscribe">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                        <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                        <li><a href="#process"><span class="link-dot"></span>Process</a></li>
+                        <li><a href="#testimonials"><span class="link-dot"></span>Testimonials</a></li>
+                        <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                        <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                        <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                        <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                        <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#"><span class="link-dot"></span>Instagram</a></li>
+                        <li><a href="#"><span class="link-dot"></span>Facebook</a></li>
+                        <li><a href="#"><span class="link-dot"></span>LinkedIn</a></li>
+                        <li><a href="#"><span class="link-dot"></span>TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+
+                <div class="footer-bottom-right">
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="footer-status">
+                        <div class="footer-status-dot"></div>
+                        <span>Accepting New Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // LOADER
+        // ========================================
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 600);
+        });
+
+        // ========================================
+        // NAV SCROLL
+        // ========================================
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMobile() {
+            mobileMenu.classList.remove('active');
+        }
+
+        // ========================================
+        // REVEAL ON SCROLL
+        // ========================================
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // ========================================
+        // COUNTER ANIMATION
+        // ========================================
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    const prefix = el.dataset.prefix || '';
+                    const suffix = el.dataset.suffix || '';
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease out quart
+                        const eased = 1 - Math.pow(1 - progress, 4);
+                        const current = Math.round(eased * target);
+
+                        if (target >= 1000) {
+                            el.textContent = prefix + current.toLocaleString() + suffix;
+                        } else {
+                            el.textContent = prefix + current + suffix;
+                        }
+
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    }
+
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(el => counterObserver.observe(el));
+
+        // ========================================
+        // CURSOR GLOW (desktop only)
+        // ========================================
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const glow = document.getElementById('cursorGlow');
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            }, { passive: true });
+        }
+
+        // ========================================
+        // SMOOTH ANCHOR SCROLLING
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ========================================
+        // HERO PARTICLE CANVAS
+        // ========================================
+        (function() {
+            const canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let animationFrameId;
+            let particles = [];
+            const mouse = { x: null, y: null, radius: 220 };
+            let heroRect;
+
+            class Particle {
+                constructor(x, y, dx, dy, size, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.dx = dx;
+                    this.dy = dy;
+                    this.size = size;
+                    this.color = color;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
+                    if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dxM = mouse.x - this.x;
+                        const dyM = mouse.y - this.y;
+                        const dist = Math.sqrt(dxM * dxM + dyM * dyM);
+                        if (dist < mouse.radius + this.size) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.x -= (dxM / dist) * force * 5;
+                            this.y -= (dyM / dist) * force * 5;
+                        }
+                    }
+
+                    this.x += this.dx;
+                    this.y += this.dy;
+                    this.draw();
+                }
+            }
+
+            function init() {
+                particles = [];
+                const count = (canvas.width * canvas.height) / 10000;
+                for (let i = 0; i < count; i++) {
+                    const size = Math.random() * 1.8 + 0.8;
+                    const x = Math.random() * canvas.width;
+                    const y = Math.random() * canvas.height;
+                    const dx = (Math.random() - 0.5) * 0.35;
+                    const dy = (Math.random() - 0.5) * 0.35;
+                    // Gold particles with slight variation
+                    const r = 200 + Math.round(Math.random() * 21);
+                    const g = 180 + Math.round(Math.random() * 25);
+                    const b = 120 + Math.round(Math.random() * 36);
+                    const color = `rgba(${r}, ${g}, ${b}, 0.85)`;
+                    particles.push(new Particle(x, y, dx, dy, size, color));
+                }
+            }
+
+            function connect() {
+                const maxDist = (canvas.width / 7) * (canvas.height / 7);
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        const dx = particles[a].x - particles[b].x;
+                        const dy = particles[a].y - particles[b].y;
+                        const dist = dx * dx + dy * dy;
+
+                        if (dist < maxDist) {
+                            const opacity = 1 - dist / 20000;
+
+                            // Brighter white lines near mouse, gold otherwise
+                            if (mouse.x !== null) {
+                                const dxM = particles[a].x - mouse.x;
+                                const dyM = particles[a].y - mouse.y;
+                                const distM = Math.sqrt(dxM * dxM + dyM * dyM);
+                                if (distM < mouse.radius) {
+                                    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+                                } else {
+                                    ctx.strokeStyle = `rgba(221, 205, 156, ${opacity})`;
+                                }
+                            } else {
+                                ctx.strokeStyle = `rgba(221, 205, 156, ${opacity})`;
+                            }
+
+                            ctx.lineWidth = 0.8;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                animationFrameId = requestAnimationFrame(animate);
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                connect();
+            }
+
+            function resize() {
+                const hero = canvas.parentElement;
+                canvas.width = hero.offsetWidth;
+                canvas.height = hero.offsetHeight;
+                heroRect = hero.getBoundingClientRect();
+                init();
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            window.addEventListener('mousemove', (e) => {
+                heroRect = canvas.parentElement.getBoundingClientRect();
+                mouse.x = e.clientX - heroRect.left;
+                mouse.y = e.clientY - heroRect.top;
+                // Only interact when mouse is over the hero
+                if (mouse.x < 0 || mouse.x > canvas.width || mouse.y < 0 || mouse.y > canvas.height) {
+                    mouse.x = null;
+                    mouse.y = null;
+                }
+            }, { passive: true });
+
+            window.addEventListener('mouseout', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            animate();
+        })();
+
+        // ========================================
+        // SERVICE CARD SPOTLIGHT EFFECT
+        // ========================================
+        (function() {
+            const cards = document.querySelectorAll('.service-card');
+
+            // Inject spotlight layers into each card
+            cards.forEach(card => {
+                const bloom = document.createElement('div');
+                bloom.className = 'spotlight-bloom';
+                const border = document.createElement('div');
+                border.className = 'spotlight-border';
+                const glow = document.createElement('div');
+                glow.className = 'spotlight-glow';
+                card.insertBefore(glow, card.firstChild);
+                card.insertBefore(border, card.firstChild);
+                card.insertBefore(bloom, card.firstChild);
+            });
+
+            // Track mouse across the entire services grid
+            const grid = document.querySelector('.services-grid');
+            if (!grid) return;
+
+            grid.addEventListener('mousemove', (e) => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--spot-x', x + 'px');
+                    card.style.setProperty('--spot-y', y + 'px');
+                    card.style.setProperty('--spot-opacity', '1');
+                });
+            }, { passive: true });
+
+            grid.addEventListener('mouseleave', () => {
+                cards.forEach(card => {
+                    card.style.setProperty('--spot-opacity', '0');
+                });
+            });
+        })();
+
+        // ========================================
+        // GRADIENT CARD 3D TILT
+        // ========================================
+        (function() {
+            const card = document.getElementById('problemCard');
+            if (!card) return;
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotateX = -(y / rect.height) * 6;
+                const rotateY = (x / rect.width) * 6;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            }, { passive: true });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        })();
+    </script>
+</body>
+</html>

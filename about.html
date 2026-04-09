@@ -657,6 +657,60 @@
         }
 
         /* ========================================
+           STORY PHOTO SLIDER
+           ======================================== */
+        .story-photo-slider {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            height: 500px;
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            box-shadow: 0 -10px 80px 5px rgba(221, 205, 156, 0.12), 0 0 10px 0 rgba(0,0,0,0.5);
+        }
+
+        .story-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease;
+        }
+
+        .story-slide.active {
+            opacity: 1;
+        }
+
+        .story-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.82) saturate(0.88);
+        }
+
+        .story-slide-dots {
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .story-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.25);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .story-dot.active {
+            background: var(--gold);
+            width: 22px;
+        }
+
+        /* ========================================
            WHAT MAKES US DIFFERENT
            ======================================== */
         .different {
@@ -1369,8 +1423,7 @@
 
             .different-grid { grid-template-columns: 1fr; }
 
-            .story-card { padding: 1.75rem; }
-            .story-stat-number { font-size: 2rem; }
+            .story-photo-slider { height: 320px; }
         }
     </style>
 </head>
@@ -1452,27 +1505,24 @@
                 </div>
 
                 <div class="reveal reveal-delay-2">
-                    <div class="story-card" id="storyCard">
-                        <div class="gcard-noise"></div>
-                        <div class="gcard-glow"></div>
-                        <div class="gcard-glow-center"></div>
-                        <div class="gcard-reflection"></div>
-                        <div class="gcard-edge-bottom"></div>
-                        <div class="gcard-edge-left"></div>
-                        <div class="gcard-edge-right"></div>
-                        <div class="gcard-content">
-                            <div class="story-card-title">WHY IT WORKS</div>
-                            <div class="story-stats">
-                                <div class="story-stat">
-                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">We don't run generic campaigns. Every strategy is built around how people actually discover, evaluate, and commit to a gym.</div>
-                                </div>
-                                <div class="story-stat">
-                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">Our team lives in the fitness industry — we understand the seasonality, the objections, and what makes someone walk through your door.</div>
-                                </div>
-                                <div class="story-stat">
-                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">We measure success the way you do — new members, filled classes, and a brand that stands out in your market.</div>
-                                </div>
-                            </div>
+                    <div class="story-photo-slider" id="storySlider">
+                        <div class="story-slide active"><img src="story-img-1.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-2.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-3.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-4.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-5.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-6.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-7.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide"><img src="story-img-8.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide-dots">
+                            <div class="story-dot active" data-index="0"></div>
+                            <div class="story-dot" data-index="1"></div>
+                            <div class="story-dot" data-index="2"></div>
+                            <div class="story-dot" data-index="3"></div>
+                            <div class="story-dot" data-index="4"></div>
+                            <div class="story-dot" data-index="5"></div>
+                            <div class="story-dot" data-index="6"></div>
+                            <div class="story-dot" data-index="7"></div>
                         </div>
                     </div>
                 </div>
@@ -1557,22 +1607,6 @@
         </div>
     </section>
 
-
-    <!-- PHOTO STRIP -->
-    <section class="about-photo-strip">
-        <div class="about-photo-item">
-            <img src="gym-coach-floor.jpg" alt="Coaching session" loading="lazy">
-            <div class="about-photo-overlay"></div>
-        </div>
-        <div class="about-photo-item">
-            <img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy">
-            <div class="about-photo-overlay"></div>
-        </div>
-        <div class="about-photo-item">
-            <img src="gym-cycling-class.jpg" alt="Group cycling class" loading="lazy">
-            <div class="about-photo-overlay"></div>
-        </div>
-    </section>
 
     <!-- YOUR GYM DESERVES BETTER MARKETING -->
     <section class="final-cta" id="contact">
@@ -1809,24 +1843,46 @@
         })();
 
         // ========================================
-        // STORY CARD 3D TILT (desktop only)
+        // STORY PHOTO SLIDER
         // ========================================
         (function() {
-            const card = document.getElementById('storyCard');
-            if (!card || !window.matchMedia('(pointer: fine)').matches) return;
+            const slider = document.getElementById('storySlider');
+            if (!slider) return;
 
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                const rotateX = -(y / rect.height) * 6;
-                const rotateY = (x / rect.width) * 6;
-                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-            }, { passive: true });
+            const slides = slider.querySelectorAll('.story-slide');
+            const dots = slider.querySelectorAll('.story-dot');
+            let current = 0;
+            let timer;
 
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = index;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() {
+                goTo((current + 1) % slides.length);
+            }
+
+            function startTimer() {
+                timer = setInterval(next, 3500);
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    clearInterval(timer);
+                    goTo(parseInt(dot.dataset.index));
+                    startTimer();
+                });
             });
+
+            // Pause on hover
+            slider.addEventListener('mouseenter', () => clearInterval(timer));
+            slider.addEventListener('mouseleave', startTimer);
+
+            startTimer();
         })();
 
         // ========================================

@@ -269,23 +269,27 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
+            filter: brightness(0.45) saturate(0.8);
         }
 
-        /* Inward vignette — strong radial mask so video appears as a floating window */
+        /* Inward vignette — dark base + strong edge fade for clean text legibility */
         .hero-vignette {
             position: absolute;
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            background: radial-gradient(
-                ellipse 75% 65% at 50% 48%,
-                transparent 0%,
-                transparent 28%,
-                rgba(0,0,0,0.35) 45%,
-                rgba(0,0,0,0.72) 60%,
-                rgba(0,0,0,0.92) 72%,
-                #000 85%
-            );
+            background:
+                /* uniform dark tint across the whole frame */
+                linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+                /* radial vignette that kills the edges to pure black */
+                radial-gradient(
+                    ellipse 72% 60% at 50% 46%,
+                    transparent 0%,
+                    transparent 30%,
+                    rgba(0,0,0,0.55) 55%,
+                    rgba(0,0,0,0.88) 70%,
+                    #000 84%
+                );
         }
 
         /* Particle canvas — hidden */
@@ -434,7 +438,6 @@
             color: rgba(255, 255, 255, 0.95);
             max-width: 550px;
             margin: 0 auto 2.5rem;
-            text-shadow: 0 1px 12px rgba(0,0,0,0.8), 0 2px 32px rgba(0,0,0,0.6);
             opacity: 0;
             transform: translateY(20px);
             animation: fade-up 0.8s var(--ease-out-expo) 0.7s forwards;
@@ -1147,48 +1150,65 @@
         }
 
         /* ========================================
-           PHOTO GALLERY
+           PHOTO GALLERY — INFINITE SLIDER
            ======================================== */
         .photo-gallery-section {
-            padding: 0;
+            padding: 6rem 0 5rem;
             overflow: hidden;
+            background: var(--black);
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 280px 280px;
-            gap: 3px;
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding: 0 2rem;
         }
 
-        .gallery-item {
+        .gallery-scroll-wrapper {
             position: relative;
+            width: 100%;
             overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
         }
 
-        .gallery-item--tall {
-            grid-row: span 2;
+        .gallery-track {
+            display: flex;
+            gap: 1.25rem;
+            width: max-content;
+            animation: gallery-scroll 32s linear infinite;
         }
 
-        .gallery-item img {
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes gallery-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .gallery-slide {
+            flex-shrink: 0;
+            width: 320px;
+            height: 320px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+        }
+
+        .gallery-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.7s var(--ease-out-expo);
-            filter: brightness(0.75) saturate(0.85);
+            filter: brightness(0.78) saturate(0.88);
+            transition: filter 0.4s ease, transform 0.4s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
-            filter: brightness(0.9) saturate(1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
-            pointer-events: none;
+        .gallery-slide:hover img {
+            filter: brightness(1) saturate(1.05);
+            transform: scale(1.04);
         }
 
         /* ========================================
@@ -1981,30 +2001,29 @@
 
     <!-- PHOTO GALLERY -->
     <section class="photo-gallery-section">
-        <div class="gallery-grid">
-            <div class="gallery-item gallery-item--tall reveal">
-                <img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item reveal reveal-delay-1">
-                <img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item reveal reveal-delay-2">
-                <img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item gallery-item--tall reveal reveal-delay-1">
-                <img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item reveal reveal-delay-2">
-                <img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy">
-                <div class="gallery-overlay"></div>
-            </div>
-            <div class="gallery-item reveal reveal-delay-3">
-                <img src="gym-group-class.jpg" alt="Group class" loading="lazy">
-                <div class="gallery-overlay"></div>
+        <div class="gallery-header reveal">
+            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Our Work</span></div>
+            <h2 class="section-title">INSIDE THE GYMS<br>WE <span class="gold">GROW.</span></h2>
+        </div>
+        <div class="gallery-scroll-wrapper">
+            <div class="gallery-track">
+                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy"></div>
+                <!-- Duplicated for seamless infinite loop -->
+                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy"></div>
             </div>
         </div>
     </section>

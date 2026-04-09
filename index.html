@@ -1147,6 +1147,51 @@
         }
 
         /* ========================================
+           PHOTO GALLERY
+           ======================================== */
+        .photo-gallery-section {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 280px 280px;
+            gap: 3px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item--tall {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s var(--ease-out-expo);
+            filter: brightness(0.75) saturate(0.85);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.9) saturate(1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ========================================
            PROCESS SECTION
            ======================================== */
         .process {
@@ -1554,6 +1599,12 @@
         }
 
         @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 200px 200px 200px;
+            }
+            .gallery-item--tall { grid-row: span 1; }
+
             .nav { padding: 1rem 1.5rem; }
             .nav.scrolled { padding: 0.75rem 1.5rem; }
             .nav-links { display: none; }
@@ -1927,6 +1978,36 @@
     </section>
 
 
+
+    <!-- PHOTO GALLERY -->
+    <section class="photo-gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--tall reveal">
+                <img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-1">
+                <img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-2">
+                <img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item gallery-item--tall reveal reveal-delay-1">
+                <img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-2">
+                <img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item reveal reveal-delay-3">
+                <img src="gym-group-class.jpg" alt="Group class" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- PROCESS -->
     <section class="section section-large process" id="process">

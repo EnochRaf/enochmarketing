@@ -915,6 +915,41 @@
         .btn-primary:hover .arrow { transform: translateX(4px); }
 
         /* ========================================
+           PHOTO STRIP
+           ======================================== */
+        .about-photo-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 420px;
+            gap: 3px;
+        }
+
+        .about-photo-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) saturate(0.75);
+            transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
+        }
+
+        .about-photo-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.75) saturate(1);
+        }
+
+        .about-photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* ========================================
            FINAL CTA SECTION
            ======================================== */
         .final-cta {
@@ -1290,6 +1325,12 @@
         }
 
         @media (max-width: 768px) {
+            .about-photo-strip {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .about-photo-item { height: 250px; }
+
             .nav { padding: 1rem 1.5rem; }
             .nav.scrolled { padding: 0.75rem 1.5rem; }
             .nav-links { display: none; }
@@ -1516,6 +1557,22 @@
         </div>
     </section>
 
+
+    <!-- PHOTO STRIP -->
+    <section class="about-photo-strip">
+        <div class="about-photo-item">
+            <img src="gym-coach-floor.jpg" alt="Coaching session" loading="lazy">
+            <div class="about-photo-overlay"></div>
+        </div>
+        <div class="about-photo-item">
+            <img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy">
+            <div class="about-photo-overlay"></div>
+        </div>
+        <div class="about-photo-item">
+            <img src="gym-cycling-class.jpg" alt="Group cycling class" loading="lazy">
+            <div class="about-photo-overlay"></div>
+        </div>
+    </section>
 
     <!-- YOUR GYM DESERVES BETTER MARKETING -->
     <section class="final-cta" id="contact">

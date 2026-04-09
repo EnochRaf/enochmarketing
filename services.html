@@ -916,6 +916,22 @@
             max-height: 480px;
         }
 
+        .svc-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.45) saturate(0.7);
+            transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
+        }
+
+        .service-visual-card:hover .svc-photo {
+            transform: scale(1.04);
+            filter: brightness(0.55) saturate(0.85);
+        }
+
         /* Noise texture */
         .svc-noise {
             position: absolute;
@@ -1723,6 +1739,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-group-squat.jpg" alt="Gym training" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -1788,6 +1805,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-coach-athlete.jpg" alt="Coach and athlete" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -1853,6 +1871,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-smoke-lift.jpg" alt="Athlete training" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -1918,6 +1937,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-group-class.jpg" alt="Group class" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -1983,6 +2003,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-cycling-class.jpg" alt="Cycling class" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -2048,6 +2069,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-deadlift-smoke.jpg" alt="Deadlift training" class="svc-photo" loading="lazy">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>

@@ -1619,12 +1619,6 @@
         }
 
         @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 200px 200px 200px;
-            }
-            .gallery-item--tall { grid-row: span 1; }
-
             .nav { padding: 1rem 1.5rem; }
             .nav.scrolled { padding: 0.75rem 1.5rem; }
             .nav-links { display: none; }
@@ -1632,8 +1626,14 @@
 
             .section, .section-large { padding: 4rem 1.5rem; }
 
-            .hero-content { padding: 7rem 1.5rem 3rem; }
-            .hero-title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+            .hero-content { padding: 7rem 1.5rem 3rem; text-align: center; }
+            .hero-title { font-size: clamp(2.4rem, 9vw, 4rem); }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-actions { justify-content: center; gap: 1rem; }
+            .hero-tag { font-size: 0.65rem; }
+
+            .photo-gallery-section { padding: 4rem 0 3.5rem; }
+            .gallery-slide { width: 220px; height: 220px; }
 
             .problem-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .services-grid { grid-template-columns: 1fr; }
@@ -1642,11 +1642,29 @@
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 
             .final-cta { padding: 3.5rem 1.5rem; }
+            .hero-geo .diamond { display: none; }
         }
 
         @media (max-width: 480px) {
+            .hero-content { padding: 6rem 1.25rem 2.5rem; }
+            .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
+            .hero-subtitle { font-size: 0.95rem; }
+            .hero-actions { flex-direction: column; align-items: center; width: 100%; }
+            .btn-primary { width: 100%; justify-content: center; font-size: 1rem; padding: 1rem 1.5rem; }
+            .btn-secondary { font-size: 0.9rem; }
+
             .results-grid { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+
+            .gallery-slide { width: 180px; height: 180px; border-radius: 0.75rem; }
+
+            .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .section-subtitle { font-size: 0.9rem; }
+        }
+
+        /* Hide cursor glow & diamonds on touch devices */
+        @media (pointer: coarse) {
+            .cursor-glow { display: none; }
         }
 
         /* ========================================

@@ -1488,13 +1488,10 @@
 
             .section, .section-large { padding: 4rem 1.5rem; }
 
-            .hero-text-center {
-                padding: 8rem 1.5rem 2rem;
-            }
-
-            .hero-title {
-                font-size: clamp(2.5rem, 10vw, 4rem);
-            }
+            .hero-text-center { padding: 7rem 1.5rem 2rem; }
+            .hero-title { font-size: clamp(2.2rem, 9vw, 4rem); }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-pill { font-size: 0.7rem; }
 
             .hero-blocks-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1502,39 +1499,47 @@
                 padding: 0 1.5rem 4rem;
             }
 
-            .service-section { padding: 5rem 1.5rem; }
-            .service-section-inner { gap: 2.5rem; }
+            .service-section { padding: 4rem 1.5rem; }
+            .service-section-inner { gap: 2rem; }
 
             .deliverables { grid-template-columns: 1fr; }
 
-            .service-visual-card { max-height: 320px; }
+            .service-visual-card { max-height: 300px; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .final-cta { padding: 6rem 1.5rem; }
+            .final-cta { padding: 5rem 1.5rem; }
+            .hero-geo .diamond { display: none; }
         }
 
         @media (max-width: 480px) {
             .hero-blocks-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.75rem;
-                padding: 0 1rem 3rem;
+                grid-template-columns: 1fr;
+                gap: 0.875rem;
+                padding: 0 1.25rem 3rem;
             }
 
-            .hero-text-center {
-                padding: 7rem 1rem 1.5rem;
-            }
+            .hero-text-center { padding: 6rem 1.25rem 1.5rem; }
+            .hero-title { font-size: clamp(2rem, 9.5vw, 3rem); }
+            .hero-subtitle { font-size: 0.9rem; }
 
-            .gcard-content { padding: 1.25rem; }
-            .gcard-content h3 { font-size: 1.15rem; }
-            .gcard-content p { font-size: 0.7rem; }
-            .gcard-icon { width: 38px; height: 38px; margin-bottom: 0.75rem; }
-            .gcard-icon svg { width: 16px; height: 16px; }
-            .gcard-link { font-size: 0.65rem; margin-top: 0.75rem; }
+            .gcard-content { padding: 1.4rem; }
+            .gcard-content h3 { font-size: 1.1rem; }
+            .gcard-content p { font-size: 0.875rem; }
+            .gcard-icon { width: 44px; height: 44px; margin-bottom: 0.75rem; }
+            .gcard-icon svg { width: 18px; height: 18px; }
+            .gcard-link { font-size: 0.8rem; margin-top: 0.75rem; }
             .hero-block { border-radius: 1.25rem; }
 
-            .service-content h2 {
-                font-size: clamp(2rem, 8vw, 3rem);
-            }
+            .service-content h2 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+            .service-section { padding: 3rem 1.25rem; }
+
+            .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .final-cta { padding: 4rem 1.25rem; }
+        }
+
+        /* Hide cursor glow on touch devices */
+        @media (pointer: coarse) {
+            .cursor-glow { display: none; }
         }
     </style>
 </head>

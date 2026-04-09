@@ -1379,12 +1379,6 @@
         }
 
         @media (max-width: 768px) {
-            .about-photo-strip {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-            .about-photo-item { height: 250px; }
-
             .nav { padding: 1rem 1.5rem; }
             .nav.scrolled { padding: 0.75rem 1.5rem; }
             .nav-links { display: none; }
@@ -1392,16 +1386,14 @@
 
             .section, .section-large { padding: 4rem 1.5rem; }
 
-            .hero-text-center {
-                padding: 8rem 1.5rem 4rem;
-            }
-
-            .hero-title {
-                font-size: clamp(2.5rem, 10vw, 4rem);
-            }
+            .hero-text-center { padding: 7rem 1.5rem 3.5rem; }
+            .hero-title { font-size: clamp(2.2rem, 9vw, 4rem); }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-pill { font-size: 0.7rem; }
 
             .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .different-grid { grid-template-columns: 1fr 1fr; }
+            .story-photo-slider { height: 340px; }
+            .different-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .values-grid { grid-template-columns: 1fr; }
 
             .numbers-bar { flex-direction: column; }
@@ -1413,17 +1405,28 @@
             .number-stat:last-child { border-bottom: none; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .final-cta { padding: 6rem 1.5rem; }
+            .final-cta { padding: 5rem 1.5rem; }
+            .hero-geo .diamond { display: none; }
         }
 
         @media (max-width: 480px) {
-            .hero-text-center {
-                padding: 7rem 1rem 3rem;
-            }
+            .hero-text-center { padding: 6rem 1.25rem 2.5rem; }
+            .hero-title { font-size: clamp(1.9rem, 9.5vw, 3rem); }
+            .hero-subtitle { font-size: 0.9rem; }
+            .hero-cta-link { font-size: 0.95rem; padding: 0.9rem 1.75rem; width: 100%; justify-content: center; }
 
             .different-grid { grid-template-columns: 1fr; }
+            .story-photo-slider { height: 260px; }
 
-            .story-photo-slider { height: 320px; }
+            .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .section-subtitle { font-size: 0.9rem; }
+
+            .final-cta { padding: 4rem 1.25rem; }
+        }
+
+        /* Hide cursor glow on touch devices */
+        @media (pointer: coarse) {
+            .cursor-glow { display: none; }
         }
     </style>
 </head>

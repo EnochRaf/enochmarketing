@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us — Enoch Marketing | LA's #1 Gym Marketing Agency</title>
-    <meta name="description" content="Enoch Marketing is LA's only agency built from the ground up for gyms and fitness brands. Learn our story, our values, and why 150+ gyms trust us to grow.">
+    <meta name="description" content="Enoch Marketing is LA's only agency built from the ground up for gyms and fitness brands. Learn our story, our values, and why gym owners across LA trust us to grow.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -416,6 +416,57 @@
             animation: fade-up 0.8s var(--ease-out-expo) 0.7s forwards;
         }
 
+        .hero-cta-row {
+            margin-top: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fade-up 0.8s var(--ease-out-expo) 1.05s forwards;
+        }
+
+        .hero-cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.12em;
+            padding: 1.1rem 2.8rem;
+            background: rgba(221, 205, 156, 0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.22);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .hero-cta-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+        }
+
+        .hero-cta-link:hover {
+            background: rgba(221, 205, 156, 0.13);
+            border-color: rgba(221, 205, 156, 0.4);
+            box-shadow: 0 0 25px rgba(221, 205, 156, 0.15), inset 0 0 20px rgba(221, 205, 156, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .hero-cta-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta-link:hover svg {
+            transform: translateX(3px);
+        }
+
         /* ========================================
            OUR STORY SECTION
            ======================================== */
@@ -423,8 +474,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
+            align-items: start;
+            margin-top: 0;
         }
 
         .story-text p {
@@ -1335,20 +1386,28 @@
             <p class="hero-subtitle">
                 Enoch Marketing is LA's only agency built from the ground up for gyms and fitness brands. We live in this industry because we believe gym owners deserve a marketing partner who actually understands their business.
             </p>
+
+            <div class="hero-cta-row">
+                <a href="contact.html" class="hero-cta-link">
+                    <span>BOOK YOUR FREE STRATEGY CALL</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- OUR STORY -->
-    <section class="section section-large">
+    <section class="section section-large" style="padding-top:5rem;padding-bottom:5rem;">
         <div class="container">
-            <div class="testimonials-badge reveal">Our Story</div>
-            <h2 class="section-title reveal">BORN IN THE GYM.<br>BUILT FOR <span class="gold">GYM OWNERS.</span></h2>
-
             <div class="story-grid">
-                <div class="story-text reveal">
-                    <p>Enoch Marketing started with a simple observation: gym owners were getting burned by agencies that didn't understand fitness. They'd hire a "marketing guy" who ran the same playbook they used for dentists and restaurants — and wonder why nobody was walking through the door.</p>
-                    <p>We knew there had to be a better way. So we built an agency that does one thing and does it obsessively: grow gyms. Every strategy, every campaign, every funnel we build is designed specifically for the way people find, evaluate, and join a gym.</p>
-                    <p>Based in Los Angeles, we've helped over 150 gyms across the city fill their floors, pack their classes, and build the kind of brand that turns first-timers into lifers.</p>
+                <div>
+                    <div class="testimonials-badge reveal">Our Story</div>
+                    <h2 class="section-title reveal">BORN IN THE GYM.<br>BUILT FOR <span class="gold">GYM OWNERS.</span></h2>
+                    <div class="story-text reveal" style="margin-top:1.5rem;">
+                        <p>Enoch Marketing started with a simple observation: gym owners were getting burned by agencies that didn't understand fitness. They'd hire a "marketing guy" who ran the same playbook they used for dentists and restaurants — and wonder why nobody was walking through the door.</p>
+                        <p>We knew there had to be a better way. So we built an agency that does one thing and does it obsessively: grow gyms. Every strategy, every campaign, every funnel we build is designed specifically for the way people find, evaluate, and join a gym.</p>
+                        <p>Based in Los Angeles, we've helped gyms across the city fill their floors, pack their classes, and build the kind of brand that turns first-timers into lifers.</p>
+                    </div>
                 </div>
 
                 <div class="reveal reveal-delay-2">
@@ -1361,19 +1420,16 @@
                         <div class="gcard-edge-left"></div>
                         <div class="gcard-edge-right"></div>
                         <div class="gcard-content">
-                            <div class="story-card-title">BY THE NUMBERS</div>
+                            <div class="story-card-title">WHY IT WORKS</div>
                             <div class="story-stats">
                                 <div class="story-stat">
-                                    <div class="story-stat-number">150+</div>
-                                    <div class="story-stat-label">Gyms Scaled</div>
+                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">We don't run generic campaigns. Every strategy is built around how people actually discover, evaluate, and commit to a gym.</div>
                                 </div>
                                 <div class="story-stat">
-                                    <div class="story-stat-number">$12M+</div>
-                                    <div class="story-stat-label">Revenue Generated</div>
+                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">Our team lives in the fitness industry — we understand the seasonality, the objections, and what makes someone walk through your door.</div>
                                 </div>
                                 <div class="story-stat">
-                                    <div class="story-stat-number">94%</div>
-                                    <div class="story-stat-label">Client Retention</div>
+                                    <div class="story-stat-label" style="font-size:0.85rem; line-height:1.6; color:var(--white-muted); text-transform:none; letter-spacing:0;">We measure success the way you do — new members, filled classes, and a brand that stands out in your market.</div>
                                 </div>
                             </div>
                         </div>
@@ -1460,29 +1516,8 @@
         </div>
     </section>
 
-    <!-- BY THE NUMBERS -->
-    <section class="section" style="padding:0;">
-        <div class="numbers-bar reveal">
-            <div class="number-stat">
-                <div class="number-stat-value" data-count="150" data-suffix="+">0</div>
-                <div class="number-stat-label">Gyms Scaled</div>
-            </div>
-            <div class="number-stat">
-                <div class="number-stat-value" data-count="12" data-prefix="$" data-suffix="M+">0</div>
-                <div class="number-stat-label">Revenue Generated</div>
-            </div>
-            <div class="number-stat">
-                <div class="number-stat-value" data-count="3" data-suffix=".2x">0</div>
-                <div class="number-stat-label">Avg. ROI</div>
-            </div>
-            <div class="number-stat">
-                <div class="number-stat-value" data-count="94" data-suffix="%">0</div>
-                <div class="number-stat-label">Client Retention</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- FINAL CTA -->
+    <!-- YOUR GYM DESERVES BETTER MARKETING -->
     <section class="final-cta" id="contact">
         <div class="final-cta-bg"></div>
 
@@ -1493,11 +1528,11 @@
         </div>
 
         <div class="container reveal">
-            <div class="section-tag" style="justify-content:center;">Ready to Grow?</div>
+            <div class="testimonials-badge reveal">Ready to Grow?</div>
             <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
             <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
             <div class="final-cta-actions">
-                <a href="https://calendly.com" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
+                <a href="contact.html" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
                     <span>BOOK YOUR FREE STRATEGY CALL</span>
                     <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>

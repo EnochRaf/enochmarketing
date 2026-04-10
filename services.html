@@ -436,6 +436,18 @@
             flex-shrink: 0;
         }
 
+        /* CTA pill glow pulse */
+        #ctaPill {
+            position: relative;
+            box-shadow: 0 0 0 0 rgba(221, 205, 156, 0.4);
+            animation: pill-pulse 2.8s ease-in-out infinite;
+        }
+
+        @keyframes pill-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(221, 205, 156, 0); }
+            50%       { box-shadow: 0 0 16px 4px rgba(221, 205, 156, 0.18); }
+        }
+
         .hero-title {
             font-family: var(--font-display);
             font-size: clamp(3rem, 7vw, 6.5rem);
@@ -2135,7 +2147,12 @@
         </div>
 
         <div class="container reveal">
-            <div class="section-tag" style="justify-content:center;">Ready to Grow?</div>
+            <div style="display:flex;justify-content:center;margin-bottom:2rem;">
+                <div class="hero-pill" style="opacity:1;transform:none;animation:none;" id="ctaPill">
+                    <span class="hero-pill-dot">Free</span>
+                    <span class="hero-pill-text">Ready to Grow?</span>
+                </div>
+            </div>
             <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
             <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
             <div class="final-cta-actions">

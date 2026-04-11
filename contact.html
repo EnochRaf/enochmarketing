@@ -1062,12 +1062,14 @@
         }
 
         @media (max-width: 768px) {
-            .nav { padding: 1rem 1.5rem; }
-            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav.scrolled { padding: 0.65rem 1.5rem; }
+            .nav-logo img { height: 60px; }
+            .nav.scrolled .nav-logo img { height: 52px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
-            .contact-hero { padding: 8rem 1.5rem 3rem; }
+            .contact-hero { padding: 6.5rem 1.5rem 3rem; }
             .contact-section { padding: 1rem 1.5rem 5rem; }
 
             .expect-section { padding: 4rem 1.5rem; }
@@ -1080,7 +1082,8 @@
         }
 
         @media (max-width: 480px) {
-            .contact-hero { padding: 7rem 1rem 2rem; }
+            .nav-logo img { height: 52px; }
+            .contact-hero { padding: 5.5rem 1rem 2rem; }
             .contact-section { padding: 1rem 1rem 4rem; }
             .form-inner { padding: 1.75rem; }
             .calendar-card { padding: 1.5rem; }

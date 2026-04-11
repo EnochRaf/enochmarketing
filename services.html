@@ -1493,14 +1493,16 @@
         }
 
         @media (max-width: 768px) {
-            .nav { padding: 1rem 1.5rem; }
-            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav.scrolled { padding: 0.65rem 1.5rem; }
+            .nav-logo img { height: 60px; }
+            .nav.scrolled .nav-logo img { height: 52px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
             .section, .section-large { padding: 4rem 1.5rem; }
 
-            .hero-text-center { padding: 7rem 1.5rem 2rem; }
+            .hero-text-center { padding: 6.5rem 1.5rem 2rem; }
             .hero-title { font-size: clamp(2.2rem, 9vw, 4rem); }
             .hero-subtitle { font-size: 1rem; }
             .hero-pill { font-size: 0.7rem; }
@@ -1524,6 +1526,8 @@
         }
 
         @media (max-width: 480px) {
+            .nav-logo img { height: 52px; }
+
             .hero-blocks-grid {
                 grid-template-columns: 1fr;
                 gap: 0.875rem;

@@ -1379,14 +1379,16 @@
         }
 
         @media (max-width: 768px) {
-            .nav { padding: 1rem 1.5rem; }
-            .nav.scrolled { padding: 0.75rem 1.5rem; }
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav.scrolled { padding: 0.65rem 1.5rem; }
+            .nav-logo img { height: 60px; }
+            .nav.scrolled .nav-logo img { height: 52px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
             .section, .section-large { padding: 4rem 1.5rem; }
 
-            .hero-text-center { padding: 7rem 1.5rem 3.5rem; }
+            .hero-text-center { padding: 6.5rem 1.5rem 3.5rem; }
             .hero-title { font-size: clamp(2.2rem, 9vw, 4rem); }
             .hero-subtitle { font-size: 1rem; }
             .hero-pill { font-size: 0.7rem; }
@@ -1410,7 +1412,8 @@
         }
 
         @media (max-width: 480px) {
-            .hero-text-center { padding: 6rem 1.25rem 2.5rem; }
+            .nav-logo img { height: 52px; }
+            .hero-text-center { padding: 5.5rem 1.25rem 2.5rem; }
             .hero-title { font-size: clamp(1.9rem, 9.5vw, 3rem); }
             .hero-subtitle { font-size: 0.9rem; }
             .hero-cta-link { font-size: 0.95rem; padding: 0.9rem 1.75rem; width: 100%; justify-content: center; }

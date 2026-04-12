@@ -1495,8 +1495,8 @@
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 60px; }
-            .nav.scrolled .nav-logo img { height: 52px; }
+            .nav-logo img { height: 80px; }
+            .nav.scrolled .nav-logo img { height: 68px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1526,7 +1526,8 @@
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 52px; }
+            .nav-logo img { height: 70px; }
+            .nav.scrolled .nav-logo img { height: 60px; }
 
             .hero-blocks-grid {
                 grid-template-columns: 1fr;
@@ -2388,6 +2389,11 @@
                 });
             });
         }
+
+        // iOS video autoplay nudge
+        document.querySelectorAll('video').forEach(v => {
+            v.play().catch(() => {});
+        });
     </script>
 </body>
 </html>

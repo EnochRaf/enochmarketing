@@ -1184,55 +1184,61 @@
                     <h3>TELL US ABOUT <span class="gold">YOUR GYM</span></h3>
                     <p>Fill out the details below so we can come prepared with a strategy tailored to your business.</p>
 
-                    <form id="inquiryForm" action="#" method="POST" onsubmit="handleSubmit(event)">
+                    <form id="inquiryForm" onsubmit="handleSubmit(event)">
+                        <!-- Hidden Formspree fields -->
+                        <input type="hidden" name="_subject" value="New Strategy Call Booking — Enoch Marketing">
+                        <input type="hidden" name="_replyto" id="replyToField" value="">
+                        <input type="hidden" name="Requested Date" id="hiddenDate" value="Not selected">
+                        <input type="hidden" name="Requested Time" id="hiddenTime" value="Not selected">
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                                <input type="text" id="firstName" name="First Name" placeholder="John" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                                <input type="text" id="lastName" name="Last Name" placeholder="Smith" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@yourgym.com" required>
+                            <input type="email" id="email" name="Email" placeholder="john@yourgym.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(310) 555-0100">
+                            <input type="tel" id="phone" name="Phone" placeholder="(310) 555-0100">
                         </div>
 
                         <div class="form-group">
                             <label for="gymName">Gym Name</label>
-                            <input type="text" id="gymName" name="gymName" placeholder="Iron Republic Fitness" required>
+                            <input type="text" id="gymName" name="Gym Name" placeholder="Iron Republic Fitness" required>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="gymType">Gym Type</label>
-                                <select id="gymType" name="gymType">
+                                <select id="gymType" name="Gym Type">
                                     <option value="" disabled selected>Select type</option>
-                                    <option value="crossfit">CrossFit Box</option>
-                                    <option value="boutique">Boutique Studio</option>
-                                    <option value="globo">Traditional Gym</option>
-                                    <option value="yoga">Yoga / Pilates</option>
-                                    <option value="boxing">Boxing / MMA</option>
-                                    <option value="pt">Personal Training Studio</option>
-                                    <option value="other">Other</option>
+                                    <option value="CrossFit Box">CrossFit Box</option>
+                                    <option value="Boutique Studio">Boutique Studio</option>
+                                    <option value="Traditional Gym">Traditional Gym</option>
+                                    <option value="Yoga / Pilates">Yoga / Pilates</option>
+                                    <option value="Boxing / MMA">Boxing / MMA</option>
+                                    <option value="Personal Training Studio">Personal Training Studio</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="members">Current Members</label>
-                                <select id="members" name="members">
+                                <select id="members" name="Current Members">
                                     <option value="" disabled selected>Select range</option>
-                                    <option value="0-50">0 - 50</option>
-                                    <option value="50-150">50 - 150</option>
-                                    <option value="150-300">150 - 300</option>
-                                    <option value="300-500">300 - 500</option>
+                                    <option value="0 - 50">0 - 50</option>
+                                    <option value="50 - 150">50 - 150</option>
+                                    <option value="150 - 300">150 - 300</option>
+                                    <option value="300 - 500">300 - 500</option>
                                     <option value="500+">500+</option>
                                 </select>
                             </div>
@@ -1240,10 +1246,10 @@
 
                         <div class="form-group">
                             <label for="message">What's your biggest growth challenge right now?</label>
-                            <textarea id="message" name="message" placeholder="Tell us what you're struggling with — ads not converting, low foot traffic, retention issues, etc."></textarea>
+                            <textarea id="message" name="Message" placeholder="Tell us what you're struggling with — ads not converting, low foot traffic, retention issues, etc."></textarea>
                         </div>
 
-                        <button type="submit" class="btn-submit">
+                        <button type="submit" class="btn-submit" id="submitBtn">
                             BOOK MY FREE STRATEGY CALL
                             <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
@@ -1520,27 +1526,84 @@
         // ========================================
         // FORM SUBMIT
         // ========================================
-        function handleSubmit(e) {
-            e.preventDefault();
 
-            const form = e.target;
-            const data = new FormData(form);
+        // ---- PASTE YOUR FORMSPREE FORM ID HERE ----
+        const FORMSPREE_ID = 'xyklkbon';
+        // -------------------------------------------
 
-            // Add calendar selections
+        // Keep hidden date/time fields in sync with calendar picker
+        const hiddenDate = document.getElementById('hiddenDate');
+        const hiddenTime = document.getElementById('hiddenTime');
+
+        // Patch into the existing calendar click handlers by watching selectedDate/selectedTime
+        // We override the day click and time click to also update hidden fields.
+        const _origCalInit = renderCalendar;
+
+        function syncCalendarHiddenFields() {
             if (selectedDate) {
-                data.append('date', selectedDate.toLocaleDateString());
+                const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                hiddenDate.value = months[selectedDate.getMonth()] + ' ' + selectedDate.getDate() + ', ' + selectedDate.getFullYear();
             }
             if (selectedTime) {
-                data.append('time', selectedTime);
+                hiddenTime.value = selectedTime;
+            }
+        }
+
+        // Patch time-slot clicks to also sync hidden fields
+        const origTimeGrid = document.getElementById('timeGrid');
+        document.getElementById('timeGrid').addEventListener('click', function() {
+            setTimeout(syncCalendarHiddenFields, 0);
+        });
+
+        // Patch calendar day clicks to also sync hidden fields
+        document.getElementById('calDays').addEventListener('click', function() {
+            setTimeout(syncCalendarHiddenFields, 0);
+        });
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+                alert('Form not yet connected. Please add your Formspree ID.');
+                return;
             }
 
-            // For now, show confirmation
-            const btn = form.querySelector('.btn-submit');
-            btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> BOOKED — WE\'LL BE IN TOUCH!';
-            btn.style.background = 'rgba(74, 222, 128, 0.1)';
-            btn.style.borderColor = 'rgba(74, 222, 128, 0.3)';
-            btn.style.color = '#4ade80';
+            // Sync calendar selections into hidden fields before sending
+            syncCalendarHiddenFields();
+
+            // Mirror email into _replyto so Formspree sets Reply-To correctly
+            document.getElementById('replyToField').value = document.getElementById('email').value;
+
+            const form = e.target;
+            const btn = document.getElementById('submitBtn');
+
+            btn.innerHTML = 'SENDING...';
             btn.disabled = true;
+
+            try {
+                const response = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> BOOKED — WE\'LL BE IN TOUCH!';
+                    btn.style.background = 'rgba(74, 222, 128, 0.1)';
+                    btn.style.borderColor = 'rgba(74, 222, 128, 0.3)';
+                    btn.style.color = '#4ade80';
+                    form.reset();
+                    hiddenDate.value = 'Not selected';
+                    hiddenTime.value = 'Not selected';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                btn.innerHTML = 'ERROR — PLEASE TRY AGAIN';
+                btn.style.borderColor = 'rgba(248, 113, 113, 0.4)';
+                btn.style.color = '#f87171';
+                btn.disabled = false;
+            }
         }
     </script>
 </body>

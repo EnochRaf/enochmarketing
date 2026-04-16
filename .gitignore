@@ -1,0 +1,15 @@
+# Mac system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Large video files (not needed in repo)
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Environment files
+.env

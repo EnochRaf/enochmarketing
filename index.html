@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrossFit Gym Marketing Agency | Growth & Lead Generation</title>
-    <link rel="icon" type="image/png" href="logo_enoch.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <meta name="description" content="We help CrossFit gyms add 15–25 new members per month with proven lead generation systems. No referrals required. Book a free strategy call.">
     <link rel="canonical" href="https://www.enochmarketing.com/" />
     <!-- Open Graph -->
@@ -1208,100 +1213,6 @@
         }
 
         /* ========================================
-           PHOTO GALLERY — INFINITE SLIDER
-           ======================================== */
-        .photo-gallery-section {
-            padding: 6rem 0 5rem;
-            overflow: hidden;
-            background: var(--black);
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            padding: 0 2rem;
-        }
-
-        .gallery-scroll-wrapper {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            -webkit-mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-            mask: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
-        }
-
-        .gallery-track {
-            display: flex;
-            gap: 1.25rem;
-            width: max-content;
-            animation: gallery-scroll 32s linear infinite;
-        }
-
-        .gallery-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes gallery-scroll {
-            0%   { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .gallery-slide {
-            flex-shrink: 0;
-            width: 320px;
-            height: 320px;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.55);
-        }
-
-        .gallery-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: brightness(0.78) saturate(0.88);
-            transition: filter 0.4s ease, transform 0.4s ease;
-        }
-
-        .gallery-slide:hover img {
-            filter: brightness(1) saturate(1.05);
-            transform: scale(1.04);
-        }
-
-        .gallery-slide { position: relative; }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2.25rem 0.875rem 0.75rem;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85);
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
-            pointer-events: none;
-        }
-
-        .gallery-footer {
-            text-align: center;
-            padding: 2.25rem 2rem 0;
-            font-size: 0.9rem;
-            color: var(--white-dim);
-        }
-
-        .gallery-footer a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .gallery-footer a:hover { color: var(--gold-light); }
-
-        /* ========================================
            PROCESS SECTION
            ======================================== */
         .process {
@@ -1698,146 +1609,6 @@
         }
 
         /* ========================================
-           TESTIMONIALS
-           ======================================== */
-        .testimonials-section {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        .testimonials-header {
-            text-align: center;
-            margin-bottom: 2.75rem;
-        }
-
-        .testimonials-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid rgba(221, 205, 156, 0.13);
-            border-radius: 1.25rem;
-            overflow: hidden;
-            background: var(--black-card);
-            position: relative;
-        }
-
-        .testimonials-strip::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            pointer-events: none;
-            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(221, 205, 156, 0.04) 0%, transparent 60%);
-            z-index: 0;
-        }
-
-        .testimonial-card {
-            position: relative;
-            padding: 2.25rem 1.875rem 2rem;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid rgba(221, 205, 156, 0.08);
-            overflow: hidden;
-            transition: background 0.35s ease;
-            z-index: 1;
-        }
-
-        .testimonial-card:last-child {
-            border-right: none;
-        }
-
-        .testimonial-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity 0.35s ease;
-        }
-
-        .testimonial-card:hover::after { opacity: 1; }
-        .testimonial-card:hover { background: rgba(255, 255, 255, 0.02); }
-
-        .tcard-deco-quote {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 4.5rem;
-            line-height: 0.8;
-            color: var(--gold);
-            opacity: 0.09;
-            position: absolute;
-            top: 1.25rem;
-            right: 1.5rem;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        .tcard-stat-num {
-            font-family: var(--font-display);
-            font-size: 3.2rem;
-            line-height: 1;
-            color: var(--gold);
-            letter-spacing: 0.02em;
-            margin-bottom: 0.2rem;
-        }
-
-        .tcard-stat-label {
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--white-dim);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
-        }
-
-        .tcard-stars {
-            color: var(--gold);
-            font-size: 0.8rem;
-            letter-spacing: 0.14em;
-            margin-bottom: 0.75rem;
-        }
-
-        .tcard-quote {
-            font-size: 0.875rem;
-            font-weight: 400;
-            line-height: 1.8;
-            color: var(--white);
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .tcard-author-block {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 1.125rem;
-            margin-top: auto;
-        }
-
-        .tcard-name {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: 0.04em;
-            margin-bottom: 0.2rem;
-        }
-
-        .tcard-gym {
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: var(--gold);
-            letter-spacing: 0.06em;
-        }
-
-        .testimonials-footnote {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.78rem;
-            font-weight: 400;
-            color: var(--white-dim);
-            letter-spacing: 0.05em;
-        }
-
-        /* ========================================
            RESPONSIVE
            ======================================== */
         @media (max-width: 1024px) {
@@ -1846,9 +1617,6 @@
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .process-steps::before { display: none; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .testimonials-strip { grid-template-columns: 1fr; }
-            .testimonial-card { border-right: none; border-bottom: 1px solid rgba(221, 205, 156, 0.08); }
-            .testimonial-card:last-child { border-bottom: none; }
         }
 
         @media (max-width: 768px) {
@@ -1867,15 +1635,11 @@
             .hero-actions { justify-content: center; gap: 1rem; }
             .hero-tag { font-size: 0.85rem; white-space: normal; text-align: center; max-width: 85vw; }
 
-            .photo-gallery-section { padding: 4rem 0 3.5rem; }
-            .gallery-slide { width: 220px; height: 220px; }
-
             .problem-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             .services-grid { grid-template-columns: 1fr; }
             .results-grid { grid-template-columns: 1fr 1fr; }
             .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .testimonials-section { padding-top: 4rem; padding-bottom: 4rem; }
             .final-cta { padding: 3.5rem 1.5rem; }
             .hero-geo .diamond { display: none; }
         }
@@ -2293,45 +2057,6 @@
     </section>
 
 
-    <!-- PHOTO GALLERY -->
-    <section class="photo-gallery-section">
-        <div class="gallery-header reveal">
-            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Our Work</span></div>
-            <h2 class="section-title">INSIDE THE GYMS<br>WE'VE <span class="gold">WORKED WITH.</span></h2>
-            <p class="section-subtitle" style="margin: 0.75rem auto 0;">Real gyms. Real results. We don't use stock photos — these are from the floors of CrossFit boxes we've partnered with.</p>
-        </div>
-        <div class="gallery-scroll-wrapper">
-            <div class="gallery-track">
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy" width="3565" height="5348"><div class="gallery-caption">CrossFit Austin — +62 New Members</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy" width="810" height="540"><div class="gallery-caption">CrossFit Denver — +3.2x Ad ROI</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy" width="960" height="640"><div class="gallery-caption">CrossFit Nashville — +41% Retention</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy" width="5078" height="3385"><div class="gallery-caption">CrossFit Dallas — +89 Members in 90 Days</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy" width="2048" height="1366"><div class="gallery-caption">CrossFit Phoenix — Membership Sold Out</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy" width="3888" height="2119"><div class="gallery-caption">CrossFit Seattle — +54 New Members</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy" width="6701" height="4467"><div class="gallery-caption">CrossFit Chicago — +2.8x Lead Volume</div></div>
-                <!-- Replace with real gym name and result stat -->
-                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy" width="6720" height="4480"><div class="gallery-caption">CrossFit Miami — +48% Revenue Growth</div></div>
-                <!-- Duplicated for seamless infinite loop -->
-                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy" width="3565" height="5348"><div class="gallery-caption">CrossFit Austin — +62 New Members</div></div>
-                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy" width="810" height="540"><div class="gallery-caption">CrossFit Denver — +3.2x Ad ROI</div></div>
-                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy" width="960" height="640"><div class="gallery-caption">CrossFit Nashville — +41% Retention</div></div>
-                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy" width="5078" height="3385"><div class="gallery-caption">CrossFit Dallas — +89 Members in 90 Days</div></div>
-                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy" width="2048" height="1366"><div class="gallery-caption">CrossFit Phoenix — Membership Sold Out</div></div>
-                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy" width="3888" height="2119"><div class="gallery-caption">CrossFit Seattle — +54 New Members</div></div>
-                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy" width="6701" height="4467"><div class="gallery-caption">CrossFit Chicago — +2.8x Lead Volume</div></div>
-                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy" width="6720" height="4480"><div class="gallery-caption">CrossFit Miami — +48% Revenue Growth</div></div>
-            </div>
-        </div>
-        <p class="gallery-footer reveal">Want to see your gym here? <a href="contact.html">Book a free strategy call.</a></p>
-    </section>
-
     <!-- PROCESS -->
     <section class="section section-large process" id="process">
         <div class="container">
@@ -2363,60 +2088,6 @@
                     <p>Adopt. Improve. Dominate. Once we find your winning formula, we pour fuel on the fire: more athletes, more revenue, more locations.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section testimonials-section" id="testimonials">
-        <div class="container">
-
-            <div class="testimonials-header reveal">
-                <div class="section-tag" style="margin: 0 auto 1.25rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Results</span></div>
-                <h2 class="section-title">WHAT GYM OWNERS<br><span class="gold">ARE SAYING</span></h2>
-            </div>
-
-            <div class="testimonials-strip">
-
-                <div class="testimonial-card reveal reveal-delay-1">
-                    <div class="tcard-deco-quote">❝</div>
-                    <div class="tcard-stat-num">+52</div><!-- Replace with real stat number -->
-                    <div class="tcard-stat-label">New Members · 60 Days</div><!-- Replace with real stat label -->
-                    <div class="tcard-stars">★★★★★</div>
-                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
-                    <div class="tcard-author-block">
-                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
-                        <div class="tcard-gym">[Gym Name] · [City]</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal reveal-delay-2">
-                    <div class="tcard-deco-quote">❝</div>
-                    <div class="tcard-stat-num">3×</div><!-- Replace with real stat number -->
-                    <div class="tcard-stat-label">Return on Ad Spend</div><!-- Replace with real stat label -->
-                    <div class="tcard-stars">★★★★★</div>
-                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
-                    <div class="tcard-author-block">
-                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
-                        <div class="tcard-gym">[Gym Name] · [City]</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card reveal reveal-delay-3">
-                    <div class="tcard-deco-quote">❝</div>
-                    <div class="tcard-stat-num">+37</div><!-- Replace with real stat number -->
-                    <div class="tcard-stat-label">Members · First Month</div><!-- Replace with real stat label -->
-                    <div class="tcard-stars">★★★★★</div>
-                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
-                    <div class="tcard-author-block">
-                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
-                        <div class="tcard-gym">[Gym Name] · [City]</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <p class="testimonials-footnote reveal">Real results from real CrossFit gym owners across the US.</p>
-
         </div>
     </section>
 

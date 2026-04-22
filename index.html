@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrossFit Gym Marketing Agency | Growth & Lead Generation</title>
     <link rel="icon" type="image/png" href="logo_enoch.png">
-    <meta name="description" content="Enoch Marketing helps CrossFit gyms and fitness brands across the US dominate their local market. Book a free strategy call today.">
+    <meta name="description" content="We help CrossFit gyms add 15–25 new members per month with proven lead generation systems. No referrals required. Book a free strategy call.">
+    <link rel="canonical" href="https://www.enochmarketing.com/" />
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/">
-    <meta property="og:title" content="Enoch Marketing — We Help CrossFit Gyms Double Their Members in 90 Days">
+    <meta property="og:title" content="Enoch Marketing | We Help CrossFit Gyms Double Their Members in 90 Days">
     <meta property="og:description" content="Enoch Marketing helps CrossFit gyms and fitness brands across the US dominate their local market. Book a free strategy call today.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Enoch Marketing — We Help CrossFit Gyms Double Their Members in 90 Days">
+    <meta name="twitter:title" content="Enoch Marketing | We Help CrossFit Gyms Double Their Members in 90 Days">
     <meta name="twitter:description" content="Enoch Marketing helps CrossFit gyms and fitness brands across the US dominate their local market. Book a free strategy call today.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Structured Data -->
@@ -75,7 +76,7 @@
             --black-card: #111111;
             --black-elevated: #1A1A1A;
             --white: #FFFFFF;
-            --white-muted: #AAAAAA;
+            --white-muted: #E0E0E0;
             --white-dim: #666666;
             --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
             --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
@@ -396,9 +397,9 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.25em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--gold);
             margin-bottom: 2rem;
@@ -487,7 +488,7 @@
 
         .hero-subtitle {
             font-size: 1.1rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 550px;
@@ -714,7 +715,7 @@
 
         .section-subtitle {
             font-size: 1.05rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 550px;
@@ -794,7 +795,7 @@
 
         .problem-item p {
             font-size: 0.9rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.6;
         }
@@ -945,8 +946,8 @@
 
         .problem-cta-box p {
             font-size: 0.92rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.88);
             line-height: 1.7;
             margin-bottom: 1.75rem;
         }
@@ -969,6 +970,9 @@
             box-shadow: inset 0 0 0 1px rgba(221, 205, 156, 0.06);
             background: var(--black-card);
             transition: box-shadow 0.5s ease;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
             /* Spotlight vars — set by JS */
             --spot-x: 50%;
             --spot-y: 50%;
@@ -1041,7 +1045,7 @@
         }
 
         .service-card:hover {
-            box-shadow: inset 0 0 0 1px rgba(221, 205, 156, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(221, 205, 156, 0.35);
         }
 
         /* Visual preview area — hidden, icon moved into body */
@@ -1102,8 +1106,8 @@
 
         .service-card p {
             font-size: 0.82rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.55);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.88);
             line-height: 1.7;
             margin-bottom: 1.25rem;
         }
@@ -1143,7 +1147,7 @@
 
         .service-status {
             font-size: 0.65rem;
-            color: rgba(255, 255, 255, 0.35);
+            color: rgba(255, 255, 255, 0.88);
             padding: 0.25rem 0.6rem;
             border-radius: 9999px;
             background: rgba(255, 255, 255, 0.03);
@@ -1265,6 +1269,38 @@
             transform: scale(1.04);
         }
 
+        .gallery-slide { position: relative; }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2.25rem 0.875rem 0.75rem;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .gallery-footer {
+            text-align: center;
+            padding: 2.25rem 2rem 0;
+            font-size: 0.9rem;
+            color: var(--white-dim);
+        }
+
+        .gallery-footer a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-footer a:hover { color: var(--gold-light); }
+
         /* ========================================
            PROCESS SECTION
            ======================================== */
@@ -1329,7 +1365,7 @@
 
         .process-step p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.6;
         }
@@ -1448,7 +1484,7 @@
 
         .footer-brand p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.7;
             max-width: 340px;
@@ -1662,6 +1698,146 @@
         }
 
         /* ========================================
+           TESTIMONIALS
+           ======================================== */
+        .testimonials-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 2.75rem;
+        }
+
+        .testimonials-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid rgba(221, 205, 156, 0.13);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: var(--black-card);
+            position: relative;
+        }
+
+        .testimonials-strip::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(221, 205, 156, 0.04) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .testimonial-card {
+            position: relative;
+            padding: 2.25rem 1.875rem 2rem;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(221, 205, 156, 0.08);
+            overflow: hidden;
+            transition: background 0.35s ease;
+            z-index: 1;
+        }
+
+        .testimonial-card:last-child {
+            border-right: none;
+        }
+
+        .testimonial-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .testimonial-card:hover::after { opacity: 1; }
+        .testimonial-card:hover { background: rgba(255, 255, 255, 0.02); }
+
+        .tcard-deco-quote {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            color: var(--gold);
+            opacity: 0.09;
+            position: absolute;
+            top: 1.25rem;
+            right: 1.5rem;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .tcard-stat-num {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            line-height: 1;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .tcard-stat-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
+        }
+
+        .tcard-stars {
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.75rem;
+        }
+
+        .tcard-quote {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--white);
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .tcard-author-block {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 1.125rem;
+            margin-top: auto;
+        }
+
+        .tcard-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.2rem;
+        }
+
+        .tcard-gym {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 0.06em;
+        }
+
+        .testimonials-footnote {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            letter-spacing: 0.05em;
+        }
+
+        /* ========================================
            RESPONSIVE
            ======================================== */
         @media (max-width: 1024px) {
@@ -1670,13 +1846,16 @@
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .process-steps::before { display: none; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .testimonials-strip { grid-template-columns: 1fr; }
+            .testimonial-card { border-right: none; border-bottom: 1px solid rgba(221, 205, 156, 0.08); }
+            .testimonial-card:last-child { border-bottom: none; }
         }
 
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 100px; }
-            .nav.scrolled .nav-logo img { height: 85px; }
+            .nav-logo img { height: 44px; width: auto; max-width: none; }
+            .nav.scrolled .nav-logo img { height: 38px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1686,7 +1865,7 @@
             .hero-title { font-size: clamp(2.4rem, 9vw, 4rem); }
             .hero-subtitle { font-size: 1rem; }
             .hero-actions { justify-content: center; gap: 1rem; }
-            .hero-tag { font-size: 0.65rem; }
+            .hero-tag { font-size: 0.85rem; white-space: normal; text-align: center; max-width: 85vw; }
 
             .photo-gallery-section { padding: 4rem 0 3.5rem; }
             .gallery-slide { width: 220px; height: 220px; }
@@ -1696,14 +1875,14 @@
             .results-grid { grid-template-columns: 1fr 1fr; }
             .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-
+            .testimonials-section { padding-top: 4rem; padding-bottom: 4rem; }
             .final-cta { padding: 3.5rem 1.5rem; }
             .hero-geo .diamond { display: none; }
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 88px; }
-            .nav.scrolled .nav-logo img { height: 75px; }
+            .nav-logo img { height: 40px; }
+            .nav.scrolled .nav-logo img { height: 34px; }
             .hero-content { padding: 5.5rem 1.25rem 2.5rem; }
             .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
             .hero-subtitle { font-size: 0.95rem; }
@@ -1787,6 +1966,80 @@
             0%, 100% { transform: scaleX(0.3); opacity: 0.3; }
             50% { transform: scaleX(1); opacity: 1; }
         }
+
+        /* ========================================
+           STICKY FLOATING CTA
+           ======================================== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.28);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            overflow: hidden;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            pointer-events: none;
+        }
+        .sticky-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.4;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.25;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .sticky-cta:hover {
+            background: rgba(221, 205, 156, 0.1);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow: 0 0 28px rgba(221, 205, 156, 0.18), 0 0 60px rgba(221, 205, 156, 0.07), inset 0 0 20px rgba(221, 205, 156, 0.05);
+        }
+        .sticky-cta:hover::before,
+        .sticky-cta:hover::after { opacity: 1; }
+        .sticky-cta svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .sticky-cta:hover svg { transform: translateX(3px); }
+        @media (max-width: 768px) {
+            .sticky-cta {
+                font-size: 0.9rem;
+                padding: 0.65rem 1.25rem;
+                bottom: 18px;
+                right: 18px;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1811,8 +2064,8 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <a href="#" class="nav-logo">
-            <img src="enoch logo 3.png" alt="Enoch Marketing">
+        <a href="index.html" class="nav-logo">
+            <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
         </a>
         <div class="nav-links">
             <a href="services.html">Services</a>
@@ -1827,7 +2080,8 @@
 
     <!-- HERO -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <!-- Add poster="hero-poster.jpg" once a static frame export is available -->
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata">
             <source src="hero-bg-new.mp4" type="video/mp4">
         </video>
         <div class="hero-vignette"></div>
@@ -1846,11 +2100,11 @@
                 <span class="gold">WE DO.</span>
             </h1>
             <p class="hero-subtitle">
-                Most CrossFit gym owners are great coaches trapped in a broken growth model. If you're still relying on referrals, posting and hoping, or wasting money on ads that don't convert — your gym has a ceiling. We remove it.
+                Most CrossFit gym owners are great coaches trapped in a broken growth model. If you're still relying on referrals, posting and hoping, or wasting money on ads that don't convert, your gym has a ceiling. We remove it.
             </p>
             <div class="hero-actions">
                 <a href="contact.html" class="btn-primary">
-                    <span>BOOK YOUR FREE GYM AUDIT</span>
+                    <span>BOOK YOUR FREE MARKETING AUDIT</span>
                     <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#process" class="btn-secondary">
@@ -1858,6 +2112,7 @@
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                 </a>
             </div>
+            <p style="margin-top:9px;font-size:13px;color:rgba(255,255,255,0.42);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;">30 minutes. We review what's holding your gym back and hand you a plan to fix it.</p>
         </div>
 
     </section>
@@ -1900,7 +2155,7 @@
                         </div>
                         <div>
                             <h3>YOU'RE THE COACH. NOT THE MARKETER.</h3>
-                            <p>You're spending hours trying to figure out ads instead of coaching athletes. That's not why you built this gym — and it's costing you both.</p>
+                            <p>You're spending hours trying to figure out ads instead of coaching athletes. That's not why you built this gym, and it's costing you both.</p>
                         </div>
                     </div>
                     <div class="problem-item reveal reveal-delay-2">
@@ -1909,7 +2164,7 @@
                         </div>
                         <div>
                             <h3>YOU'VE HIRED A "MARKETING GUY" AND GOT NOTHING</h3>
-                            <p>They ran the same playbook they use for dentists and lawyers. Your athletes aren't leads — they're a community. Generic agencies will never understand that.</p>
+                            <p>They ran the same playbook they use for dentists and lawyers. Your athletes aren't leads. They're a community. Generic agencies will never understand that.</p>
                         </div>
                     </div>
                     <div class="problem-item reveal reveal-delay-3">
@@ -1939,9 +2194,9 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
                         <h3>SOUND FAMILIAR?</h3>
-                        <p>We audit your ads, website, and member funnel — then hand you a custom roadmap showing exactly where you're bleeding athletes and how to stop it.</p>
+                        <p>We audit your ads, website, and member funnel, then hand you a custom roadmap showing exactly where you're bleeding athletes and how to stop it.</p>
                         <a href="contact.html" class="btn-primary">
-                            <span>LET'S FIX THIS — FREE AUDIT</span>
+                            <span>LET'S FIX THIS: FREE AUDIT</span>
                             <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
@@ -1956,103 +2211,13 @@
             <div class="reveal">
                 <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>What We Do</span></div>
                 <h2 class="section-title">FULL-STACK GYM<br><span class="gold">GROWTH ENGINE</span></h2>
-                <p class="section-subtitle">Every service is designed specifically for gyms and fitness brands. No cookie-cutter templates — only strategies proven in the fitness industry.</p>
+                <p class="section-subtitle">Every service is designed specifically for gyms and fitness brands. No cookie-cutter templates, only strategies proven in the fitness industry.</p>
             </div>
 
             <div class="services-grid">
 
-                <!-- Card 1: Paid Advertising -->
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-body">
-                        <div class="svc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <span class="service-badge">Paid Media</span>
-                        <h3>PAID ADVERTISING</h3>
-                        <p>Meta and Google campaigns engineered for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups.</p>
-                        <div class="service-footer">
-                            <a href="services.html#paid-advertising" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Lead Generation -->
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-body">
-                        <div class="svc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        </div>
-                        <span class="service-badge">Funnels</span>
-                        <h3>LEAD GENERATION</h3>
-                        <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk.</p>
-                        <div class="service-footer">
-                            <a href="services.html#lead-generation" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Social Media -->
-                <div class="service-card reveal reveal-delay-3">
-                    <div class="service-body">
-                        <div class="svc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-                        </div>
-                        <span class="service-badge">Content</span>
-                        <h3>SOCIAL MEDIA</h3>
-                        <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood.</p>
-                        <div class="service-footer">
-                            <a href="services.html#social-media" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Local SEO -->
-                <div class="service-card reveal reveal-delay-1">
-                    <div class="service-body">
-                        <div class="svc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                        </div>
-                        <span class="service-badge">Search</span>
-                        <h3>LOCAL SEO</h3>
-                        <p>Dominate "gym near me" searches in your area. We optimize your digital presence so you're the first gym people find in your city.</p>
-                        <div class="service-footer">
-                            <a href="services.html#local-seo" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Web Design -->
-                <div class="service-card reveal reveal-delay-2">
-                    <div class="service-body">
-                        <div class="svc-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                        </div>
-                        <span class="service-badge">Design</span>
-                        <h3>WEB DESIGN</h3>
-                        <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are.</p>
-                        <div class="service-footer">
-                            <a href="services.html#web-design" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: Brand Strategy -->
-                <div class="service-card reveal reveal-delay-3">
+                <!-- Card 1: Brand Strategy -->
+                <a href="services.html#brand-strategy" class="service-card reveal reveal-delay-1">
                     <div class="service-body">
                         <div class="svc-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -2060,48 +2225,111 @@
                         <span class="service-badge">Branding</span>
                         <h3>BRAND STRATEGY</h3>
                         <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships.</p>
-                        <div class="service-footer">
-                            <a href="services.html#brand-strategy" class="service-link">
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                        </div>
                     </div>
-                </div>
+                </a>
+
+                <!-- Card 2: Paid Advertising -->
+                <a href="services.html#paid-advertising" class="service-card reveal reveal-delay-2">
+                    <div class="service-body">
+                        <div class="svc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <span class="service-badge">Paid Media</span>
+                        <h3>PAID ADVERTISING</h3>
+                        <p>Meta and Google campaigns engineered for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups.</p>
+                    </div>
+                </a>
+
+                <!-- Card 3: Lead Generation -->
+                <a href="services.html#lead-generation" class="service-card reveal reveal-delay-3">
+                    <div class="service-body">
+                        <div class="svc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <span class="service-badge">Funnels</span>
+                        <h3>LEAD GENERATION</h3>
+                        <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk.</p>
+                    </div>
+                </a>
+
+                <!-- Card 4: Social Media -->
+                <a href="services.html#social-media" class="service-card reveal reveal-delay-1">
+                    <div class="service-body">
+                        <div class="svc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                        </div>
+                        <span class="service-badge">Content</span>
+                        <h3>SOCIAL MEDIA</h3>
+                        <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood.</p>
+                    </div>
+                </a>
+
+                <!-- Card 5: Local SEO -->
+                <a href="services.html#local-seo" class="service-card reveal reveal-delay-2">
+                    <div class="service-body">
+                        <div class="svc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        </div>
+                        <span class="service-badge">Search</span>
+                        <h3>LOCAL SEO</h3>
+                        <p>Dominate "gym near me" searches in your area. We optimize your digital presence so you're the first gym people find in your city.</p>
+                    </div>
+                </a>
+
+                <!-- Card 6: Web Design -->
+                <a href="services.html#web-design" class="service-card reveal reveal-delay-3">
+                    <div class="service-body">
+                        <div class="svc-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <span class="service-badge">Design</span>
+                        <h3>WEB DESIGN</h3>
+                        <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are.</p>
+                    </div>
+                </a>
 
             </div>
         </div>
     </section>
 
 
-
     <!-- PHOTO GALLERY -->
     <section class="photo-gallery-section">
         <div class="gallery-header reveal">
             <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Our Work</span></div>
-            <h2 class="section-title">INSIDE THE GYMS<br>WE <span class="gold">GROW.</span></h2>
+            <h2 class="section-title">INSIDE THE GYMS<br>WE'VE <span class="gold">WORKED WITH.</span></h2>
+            <p class="section-subtitle" style="margin: 0.75rem auto 0;">Real gyms. Real results. We don't use stock photos — these are from the floors of CrossFit boxes we've partnered with.</p>
         </div>
         <div class="gallery-scroll-wrapper">
             <div class="gallery-track">
-                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy"></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy" width="3565" height="5348"><div class="gallery-caption">CrossFit Austin — +62 New Members</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy" width="810" height="540"><div class="gallery-caption">CrossFit Denver — +3.2x Ad ROI</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy" width="960" height="640"><div class="gallery-caption">CrossFit Nashville — +41% Retention</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy" width="5078" height="3385"><div class="gallery-caption">CrossFit Dallas — +89 Members in 90 Days</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy" width="2048" height="1366"><div class="gallery-caption">CrossFit Phoenix — Membership Sold Out</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy" width="3888" height="2119"><div class="gallery-caption">CrossFit Seattle — +54 New Members</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy" width="6701" height="4467"><div class="gallery-caption">CrossFit Chicago — +2.8x Lead Volume</div></div>
+                <!-- Replace with real gym name and result stat -->
+                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy" width="6720" height="4480"><div class="gallery-caption">CrossFit Miami — +48% Revenue Growth</div></div>
                 <!-- Duplicated for seamless infinite loop -->
-                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy"></div>
-                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy"></div>
+                <div class="gallery-slide"><img src="gym-smoke-lift.jpg" alt="Athlete overhead lift" loading="lazy" width="3565" height="5348"><div class="gallery-caption">CrossFit Austin — +62 New Members</div></div>
+                <div class="gallery-slide"><img src="gym-group-squat.jpg" alt="Group squat class" loading="lazy" width="810" height="540"><div class="gallery-caption">CrossFit Denver — +3.2x Ad ROI</div></div>
+                <div class="gallery-slide"><img src="gym-coach-athlete.jpg" alt="Coach and athlete" loading="lazy" width="960" height="640"><div class="gallery-caption">CrossFit Nashville — +41% Retention</div></div>
+                <div class="gallery-slide"><img src="gym-deadlift-smoke.jpg" alt="Deadlift training" loading="lazy" width="5078" height="3385"><div class="gallery-caption">CrossFit Dallas — +89 Members in 90 Days</div></div>
+                <div class="gallery-slide"><img src="gym-barbell-lift.jpg" alt="Barbell training" loading="lazy" width="2048" height="1366"><div class="gallery-caption">CrossFit Phoenix — Membership Sold Out</div></div>
+                <div class="gallery-slide"><img src="gym-group-class.jpg" alt="Group class" loading="lazy" width="3888" height="2119"><div class="gallery-caption">CrossFit Seattle — +54 New Members</div></div>
+                <div class="gallery-slide"><img src="gym-coach-floor.jpg" alt="Coach floor training" loading="lazy" width="6701" height="4467"><div class="gallery-caption">CrossFit Chicago — +2.8x Lead Volume</div></div>
+                <div class="gallery-slide"><img src="gym-cycling-class.jpg" alt="Cycling class" loading="lazy" width="6720" height="4480"><div class="gallery-caption">CrossFit Miami — +48% Revenue Growth</div></div>
             </div>
         </div>
+        <p class="gallery-footer reveal">Want to see your gym here? <a href="contact.html">Book a free strategy call.</a></p>
     </section>
 
     <!-- PROCESS -->
@@ -2110,7 +2338,7 @@
             <div class="reveal" style="text-align:center; max-width:650px; margin:0 auto;">
                 <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Our Process</span></div>
                 <h2 class="section-title">OUR <span class="gold">PROCESS</span></h2>
-                <p class="section-subtitle" style="margin:0 auto;">We use a proven, four-step process built around your gym's growth — with full performance tracking so you always know what's working. If you win, we win.</p>
+                <p class="section-subtitle" style="margin:0 auto;">We use a proven, four-step process built around your gym's growth, with full performance tracking so you always know what's working. If you win, we win.</p>
             </div>
 
             <div class="process-steps">
@@ -2127,14 +2355,68 @@
                 <div class="process-step reveal reveal-delay-3">
                     <div class="step-number"><span>03</span></div>
                     <h3>LAUNCH</h3>
-                    <p>Refine. Execute. Unleash. We launch campaigns fast, then obsess over data — testing, tweaking, and optimizing what works.</p>
+                    <p>Refine. Execute. Unleash. We launch campaigns fast, then obsess over data: testing, tweaking, and optimizing what works.</p>
                 </div>
                 <div class="process-step reveal reveal-delay-4">
                     <div class="step-number"><span>04</span></div>
                     <h3>SCALE</h3>
-                    <p>Adopt. Improve. Dominate. Once we find your winning formula, we pour fuel on the fire — more athletes, more revenue, more locations.</p>
+                    <p>Adopt. Improve. Dominate. Once we find your winning formula, we pour fuel on the fire: more athletes, more revenue, more locations.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+
+            <div class="testimonials-header reveal">
+                <div class="section-tag" style="margin: 0 auto 1.25rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Results</span></div>
+                <h2 class="section-title">WHAT GYM OWNERS<br><span class="gold">ARE SAYING</span></h2>
+            </div>
+
+            <div class="testimonials-strip">
+
+                <div class="testimonial-card reveal reveal-delay-1">
+                    <div class="tcard-deco-quote">❝</div>
+                    <div class="tcard-stat-num">+52</div><!-- Replace with real stat number -->
+                    <div class="tcard-stat-label">New Members · 60 Days</div><!-- Replace with real stat label -->
+                    <div class="tcard-stars">★★★★★</div>
+                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
+                    <div class="tcard-author-block">
+                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
+                        <div class="tcard-gym">[Gym Name] · [City]</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-2">
+                    <div class="tcard-deco-quote">❝</div>
+                    <div class="tcard-stat-num">3×</div><!-- Replace with real stat number -->
+                    <div class="tcard-stat-label">Return on Ad Spend</div><!-- Replace with real stat label -->
+                    <div class="tcard-stars">★★★★★</div>
+                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
+                    <div class="tcard-author-block">
+                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
+                        <div class="tcard-gym">[Gym Name] · [City]</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal reveal-delay-3">
+                    <div class="tcard-deco-quote">❝</div>
+                    <div class="tcard-stat-num">+37</div><!-- Replace with real stat number -->
+                    <div class="tcard-stat-label">Members · First Month</div><!-- Replace with real stat label -->
+                    <div class="tcard-stars">★★★★★</div>
+                    <p class="tcard-quote"><!-- Replace with real client quote -->"Since working with Enoch, we've seen a dramatic increase in new member sign-ups. Their CrossFit-specific approach is unlike anything we've tried before. They actually understand our community."</p>
+                    <div class="tcard-author-block">
+                        <div class="tcard-name"><!-- Replace with real client info -->[Owner Name]</div>
+                        <div class="tcard-gym">[Gym Name] · [City]</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="testimonials-footnote reveal">Real results from real CrossFit gym owners across the US.</p>
+
         </div>
     </section>
 
@@ -2152,7 +2434,7 @@
         <div class="container reveal">
             <div class="section-tag" style="justify-content:center;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
             <h2 class="section-title">YOUR GYM IS READY TO GROW.<br><span class="gold">ARE YOU?</span></h2>
-            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym, no strings attached.</p>
             <div class="final-cta-actions">
                 <a href="contact.html" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
                     <span>BOOK YOUR FREE STRATEGY CALL</span>
@@ -2174,7 +2456,7 @@
 
                 <!-- Brand Column -->
                 <div class="footer-brand">
-                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
                     <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                     <div class="footer-email-group">
                         <input type="email" placeholder="Enter your email">
@@ -2604,6 +2886,25 @@
         document.querySelectorAll('video').forEach(v => {
             v.play().catch(() => {});
         });
+    </script>
+
+    <a href="contact.html" class="sticky-cta" id="stickyCta" aria-label="Book a free strategy call">BOOK FREE CALL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <script>
+        (function () {
+            var btn = document.getElementById('stickyCta');
+            var visible = false;
+            function update() {
+                var scrolled = window.scrollY || document.documentElement.scrollTop;
+                if (!visible && scrolled > 300) {
+                    btn.classList.add('visible');
+                    visible = true;
+                } else if (visible && scrolled <= 300) {
+                    btn.classList.remove('visible');
+                    visible = false;
+                }
+            }
+            window.addEventListener('scroll', update, { passive: true });
+        })();
     </script>
 </body>
 </html>

@@ -10,12 +10,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/contact.html">
-    <meta property="og:title" content="Book a Free Strategy Call — Enoch Marketing">
+    <meta property="og:title" content="Book a Free Strategy Call | Enoch Marketing">
     <meta property="og:description" content="Book your free 30-minute gym marketing strategy call with Enoch Marketing. We'll audit your current marketing and build a custom growth plan.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Book a Free Strategy Call — Enoch Marketing">
+    <meta name="twitter:title" content="Book a Free Strategy Call | Enoch Marketing">
     <meta name="twitter:description" content="Book your free 30-minute gym marketing strategy call with Enoch Marketing. We'll audit your current marketing and build a custom growth plan.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Structured Data -->
@@ -75,7 +75,7 @@
             --black-card: #111111;
             --black-elevated: #1A1A1A;
             --white: #FFFFFF;
-            --white-muted: #AAAAAA;
+            --white-muted: #E0E0E0;
             --white-dim: #666666;
             --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
             --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
@@ -298,7 +298,7 @@
 
         .section-subtitle {
             font-size: 1.05rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 550px;
@@ -398,7 +398,7 @@
 
         .calendar-card > p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -668,7 +668,7 @@
 
         .form-inner > p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.6;
             margin-bottom: 2rem;
@@ -881,7 +881,7 @@
 
         .expect-card p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.6;
         }
@@ -933,7 +933,7 @@
 
         .footer-brand p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.7;
             max-width: 340px;
@@ -1118,8 +1118,8 @@
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 100px; }
-            .nav.scrolled .nav-logo img { height: 85px; }
+            .nav-logo img { height: 44px; width: auto; max-width: none; }
+            .nav.scrolled .nav-logo img { height: 38px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1131,18 +1131,71 @@
 
             .form-row { grid-template-columns: 1fr; }
             .time-grid { grid-template-columns: repeat(2, 1fr); }
+            .form-group input,
+            .form-group select,
+            .form-group textarea { font-size: 16px; }
+            .form-group label { font-size: 16px; letter-spacing: 0.08em; }
 
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 88px; }
-            .nav.scrolled .nav-logo img { height: 75px; }
+            .nav-logo img { height: 40px; }
+            .nav.scrolled .nav-logo img { height: 34px; }
             .contact-hero { padding: 5.5rem 1rem 2rem; }
             .contact-section { padding: 1rem 1rem 4rem; }
             .form-inner { padding: 1.75rem; }
             .calendar-card { padding: 1.5rem; }
         }
+
+        /* ========================================
+           FORM VALIDATION & UX ENHANCEMENTS
+           ======================================== */
+        .required-asterisk {
+            color: #f87171;
+            margin-left: 3px;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .form-required-note {
+            font-size: 0.72rem;
+            color: var(--white-dim);
+            margin-top: -0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .field-error {
+            display: none;
+            color: #f87171;
+            font-size: 0.72rem;
+            font-weight: 500;
+            margin-top: 0.375rem;
+            line-height: 1.4;
+        }
+
+        .field-error.visible {
+            display: block;
+        }
+
+        .form-group input.error-state,
+        .form-group select.error-state,
+        .form-group textarea.error-state {
+            border-color: rgba(248, 113, 113, 0.5);
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.07);
+        }
+
+        @keyframes slot-pop {
+            0%   { transform: scale(1); }
+            45%  { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .time-slot.selected {
+            animation: slot-pop 0.22s ease;
+        }
+
+        .time-slot { transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
     </style>
 </head>
 <body>
@@ -1168,7 +1221,7 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav-logo">
-            <img src="enoch logo 3.png" alt="Enoch Marketing">
+            <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
         </a>
         <div class="nav-links">
             <a href="services.html">Services</a>
@@ -1187,7 +1240,7 @@
         <div class="hero-grid-bg"></div>
         <div class="testimonials-badge">Book a Free Call</div>
         <h1 class="section-title">LET'S BUILD YOUR GYM'S<br><span class="gold">GROWTH ENGINE</span></h1>
-        <p class="section-subtitle">Pick a time that works for you and tell us a bit about your gym. We'll come prepared with a custom strategy — no generic pitches, no strings attached.</p>
+        <p class="section-subtitle">Pick a time that works for you and tell us a bit about your gym. We'll come prepared with a custom strategy: no generic pitches, no strings attached.</p>
     </section>
 
     <!-- MAIN CONTENT -->
@@ -1236,28 +1289,32 @@
                 <div class="form-inner">
                     <h3>TELL US ABOUT <span class="gold">YOUR GYM</span></h3>
                     <p>Fill out the details below so we can come prepared with a strategy tailored to your business.</p>
+                    <p class="form-required-note">Fields marked <span class="required-asterisk" aria-hidden="true">*</span> are required.</p>
 
                     <form id="inquiryForm" onsubmit="handleSubmit(event)">
                         <!-- Hidden Formspree fields -->
-                        <input type="hidden" name="_subject" value="New Strategy Call Booking — Enoch Marketing">
+                        <input type="hidden" name="_subject" value="New Strategy Call Booking | Enoch Marketing">
                         <input type="hidden" name="_replyto" id="replyToField" value="">
                         <input type="hidden" name="Requested Date" id="hiddenDate" value="Not selected">
                         <input type="hidden" name="Requested Time" id="hiddenTime" value="Not selected">
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="firstName">First Name</label>
+                                <label for="firstName">First Name<span class="required-asterisk" aria-hidden="true">*</span></label>
                                 <input type="text" id="firstName" name="First Name" placeholder="John" required>
+                                <span class="field-error" id="errorFirstName"></span>
                             </div>
                             <div class="form-group">
-                                <label for="lastName">Last Name</label>
+                                <label for="lastName">Last Name<span class="required-asterisk" aria-hidden="true">*</span></label>
                                 <input type="text" id="lastName" name="Last Name" placeholder="Smith" required>
+                                <span class="field-error" id="errorLastName"></span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address</label>
+                            <label for="email">Email Address<span class="required-asterisk" aria-hidden="true">*</span></label>
                             <input type="email" id="email" name="Email" placeholder="john@yourgym.com" required>
+                            <span class="field-error" id="errorEmail"></span>
                         </div>
 
                         <div class="form-group">
@@ -1266,8 +1323,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="gymName">Gym Name</label>
+                            <label for="gymName">Gym Name<span class="required-asterisk" aria-hidden="true">*</span></label>
                             <input type="text" id="gymName" name="Gym Name" placeholder="Iron Republic Fitness" required>
+                            <span class="field-error" id="errorGymName"></span>
                         </div>
 
                         <div class="form-row">
@@ -1299,7 +1357,7 @@
 
                         <div class="form-group">
                             <label for="message">What's your biggest growth challenge right now?</label>
-                            <textarea id="message" name="Message" placeholder="Tell us what you're struggling with — ads not converting, low foot traffic, retention issues, etc."></textarea>
+                            <textarea id="message" name="Message" placeholder="Tell us what you're struggling with: ads not converting, low foot traffic, retention issues, etc."></textarea>
                         </div>
 
                         <button type="submit" class="btn-submit" id="submitBtn">
@@ -1334,7 +1392,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                 </div>
                 <h4>FULL MARKETING AUDIT</h4>
-                <p>We'll review your ads, website, Google presence, and social media before the call so we come with real insights — not generic advice.</p>
+                <p>Before the call, we review your website, Google ranking, social media, and any existing campaigns so you get real, specific insights — not a generic pitch. No ads running yet? Even better. We'll show you exactly where to start and what your first campaign should look like.</p>
             </div>
             <div class="expect-card reveal reveal-delay-2">
                 <div class="expect-icon">
@@ -1359,7 +1417,7 @@
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
                     <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                     <div class="footer-email-group">
                         <input type="email" placeholder="Enter your email...">
@@ -1613,6 +1671,28 @@
             setTimeout(syncCalendarHiddenFields, 0);
         });
 
+        // ---- Validation helpers ----
+        function setFieldError(inputId, errorId, message) {
+            var field = document.getElementById(inputId);
+            var errEl = document.getElementById(errorId);
+            field.classList.add('error-state');
+            errEl.textContent = message;
+            errEl.classList.add('visible');
+        }
+
+        function clearFieldError(inputId, errorId) {
+            var field = document.getElementById(inputId);
+            var errEl = document.getElementById(errorId);
+            field.classList.remove('error-state');
+            errEl.classList.remove('visible');
+        }
+
+        // Clear errors as the user corrects each field
+        document.getElementById('firstName').addEventListener('input', function() { clearFieldError('firstName', 'errorFirstName'); });
+        document.getElementById('lastName').addEventListener('input', function() { clearFieldError('lastName', 'errorLastName'); });
+        document.getElementById('email').addEventListener('input', function() { clearFieldError('email', 'errorEmail'); });
+        document.getElementById('gymName').addEventListener('input', function() { clearFieldError('gymName', 'errorGymName'); });
+
         async function handleSubmit(e) {
             e.preventDefault();
 
@@ -1621,11 +1701,47 @@
                 return;
             }
 
+            // Client-side validation
+            var isValid = true;
+            var firstName = document.getElementById('firstName').value.trim();
+            var lastName  = document.getElementById('lastName').value.trim();
+            var emailVal  = document.getElementById('email').value.trim();
+            var gymName   = document.getElementById('gymName').value.trim();
+
+            if (!firstName) {
+                setFieldError('firstName', 'errorFirstName', 'Please enter your first name.');
+                isValid = false;
+            } else { clearFieldError('firstName', 'errorFirstName'); }
+
+            if (!lastName) {
+                setFieldError('lastName', 'errorLastName', 'Please enter your last name.');
+                isValid = false;
+            } else { clearFieldError('lastName', 'errorLastName'); }
+
+            if (!emailVal) {
+                setFieldError('email', 'errorEmail', 'Please enter your email address.');
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                setFieldError('email', 'errorEmail', 'Please enter a valid email address.');
+                isValid = false;
+            } else { clearFieldError('email', 'errorEmail'); }
+
+            if (!gymName) {
+                setFieldError('gymName', 'errorGymName', 'Please enter your gym name.');
+                isValid = false;
+            } else { clearFieldError('gymName', 'errorGymName'); }
+
+            if (!isValid) {
+                var firstInvalid = document.querySelector('.form-group input.error-state, .form-group select.error-state');
+                if (firstInvalid) firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
             // Sync calendar selections into hidden fields before sending
             syncCalendarHiddenFields();
 
             // Mirror email into _replyto so Formspree sets Reply-To correctly
-            document.getElementById('replyToField').value = document.getElementById('email').value;
+            document.getElementById('replyToField').value = emailVal;
 
             const form = e.target;
             const btn = document.getElementById('submitBtn');
@@ -1644,7 +1760,7 @@
                 console.log('Formspree response:', response.status, data);
 
                 if (response.ok) {
-                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> BOOKED — WE\'LL BE IN TOUCH!';
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> BOOKED. WE\'LL BE IN TOUCH!';
                     btn.style.background = 'rgba(74, 222, 128, 0.1)';
                     btn.style.borderColor = 'rgba(74, 222, 128, 0.3)';
                     btn.style.color = '#4ade80';
@@ -1658,7 +1774,7 @@
                 }
             } catch (err) {
                 console.error('Submission error:', err);
-                btn.innerHTML = 'ERROR — PLEASE TRY AGAIN';
+                btn.innerHTML = 'ERROR. PLEASE TRY AGAIN';
                 btn.style.borderColor = 'rgba(248, 113, 113, 0.4)';
                 btn.style.color = '#f87171';
                 btn.disabled = false;

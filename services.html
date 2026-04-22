@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrossFit Gym Marketing Agency | Growth & Lead Generation</title>
     <link rel="icon" type="image/png" href="logo_enoch.png">
-    <meta name="description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy — built exclusively for gyms and fitness brands across the US.">
+    <meta name="description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy, built exclusively for gyms and fitness brands across the US.">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/services.html">
-    <meta property="og:title" content="Our Services — Enoch Marketing">
-    <meta property="og:description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy — built exclusively for gyms and fitness brands across the US.">
+    <meta property="og:title" content="Our Services | Enoch Marketing">
+    <meta property="og:description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy, built exclusively for gyms and fitness brands across the US.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Our Services — Enoch Marketing">
-    <meta name="twitter:description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy — built exclusively for gyms and fitness brands across the US.">
+    <meta name="twitter:title" content="Our Services | Enoch Marketing">
+    <meta name="twitter:description" content="Paid ads, lead generation, SEO, social media, web design & brand strategy, built exclusively for gyms and fitness brands across the US.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -75,7 +75,7 @@
             --black-card: #111111;
             --black-elevated: #1A1A1A;
             --white: #FFFFFF;
-            --white-muted: #AAAAAA;
+            --white-muted: #E0E0E0;
             --white-dim: #666666;
             --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
             --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
@@ -343,7 +343,7 @@
 
         .section-subtitle {
             font-size: 1.05rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 550px;
@@ -515,7 +515,7 @@
 
         .hero-subtitle {
             font-size: 1.1rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 580px;
@@ -759,8 +759,8 @@
 
         .gcard-content p {
             font-size: 0.82rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.55);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.88);
             line-height: 1.6;
             margin-bottom: auto;
         }
@@ -933,7 +933,7 @@
 
         .service-content > p {
             font-size: 1rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.8;
             margin-bottom: 2.5rem;
@@ -1309,7 +1309,7 @@
 
         .footer-brand p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.7;
             max-width: 340px;
@@ -1549,8 +1549,8 @@
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 100px; }
-            .nav.scrolled .nav-logo img { height: 85px; }
+            .nav-logo img { height: 44px; width: auto; max-width: none; }
+            .nav.scrolled .nav-logo img { height: 38px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1580,8 +1580,8 @@
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 88px; }
-            .nav.scrolled .nav-logo img { height: 75px; }
+            .nav-logo img { height: 40px; }
+            .nav.scrolled .nav-logo img { height: 34px; }
 
             .hero-blocks-grid {
                 grid-template-columns: 1fr;
@@ -1612,6 +1612,80 @@
         @media (pointer: coarse) {
             .cursor-glow { display: none; }
         }
+
+        /* ========================================
+           STICKY FLOATING CTA
+           ======================================== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.28);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            overflow: hidden;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            pointer-events: none;
+        }
+        .sticky-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.4;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.25;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .sticky-cta:hover {
+            background: rgba(221, 205, 156, 0.1);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow: 0 0 28px rgba(221, 205, 156, 0.18), 0 0 60px rgba(221, 205, 156, 0.07), inset 0 0 20px rgba(221, 205, 156, 0.05);
+        }
+        .sticky-cta:hover::before,
+        .sticky-cta:hover::after { opacity: 1; }
+        .sticky-cta svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .sticky-cta:hover svg { transform: translateX(3px); }
+        @media (max-width: 768px) {
+            .sticky-cta {
+                font-size: 0.9rem;
+                padding: 0.65rem 1.25rem;
+                bottom: 18px;
+                right: 18px;
+                gap: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1637,7 +1711,7 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav-logo">
-            <img src="enoch logo 3.png" alt="Enoch Marketing">
+            <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
         </a>
         <div class="nav-links">
             <a href="services.html" class="active">Services</a>
@@ -1652,7 +1726,8 @@
 
     <!-- HERO -->
     <section class="services-hero">
-        <video class="services-hero-video" autoplay muted loop playsinline>
+        <!-- Add poster="services-hero-poster.jpg" once a static frame export is available -->
+        <video class="services-hero-video" autoplay muted loop playsinline preload="metadata">
             <source src="services-hero.mp4" type="video/mp4">
         </video>
         <div class="services-hero-vignette"></div>
@@ -1667,115 +1742,15 @@
                 EVERYTHING YOUR GYM<br>NEEDS TO <span class="gold">DOMINATE.</span>
             </h1>
             <p class="hero-subtitle">
-                Six battle-tested services built exclusively for gyms and fitness brands. No cookie-cutter templates — only strategies proven to fill floors and pack classes.
+                Six battle-tested services built exclusively for gyms and fitness brands. No cookie-cutter templates, only strategies proven to fill floors and pack classes.
             </p>
         </div>
 
         <!-- Service blocks grid -->
         <div class="hero-blocks-grid">
 
-            <!-- Block 1: Paid Advertising -->
-            <a href="#paid-advertising" class="hero-block" data-delay="0">
-                <div class="gcard-noise"></div>
-                <div class="gcard-smudge"></div>
-                <div class="gcard-glow"></div>
-                <div class="gcard-glow-center"></div>
-                <div class="gcard-reflection"></div>
-                <div class="gcard-edge-bottom"></div>
-                <div class="gcard-edge-left"></div>
-                <div class="gcard-edge-right"></div>
-                <div class="gcard-content">
-                    <div class="gcard-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>PAID ADVERTISING</h3>
-                    <p>Meta and Google campaigns engineered for gym membership sales. The exact hooks and audiences that drive sign-ups.</p>
-                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </div>
-            </a>
-
-            <!-- Block 2: Lead Generation -->
-            <a href="#lead-generation" class="hero-block" data-delay="1">
-                <div class="gcard-noise"></div>
-                <div class="gcard-smudge"></div>
-                <div class="gcard-glow"></div>
-                <div class="gcard-glow-center"></div>
-                <div class="gcard-reflection"></div>
-                <div class="gcard-edge-bottom"></div>
-                <div class="gcard-edge-left"></div>
-                <div class="gcard-edge-right"></div>
-                <div class="gcard-content">
-                    <div class="gcard-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                    <h3>LEAD GENERATION</h3>
-                    <p>Custom funnels that turn cold traffic into booked tours and trial sessions. First click to front desk.</p>
-                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </div>
-            </a>
-
-            <!-- Block 3: Social Media -->
-            <a href="#social-media" class="hero-block" data-delay="2">
-                <div class="gcard-noise"></div>
-                <div class="gcard-smudge"></div>
-                <div class="gcard-glow"></div>
-                <div class="gcard-glow-center"></div>
-                <div class="gcard-reflection"></div>
-                <div class="gcard-edge-bottom"></div>
-                <div class="gcard-edge-left"></div>
-                <div class="gcard-edge-right"></div>
-                <div class="gcard-content">
-                    <div class="gcard-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-                    </div>
-                    <h3>SOCIAL MEDIA</h3>
-                    <p>Scroll-stopping content that builds authority and makes your gym the go-to brand in your neighborhood.</p>
-                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </div>
-            </a>
-
-            <!-- Block 4: Local SEO -->
-            <a href="#local-seo" class="hero-block" data-delay="3">
-                <div class="gcard-noise"></div>
-                <div class="gcard-smudge"></div>
-                <div class="gcard-glow"></div>
-                <div class="gcard-glow-center"></div>
-                <div class="gcard-reflection"></div>
-                <div class="gcard-edge-bottom"></div>
-                <div class="gcard-edge-left"></div>
-                <div class="gcard-edge-right"></div>
-                <div class="gcard-content">
-                    <div class="gcard-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                    </div>
-                    <h3>LOCAL SEO</h3>
-                    <p>Dominate "gym near me" searches. Be the first gym people find when they search in your city.</p>
-                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </div>
-            </a>
-
-            <!-- Block 5: Web Design -->
-            <a href="#web-design" class="hero-block" data-delay="4">
-                <div class="gcard-noise"></div>
-                <div class="gcard-smudge"></div>
-                <div class="gcard-glow"></div>
-                <div class="gcard-glow-center"></div>
-                <div class="gcard-reflection"></div>
-                <div class="gcard-edge-bottom"></div>
-                <div class="gcard-edge-left"></div>
-                <div class="gcard-edge-right"></div>
-                <div class="gcard-content">
-                    <div class="gcard-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                    </div>
-                    <h3>WEB DESIGN</h3>
-                    <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first, always.</p>
-                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </div>
-            </a>
-
-            <!-- Block 6: Brand Strategy -->
-            <a href="#brand-strategy" class="hero-block" data-delay="5">
+            <!-- Block 1: Brand Strategy -->
+            <a href="#brand-strategy" class="hero-block" data-delay="0">
                 <div class="gcard-noise"></div>
                 <div class="gcard-smudge"></div>
                 <div class="gcard-glow"></div>
@@ -1794,349 +1769,119 @@
                 </div>
             </a>
 
+            <!-- Block 2: Paid Advertising -->
+            <a href="#paid-advertising" class="hero-block" data-delay="1">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>PAID ADVERTISING</h3>
+                    <p>Meta and Google campaigns engineered for gym membership sales. The exact hooks and audiences that drive sign-ups.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 3: Lead Generation -->
+            <a href="#lead-generation" class="hero-block" data-delay="2">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>LEAD GENERATION</h3>
+                    <p>Custom funnels that turn cold traffic into booked tours and trial sessions. First click to front desk.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 4: Social Media -->
+            <a href="#social-media" class="hero-block" data-delay="3">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                    <h3>SOCIAL MEDIA</h3>
+                    <p>Scroll-stopping content that builds authority and makes your gym the go-to brand in your neighborhood.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 5: Local SEO -->
+            <a href="#local-seo" class="hero-block" data-delay="4">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                    <h3>LOCAL SEO</h3>
+                    <p>Dominate "gym near me" searches. Be the first gym people find when they search in your city.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
+            <!-- Block 6: Web Design -->
+            <a href="#web-design" class="hero-block" data-delay="5">
+                <div class="gcard-noise"></div>
+                <div class="gcard-smudge"></div>
+                <div class="gcard-glow"></div>
+                <div class="gcard-glow-center"></div>
+                <div class="gcard-reflection"></div>
+                <div class="gcard-edge-bottom"></div>
+                <div class="gcard-edge-left"></div>
+                <div class="gcard-edge-right"></div>
+                <div class="gcard-content">
+                    <div class="gcard-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                    <h3>WEB DESIGN</h3>
+                    <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first, always.</p>
+                    <span class="gcard-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                </div>
+            </a>
+
         </div>
     </section>
 
     <!-- ============================================
-         SERVICE 1: PAID ADVERTISING
-         ============================================ -->
-    <section class="service-section" id="paid-advertising">
-        <div class="service-section-inner">
-            <div class="service-content reveal">
-                <div class="service-number">01</div>
-                <div class="service-badge">Paid Media</div>
-                <h2>PAID <span class="gold">ADVERTISING</span></h2>
-                <p>Meta and Google ad campaigns engineered specifically for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups — because that's all we do.</p>
-                <div class="deliverables">
-                    <div class="deliverable-item reveal reveal-delay-1">
-                        <div class="deliverable-diamond"></div>
-                        <span>Custom ad creative design</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-2">
-                        <div class="deliverable-diamond"></div>
-                        <span>Audience research & targeting</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-3">
-                        <div class="deliverable-diamond"></div>
-                        <span>A/B split testing</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-4">
-                        <div class="deliverable-diamond"></div>
-                        <span>Campaign optimization</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-5">
-                        <div class="deliverable-diamond"></div>
-                        <span>Weekly performance reports</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-6">
-                        <div class="deliverable-diamond"></div>
-                        <span>Dedicated ad strategist</span>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn-primary">
-                    <span>GET STARTED</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-group-squat.jpg" alt="Gym training" class="svc-photo" loading="lazy">
-                <div class="svc-noise"></div>
-                <div class="svc-card-grid"></div>
-                <div class="svc-card-glow"></div>
-                <div class="svc-card-reflection"></div>
-                <div class="svc-card-edge"></div>
-                <div class="svc-corner-diamond tl"></div>
-                <div class="svc-corner-diamond tr"></div>
-                <div class="svc-corner-diamond bl"></div>
-                <div class="svc-corner-diamond br"></div>
-                <div class="svc-orbit">
-                    <div class="svc-orbit-ring">
-                        <div class="svc-orbit-dot"></div>
-                    </div>
-                </div>
-                <div class="svc-card-icon">
-                    <div class="svc-card-icon-inner">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICE 2: LEAD GENERATION
-         ============================================ -->
-    <section class="service-section" id="lead-generation">
-        <div class="service-section-inner">
-            <div class="service-content reveal">
-                <div class="service-number">02</div>
-                <div class="service-badge">Funnels</div>
-                <h2>LEAD <span class="gold">GENERATION</span></h2>
-                <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk — so every dollar you spend on ads actually produces members.</p>
-                <div class="deliverables">
-                    <div class="deliverable-item reveal reveal-delay-1">
-                        <div class="deliverable-diamond"></div>
-                        <span>Custom landing pages</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-2">
-                        <div class="deliverable-diamond"></div>
-                        <span>Lead capture forms</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-3">
-                        <div class="deliverable-diamond"></div>
-                        <span>Automated email/SMS sequences</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-4">
-                        <div class="deliverable-diamond"></div>
-                        <span>CRM integration</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-5">
-                        <div class="deliverable-diamond"></div>
-                        <span>Lead scoring & qualification</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-6">
-                        <div class="deliverable-diamond"></div>
-                        <span>Tour booking automation</span>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn-primary">
-                    <span>GET STARTED</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-coach-athlete.jpg" alt="Coach and athlete" class="svc-photo" loading="lazy">
-                <div class="svc-noise"></div>
-                <div class="svc-card-grid"></div>
-                <div class="svc-card-glow"></div>
-                <div class="svc-card-reflection"></div>
-                <div class="svc-card-edge"></div>
-                <div class="svc-corner-diamond tl"></div>
-                <div class="svc-corner-diamond tr"></div>
-                <div class="svc-corner-diamond bl"></div>
-                <div class="svc-corner-diamond br"></div>
-                <div class="svc-orbit">
-                    <div class="svc-orbit-ring" style="animation-duration:18s;">
-                        <div class="svc-orbit-dot"></div>
-                    </div>
-                </div>
-                <div class="svc-card-icon">
-                    <div class="svc-card-icon-inner">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICE 3: SOCIAL MEDIA
-         ============================================ -->
-    <section class="service-section" id="social-media">
-        <div class="service-section-inner">
-            <div class="service-content reveal">
-                <div class="service-number">03</div>
-                <div class="service-badge">Content</div>
-                <h2>SOCIAL <span class="gold">MEDIA</span></h2>
-                <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood — not another generic fitness page people scroll past.</p>
-                <div class="deliverables">
-                    <div class="deliverable-item reveal reveal-delay-1">
-                        <div class="deliverable-diamond"></div>
-                        <span>Content strategy & calendar</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-2">
-                        <div class="deliverable-diamond"></div>
-                        <span>Professional photo/video shoots</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-3">
-                        <div class="deliverable-diamond"></div>
-                        <span>Post design & copywriting</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-4">
-                        <div class="deliverable-diamond"></div>
-                        <span>Community management</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-5">
-                        <div class="deliverable-diamond"></div>
-                        <span>Instagram & TikTok Reels</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-6">
-                        <div class="deliverable-diamond"></div>
-                        <span>Monthly analytics reports</span>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn-primary">
-                    <span>GET STARTED</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-smoke-lift.jpg" alt="Athlete training" class="svc-photo" loading="lazy">
-                <div class="svc-noise"></div>
-                <div class="svc-card-grid"></div>
-                <div class="svc-card-glow"></div>
-                <div class="svc-card-reflection"></div>
-                <div class="svc-card-edge"></div>
-                <div class="svc-corner-diamond tl"></div>
-                <div class="svc-corner-diamond tr"></div>
-                <div class="svc-corner-diamond bl"></div>
-                <div class="svc-corner-diamond br"></div>
-                <div class="svc-orbit">
-                    <div class="svc-orbit-ring" style="animation-duration:22s;">
-                        <div class="svc-orbit-dot"></div>
-                    </div>
-                </div>
-                <div class="svc-card-icon">
-                    <div class="svc-card-icon-inner">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICE 4: LOCAL SEO
-         ============================================ -->
-    <section class="service-section" id="local-seo">
-        <div class="service-section-inner">
-            <div class="service-content reveal">
-                <div class="service-number">04</div>
-                <div class="service-badge">Search</div>
-                <h2>LOCAL <span class="gold">SEO</span></h2>
-                <p>Dominate "gym near me" searches in your area. We optimize your entire digital presence so you're the first gym people find when they search in your city — organically, without paying per click.</p>
-                <div class="deliverables">
-                    <div class="deliverable-item reveal reveal-delay-1">
-                        <div class="deliverable-diamond"></div>
-                        <span>Google Business Profile optimization</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-2">
-                        <div class="deliverable-diamond"></div>
-                        <span>Local keyword targeting</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-3">
-                        <div class="deliverable-diamond"></div>
-                        <span>Citation building & cleanup</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-4">
-                        <div class="deliverable-diamond"></div>
-                        <span>Review generation strategy</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-5">
-                        <div class="deliverable-diamond"></div>
-                        <span>On-page SEO optimization</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-6">
-                        <div class="deliverable-diamond"></div>
-                        <span>Monthly ranking reports</span>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn-primary">
-                    <span>GET STARTED</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-group-class.jpg" alt="Group class" class="svc-photo" loading="lazy">
-                <div class="svc-noise"></div>
-                <div class="svc-card-grid"></div>
-                <div class="svc-card-glow"></div>
-                <div class="svc-card-reflection"></div>
-                <div class="svc-card-edge"></div>
-                <div class="svc-corner-diamond tl"></div>
-                <div class="svc-corner-diamond tr"></div>
-                <div class="svc-corner-diamond bl"></div>
-                <div class="svc-corner-diamond br"></div>
-                <div class="svc-orbit">
-                    <div class="svc-orbit-ring" style="animation-duration:24s;">
-                        <div class="svc-orbit-dot"></div>
-                    </div>
-                </div>
-                <div class="svc-card-icon">
-                    <div class="svc-card-icon-inner">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICE 5: WEB DESIGN
-         ============================================ -->
-    <section class="service-section" id="web-design">
-        <div class="service-section-inner">
-            <div class="service-content reveal">
-                <div class="service-number">05</div>
-                <div class="service-badge">Design</div>
-                <h2>WEB <span class="gold">DESIGN</span></h2>
-                <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are — scrolling at midnight, deciding which gym to try tomorrow.</p>
-                <div class="deliverables">
-                    <div class="deliverable-item reveal reveal-delay-1">
-                        <div class="deliverable-diamond"></div>
-                        <span>Custom responsive website</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-2">
-                        <div class="deliverable-diamond"></div>
-                        <span>Mobile-first design</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-3">
-                        <div class="deliverable-diamond"></div>
-                        <span>Speed optimization</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-4">
-                        <div class="deliverable-diamond"></div>
-                        <span>SEO-ready structure</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-5">
-                        <div class="deliverable-diamond"></div>
-                        <span>Membership signup integration</span>
-                    </div>
-                    <div class="deliverable-item reveal reveal-delay-6">
-                        <div class="deliverable-diamond"></div>
-                        <span>Ongoing maintenance & updates</span>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn-primary">
-                    <span>GET STARTED</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-            </div>
-            <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-cycling-class.jpg" alt="Cycling class" class="svc-photo" loading="lazy">
-                <div class="svc-noise"></div>
-                <div class="svc-card-grid"></div>
-                <div class="svc-card-glow"></div>
-                <div class="svc-card-reflection"></div>
-                <div class="svc-card-edge"></div>
-                <div class="svc-corner-diamond tl"></div>
-                <div class="svc-corner-diamond tr"></div>
-                <div class="svc-corner-diamond bl"></div>
-                <div class="svc-corner-diamond br"></div>
-                <div class="svc-orbit">
-                    <div class="svc-orbit-ring" style="animation-duration:16s;">
-                        <div class="svc-orbit-dot"></div>
-                    </div>
-                </div>
-                <div class="svc-card-icon">
-                    <div class="svc-card-icon-inner">
-                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         SERVICE 6: BRAND STRATEGY
+         SERVICE 1: BRAND STRATEGY
          ============================================ -->
     <section class="service-section" id="brand-strategy">
         <div class="service-section-inner">
             <div class="service-content reveal">
-                <div class="service-number">06</div>
+                <div class="service-number">01</div>
                 <div class="service-badge">Branding</div>
                 <h2>BRAND <span class="gold">STRATEGY</span></h2>
-                <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships — turning your gym from a commodity into a destination.</p>
+                <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships, turning your gym from a commodity into a destination.</p>
                 <div class="deliverables">
                     <div class="deliverable-item reveal reveal-delay-1">
                         <div class="deliverable-diamond"></div>
@@ -2169,7 +1914,7 @@
                 </a>
             </div>
             <div class="service-visual-card reveal reveal-delay-2">
-                <img src="gym-deadlift-smoke.jpg" alt="Deadlift training" class="svc-photo" loading="lazy">
+                <img src="gym-deadlift-smoke.jpg" alt="Deadlift training" class="svc-photo" loading="lazy" width="5078" height="3385">
                 <div class="svc-noise"></div>
                 <div class="svc-card-grid"></div>
                 <div class="svc-card-glow"></div>
@@ -2193,6 +1938,336 @@
         </div>
     </section>
 
+    <!-- ============================================
+         SERVICE 2: PAID ADVERTISING
+         ============================================ -->
+    <section class="service-section" id="paid-advertising">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">02</div>
+                <div class="service-badge">Paid Media</div>
+                <h2>PAID <span class="gold">ADVERTISING</span></h2>
+                <p>Meta and Google ad campaigns engineered specifically for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups, because that's all we do.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom ad creative design</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Audience research & targeting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>A/B split testing</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Campaign optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Weekly performance reports</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Dedicated ad strategist</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-group-squat.jpg" alt="Gym training" class="svc-photo" loading="lazy" width="810" height="540">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 3: LEAD GENERATION
+         ============================================ -->
+    <section class="service-section" id="lead-generation">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">03</div>
+                <div class="service-badge">Funnels</div>
+                <h2>LEAD <span class="gold">GENERATION</span></h2>
+                <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk, so every dollar you spend on ads actually produces members.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom landing pages</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Lead capture forms</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Automated email/SMS sequences</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>CRM integration</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Lead scoring & qualification</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Tour booking automation</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-coach-athlete.jpg" alt="Coach and athlete" class="svc-photo" loading="lazy" width="960" height="640">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:18s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 4: SOCIAL MEDIA
+         ============================================ -->
+    <section class="service-section" id="social-media">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">04</div>
+                <div class="service-badge">Content</div>
+                <h2>SOCIAL <span class="gold">MEDIA</span></h2>
+                <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood, not another generic fitness page people scroll past.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Content strategy & calendar</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Professional photo/video shoots</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Post design & copywriting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Community management</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Instagram & TikTok Reels</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Monthly analytics reports</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-smoke-lift.jpg" alt="Athlete training" class="svc-photo" loading="lazy" width="3565" height="5348">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:22s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 5: LOCAL SEO
+         ============================================ -->
+    <section class="service-section" id="local-seo">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">05</div>
+                <div class="service-badge">Search</div>
+                <h2>LOCAL <span class="gold">SEO</span></h2>
+                <p>Dominate "gym near me" searches in your area. We optimize your entire digital presence so you're the first gym people find when they search in your city, organically, without paying per click.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Google Business Profile optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Local keyword targeting</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Citation building & cleanup</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>Review generation strategy</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>On-page SEO optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Monthly ranking reports</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-group-class.jpg" alt="Group class" class="svc-photo" loading="lazy" width="3888" height="2119">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:24s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE 6: WEB DESIGN
+         ============================================ -->
+    <section class="service-section" id="web-design">
+        <div class="service-section-inner">
+            <div class="service-content reveal">
+                <div class="service-number">06</div>
+                <div class="service-badge">Design</div>
+                <h2>WEB <span class="gold">DESIGN</span></h2>
+                <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are: scrolling at midnight, deciding which gym to try tomorrow.</p>
+                <div class="deliverables">
+                    <div class="deliverable-item reveal reveal-delay-1">
+                        <div class="deliverable-diamond"></div>
+                        <span>Custom responsive website</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-2">
+                        <div class="deliverable-diamond"></div>
+                        <span>Mobile-first design</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-3">
+                        <div class="deliverable-diamond"></div>
+                        <span>Speed optimization</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-4">
+                        <div class="deliverable-diamond"></div>
+                        <span>SEO-ready structure</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-5">
+                        <div class="deliverable-diamond"></div>
+                        <span>Membership signup integration</span>
+                    </div>
+                    <div class="deliverable-item reveal reveal-delay-6">
+                        <div class="deliverable-diamond"></div>
+                        <span>Ongoing maintenance & updates</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET STARTED</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="service-visual-card reveal reveal-delay-2">
+                <img src="gym-cycling-class.jpg" alt="Cycling class" class="svc-photo" loading="lazy" width="6720" height="4480">
+                <div class="svc-noise"></div>
+                <div class="svc-card-grid"></div>
+                <div class="svc-card-glow"></div>
+                <div class="svc-card-reflection"></div>
+                <div class="svc-card-edge"></div>
+                <div class="svc-corner-diamond tl"></div>
+                <div class="svc-corner-diamond tr"></div>
+                <div class="svc-corner-diamond bl"></div>
+                <div class="svc-corner-diamond br"></div>
+                <div class="svc-orbit">
+                    <div class="svc-orbit-ring" style="animation-duration:16s;">
+                        <div class="svc-orbit-dot"></div>
+                    </div>
+                </div>
+                <div class="svc-card-icon">
+                    <div class="svc-card-icon-inner">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="final-cta" id="contact">
         <div class="final-cta-bg"></div>
@@ -2210,7 +2285,7 @@
                 </div>
             </div>
             <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
-            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym, no strings attached.</p>
             <div class="final-cta-actions">
                 <a href="contact.html" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
                     <span>BOOK YOUR FREE STRATEGY CALL</span>
@@ -2230,7 +2305,7 @@
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
                     <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                     <div class="footer-email-group">
                         <input type="email" placeholder="Enter your email...">
@@ -2448,6 +2523,25 @@
         document.querySelectorAll('video').forEach(v => {
             v.play().catch(() => {});
         });
+    </script>
+
+    <a href="contact.html" class="sticky-cta" id="stickyCta" aria-label="Book a free strategy call">BOOK FREE CALL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <script>
+        (function () {
+            var btn = document.getElementById('stickyCta');
+            var visible = false;
+            function update() {
+                var scrolled = window.scrollY || document.documentElement.scrollTop;
+                if (!visible && scrolled > 300) {
+                    btn.classList.add('visible');
+                    visible = true;
+                } else if (visible && scrolled <= 300) {
+                    btn.classList.remove('visible');
+                    visible = false;
+                }
+            }
+            window.addEventListener('scroll', update, { passive: true });
+        })();
     </script>
 </body>
 </html>

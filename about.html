@@ -10,12 +10,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/about.html">
-    <meta property="og:title" content="About Us — Enoch Marketing">
+    <meta property="og:title" content="About Us | Enoch Marketing">
     <meta property="og:description" content="Enoch Marketing is the only agency built from the ground up for gyms and fitness brands. Learn our story, our values, and why gym owners trust us to grow.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us — Enoch Marketing">
+    <meta name="twitter:title" content="About Us | Enoch Marketing">
     <meta name="twitter:description" content="Enoch Marketing is the only agency built from the ground up for gyms and fitness brands. Learn our story, our values, and why gym owners trust us to grow.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
     <!-- Structured Data -->
@@ -75,7 +75,7 @@
             --black-card: #111111;
             --black-elevated: #1A1A1A;
             --white: #FFFFFF;
-            --white-muted: #AAAAAA;
+            --white-muted: #E0E0E0;
             --white-dim: #666666;
             --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
             --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
@@ -343,7 +343,7 @@
 
         .section-subtitle {
             font-size: 1.05rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 550px;
@@ -472,7 +472,7 @@
 
         .hero-title {
             font-family: var(--font-display);
-            font-size: clamp(3rem, 7vw, 6.5rem);
+            font-size: clamp(2.6rem, 5.5vw, 5rem);
             line-height: 0.95;
             letter-spacing: 0.02em;
             margin-bottom: 1.75rem;
@@ -483,7 +483,7 @@
 
         .hero-subtitle {
             font-size: 1.1rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.7;
             color: var(--white-muted);
             max-width: 620px;
@@ -557,7 +557,7 @@
 
         .story-text p {
             font-size: 0.95rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.8;
             margin-bottom: 1.25rem;
@@ -834,7 +834,7 @@
 
         .different-item p {
             font-size: 0.88rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.65;
         }
@@ -935,7 +935,7 @@
 
         .value-card p {
             font-size: 0.9rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.7;
         }
@@ -1212,7 +1212,7 @@
 
         .footer-brand p {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white-muted);
             line-height: 1.7;
             max-width: 340px;
@@ -1458,8 +1458,8 @@
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 100px; }
-            .nav.scrolled .nav-logo img { height: 85px; }
+            .nav-logo img { height: 44px; width: auto; max-width: none; }
+            .nav.scrolled .nav-logo img { height: 38px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1483,14 +1483,18 @@
             }
             .number-stat:last-child { border-bottom: none; }
 
+            .founder-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .founder-photo-col { max-width: 260px; margin: 0 auto; }
+            .founder-photo-col::before { display: none; }
+
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .final-cta { padding: 5rem 1.5rem; }
             .hero-geo .diamond { display: none; }
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 88px; }
-            .nav.scrolled .nav-logo img { height: 75px; }
+            .nav-logo img { height: 40px; }
+            .nav.scrolled .nav-logo img { height: 34px; }
             .hero-text-center { padding: 5.5rem 1.25rem 2.5rem; }
             .hero-title { font-size: clamp(1.9rem, 9.5vw, 3rem); }
             .hero-subtitle { font-size: 0.9rem; }
@@ -1505,9 +1509,304 @@
             .final-cta { padding: 4rem 1.25rem; }
         }
 
+        /* ========================================
+           FOUNDER SECTION
+           ======================================== */
+        .founder-section {
+            background: var(--black-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-section::before,
+        .founder-section::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221, 205, 156, 0.2), transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .founder-section::before { top: 0; }
+        .founder-section::after  { bottom: 0; }
+
+        /* Ambient glow behind photo */
+        .founder-bg-glow {
+            position: absolute;
+            left: -6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 58%;
+            aspect-ratio: 1;
+            background: radial-gradient(circle, rgba(221, 205, 156, 0.055) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        /* Background diamond — right side echo */
+        .founder-bg-diamond {
+            position: absolute;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 260px;
+            height: 260px;
+            border: 1px solid rgba(221, 205, 156, 0.055);
+            pointer-events: none;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 5.5rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---- Photo column ---- */
+        .founder-photo-col {
+            position: relative;
+        }
+
+        /* Gold accent line left of photo */
+        .founder-photo-col::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 14%;
+            bottom: 14%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(221, 205, 156, 0.55), transparent);
+            pointer-events: none;
+        }
+
+        /* Corner bracket wrapper */
+        .founder-photo-brackets {
+            position: relative;
+            display: block;
+        }
+
+        .founder-photo-brackets::before {
+            content: '';
+            position: absolute;
+            top: -7px; left: -7px;
+            width: 30px; height: 30px;
+            border-top: 1.5px solid var(--gold);
+            border-left: 1.5px solid var(--gold);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .founder-photo-brackets::after {
+            content: '';
+            position: absolute;
+            bottom: -7px; right: -7px;
+            width: 30px; height: 30px;
+            border-bottom: 1.5px solid var(--gold);
+            border-right: 1.5px solid var(--gold);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .founder-photo-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border-radius: 3px;
+            box-shadow:
+                0 0 0 1px rgba(221, 205, 156, 0.1),
+                0 28px 56px rgba(0, 0, 0, 0.55),
+                0 0 60px rgba(221, 205, 156, 0.04);
+        }
+
+        .founder-photo-wrap img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            filter: brightness(0.94) contrast(1.03) saturate(0.88);
+            transition: transform 0.7s ease, filter 0.7s ease;
+            z-index: 1;
+        }
+
+        .founder-photo-col:hover .founder-photo-wrap img {
+            transform: scale(1.03);
+            filter: brightness(1) contrast(1.03) saturate(1);
+        }
+
+        /* Name overlay at bottom of photo */
+        .founder-photo-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 3rem 1.25rem 1.1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            z-index: 2;
+        }
+
+        .founder-overlay-name {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.08em;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .founder-overlay-role {
+            display: block;
+            font-family: var(--font-body);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 0.32rem;
+        }
+
+        /* ---- Text column ---- */
+        .founder-text-col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .founder-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+            line-height: 0.97;
+            letter-spacing: 0.02em;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Thin gold divider rule */
+        .founder-rule {
+            width: 44px;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .founder-body {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.9;
+            color: rgba(224, 224, 224, 0.78);
+            margin-bottom: 0.85rem;
+            max-width: 500px;
+        }
+
+        /* Credential list — replaces badge pills */
+        .founder-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .founder-credential {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+        }
+
+        .founder-credential-dash {
+            width: 18px;
+            height: 1px;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
         /* Hide cursor glow on touch devices */
         @media (pointer: coarse) {
             .cursor-glow { display: none; }
+        }
+
+        /* ========================================
+           STICKY FLOATING CTA
+           ======================================== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--gold);
+            border: 1px solid rgba(221, 205, 156, 0.28);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            overflow: hidden;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+            pointer-events: none;
+        }
+        .sticky-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.4;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 70%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.25;
+            transition: opacity 0.4s ease;
+        }
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .sticky-cta:hover {
+            background: rgba(221, 205, 156, 0.1);
+            border-color: rgba(221, 205, 156, 0.5);
+            color: var(--gold-light);
+            box-shadow: 0 0 28px rgba(221, 205, 156, 0.18), 0 0 60px rgba(221, 205, 156, 0.07), inset 0 0 20px rgba(221, 205, 156, 0.05);
+        }
+        .sticky-cta:hover::before,
+        .sticky-cta:hover::after { opacity: 1; }
+        .sticky-cta svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .sticky-cta:hover svg { transform: translateX(3px); }
+        @media (max-width: 768px) {
+            .sticky-cta {
+                font-size: 0.9rem;
+                padding: 0.65rem 1.25rem;
+                bottom: 18px;
+                right: 18px;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -1534,7 +1833,7 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="index.html" class="nav-logo">
-            <img src="enoch logo 3.png" alt="Enoch Marketing">
+            <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
         </a>
         <div class="nav-links">
             <a href="services.html">Services</a>
@@ -1549,7 +1848,8 @@
 
     <!-- HERO -->
     <section class="about-hero">
-        <video class="about-hero-video" autoplay muted loop playsinline>
+        <!-- Add poster="about-hero-poster.jpg" once a static frame export is available -->
+        <video class="about-hero-video" autoplay muted loop playsinline preload="metadata">
             <source src="about-hero.mp4" type="video/mp4">
         </video>
         <div class="about-hero-vignette"></div>
@@ -1560,10 +1860,10 @@
                 <span>About Enoch</span>
             </div>
             <h1 class="hero-title">
-                WE DON'T DO MARKETING.<br>WE BUILD <span class="gold">GROWTH ENGINES.</span>
+                WE DON'T JUST RUN ADS.<br>WE BUILD THE SYSTEM THAT <span class="gold">FILLS YOUR GYM.</span>
             </h1>
             <p class="hero-subtitle">
-                Enoch Marketing is the only agency built from the ground up exclusively for gyms and fitness brands. We live in this industry because we believe gym owners deserve a marketing partner who actually understands their business.
+                Most agencies hand you a campaign and disappear. Enoch builds the full growth engine — ads, funnels, content, and strategy — all locked in on one goal: more members, more revenue, more gym.
             </p>
 
             <div class="hero-cta-row">
@@ -1583,7 +1883,7 @@
                     <div class="testimonials-badge reveal">Our Story</div>
                     <h2 class="section-title reveal">BORN IN THE GYM.<br>BUILT FOR <span class="gold">GYM OWNERS.</span></h2>
                     <div class="story-text reveal" style="margin-top:1.5rem;">
-                        <p>Enoch Marketing started with a simple observation: gym owners were getting burned by agencies that didn't understand fitness. They'd hire a "marketing guy" who ran the same playbook they used for dentists and restaurants — and wonder why nobody was walking through the door.</p>
+                        <p>Enoch Marketing started with a simple observation: gym owners were getting burned by agencies that didn't understand fitness. They'd hire a "marketing guy" who ran the same playbook they used for dentists and restaurants, then wonder why nobody was walking through the door.</p>
                         <p>We knew there had to be a better way. So we built an agency that does one thing and does it obsessively: grow gyms. Every strategy, every campaign, every funnel we build is designed specifically for the way people find, evaluate, and join a gym.</p>
                         <p>We've helped gyms across the country fill their floors, pack their classes, and build the kind of brand that turns first-timers into lifers.</p>
                     </div>
@@ -1591,14 +1891,14 @@
 
                 <div class="reveal reveal-delay-2">
                     <div class="story-photo-slider" id="storySlider">
-                        <div class="story-slide active"><img src="story-img-1.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-2.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-3.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-4.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-5.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-6.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-7.jpg" alt="Gym training" loading="lazy"></div>
-                        <div class="story-slide"><img src="story-img-8.jpg" alt="Gym training" loading="lazy"></div>
+                        <div class="story-slide active"><img src="story-img-1.jpg" alt="Gym training" loading="lazy" width="810" height="540"></div>
+                        <div class="story-slide"><img src="story-img-2.jpg" alt="Gym training" loading="lazy" width="6701" height="4467"></div>
+                        <div class="story-slide"><img src="story-img-3.jpg" alt="Gym training" loading="lazy" width="5078" height="3385"></div>
+                        <div class="story-slide"><img src="story-img-4.jpg" alt="Gym training" loading="lazy" width="6720" height="4480"></div>
+                        <div class="story-slide"><img src="story-img-5.jpg" alt="Gym training" loading="lazy" width="3888" height="2119"></div>
+                        <div class="story-slide"><img src="story-img-6.jpg" alt="Gym training" loading="lazy" width="3565" height="5348"></div>
+                        <div class="story-slide"><img src="story-img-7.jpg" alt="Gym training" loading="lazy" width="960" height="640"></div>
+                        <div class="story-slide"><img src="story-img-8.jpg" alt="Gym training" loading="lazy" width="2048" height="1366"></div>
                         <div class="story-slide-dots">
                             <div class="story-dot active" data-index="0"></div>
                             <div class="story-dot" data-index="1"></div>
@@ -1645,7 +1945,7 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <h3>FULL-STACK TEAM</h3>
-                    <p>Ads, funnels, SEO, social, web design, and brand — all under one roof. No juggling five different vendors.</p>
+                    <p>Ads, funnels, SEO, social, web design, and brand, all under one roof. No juggling five different vendors.</p>
                 </div>
 
                 <div class="different-item reveal reveal-delay-4">
@@ -1671,14 +1971,14 @@
                 <div class="value-card reveal reveal-delay-1">
                     <div class="value-card-content">
                         <h3>TRANSPARENCY</h3>
-                        <p>No vanity metrics, no fluff reports. We show you the real numbers — cost per lead, cost per member, actual ROI. If something isn't working, you'll hear it from us first.</p>
+                        <p>No vanity metrics, no fluff reports. We show you the real numbers: cost per lead, cost per member, actual ROI. If something isn't working, you'll hear it from us first.</p>
                     </div>
                 </div>
 
                 <div class="value-card reveal reveal-delay-2">
                     <div class="value-card-content">
-                        <h3>OWNERSHIP</h3>
-                        <p>Your gym is our gym. We don't hand off work to junior freelancers or outsource overseas. Every campaign is managed by senior strategists who know fitness inside and out.</p>
+                        <h3>ACCOUNTABILITY</h3>
+                        <p>We treat your results like they're our own. No junior handoffs, no overseas outsourcing. Every campaign is owned by a senior strategist who knows fitness — and who answers directly for the numbers.</p>
                     </div>
                 </div>
 
@@ -1688,6 +1988,50 @@
                         <p>Good enough isn't good enough. We test, iterate, and optimize every single week. The gym that was your competitor last month should be chasing you next month.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOUNDER -->
+    <section class="section founder-section" id="founder">
+        <div class="founder-bg-glow"></div>
+        <div class="founder-bg-diamond"></div>
+        <div class="container">
+            <div class="founder-grid">
+
+                <!-- Photo column -->
+                <div class="founder-photo-col reveal">
+                    <div class="founder-photo-brackets">
+                        <div class="founder-photo-wrap">
+                            <img src="collin-charles.png" alt="Collin Charles, Founder of Enoch Marketing" loading="lazy" width="380" height="507">
+                            <div class="founder-photo-overlay">
+                                <span class="founder-overlay-name">COLLIN CHARLES</span>
+                                <span class="founder-overlay-role">Founder, Enoch Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text column -->
+                <div class="founder-text-col reveal reveal-delay-2">
+                    <div class="section-tag" style="margin-bottom:1.25rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Meet the Founder</span></div>
+                    <h2 class="founder-title">BUILT BY SOMEONE WHO<br><span class="gold">UNDERSTANDS YOUR WORLD</span></h2>
+                    <div class="founder-rule"></div>
+                    <p class="founder-body">Collin Charles is a United States Air Force Academy graduate and decorated officer who spent six years managing some of the most complex, high-stakes programs in the US military — from cyber defense operations for Space Force to leading cross-functional teams of 3,000+ personnel.</p>
+                    <p class="founder-body">He built Enoch Marketing because he saw a direct parallel: gym owners were running their marketing the same way bad contractors run government programs — no accountability, no metrics, no results. Collin brings the same mission-driven precision he used to execute DoD contracts to every gym he partners with. If it can't be measured, it gets cut. If it's working, it gets scaled.</p>
+                    <div class="founder-credentials">
+                        <div class="founder-credential"><span class="founder-credential-dash"></span>US Air Force Academy Graduate</div>
+                        <div class="founder-credential"><span class="founder-credential-dash"></span>Veterans-Founded Agency</div>
+                        <div class="founder-credential"><span class="founder-credential-dash"></span>USC MBA Candidate</div>
+                        <div class="founder-credential"><span class="founder-credential-dash"></span>CrossFit Gym Specialist</div>
+                    </div>
+                    <a href="contact.html" class="btn-primary">
+                        <span>BOOK A FREE STRATEGY CALL</span>
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1706,7 +2050,7 @@
         <div class="container reveal">
             <div class="testimonials-badge reveal">Ready to Grow?</div>
             <h2 class="section-title">YOUR GYM DESERVES<br><span class="gold">BETTER MARKETING</span></h2>
-            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym — no strings attached.</p>
+            <p class="section-subtitle">Book a free 30-minute strategy call. We'll audit your current marketing, show you exactly where you're leaving money on the table, and map out a plan to pack your gym, no strings attached.</p>
             <div class="final-cta-actions">
                 <a href="contact.html" class="btn-primary" style="font-size:1.3rem; padding:1.3rem 3rem;">
                     <span>BOOK YOUR FREE STRATEGY CALL</span>
@@ -1726,7 +2070,7 @@
         <div class="footer-inner">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="enoch logo 3.png" alt="Enoch Marketing">
+                    <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
                     <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                     <div class="footer-email-group">
                         <input type="email" placeholder="Enter your email...">
@@ -1997,6 +2341,25 @@
         document.querySelectorAll('video').forEach(v => {
             v.play().catch(() => {});
         });
+    </script>
+
+    <a href="contact.html" class="sticky-cta" id="stickyCta" aria-label="Book a free strategy call">BOOK FREE CALL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <script>
+        (function () {
+            var btn = document.getElementById('stickyCta');
+            var visible = false;
+            function update() {
+                var scrolled = window.scrollY || document.documentElement.scrollTop;
+                if (!visible && scrolled > 300) {
+                    btn.classList.add('visible');
+                    visible = true;
+                } else if (visible && scrolled <= 300) {
+                    btn.classList.remove('visible');
+                    visible = false;
+                }
+            }
+            window.addEventListener('scroll', update, { passive: true });
+        })();
     </script>
 </body>
 </html>

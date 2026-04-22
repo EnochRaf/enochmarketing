@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Enoch Marketing — CrossFit Gym Marketing Agency</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <meta name="description" content="Transparent pricing for CrossFit gym marketing. Paid ads, social media, SEO, web design & more. No contracts, no retainers, 100% money-back guarantee.">
+    <link rel="canonical" href="https://www.enochmarketing.com/pricing.html" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enoch Marketing">
+    <meta property="og:url" content="https://www.enochmarketing.com/pricing.html">
+    <meta property="og:title" content="Pricing | Enoch Marketing">
+    <meta property="og:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back guarantee.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing | Enoch Marketing">
+    <meta name="twitter:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back guarantee.">
+    <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        /* ===== CURSOR GLOW ===== */
+        #cursorGlow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(221,205,156,0.04) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0.75rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+        .nav.scrolled {
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(221,205,156,0.1);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+        .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
+        .nav.scrolled .nav-logo img { height: 140px; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-muted);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            padding: 0.7rem 1.8rem;
+            background: rgba(221,205,156,0.08);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .nav-cta::after {
+            content: '' !important;
+            display: block !important;
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+            transition: opacity 0.5s ease;
+        }
+        .nav-cta:hover {
+            background: rgba(221,205,156,0.15);
+            border-color: rgba(221,205,156,0.4);
+            box-shadow: 0 0 20px rgba(221,205,156,0.15), inset 0 0 20px rgba(221,205,156,0.05);
+            transform: translateY(-1px);
+        }
+        .nav-cta:hover::before { opacity: 1; }
+        .nav-cta:hover::after { opacity: 1; }
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            padding: 5px;
+        }
+        .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.97);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            padding: 1.1rem 2.5rem;
+            background: rgba(221,205,156,0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35;
+            transition: opacity 0.5s ease;
+        }
+        .btn-primary:hover {
+            background: rgba(221,205,156,0.12);
+            border-color: rgba(221,205,156,0.5);
+            color: var(--gold-light);
+            box-shadow: 0 0 25px rgba(221,205,156,0.2), 0 0 60px rgba(221,205,156,0.08), inset 0 0 25px rgba(221,205,156,0.06);
+        }
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-primary:hover::after { opacity: 1; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow { position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        /* ===== SECTION UTILITIES ===== */
+        .section { position: relative; padding: 7rem 3rem; }
+        .section-large { padding: 9rem 3rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-tag {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 1.1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(221,205,156,0.18);
+            background: rgba(221,205,156,0.04);
+            --stag-x: 50%; --stag-y: 50%; --stag-op: 0;
+        }
+        .section-tag .stag-border {
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: 1;
+            opacity: var(--stag-op);
+            background: radial-gradient(180px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.9), transparent 55%);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            padding: 1px;
+            transition: opacity 0.35s ease;
+        }
+        .section-tag .stag-glow {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: 0;
+            opacity: var(--stag-op);
+            background: radial-gradient(140px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.12), transparent 55%);
+            transition: opacity 0.35s ease;
+        }
+        .section-tag .stag-bloom {
+            position: absolute;
+            inset: -6px;
+            border-radius: inherit;
+            pointer-events: none;
+            z-index: -1;
+            opacity: var(--stag-op);
+            filter: blur(10px);
+            background: radial-gradient(120px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.18), transparent 55%);
+            transition: opacity 0.35s ease;
+        }
+        .section-tag > span { position: relative; z-index: 2; }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.25rem;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 600px;
+        }
+        .gold { color: var(--gold); }
+
+        /* ===== REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== HERO ===== */
+        .page-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            overflow: hidden;
+            background: var(--black);
+            padding-bottom: 6rem;
+        }
+        .page-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 80% 20%, rgba(221,205,156,0.03) 0%, transparent 50%);
+        }
+        .page-hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 80% at 50% 100%, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 100%, black 30%, transparent 80%);
+        }
+        .page-hero-diamonds {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .page-hero-diamonds .d {
+            position: absolute;
+            border: 1px solid rgba(221,205,156,0.07);
+            transform: rotate(45deg);
+            animation: float-d 18s ease-in-out infinite;
+        }
+        @keyframes float-d {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.7; }
+            50% { transform: rotate(45deg) translateY(-18px); opacity: 0.3; }
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10rem 3rem 0;
+            width: 100%;
+        }
+        .page-hero-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fade-up 0.8s var(--ease-out-expo) 0.2s forwards;
+        }
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 9vw, 8rem);
+            line-height: 0.92;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.35s forwards;
+        }
+        .page-hero-title .line2 { color: var(--gold); }
+        .page-hero-desc {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.5);
+            max-width: 560px;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.5s forwards;
+        }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-hero-divider {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.15), transparent);
+        }
+
+        /* ===== CATEGORY FILTER TABS ===== */
+        .filter-bar-wrap {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(221,205,156,0.08);
+            transition: top 0.3s ease;
+        }
+        .filter-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .filter-bar::-webkit-scrollbar { display: none; }
+        .filter-tab {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            padding: 1.1rem 1.5rem;
+            white-space: nowrap;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            background: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
+        .filter-tab:hover { color: var(--gold-light); }
+        .filter-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+        /* ===== PRICING CATEGORY SECTION ===== */
+        .pricing-section {
+            padding: 5rem 3rem 4rem;
+            display: none;
+        }
+        .pricing-section.active {
+            display: block;
+            animation: section-in 0.35s var(--ease-out-expo) forwards;
+        }
+        @keyframes section-in {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pricing-header {
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
+        }
+        .pricing-category-label {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            letter-spacing: 0.05em;
+            color: var(--white);
+            margin-bottom: 0.35rem;
+        }
+        .pricing-category-sub {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-dim);
+        }
+        .pricing-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .pricing-table-head {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            padding: 0.85rem 2rem;
+            background: rgba(221,205,156,0.06);
+            border-bottom: 1px solid rgba(221,205,156,0.1);
+        }
+        .pricing-table-head span {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+        }
+        .pricing-table-head span:nth-child(2) { min-width: 180px; text-align: right; }
+        .pricing-table-head span:nth-child(3) { min-width: 100px; text-align: center; }
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            padding: 1.4rem 2rem;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: background 0.25s ease;
+            position: relative;
+        }
+        .pricing-row:last-child { border-bottom: none; }
+        .pricing-row:hover { background: rgba(221,205,156,0.03); }
+        .pricing-row-name {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--white-muted);
+            padding-right: 1rem;
+        }
+        .pricing-row-amount {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+            color: var(--gold);
+            min-width: 180px;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .pricing-badge {
+            min-width: 100px;
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.7rem;
+            border-radius: 9999px;
+        }
+        .pricing-badge.monthly {
+            background: rgba(221,205,156,0.1);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.2);
+        }
+        .pricing-badge.one-time {
+            background: rgba(255,255,255,0.04);
+            color: var(--white-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .pricing-badge.per-piece {
+            background: rgba(255,255,255,0.03);
+            color: var(--white-dim);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        /* ===== PACKAGES SECTION ===== */
+        .packages-section {
+            padding: 7rem 3rem;
+            position: relative;
+            background: var(--black-soft);
+        }
+        .packages-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black, transparent);
+            pointer-events: none;
+        }
+        .packages-header {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+        .packages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        .package-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .package-card.featured {
+            background: var(--black-elevated);
+            border-color: rgba(221,205,156,0.35);
+            box-shadow: 0 0 60px rgba(221,205,156,0.08), 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .package-card.featured:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 80px rgba(221,205,156,0.12), 0 30px 80px rgba(0,0,0,0.6);
+        }
+        .package-card-glow {
+            position: absolute;
+            top: -60px; left: 50%;
+            transform: translateX(-50%);
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(221,205,156,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .package-card-shine {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.4), transparent);
+        }
+        .package-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-body);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            padding: 0.3rem 0.85rem;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+        }
+        .package-badge-placeholder {
+            height: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .package-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+        }
+        .package-price {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+        .package-price-note {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            margin-bottom: 2rem;
+        }
+        .package-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.15), transparent);
+            margin-bottom: 1.75rem;
+        }
+        .package-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 2.5rem;
+            flex: 1;
+        }
+        .package-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-muted);
+            line-height: 1.5;
+        }
+        .package-feature-check {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.1);
+            border: 1px solid rgba(221,205,156,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .package-feature-check svg { color: var(--gold); }
+        .package-cta {
+            display: block;
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            padding: 0.9rem 1.5rem;
+            background: rgba(221,205,156,0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 9999px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .package-cta::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3;
+        }
+        .package-cta:hover {
+            background: rgba(221,205,156,0.12);
+            border-color: rgba(221,205,156,0.45);
+            color: var(--gold-light);
+            box-shadow: 0 0 25px rgba(221,205,156,0.15);
+        }
+        .package-card.featured .package-cta {
+            background: rgba(221,205,156,0.12);
+            border-color: rgba(221,205,156,0.4);
+        }
+        .package-card.featured .package-cta:hover {
+            background: rgba(221,205,156,0.2);
+            border-color: var(--gold);
+        }
+
+        /* ===== NOTES SECTION ===== */
+        .notes-section {
+            padding: 7rem 3rem;
+        }
+        .notes-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        .note-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 12px;
+            padding: 2rem 2.25rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: border-color 0.3s ease;
+        }
+        .note-card:hover { border-color: rgba(221,205,156,0.18); }
+        .note-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(221,205,156,0.07);
+            border: 1px solid rgba(221,205,156,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+        .note-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 0.6rem;
+        }
+        .note-body {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-dim);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .final-cta {
+            padding: 8rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 70% at 50% 50%, rgba(221,205,156,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .final-cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .final-cta .section-title { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1rem; }
+        .final-cta .section-subtitle { margin: 0 auto 2.5rem; }
+        .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            border-top: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px 12px 0 0;
+            padding: 5rem 3rem 2.5rem;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+            align-items: start;
+        }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img { height: 170px; width: auto; align-self: flex-start; margin-left: -15px; margin-top: -20px; }
+        .footer-brand p { font-size: 0.85rem; font-weight: 400; color: var(--white-muted); line-height: 1.7; max-width: 340px; }
+        .footer-email-group { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; max-width: 320px; }
+        .footer-email-group input {
+            flex: 1;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(221,205,156,0.15);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-group input:focus { border-color: rgba(221,205,156,0.4); }
+        .footer-email-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            color: var(--black);
+            flex-shrink: 0;
+            transition: background 0.3s ease;
+        }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--white-dim);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .footer ul li a .link-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials { display: flex; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            background: rgba(74,222,128,0.05);
+            border: 1px solid rgba(74,222,128,0.1);
+        }
+        .footer-status-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .footer-status span {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(74,222,128,0.7);
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-section {
+            padding: 5rem 3rem 4rem;
+            border-bottom: 1px solid rgba(221,205,156,0.08);
+        }
+        .intro-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .intro-left .section-title { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 0; }
+        .intro-right p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.55);
+        }
+        .intro-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .intro-stat-num {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .intro-stat-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 0.2rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nav { padding: 0.75rem 2rem; }
+            .nav-links { gap: 1.75rem; }
+            .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .intro-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .notes-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .section { padding: 5rem 1.5rem; }
+            .section-large { padding: 6rem 1.5rem; }
+            .page-hero-content { padding: 8rem 1.5rem 0; }
+            .pricing-section { padding: 4rem 1.5rem 3rem; }
+            .pricing-table-head { padding: 0.75rem 1.25rem; }
+            .pricing-row { padding: 1.1rem 1.25rem; grid-template-columns: 1fr auto; }
+            .pricing-row-amount { font-size: 1.2rem; min-width: 140px; }
+            .pricing-badge { display: none; }
+            .pricing-table-head span:nth-child(3) { display: none; }
+            .packages-section { padding: 5rem 1.5rem; }
+            .notes-section { padding: 5rem 1.5rem; }
+            .final-cta { padding: 6rem 1.5rem; }
+            .intro-section { padding: 4rem 1.5rem; }
+            .intro-stats { gap: 1.5rem; }
+            .filter-bar { padding: 0 1.5rem; }
+            .footer { padding: 4rem 1.5rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .btn-primary { width: 100%; justify-content: center; font-size: 1rem; padding: 1rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cursorGlow"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="pricing.html" onclick="closeMobile()" style="color:var(--gold);">Pricing</a>
+    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    </a>
+    <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="page-hero-diamonds" aria-hidden="true">
+        <div class="d" style="width:80px;height:80px;top:15%;left:8%;animation-delay:0s;animation-duration:20s;"></div>
+        <div class="d" style="width:40px;height:40px;top:30%;left:20%;animation-delay:3s;animation-duration:16s;opacity:0.4;"></div>
+        <div class="d" style="width:120px;height:120px;top:10%;right:12%;animation-delay:6s;animation-duration:24s;"></div>
+        <div class="d" style="width:55px;height:55px;top:55%;right:22%;animation-delay:2s;animation-duration:18s;opacity:0.5;"></div>
+        <div class="d" style="width:30px;height:30px;top:70%;left:35%;animation-delay:8s;animation-duration:14s;opacity:0.35;"></div>
+        <div class="d" style="width:90px;height:90px;bottom:15%;right:5%;animation-delay:4s;animation-duration:22s;opacity:0.3;"></div>
+    </div>
+
+    <div class="page-hero-content">
+        <p class="page-hero-eyebrow">Enoch Marketing &mdash; 2026 Pricing Guide</p>
+        <h1 class="page-hero-title">
+            REAL PRICING.<br>
+            <span class="line2">ZERO SURPRISES.</span>
+        </h1>
+        <p class="page-hero-desc">No hidden fees. No lock-in contracts. Pricing that flexes to what your gym actually needs — and a full money-back guarantee backing every dollar you invest.</p>
+    </div>
+    <div class="page-hero-divider"></div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+    <div class="intro-inner">
+        <div class="intro-left reveal">
+            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Who We Are</span></div>
+            <h2 class="section-title">WE'RE NOT HERE<br>TO SELL YOU <span class="gold">FLUFF.</span></h2>
+        </div>
+        <div class="intro-right reveal reveal-delay-2">
+            <p>Enoch Marketing exists to help CrossFit affiliates get more athletes through the door, keep them coming back, and build a brand that owns your local market. Pricing below is real — it flexes based on what your box actually needs. Running multiple locations? Let's talk volume.</p>
+            <div class="intro-stats">
+                <div>
+                    <div class="intro-stat-num">100%</div>
+                    <div class="intro-stat-label">Money-Back Guarantee</div>
+                </div>
+                <div>
+                    <div class="intro-stat-num">$0</div>
+                    <div class="intro-stat-label">Hidden Fees</div>
+                </div>
+                <div>
+                    <div class="intro-stat-num">0</div>
+                    <div class="intro-stat-label">Long-Term Contracts</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-bar-wrap" id="filterBar">
+    <div class="filter-bar">
+        <button class="filter-tab active" data-target="social-media">Social Media</button>
+        <button class="filter-tab" data-target="paid-advertising">Paid Advertising</button>
+        <button class="filter-tab" data-target="website-seo">Website &amp; SEO</button>
+        <button class="filter-tab" data-target="email-sms">Email &amp; SMS</button>
+        <button class="filter-tab" data-target="branding">Branding &amp; Creative</button>
+        <button class="filter-tab" data-target="packages">Packages</button>
+    </div>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<section class="pricing-section active" id="social-media">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 01</span></div>
+        <h2 class="pricing-category-label">Social Media Management</h2>
+        <p class="pricing-category-sub">Content that builds your community, not just your follower count.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Social Media Strategy Development</div>
+            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Content Creation &amp; Posting</div>
+            <div class="pricing-row-amount">$750 – $1,500</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Community Management &amp; Engagement</div>
+            <div class="pricing-row-amount">$750 – $1,875</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Social Media Analytics &amp; Reporting</div>
+            <div class="pricing-row-amount">$375 – $750</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+    </div>
+</section>
+
+<!-- PAID ADVERTISING -->
+<section class="pricing-section" id="paid-advertising">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 02</span></div>
+        <h2 class="pricing-category-label">Paid Advertising</h2>
+        <p class="pricing-category-sub">Every dollar tracked. Every campaign built to fill your gym with athletes, not clicks.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Google Ads Management</div>
+            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Facebook &amp; Instagram Ads Management</div>
+            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">TikTok Ads Management</div>
+            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Ad Creative Design <span style="color:var(--white-dim);font-size:0.8em;">(per set of 5)</span></div>
+            <div class="pricing-row-amount">$565 – $1,125</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+    </div>
+    <p style="max-width:1200px;margin:1rem auto 0;font-size:0.75rem;color:var(--white-dim);padding-left:0.25rem;">
+        * Management fees are separate from ad spend paid directly to Google, Meta, or TikTok.
+    </p>
+</section>
+
+<!-- WEBSITE & SEO -->
+<section class="pricing-section" id="website-seo">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 03</span></div>
+        <h2 class="pricing-category-label">Website &amp; SEO</h2>
+        <p class="pricing-category-sub">Own your local search rankings so athletes find you before they find anyone else.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Website Design &amp; Development</div>
+            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Local SEO Optimization</div>
+            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Google Business Profile Optimization</div>
+            <div class="pricing-row-amount">$375 – $750</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL & SMS -->
+<section class="pricing-section" id="email-sms">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 04</span></div>
+        <h2 class="pricing-category-label">Email &amp; SMS Marketing</h2>
+        <p class="pricing-category-sub">Automated follow-up that keeps leads warm and turns trials into long-term members.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Email Marketing Setup &amp; Automation</div>
+            <div class="pricing-row-amount">$1,125 – $1,875</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">SMS Marketing Setup &amp; Campaigns</div>
+            <div class="pricing-row-amount">$750 – $1,500</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+    </div>
+</section>
+
+<!-- BRANDING & CREATIVE -->
+<section class="pricing-section" id="branding">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 05</span></div>
+        <h2 class="pricing-category-label">Branding &amp; Creative</h2>
+        <p class="pricing-category-sub">A brand athletes trust before they ever walk through your door.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Brand Identity Package <span style="color:var(--white-dim);font-size:0.8em;">(logo, colors, fonts)</span></div>
+            <div class="pricing-row-amount">$1,125 – $1,875</div>
+            <span class="pricing-badge one-time">One-Time</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Graphic Design <span style="color:var(--white-dim);font-size:0.8em;">(per piece)</span></div>
+            <div class="pricing-row-amount">$200 – $563</div>
+            <span class="pricing-badge per-piece">Per Piece</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Video Production <span style="color:var(--white-dim);font-size:0.8em;">(short-form)</span></div>
+            <div class="pricing-row-amount">$250 – $750</div>
+            <span class="pricing-badge per-piece">Per Video</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Photography <span style="color:var(--white-dim);font-size:0.8em;">(half-day session)</span></div>
+            <div class="pricing-row-amount">$1,000 – $2,500</div>
+            <span class="pricing-badge per-piece">Per Session</span>
+        </div>
+    </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+    <div class="packages-bg"></div>
+    <div class="packages-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Bundled Packages</span></div>
+        <h2 class="section-title">TURNKEY GROWTH.<br><span class="gold">PICK YOUR LEVEL.</span></h2>
+        <p class="section-subtitle">Built for gyms that want a cohesive, fully-managed marketing system — not a patchwork of freelancers. Significant savings over individual service pricing.</p>
+    </div>
+    <div class="packages-grid">
+
+        <!-- Starter -->
+        <div class="package-card reveal reveal-delay-1">
+            <div class="package-badge-placeholder"></div>
+            <div class="package-name">STARTER</div>
+            <div class="package-price">$1K – $2K</div>
+            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Social media management on 2 platforms
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Google Business Profile optimization
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Basic email marketing setup
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Monthly analytics &amp; reporting
+                </li>
+            </ul>
+            <a href="contact.html" class="package-cta">GET STARTED</a>
+        </div>
+
+        <!-- Growth (Featured) -->
+        <div class="package-card featured reveal reveal-delay-2">
+            <div class="package-card-glow"></div>
+            <div class="package-card-shine"></div>
+            <div class="package-badge">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Most Popular
+            </div>
+            <div class="package-name">GROWTH</div>
+            <div class="package-price">$2K – $3K</div>
+            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Social media on 3–4 platforms
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Paid ads on 1 channel (Meta or Google)
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Local SEO optimization
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Email marketing &amp; automation
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Reputation management
+                </li>
+            </ul>
+            <a href="contact.html" class="package-cta">GET STARTED</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="package-card reveal reveal-delay-3">
+            <div class="package-badge-placeholder"></div>
+            <div class="package-name">PREMIUM</div>
+            <div class="package-price">$3K – $4K</div>
+            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+            <div class="package-divider"></div>
+            <ul class="package-features">
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Full social media across 5 platforms
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Multi-channel paid ads (Google + Meta + TikTok)
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    SEO, email &amp; SMS marketing
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Video content production
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Reputation management
+                </li>
+                <li class="package-feature">
+                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Monthly strategy calls
+                </li>
+            </ul>
+            <a href="contact.html" class="package-cta">GET STARTED</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- IMPORTANT NOTES -->
+<section class="notes-section">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Important Notes</span></div>
+            <h2 class="section-title">HOW WE WORK<br><span class="gold">WITH YOU.</span></h2>
+        </div>
+        <div class="notes-grid">
+            <div class="note-card reveal reveal-delay-1">
+                <div class="note-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div>
+                    <div class="note-title">AD SPEND IS SEPARATE</div>
+                    <p class="note-body">All paid advertising management fees are separate from the actual ad spend budget, which is paid directly to the advertising platform (Google, Meta, TikTok, etc.). You always own your ad accounts.</p>
+                </div>
+            </div>
+            <div class="note-card reveal reveal-delay-2">
+                <div class="note-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div>
+                    <div class="note-title">FREE ONBOARDING</div>
+                    <p class="note-body">All new partnerships include a complimentary onboarding session to align on goals, brand voice, target demographics, and KPIs. We come prepared — you don't need to explain CrossFit to us.</p>
+                </div>
+            </div>
+            <div class="note-card reveal reveal-delay-3">
+                <div class="note-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                </div>
+                <div>
+                    <div class="note-title">NO CONTRACTS. NO RETAINERS.</div>
+                    <p class="note-body">We don't lock you into long-term retainers or binding contracts. You pay only for the time and services you want, when you want them. Our goal is to earn your business every single month through results, not fine print.</p>
+                </div>
+            </div>
+            <div class="note-card reveal reveal-delay-4">
+                <div class="note-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                    <div class="note-title">100% MONEY-BACK GUARANTEE</div>
+                    <p class="note-body">We stand behind our work completely. If you are not satisfied with the results of any service we deliver, we offer a full 100% money-back guarantee — no questions asked. Your trust means everything to us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="final-cta-bg"></div>
+    <div class="final-cta-content reveal">
+        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
+        <h2 class="section-title">LET'S BUILD YOUR<br><span class="gold">GROWTH ENGINE.</span></h2>
+        <p class="section-subtitle">Book a free 30-minute marketing audit. We'll review your gym's online presence and hand you a specific plan — no pitch, no fluff.</p>
+        <div class="cta-actions">
+            <a href="contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
+                <span>BOOK YOUR FREE MARKETING AUDIT</span>
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p style="font-size:13px;color:rgba(255,255,255,0.35);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;margin-top:4px;">30 minutes. We review what's holding your gym back and hand you a plan to fix it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                    <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                    <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                    <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                    <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                    <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                    <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                    <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                    <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+                    </a>
+                </div>
+                <div class="footer-status">
+                    <div class="footer-status-dot"></div>
+                    <span>Accepting New Clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // NAV SCROLL
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // MOBILE MENU
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    function closeMobile() { mobileMenu.classList.remove('active'); }
+
+    // REVEAL ON SCROLL
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // SECTION TAG MOUSE GLOW
+    document.querySelectorAll('.section-tag').forEach(tag => {
+        tag.addEventListener('mousemove', e => {
+            const rect = tag.getBoundingClientRect();
+            tag.style.setProperty('--stag-x', (e.clientX - rect.left) + 'px');
+            tag.style.setProperty('--stag-y', (e.clientY - rect.top) + 'px');
+            tag.style.setProperty('--stag-op', '1');
+        });
+        tag.addEventListener('mouseleave', () => tag.style.setProperty('--stag-op', '0'));
+    });
+
+    // CURSOR GLOW
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        }, { passive: true });
+    }
+
+    // FILTER TABS — show/hide sections
+    const tabs = document.querySelectorAll('.filter-tab');
+    const pricingSections = document.querySelectorAll('.pricing-section');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.dataset.target;
+
+            // Switch active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Switch visible section
+            pricingSections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(targetId);
+            if (target) target.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

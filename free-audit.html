@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Gym Growth Audit | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Get a free personal video audit of your gym's website, ads, and online presence. Loom walkthrough delivered within 48 hours. No pitch. No strings.">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --gray: #AAAAAA;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* ===== REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== MINIMAL HEADER ===== */
+        .lp-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 0 3rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+        .lp-header.scrolled {
+            background: rgba(0,0,0,0.94);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(221,205,156,0.08);
+        }
+        .lp-header-logo img {
+            height: 170px;
+            width: auto;
+            transition: height 0.4s var(--ease-out-expo);
+        }
+        .lp-header.scrolled .lp-header-logo img { height: 130px; }
+        .lp-header-cta {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            letter-spacing: 0.12em;
+            padding: 0.55rem 1.4rem;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 9999px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+        .lp-header-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        /* ===== HERO — SPLIT LAYOUT ===== */
+        @keyframes fdiamond {
+            0%,100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+            50% { transform: rotate(45deg) translateY(-14px); opacity: 0.2; }
+        }
+        @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @keyframes scroll-pulse { 0%,100%{opacity:0.4;} 50%{opacity:1;} }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 75% 25%, rgba(221,205,156,0.055) 0%, transparent 60%),
+                var(--black);
+        }
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 20%, transparent 70%);
+        }
+
+        /* Split grid */
+        .hero-split {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 8rem 3rem 5rem;
+            display: grid;
+            grid-template-columns: 55fr 45fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* ── LEFT ── */
+        .hero-left {}
+
+        /* Badge — pill with inner tag (like component) */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            padding: 0.3rem 1rem 0.3rem 0.3rem;
+            border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 9999px;
+            background: rgba(221,205,156,0.03);
+            margin-bottom: 1.75rem;
+            width: fit-content;
+            opacity: 0;
+            animation: fade-up 0.7s var(--ease-out-expo) 0.1s forwards;
+        }
+        .hero-badge-tag {
+            background: var(--gold);
+            color: var(--black);
+            font-family: var(--font-display);
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            padding: 0.22rem 0.75rem;
+            border-radius: 9999px;
+            margin-right: 0.75rem;
+            white-space: nowrap;
+        }
+        .hero-badge-text {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.55);
+        }
+        .hero-badge-arrow {
+            margin-left: 0.6rem;
+            color: var(--gold);
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3.5rem, 6.5vw, 6rem);
+            line-height: 0.9;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.25rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.25s forwards;
+        }
+        .hero-title .gold { color: var(--gold); }
+
+        .hero-sub {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.75;
+            color: var(--white-muted);
+            max-width: 460px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.4s forwards;
+        }
+
+        /* Hero CTA button */
+        .hero-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.12em;
+            padding: 1rem 2.25rem;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.55s forwards;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hero-cta-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(221,205,156,0.22);
+        }
+        .hero-cta-btn svg { transition: transform 0.3s ease; }
+        .hero-cta-btn:hover svg { transform: translateX(3px); }
+
+        /* Checklist */
+        .hero-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.7s forwards;
+        }
+        .hero-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+        .hero-check {
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.08);
+            border: 1px solid rgba(221,205,156,0.2);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+
+        /* ── RIGHT: scrolling image gallery ── */
+        .hero-right {
+            position: relative;
+            height: 560px;
+            overflow: hidden;
+        }
+
+        /* Gradient fades — left blend + top/bottom vignette */
+        .gallery-fade-l {
+            position: absolute; top: 0; bottom: 0; left: -1px;
+            width: 48%; z-index: 4; pointer-events: none;
+            background: linear-gradient(to right, var(--black) 20%, transparent 100%);
+        }
+        .gallery-fade-t {
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 30%; z-index: 3; pointer-events: none;
+            background: linear-gradient(to bottom, var(--black) 0%, transparent 100%);
+        }
+        .gallery-fade-b {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 30%; z-index: 3; pointer-events: none;
+            background: linear-gradient(to top, var(--black) 0%, transparent 100%);
+        }
+
+        .hero-gallery {
+            position: absolute; inset: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            overflow: hidden;
+        }
+
+        .gallery-col { overflow: hidden; }
+
+        .gallery-track {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            will-change: transform;
+        }
+        .gallery-track-up   { animation: gallery-up   45s linear infinite; }
+        .gallery-track-down { animation: gallery-down 45s linear infinite; }
+
+        @keyframes gallery-up {
+            0%   { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        @keyframes gallery-down {
+            0%   { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+            aspect-ratio: 3 / 4;
+        }
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.04); }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.12em;
+            padding: 1.1rem 2.75rem;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(221,205,156,0.25);
+        }
+        .btn-gold .arrow { transition: transform 0.3s ease; }
+        .btn-gold:hover .arrow { transform: translateX(4px); }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem; left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 0.5rem;
+            opacity: 0;
+            animation: fade-up 1s var(--ease-out-expo) 1s forwards;
+        }
+        .hero-scroll span {
+            font-size: 0.58rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: rgba(255,255,255,0.18);
+        }
+        .scroll-line {
+            width: 1px; height: 36px;
+            background: linear-gradient(to bottom, rgba(221,205,156,0.4), transparent);
+            animation: scroll-pulse 2s ease-in-out infinite;
+        }
+
+        @media (max-width: 960px) {
+            .hero-split { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 0; }
+            .hero-right { display: none; }
+            .hero-title { font-size: clamp(3rem, 10vw, 5rem); }
+            .hero-sub { max-width: 100%; }
+            .hero-form { max-width: 100%; }
+        }
+
+        /* ===== SECTION UTILITY ===== */
+        .section { padding: 8rem 3rem; }
+        .section-alt { background: var(--black-soft); }
+        .container { max-width: 960px; margin: 0 auto; }
+        .container-wide { max-width: 1100px; margin: 0 auto; }
+        .eyebrow {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 5.5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
+        .section-title .gold { color: var(--gold); }
+        .section-divider {
+            width: 48px; height: 2px;
+            background: var(--gold);
+            margin-bottom: 2rem;
+        }
+        .body-copy {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.85;
+            color: var(--white-muted);
+        }
+        .body-copy p + p { margin-top: 1.25em; }
+        .body-copy strong { color: var(--white-muted); font-weight: 600; }
+
+        /* ===== PROBLEM SECTION ===== */
+        .problem-section {
+            padding: 8rem 3rem;
+            border-top: 1px solid rgba(221,205,156,0.06);
+        }
+        .problem-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .problem-accent {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            letter-spacing: 0.03em;
+            color: var(--white);
+            margin-bottom: 2rem;
+            line-height: 1.15;
+        }
+        .problem-accent .gold { color: var(--gold); }
+
+        /* ===== WHAT YOU GET ===== */
+        .get-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 3rem 0;
+        }
+        .get-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: border-color 0.3s ease, transform 0.35s ease;
+        }
+        .get-card:hover {
+            border-color: rgba(221,205,156,0.2);
+            transform: translateY(-4px);
+        }
+        .get-card-icon {
+            width: 42px; height: 42px;
+            border-radius: 10px;
+            background: rgba(221,205,156,0.07);
+            border: 1px solid rgba(221,205,156,0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+        .get-card-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.05em;
+            color: var(--gold-light);
+            margin-bottom: 0.6rem;
+        }
+        .get-card-body {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        .get-callout {
+            background: rgba(221,205,156,0.04);
+            border: 1px solid rgba(221,205,156,0.15);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 1.75rem;
+        }
+        .get-callout p {
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        .get-callout strong { color: var(--gold); }
+
+        /* ===== WHO THIS IS FOR ===== */
+        .for-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+        .for-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.07);
+            border-radius: 12px;
+            transition: border-color 0.3s ease;
+        }
+        .for-item:hover { border-color: rgba(221,205,156,0.18); }
+        .for-check {
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.1);
+            border: 1px solid rgba(221,205,156,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            color: var(--gold);
+        }
+        .for-text {
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--white);
+        }
+        .for-not {
+            padding: 1.5rem 1.75rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+        }
+        .for-not p {
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-muted);
+            font-style: italic;
+        }
+
+        /* ===== WHY FREE ===== */
+        .why-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .why-cap {
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+            letter-spacing: 0.03em;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+        .proof-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 14px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .proof-card-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            gap: 1rem;
+            text-align: center;
+        }
+        .proof-placeholder-icon {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.06);
+            border: 1px dashed rgba(221,205,156,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(221,205,156,0.3);
+        }
+        .proof-placeholder-label {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: rgba(221,205,156,0.25);
+        }
+        .proof-placeholder-sub {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.15);
+            letter-spacing: 0.05em;
+        }
+        .proof-coming {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            padding: 7rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .form-section-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(221,205,156,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .form-section-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 75%);
+            pointer-events: none;
+        }
+        .form-wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .form-header {
+            text-align: left;
+        }
+        /* Form card — matches contact.html glowing card */
+        .form-card {
+            position: relative;
+            border-radius: 1.75rem;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(221,205,156,0.08);
+        }
+        .form-card .fc-noise {
+            position: absolute; inset: 0;
+            opacity: 0.2; mix-blend-mode: overlay;
+            pointer-events: none; z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .form-card .fc-glow {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 50%; z-index: 2; pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom right, rgba(221,205,156,0.3) -10%, transparent 65%),
+                radial-gradient(ellipse at bottom left, rgba(184,167,108,0.25) -10%, transparent 65%);
+            filter: blur(35px); opacity: 0.6;
+        }
+        .form-card .fc-glow-center {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 45%; z-index: 2; pointer-events: none;
+            background: radial-gradient(circle at bottom center, rgba(221,205,156,0.35) -20%, transparent 55%);
+            filter: blur(40px); opacity: 0.5;
+        }
+        .form-card .fc-reflection {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.03) 100%);
+            pointer-events: none; z-index: 3;
+        }
+        .form-card .fc-edge {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 2px; z-index: 4; pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.03) 100%);
+            box-shadow: 0 0 12px 2px rgba(221,205,156,0.4), 0 0 25px 4px rgba(184,167,108,0.2);
+        }
+        .form-card .fc-edge-left {
+            position: absolute; bottom: 0; left: 0;
+            width: 1px; height: 25%; z-index: 4; pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 40%, transparent 100%);
+            box-shadow: 0 0 10px 1px rgba(221,205,156,0.3);
+        }
+        .form-card .fc-edge-right {
+            position: absolute; bottom: 0; right: 0;
+            width: 1px; height: 25%; z-index: 4; pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 40%, transparent 100%);
+            box-shadow: 0 0 10px 1px rgba(221,205,156,0.3);
+        }
+        .form-inner {
+            position: relative; z-index: 10;
+            padding: 2.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(221,205,156,0.28);
+            border-radius: 12px;
+            padding: 0.85rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(255,255,255,0.45); }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(221,205,156,0.5);
+            box-shadow: 0 0 0 3px rgba(221,205,156,0.08);
+            background: rgba(255,255,255,0.09);
+        }
+        .form-group select {
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23AAAAAA' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+        .form-group select option { background: var(--black-card); color: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .req { color: #f87171; }
+        .form-optional {
+            font-size: 0.6rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.08em;
+            text-transform: none;
+            margin-left: 0.3rem;
+        }
+        .form-required-note {
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.45);
+            margin-top: 0.5rem;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+        .form-disclaimer {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+            padding: 0.9rem 1rem;
+            background: rgba(221,205,156,0.03);
+            border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 10px;
+        }
+        .form-disclaimer p {
+            font-size: 0.72rem;
+            font-weight: 400;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.6);
+        }
+        .ads-toggle { display: flex; gap: 0.75rem; }
+        .ads-btn {
+            flex: 1; padding: 0.85rem;
+            font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.1em;
+            text-align: center; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(221,205,156,0.2); border-radius: 10px;
+            color: var(--white-muted); cursor: pointer; transition: all 0.25s ease;
+        }
+        .ads-btn:hover { border-color: rgba(221,205,156,0.4); color: var(--white); }
+        .ads-btn.active { background: rgba(221,205,156,0.1); border-color: rgba(221,205,156,0.4); color: var(--gold); }
+        .field-error { display: none; color: #f87171; font-size: 0.7rem; font-weight: 500; margin-top: 0.35rem; }
+        .field-error.visible { display: block; }
+        .form-group input.error-state,
+        .form-group textarea.error-state { border-color: rgba(248,113,113,0.45); }
+        /* Submit button — matches contact.html */
+        .btn-submit-gold {
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            gap: 0.75rem; width: 100%;
+            font-family: var(--font-display);
+            font-size: 1.15rem; letter-spacing: 0.1em;
+            padding: 1.1rem 2.5rem;
+            background: rgba(221,205,156,0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25);
+            border-radius: 9999px;
+            position: relative; overflow: hidden;
+            transition: all 0.5s ease; cursor: pointer; margin-top: 0.5rem;
+        }
+        .btn-submit-gold::before {
+            content: ''; position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%); width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+        .btn-submit-gold::after {
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%); width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35; transition: opacity 0.5s ease;
+        }
+        .btn-submit-gold:hover {
+            background: rgba(221,205,156,0.12);
+            border-color: rgba(221,205,156,0.5);
+            color: var(--gold-light);
+            box-shadow: 0 0 25px rgba(221,205,156,0.2), 0 0 60px rgba(221,205,156,0.08), inset 0 0 25px rgba(221,205,156,0.06);
+        }
+        .btn-submit-gold:hover::before { opacity: 1; }
+        .btn-submit-gold:hover::after { opacity: 1; }
+        .btn-submit-gold .arrow { transition: transform 0.3s ease; }
+        .btn-submit-gold:hover .arrow { transform: translateX(4px); }
+        .form-fine {
+            text-align: center; margin-top: 1rem;
+            font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.6;
+        }
+        .form-fine strong { color: rgba(221,205,156,0.9); }
+
+        /* ===== SCARCITY BAR ===== */
+        .scarcity-bar {
+            background: rgba(221,205,156,0.05);
+            border-top: 1px solid rgba(221,205,156,0.1);
+            border-bottom: 1px solid rgba(221,205,156,0.1);
+            padding: 1rem 3rem;
+            text-align: center;
+        }
+        .scarcity-bar p {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+        }
+        .scarcity-bar span {
+            color: rgba(255,255,255,0.4);
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-left: 1rem;
+        }
+
+        /* ===== LP FOOTER ===== */
+        .footer {
+            position: relative;
+            border-top: 1px solid rgba(221, 205, 156, 0.1);
+            border-radius: 12px 12px 0 0;
+            padding: 5rem 3rem 2.5rem;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-grid-bg {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(221, 205, 156, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221, 205, 156, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem; margin-bottom: 3.5rem; align-items: start;
+        }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img {
+            height: 170px; width: auto;
+            align-self: flex-start; margin-left: -15px; margin-top: -20px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem; font-weight: 400;
+            color: var(--white-muted); line-height: 1.7; max-width: 340px;
+        }
+        .footer-email-group {
+            display: flex; align-items: center; gap: 0.5rem;
+            margin-top: 0.5rem; max-width: 320px;
+        }
+        .footer-email-group input {
+            flex: 1; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(221,205,156,0.15); border-radius: 10px;
+            padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.8rem;
+            color: var(--white); outline: none; transition: border-color 0.3s ease;
+        }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-group input:focus { border-color: rgba(221,205,156,0.4); }
+        .footer-email-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; background: var(--gold);
+            border-radius: 10px; color: var(--black); flex-shrink: 0;
+            transition: background 0.3s ease;
+        }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 {
+            font-family: var(--font-display); font-size: 0.85rem;
+            font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 1.25rem;
+        }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a {
+            font-size: 0.85rem; font-weight: 400; color: var(--white-dim);
+            transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.6rem;
+        }
+        .footer ul li a .link-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: rgba(255,255,255,0.12); transition: all 0.25s ease; flex-shrink: 0;
+        }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04);
+            flex-wrap: wrap; gap: 1rem;
+        }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials {
+            display: flex; gap: 1rem;
+            padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status {
+            display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.35rem 0.85rem; border-radius: 9999px;
+            background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.1);
+        }
+        .footer-status-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #4ade80; animation: pulse-green 2s ease-in-out infinite;
+        }
+        .footer-status span {
+            font-size: 0.6rem; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: rgba(74,222,128,0.7);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 860px) {
+            .form-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+            .form-header { position: static; }
+        }
+        @media (max-width: 768px) {
+            .form-row-2 { grid-template-columns: 1fr; }
+            .lp-header { padding: 0 1.5rem; }
+            .hero { padding: 0 1.5rem; }
+            .hero-inner { padding-top: 5rem; }
+            .section { padding: 5rem 1.5rem; }
+            .problem-section { padding: 5rem 1.5rem; }
+            .form-section { padding: 5rem 1.5rem; }
+            .get-grid { grid-template-columns: 1fr; }
+            .proof-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 2rem 1.5rem; }
+            .scarcity-bar { padding: 1rem 1.5rem; }
+            .btn-gold { font-size: 1.1rem; padding: 1rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MINIMAL HEADER -->
+<header class="lp-header" id="lpHeader">
+    <a href="index.html" class="lp-header-logo">
+        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    </a>
+    <a href="#claim" class="lp-header-cta">CLAIM YOUR FREE AUDIT</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-split">
+
+        <!-- LEFT: Copy + form -->
+        <div class="hero-left">
+
+            <!-- Badge pill (component-style) -->
+            <div class="hero-badge">
+                <span class="hero-badge-tag">FREE</span>
+                <span class="hero-badge-text">Qualifying Gyms Only · 10 Spots This Month</span>
+                <svg class="hero-badge-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+
+            <h1 class="hero-title">
+                YOUR GYM DESERVES<br>A <span class="gold">PACKED FLOOR.</span>
+            </h1>
+
+            <p class="hero-sub">Find out exactly what is stopping that from happening — and get the 3 highest-impact fixes delivered in a personal video.</p>
+
+            <!-- CTA button — scrolls to claim form -->
+            <a href="#claim" class="hero-cta-btn">
+                GET MY FREE AUDIT
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <!-- Three-point checklist -->
+            <ul class="hero-checklist">
+                <li>
+                    <span class="hero-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Personal Loom walkthrough — not a PDF template
+                </li>
+                <li>
+                    <span class="hero-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    Delivered within 48 hours
+                </li>
+                <li>
+                    <span class="hero-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                    No sales call. No credit card. No strings.
+                </li>
+            </ul>
+        </div>
+
+        <!-- RIGHT: Scrolling image gallery -->
+        <div class="hero-right" aria-hidden="true">
+            <div class="gallery-fade-l"></div>
+            <div class="gallery-fade-t"></div>
+            <div class="gallery-fade-b"></div>
+            <div class="hero-gallery">
+                <!-- Column 1: scrolls upward -->
+                <div class="gallery-col">
+                    <div class="gallery-track gallery-track-up">
+                        <div class="gallery-item"><img src="gym-barbell-lift.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-coach-athlete.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-coach-floor.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-cycling-class.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-1.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-3.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-5.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-7.jpg" alt="" loading="lazy"></div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="gallery-item"><img src="gym-barbell-lift.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-coach-athlete.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-coach-floor.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-cycling-class.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-1.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-3.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-5.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-7.jpg" alt="" loading="lazy"></div>
+                    </div>
+                </div>
+                <!-- Column 2: scrolls downward -->
+                <div class="gallery-col">
+                    <div class="gallery-track gallery-track-down">
+                        <div class="gallery-item"><img src="gym-deadlift-smoke.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-group-class.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-group-squat.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-smoke-lift.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-2.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-4.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-6.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-8.jpg" alt="" loading="lazy"></div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="gallery-item"><img src="gym-deadlift-smoke.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-group-class.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-group-squat.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="gym-smoke-lift.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-2.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-4.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-6.jpg" alt="" loading="lazy"></div>
+                        <div class="gallery-item"><img src="story-img-8.jpg" alt="" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- PROBLEM / AGITATION -->
+<section class="problem-section section-alt">
+    <div class="problem-inner">
+        <div class="reveal">
+            <p class="eyebrow">The Real Problem</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="problem-accent reveal reveal-delay-1">
+            You are running a great gym. Good coaches. Solid programming. Athletes who get real results.<br><br>
+            But your floor is not as full as it <span class="gold">should be.</span>
+        </div>
+        <div class="body-copy reveal reveal-delay-2">
+            <p>You are probably already running ads. Maybe you have a website. Maybe you are posting on Instagram three times a week. And still, new members are not coming in at the rate you need.</p>
+            <p><strong>Here is what most gym owners do not know:</strong> the problem is almost never the gym. It is the marketing system surrounding it. The wrong message. A website that does not convert. Ads that get clicks but not members. Lead follow-up that goes cold.</p>
+            <p>And the worst part? You will not know which one is the problem until someone actually looks at your specific situation.</p>
+            <p><strong>That is exactly what this audit is.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section">
+    <div class="container-wide">
+        <div class="reveal">
+            <p class="eyebrow">What's Included</p>
+            <h2 class="section-title">WHAT YOU <span class="gold">GET</span></h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="body-copy reveal reveal-delay-1" style="max-width:680px;">
+            <p>This is not a strategy call where I ask you questions for 45 minutes and give you a PDF. I will actually look at your gym's marketing presence before we ever talk. Then I will send you a personal Loom video walking through:</p>
+        </div>
+
+        <div class="get-grid">
+            <div class="get-card reveal reveal-delay-1">
+                <div class="get-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                </div>
+                <div class="get-card-title">YOUR WEBSITE</div>
+                <p class="get-card-body">Is it built to convert visitors into leads, or is it just a digital brochure? I will look at your messaging, layout, calls-to-action, and load speed.</p>
+            </div>
+            <div class="get-card reveal reveal-delay-2">
+                <div class="get-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                </div>
+                <div class="get-card-title">YOUR ADS</div>
+                <p class="get-card-body">If you are running them, what is working and what is bleeding your budget? If you are not, what your competitors are doing that you are missing.</p>
+            </div>
+            <div class="get-card reveal reveal-delay-3">
+                <div class="get-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </div>
+                <div class="get-card-title">YOUR GOOGLE PRESENCE</div>
+                <p class="get-card-body">Are athletes finding you when they search for a gym in your area? I will audit your Google Business Profile, local SEO, and search rankings.</p>
+            </div>
+            <div class="get-card reveal reveal-delay-4">
+                <div class="get-card-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div class="get-card-title">YOUR SOCIAL PROOF</div>
+                <p class="get-card-body">Are reviews, testimonials, and UGC working for you or against you? Social proof is often what turns a curious visitor into a paying member.</p>
+            </div>
+        </div>
+
+        <div class="get-callout reveal">
+            <p>At the end, you will get <strong>3 specific, prioritized action items</strong> you can act on this week. Not generic advice. Not a template. <strong>Your gym, your market, your fixes.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="reveal">
+            <p class="eyebrow">Is This For You?</p>
+            <h2 class="section-title">WHO THIS <span class="gold">IS FOR</span></h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="body-copy reveal reveal-delay-1" style="margin-bottom:0.5rem;">
+            <p>This audit is built for gym owners who:</p>
+        </div>
+
+        <ul class="for-list">
+            <li class="for-item reveal reveal-delay-1">
+                <span class="for-check">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="for-text">Are spending money on ads but not seeing consistent new members join</p>
+            </li>
+            <li class="for-item reveal reveal-delay-2">
+                <span class="for-check">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="for-text">Know their marketing is not where it needs to be but are not sure where the breakdown is</p>
+            </li>
+            <li class="for-item reveal reveal-delay-3">
+                <span class="for-check">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="for-text">Want a real outside perspective from someone who works exclusively with gyms</p>
+            </li>
+            <li class="for-item reveal reveal-delay-4">
+                <span class="for-check">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                <p class="for-text">Are serious about growth and will actually look at and implement the feedback they receive</p>
+            </li>
+        </ul>
+
+        <div class="for-not reveal">
+            <p>If you are looking for someone to validate that everything is fine, this is not for you. This audit is for gym owners who want the truth and want to act on it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY IS THIS FREE -->
+<section class="section">
+    <div class="why-inner">
+        <div class="reveal">
+            <p class="eyebrow">Full Transparency</p>
+            <h2 class="section-title">WHY IS THIS <span class="gold">FREE?</span></h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="reveal reveal-delay-1">
+            <p class="why-cap">"We work exclusively with gyms. The best way to prove value is to prove it before asking for anything."</p>
+        </div>
+        <div class="body-copy reveal reveal-delay-2">
+            <p>Enoch Marketing works exclusively with gyms. We are building a track record, and the best way to do that is to prove the value before asking for anything.</p>
+            <p>You get a real audit. We get to show what we can do. <strong>No pitch at the end.</strong> If you want to talk about working together after you see the video, we are open to that conversation. But that is entirely up to you.</p>
+            <p>We are capping this at <strong>10 audits this month</strong> so we can actually deliver quality work for each one.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- FORM + FINAL CTA -->
+<section class="form-section" id="claim">
+    <div class="form-section-bg"></div>
+    <div class="form-section-grid"></div>
+
+    <div class="form-wrap">
+
+        <!-- LEFT: Text -->
+        <div class="form-header reveal">
+            <p class="eyebrow">Claim Your Spot</p>
+            <h2 class="section-title">READY TO SEE WHAT IS<br><span class="gold">HOLDING YOUR GYM BACK?</span></h2>
+            <div class="section-divider" style="margin-top:1.5rem;"></div>
+            <p style="font-size:0.9rem;color:var(--white-muted);line-height:1.85;margin-top:1.25rem;">Fill out the short form. Takes 90 seconds. I will review your gym's marketing before recording — so the feedback is specific to you, not a template.</p>
+            <ul style="margin-top:1.75rem;display:flex;flex-direction:column;gap:0.75rem;">
+                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
+                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    Personal Loom — not a generic PDF
+                </li>
+                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
+                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    Delivered within 48 hours
+                </li>
+                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
+                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    No sales call · No credit card · No strings
+                </li>
+            </ul>
+            <p style="margin-top:2rem;font-size:0.72rem;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;">10 spots available this month</p>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div>
+
+        <div class="form-card reveal">
+            <div class="fc-noise"></div>
+            <div class="fc-glow"></div>
+            <div class="fc-glow-center"></div>
+            <div class="fc-reflection"></div>
+            <div class="fc-edge"></div>
+            <div class="fc-edge-left"></div>
+            <div class="fc-edge-right"></div>
+
+            <div class="form-inner">
+                <form id="auditForm" onsubmit="handleAuditSubmit(event)">
+                    <input type="hidden" name="_subject" value="Free Gym Audit Request | Enoch Marketing">
+                    <input type="hidden" name="_replyto" id="auditReplyTo" value="">
+                    <input type="hidden" name="Running Paid Ads" id="hiddenAds" value="Not answered">
+
+                    <!-- Row: Name + Gym -->
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="auditFirstName">First Name <span class="req">*</span></label>
+                            <input type="text" id="auditFirstName" name="First Name" placeholder="John" required>
+                            <span class="field-error" id="errFirstName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="auditGymName">Gym Name <span class="req">*</span></label>
+                            <input type="text" id="auditGymName" name="Gym Name" placeholder="Iron Republic CrossFit" required>
+                            <span class="field-error" id="errGymName"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="auditEmail">Email Address <span class="req">*</span></label>
+                        <input type="email" id="auditEmail" name="Email" placeholder="john@yourgym.com" required>
+                        <span class="field-error" id="errEmail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="auditWebsite">Gym Website <span class="req">*</span></label>
+                        <input type="url" id="auditWebsite" name="Website URL" placeholder="https://yourgym.com" required>
+                        <span class="field-error" id="errWebsite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Running Paid Ads?</label>
+                        <div class="ads-toggle">
+                            <button type="button" class="ads-btn" id="adsYes" onclick="selectAds('Yes')">YES</button>
+                            <button type="button" class="ads-btn" id="adsNo" onclick="selectAds('No')">NO</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="auditChallenge">Biggest Marketing Challenge <span class="form-optional">(optional)</span></label>
+                        <textarea id="auditChallenge" name="Biggest Marketing Challenge" placeholder="What's not working right now? Ads, foot traffic, website, social — anything goes."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit-gold" id="auditSubmitBtn">
+                        SEND ME MY FREE AUDIT
+                        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <!-- Privacy disclaimer -->
+                    <div class="form-disclaimer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;color:rgba(221,205,156,0.5);margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <p>Your information is 100% private. We never share, sell, or distribute your data to any third party — ever. This audit is between you and us.</p>
+                    </div>
+
+                    <p class="form-fine">
+                        <strong>10 spots available this month.</strong> Once claimed, this page closes.
+                    </p>
+                    <p class="form-required-note"><span style="color:#f87171;">*</span> Required fields</p>
+                </form>
+            </div>
+        </div>
+        </div><!-- /right col -->
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                    <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                    <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                    <li><a href="index.html#process"><span class="link-dot"></span>Process</a></li>
+                    <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                    <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                    <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                    <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                    <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                    <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+                </div>
+                <div class="footer-status">
+                    <div class="footer-status-dot"></div>
+                    <span>Accepting New Clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // HEADER SCROLL
+    const lpHeader = document.getElementById('lpHeader');
+    window.addEventListener('scroll', () => {
+        lpHeader.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // REVEAL ON SCROLL
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => revealObs.observe(el));
+
+    // ADS TOGGLE
+    function selectAds(val) {
+        document.getElementById('adsYes').classList.toggle('active', val === 'Yes');
+        document.getElementById('adsNo').classList.toggle('active', val === 'No');
+        document.getElementById('hiddenAds').value = val;
+    }
+
+    // FIELD HELPERS
+    function setErr(inputId, errId, msg) {
+        document.getElementById(inputId).classList.add('error-state');
+        const el = document.getElementById(errId);
+        el.textContent = msg; el.classList.add('visible');
+    }
+    function clearErr(inputId, errId) {
+        document.getElementById(inputId).classList.remove('error-state');
+        document.getElementById(errId).classList.remove('visible');
+    }
+
+    ['auditFirstName','auditGymName','auditEmail','auditWebsite'].forEach(id => {
+        const errMap = { auditFirstName:'errFirstName', auditGymName:'errGymName', auditEmail:'errEmail', auditWebsite:'errWebsite' };
+        document.getElementById(id).addEventListener('input', () => clearErr(id, errMap[id]));
+    });
+
+    // ── TELEGRAM CONFIG ───────────────────────────────────────────────────────
+    // SETUP (takes ~3 minutes):
+    //  1. Open Telegram → search @BotFather → send /newbot → follow prompts
+    //     Copy the token it gives you (looks like: 7812345678:AABbCcDdEeFf...)
+    //  2. Open a chat with your new bot and send any message (e.g. "hello")
+    //  3. Visit: https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates
+    //     Find "chat":{"id": XXXXXXXXX} — that number is your chat ID
+    //  4. Paste both values below and you're done.
+    const TELEGRAM_BOT_TOKEN = '8614798353:AAEH8RluMWKEAWvKKMHUD1cUE7-FBAPJO2I';
+    const TELEGRAM_CHAT_ID   = '6526007854';
+    // ─────────────────────────────────────────────────────────────────────────
+
+    async function handleAuditSubmit(e) {
+        e.preventDefault();
+
+        if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
+            alert('Telegram not connected yet — see setup instructions in the script.');
+            return;
+        }
+
+        const firstName = document.getElementById('auditFirstName').value.trim();
+        const gymName   = document.getElementById('auditGymName').value.trim();
+        const email     = document.getElementById('auditEmail').value.trim();
+        const website   = document.getElementById('auditWebsite').value.trim();
+        const challenge = document.getElementById('auditChallenge').value.trim();
+        const ads       = document.getElementById('hiddenAds').value;
+
+        let valid = true;
+        if (!firstName) { setErr('auditFirstName','errFirstName','Please enter your first name.'); valid = false; }
+        if (!gymName)   { setErr('auditGymName','errGymName','Please enter your gym name.'); valid = false; }
+        if (!email)     { setErr('auditEmail','errEmail','Please enter your email address.'); valid = false; }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('auditEmail','errEmail','Please enter a valid email.'); valid = false; }
+        if (!website)   { setErr('auditWebsite','errWebsite','Please enter your gym website URL.'); valid = false; }
+        if (!valid) {
+            const firstErr = document.querySelector('.form-group input.error-state');
+            if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        const btn = document.getElementById('auditSubmitBtn');
+        btn.innerHTML = 'SENDING...';
+        btn.disabled = true;
+
+        const now = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', dateStyle: 'medium', timeStyle: 'short' });
+
+        const message =
+`🏋️ <b>NEW GYM AUDIT REQUEST</b>
+━━━━━━━━━━━━━━━━━━━━
+👤 <b>Name:</b> ${firstName}
+🏟 <b>Gym:</b> ${gymName}
+📧 <b>Email:</b> ${email}
+🌐 <b>Website:</b> ${website}
+📣 <b>Running Ads:</b> ${ads}${challenge ? `\n💬 <b>Challenge:</b>\n<i>${challenge}</i>` : ''}
+━━━━━━━━━━━━━━━━━━━━
+🕐 ${now} CT`;
+
+        try {
+            const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML',
+                    disable_web_page_preview: true
+                })
+            });
+            const data = await res.json();
+            if (data.ok) {
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> REQUEST SENT — WE\'LL BE IN TOUCH';
+                btn.style.background = 'rgba(74,222,128,0.12)';
+                btn.style.borderColor = 'rgba(74,222,128,0.3)';
+                btn.style.color = '#4ade80';
+                e.target.reset();
+                document.getElementById('adsYes').classList.remove('active');
+                document.getElementById('adsNo').classList.remove('active');
+                document.getElementById('hiddenAds').value = 'Not answered';
+            } else {
+                throw new Error(data.description || 'Telegram error');
+            }
+        } catch (err) {
+            btn.innerHTML = 'ERROR — PLEASE TRY AGAIN';
+            btn.style.color = '#f87171';
+            btn.disabled = false;
+        }
+    }
+</script>
+
+</body>
+</html>

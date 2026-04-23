@@ -604,45 +604,88 @@
             gap: 1.5rem;
             align-items: stretch;
         }
+
+        /* ── Glowing package card (matches form card style) ── */
         .package-card {
-            background: var(--black-card);
-            border: 1px solid rgba(221,205,156,0.1);
-            border-radius: 16px;
-            padding: 2.5rem;
             position: relative;
+            border-radius: 1.75rem;
             overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(221,205,156,0.08);
             display: flex;
             flex-direction: column;
-            transition: transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease, border-color 0.4s ease;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s var(--ease-out-quart);
         }
         .package-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transform: translateY(-5px);
+            border-color: rgba(221,205,156,0.15);
+            box-shadow: 0 -6px 50px 3px rgba(221,205,156,0.08), 0 20px 60px rgba(0,0,0,0.5);
         }
         .package-card.featured {
-            background: var(--black-elevated);
-            border-color: rgba(221,205,156,0.35);
-            box-shadow: 0 0 60px rgba(221,205,156,0.08), 0 20px 60px rgba(0,0,0,0.5);
+            border-color: rgba(221,205,156,0.2);
+            box-shadow: 0 -10px 80px 5px rgba(221,205,156,0.14), 0 20px 60px rgba(0,0,0,0.5);
         }
         .package-card.featured:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 80px rgba(221,205,156,0.12), 0 30px 80px rgba(0,0,0,0.6);
+            border-color: rgba(221,205,156,0.3);
+            box-shadow: 0 -12px 100px 8px rgba(221,205,156,0.2), 0 30px 80px rgba(0,0,0,0.6);
         }
-        .package-card-glow {
-            position: absolute;
-            top: -60px; left: 50%;
-            transform: translateX(-50%);
-            width: 200px; height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(221,205,156,0.12) 0%, transparent 70%);
-            pointer-events: none;
+
+        /* Glow layers */
+        .pc-noise {
+            position: absolute; inset: 0; opacity: 0.18; mix-blend-mode: overlay;
+            pointer-events: none; z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
-        .package-card-shine {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(221,205,156,0.4), transparent);
+        .pc-glow {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+            z-index: 2; pointer-events: none;
+            background:
+                radial-gradient(ellipse at bottom right, rgba(221,205,156,0.28) -10%, transparent 65%),
+                radial-gradient(ellipse at bottom left, rgba(184,167,108,0.22) -10%, transparent 65%);
+            filter: blur(35px); opacity: 0.55;
         }
+        .package-card.featured .pc-glow { opacity: 0.75; }
+        .pc-glow-center {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 45%;
+            z-index: 2; pointer-events: none;
+            background: radial-gradient(circle at bottom center, rgba(221,205,156,0.32) -20%, transparent 55%);
+            filter: blur(40px); opacity: 0.45;
+        }
+        .package-card.featured .pc-glow-center { opacity: 0.65; }
+        .pc-reflection {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.02) 100%);
+            pointer-events: none; z-index: 3;
+        }
+        .pc-edge {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+            z-index: 4; pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.02) 100%);
+            box-shadow: 0 0 12px 2px rgba(221,205,156,0.35), 0 0 25px 4px rgba(184,167,108,0.18);
+        }
+        .pc-edge-l {
+            position: absolute; bottom: 0; left: 0; width: 1px; height: 25%;
+            z-index: 4; pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 40%, transparent 100%);
+            box-shadow: 0 0 10px 1px rgba(221,205,156,0.25);
+        }
+        .pc-edge-r {
+            position: absolute; bottom: 0; right: 0; width: 1px; height: 25%;
+            z-index: 4; pointer-events: none;
+            background: linear-gradient(to top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.12) 40%, transparent 100%);
+            box-shadow: 0 0 10px 1px rgba(221,205,156,0.25);
+        }
+
+        /* Inner content wrapper */
+        .pkg-inner {
+            position: relative;
+            z-index: 10;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
         .package-badge {
             display: inline-flex;
             align-items: center;
@@ -657,11 +700,9 @@
             padding: 0.3rem 0.85rem;
             border-radius: 9999px;
             margin-bottom: 1.5rem;
+            width: fit-content;
         }
-        .package-badge-placeholder {
-            height: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
+        .package-badge-placeholder { height: 1.8rem; margin-bottom: 1.5rem; }
         .package-name {
             font-family: var(--font-display);
             font-size: 2rem;
@@ -680,18 +721,18 @@
         .package-price-note {
             font-size: 0.75rem;
             font-weight: 400;
-            color: var(--white-dim);
+            color: rgba(255,255,255,0.4);
             margin-bottom: 2rem;
         }
         .package-divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(221,205,156,0.15), transparent);
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.18), transparent);
             margin-bottom: 1.75rem;
         }
         .package-features {
             display: flex;
             flex-direction: column;
-            gap: 0.85rem;
+            gap: 0;
             margin-bottom: 2.5rem;
             flex: 1;
         }
@@ -699,24 +740,34 @@
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             font-weight: 400;
-            color: var(--white-muted);
-            line-height: 1.5;
+            line-height: 1.45;
+            padding: 0.65rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .package-feature-check {
-            width: 16px;
-            height: 16px;
+        .package-feature:last-child { border-bottom: none; }
+        .package-feature.included { color: var(--white-muted); }
+        .package-feature.excluded { color: rgba(255,255,255,0.3); }
+
+        /* Check / X icons */
+        .feat-icon {
+            width: 17px; height: 17px;
             border-radius: 50%;
-            background: rgba(221,205,156,0.1);
-            border: 1px solid rgba(221,205,156,0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 1px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 1px;
         }
-        .package-feature-check svg { color: var(--gold); }
+        .feat-icon.yes {
+            background: rgba(74,222,128,0.12);
+            border: 1px solid rgba(74,222,128,0.3);
+            color: #4ade80;
+        }
+        .feat-icon.no {
+            background: rgba(248,113,113,0.08);
+            border: 1px solid rgba(248,113,113,0.2);
+            color: rgba(248,113,113,0.5);
+        }
+
         .package-cta {
             display: block;
             text-align: center;
@@ -728,16 +779,12 @@
             color: var(--gold);
             border: 1px solid rgba(221,205,156,0.2);
             border-radius: 9999px;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
             transition: all 0.4s ease;
         }
         .package-cta::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 60%; height: 1px;
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%); width: 60%; height: 1px;
             background: linear-gradient(to right, transparent, var(--gold), transparent);
             opacity: 0.3;
         }
@@ -748,11 +795,11 @@
             box-shadow: 0 0 25px rgba(221,205,156,0.15);
         }
         .package-card.featured .package-cta {
-            background: rgba(221,205,156,0.12);
-            border-color: rgba(221,205,156,0.4);
+            background: rgba(221,205,156,0.1);
+            border-color: rgba(221,205,156,0.35);
         }
         .package-card.featured .package-cta:hover {
-            background: rgba(221,205,156,0.2);
+            background: rgba(221,205,156,0.18);
             border-color: var(--gold);
         }
 
@@ -1295,105 +1342,178 @@
     </div>
     <div class="packages-grid">
 
-        <!-- Starter -->
+        <!-- STARTER -->
         <div class="package-card reveal reveal-delay-1">
-            <div class="package-badge-placeholder"></div>
-            <div class="package-name">STARTER</div>
-            <div class="package-price">$1K – $2K</div>
-            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-            <div class="package-divider"></div>
-            <ul class="package-features">
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Social media management on 2 platforms
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Google Business Profile optimization
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Basic email marketing setup
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Monthly analytics &amp; reporting
-                </li>
-            </ul>
-            <a href="contact.html" class="package-cta">GET STARTED</a>
-        </div>
-
-        <!-- Growth (Featured) -->
-        <div class="package-card featured reveal reveal-delay-2">
-            <div class="package-card-glow"></div>
-            <div class="package-card-shine"></div>
-            <div class="package-badge">
-                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Most Popular
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge-placeholder"></div>
+                <div class="package-name">STARTER</div>
+                <div class="package-price">$1K – $2K</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Social media management — 2 platforms
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Google Business Profile optimization
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Basic email marketing setup
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Monthly analytics &amp; reporting
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Paid advertising management
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Local SEO optimization
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Reputation management
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Video content production
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Monthly strategy calls
+                    </li>
+                </ul>
+                <a href="contact.html" class="package-cta">GET STARTED</a>
             </div>
-            <div class="package-name">GROWTH</div>
-            <div class="package-price">$2K – $3K</div>
-            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-            <div class="package-divider"></div>
-            <ul class="package-features">
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Social media on 3–4 platforms
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Paid ads on 1 channel (Meta or Google)
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Local SEO optimization
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Email marketing &amp; automation
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Reputation management
-                </li>
-            </ul>
-            <a href="contact.html" class="package-cta">GET STARTED</a>
         </div>
 
-        <!-- Premium -->
+        <!-- GROWTH (Featured) -->
+        <div class="package-card featured reveal reveal-delay-2">
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Most Popular
+                </div>
+                <div class="package-name">GROWTH</div>
+                <div class="package-price">$2K – $3K</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Social media management — 3–4 platforms
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Google Business Profile optimization
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Email marketing &amp; automation
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Monthly analytics &amp; reporting
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Paid ads — 1 channel (Meta or Google)
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Local SEO optimization
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Reputation management
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Video content production
+                    </li>
+                    <li class="package-feature excluded">
+                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                        Monthly strategy calls
+                    </li>
+                </ul>
+                <a href="contact.html" class="package-cta">GET STARTED</a>
+            </div>
+        </div>
+
+        <!-- PREMIUM -->
         <div class="package-card reveal reveal-delay-3">
-            <div class="package-badge-placeholder"></div>
-            <div class="package-name">PREMIUM</div>
-            <div class="package-price">$3K – $4K</div>
-            <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-            <div class="package-divider"></div>
-            <ul class="package-features">
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Full social media across 5 platforms
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Multi-channel paid ads (Google + Meta + TikTok)
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    SEO, email &amp; SMS marketing
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Video content production
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Reputation management
-                </li>
-                <li class="package-feature">
-                    <span class="package-feature-check"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    Monthly strategy calls
-                </li>
-            </ul>
-            <a href="contact.html" class="package-cta">GET STARTED</a>
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge-placeholder"></div>
+                <div class="package-name">PREMIUM</div>
+                <div class="package-price">$3K – $4K</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Social media management — 5 platforms
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Google Business Profile optimization
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Email &amp; SMS marketing + automation
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Monthly analytics &amp; reporting
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Multi-channel paid ads (Google + Meta + TikTok)
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Local SEO optimization
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Reputation management
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Video content production
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Monthly strategy calls
+                    </li>
+                </ul>
+                <a href="contact.html" class="package-cta">GET STARTED</a>
+            </div>
         </div>
 
     </div>

@@ -66,7 +66,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
     <style>
         /* ========================================
            CSS VARIABLES & RESET
@@ -260,7 +261,7 @@
             flex-direction: column;
             gap: 5px;
             background: none;
-            padding: 5px;
+            padding: 10px 8px;
         }
 
         .nav-hamburger span {
@@ -423,10 +424,6 @@
                 );
         }
 
-        .about-hero-bg {
-            display: none;
-        }
-
         .hero-grid-bg {
             position: absolute;
             inset: 0;
@@ -570,172 +567,6 @@
 
         .story-text p:last-child {
             margin-bottom: 0;
-        }
-
-        /* Stats glass card */
-        .story-card {
-            position: relative;
-            border-radius: 1.75rem;
-            overflow: hidden;
-            padding: 2.5rem;
-            background: #000;
-            border: 1px solid rgba(221, 205, 156, 0.08);
-            transform-style: preserve-3d;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 -10px 80px 5px rgba(221, 205, 156, 0.12), 0 0 10px 0 rgba(0, 0, 0, 0.5);
-            cursor: default;
-        }
-
-        .story-card:hover {
-            box-shadow: 0 -10px 100px 10px rgba(221, 205, 156, 0.18), 0 0 10px 0 rgba(0, 0, 0, 0.5);
-        }
-
-        /* Glass reflection */
-        .gcard-reflection {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 40%, transparent 80%, rgba(255,255,255,0.04) 100%);
-            pointer-events: none;
-            z-index: 5;
-            border-radius: inherit;
-        }
-
-        /* Noise texture */
-        .gcard-noise {
-            position: absolute;
-            inset: 0;
-            opacity: 0.25;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            z-index: 2;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
-
-        /* Gold glow from bottom */
-        .gcard-glow {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 65%;
-            z-index: 3;
-            pointer-events: none;
-            background:
-                radial-gradient(ellipse at bottom right, rgba(221, 205, 156, 0.45) -10%, transparent 65%),
-                radial-gradient(ellipse at bottom left, rgba(184, 167, 108, 0.4) -10%, transparent 65%);
-            filter: blur(35px);
-            opacity: 0.7;
-            transition: opacity 0.4s ease;
-        }
-
-        .story-card:hover .gcard-glow {
-            opacity: 0.9;
-        }
-
-        /* Central gold glow */
-        .gcard-glow-center {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60%;
-            z-index: 3;
-            pointer-events: none;
-            background: radial-gradient(circle at bottom center, rgba(221, 205, 156, 0.5) -20%, transparent 55%);
-            filter: blur(40px);
-            opacity: 0.65;
-            transition: opacity 0.4s ease;
-        }
-
-        .story-card:hover .gcard-glow-center {
-            opacity: 0.85;
-        }
-
-        /* Bottom edge glow line */
-        .gcard-edge-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            z-index: 6;
-            pointer-events: none;
-            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.05) 100%);
-            box-shadow: 0 0 15px 3px rgba(221, 205, 156, 0.6), 0 0 30px 6px rgba(184, 167, 108, 0.4);
-        }
-
-        /* Left edge glow */
-        .gcard-edge-left {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 1px;
-            height: 30%;
-            z-index: 6;
-            pointer-events: none;
-            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
-            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
-        }
-
-        /* Right edge glow */
-        .gcard-edge-right {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 1px;
-            height: 30%;
-            z-index: 6;
-            pointer-events: none;
-            background: linear-gradient(to top, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 40%, transparent 100%);
-            box-shadow: 0 0 12px 2px rgba(221, 205, 156, 0.5);
-        }
-
-        /* Card content */
-        .gcard-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .story-card-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            letter-spacing: 0.06em;
-            color: var(--white);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .story-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .story-stat {
-            text-align: center;
-            padding: 1rem 0;
-            border-top: 1px solid rgba(221, 205, 156, 0.1);
-        }
-
-        .story-stat:first-child {
-            border-top: none;
-        }
-
-        .story-stat-number {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            letter-spacing: 0.02em;
-            color: var(--gold);
-            line-height: 1;
-        }
-
-        .story-stat-label {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--white-dim);
-            margin-top: 0.35rem;
         }
 
         /* ========================================
@@ -946,43 +777,6 @@
         }
 
         /* ========================================
-           BY THE NUMBERS SECTION
-           ======================================== */
-        .numbers-bar {
-            display: flex;
-            border-top: 1px solid rgba(221, 205, 156, 0.1);
-            border-bottom: 1px solid rgba(221, 205, 156, 0.1);
-        }
-
-        .number-stat {
-            flex: 1;
-            padding: 3.5rem 3rem;
-            text-align: center;
-            border-right: 1px solid rgba(221, 205, 156, 0.1);
-        }
-
-        .number-stat:last-child {
-            border-right: none;
-        }
-
-        .number-stat-value {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            letter-spacing: 0.02em;
-            color: var(--gold);
-            line-height: 1;
-        }
-
-        .number-stat-label {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--white-dim);
-            margin-top: 0.5rem;
-        }
-
-        /* ========================================
            BUTTONS
            ======================================== */
         .btn-primary {
@@ -1049,41 +843,6 @@
             transition: transform 0.3s ease;
         }
         .btn-primary:hover .arrow { transform: translateX(4px); }
-
-        /* ========================================
-           PHOTO STRIP
-           ======================================== */
-        .about-photo-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            height: 420px;
-            gap: 3px;
-        }
-
-        .about-photo-item {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6) saturate(0.75);
-            transition: transform 0.7s var(--ease-out-expo), filter 0.5s ease;
-        }
-
-        .about-photo-item:hover img {
-            transform: scale(1.05);
-            filter: brightness(0.75) saturate(1);
-        }
-
-        .about-photo-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
-            pointer-events: none;
-        }
 
         /* ========================================
            FINAL CTA SECTION
@@ -1449,15 +1208,6 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .numbers-bar {
-                flex-wrap: wrap;
-            }
-            .number-stat {
-                flex: 1 1 50%;
-            }
-            .number-stat:nth-child(2) {
-                border-right: none;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1480,14 +1230,6 @@
             .different-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .values-grid { grid-template-columns: 1fr; }
 
-            .numbers-bar { flex-direction: column; }
-            .number-stat {
-                border-right: none;
-                border-bottom: 1px solid rgba(221, 205, 156, 0.1);
-                padding: 2rem 1.5rem;
-            }
-            .number-stat:last-child { border-bottom: none; }
-
             .founder-grid { grid-template-columns: 1fr; gap: 3rem; }
             .founder-photo-col { max-width: 260px; margin: 0 auto; }
             .founder-photo-col::before { display: none; }
@@ -1495,6 +1237,8 @@
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .final-cta { padding: 5rem 1.5rem; }
             .hero-geo .diamond { display: none; }
+            .different-item p { font-size: 1rem; }
+            .founder-body { font-size: 1rem; }
         }
 
         @media (max-width: 480px) {
@@ -1829,10 +1573,10 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" onclick="closeMobile()">Home</a>
         <a href="services.html" onclick="closeMobile()">Services</a>
         <a href="pricing.html" onclick="closeMobile()">Pricing</a>
         <a href="about.html" onclick="closeMobile()">About Us</a>
-        <a href="index.html#process" onclick="closeMobile()">Process</a>
         <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
     </div>
 
@@ -1842,10 +1586,10 @@
             <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
         </a>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="pricing.html">Pricing</a>
             <a href="about.html" class="active">About Us</a>
-            <a href="index.html#process">Process</a>
             <a href="contact.html" class="nav-cta">Book Free Call</a>
         </div>
         <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -1898,14 +1642,14 @@
 
                 <div class="reveal reveal-delay-2">
                     <div class="story-photo-slider" id="storySlider">
-                        <div class="story-slide active"><img src="story-img-1.jpg" alt="Gym training" loading="lazy" width="810" height="540"></div>
-                        <div class="story-slide"><img src="story-img-2.jpg" alt="Gym training" loading="lazy" width="6701" height="4467"></div>
-                        <div class="story-slide"><img src="story-img-3.jpg" alt="Gym training" loading="lazy" width="5078" height="3385"></div>
-                        <div class="story-slide"><img src="story-img-4.jpg" alt="Gym training" loading="lazy" width="6720" height="4480"></div>
-                        <div class="story-slide"><img src="story-img-5.jpg" alt="Gym training" loading="lazy" width="3888" height="2119"></div>
-                        <div class="story-slide"><img src="story-img-6.jpg" alt="Gym training" loading="lazy" width="3565" height="5348"></div>
-                        <div class="story-slide"><img src="story-img-7.jpg" alt="Gym training" loading="lazy" width="960" height="640"></div>
-                        <div class="story-slide"><img src="story-img-8.jpg" alt="Gym training" loading="lazy" width="2048" height="1366"></div>
+                        <div class="story-slide active"><picture><source srcset="story-img-1.avif" type="image/avif"><img src="story-img-1.jpg" alt="Gym training" loading="lazy" width="810" height="540"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-2.avif" type="image/avif"><img src="story-img-2.jpg" alt="Gym training" loading="lazy" width="1200" height="800"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-3.avif" type="image/avif"><img src="story-img-3.jpg" alt="Gym training" loading="lazy" width="1200" height="799"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-4.avif" type="image/avif"><img src="story-img-4.jpg" alt="Gym training" loading="lazy" width="1200" height="800"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-5.avif" type="image/avif"><img src="story-img-5.jpg" alt="Gym training" loading="lazy" width="1200" height="654"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-6.avif" type="image/avif"><img src="story-img-6.jpg" alt="Gym training" loading="lazy" width="798" height="1200"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-7.avif" type="image/avif"><img src="story-img-7.jpg" alt="Gym training" loading="lazy" width="960" height="640"></picture></div>
+                        <div class="story-slide"><picture><source srcset="story-img-8.avif" type="image/avif"><img src="story-img-8.jpg" alt="Gym training" loading="lazy" width="1200" height="800"></picture></div>
                         <div class="story-slide-dots">
                             <div class="story-dot active" data-index="0"></div>
                             <div class="story-dot" data-index="1"></div>
@@ -2011,7 +1755,7 @@
                 <div class="founder-photo-col reveal">
                     <div class="founder-photo-brackets">
                         <div class="founder-photo-wrap">
-                            <img src="collin-charles.png" alt="Collin Charles, Founder of Enoch Marketing" loading="lazy" width="380" height="507">
+                            <picture><source srcset="collin-charles.avif" type="image/avif"><img src="collin-charles.png" alt="Collin Charles, Founder of Enoch Marketing" loading="lazy" width="380" height="507"></picture>
                             <div class="founder-photo-overlay">
                                 <span class="founder-overlay-name">COLLIN CHARLES</span>
                                 <span class="founder-overlay-role">Founder, Enoch Marketing</span>

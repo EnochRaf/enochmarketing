@@ -169,7 +169,7 @@
             flex-direction: column;
             gap: 5px;
             background: none;
-            padding: 5px;
+            padding: 10px 8px;
         }
         .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
         .mobile-menu {
@@ -1071,6 +1071,21 @@
             .footer { padding: 4rem 1.5rem 2rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .btn-primary { width: 100%; justify-content: center; font-size: 1rem; padding: 1rem 1.5rem; }
+            .package-feature { font-size: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo img { height: 62px; }
+            .nav.scrolled .nav-logo img { height: 52px; }
+            .packages-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .package-card { padding: 2rem 1.25rem; }
+            .package-price { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+            .pricing-table-head,
+            .pricing-row { padding: 0.9rem 1rem; }
+            .pricing-row-amount { font-size: 1.1rem; min-width: 120px; }
+            .filter-bar { flex-wrap: wrap; gap: 0.5rem; }
+            .filter-btn { font-size: 0.75rem; padding: 0.4rem 0.9rem; }
+            .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+            .final-cta { padding: 4rem 1.25rem; }
         }
     </style>
 </head>
@@ -1093,6 +1108,7 @@
         <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
     </a>
     <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html" class="active">Pricing</a>
         <a href="about.html">About Us</a>

@@ -485,6 +485,27 @@
             line-height: 1.7;
             color: var(--white-muted);
         }
+        .get-card-more {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: rgba(221,205,156,0.3);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s ease;
+        }
+        .get-card-more:hover { text-decoration-color: var(--gold); }
+        .inline-link {
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: rgba(221,205,156,0.35);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s ease;
+        }
+        .inline-link:hover { text-decoration-color: var(--gold); }
         .get-callout {
             background: rgba(221,205,156,0.04);
             border: 1px solid rgba(221,205,156,0.15);
@@ -978,8 +999,8 @@
         @media (max-width: 768px) {
             .form-row-2 { grid-template-columns: 1fr; }
             .lp-header { padding: 0 1.5rem; }
-            .lp-header-logo img { height: 68px; width: auto; max-width: none; }
-            .lp-header.scrolled .lp-header-logo img { height: 58px; }
+            .lp-header-logo img { height: 100px; width: auto; max-width: none; }
+            .lp-header.scrolled .lp-header-logo img { height: 85px; }
             .hero { padding: 0 1.5rem; }
             .hero-inner { padding-top: 5rem; }
             .section { padding: 5rem 1.5rem; }
@@ -1124,10 +1145,10 @@
             But your floor is not as full as it <span class="gold">should be.</span>
         </div>
         <div class="body-copy reveal reveal-delay-2">
-            <p>You are probably already running ads. Maybe you have a website. Maybe you are posting on Instagram three times a week. And still, new members are not coming in at the rate you need.</p>
-            <p><strong>Here is what most gym owners do not know:</strong> the problem is almost never the gym. It is the marketing system surrounding it. The wrong message. A website that does not convert. Ads that get clicks but not members. Lead follow-up that goes cold.</p>
+            <p>You are probably already <a href="services.html#paid-advertising" class="inline-link">running ads</a>. Maybe you have a <a href="services.html#web-design" class="inline-link">website</a>. Maybe you are <a href="services.html#social-media" class="inline-link">posting on Instagram</a> three times a week. And still, new members are not coming in at the rate you need.</p>
+            <p>Here is what most gym owners do not know: the problem is almost never the gym. It is the marketing system surrounding it. The wrong message. A website that does not convert. <a href="services.html#paid-advertising" class="inline-link">Ads</a> that get clicks but not members. <a href="services.html#lead-generation" class="inline-link">Lead follow-up</a> that goes cold.</p>
             <p>And the worst part? You will not know which one is the problem until someone actually looks at your specific situation.</p>
-            <p><strong>That is exactly what this audit is.</strong></p>
+            <p>That is exactly what this audit is.</p>
         </div>
     </div>
 </section>
@@ -1151,6 +1172,7 @@
                 </div>
                 <div class="get-card-title">YOUR WEBSITE</div>
                 <p class="get-card-body">Is it built to convert visitors into leads, or is it just a digital brochure? I will look at your messaging, layout, calls-to-action, and load speed.</p>
+                <a href="services.html#web-design" class="get-card-more">Learn more about our web design →</a>
             </div>
             <div class="get-card reveal reveal-delay-2">
                 <div class="get-card-icon">
@@ -1158,6 +1180,7 @@
                 </div>
                 <div class="get-card-title">YOUR ADS</div>
                 <p class="get-card-body">If you are running them, what is working and what is bleeding your budget? If you are not, what your competitors are doing that you are missing.</p>
+                <a href="services.html#paid-advertising" class="get-card-more">Learn more about our paid advertising →</a>
             </div>
             <div class="get-card reveal reveal-delay-3">
                 <div class="get-card-icon">
@@ -1165,6 +1188,7 @@
                 </div>
                 <div class="get-card-title">YOUR GOOGLE PRESENCE</div>
                 <p class="get-card-body">Are athletes finding you when they search for a gym in your area? I will audit your Google Business Profile, local SEO, and search rankings.</p>
+                <a href="services.html#local-seo" class="get-card-more">Learn more about our local SEO →</a>
             </div>
             <div class="get-card reveal reveal-delay-4">
                 <div class="get-card-icon">
@@ -1172,11 +1196,12 @@
                 </div>
                 <div class="get-card-title">YOUR SOCIAL PROOF</div>
                 <p class="get-card-body">Are reviews, testimonials, and UGC working for you or against you? Social proof is often what turns a curious visitor into a paying member.</p>
+                <a href="services.html#social-media" class="get-card-more">Learn more about our social media →</a>
             </div>
         </div>
 
         <div class="get-callout reveal">
-            <p>At the end, you will get <strong>3 specific, prioritized action items</strong> you can act on this week. Not generic advice. Not a template. <strong>Your gym, your market, your fixes.</strong></p>
+            <p>At the end, you will get 3 specific, prioritized action items you can act on this week. Not generic advice. Not a template. Your gym, your market, your fixes.</p>
         </div>
     </div>
 </section>
@@ -1238,9 +1263,9 @@
             <p class="why-cap">"We work exclusively with gyms. The best way to prove value is to prove it before asking for anything."</p>
         </div>
         <div class="body-copy reveal reveal-delay-2">
-            <p>Enoch Marketing works exclusively with gyms. We are building a track record, and the best way to do that is to prove the value before asking for anything.</p>
-            <p>You get a real audit. We get to show what we can do. <strong>No pitch at the end.</strong> If you want to talk about working together after you see the video, we are open to that conversation. But that is entirely up to you.</p>
-            <p>We are capping this at <strong>10 audits this month</strong> so we can actually deliver quality work for each one.</p>
+            <p><a href="about.html" class="inline-link">Enoch Marketing</a> works exclusively with gyms. We are building a track record, and the best way to do that is to prove the value before asking for anything.</p>
+            <p>You get a real audit. We get to show what we can do. No pitch at the end. If you want to talk about working together after you see the video, we are open to that conversation. But that is entirely up to you.</p>
+            <p>We are capping this at 10 audits this month so we can actually deliver quality work for each one.</p>
         </div>
     </div>
 </section>
@@ -1351,7 +1376,7 @@
                     </div>
 
                     <p class="form-fine">
-                        <strong>10 spots available this month.</strong> Once claimed, this page closes.
+                        10 spots available this month. Once claimed, this page closes.
                     </p>
                     <p class="form-required-note"><span style="color:#f87171;">*</span> Required fields</p>
                 </form>

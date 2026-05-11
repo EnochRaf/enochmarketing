@@ -1622,8 +1622,8 @@
         @media (max-width: 768px) {
             .nav { padding: 0.75rem 1.5rem; }
             .nav.scrolled { padding: 0.65rem 1.5rem; }
-            .nav-logo img { height: 100px; width: auto; max-width: none; }
-            .nav.scrolled .nav-logo img { height: 85px; }
+            .nav-logo img { height: 120px; width: auto; max-width: none; }
+            .nav.scrolled .nav-logo img { height: 100px; }
             .nav-links { display: none; }
             .nav-hamburger { display: flex; }
 
@@ -1646,8 +1646,8 @@
         }
 
         @media (max-width: 480px) {
-            .nav-logo img { height: 90px; }
-            .nav.scrolled .nav-logo img { height: 78px; }
+            .nav-logo img { height: 110px; }
+            .nav.scrolled .nav-logo img { height: 92px; }
             .hero-content { padding: 5.5rem 1.25rem 2.5rem; }
             .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
             .hero-subtitle { font-size: 0.95rem; }
@@ -1805,6 +1805,186 @@
                 gap: 0.5rem;
             }
         }
+
+        /* ========================================
+           BLOG PREVIEW SECTION
+           ======================================== */
+        .blog-preview {
+            position: relative;
+            padding: 7rem 3rem;
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221,205,156,0.06);
+            overflow: hidden;
+        }
+        .blog-preview-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.02) 1px, transparent 1px);
+            background-size: 55px 55px;
+            mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 85% 80% at 50% 50%, black, transparent);
+            pointer-events: none;
+        }
+        .blog-preview-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 3.5rem;
+            gap: 2rem;
+        }
+        .blog-preview-header-left {}
+        .blog-preview-all {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid rgba(221,205,156,0.25);
+            padding-bottom: 0.2rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .blog-preview-all:hover { color: var(--gold-light); border-color: var(--gold-light); gap: 0.9rem; }
+        .blog-preview-all svg { transition: transform 0.3s ease; }
+        .blog-preview-all:hover svg { transform: translateX(3px); }
+        .blog-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .bp-card {
+            position: relative;
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 1rem;
+            overflow: hidden;
+            background: var(--black-card);
+            transition: border-color 0.4s ease, transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+        .bp-card:hover {
+            border-color: rgba(221,205,156,0.2);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(0,0,0,0.5), 0 0 35px rgba(221,205,156,0.04);
+        }
+        .bp-visual {
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+        .bp-visual-bg {
+            position: absolute;
+            inset: 0;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+        .bp-card:hover .bp-visual-bg { transform: scale(1.05); }
+        .bp-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(221,205,156,0.07) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .bp-visual-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bp-icon-ring {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(221,205,156,0.15);
+            background: rgba(221,205,156,0.04);
+        }
+        .bp-icon-ring svg { color: var(--gold); opacity: 0.65; }
+        .bp-cat {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(221,205,156,0.18);
+            border-radius: 9999px;
+            padding: 0.25rem 0.7rem;
+        }
+        .bp-body {
+            padding: 1.5rem 1.75rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .bp-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+        .bp-card:hover .bp-title { color: var(--gold-light); }
+        .bp-excerpt {
+            font-size: 0.83rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.48);
+            flex: 1;
+            margin-bottom: 1.25rem;
+        }
+        .bp-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .bp-meta {
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .bp-arrow {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(221,205,156,0.18);
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        .bp-card:hover .bp-arrow {
+            background: rgba(221,205,156,0.1);
+            border-color: rgba(221,205,156,0.35);
+            transform: rotate(-45deg);
+        }
+        @media (max-width: 1024px) {
+            .blog-preview-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .blog-preview { padding: 5rem 1.5rem; }
+            .blog-preview-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .blog-preview-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -1825,6 +2005,7 @@
         <a href="services.html" onclick="closeMobile()">Services</a>
         <a href="pricing.html" onclick="closeMobile()">Pricing</a>
         <a href="about.html" onclick="closeMobile()">About Us</a>
+        <a href="blog.html" onclick="closeMobile()">Blog</a>
         <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
     </div>
 
@@ -1838,6 +2019,7 @@
             <a href="services.html">Services</a>
             <a href="pricing.html">Pricing</a>
             <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
             <a href="contact.html" class="nav-cta">Book Free Call</a>
         </div>
         <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -2094,6 +2276,90 @@
         </div>
     </section>
 
+    <!-- BLOG PREVIEW -->
+    <section class="blog-preview">
+        <div class="blog-preview-bg"></div>
+        <div class="container" style="position:relative;z-index:1;">
+            <div class="blog-preview-header">
+                <div class="blog-preview-header-left reveal">
+                    <div class="section-tag" style="margin-bottom:1.25rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Free Resources</span></div>
+                    <h2 class="section-title" style="margin-bottom:0.5rem;">INSIGHTS FOR<br><span class="gold">GYM OWNERS</span></h2>
+                    <p class="section-subtitle" style="font-size:0.92rem;">Proven strategies, frameworks, and marketing playbooks — free.</p>
+                </div>
+                <a href="blog.html" class="blog-preview-all reveal">
+                    View All Articles
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="blog-preview-grid">
+
+                <!-- Article 1: Meta Ads -->
+                <a href="blog-meta-ads.html" class="bp-card reveal reveal-delay-1">
+                    <div class="bp-visual">
+                        <div class="bp-visual-bg" style="background:linear-gradient(135deg,#0d0d0d 0%,#141208 50%,#0a0a0a 100%);"></div>
+                        <div class="bp-visual-icon">
+                            <div class="bp-icon-ring">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </div>
+                        </div>
+                        <div class="bp-cat">Paid Advertising</div>
+                    </div>
+                    <div class="bp-body">
+                        <h3 class="bp-title">HOW CROSSFIT GYMS ADD 20+ MEMBERS/MONTH WITH META ADS</h3>
+                        <p class="bp-excerpt">Most gym owners try Meta ads, burn $500, get zero results, and quit. Here's the exact 5-step framework that actually works.</p>
+                        <div class="bp-footer">
+                            <span class="bp-meta">8 min read</span>
+                            <div class="bp-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 2: Local SEO -->
+                <a href="blog-local-seo.html" class="bp-card reveal reveal-delay-2">
+                    <div class="bp-visual">
+                        <div class="bp-visual-bg" style="background:linear-gradient(135deg,#0a0d0a 0%,#0d1209 50%,#0a0a0a 100%);"></div>
+                        <div class="bp-visual-icon">
+                            <div class="bp-icon-ring">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                            </div>
+                        </div>
+                        <div class="bp-cat">Local SEO</div>
+                    </div>
+                    <div class="bp-body">
+                        <h3 class="bp-title">THE GYM OWNER'S LOCAL SEO PLAYBOOK</h3>
+                        <p class="bp-excerpt">78% of gym searches happen on Google. If you're not showing up, your competitors are taking those members. Here's how to fix that.</p>
+                        <div class="bp-footer">
+                            <span class="bp-meta">7 min read</span>
+                            <div class="bp-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Article 3: Lead Gen -->
+                <a href="blog-lead-gen.html" class="bp-card reveal reveal-delay-3">
+                    <div class="bp-visual">
+                        <div class="bp-visual-bg" style="background:linear-gradient(135deg,#0d0b08 0%,#130f07 50%,#0a0a0a 100%);"></div>
+                        <div class="bp-visual-icon">
+                            <div class="bp-icon-ring">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                        </div>
+                        <div class="bp-cat">Lead Generation</div>
+                    </div>
+                    <div class="bp-body">
+                        <h3 class="bp-title">WHY YOUR LEAD FUNNEL IS BROKEN</h3>
+                        <p class="bp-excerpt">Getting clicks but not sign-ups? The average gym leaks 67% of potential members before they ever talk to a coach. Here's the fix.</p>
+                        <div class="bp-footer">
+                            <span class="bp-meta">6 min read</span>
+                            <div class="bp-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="final-cta" id="contact">
         <div class="final-cta-bg"></div>
@@ -2147,6 +2413,7 @@
                         <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
                         <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
                         <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                        <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
                         <li><a href="#process"><span class="link-dot"></span>Process</a></li>
                         <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
                     </ul>

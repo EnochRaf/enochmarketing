@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Gym Marketing Insights | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <meta name="description" content="Free marketing insights, strategies, and playbooks for CrossFit gym owners. Learn how to get more members, run better ads, and grow your gym.">
+    <link rel="canonical" href="https://www.enochmarketing.com/blog.html" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enoch Marketing">
+    <meta property="og:url" content="https://www.enochmarketing.com/blog.html">
+    <meta property="og:title" content="Blog — Gym Marketing Insights | Enoch Marketing">
+    <meta property="og:description" content="Free marketing strategies and playbooks for CrossFit gym owners. Grow your gym with proven systems.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog — Gym Marketing Insights | Enoch Marketing">
+    <meta name="twitter:description" content="Free marketing strategies and playbooks for CrossFit gym owners.">
+    <meta name="twitter:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--black); }
+        body { font-family: var(--font-body); background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        #cursorGlow {
+            position: fixed; width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(221,205,156,0.04) 0%, transparent 70%);
+            pointer-events: none; transform: translate(-50%, -50%); z-index: 0; transition: opacity 0.3s;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0.75rem 3rem; display: flex; align-items: center;
+            justify-content: space-between; transition: all 0.5s var(--ease-out-expo);
+        }
+        .nav.scrolled {
+            background: rgba(0,0,0,0.92); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(221,205,156,0.1);
+        }
+        .nav-logo { display: flex; align-items: center; }
+        .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
+        .nav.scrolled .nav-logo img { height: 140px; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a {
+            font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-muted);
+            transition: color 0.3s ease; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 1px; background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            padding: 0.7rem 1.8rem; background: rgba(221,205,156,0.08); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            position: relative; overflow: hidden; transition: all 0.4s ease;
+        }
+        .nav-cta::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+        .nav-cta::after {
+            content: '' !important; display: block !important; position: absolute;
+            bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 75%; height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            opacity: 0.3; transition: opacity 0.5s ease;
+        }
+        .nav-cta:hover { background: rgba(221,205,156,0.15); border-color: rgba(221,205,156,0.4); box-shadow: 0 0 20px rgba(221,205,156,0.15); transform: translateY(-1px); }
+        .nav-cta:hover::before, .nav-cta:hover::after { opacity: 1; }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 10px 8px; }
+        .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999;
+            flex-direction: column; align-items: center; justify-content: center;
+            gap: 2rem; opacity: 0; transition: opacity 0.4s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--white); transition: color 0.3s ease; }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ── BUTTONS ── */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.1em;
+            padding: 1rem 2.2rem; background: rgba(221,205,156,0.06); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer;
+        }
+        .btn-primary::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 75%; height: 1px; background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+        .btn-primary::after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 75%; height: 1px; background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+            opacity: 0.35; transition: opacity 0.5s ease;
+        }
+        .btn-primary:hover { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.5); color: var(--gold-light); box-shadow: 0 0 25px rgba(221,205,156,0.2), inset 0 0 25px rgba(221,205,156,0.06); }
+        .btn-primary:hover::before, .btn-primary:hover::after { opacity: 1; }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow { position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        /* ── SECTION UTILS ── */
+        .section { position: relative; padding: 7rem 3rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-tag {
+            position: relative; display: inline-flex; align-items: center; gap: 0.75rem;
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 1.5rem; padding: 0.4rem 1.1rem;
+            border-radius: 9999px; border: 1px solid rgba(221,205,156,0.18);
+            background: rgba(221,205,156,0.04); --stag-x: 50%; --stag-y: 50%; --stag-op: 0;
+        }
+        .section-tag .stag-border {
+            position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; z-index: 1;
+            opacity: var(--stag-op);
+            background: radial-gradient(180px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.9), transparent 55%);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude; -webkit-mask-composite: xor; padding: 1px; transition: opacity 0.35s ease;
+        }
+        .section-tag .stag-glow {
+            position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+            opacity: var(--stag-op);
+            background: radial-gradient(140px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.12), transparent 55%);
+            transition: opacity 0.35s ease;
+        }
+        .section-tag .stag-bloom {
+            position: absolute; inset: -6px; border-radius: inherit; pointer-events: none; z-index: -1;
+            opacity: var(--stag-op); filter: blur(10px);
+            background: radial-gradient(120px circle at var(--stag-x) var(--stag-y), rgba(221,205,156,0.18), transparent 55%);
+            transition: opacity 0.35s ease;
+        }
+        .section-tag > span { position: relative; z-index: 2; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 1.25rem; }
+        .section-subtitle { font-size: 1rem; font-weight: 400; line-height: 1.7; color: var(--white-muted); max-width: 600px; }
+        .gold { color: var(--gold); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ── BLOG HERO ── */
+        .blog-hero {
+            position: relative; min-height: 65vh; display: flex; flex-direction: column;
+            justify-content: flex-end; overflow: hidden; background: var(--black); padding-bottom: 6rem;
+        }
+        .blog-hero-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 90% 60% at 50% 100%, rgba(221,205,156,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 50% at 80% 10%, rgba(221,205,156,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 40% at 10% 80%, rgba(221,205,156,0.03) 0%, transparent 50%);
+        }
+        .blog-hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 90% at 50% 100%, black 20%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 100%, black 20%, transparent 75%);
+        }
+        .blog-hero-diamonds { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .blog-hero-diamonds .d {
+            position: absolute; border: 1px solid rgba(221,205,156,0.06); transform: rotate(45deg);
+            animation: float-d 20s ease-in-out infinite;
+        }
+        @keyframes float-d {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.6; }
+            50% { transform: rotate(45deg) translateY(-20px); opacity: 0.2; }
+        }
+        .blog-hero-content {
+            position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+            padding: 10rem 3rem 0; width: 100%;
+        }
+        .blog-hero-eyebrow {
+            font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1.25rem; opacity: 0;
+            animation: fade-up 0.8s var(--ease-out-expo) 0.2s forwards;
+        }
+        .blog-hero-title {
+            font-family: var(--font-display); font-size: clamp(4rem, 9vw, 8rem);
+            line-height: 0.92; letter-spacing: 0.01em; margin-bottom: 1.5rem;
+            opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.35s forwards;
+        }
+        .blog-hero-title .line2 { color: var(--gold); }
+        .blog-hero-desc {
+            font-size: 1rem; font-weight: 400; line-height: 1.75; color: rgba(255,255,255,0.5);
+            max-width: 560px; opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.5s forwards;
+        }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .blog-hero-divider {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.15), transparent);
+        }
+
+        /* ── FILTER BAR ── */
+        .filter-bar-wrap {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(0,0,0,0.95); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(221,205,156,0.08);
+        }
+        .filter-bar {
+            max-width: 1200px; margin: 0 auto; padding: 0 3rem;
+            display: flex; align-items: center; gap: 0; overflow-x: auto; scrollbar-width: none;
+        }
+        .filter-bar::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
+            padding: 1.1rem 1.5rem; white-space: nowrap; cursor: pointer;
+            border: none; border-bottom: 2px solid transparent;
+            background: none; transition: all 0.3s ease;
+        }
+        .filter-btn:hover { color: var(--gold-light); }
+        .filter-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+        /* ── FEATURED ARTICLE ── */
+        .featured-section { padding: 5rem 3rem 3rem; }
+        .featured-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--gold-dark); margin-bottom: 1.5rem;
+        }
+        .featured-card {
+            position: relative; display: grid; grid-template-columns: 1fr 1fr;
+            border: 1px solid rgba(221,205,156,0.1); border-radius: 1.25rem; overflow: hidden;
+            background: var(--black-card); transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            min-height: 420px;
+        }
+        .featured-card:hover {
+            border-color: rgba(221,205,156,0.22);
+            box-shadow: 0 0 60px rgba(221,205,156,0.06), 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .featured-visual {
+            position: relative; overflow: hidden; min-height: 380px;
+            background: var(--black-soft);
+        }
+        .featured-visual-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 100% 80% at 0% 100%, rgba(221,205,156,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 70% 70% at 100% 0%, rgba(184,167,108,0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+        }
+        .featured-visual-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .featured-visual-icon {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        }
+        .fv-icon-ring {
+            width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(221,205,156,0.12);
+            background: radial-gradient(circle, rgba(221,205,156,0.06) 0%, transparent 70%);
+        }
+        .fv-icon-ring svg { color: var(--gold); opacity: 0.7; }
+        .featured-visual-badge {
+            position: absolute; top: 1.5rem; left: 1.5rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
+            border: 1px solid rgba(221,205,156,0.2); border-radius: 9999px;
+            padding: 0.35rem 0.9rem; color: var(--gold);
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .featured-visual-line {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, rgba(221,205,156,0.5), rgba(221,205,156,0.1));
+        }
+        .featured-body {
+            padding: 3rem 3rem 3rem; display: flex; flex-direction: column; justify-content: center;
+        }
+        .featured-body .article-category {
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 1rem;
+        }
+        .featured-title {
+            font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem);
+            line-height: 1.05; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.25rem;
+        }
+        .featured-excerpt {
+            font-size: 0.95rem; font-weight: 400; line-height: 1.75; color: rgba(255,255,255,0.55);
+            margin-bottom: 2rem;
+        }
+        .featured-meta {
+            display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--white-dim);
+        }
+        .featured-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--white-dim); }
+        .article-read-link {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold);
+            border-bottom: 1px solid rgba(221,205,156,0.25); padding-bottom: 0.2rem;
+            transition: all 0.3s ease; width: fit-content;
+        }
+        .article-read-link:hover { color: var(--gold-light); border-color: var(--gold-light); gap: 0.9rem; }
+        .article-read-link svg { transition: transform 0.3s ease; }
+        .article-read-link:hover svg { transform: translateX(3px); }
+
+        /* ── BLOG GRID ── */
+        .blog-section { padding: 3rem 3rem 7rem; }
+        .blog-section-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 3rem; border-bottom: 1px solid rgba(221,205,156,0.08); padding-bottom: 1.5rem;
+        }
+        .blog-section-header h2 {
+            font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.08em;
+            color: var(--white-muted);
+        }
+        .blog-count {
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .blog-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .article-card {
+            position: relative; border: 1px solid rgba(221,205,156,0.08); border-radius: 1rem;
+            overflow: hidden; background: var(--black-card);
+            transition: border-color 0.4s ease, transform 0.4s var(--ease-out-quart), box-shadow 0.4s ease;
+            display: flex; flex-direction: column;
+        }
+        .article-card:hover {
+            border-color: rgba(221,205,156,0.18); transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(221,205,156,0.04);
+        }
+        .card-visual {
+            position: relative; height: 180px; overflow: hidden;
+        }
+        .card-visual-bg {
+            position: absolute; inset: 0; transition: transform 0.6s var(--ease-out-expo);
+        }
+        .article-card:hover .card-visual-bg { transform: scale(1.04); }
+        .card-visual-icon {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        }
+        .card-icon-circle {
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(221,205,156,0.15);
+            background: rgba(221,205,156,0.05);
+        }
+        .card-icon-circle svg { color: var(--gold); opacity: 0.65; }
+        .card-cat-badge {
+            position: absolute; top: 1rem; left: 1rem;
+            font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--gold); background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
+            border: 1px solid rgba(221,205,156,0.18); border-radius: 9999px;
+            padding: 0.25rem 0.7rem;
+        }
+        .card-body { padding: 1.75rem 1.75rem 2rem; display: flex; flex-direction: column; flex: 1; }
+        .card-title {
+            font-family: var(--font-display); font-size: 1.4rem; line-height: 1.08;
+            letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        .article-card:hover .card-title { color: var(--gold-light); }
+        .card-excerpt {
+            font-size: 0.85rem; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.5);
+            flex: 1; margin-bottom: 1.5rem;
+        }
+        .card-footer {
+            display: flex; align-items: center; justify-content: space-between;
+            padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .card-meta {
+            font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--white-dim);
+        }
+        .card-arrow {
+            width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            border: 1px solid rgba(221,205,156,0.18); color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        .article-card:hover .card-arrow { background: rgba(221,205,156,0.1); border-color: rgba(221,205,156,0.35); transform: rotate(-45deg); }
+
+        /* Card visual background variants */
+        .cv-ads { background: linear-gradient(135deg, #0d0d0d 0%, #141208 50%, #0a0a0a 100%); }
+        .cv-seo { background: linear-gradient(135deg, #0a0d0a 0%, #0d1209 50%, #0a0a0a 100%); }
+        .cv-leadgen { background: linear-gradient(135deg, #0d0b08 0%, #130f07 50%, #0a0a0a 100%); }
+        .cv-social { background: linear-gradient(135deg, #0a0a0d 0%, #0d0912 50%, #0a0a0a 100%); }
+        .cv-retention { background: linear-gradient(135deg, #080d0d 0%, #081212 50%, #0a0a0a 100%); }
+        .cv-branding { background: linear-gradient(135deg, #0d0d08 0%, #141208 50%, #0a0a0a 100%); }
+        .cv-analytics { background: linear-gradient(135deg, #0a0a0d 0%, #090c12 50%, #0a0a0a 100%); }
+
+        /* Additional visual glow per card */
+        .card-visual::after {
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.06) 0%, transparent 60%);
+        }
+
+        /* ── NEWSLETTER ── */
+        .newsletter-section {
+            position: relative; padding: 7rem 3rem; overflow: hidden;
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221,205,156,0.06);
+        }
+        .newsletter-bg {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(221,205,156,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .newsletter-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+        }
+        .newsletter-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
+        .newsletter-inner .section-title { font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+        .newsletter-inner p {
+            font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+        }
+        .newsletter-form { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
+        .newsletter-input {
+            flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.15);
+            border-radius: 9999px; padding: 0.9rem 1.5rem; font-family: var(--font-body);
+            font-size: 0.85rem; color: var(--white); outline: none; transition: border-color 0.3s ease;
+        }
+        .newsletter-input::placeholder { color: var(--white-dim); }
+        .newsletter-input:focus { border-color: rgba(221,205,156,0.35); }
+        .newsletter-note { font-size: 0.7rem; color: var(--white-dim); margin-top: 1rem; }
+
+        /* ── FOOTER ── */
+        .footer {
+            position: relative; border-top: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px 12px 0 0; padding: 5rem 3rem 2.5rem; overflow: hidden;
+            max-width: 1400px; margin: 0 auto;
+        }
+        .footer-grid-bg {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 5fr 2fr 2fr 2fr; gap: 3rem; margin-bottom: 3.5rem; align-items: start; }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img { height: 170px; width: auto; align-self: flex-start; margin-left: -15px; margin-top: -20px; }
+        .footer-brand p { font-size: 0.85rem; color: var(--white-muted); line-height: 1.7; max-width: 340px; }
+        .footer-email-group { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; max-width: 320px; }
+        .footer-email-group input { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.15); border-radius: 10px; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.8rem; color: var(--white); outline: none; transition: border-color 0.3s ease; }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-group input:focus { border-color: rgba(221,205,156,0.4); }
+        .footer-email-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--gold); border-radius: 10px; color: var(--black); flex-shrink: 0; transition: background 0.3s ease; }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a { font-size: 0.85rem; color: var(--white-dim); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.6rem; }
+        .link-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.25s ease; flex-shrink: 0; }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials { display: flex; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 9999px; background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.1); }
+        .footer-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse-green 2s ease-in-out infinite; }
+        @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .footer-status span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(74,222,128,0.7); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .nav { padding: 0.75rem 2rem; }
+            .nav-links { gap: 1.75rem; }
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-visual { min-height: 260px; }
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav-logo img { height: 120px; }
+            .nav.scrolled .nav-logo img { height: 100px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .blog-hero-content { padding: 8rem 1.5rem 0; }
+            .featured-section, .blog-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .filter-bar { padding: 0 1.5rem; }
+            .featured-body { padding: 2rem 1.75rem; }
+            .featured-title { font-size: 1.9rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .newsletter-section { padding: 5rem 1.5rem; }
+            .newsletter-form { flex-direction: column; }
+            .footer { padding: 4rem 1.5rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo img { height: 110px; }
+            .nav.scrolled .nav-logo img { height: 92px; }
+            .blog-hero-title { font-size: clamp(3rem, 12vw, 5rem); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cursorGlow"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="blog.html" onclick="closeMobile()" style="color:var(--gold);">Blog</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+</div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Blog Hero -->
+<section class="blog-hero">
+    <div class="blog-hero-bg"></div>
+    <div class="blog-hero-grid"></div>
+    <div class="blog-hero-diamonds">
+        <div class="d" style="width:280px;height:280px;left:-5%;top:15%;animation-duration:22s;"></div>
+        <div class="d" style="width:180px;height:180px;right:8%;top:25%;animation-duration:18s;animation-delay:-4s;"></div>
+        <div class="d" style="width:120px;height:120px;right:20%;bottom:20%;animation-duration:25s;animation-delay:-8s;"></div>
+    </div>
+    <div class="blog-hero-content">
+        <p class="blog-hero-eyebrow">Free Resources</p>
+        <h1 class="blog-hero-title">
+            GROW YOUR GYM<br>
+            <span class="line2">WITH PROVEN INSIGHTS</span>
+        </h1>
+        <p class="blog-hero-desc">
+            Actionable marketing strategies, ad frameworks, and growth playbooks built exclusively for CrossFit gym owners and fitness brands.
+        </p>
+    </div>
+    <div class="blog-hero-divider"></div>
+</section>
+
+<!-- Filter Bar -->
+<div class="filter-bar-wrap">
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Articles</button>
+        <button class="filter-btn" data-filter="paid-ads">Paid Ads</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+        <button class="filter-btn" data-filter="lead-gen">Lead Gen</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="retention">Retention</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
+    </div>
+</div>
+
+<!-- Featured Article -->
+<div class="featured-section container" id="articles">
+    <p class="featured-label">Featured Article</p>
+    <a href="blog-meta-ads.html" class="featured-card reveal" data-category="paid-ads">
+        <div class="featured-visual">
+            <div class="featured-visual-bg"></div>
+            <div class="featured-visual-grid"></div>
+            <div class="featured-visual-icon">
+                <div class="fv-icon-ring">
+                    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+            </div>
+            <div class="featured-visual-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Paid Advertising
+            </div>
+            <div class="featured-visual-line"></div>
+        </div>
+        <div class="featured-body">
+            <p class="article-category">Paid Advertising &nbsp;·&nbsp; 8 Min Read</p>
+            <h2 class="featured-title">How CrossFit Gyms Are Adding 20+ Members Per Month With Meta Ads</h2>
+            <p class="featured-excerpt">Most gym owners try Meta ads, burn $500, get no results, and quit. The problem isn't Meta — it's the approach. Here's the exact five-step framework our clients use to sign 20+ new members per month on autopilot.</p>
+            <div class="featured-meta">
+                <span>May 8, 2026</span>
+                <div class="featured-meta-dot"></div>
+                <span>8 min read</span>
+                <div class="featured-meta-dot"></div>
+                <span>By Enoch Marketing</span>
+            </div>
+            <span class="article-read-link">
+                Read Full Article
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+        </div>
+    </a>
+</div>
+
+<!-- Blog Grid -->
+<section class="blog-section">
+    <div class="container">
+        <div class="blog-section-header">
+            <h2>ALL ARTICLES</h2>
+            <span class="blog-count" id="articleCount">7 Articles</span>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+
+            <!-- Article 2: Local SEO -->
+            <a href="blog-local-seo.html" class="article-card reveal reveal-delay-1" data-category="seo">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-seo"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Local SEO</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">THE GYM OWNER'S LOCAL SEO PLAYBOOK</h3>
+                    <p class="card-excerpt">78% of gym searches happen on Google. If you're not showing up, your competitors are taking those members. Step-by-step guide to dominating local search in your city.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">May 5, 2026 &nbsp;·&nbsp; 7 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3: Lead Gen -->
+            <a href="blog-lead-gen.html" class="article-card reveal reveal-delay-2" data-category="lead-gen">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-leadgen"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Lead Gen</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">WHY YOUR LEAD FUNNEL IS BROKEN</h3>
+                    <p class="card-excerpt">Getting clicks but not sign-ups? The average gym leaks 67% of potential members at the funnel stage. Here's how to fix every stage of the pipeline in 30 days.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">May 1, 2026 &nbsp;·&nbsp; 6 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4: Social Media -->
+            <a href="blog-social-media.html" class="article-card reveal reveal-delay-3" data-category="social">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-social"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Social Media</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">STOP POSTING INTO THE VOID</h3>
+                    <p class="card-excerpt">The average CrossFit gym spends 5+ hours a week on social media and signs zero new members from it. Here's what the fastest-growing gyms do instead.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Apr 28, 2026 &nbsp;·&nbsp; 5 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 5: Retention -->
+            <a href="blog-retention.html" class="article-card reveal reveal-delay-1" data-category="retention">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-retention"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Retention</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">THE MEMBER RETENTION BLUEPRINT</h3>
+                    <p class="card-excerpt">Acquiring a new member costs 5–7x more than keeping one. Most gyms spend everything on acquisition and nothing on retention. Here's how to flip that equation.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Apr 22, 2026 &nbsp;·&nbsp; 6 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 6: Branding -->
+            <a href="blog-branding.html" class="article-card reveal reveal-delay-2" data-category="branding">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-branding"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Branding</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">WHY PROFITABLE GYMS DON'T COMPETE ON PRICE</h3>
+                    <p class="card-excerpt">Low-price gyms are everywhere. Premium gyms with loyal communities are rare. Here's how to position your CrossFit box as the obvious choice — without cutting your rates.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Apr 15, 2026 &nbsp;·&nbsp; 5 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 7: Google Ads -->
+            <a href="blog-google-ads.html" class="article-card reveal reveal-delay-3" data-category="paid-ads">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-ads"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Paid Ads</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">GOOGLE ADS FOR GYM OWNERS IN 2026</h3>
+                    <p class="card-excerpt">Google Ads shows intent-based traffic — people already searching for a gym. Less competitive and cheaper-per-lead than Meta. Here's the framework that converts clicks to sign-ups.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Apr 10, 2026 &nbsp;·&nbsp; 7 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 8: Analytics -->
+            <a href="blog-analytics.html" class="article-card reveal reveal-delay-1" data-category="analytics">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-analytics"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Analytics</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">5 MARKETING METRICS EVERY GYM OWNER MUST TRACK</h3>
+                    <p class="card-excerpt">Most gym owners track members and revenue but ignore the upstream metrics that predict those numbers. Know these 5 to stay six weeks ahead of problems before they hit.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">Apr 5, 2026 &nbsp;·&nbsp; 4 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section">
+    <div class="newsletter-bg"></div>
+    <div class="newsletter-grid"></div>
+    <div class="newsletter-inner reveal">
+        <div class="section-tag" style="justify-content:center; margin-bottom:1.5rem;">
+            <div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div>
+            <span>Stay Ahead</span>
+        </div>
+        <h2 class="section-title">GET THE PLAYBOOK<br><span class="gold">EVERY WEEK</span></h2>
+        <p>New strategies, case studies, and marketing frameworks delivered to gym owners who refuse to stay stuck. No fluff, no spam — just what works.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" class="newsletter-input" placeholder="Enter your gym email..." required>
+            <button type="submit" class="btn-primary" style="white-space:nowrap; padding:0.9rem 1.75rem;">
+                <span>SUBSCRIBE</span>
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </form>
+        <p class="newsletter-note">Join 1,200+ gym owners. Unsubscribe anytime.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                    <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                    <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                    <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
+                    <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                    <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                    <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                    <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                    <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                    <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+                    </a>
+                </div>
+                <div class="footer-status">
+                    <div class="footer-status-dot"></div>
+                    <span>Accepting New Clients</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    function closeMobile() { mobileMenu.classList.remove('active'); }
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    document.querySelectorAll('.section-tag').forEach(tag => {
+        tag.addEventListener('mousemove', e => {
+            const rect = tag.getBoundingClientRect();
+            tag.style.setProperty('--stag-x', (e.clientX - rect.left) + 'px');
+            tag.style.setProperty('--stag-y', (e.clientY - rect.top) + 'px');
+            tag.style.setProperty('--stag-op', '1');
+        });
+        tag.addEventListener('mouseleave', () => tag.style.setProperty('--stag-op', '0'));
+    });
+
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        }, { passive: true });
+    }
+
+    // Category filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#blogGrid .article-card');
+    const featuredCard = document.querySelector('.featured-card');
+    const countEl = document.getElementById('articleCount');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+
+            // Featured article
+            if (filter === 'all' || filter === 'paid-ads') {
+                featuredCard.style.display = '';
+            } else {
+                featuredCard.style.display = 'none';
+            }
+
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const cat = card.dataset.category;
+                const show = filter === 'all' || cat === filter;
+                card.style.display = show ? '' : 'none';
+                if (show) visibleCount++;
+            });
+
+            if (filter === 'all' || filter === 'paid-ads') visibleCount++;
+            countEl.textContent = visibleCount + (visibleCount === 1 ? ' Article' : ' Articles');
+        });
+    });
+
+    function handleNewsletterSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('button');
+        btn.innerHTML = '<span>SUBSCRIBED!</span>';
+        btn.style.background = 'rgba(74,222,128,0.1)';
+        btn.style.borderColor = 'rgba(74,222,128,0.3)';
+        btn.style.color = '#4ade80';
+    }
+</script>
+</body>
+</html>

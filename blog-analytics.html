@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Marketing Metrics Every Gym Owner Must Track | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.enochmarketing.com/blog-analytics.html" />
+    <meta name="description" content="Most gym owners track members and revenue but ignore the upstream metrics that predict those numbers. Know these 5 to stay six weeks ahead of problems before they hit.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="5 Marketing Metrics Every Gym Owner Must Track">
+    <meta property="og:description" content="Revenue is a lagging indicator. These 5 metrics tell you what's coming before it arrives — and give you time to act.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <meta property="og:url" content="https://www.enochmarketing.com/blog-analytics.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #DDCD9C; --gold-light: #EDE3C4; --gold-dark: #B8A76C; --black: #000000; --black-soft: #0A0A0A; --black-card: #111111; --black-elevated: #1A1A1A; --white: #FFFFFF; --white-muted: #E0E0E0; --white-dim: #666666; --font-display: 'Bebas Neue', 'Arial Black', sans-serif; --font-body: 'Montserrat', 'Helvetica Neue', sans-serif; --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--black); }
+        body { font-family: var(--font-body); background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+        #cursorGlow { position: fixed; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(221,205,156,0.04) 0%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); z-index: 0; transition: opacity 0.3s; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.75rem 3rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.5s var(--ease-out-expo); }
+        .nav.scrolled { background: rgba(0,0,0,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(221,205,156,0.1); }
+        .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
+        .nav.scrolled .nav-logo img { height: 140px; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a { font-family: var(--font-body); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-muted); transition: color 0.3s ease; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.4s var(--ease-out-expo); }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-cta { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em; padding: 0.7rem 1.8rem; background: rgba(221,205,156,0.08); color: var(--gold); border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px; overflow: hidden; transition: all 0.4s ease; }
+        .nav-cta:hover { background: rgba(221,205,156,0.15); border-color: rgba(221,205,156,0.4); transform: translateY(-1px); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 10px 8px; }
+        .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
+        .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; opacity: 0; transition: opacity 0.4s ease; }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--white); transition: color 0.3s ease; }
+        .mobile-menu a:hover { color: var(--gold); }
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.1em; padding: 1rem 2.2rem; background: rgba(221,205,156,0.06); color: var(--gold); border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px; position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer; }
+        .btn-primary:hover { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.5); color: var(--gold-light); box-shadow: 0 0 25px rgba(221,205,156,0.2); }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow { position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+        .gold { color: var(--gold); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        .article-hero { position: relative; padding: 12rem 3rem 6rem; overflow: hidden; background: var(--black); }
+        .article-hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 30% 100%, rgba(221,205,156,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 50% at 70% 10%, rgba(221,205,156,0.03) 0%, transparent 50%); }
+        .article-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%); }
+        .article-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .article-breadcrumb { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 2rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); }
+        .article-breadcrumb a:hover { color: var(--gold); }
+        .article-breadcrumb-sep { opacity: 0.3; }
+        .article-cat-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); background: rgba(221,205,156,0.07); border: 1px solid rgba(221,205,156,0.2); border-radius: 9999px; padding: 0.35rem 0.9rem; margin-bottom: 1.5rem; }
+        .article-hero-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 0.96; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.75rem; opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.2s forwards; }
+        .article-hero-title .line2 { color: var(--gold); }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+        .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-dim); opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.4s forwards; }
+        .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--white-dim); }
+        .article-hero-divider { position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent); }
+
+        .article-layout { display: grid; grid-template-columns: 1fr 360px; gap: 5rem; max-width: 1200px; margin: 0 auto; padding: 5rem 3rem 7rem; }
+        .article-body { min-width: 0; }
+        .article-body p { font-size: 1.05rem; font-weight: 400; line-height: 1.9; color: rgba(255,255,255,0.72); margin-bottom: 1.75rem; }
+        .article-body h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 0.04em; color: var(--white); margin: 3rem 0 1.25rem; }
+        .article-body h3 { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--white-muted); margin: 2.25rem 0 1rem; }
+        .article-body strong { color: var(--white); font-weight: 600; }
+        .article-body ul, .article-body ol { margin: 0 0 1.75rem 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+        .article-body li { font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,0.72); display: flex; align-items: flex-start; gap: 0.75rem; }
+        .article-body ul li::before { content: ''; width: 6px; height: 6px; min-width: 6px; border-radius: 50%; background: var(--gold); margin-top: 0.65rem; }
+        .article-body ol { counter-reset: item; }
+        .article-body ol li::before { content: counter(item); counter-increment: item; font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); min-width: 1.5rem; line-height: 1.5; }
+        .callout { border-left: 3px solid var(--gold); background: rgba(221,205,156,0.04); border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 2.5rem 0; }
+        .callout p { margin-bottom: 0; color: rgba(255,255,255,0.8); }
+        .callout strong { color: var(--gold); }
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2.5rem 0; }
+        .stat-box { border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem; background: var(--black-card); padding: 1.5rem; }
+        .stat-box-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+        .stat-box-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-dim); }
+        .metric-card { border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem; background: var(--black-card); padding: 2rem; margin: 1.5rem 0; position: relative; overflow: hidden; }
+        .metric-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); border-radius: 3px 0 0 3px; }
+        .metric-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+        .metric-num-badge { font-family: var(--font-display); font-size: 3rem; color: var(--gold); line-height: 1; opacity: 0.2; }
+        .metric-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+        .metric-formula { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 1rem; }
+        .metric-body p { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.65); margin-bottom: 0.75rem; }
+        .metric-body p:last-child { margin-bottom: 0; }
+        .metric-benchmark { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(221,205,156,0.06); border: 1px solid rgba(221,205,156,0.12); border-radius: 9999px; padding: 0.3rem 0.85rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem; }
+        .article-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent); margin: 3rem 0; }
+        .dashboard-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0; }
+        .dashboard-item { background: var(--black-card); border: 1px solid rgba(221,205,156,0.07); border-radius: 0.75rem; padding: 1.25rem 1.5rem; }
+        .dashboard-item h4 { font-family: var(--font-display); font-size: 0.85rem; color: var(--gold-dark); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+        .dashboard-item p { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.5); margin: 0; }
+
+        .article-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 2rem; }
+        .sidebar-card { border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem; background: var(--black-card); padding: 1.75rem; overflow: hidden; position: relative; }
+        .sidebar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, rgba(221,205,156,0.3), transparent); }
+        .sidebar-card h4 { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 1.25rem; text-transform: uppercase; }
+        .toc-list { display: flex; flex-direction: column; gap: 0; }
+        .toc-list a { font-size: 0.82rem; color: var(--white-dim); padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; gap: 0.6rem; transition: color 0.3s ease; }
+        .toc-list a:last-child { border-bottom: none; }
+        .toc-list a:hover { color: var(--gold); }
+        .toc-list a::before { content: ''; width: 5px; height: 5px; min-width: 5px; border-radius: 50%; background: rgba(221,205,156,0.25); transition: background 0.3s ease; }
+        .toc-list a:hover::before { background: var(--gold); }
+        .cta-card { border: 1px solid rgba(221,205,156,0.15); border-radius: 1rem; background: linear-gradient(135deg, var(--black-card) 0%, #0d0d0d 100%); padding: 2rem; text-align: center; position: relative; overflow: hidden; }
+        .cta-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.06) 0%, transparent 70%); pointer-events: none; }
+        .cta-card h4 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 0.75rem; position: relative; z-index: 1; }
+        .cta-card p { font-size: 0.8rem; line-height: 1.6; color: var(--white-dim); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .cta-card .btn-primary { width: 100%; justify-content: center; font-size: 0.9rem; padding: 0.85rem 1.5rem; position: relative; z-index: 1; }
+
+        .related-section { padding: 5rem 3rem 7rem; border-top: 1px solid rgba(221,205,156,0.06); background: var(--black-soft); }
+        .related-inner { max-width: 1200px; margin: 0 auto; }
+        .related-header { margin-bottom: 2.5rem; }
+        .related-header h2 { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.25rem; }
+        .related-header p { font-size: 0.85rem; color: var(--white-dim); }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card { border: 1px solid rgba(221,205,156,0.08); border-radius: 1rem; background: var(--black-card); padding: 1.75rem; display: flex; flex-direction: column; transition: border-color 0.3s ease, transform 0.3s var(--ease-out-quart); }
+        .related-card:hover { border-color: rgba(221,205,156,0.18); transform: translateY(-3px); }
+        .related-cat { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        .related-title { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.1; color: var(--white); margin-bottom: 0.75rem; flex: 1; }
+        .related-link { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease; }
+        .related-card:hover .related-link { color: var(--gold); }
+
+        .footer { position: relative; border-top: 1px solid rgba(221,205,156,0.1); border-radius: 12px 12px 0 0; padding: 5rem 3rem 2.5rem; overflow: hidden; max-width: 1400px; margin: 0 auto; }
+        .footer-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(circle at center, black, transparent 80%); -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%); pointer-events: none; }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 5fr 2fr 2fr 2fr; gap: 3rem; margin-bottom: 3.5rem; align-items: start; }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img { height: 170px; width: auto; align-self: flex-start; margin-left: -15px; margin-top: -20px; }
+        .footer-brand p { font-size: 0.85rem; color: var(--white-muted); line-height: 1.7; max-width: 340px; }
+        .footer-email-group { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; max-width: 320px; }
+        .footer-email-group input { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.15); border-radius: 10px; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.8rem; color: var(--white); outline: none; }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--gold); border-radius: 10px; color: var(--black); flex-shrink: 0; transition: background 0.3s ease; }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a { font-size: 0.85rem; color: var(--white-dim); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.6rem; }
+        .link-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.25s ease; flex-shrink: 0; }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials { display: flex; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 9999px; background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.1); }
+        .footer-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse-green 2s ease-in-out infinite; }
+        @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .footer-status span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(74,222,128,0.7); }
+
+        @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; gap: 3rem; } .sidebar-sticky { position: static; } .related-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } .dashboard-row { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .nav { padding: 0.75rem 1.5rem; } .nav-logo img { height: 120px; } .nav.scrolled .nav-logo img { height: 100px; } .nav-links { display: none; } .nav-hamburger { display: flex; } .article-hero { padding: 10rem 1.5rem 5rem; } .article-layout { padding: 4rem 1.5rem 5rem; } .stat-row { grid-template-columns: 1fr; } .related-section { padding: 4rem 1.5rem 5rem; } .related-grid { grid-template-columns: 1fr; } .footer { padding: 4rem 1.5rem 2rem; } .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+        @media (max-width: 480px) { .nav-logo img { height: 110px; } .nav.scrolled .nav-logo img { height: 92px; } }
+    </style>
+</head>
+<body>
+
+<div id="cursorGlow"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="blog.html" onclick="closeMobile()" style="color:var(--gold);">Blog</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+</div>
+
+<nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<section class="article-hero">
+    <div class="article-hero-bg"></div>
+    <div class="article-hero-grid"></div>
+    <div class="article-hero-content">
+        <div class="article-breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="article-breadcrumb-sep">/</span>
+            <span>Analytics</span>
+        </div>
+        <div class="article-cat-badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+            Analytics
+        </div>
+        <h1 class="article-hero-title">
+            5 METRICS EVERY<br>
+            <span class="line2">GYM OWNER MUST TRACK</span>
+        </h1>
+        <div class="article-meta">
+            <span>Apr 5, 2026</span>
+            <div class="article-meta-dot"></div>
+            <span>4 min read</span>
+            <div class="article-meta-dot"></div>
+            <span>By Enoch Marketing</span>
+        </div>
+    </div>
+    <div class="article-hero-divider"></div>
+</section>
+
+<div class="article-layout">
+    <article class="article-body reveal">
+
+        <p>Ask the average gym owner how their marketing is performing and they'll tell you how many members they have and what their monthly revenue looks like. These are important numbers — but they're lagging indicators. By the time revenue drops, the problem is already 6–8 weeks old.</p>
+
+        <p>The gym owners who stay ahead of problems — who catch a slow month before it becomes a bad quarter — track upstream metrics. These are the numbers that predict revenue and membership changes before they show up in your bank account.</p>
+
+        <p>Here are the five metrics every CrossFit gym marketing operation should measure monthly.</p>
+
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="stat-box-num">78%</div>
+                <div class="stat-box-label">Of gym owners track revenue but can't name their cost per lead</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">2.3x</div>
+                <div class="stat-box-label">Faster growth at gyms that review marketing metrics monthly</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">40%</div>
+                <div class="stat-box-label">Of gym ad budget wasted on channels with no attribution tracking</div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <p><strong>The Principle:</strong> Revenue is a lagging indicator — it tells you what happened. The 5 metrics below are leading indicators — they tell you what's about to happen. Track all 5 to stay six weeks ahead of problems instead of reacting to them after the fact.</p>
+        </div>
+
+        <h2>THE 5 METRICS</h2>
+
+        <div class="metric-card">
+            <div class="metric-header">
+                <div>
+                    <div class="metric-title">COST PER LEAD (CPL)</div>
+                    <div class="metric-formula">Formula: Total Ad Spend ÷ Total Leads</div>
+                </div>
+                <div class="metric-num-badge">01</div>
+            </div>
+            <div class="metric-body">
+                <p>CPL is the most fundamental paid advertising metric. If you're spending $1,500/month on Meta ads and generating 40 leads, your CPL is $37.50. This number tells you how efficiently your advertising is capturing attention and converting it into actionable interest.</p>
+                <p>What moves CPL: creative quality, audience targeting, offer attractiveness, and landing page relevance. If CPL rises suddenly, check those four variables — one of them changed. If CPL drops, identify what changed and amplify it.</p>
+                <div class="metric-benchmark">Target: Under $40 per lead for CrossFit gyms</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-header">
+                <div>
+                    <div class="metric-title">LEAD-TO-MEMBER RATE</div>
+                    <div class="metric-formula">Formula: New Members ÷ Total Leads × 100</div>
+                </div>
+                <div class="metric-num-badge">02</div>
+            </div>
+            <div class="metric-body">
+                <p>This is your sales conversion rate — the percentage of leads that actually sign up. A lead that never becomes a member is just ad spend. Most gym owners focus on generating more leads when the real problem is converting the ones they already have.</p>
+                <p>If your lead-to-member rate is below 15%, the problem is almost always in follow-up speed, your intro experience, or your pricing conversation — not in the quality of leads. Fix those before spending more on ads.</p>
+                <div class="metric-benchmark">Target: 15–25% lead-to-member rate</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-header">
+                <div>
+                    <div class="metric-title">MEMBER ACQUISITION COST (MAC)</div>
+                    <div class="metric-formula">Formula: Total Marketing Spend ÷ New Members</div>
+                </div>
+                <div class="metric-num-badge">03</div>
+            </div>
+            <div class="metric-body">
+                <p>MAC is the full cost of bringing one new paying member through the door. Unlike CPL (which only measures ad spend per lead), MAC divides your total marketing investment — ads, agency fees, tools, events — by actual new members. It's the real cost of growth.</p>
+                <p>The critical comparison: MAC vs. Member Lifetime Value. If your MAC is $300 and a member stays an average of 14 months at $175/month, your LTV is $2,450. That's an 8x return on acquisition spend — excellent. If MAC is $500 and LTV is $700, you're barely profitable on each new member.</p>
+                <div class="metric-benchmark">Target: MAC should be under 20% of member LTV</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-header">
+                <div>
+                    <div class="metric-title">MONTHLY CHURN RATE</div>
+                    <div class="metric-formula">Formula: Cancellations ÷ Total Members × 100</div>
+                </div>
+                <div class="metric-num-badge">04</div>
+            </div>
+            <div class="metric-body">
+                <p>Churn is the percentage of your member base that cancels each month. A 4% monthly churn rate means you're replacing half your gym every year — just to break even. Every dollar of acquisition spend is being offset by retention losses.</p>
+                <p>Track churn by cohort (members who joined in January vs. February vs. March) to identify whether the issue is specific to new members or distributed across tenure groups. First-90-day churn is almost always fixable with better onboarding; long-term member churn usually signals a community or programming issue.</p>
+                <div class="metric-benchmark">Target: Under 2% monthly churn rate</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-header">
+                <div>
+                    <div class="metric-title">MEMBER LIFETIME VALUE (LTV)</div>
+                    <div class="metric-formula">Formula: Avg Monthly Revenue × Avg Member Tenure (months)</div>
+                </div>
+                <div class="metric-num-badge">05</div>
+            </div>
+            <div class="metric-body">
+                <p>LTV is what the average member is worth to your business over the total duration of their membership. It's the denominator in almost every acquisition decision: "Is it worth spending $X to acquire this type of member?"</p>
+                <p>To increase LTV, you have two levers: increase average monthly revenue per member (rate increases, add-ons, upsells like personal training or nutrition coaching) or increase average tenure (which comes back to retention). A gym with an LTV of $3,000 can profitably spend significantly more on acquisition than a gym with an LTV of $900 — and grow much faster because of it.</p>
+                <div class="metric-benchmark">Target: Track trend monthly, aim to increase YoY</div>
+            </div>
+        </div>
+
+        <div class="article-divider"></div>
+
+        <h2>BUILDING YOUR SIMPLE DASHBOARD</h2>
+
+        <p>You don't need expensive software to track these five numbers. A simple Google Sheet updated monthly is enough to start. Here's what each column should contain:</p>
+
+        <div class="dashboard-row">
+            <div class="dashboard-item">
+                <h4>WEEKLY (Quick Check)</h4>
+                <p>New leads this week, leads responded to within 5 minutes, intro classes booked vs. attended.</p>
+            </div>
+            <div class="dashboard-item">
+                <h4>MONTHLY (Full Review)</h4>
+                <p>CPL by channel, lead-to-member rate, new members, cancellations, churn rate, total marketing spend, MAC.</p>
+            </div>
+            <div class="dashboard-item">
+                <h4>QUARTERLY (Strategic)</h4>
+                <p>LTV update, MAC vs. LTV ratio, 3-month churn trend by cohort, channel attribution (which source drives highest-quality members).</p>
+            </div>
+            <div class="dashboard-item">
+                <h4>ANNUALLY (Business Review)</h4>
+                <p>YoY member growth, YoY revenue, LTV trend, best-performing acquisition channels, retention benchmark vs. prior year.</p>
+            </div>
+        </div>
+
+        <p>The goal is not to track everything — it's to track the five numbers that predict problems early enough to act. One monthly hour reviewing these metrics is worth more than a week of posting on social media without knowing whether any of it is working.</p>
+
+        <p>If you'd like help setting up tracking for your gym or want to know which of your current channels is actually driving members (not just clicks), <a href="free-audit.html" style="color:var(--gold); border-bottom: 1px solid rgba(221,205,156,0.3);">book a free audit here</a> — we'll pull together your numbers and show you what they mean.</p>
+
+    </article>
+
+    <aside class="article-sidebar">
+        <div class="sidebar-sticky">
+            <div class="sidebar-card">
+                <h4>In This Article</h4>
+                <nav class="toc-list">
+                    <a href="#why">Why Most Tracking Is Backwards</a>
+                    <a href="#cpl">Metric 1 — Cost Per Lead</a>
+                    <a href="#ltm">Metric 2 — Lead-to-Member Rate</a>
+                    <a href="#mac">Metric 3 — Member Acquisition Cost</a>
+                    <a href="#churn">Metric 4 — Monthly Churn Rate</a>
+                    <a href="#ltv">Metric 5 — Member Lifetime Value</a>
+                    <a href="#dashboard">Your Simple Dashboard</a>
+                </nav>
+            </div>
+            <div class="cta-card">
+                <h4>FREE METRICS AUDIT</h4>
+                <p>Not sure what your numbers are? We'll help you build a simple tracking dashboard and interpret what your data means for growth.</p>
+                <a href="free-audit.html" class="btn-primary">
+                    <span>GET MY FREE AUDIT</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<section class="related-section">
+    <div class="related-inner">
+        <div class="related-header reveal">
+            <h2>KEEP READING</h2>
+            <p>More strategies for growing your CrossFit gym</p>
+        </div>
+        <div class="related-grid">
+            <a href="blog-retention.html" class="related-card reveal reveal-delay-1">
+                <p class="related-cat">Retention</p>
+                <h3 class="related-title">THE MEMBER RETENTION BLUEPRINT</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="blog-google-ads.html" class="related-card reveal reveal-delay-2">
+                <p class="related-cat">Paid Advertising</p>
+                <h3 class="related-title">GOOGLE ADS FOR GYM OWNERS IN 2026</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="blog-lead-gen.html" class="related-card reveal reveal-delay-3">
+                <p class="related-cat">Lead Generation</p>
+                <h3 class="related-title">WHY YOUR LEAD FUNNEL IS BROKEN</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <div><h4>Navigation</h4><ul>
+                <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
+                <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+            </ul></div>
+            <div><h4>Services</h4><ul>
+                <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+            </ul></div>
+            <div><h4>Connect</h4><ul>
+                <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+            </ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+                </div>
+                <div class="footer-status"><div class="footer-status-dot"></div><span>Accepting New Clients</span></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    function closeMobile() { mobileMenu.classList.remove('active'); }
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, { passive: true });
+    }
+</script>
+</body>
+</html>

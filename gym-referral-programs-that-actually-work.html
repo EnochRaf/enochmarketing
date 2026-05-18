@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Programs That Actually Work for Gyms | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.enochmarketing.com/gym-referral-programs-that-actually-work.html" />
+    <meta name="description" content="A free week for a friend isn't a referral program — it's a coupon. Here's the framework for building a referral system that consistently generates your highest-quality members.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Referral Programs That Actually Work for Gyms">
+    <meta property="og:description" content="A free week for a friend isn't a referral program — it's a coupon. Here's the framework for building a referral system that consistently generates your highest-quality members.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <meta property="og:url" content="https://www.enochmarketing.com/gym-referral-programs-that-actually-work.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --red: #e84040;
+            --orange: #f5873a;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--black); }
+        body { font-family: var(--font-body); background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        #cursorGlow {
+            position: fixed; width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(221,205,156,0.04) 0%, transparent 70%);
+            pointer-events: none; transform: translate(-50%, -50%); z-index: 0; transition: opacity 0.3s;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0.75rem 3rem; display: flex; align-items: center;
+            justify-content: space-between; transition: all 0.5s var(--ease-out-expo);
+        }
+        .nav.scrolled {
+            background: rgba(0,0,0,0.92); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(221,205,156,0.1);
+        }
+        .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
+        .nav.scrolled .nav-logo img { height: 140px; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a {
+            font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-muted);
+            transition: color 0.3s ease; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 1px; background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            padding: 0.7rem 1.8rem; background: rgba(221,205,156,0.08); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            overflow: hidden; transition: all 0.4s ease;
+        }
+        .nav-cta:hover { background: rgba(221,205,156,0.15); border-color: rgba(221,205,156,0.4); transform: translateY(-1px); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 10px 8px; }
+        .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999;
+            flex-direction: column; align-items: center; justify-content: center;
+            gap: 2rem; opacity: 0; transition: opacity 0.4s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--white); transition: color 0.3s ease; }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ── BUTTONS ── */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.1em;
+            padding: 1rem 2.2rem; background: rgba(221,205,156,0.06); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer;
+        }
+        .btn-primary:hover { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.5); color: var(--gold-light); box-shadow: 0 0 25px rgba(221,205,156,0.2); }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow { position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        /* ── REVEAL ── */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ── ARTICLE HERO ── */
+        .article-hero { position: relative; padding: 12rem 3rem 6rem; overflow: hidden; background: var(--black); }
+        .article-hero-bg {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 30% 100%, rgba(221,205,156,0.07) 0%, transparent 55%),
+                        radial-gradient(ellipse 50% 50% at 70% 10%, rgba(221,205,156,0.03) 0%, transparent 50%);
+        }
+        .article-hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%);
+        }
+        .article-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .article-breadcrumb {
+            display: flex; align-items: center; gap: 0.6rem; margin-bottom: 2rem;
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim);
+        }
+        .article-breadcrumb a:hover { color: var(--gold); }
+        .article-breadcrumb-sep { opacity: 0.3; }
+        .article-cat-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold); background: rgba(221,205,156,0.07); border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 9999px; padding: 0.35rem 0.9rem; margin-bottom: 1.5rem;
+        }
+        .article-hero-title {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 5rem);
+            line-height: 0.96; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.75rem;
+            opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.2s forwards;
+        }
+        .article-hero-title .line2 { color: var(--gold); }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+        .article-meta {
+            display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem;
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--white-dim); opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.4s forwards;
+            margin-bottom: 2.5rem;
+        }
+        .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--white-dim); }
+        .article-hero-intro {
+            font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.6);
+            max-width: 760px; border-left: 3px solid var(--gold); padding-left: 1.5rem;
+            opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.5s forwards;
+            margin-bottom: 3rem;
+        }
+        .article-hero-divider {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent);
+        }
+
+        /* ── STAT BAR ── */
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .stat-box {
+            border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem 1.5rem;
+        }
+        .stat-box-num { font-family: var(--font-display); font-size: 3rem; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-box-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white-dim); line-height: 1.5; }
+
+        /* ── ARTICLE LAYOUT ── */
+        .article-layout {
+            display: grid; grid-template-columns: 1fr 360px; gap: 5rem;
+            max-width: 1200px; margin: 0 auto; padding: 5rem 3rem 7rem;
+        }
+        .article-body { min-width: 0; }
+        .article-body p { font-size: 1.05rem; font-weight: 400; line-height: 1.9; color: rgba(255,255,255,0.72); margin-bottom: 1.75rem; }
+        .article-body h2 {
+            font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+            letter-spacing: 0.04em; color: var(--white); margin: 3rem 0 1.25rem;
+        }
+        .article-body h3 {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--gold); margin: 2rem 0 0.75rem;
+        }
+        .article-body strong { color: var(--white); font-weight: 600; }
+        .article-body em { color: var(--gold-light); font-style: italic; }
+        .article-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent);
+            margin: 3rem 0; border: none;
+        }
+
+        /* ── CALLOUT ── */
+        .callout {
+            border-left: 3px solid var(--gold); background: rgba(221,205,156,0.04);
+            border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 2.5rem 0;
+        }
+        .callout p { margin-bottom: 0 !important; color: rgba(255,255,255,0.85) !important; font-style: italic; }
+        .callout strong { color: var(--gold); }
+        .callout-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold); display: block; margin-bottom: 0.75rem;
+        }
+        .callout.warn { border-left-color: var(--orange); background: rgba(245,135,58,0.04); }
+        .callout.warn .callout-label { color: var(--orange); }
+
+        /* ── TRUST CHAIN ── */
+        .trust-chain { display: flex; align-items: stretch; gap: 0; margin: 2rem 0; flex-wrap: wrap; }
+        .trust-node {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; padding: 1.5rem 1.25rem; flex: 1; text-align: center; min-width: 130px;
+        }
+        .trust-node.highlight { border-color: rgba(221,205,156,0.25); background: rgba(221,205,156,0.04); }
+        .trust-arrow { display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; color: var(--gold); font-size: 1.25rem; flex-shrink: 0; }
+        .trust-icon  { font-size: 1.75rem; display: block; margin-bottom: 0.6rem; }
+        .trust-label { font-family: var(--font-display); font-size: 1rem; color: var(--white); display: block; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+        .trust-desc  { font-size: 0.72rem; color: var(--white-dim); line-height: 1.45; }
+
+        /* ── MYTH GRID ── */
+        .myth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+        .myth-col { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; }
+        .myth-col-header { padding: 0.85rem 1.25rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+        .myth-col.bad  .myth-col-header { background: rgba(232,64,64,0.1); color: var(--red); border-bottom: 1px solid rgba(232,64,64,0.15); }
+        .myth-col.good .myth-col-header { background: rgba(221,205,156,0.08); color: var(--gold); border-bottom: 1px solid rgba(221,205,156,0.15); }
+        .myth-item { padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 0.65rem; align-items: flex-start; }
+        .myth-item:last-child { border-bottom: none; }
+        .myth-icon { font-size: 0.8rem; margin-top: 2px; flex-shrink: 0; font-weight: 700; }
+        .myth-col.bad  .myth-icon { color: var(--red); }
+        .myth-col.good .myth-icon { color: var(--gold); }
+        .myth-text { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+        .myth-col.good .myth-text { color: rgba(255,255,255,0.75); }
+
+        /* ── TIER STACK ── */
+        .tier-stack { display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0; }
+        .tier-card {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; overflow: hidden;
+            display: grid; grid-template-columns: 220px 1fr;
+        }
+        .tier-label-col {
+            padding: 1.75rem 1.5rem; border-right: 1px solid rgba(221,205,156,0.07);
+            display: flex; flex-direction: column; justify-content: center; gap: 0.5rem;
+        }
+        .tier-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .tier-name  { font-family: var(--font-display); font-size: 1.75rem; line-height: 1; color: var(--white); letter-spacing: 0.04em; }
+        .tier-desc  { font-size: 0.72rem; color: var(--white-dim); line-height: 1.5; margin-top: 4px; }
+        .tier-body-col { padding: 1.5rem 1.75rem; }
+        .tier-what { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.75rem; }
+        .tier-body-col p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 0.85rem; }
+        .tier-body-col p:last-child { margin-bottom: 0; }
+        .tier-incentive {
+            display: inline-flex; align-items: flex-start; gap: 0.6rem;
+            background: rgba(221,205,156,0.07); border: 1px solid rgba(221,205,156,0.18);
+            border-radius: 0.5rem; padding: 0.65rem 1rem; margin-top: 0.5rem;
+        }
+        .tier-incentive-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 1px; }
+        .tier-incentive-val   { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+        .tier-card.bronze .tier-label-col { border-left: 4px solid #cd7f32; }
+        .tier-card.bronze .tier-badge     { color: #cd7f32; }
+        .tier-card.silver .tier-label-col { border-left: 4px solid #a0a8b0; }
+        .tier-card.silver .tier-badge     { color: #a0a8b0; }
+        .tier-card.gold   .tier-label-col { border-left: 4px solid var(--gold); }
+        .tier-card.gold   .tier-badge     { color: var(--gold); }
+
+        /* ── MOMENT MAP ── */
+        .moment-map { margin: 2rem 0; display: flex; flex-direction: column; gap: 1rem; }
+        .moment-row { display: grid; grid-template-columns: 130px 1fr; gap: 1.25rem; align-items: start; }
+        .moment-timing { display: flex; flex-direction: column; align-items: flex-end; padding-top: 1.1rem; gap: 0.25rem; }
+        .moment-timing-label { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); line-height: 1; text-align: right; }
+        .moment-timing-sub   { font-size: 0.65rem; font-weight: 500; color: var(--white-dim); letter-spacing: 0.06em; text-transform: uppercase; text-align: right; line-height: 1.3; }
+        .moment-card {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; padding: 1.25rem 1.5rem; position: relative;
+        }
+        .moment-card.hot { border-color: rgba(221,205,156,0.25); background: rgba(221,205,156,0.04); }
+        .moment-card.hot::before {
+            content: 'BEST MOMENT'; position: absolute; top: -1px; right: 1rem;
+            background: var(--gold); color: var(--black); font-size: 0.55rem; font-weight: 700;
+            letter-spacing: 0.12em; padding: 3px 8px; border-radius: 0 0 6px 6px; font-family: var(--font-body);
+        }
+        .moment-title { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+        .moment-why   { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 0.75rem; }
+        .moment-script { background: var(--black); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.5rem; padding: 0.85rem 1.1rem; margin-top: 0.5rem; }
+        .moment-script-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem; display: block; }
+        .moment-script p { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-style: italic; margin: 0; line-height: 1.65; }
+
+        /* ── INCENTIVE ANATOMY TABLE ── */
+        .incentive-anatomy { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .anatomy-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; }
+        .anatomy-header-title { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--white); }
+        .anatomy-header-sub { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .anatomy-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 0; border-bottom: 1px solid rgba(221,205,156,0.07); }
+        .anatomy-row:last-child { border-bottom: none; }
+        .anatomy-row.thead .anatomy-cell { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); padding: 0.75rem 1.1rem; background: #0d0d0d; }
+        .anatomy-cell { padding: 1rem 1.1rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); border-right: 1px solid rgba(221,205,156,0.07); line-height: 1.6; vertical-align: top; }
+        .anatomy-cell:last-child { border-right: none; }
+        .anatomy-cell strong { color: var(--white); font-weight: 600; }
+        .anatomy-cell .good { color: var(--gold); font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px; }
+        .anatomy-cell .bad  { color: var(--red);  font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px; }
+
+        /* ── SCORECARD ── */
+        .scorecard { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .scorecard-header { padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid rgba(221,205,156,0.07); }
+        .scorecard-title  { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); letter-spacing: 0.04em; }
+        .scorecard-sub    { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .scorecard-item   { display: grid; grid-template-columns: 1fr 90px; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.06); gap: 1.25rem; }
+        .scorecard-item:last-child { border-bottom: none; }
+        .scorecard-q { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+        .scorecard-q strong { color: var(--white); display: block; font-size: 0.82rem; margin-bottom: 3px; font-weight: 600; }
+        .score-pills { display: flex; gap: 5px; justify-content: flex-end; }
+        .score-pill {
+            width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(221,205,156,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.65rem; font-weight: 700; color: var(--white-dim); cursor: default;
+            font-family: var(--font-body);
+        }
+        .score-pill.yes  { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.4); color: var(--gold); }
+        .score-pill.half { background: rgba(245,135,58,0.12); border-color: rgba(245,135,58,0.3); color: var(--orange); }
+        .scorecard-footer { padding: 1rem 1.5rem; background: #0d0d0d; border-top: 1px solid rgba(221,205,156,0.07); display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; }
+        .score-legend-item { text-align: center; padding: 0.6rem; }
+        .score-legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: middle; }
+        .score-legend-label { font-size: 0.72rem; color: var(--white-dim); }
+
+        /* ── CHECKLIST ── */
+        .checklist {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 1rem; padding: 2rem; margin: 1.5rem 0;
+        }
+        .checklist-title {
+            font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em;
+            color: var(--white); margin-bottom: 1.25rem;
+        }
+        .checklist ul { display: flex; flex-direction: column; gap: 0; }
+        .checklist ul li {
+            font-size: 0.88rem; color: rgba(255,255,255,0.65);
+            padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.55;
+        }
+        .checklist ul li:last-child { border-bottom: none; }
+        .check-box {
+            width: 16px; height: 16px; min-width: 16px; border: 1.5px solid rgba(221,205,156,0.25);
+            border-radius: 3px; margin-top: 2px;
+        }
+
+        /* ── CTA BLOCK ── */
+        .cta-block {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.15);
+            border-top: 3px solid var(--gold); border-radius: 0 0 1rem 1rem;
+            padding: 3rem; text-align: center; margin: 4rem 0 0;
+        }
+        .cta-block h2 {
+            font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.04em;
+            color: var(--white); margin: 0 0 0.75rem !important;
+        }
+        .cta-block p { color: rgba(255,255,255,0.6); font-size: 0.95rem; max-width: 480px; margin: 0 auto 2rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            padding: 1rem 2.2rem; background: rgba(221,205,156,0.1); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.35); border-radius: 9999px; transition: all 0.4s ease;
+        }
+        .cta-btn:hover { background: rgba(221,205,156,0.18); border-color: rgba(221,205,156,0.6); color: var(--gold-light); }
+        .cta-sub { font-size: 0.72rem; color: var(--white-dim); margin-top: 1rem; display: block; }
+
+        /* ── SIDEBAR ── */
+        .article-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 2rem; }
+        .sidebar-card {
+            border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem; overflow: hidden; position: relative;
+        }
+        .sidebar-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.3), transparent);
+        }
+        .sidebar-card h4 {
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            color: var(--gold); margin-bottom: 1.25rem; text-transform: uppercase;
+        }
+        .toc-list { display: flex; flex-direction: column; gap: 0; }
+        .toc-list a {
+            font-size: 0.82rem; color: var(--white-dim); padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex; align-items: center; gap: 0.6rem; transition: color 0.3s ease;
+        }
+        .toc-list a:last-child { border-bottom: none; }
+        .toc-list a:hover { color: var(--gold); }
+        .toc-list a::before {
+            content: ''; width: 5px; height: 5px; min-width: 5px; border-radius: 50%;
+            background: rgba(221,205,156,0.25); transition: background 0.3s ease;
+        }
+        .toc-list a:hover::before { background: var(--gold); }
+        .cta-card {
+            border: 1px solid rgba(221,205,156,0.15); border-radius: 1rem;
+            background: linear-gradient(135deg, var(--black-card) 0%, #0d0d0d 100%);
+            padding: 2rem; text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+            background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-card h4 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 0.75rem; position: relative; z-index: 1; }
+        .cta-card p { font-size: 0.8rem; line-height: 1.6; color: var(--white-dim); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .cta-card .btn-primary { width: 100%; justify-content: center; font-size: 0.9rem; padding: 0.85rem 1.5rem; position: relative; z-index: 1; }
+
+        /* ── RELATED ── */
+        .related-section {
+            padding: 5rem 3rem 7rem; border-top: 1px solid rgba(221,205,156,0.06);
+            background: var(--black-soft);
+        }
+        .related-inner { max-width: 1200px; margin: 0 auto; }
+        .related-header { margin-bottom: 2.5rem; }
+        .related-header h2 { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.25rem; }
+        .related-header p { font-size: 0.85rem; color: var(--white-dim); }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card {
+            border: 1px solid rgba(221,205,156,0.08); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem; display: flex; flex-direction: column;
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-out-quart);
+        }
+        .related-card:hover { border-color: rgba(221,205,156,0.18); transform: translateY(-3px); }
+        .related-cat { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        .related-title { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.1; color: var(--white); margin-bottom: 0.75rem; flex: 1; }
+        .related-link { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease; }
+        .related-card:hover .related-link { color: var(--gold); }
+
+        /* ── FOOTER ── */
+        .footer {
+            position: relative; border-top: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px 12px 0 0; padding: 5rem 3rem 2.5rem; overflow: hidden;
+            max-width: 1400px; margin: 0 auto;
+        }
+        .footer-grid-bg {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 5fr 2fr 2fr 2fr; gap: 3rem; margin-bottom: 3.5rem; align-items: start; }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img { height: 170px; width: auto; align-self: flex-start; margin-left: -15px; margin-top: -20px; }
+        .footer-brand p { font-size: 0.85rem; color: var(--white-muted); line-height: 1.7; max-width: 340px; }
+        .footer-email-group { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; max-width: 320px; }
+        .footer-email-group input { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.15); border-radius: 10px; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.8rem; color: var(--white); outline: none; }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--gold); border-radius: 10px; color: var(--black); flex-shrink: 0; transition: background 0.3s ease; }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a { font-size: 0.85rem; color: var(--white-dim); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.6rem; }
+        .link-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.25s ease; flex-shrink: 0; }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials { display: flex; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 9999px; background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.1); }
+        .footer-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse-green 2s ease-in-out infinite; }
+        @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .footer-status span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(74,222,128,0.7); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .sidebar-sticky { position: static; }
+            .related-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav-logo img { height: 120px; }
+            .nav.scrolled .nav-logo img { height: 100px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .article-hero { padding: 10rem 1.5rem 5rem; }
+            .article-layout { padding: 4rem 1.5rem 5rem; }
+            .stat-row { grid-template-columns: 1fr; }
+            .myth-grid { grid-template-columns: 1fr; }
+            .tier-card { grid-template-columns: 1fr; }
+            .tier-label-col { border-right: none; border-bottom: 1px solid rgba(221,205,156,0.07); }
+            .anatomy-row { grid-template-columns: 1fr; }
+            .anatomy-row.thead { display: none; }
+            .trust-chain { flex-wrap: wrap; }
+            .trust-node { min-width: 120px; }
+            .moment-row { grid-template-columns: 1fr; }
+            .moment-timing { align-items: flex-start; padding-top: 0; flex-direction: row; align-items: center; gap: 0.75rem; }
+            .related-section { padding: 4rem 1.5rem 5rem; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer { padding: 4rem 1.5rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo img { height: 110px; }
+            .nav.scrolled .nav-logo img { height: 92px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="cursorGlow"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="blog.html" onclick="closeMobile()" style="color:var(--gold);">Blog</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+</div>
+
+<nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- HERO -->
+<section class="article-hero">
+    <div class="article-hero-bg"></div>
+    <div class="article-hero-grid"></div>
+    <div class="article-hero-content">
+        <div class="article-breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="article-breadcrumb-sep">/</span>
+            <span>Member Growth</span>
+        </div>
+        <div class="article-cat-badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            Member Growth
+        </div>
+        <h1 class="article-hero-title">
+            REFERRAL PROGRAMS THAT<br>
+            <span class="line2">ACTUALLY WORK FOR GYMS</span>
+        </h1>
+        <div class="article-meta">
+            <span>May 2026</span>
+            <div class="article-meta-dot"></div>
+            <span>9 min read</span>
+            <div class="article-meta-dot"></div>
+            <span>By Enoch Marketing</span>
+        </div>
+        <p class="article-hero-intro">
+            A free week for a friend isn't a referral program. It's a coupon with a vague delivery mechanism and no follow-through. Real referral systems are structured, timed to psychology, and built to generate your best members — not your most casual ones. Here's how to build one.
+        </p>
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="stat-box-num">83%</div>
+                <div class="stat-box-label">Of satisfied customers are willing to refer — but only 29% actually do without being asked</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">4×</div>
+                <div class="stat-box-label">More likely to join — referred members convert at dramatically higher rates than cold leads</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">37%</div>
+                <div class="stat-box-label">Higher retention — referred members stay longer and churn less than any other acquisition channel</div>
+            </div>
+        </div>
+    </div>
+    <div class="article-hero-divider"></div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-layout">
+    <article class="article-body">
+
+        <p>Ask any gym owner what their best source of new members is and almost every one of them will say the same thing: word of mouth. Then ask them what their word-of-mouth strategy is — what system they have in place to deliberately generate referrals, when they ask, how they incentivize it, how they track it — and the answer is usually silence, a vague mention of a flyer on the front desk, or a story about that one time they offered a free month and two people came in.</p>
+
+        <p>That's the gap. The channel that generates your best leads, your most loyal members, and your lowest acquisition cost is almost entirely left to chance. Gym owners who've figured this out — who've built a real referral system instead of hoping good vibes spread on their own — are quietly growing without pouring money into ads every month. The ones who haven't are spending more on paid traffic trying to replace what a referral program would have generated for free.</p>
+
+        <p>The difference isn't luck, and it isn't having a uniquely amazing gym. It's having a system. This is how you build one.</p>
+
+        <hr class="article-divider">
+
+        <h2 id="why-referrals">WHY REFERRALS ARE YOUR MOST VALUABLE CHANNEL</h2>
+
+        <p>Before we get into mechanics, it's worth understanding <em>why</em> referred members are so different from members who find you through ads or organic search. Because once you understand the psychology, the entire strategy for generating more of them becomes obvious.</p>
+
+        <p>When someone finds your gym through a Google Ad, they're a stranger evaluating an option. They have no social connection to the gym, no pre-existing trust, and no emotional stake in making it work. Their commitment to showing up is built entirely on the quality of your marketing — and it evaporates the first time life gets inconvenient.</p>
+
+        <p>When someone joins because their best friend goes there and has been raving about it for three months, they arrive with something fundamentally different: <strong>pre-loaded belonging.</strong> They already know someone. They already feel partially invested. They have a social reason to show up beyond their own willpower — because their friend is expecting them at the 6am class on Wednesday. That social accountability is worth more than any class schedule, any programming quality, any piece of equipment you could buy.</p>
+
+        <div class="trust-chain">
+            <div class="trust-node">
+                <span class="trust-icon">🏋️</span>
+                <span class="trust-label">Existing Member</span>
+                <span class="trust-desc">Happy, engaged, invested in the community</span>
+            </div>
+            <div class="trust-arrow">→</div>
+            <div class="trust-node">
+                <span class="trust-icon">💬</span>
+                <span class="trust-label">Social Proof</span>
+                <span class="trust-desc">Genuine word-of-mouth — the most trusted signal on earth</span>
+            </div>
+            <div class="trust-arrow">→</div>
+            <div class="trust-node">
+                <span class="trust-icon">🤝</span>
+                <span class="trust-label">Pre-Sold Lead</span>
+                <span class="trust-desc">Arrives warm, trusting, with social accountability built in</span>
+            </div>
+            <div class="trust-arrow">→</div>
+            <div class="trust-node highlight">
+                <span class="trust-icon">⭐</span>
+                <span class="trust-label">Best Members</span>
+                <span class="trust-desc">Higher conversion, longer retention, more referrals themselves</span>
+            </div>
+        </div>
+
+        <p>This chain is why referrals compound. A referred member who stays for three years and refers two people of their own generates value that no paid ad can replicate. The math on this is staggering when you build the system to make it happen consistently rather than occasionally.</p>
+
+        <hr class="article-divider">
+
+        <h2 id="why-most-fail">WHY MOST GYM REFERRAL PROGRAMS FAIL</h2>
+
+        <p>The "bring a friend" model fails not because the idea is wrong, but because it's built backwards. It's designed around what's easy for the gym to offer, not around what actually motivates a member to make a referral. Here's what separates programs that work from ones that sit on a flyer and collect dust.</p>
+
+        <div class="myth-grid">
+            <div class="myth-col bad">
+                <div class="myth-col-header">What Most Gyms Do</div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">Offer a generic "bring a friend" with no clear ask or timeline</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">Incentivize the referrer with a free week or month — a discount, not a reward</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">Ask for referrals at sign-up, when the member has zero loyalty yet</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">Put a flyer at the desk and call it a program</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">Offer the same incentive to all members regardless of engagement level</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">No follow-up with either the referrer or the referred lead</span></div>
+                <div class="myth-item"><span class="myth-icon">✕</span><span class="myth-text">No tracking — no idea what's working, what isn't, or who the top referrers are</span></div>
+            </div>
+            <div class="myth-col good">
+                <div class="myth-col-header">What Actually Works</div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Specific ask with a clear mechanism: "share this link" or "give them this card"</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Incentive that feels like a <em>reward</em> — experiential, exclusive, or genuinely valuable</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Ask at peak emotional moments — PR day, first Rx, 30-day milestone, transformation moment</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Automated touchpoints that remind members at the right intervals</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Tiered program that rewards your most engaged members with the best incentives</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Immediate follow-up with referred leads — speed is the #1 conversion variable</span></div>
+                <div class="myth-item"><span class="myth-icon">✓</span><span class="myth-text">Dashboard tracking referral source, conversion rate, and LTV of referred members</span></div>
+            </div>
+        </div>
+
+        <div class="callout">
+            <span class="callout-label">The Core Problem</span>
+            <p>"Most gyms treat referral as a passive hope rather than an active system. They want the outcome — a stream of warm, loyal, pre-sold new members — without engineering the cause. You can't harvest something you never planted."</p>
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="the-three-programs">THREE REFERRAL MODELS THAT ACTUALLY WORK</h2>
+
+        <p>There isn't one right referral program. There are three distinct models, each suited to different gym sizes, cultures, and growth goals. Most gyms should run a combination of at least two of them simultaneously. Here's the breakdown.</p>
+
+        <div class="tier-stack">
+
+            <div class="tier-card bronze">
+                <div class="tier-label-col">
+                    <span class="tier-badge">Model 01</span>
+                    <span class="tier-name">The Evergreen Program</span>
+                    <span class="tier-desc">Always-on, passive, requires minimal management once built</span>
+                </div>
+                <div class="tier-body-col">
+                    <div class="tier-what">What It Is</div>
+                    <p>A permanent, year-round referral offer that every member knows about and can activate at any time. This is the foundation layer — the baseline program that runs in the background regardless of anything else you're doing. Its job is to make sure that every member who <em>wants</em> to refer someone has a clear, easy mechanism to do so and a reason to follow through.</p>
+                    <p>The key to making the evergreen program work isn't the incentive size — it's the clarity of the mechanism. Most gyms fail here not because they don't offer anything, but because the member doesn't know exactly what to do. "Tell your friends" is not a mechanism. "Share your unique link" or "grab three referral cards from the desk" is a mechanism.</p>
+                    <div class="tier-incentive">
+                        <span class="tier-incentive-label">Incentive</span>
+                        <span class="tier-incentive-val">1 month free for referrer when their friend signs up for a 3+ month membership &bull; Free trial class for the referred friend</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tier-card silver">
+                <div class="tier-label-col">
+                    <span class="tier-badge">Model 02</span>
+                    <span class="tier-name">The Milestone Ask</span>
+                    <span class="tier-desc">Timed to emotional peak moments — highest conversion rate of any model</span>
+                </div>
+                <div class="tier-body-col">
+                    <div class="tier-what">What It Is</div>
+                    <p>A referral ask that fires automatically at the exact moments when a member is most emotionally activated — their first PR, their first Rx workout, a transformation milestone, their 6-month anniversary. These are the moments when a member's enthusiasm for the gym is at its absolute peak, and enthusiasm is what drives referrals.</p>
+                    <p>Think about it from the member's perspective. On the day someone hits their first pull-up after months of trying, they're not thinking "this gym is fine." They're thinking "this place changed my life." That emotion is the fuel for a referral. If you ask in that moment — specifically, personally, immediately — the conversion rate is dramatically higher than any generic "bring a friend" nudge sent to your whole list on a random Tuesday.</p>
+                    <div class="tier-incentive">
+                        <span class="tier-incentive-label">Incentive</span>
+                        <span class="tier-incentive-val">Exclusive reward tied to the milestone (custom gear, nutrition consult, specialty session) &bull; Doubles as milestone recognition</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tier-card gold">
+                <div class="tier-label-col">
+                    <span class="tier-badge">Model 03</span>
+                    <span class="tier-name">The Ambassador Program</span>
+                    <span class="tier-desc">For your top 5–10% of members — generates disproportionate referral volume</span>
+                </div>
+                <div class="tier-body-col">
+                    <div class="tier-what">What It Is</div>
+                    <p>A structured, invitation-only tier for your most engaged and vocal members — the ones who are already talking about your gym on social media, bringing people to try a class on their own, and acting as unofficial community champions. These are your natural ambassadors. The program formalizes and rewards what they're already doing.</p>
+                    <p>Ambassadors get exclusive perks — early access to programming updates, invites to member events, a small monthly credit, their name and story featured on your social channels — in exchange for actively participating in your referral ecosystem. They're given tools: a personal referral link, a digital media kit, talking points, and a direct line to ownership. They feel special because they <em>are</em> special to your business. The ROI on a well-run ambassador program typically outperforms all other referral models combined.</p>
+                    <div class="tier-incentive">
+                        <span class="tier-incentive-label">Incentive</span>
+                        <span class="tier-incentive-val">Exclusive status + monthly perks + escalating rewards per referral + public recognition &bull; Invite-only, by coach nomination</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="when-to-ask">THE TIMING IS EVERYTHING</h2>
+
+        <p>The single biggest variable in referral program success isn't the incentive. It isn't the mechanism. It's the <strong>timing of the ask.</strong> The same member who would shrug at a referral request on a random Tuesday will enthusiastically share your gym with five people on a day when the coach just shouted their name across the floor after a PR lift.</p>
+
+        <p>Here are the six moments that generate the highest referral conversion — and exactly how to approach each one.</p>
+
+        <div class="moment-map">
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">The PR</div>
+                    <div class="moment-timing-sub">Personal Record Day</div>
+                </div>
+                <div class="moment-card hot">
+                    <div class="moment-title">The moment a member beats their own best</div>
+                    <div class="moment-why">This is peak emotional activation. The member is elated, proud, and already mentally composing what they're going to tell people. The referral ask lands here like a conversation, not a sales pitch.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"You've been working toward that for weeks — that's a huge deal. Honestly, the people who see results like this are always the ones who'd love it here. If you know anyone who's been thinking about trying CrossFit, send them my way — I'd love to give them a free class on the house."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">30 Days</div>
+                    <div class="moment-timing-sub">The Milestone Check-In</div>
+                </div>
+                <div class="moment-card hot">
+                    <div class="moment-title">Month one complete — loyalty is forming</div>
+                    <div class="moment-why">At the 30-day mark, a member who's still in has already made their keep-or-leave decision. They're committed, they're seeing results, and they have enough experience to speak authentically about what the gym is like. This is the best window for the structured ask.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"You've had a solid first month — the progress you've made is real. A lot of people who get to where you are naturally start talking about it. If you ever want to bring someone in to try a class, just let me know and I'll make sure they get the same attention you did on day one. There's also something in it for you if they decide to join."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">First Rx</div>
+                    <div class="moment-timing-sub">Skills Breakthrough</div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-title">Their first prescribed workout — identity shift</div>
+                    <div class="moment-why">Completing a workout Rx for the first time crosses a psychological line — the member stops seeing themselves as a beginner. That identity shift generates intense positive association with the gym and is a powerful trigger for telling others.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"First Rx is a big deal — seriously. A lot of people who've been doing CrossFit for a year haven't gotten there yet. If you've got anyone in your life who's on the fence about trying this, today's a great story to share with them."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">Post-Event</div>
+                    <div class="moment-timing-sub">After a Competition</div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-title">The high after a community event</div>
+                    <div class="moment-why">In-house competitions, benchmark challenges, and team events generate collective highs that spill outside the gym walls. Members naturally post about them, talk about them, and invite people to the next one. Structure a referral opportunity around every event.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"Events like this are exactly why I love running this gym. If anyone in your circle saw your posts today and expressed interest — even just a 'that looks cool' — send them my info. Next one is in 8 weeks and I'd love to have some new faces in it."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">3 Months</div>
+                    <div class="moment-timing-sub">Habit Lock-In Point</div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-title">The long-term member ask</div>
+                    <div class="moment-why">At three months, a member is a confirmed long-termer. They have visible transformation, deep community ties, and strong opinions about the gym. They're walking testimonials. This is where you formalize the relationship with an ambassador invitation or an explicit referral reward.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"Three months in — you're one of our people now. Genuinely. Members like you are the reason this place has the culture it does, and I'd love for you to help us grow it. I've got a referral setup that rewards you every time someone you bring in joins. Want me to send you the details?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="moment-row">
+                <div class="moment-timing">
+                    <div class="moment-timing-label">Transformation</div>
+                    <div class="moment-timing-sub">Visible Change</div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-title">When someone's results become undeniable</div>
+                    <div class="moment-why">When a member hits a visible transformation milestone — a body composition change, a health improvement, a lifestyle shift — the people around them are already asking what they're doing. The referral isn't something you're creating at this point. You're just giving it a mechanism.</div>
+                    <div class="moment-script">
+                        <span class="moment-script-label">How to Ask</span>
+                        <p>"People must be asking you what you're doing. When they do — and they will — send them here. I'll take care of them the same way we took care of you. There's no better ad for this place than what you've accomplished."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="incentive-design">DESIGNING THE RIGHT INCENTIVE</h2>
+
+        <p>The incentive is the part most gym owners get wrong. Not because they're not generous — many are — but because they design the incentive around what's cheap and easy to offer, not around what actually motivates a member to make the ask.</p>
+
+        <p>Here's the core principle: <strong>the best referral incentive feels like a reward, not a discount.</strong> A free week of membership for the referred friend is a discount. A custom pair of shorts, a one-on-one nutrition consult, or an exclusive "founding member" rate for your new Saturday specialty class is a reward. The psychological difference between those two things is enormous — and it changes both how you present the program and how members respond to it.</p>
+
+        <div class="incentive-anatomy">
+            <div class="anatomy-header">
+                <div class="anatomy-header-title">Incentive Design Framework</div>
+                <div class="anatomy-header-sub">What makes a referral incentive actually motivate action — and what kills it</div>
+            </div>
+            <div class="anatomy-row thead">
+                <div class="anatomy-cell">Incentive Type</div>
+                <div class="anatomy-cell">Why It Works / Doesn't</div>
+                <div class="anatomy-cell">Best Used When</div>
+            </div>
+            <div class="anatomy-row">
+                <div class="anatomy-cell"><strong>Free Month of Membership</strong></div>
+                <div class="anatomy-cell">
+                    <span class="good">✓ High perceived dollar value</span>
+                    <span class="bad">✕ Feels like a discount off something they're paying for anyway</span>
+                    <span class="bad">✕ Devalues membership in member's mind</span>
+                </div>
+                <div class="anatomy-cell">As a secondary reward, not the primary one. Better as "month 3 is on us" than "bring a friend, save $150."</div>
+            </div>
+            <div class="anatomy-row">
+                <div class="anatomy-cell"><strong>Custom Gym Merch</strong></div>
+                <div class="anatomy-cell">
+                    <span class="good">✓ Tangible, visible, creates identity attachment</span>
+                    <span class="good">✓ Doubles as marketing every time the referrer wears it</span>
+                    <span class="bad">✕ Must be quality — cheap merch backfires</span>
+                </div>
+                <div class="anatomy-cell">Excellent for first referral and ambassador program. High perceived value, low actual cost for quality gear.</div>
+            </div>
+            <div class="anatomy-row">
+                <div class="anatomy-cell"><strong>Nutrition Consultation</strong></div>
+                <div class="anatomy-cell">
+                    <span class="good">✓ High perceived and actual value</span>
+                    <span class="good">✓ Directly enhances their gym results — keeps them engaged</span>
+                    <span class="good">✓ Feels exclusive and personal</span>
+                </div>
+                <div class="anatomy-cell">Best for ambassador program tier and milestone-triggered asks. The kind of reward that deepens retention as well as drives referrals.</div>
+            </div>
+            <div class="anatomy-row">
+                <div class="anatomy-cell"><strong>Cash or Gift Cards</strong></div>
+                <div class="anatomy-cell">
+                    <span class="good">✓ Universally motivating, clear value</span>
+                    <span class="bad">✕ Transactional feel — can make referrals feel mercenary</span>
+                    <span class="bad">✕ Doesn't reinforce gym identity or community</span>
+                </div>
+                <div class="anatomy-cell">Use sparingly, and only as part of a tiered structure (e.g., $50 toward gym retail after 3 referrals). Not as the headline incentive.</div>
+            </div>
+            <div class="anatomy-row">
+                <div class="anatomy-cell"><strong>Exclusive Access / Status</strong></div>
+                <div class="anatomy-cell">
+                    <span class="good">✓ Deeply motivating for community-oriented members</span>
+                    <span class="good">✓ Zero cost to the gym</span>
+                    <span class="good">✓ Reinforces belonging and identity — the real product you sell</span>
+                </div>
+                <div class="anatomy-cell">The foundation of the ambassador program. "You're invited to join our founding ambassador group" is more powerful for the right member than any cash reward.</div>
+            </div>
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="the-follow-up">THE FOLLOW-UP IS WHERE IT LIVES OR DIES</h2>
+
+        <p>Here's a brutal reality: the majority of referral leads that gyms generate never convert — not because the lead wasn't interested, but because the follow-up was slow, generic, or nonexistent. A referred lead arrives warm. They arrive with trust already established by the person who sent them. Every hour that passes without a personal, specific follow-up is an hour that warmth is cooling.</p>
+
+        <div class="callout warn">
+            <span class="callout-label">The Speed Rule</span>
+            <p>"A referred lead that doesn't hear from you within 2 hours of submitting their information converts at roughly the same rate as a cold lead. The trust transfer from the referrer evaporates fast. Speed is the multiplier — without it, the whole system underperforms."</p>
+        </div>
+
+        <p>When a referral comes in, three things need to happen immediately and in order:</p>
+
+        <p><strong>1. Personal outreach within 2 hours</strong> — not an automated "thanks for your interest" email. A text or call from a real person that mentions the member who referred them by name. "Hey Sarah — Marcus mentioned you've been thinking about trying CrossFit. I'm the owner here, and I wanted to reach out personally." That sentence does more conversion work than any landing page.</p>
+
+        <p><strong>2. The referrer is notified immediately</strong> — the moment their friend's referral is received, the referrer gets a message: "Your referral just came through — we're reaching out to them now. Thank you for sending them our way." This closes the loop, reinforces the positive behavior, and makes the referrer feel invested in the outcome.</p>
+
+        <p><strong>3. A follow-up sequence if no response</strong> — referred leads that don't respond to the first outreach should receive a 3-touch follow-up sequence over 5 days. Not a generic drip. A sequence that references the referral, the specific member who sent them, and a clear low-barrier next step ("just come to one class — if it's not for you, no pressure at all").</p>
+
+        <hr class="article-divider">
+
+        <h2 id="scorecard">RATE YOUR CURRENT PROGRAM</h2>
+
+        <p>Before building anything new, it's worth being honest about where your current referral effort stands. Run through this scorecard. Be ruthless.</p>
+
+        <div class="scorecard">
+            <div class="scorecard-header">
+                <div class="scorecard-title">Referral Program Scorecard</div>
+                <div class="scorecard-sub">Score yourself honestly — this is where the gaps become visible</div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Clear Mechanism</strong>
+                    Does every member know exactly how to make a referral right now — a link, a card, a specific step?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Timing Strategy</strong>
+                    Do you have specific moments identified where you ask for referrals — and a script or system for each?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Incentive Quality</strong>
+                    Does your referral incentive feel like a reward, or does it feel like a discount on something they already pay for?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Both-Side Incentive</strong>
+                    Does your program reward <em>both</em> the referrer AND the referred friend — not just one of them?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Speed of Follow-Up</strong>
+                    When a referral comes in, does a real person reach out within 2 hours — mentioning the referrer by name?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Automation Layer</strong>
+                    Are there automated touchpoints reminding members of the referral program at the right intervals — not just at sign-up?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Ambassador Tier</strong>
+                    Have you identified your top referrers and given them a formal role, exclusive perks, and active engagement?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-item">
+                <div class="scorecard-q">
+                    <strong>Tracking &amp; Attribution</strong>
+                    Do you know your referral conversion rate, which members refer most, and the LTV of referred vs. cold members?
+                </div>
+                <div class="score-pills">
+                    <div class="score-pill">Y</div>
+                    <div class="score-pill half">~</div>
+                    <div class="score-pill">N</div>
+                </div>
+            </div>
+
+            <div class="scorecard-footer">
+                <div class="score-legend-item"><span class="score-legend-dot" style="background:var(--gold);"></span><span class="score-legend-label">6–8 Yes: Strong foundation</span></div>
+                <div class="score-legend-item"><span class="score-legend-dot" style="background:var(--orange);"></span><span class="score-legend-label">3–5 Yes: Significant gaps</span></div>
+                <div class="score-legend-item"><span class="score-legend-dot" style="background:var(--red);"></span><span class="score-legend-label">0–2 Yes: Start from scratch</span></div>
+            </div>
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="build-it">BUILDING IT: WHERE TO START THIS WEEK</h2>
+
+        <div class="checklist">
+            <div class="checklist-title">This Week — Get the Foundation Right</div>
+            <ul>
+                <li><span class="check-box"></span>Define your mechanism: create a unique referral link per member (most gym software supports this) or print physical referral cards with a tracking code</li>
+                <li><span class="check-box"></span>Choose your evergreen incentive — one reward for the referrer, one for the new member. Write it out in one clear sentence that any member could repeat from memory</li>
+                <li><span class="check-box"></span>Brief your coaches on the 6 timing moments above and give them the script framework for each. Practice it once so it feels natural, not rehearsed</li>
+                <li><span class="check-box"></span>Set up a 2-hour follow-up protocol for referral leads — whether that's a CRM notification, a Slack alert, or a simple text to the person who handles sales conversations</li>
+                <li><span class="check-box"></span>Add a referral mention to your 30-day milestone conversation for every new member (see: <a href="crossfit-30-day-new-member-experience.html" style="color:var(--gold);text-decoration:underline;text-decoration-color:rgba(221,205,156,0.3);">The 30-Day New Member Experience</a>)</li>
+            </ul>
+        </div>
+
+        <div class="checklist">
+            <div class="checklist-title">This Month — Build the System Layer</div>
+            <ul>
+                <li><span class="check-box"></span>Set up an automated referral reminder email that fires at day 30, day 90, and after each PR or milestone event — personal in tone, specific in the ask</li>
+                <li><span class="check-box"></span>Identify your top 5–10 most engaged members by attendance, social activity, and community involvement — these are your ambassador candidates</li>
+                <li><span class="check-box"></span>Design the ambassador program: the perks, the name, the invitation process, and the referral tools you'll give them (personal link, talking points, digital kit)</li>
+                <li><span class="check-box"></span>Add referral source as a required field in your new member intake process so you can track attribution from day one</li>
+                <li><span class="check-box"></span>Set a monthly referral review: how many referrals came in, who referred them, conversion rate, and LTV of referred members vs. other channels</li>
+                <li><span class="check-box"></span>Run your first milestone-triggered ask in the next class where someone hits a PR — use the script above, see what the response is, refine from there</li>
+            </ul>
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="the-bottom-line">THE BOTTOM LINE</h2>
+
+        <p>The gyms quietly outgrowing their competitors right now aren't necessarily running better programming or spending more on ads. Many of them have simply figured out how to turn their happiest members into a predictable, systematic growth engine. They've stopped leaving word-of-mouth to chance and started engineering it with the same intentionality they bring to everything else they do well.</p>
+
+        <p>A referral program isn't complicated to build. It requires one afternoon to design, one team meeting to brief, and one month of consistent execution to see results. What it does require — and what most gym owners never give it — is the deliberate decision to treat it as a real system rather than a flyer on a desk.</p>
+
+        <p>Your members are already talking about you. The only question is whether you've given them a reason, a mechanism, and a moment to turn that conversation into a new member walking through your door.</p>
+
+        <p><strong>Build the system. The rest follows.</strong></p>
+
+        <div class="cta-block">
+            <h2>Build Your Referral System</h2>
+            <p>We'll design a complete referral program for your gym — the structure, the incentives, the timing, and the automation — and show you how to launch it in 30 days.</p>
+            <a href="contact.html" class="cta-btn">
+                Book My Free Strategy Call
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <span class="cta-sub">30 minutes. No obligation. We'll come with a plan built for your gym.</span>
+        </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+        <div class="sidebar-sticky">
+            <div class="sidebar-card">
+                <h4>In This Article</h4>
+                <nav class="toc-list">
+                    <a href="#why-referrals">Why Referrals Are Your Best Channel</a>
+                    <a href="#why-most-fail">Why Most Programs Fail</a>
+                    <a href="#the-three-programs">Three Models That Work</a>
+                    <a href="#when-to-ask">Timing Is Everything</a>
+                    <a href="#incentive-design">Designing the Right Incentive</a>
+                    <a href="#the-follow-up">The Follow-Up System</a>
+                    <a href="#scorecard">Rate Your Program</a>
+                    <a href="#build-it">Building It This Week</a>
+                    <a href="#the-bottom-line">The Bottom Line</a>
+                </nav>
+            </div>
+            <div class="cta-card">
+                <h4>FREE GROWTH AUDIT</h4>
+                <p>We'll review your current member growth strategy and show you exactly where the highest-ROI opportunities are — referrals and beyond.</p>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET MY FREE AUDIT</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- RELATED ARTICLES -->
+<section class="related-section">
+    <div class="related-inner">
+        <div class="related-header reveal">
+            <h2>KEEP READING</h2>
+            <p>More strategies for growing your CrossFit gym</p>
+        </div>
+        <div class="related-grid">
+            <a href="crossfit-30-day-new-member-experience.html" class="related-card reveal reveal-delay-1">
+                <p class="related-cat">Member Retention</p>
+                <h3 class="related-title">THE 30-DAY NEW MEMBER EXPERIENCE</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="email-marketing-for-gyms.html" class="related-card reveal reveal-delay-2">
+                <p class="related-cat">Email Marketing</p>
+                <h3 class="related-title">EMAIL MARKETING FOR GYMS: THE CHANNEL EVERYONE ABANDONED</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="blog-lead-gen.html" class="related-card reveal reveal-delay-3">
+                <p class="related-cat">Lead Generation</p>
+                <h3 class="related-title">WHY YOUR LEAD FUNNEL IS BROKEN</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <div><h4>Navigation</h4><ul>
+                <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
+                <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+            </ul></div>
+            <div><h4>Services</h4><ul>
+                <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+            </ul></div>
+            <div><h4>Connect</h4><ul>
+                <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+            </ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+                </div>
+                <div class="footer-status"><div class="footer-status-dot"></div><span>Accepting New Clients</span></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    function closeMobile() { mobileMenu.classList.remove('active'); }
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, { passive: true });
+    }
+</script>
+</body>
+</html>

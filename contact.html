@@ -2035,9 +2035,18 @@
                     btn.style.background = 'rgba(74, 222, 128, 0.1)';
                     btn.style.borderColor = 'rgba(74, 222, 128, 0.3)';
                     btn.style.color = '#4ade80';
+                    const bookingDate = hiddenDate.value;
+                    const bookingTime = hiddenTime.value;
                     form.reset();
                     hiddenDate.value = 'Not selected';
                     hiddenTime.value = 'Not selected';
+
+                    // Telegram notification to Tala via Cloudflare Worker
+                    fetch('https://bold-cell-f211.tala-ocevents.workers.dev', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ firstName, lastName, email: emailVal, gymName, date: bookingDate, time: bookingTime })
+                    });
                 } else {
                     const errorMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Unknown error';
                     console.error('Formspree error:', errorMsg);

@@ -11,5 +11,9 @@
 *.avi
 *.mkv
 
+# Dependencies
+node_modules/
+
 # Environment files
 .env
+.vercel

@@ -42,6 +42,8 @@ All JSON-LD on all pages parses without errors. FAQPage exists only where the pa
 ### 5. Em-dashes
 566 em-dashes removed across all 20 pages, including one `&mdash;` entity on pricing.html. Replacement rules: clause continuations became commas, label/example introductions became colons, seven hand-tuned cases (parenthetical, quoted speech, paired dashes), and the pricing table's "not included" glyph became an en-dash. No other copy wording was changed.
 
+A follow-up proofread of every replacement site (old text vs. new, from git history) found 35 spots where the comma created a run-on between two independent clauses; those were upgraded to a period or colon. Punctuation and sentence-start capitalization only, still no wording changes.
+
 ### 6. Heading structure, images, video, render-blocking
 - Every page has exactly one `<h1>`; h2/h3 nesting is sound.
 - All content images already had descriptive alt text and `loading="lazy"`. The Meta pixel noscript `<img>` lacked alt on all 20 pages; it now carries `alt=""`.

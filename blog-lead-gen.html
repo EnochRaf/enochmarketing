@@ -20,7 +20,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Why Your Lead Generation Funnel Is Broken (And How to Fix It in 30 Days)">
     <meta property="og:description" content="Getting clicks but not sign-ups? Fix every stage of your gym's lead pipeline with this 30-day playbook.">
-    <meta property="og:image" content="https://www.enochmarketing.com/logo_enoch.png">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <meta property="og:url" content="https://www.enochmarketing.com/blog-lead-gen.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -172,6 +172,67 @@
         @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; gap: 3rem; } .sidebar-sticky { position: static; } .related-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 768px) { .nav { padding: 0.75rem 1.5rem; } .nav-logo img { height: 120px; } .nav.scrolled .nav-logo img { height: 100px; } .nav-links { display: none; } .nav-hamburger { display: flex; } .article-hero { padding: 10rem 1.5rem 5rem; } .article-layout { padding: 4rem 1.5rem 5rem; } .stat-row { grid-template-columns: 1fr; } .related-section { padding: 4rem 1.5rem 5rem; } .related-grid { grid-template-columns: 1fr; } .footer { padding: 4rem 1.5rem 2rem; } .footer-grid { grid-template-columns: 1fr; gap: 2rem; } .funnel-stage { grid-template-columns: 1fr; } }
         @media (max-width: 480px) { .nav-logo img { height: 110px; } .nav.scrolled .nav-logo img { height: 92px; } }
+    
+        /* ========================================
+           AUTHOR BIO
+           ======================================== */
+        .author-bio-section {
+            padding: 0 3rem 5rem;
+            background: var(--black);
+        }
+        .author-bio-inner { max-width: 800px; margin: 0 auto; }
+        .author-bio-card {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.12);
+            border-radius: 1.25rem;
+            padding: 2rem;
+        }
+        .author-bio-img {
+            flex-shrink: 0;
+            width: 72px;
+            height: 96px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(221, 205, 156, 0.15);
+        }
+        .author-bio-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .author-bio-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+        .author-bio-role {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 0.9rem;
+        }
+        .author-bio-body {
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+            margin: 0;
+        }
+        .author-bio-body a {
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: rgba(221, 205, 156, 0.35);
+            text-underline-offset: 3px;
+            transition: color 0.3s ease;
+        }
+        .author-bio-body a:hover { color: var(--gold-light); }
+        @media (max-width: 768px) {
+            .author-bio-section { padding: 0 1.5rem 4rem; }
+            .author-bio-card { flex-direction: column; gap: 1.25rem; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -198,6 +259,58 @@
       gtag('js', new Date());
       gtag('config', 'G-85XT8T4WZ8');
     </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Lead Funnel Is Broken",
+    "datePublished": "2026-05-01",
+    "author": {
+        "@type": "Person",
+        "name": "Collin Charles",
+        "url": "https://www.enochmarketing.com/about.html"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Enoch Marketing",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.enochmarketing.com/enoch-logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.enochmarketing.com/blog-lead-gen.html"
+    },
+    "image": "https://www.enochmarketing.com/logo-enoch.png"
+}
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.enochmarketing.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.enochmarketing.com/blog.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Why Your Lead Funnel Is Broken",
+            "item": "https://www.enochmarketing.com/blog-lead-gen.html"
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -208,7 +321,7 @@
 <div id="cursorGlow"></div>
 
 <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="closeMobile()">Home</a>
+    <a href="/" onclick="closeMobile()">Home</a>
     <a href="services.html" onclick="closeMobile()">Services</a>
     <a href="pricing.html" onclick="closeMobile()">Pricing</a>
     <a href="about.html" onclick="closeMobile()">About Us</a>
@@ -217,11 +330,11 @@
 </div>
 
 <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo">
-        <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350">
+    <a href="/" class="nav-logo">
+        <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350">
     </a>
     <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="services.html">Services</a>
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About Us</a>
@@ -255,7 +368,7 @@
             <div class="article-meta-dot"></div>
             <span>6 min read</span>
             <div class="article-meta-dot"></div>
-            <span>By Enoch Marketing</span>
+            <span>By Collin Charles</span>
         </div>
     </div>
     <div class="article-hero-divider"></div>
@@ -415,6 +528,24 @@
     </aside>
 </div>
 
+<section class="author-bio-section">
+    <div class="author-bio-inner">
+        <div class="author-bio-card">
+            <div class="author-bio-img">
+                <picture>
+                    <source srcset="collin-charles.avif" type="image/avif">
+                    <img src="collin-charles.png" alt="Collin Charles, founder of Enoch Marketing" loading="lazy" width="72" height="96">
+                </picture>
+            </div>
+            <div class="author-bio-content">
+                <p class="author-bio-name">COLLIN CHARLES</p>
+                <p class="author-bio-role">Founder, Enoch Marketing</p>
+                <p class="author-bio-body">Collin Charles is the founder of Enoch Marketing, a veteran, and a longtime CrossFit athlete. He has spent years inside the boxes and gyms he now helps grow. Every framework on this blog comes from real campaigns run for real gym owners. <a href="contact.html">Book a free gym audit</a> to see what your gym is leaving on the table.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="related-section">
     <div class="related-inner">
         <div class="related-header reveal">
@@ -446,7 +577,7 @@
     <div class="footer-inner">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="enoch logo 3.png" alt="Enoch Marketing" width="1080" height="1350" loading="lazy">
+                <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350" loading="lazy">
                 <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                 <div class="footer-email-group">
                     <input type="email" placeholder="Enter your email...">

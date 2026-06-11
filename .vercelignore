@@ -1,0 +1,25 @@
+# Explicit deploy ignore list. Without this file the Vercel CLI falls back
+# to .gitignore, which excludes *.mp4 and would strip the hero videos.
+
+# Dependencies and local tooling
+node_modules
+package.json
+package-lock.json
+.claude
+tools
+.tmp
+
+# Internal docs, not for the public site
+CLAUDE.md
+SEO_AUDIT_RESULTS.md
+MANUAL_TODO.md
+audit_landing_page_copy.md
+SERVICE & PRICING GUIDE 1.pdf
+
+# Secrets and system files
+.env
+credentials.json
+token.json
+.DS_Store
+.git
+.gitignore

@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHK9XF2Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gym Owner's Guide to Competitor Analysis | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.enochmarketing.com/gym-owner-competitor-analysis-guide.html" />
+    <meta name="description" content="Research your local gym competitors, find the gaps no one is filling, and claim a position rivals cannot copy. The competitor analysis playbook for gym owners.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Gym Owner's Guide to Competitor Analysis">
+    <meta property="og:description" content="Research your local gym competitors, find the gaps no one is filling, and claim a position rivals cannot copy. The competitor analysis playbook for gym owners.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
+    <meta property="og:url" content="https://www.enochmarketing.com/gym-owner-competitor-analysis-guide.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Gym Owner's Guide to Competitor Analysis">
+    <meta name="twitter:description" content="Research your local gym competitors, find the gaps no one is filling, and claim a position rivals cannot copy. The competitor analysis playbook for gym owners.">
+    <meta name="twitter:image" content="https://www.enochmarketing.com/logo-enoch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --black-elevated: #1A1A1A;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+            --red: #e84040;
+            --orange: #f5873a;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--black); }
+        body { font-family: var(--font-body); background: var(--black); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; cursor: pointer; font-family: inherit; }
+        ul { list-style: none; }
+
+        #cursorGlow {
+            position: fixed; width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(221,205,156,0.04) 0%, transparent 70%);
+            pointer-events: none; transform: translate(-50%, -50%); z-index: 0; transition: opacity 0.3s;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0.75rem 3rem; display: flex; align-items: center;
+            justify-content: space-between; transition: all 0.5s var(--ease-out-expo);
+        }
+        .nav.scrolled {
+            background: rgba(0,0,0,0.92); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(221,205,156,0.1);
+        }
+        .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
+        .nav.scrolled .nav-logo img { height: 140px; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a {
+            font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-muted);
+            transition: color 0.3s ease; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 1px; background: var(--gold);
+            transition: width 0.4s var(--ease-out-expo);
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        .nav-cta {
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            padding: 0.7rem 1.8rem; background: rgba(221,205,156,0.08); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            overflow: hidden; transition: all 0.4s ease;
+        }
+        .nav-cta:hover { background: rgba(221,205,156,0.15); border-color: rgba(221,205,156,0.4); transform: translateY(-1px); }
+        .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; padding: 10px 8px; }
+        .nav-hamburger span { width: 28px; height: 2px; background: var(--gold); transition: all 0.3s ease; }
+        .mobile-menu {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999;
+            flex-direction: column; align-items: center; justify-content: center;
+            gap: 2rem; opacity: 0; transition: opacity 0.4s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu a { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.1em; color: var(--white); transition: color 0.3s ease; }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ── BUTTONS ── */
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.1em;
+            padding: 1rem 2.2rem; background: rgba(221,205,156,0.06); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px;
+            position: relative; overflow: hidden; transition: all 0.5s ease; cursor: pointer;
+        }
+        .btn-primary:hover { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.5); color: var(--gold-light); box-shadow: 0 0 25px rgba(221,205,156,0.2); }
+        .btn-primary span { position: relative; z-index: 1; }
+        .btn-primary .arrow { position: relative; z-index: 1; transition: transform 0.3s ease; }
+        .btn-primary:hover .arrow { transform: translateX(4px); }
+
+        /* ── REVEAL ── */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ── ARTICLE HERO ── */
+        .article-hero { position: relative; padding: 12rem 3rem 6rem; overflow: hidden; background: var(--black); }
+        .article-hero-bg {
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 30% 100%, rgba(221,205,156,0.07) 0%, transparent 55%),
+                        radial-gradient(ellipse 50% 50% at 70% 10%, rgba(221,205,156,0.03) 0%, transparent 50%);
+        }
+        .article-hero-grid {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 100%, black 20%, transparent 70%);
+        }
+        .article-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .article-breadcrumb {
+            display: flex; align-items: center; gap: 0.6rem; margin-bottom: 2rem;
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim);
+        }
+        .article-breadcrumb a:hover { color: var(--gold); }
+        .article-breadcrumb-sep { opacity: 0.3; }
+        .article-cat-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold); background: rgba(221,205,156,0.07); border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 9999px; padding: 0.35rem 0.9rem; margin-bottom: 1.5rem;
+        }
+        .article-hero-title {
+            font-family: var(--font-display); font-size: clamp(2.5rem, 5.5vw, 5rem);
+            line-height: 0.96; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.75rem;
+            opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.2s forwards;
+        }
+        .article-hero-title .line2 { color: var(--gold); }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+        .article-meta {
+            display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem;
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--white-dim); opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.4s forwards;
+            margin-bottom: 2.5rem;
+        }
+        .article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--white-dim); }
+        .article-hero-intro {
+            font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.6);
+            max-width: 760px; border-left: 3px solid var(--gold); padding-left: 1.5rem;
+            opacity: 0; animation: fade-up 0.9s var(--ease-out-expo) 0.5s forwards;
+            margin-bottom: 3rem;
+        }
+        .article-hero-divider {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent);
+        }
+
+        /* ── STAT BAR ── */
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .stat-box {
+            border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem 1.5rem;
+        }
+        .stat-box-num { font-family: var(--font-display); font-size: 3rem; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-box-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white-dim); line-height: 1.5; }
+
+        /* ── ARTICLE LAYOUT ── */
+        .article-layout {
+            display: grid; grid-template-columns: 1fr 360px; gap: 5rem;
+            max-width: 1200px; margin: 0 auto; padding: 5rem 3rem 7rem;
+        }
+        .article-body { min-width: 0; }
+        .article-body p { font-size: 1.05rem; font-weight: 400; line-height: 1.9; color: rgba(255,255,255,0.72); margin-bottom: 1.75rem; }
+        .article-body h2 {
+            font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+            letter-spacing: 0.04em; color: var(--white); margin: 3rem 0 1.25rem;
+        }
+        .article-body h3 {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--gold); margin: 2rem 0 0.75rem;
+        }
+        .article-body strong { color: var(--white); font-weight: 600; }
+        .article-body em { color: var(--gold-light); font-style: italic; }
+        .article-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent);
+            margin: 3rem 0; border: none;
+        }
+
+        /* ── CALLOUT ── */
+        .callout {
+            border-left: 3px solid var(--gold); background: rgba(221,205,156,0.04);
+            border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 2.5rem 0;
+        }
+        .callout p { margin-bottom: 0 !important; color: rgba(255,255,255,0.85) !important; font-style: italic; }
+        .callout strong { color: var(--gold); }
+        .callout-label {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold); display: block; margin-bottom: 0.75rem;
+        }
+        .callout.warn { border-left-color: var(--orange); background: rgba(245,135,58,0.04); }
+        .callout.warn .callout-label { color: var(--orange); }
+
+        /* ── TRUST CHAIN ── */
+        .trust-chain { display: flex; align-items: stretch; gap: 0; margin: 2rem 0; flex-wrap: wrap; }
+        .trust-node {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; padding: 1.5rem 1.25rem; flex: 1; text-align: center; min-width: 130px;
+        }
+        .trust-node.highlight { border-color: rgba(221,205,156,0.25); background: rgba(221,205,156,0.04); }
+        .trust-arrow { display: flex; align-items: center; justify-content: center; padding: 0 0.5rem; color: var(--gold); font-size: 1.25rem; flex-shrink: 0; }
+        .trust-icon  { font-size: 1.75rem; display: block; margin-bottom: 0.6rem; }
+        .trust-label { font-family: var(--font-display); font-size: 1rem; color: var(--white); display: block; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+        .trust-desc  { font-size: 0.72rem; color: var(--white-dim); line-height: 1.45; }
+
+        /* ── MYTH GRID ── */
+        .myth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+        .myth-col { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; }
+        .myth-col-header { padding: 0.85rem 1.25rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+        .myth-col.bad  .myth-col-header { background: rgba(232,64,64,0.1); color: var(--red); border-bottom: 1px solid rgba(232,64,64,0.15); }
+        .myth-col.good .myth-col-header { background: rgba(221,205,156,0.08); color: var(--gold); border-bottom: 1px solid rgba(221,205,156,0.15); }
+        .myth-item { padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 0.65rem; align-items: flex-start; }
+        .myth-item:last-child { border-bottom: none; }
+        .myth-icon { font-size: 0.8rem; margin-top: 2px; flex-shrink: 0; font-weight: 700; }
+        .myth-col.bad  .myth-icon { color: var(--red); }
+        .myth-col.good .myth-icon { color: var(--gold); }
+        .myth-text { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+        .myth-col.good .myth-text { color: rgba(255,255,255,0.75); }
+
+        /* ── TIER STACK ── */
+        .tier-stack { display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0; }
+        .tier-card {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; overflow: hidden;
+            display: grid; grid-template-columns: 220px 1fr;
+        }
+        .tier-label-col {
+            padding: 1.75rem 1.5rem; border-right: 1px solid rgba(221,205,156,0.07);
+            display: flex; flex-direction: column; justify-content: center; gap: 0.5rem;
+        }
+        .tier-badge { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; display: block; }
+        .tier-name  { font-family: var(--font-display); font-size: 1.75rem; line-height: 1; color: var(--white); letter-spacing: 0.04em; }
+        .tier-desc  { font-size: 0.72rem; color: var(--white-dim); line-height: 1.5; margin-top: 4px; }
+        .tier-body-col { padding: 1.5rem 1.75rem; }
+        .tier-what { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.75rem; }
+        .tier-body-col p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 0.85rem; }
+        .tier-body-col p:last-child { margin-bottom: 0; }
+        .tier-incentive {
+            display: inline-flex; align-items: flex-start; gap: 0.6rem;
+            background: rgba(221,205,156,0.07); border: 1px solid rgba(221,205,156,0.18);
+            border-radius: 0.5rem; padding: 0.65rem 1rem; margin-top: 0.5rem;
+        }
+        .tier-incentive-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; padding-top: 1px; }
+        .tier-incentive-val   { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+        .tier-card.bronze .tier-label-col { border-left: 4px solid #cd7f32; }
+        .tier-card.bronze .tier-badge     { color: #cd7f32; }
+        .tier-card.silver .tier-label-col { border-left: 4px solid #a0a8b0; }
+        .tier-card.silver .tier-badge     { color: #a0a8b0; }
+        .tier-card.gold   .tier-label-col { border-left: 4px solid var(--gold); }
+        .tier-card.gold   .tier-badge     { color: var(--gold); }
+
+        /* ── MOMENT MAP ── */
+        .moment-map { margin: 2rem 0; display: flex; flex-direction: column; gap: 1rem; }
+        .moment-row { display: grid; grid-template-columns: 130px 1fr; gap: 1.25rem; align-items: start; }
+        .moment-timing { display: flex; flex-direction: column; align-items: flex-end; padding-top: 1.1rem; gap: 0.25rem; }
+        .moment-timing-label { font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); line-height: 1; text-align: right; }
+        .moment-timing-sub   { font-size: 0.65rem; font-weight: 500; color: var(--white-dim); letter-spacing: 0.06em; text-transform: uppercase; text-align: right; line-height: 1.3; }
+        .moment-card {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 0.75rem; padding: 1.25rem 1.5rem; position: relative;
+        }
+        .moment-card.hot { border-color: rgba(221,205,156,0.25); background: rgba(221,205,156,0.04); }
+        .moment-card.hot::before {
+            content: 'BEST MOMENT'; position: absolute; top: -1px; right: 1rem;
+            background: var(--gold); color: var(--black); font-size: 0.55rem; font-weight: 700;
+            letter-spacing: 0.12em; padding: 3px 8px; border-radius: 0 0 6px 6px; font-family: var(--font-body);
+        }
+        .moment-title { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+        .moment-why   { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 0.75rem; }
+        .moment-script { background: var(--black); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.5rem; padding: 0.85rem 1.1rem; margin-top: 0.5rem; }
+        .moment-script-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem; display: block; }
+        .moment-script p { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-style: italic; margin: 0; line-height: 1.65; }
+
+        /* ── INCENTIVE ANATOMY TABLE ── */
+        .incentive-anatomy { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .anatomy-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; }
+        .anatomy-header-title { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--white); }
+        .anatomy-header-sub { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .anatomy-row { display: grid; grid-template-columns: 200px 1fr 1fr; gap: 0; border-bottom: 1px solid rgba(221,205,156,0.07); }
+        .anatomy-row:last-child { border-bottom: none; }
+        .anatomy-row.thead .anatomy-cell { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); padding: 0.75rem 1.1rem; background: #0d0d0d; }
+        .anatomy-cell { padding: 1rem 1.1rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); border-right: 1px solid rgba(221,205,156,0.07); line-height: 1.6; vertical-align: top; }
+        .anatomy-cell:last-child { border-right: none; }
+        .anatomy-cell strong { color: var(--white); font-weight: 600; }
+        .anatomy-cell .good { color: var(--gold); font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px; }
+        .anatomy-cell .bad  { color: var(--red);  font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px; }
+
+        /* ── SCORECARD ── */
+        .scorecard { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .scorecard-header { padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid rgba(221,205,156,0.07); }
+        .scorecard-title  { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); letter-spacing: 0.04em; }
+        .scorecard-sub    { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .scorecard-item   { display: grid; grid-template-columns: 1fr 90px; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.06); gap: 1.25rem; }
+        .scorecard-item:last-child { border-bottom: none; }
+        .scorecard-q { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+        .scorecard-q strong { color: var(--white); display: block; font-size: 0.82rem; margin-bottom: 3px; font-weight: 600; }
+        .score-pills { display: flex; gap: 5px; justify-content: flex-end; }
+        .score-pill {
+            width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(221,205,156,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.65rem; font-weight: 700; color: var(--white-dim); cursor: default;
+            font-family: var(--font-body);
+        }
+        .score-pill.yes  { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.4); color: var(--gold); }
+        .score-pill.half { background: rgba(245,135,58,0.12); border-color: rgba(245,135,58,0.3); color: var(--orange); }
+        .scorecard-footer { padding: 1rem 1.5rem; background: #0d0d0d; border-top: 1px solid rgba(221,205,156,0.07); display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; }
+        .score-legend-item { text-align: center; padding: 0.6rem; }
+        .score-legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: middle; }
+        .score-legend-label { font-size: 0.72rem; color: var(--white-dim); }
+
+        /* ── CHECKLIST ── */
+        .checklist {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 1rem; padding: 2rem; margin: 1.5rem 0;
+        }
+        .checklist-title {
+            font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em;
+            color: var(--white); margin-bottom: 1.25rem;
+        }
+        .checklist ul { display: flex; flex-direction: column; gap: 0; }
+        .checklist ul li {
+            font-size: 0.88rem; color: rgba(255,255,255,0.65);
+            padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: flex-start; gap: 0.75rem; line-height: 1.55;
+        }
+        .checklist ul li:last-child { border-bottom: none; }
+        .check-box {
+            width: 16px; height: 16px; min-width: 16px; border: 1.5px solid rgba(221,205,156,0.25);
+            border-radius: 3px; margin-top: 2px;
+        }
+
+        /* ── CTA BLOCK ── */
+        .cta-block {
+            background: var(--black-card); border: 1px solid rgba(221,205,156,0.15);
+            border-top: 3px solid var(--gold); border-radius: 0 0 1rem 1rem;
+            padding: 3rem; text-align: center; margin: 4rem 0 0;
+        }
+        .cta-block h2 {
+            font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.04em;
+            color: var(--white); margin: 0 0 0.75rem !important;
+        }
+        .cta-block p { color: rgba(255,255,255,0.6); font-size: 0.95rem; max-width: 480px; margin: 0 auto 2rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            padding: 1rem 2.2rem; background: rgba(221,205,156,0.1); color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.35); border-radius: 9999px; transition: all 0.4s ease;
+        }
+        .cta-btn:hover { background: rgba(221,205,156,0.18); border-color: rgba(221,205,156,0.6); color: var(--gold-light); }
+        .cta-sub { font-size: 0.72rem; color: var(--white-dim); margin-top: 1rem; display: block; }
+
+        /* ── SIDEBAR ── */
+        .article-sidebar { position: relative; }
+        .sidebar-sticky { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 2rem; }
+        .sidebar-card {
+            border: 1px solid rgba(221,205,156,0.1); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem; overflow: hidden; position: relative;
+        }
+        .sidebar-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(to right, transparent, rgba(221,205,156,0.3), transparent);
+        }
+        .sidebar-card h4 {
+            font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.1em;
+            color: var(--gold); margin-bottom: 1.25rem; text-transform: uppercase;
+        }
+        .toc-list { display: flex; flex-direction: column; gap: 0; }
+        .toc-list a {
+            font-size: 0.82rem; color: var(--white-dim); padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex; align-items: center; gap: 0.6rem; transition: color 0.3s ease;
+        }
+        .toc-list a:last-child { border-bottom: none; }
+        .toc-list a:hover { color: var(--gold); }
+        .toc-list a::before {
+            content: ''; width: 5px; height: 5px; min-width: 5px; border-radius: 50%;
+            background: rgba(221,205,156,0.25); transition: background 0.3s ease;
+        }
+        .toc-list a:hover::before { background: var(--gold); }
+        .cta-card {
+            border: 1px solid rgba(221,205,156,0.15); border-radius: 1rem;
+            background: linear-gradient(135deg, var(--black-card) 0%, #0d0d0d 100%);
+            padding: 2rem; text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+            background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-card h4 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 0.75rem; position: relative; z-index: 1; }
+        .cta-card p { font-size: 0.8rem; line-height: 1.6; color: var(--white-dim); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .cta-card .btn-primary { width: 100%; justify-content: center; font-size: 0.9rem; padding: 0.85rem 1.5rem; position: relative; z-index: 1; }
+
+        /* ── RELATED ── */
+        .related-section {
+            padding: 5rem 3rem 7rem; border-top: 1px solid rgba(221,205,156,0.06);
+            background: var(--black-soft);
+        }
+        .related-inner { max-width: 1200px; margin: 0 auto; }
+        .related-header { margin-bottom: 2.5rem; }
+        .related-header h2 { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.25rem; }
+        .related-header p { font-size: 0.85rem; color: var(--white-dim); }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card {
+            border: 1px solid rgba(221,205,156,0.08); border-radius: 1rem;
+            background: var(--black-card); padding: 1.75rem; display: flex; flex-direction: column;
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-out-quart);
+        }
+        .related-card:hover { border-color: rgba(221,205,156,0.18); transform: translateY(-3px); }
+        .related-cat { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+        .related-title { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.1; color: var(--white); margin-bottom: 0.75rem; flex: 1; }
+        .related-link { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s ease; }
+        .related-card:hover .related-link { color: var(--gold); }
+
+        /* ── FOOTER ── */
+        .footer {
+            position: relative; border-top: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px 12px 0 0; padding: 5rem 3rem 2.5rem; overflow: hidden;
+            max-width: 1400px; margin: 0 auto;
+        }
+        .footer-grid-bg {
+            position: absolute; inset: 0;
+            background-image: linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 5fr 2fr 2fr 2fr; gap: 3rem; margin-bottom: 3.5rem; align-items: start; }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img { height: 170px; width: auto; align-self: flex-start; margin-left: -15px; margin-top: -20px; }
+        .footer-brand p { font-size: 0.85rem; color: var(--white-muted); line-height: 1.7; max-width: 340px; }
+        .footer-email-group { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; max-width: 320px; }
+        .footer-email-group input { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.15); border-radius: 10px; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 0.8rem; color: var(--white); outline: none; }
+        .footer-email-group input::placeholder { color: var(--white-dim); }
+        .footer-email-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--gold); border-radius: 10px; color: var(--black); flex-shrink: 0; transition: background 0.3s ease; }
+        .footer-email-btn:hover { background: var(--gold-light); }
+        .footer h4 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a { font-size: 0.85rem; color: var(--white-dim); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.6rem; }
+        .link-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.25s ease; flex-shrink: 0; }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer ul li a:hover .link-dot { background: var(--gold); width: 14px; border-radius: 4px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-bottom-right { display: flex; align-items: center; gap: 1.5rem; }
+        .footer-socials { display: flex; gap: 1rem; padding-right: 1.5rem; border-right: 1px solid rgba(255,255,255,0.08); }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 9999px; background: rgba(74,222,128,0.05); border: 1px solid rgba(74,222,128,0.1); }
+        .footer-status-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse-green 2s ease-in-out infinite; }
+        @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .footer-status span { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(74,222,128,0.7); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .article-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .sidebar-sticky { position: static; }
+            .related-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 0.75rem 1.5rem; }
+            .nav-logo img { height: 120px; }
+            .nav.scrolled .nav-logo img { height: 100px; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .article-hero { padding: 10rem 1.5rem 5rem; }
+            .article-layout { padding: 4rem 1.5rem 5rem; }
+            .stat-row { grid-template-columns: 1fr; }
+            .myth-grid { grid-template-columns: 1fr; }
+            .tier-card { grid-template-columns: 1fr; }
+            .tier-label-col { border-right: none; border-bottom: 1px solid rgba(221,205,156,0.07); }
+            .anatomy-row { grid-template-columns: 1fr; }
+            .anatomy-row.thead { display: none; }
+            .trust-chain { flex-wrap: wrap; }
+            .trust-node { min-width: 120px; }
+            .moment-row { grid-template-columns: 1fr; }
+            .moment-timing { align-items: flex-start; padding-top: 0; flex-direction: row; align-items: center; gap: 0.75rem; }
+            .related-section { padding: 4rem 1.5rem 5rem; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer { padding: 4rem 1.5rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .nav-logo img { height: 110px; }
+            .nav.scrolled .nav-logo img { height: 92px; }
+        }
+    
+        /* ========================================
+           AUTHOR BIO
+           ======================================== */
+        .author-bio-section {
+            padding: 0 3rem 5rem;
+            background: var(--black);
+        }
+        .author-bio-inner { max-width: 800px; margin: 0 auto; }
+        .author-bio-card {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.12);
+            border-radius: 1.25rem;
+            padding: 2rem;
+        }
+        .author-bio-img {
+            flex-shrink: 0;
+            width: 72px;
+            height: 96px;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(221, 205, 156, 0.15);
+        }
+        .author-bio-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .author-bio-name {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+        .author-bio-role {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 0.9rem;
+        }
+        .author-bio-body {
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+            margin: 0;
+        }
+        .author-bio-body a {
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: rgba(221, 205, 156, 0.35);
+            text-underline-offset: 3px;
+            transition: color 0.3s ease;
+        }
+        .author-bio-body a:hover { color: var(--gold-light); }
+        @media (max-width: 768px) {
+            .author-bio-section { padding: 0 1.5rem 4rem; }
+            .author-bio-card { flex-direction: column; gap: 1.25rem; }
+        }
+
+        /* ── COMPETITOR ANALYSIS COMPONENTS ── */
+        .competitor-map { display: flex; flex-direction: column; gap: 0.9rem; margin: 2rem 0; }
+        .comp-card { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; display: grid; grid-template-columns: 180px 1fr 1fr; }
+        .comp-type-col { padding: 1.4rem 1.1rem; border-right: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; }
+        .comp-type-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); }
+        .comp-type-name  { font-family: var(--font-display); font-size: 1.25rem; color: var(--white); letter-spacing: 0.04em; line-height: 1.1; }
+        .comp-type-example { font-size: 0.7rem; color: var(--white-dim); font-style: italic; margin-top: 2px; }
+        .comp-threat-col { padding: 1.1rem 1.25rem; border-right: 1px solid rgba(221,205,156,0.07); }
+        .comp-insight-col { padding: 1.1rem 1.25rem; }
+        .comp-col-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem; display: block; }
+        .comp-threat-level { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 0.6rem; }
+        .comp-threat-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .comp-threat-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+        .comp-col-body { font-size: 0.8rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+        .intel-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.9rem; margin: 2rem 0; }
+        .intel-card { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; padding: 1.4rem; }
+        .intel-num  { font-family: var(--font-display); font-size: 2.25rem; color: var(--white-dim); line-height: 1; display: block; margin-bottom: 4px; }
+        .intel-method { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.04em; color: var(--white); display: block; margin-bottom: 0.35rem; line-height: 1.1; }
+        .intel-label  { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; display: block; }
+        .intel-desc { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 0.75rem; }
+        .intel-what-to-look-for { background: var(--black); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.4rem; padding: 0.65rem 0.9rem; }
+        .intel-look-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); display: block; margin-bottom: 0.4rem; }
+        .intel-look-items { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+        .intel-look-item { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.45; padding-left: 0.75rem; position: relative; }
+        .intel-look-item::before { content: '\2192'; position: absolute; left: 0; color: var(--gold); font-size: 0.65rem; }
+
+        .gap-finder { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .gf-header  { padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; }
+        .gf-title   { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--white); }
+        .gf-sub     { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .gf-table   { width: 100%; border-collapse: collapse; }
+        .gf-table thead tr { border-bottom: 2px solid var(--gold); }
+        .gf-table th { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white-dim); padding: 0.75rem 1rem; text-align: left; }
+        .gf-table th:not(:first-child) { text-align: center; }
+        .gf-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(221,205,156,0.07); font-size: 0.8rem; color: rgba(255,255,255,0.65); vertical-align: middle; }
+        .gf-table td:first-child { font-weight: 600; color: var(--white); }
+        .gf-table td:not(:first-child) { text-align: center; }
+        .gf-check { color: var(--gold); font-size: 0.9rem; }
+        .gf-cross  { color: var(--red); font-size: 0.85rem; opacity: 0.7; }
+        .gf-partial{ color: var(--orange); font-size: 0.85rem; }
+        .gf-gap-row td { background: rgba(221,205,156,0.05) !important; }
+        .gf-gap-row td:first-child { color: var(--gold); }
+        .gf-footer  { padding: 0.9rem 1.5rem; border-top: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; font-size: 0.75rem; color: var(--white-dim); line-height: 1.6; }
+
+        .diff-statement { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .ds-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; }
+        .ds-title  { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); letter-spacing: 0.04em; }
+        .ds-sub    { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .ds-template { padding: 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); }
+        .ds-sentence { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 2.2; }
+        .ds-blank { display: inline-block; border-bottom: 2px solid var(--gold); padding: 0 8px; min-width: 120px; color: var(--gold); font-weight: 600; font-size: 0.88rem; font-style: italic; }
+        .ds-example { padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); display: grid; grid-template-columns: 80px 1fr; gap: 0.9rem; align-items: start; }
+        .ds-example:last-child { border-bottom: none; }
+        .ds-ex-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 3px; }
+        .ds-ex-label.weak   { color: var(--red); }
+        .ds-ex-label.strong { color: var(--gold); }
+        .ds-ex-text { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+        .ds-ex-text.strong  { color: var(--white); }
+        .ds-ex-why  { font-size: 0.75rem; color: var(--white-dim); margin-top: 4px; font-style: italic; }
+
+        .intel-calendar { background: var(--black-card); border: 1px solid rgba(221,205,156,0.08); border-radius: 0.75rem; overflow: hidden; margin: 2rem 0; }
+        .ic-header { padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(221,205,156,0.07); background: #0d0d0d; }
+        .ic-title  { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); letter-spacing: 0.04em; }
+        .ic-sub    { font-size: 0.82rem; color: var(--white-dim); margin-top: 4px; }
+        .ic-quarters { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(221,205,156,0.07); }
+        .ic-q { background: var(--black-card); padding: 1.1rem 1rem; }
+        .ic-q-label { font-family: var(--font-display); font-size: 1.25rem; color: var(--gold); display: block; margin-bottom: 4px; letter-spacing: 0.04em; }
+        .ic-q-name  { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); display: block; margin-bottom: 0.75rem; }
+        .ic-q-tasks { list-style: none; display: flex; flex-direction: column; gap: 0; }
+        .ic-q-task  { font-size: 0.75rem; color: rgba(255,255,255,0.65); padding: 0.45rem 0; border-bottom: 1px solid rgba(221,205,156,0.06); line-height: 1.45; padding-left: 0.85rem; position: relative; }
+        .ic-q-task:last-child { border-bottom: none; }
+        .ic-q-task::before { content: '\203A'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .intel-grid, .ic-quarters { grid-template-columns: 1fr; }
+            .comp-card { grid-template-columns: 1fr; }
+            .comp-type-col, .comp-threat-col { border-right: none; border-bottom: 1px solid rgba(221,205,156,0.07); }
+            .ds-example { grid-template-columns: 1fr; }
+            .gap-finder { overflow-x: auto; }
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2151580048923147');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2151580048923147&ev=PageView&noscript=1" alt=""
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-85XT8T4WZ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-85XT8T4WZ8');
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Gym Owner's Guide to Competitor Analysis",
+    "datePublished": "2026-06-01",
+    "author": {
+        "@type": "Person",
+        "name": "Collin Charles",
+        "url": "https://www.enochmarketing.com/about.html"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Enoch Marketing",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.enochmarketing.com/enoch-logo.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.enochmarketing.com/gym-owner-competitor-analysis-guide.html"
+    },
+    "image": "https://www.enochmarketing.com/logo-enoch.png"
+}
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.enochmarketing.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.enochmarketing.com/blog.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "The Gym Owner's Guide to Competitor Analysis",
+            "item": "https://www.enochmarketing.com/gym-owner-competitor-analysis-guide.html"
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHK9XF2Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<div id="cursorGlow"></div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/" onclick="closeMobile()">Home</a>
+    <a href="services.html" onclick="closeMobile()">Services</a>
+    <a href="pricing.html" onclick="closeMobile()">Pricing</a>
+    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="blog.html" onclick="closeMobile()" style="color:var(--gold);">Blog</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+</div>
+
+<nav class="nav" id="nav">
+    <a href="/" class="nav-logo">
+        <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350">
+    </a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- HERO -->
+<section class="article-hero">
+    <div class="article-hero-bg"></div>
+    <div class="article-hero-grid"></div>
+    <div class="article-hero-content">
+        <div class="article-breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="article-breadcrumb-sep">/</span>
+            <span>Strategy</span>
+        </div>
+        <div class="article-cat-badge">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Strategy
+        </div>
+        <h1 class="article-hero-title">
+            THE GYM OWNER'S GUIDE TO<br>
+            <span class="line2">COMPETITOR ANALYSIS</span>
+        </h1>
+        <div class="article-meta">
+            <span>June 2026</span>
+            <div class="article-meta-dot"></div>
+            <span>9 min read</span>
+            <div class="article-meta-dot"></div>
+            <span>By Collin Charles</span>
+        </div>
+        <p class="article-hero-intro">
+            Most gym owners think they know their competition. They have driven past the Planet Fitness and checked a rival's Instagram. That is not competitive analysis, it is a glance in the rearview mirror. Real competitor research shows you exactly where the gaps are and how to own a position nobody else is occupying.
+        </p>
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="stat-box-num">74%</div>
+                <div class="stat-box-label">Of gym owners have never formally analysed a competitor's pricing, positioning, or reviews. They compete on instinct, not intelligence</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">3-5</div>
+                <div class="stat-box-label">Direct competitors is typical for a CrossFit gym, but the real landscape usually has 8 to 12 players when you count every format</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-num">1</div>
+                <div class="stat-box-label">Gap in the local market, correctly identified and claimed, is worth more than spend fighting for a position already taken</div>
+            </div>
+        </div>
+    </div>
+    <div class="article-hero-divider"></div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-layout">
+    <article class="article-body">
+
+
+      <p>Competitive analysis sounds like something large corporations do with expensive consultants and quarterly strategy decks. For most small gym owners, it brings to mind stressful comparison anxiety, the uncomfortable feeling of looking at a competitor's packed schedule and pristine Instagram and wondering what they're doing differently.</p>
+
+      <p>That's not what real competitive analysis is. Real competitive analysis is not about anxiety and it's not about copying. It's about information. It's the disciplined process of understanding your market clearly enough to find the gaps, the things prospects in your area want that nobody is currently giving them well. And it produces something immediately actionable: a positioning strategy that isn't "we're a great CrossFit gym" but "we're specifically the gym for [X people] who want [Y thing] that [Z competitors] don't provide."</p>
+
+      <p>That specificity is the difference between a gym that competes on price because it has no other angle, and a gym that doesn't need to compete on price because it owns a position nobody else is claiming. This article gives you the framework to find that position, using publicly available information, a structured approach, and a few hours of focused research.</p>
+
+      <div class="callout">
+        <span class="callout-label">The Goal of Competitor Research</span>
+        <p>"The point of studying your competitors is not to know what they're doing so you can do it too. It's to know what they're doing so you can find exactly what they're not doing, and own that space before anyone else notices it's empty."</p>
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="map-the-landscape">Map Your Full Competitive Landscape First</h2>
+      <p>Before you can analyse your competitors, you need to know who they actually are, and the list is almost always longer and more varied than gym owners initially think. Your competition isn't just other CrossFit boxes. It's every fitness option a prospect could choose instead of you. Here are the six competitor types that belong on your map, and how each one competes with you differently.</p>
+
+      <div class="competitor-map">
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 01</span>
+            <span class="comp-type-name">Other CrossFit Boxes</span>
+            <span class="comp-type-example">The box 3 miles away with the slightly lower price</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--red)"></div><span class="comp-threat-text" style="color:var(--red)">High, Direct</span></div>
+            <p class="comp-col-body">Same product, same format, same target market. A prospect who's considering CrossFit is comparing you directly. Pricing, coaching quality, community feel, and brand differentiation all matter intensely here.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">Pricing tiers, class schedule density, coach credentials and tenure, review themes on Google, social media voice and content type, facility quality from photos, their trial offer structure.</p>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 02</span>
+            <span class="comp-type-name">Boutique Fitness Studios</span>
+            <span class="comp-type-example">F45, Barry's, OrangeTheory, local HIIT studios</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--orange)"></div><span class="comp-threat-text" style="color:var(--orange)">Medium, Overlapping</span></div>
+            <p class="comp-col-body">Competing for the same fitness-committed, higher-income demographic. Often better-funded for marketing. Their weakness: less personalised coaching, lower community depth, no progressive skill development.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">Their marketing channels and spend (visible via Meta Ad Library), their onboarding experience, what their reviews say about coach knowledge, whether members talk about community or just "a good workout."</p>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 03</span>
+            <span class="comp-type-name">Commercial Gyms</span>
+            <span class="comp-type-example">Planet Fitness, Anytime Fitness, LA Fitness</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--white-dim)"></div><span class="comp-threat-text" style="color:var(--white-dim)">Low, Price Segment</span></div>
+            <p class="comp-col-body">Competing only on price. A prospect genuinely choosing between you and Planet Fitness is making a lifestyle decision, not a fitness one. Your job is to clarify that the comparison is fundamentally wrong.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">Their Google Review complaints, these reveal the exact gaps (no coaching, nobody knows your name, no accountability) that you fill. Their negative reviews are your most powerful differentiation ammunition.</p>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 04</span>
+            <span class="comp-type-name">Personal Trainers</span>
+            <span class="comp-type-example">Independent PTs, online coaching platforms</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--orange)"></div><span class="comp-threat-text" style="color:var(--orange)">Medium, 1:1 Preference</span></div>
+            <p class="comp-col-body">Appeals to members who want individual attention. Your advantage: community, cost efficiency vs. 1:1, and the accountability of public group performance. Their advantage: fully personalised programming.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">What they charge per session vs. your monthly cost per class. What outcomes they promise. Whether they serve the same demographic. Consider whether a partnership makes more sense than competition.</p>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 05</span>
+            <span class="comp-type-name">Specialty Gyms</span>
+            <span class="comp-type-example">Weightlifting clubs, gymnastics, martial arts</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--gold-dark)"></div><span class="comp-threat-text" style="color:var(--gold-dark)">Low, Specialist Segment</span></div>
+            <p class="comp-col-body">Different enough that direct comparison is rare. Cross-pollination is more likely, members who do CrossFit and martial arts simultaneously. These are more often partners than competitors in the right market.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">Member demographic overlap. Whether they serve clients who could benefit from CrossFit's general conditioning alongside their specialty. Partnership opportunities worth more than competitive intelligence here.</p>
+          </div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-type-col">
+            <span class="comp-type-label">Type 06</span>
+            <span class="comp-type-name">Inertia / Do Nothing</span>
+            <span class="comp-type-example">The prospect who stays on the couch</span>
+          </div>
+          <div class="comp-threat-col">
+            <span class="comp-col-label">Threat Level</span>
+            <div class="comp-threat-level"><div class="comp-threat-dot" style="background:var(--red)"></div><span class="comp-threat-text" style="color:var(--red)">High, Most Common</span></div>
+            <p class="comp-col-body">The competitor nobody talks about. Most people who could benefit from your gym choose nothing, not a competitor. Understanding why helps you address the inertia barrier specifically in your marketing.</p>
+          </div>
+          <div class="comp-insight-col">
+            <span class="comp-col-label">What to Research</span>
+            <p class="comp-col-body">Survey your existing members: what almost stopped them from starting? Those answers reveal the objections stopping prospects from choosing any gym at all, and your marketing should address them directly.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="intel-gathering">The Intelligence Gathering Framework</h2>
+      <p>Competitor research doesn't require spy tactics or awkward mystery-shopper visits. The most valuable competitive intelligence is completely public, sitting in Google reviews, social media, ad libraries, and websites. Here's how to systematically extract it.</p>
+
+      <div class="intel-grid">
+
+        <div class="intel-card">
+          <span class="intel-num">01</span>
+          <span class="intel-method">Google Reviews Deep Dive</span>
+          <span class="intel-label">Time required: 45–60 minutes per competitor</span>
+          <p class="intel-desc">Read every review your top 3 competitors have received, not just their star rating summary. Specifically, read the one-star and two-star reviews in detail. These contain your most valuable competitive intelligence: the exact failures, gaps, and frustrations that members experienced. Then read their five-star reviews for the same reason, what do people love most? That's their strongest claim to defend against.</p>
+          <div class="intel-what-to-look-for">
+            <span class="intel-look-label">What to document</span>
+            <ul class="intel-look-items">
+              <li class="intel-look-item">Recurring complaints in 1–2 star reviews (coach quality, scheduling, community feel)</li>
+              <li class="intel-look-item">What five-star reviewers cite as the primary reason they love the gym</li>
+              <li class="intel-look-item">How management responds to negative reviews, reveals culture and priorities</li>
+              <li class="intel-look-item">Whether their five-star themes match what you offer, or what you could offer better</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="intel-card">
+          <span class="intel-num">02</span>
+          <span class="intel-method">Meta Ad Library Audit</span>
+          <span class="intel-label">Time required: 20–30 minutes per competitor</span>
+          <p class="intel-desc">Go to facebook.com/ads/library, search each competitor's name, and see every ad they're currently running. This is completely free and completely public. You can see their creative, their offer, their targeting approach (inferred from creative language), and how long they've been running each ad. Ads that have been running for more than 3 weeks are working, those are their best-performing offers and messaging.</p>
+          <div class="intel-what-to-look-for">
+            <span class="intel-look-label">What to document</span>
+            <ul class="intel-look-items">
+              <li class="intel-look-item">What offer they're leading with (free trial, discount, challenge sign-up)</li>
+              <li class="intel-look-item">What headline and hook they use, what problem are they solving?</li>
+              <li class="intel-look-item">Which ads have been running the longest (these are their winners)</li>
+              <li class="intel-look-item">What their creative looks like, production quality, real vs. stock imagery</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="intel-card">
+          <span class="intel-num">03</span>
+          <span class="intel-method">Website and SEO Analysis</span>
+          <span class="intel-label">Time required: 30 minutes per competitor</span>
+          <p class="intel-desc">Visit each competitor's website as a new prospect would. How easy is it to find pricing? How clear is their trial offer? What's the quality of their photography, stock or real? Does it load quickly on mobile? Then use a free tool like Ubersuggest or Google's "site:" search to understand which keywords they rank for. The keywords they rank for but you don't are direct SEO opportunities.</p>
+          <div class="intel-what-to-look-for">
+            <span class="intel-look-label">What to document</span>
+            <ul class="intel-look-items">
+              <li class="intel-look-item">Time to find pricing from the homepage (how many clicks?)</li>
+              <li class="intel-look-item">Quality and authenticity of their imagery</li>
+              <li class="intel-look-item">Clarity and prominence of their trial/CTA offer</li>
+              <li class="intel-look-item">Local SEO keywords they rank for that you currently don't</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="intel-card">
+          <span class="intel-num">04</span>
+          <span class="intel-method">Social Media Content Audit</span>
+          <span class="intel-label">Time required: 30–45 minutes per competitor</span>
+          <p class="intel-desc">Scroll the last 30 posts on each competitor's Instagram or Facebook. Note what types of content they post (promotional, community, educational), what their engagement looks like relative to their follower count, and what topics or formats generate the most response. High engagement on specific content types tells you exactly what their audience wants more of, and what you could do better.</p>
+          <div class="intel-what-to-look-for">
+            <span class="intel-look-label">What to document</span>
+            <ul class="intel-look-items">
+              <li class="intel-look-item">Content type breakdown: community/promotional/educational split</li>
+              <li class="intel-look-item">Their top 5 posts by engagement, what do they have in common?</li>
+              <li class="intel-look-item">Whether they tell member stories, and how well they do it</li>
+              <li class="intel-look-item">Tone and voice: corporate/generic or specific/authentic?</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="the-gap-finder">The Competitive Gap Finder</h2>
+      <p>Once you've gathered intelligence on your top 3–4 direct competitors, the next step is to systematically compare them against yourself and against what the market actually wants. This is where the genuine positioning opportunities live, not in out-competing them at what they already do well, but in identifying what they all fail to do, or what they do inconsistently enough that you could own it.</p>
+
+      <div class="gap-finder">
+        <div class="gf-header">
+          <div class="gf-title">Competitive Feature Gap Finder</div>
+          <div class="gf-sub">Map your competitors across the dimensions that matter to your target member, gaps are your positioning opportunities</div>
+        </div>
+        <table class="gf-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Your Gym</th>
+              <th>Competitor A</th>
+              <th>Competitor B</th>
+              <th>Competitor C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coach knows every member's name</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-partial">~</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-partial">~</span></td>
+            </tr>
+            <tr>
+              <td>Progress tracking from day one</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Structured new member onboarding</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-partial">~</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Transparent, clear pricing online</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-partial">~</span></td>
+            </tr>
+            <tr class="gf-gap-row">
+              <td>Nutrition coaching integrated</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr class="gf-gap-row">
+              <td>Dedicated beginner pathway</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Active community events / socials</td>
+              <td><span class="gf-partial">~</span></td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>YouTube / long-form content presence</td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Member milestone public recognition</td>
+              <td><span class="gf-check">✓</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-partial">~</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+            <tr>
+              <td>Formal referral programme</td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+              <td><span class="gf-cross">✕</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="gf-footer">Rows highlighted in green = your exclusive advantages, these belong in your positioning and marketing. Rows where all competitors show ✕ = open market gaps. YouTube presence and formal referral programme are universal gaps in this example, first mover advantage is available to any gym willing to build them.</div>
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="the-position">Turning Research Into Positioning</h2>
+      <p>Competitive analysis is only useful if it changes what you say and how you say it. The output of this work should be a specific, defensible positioning statement that you couldn't have written before doing the research, one that directly addresses the gaps you've identified and claims a space that no competitor currently occupies.</p>
+
+      <div class="diff-statement">
+        <div class="ds-header">
+          <div class="ds-title">The Differentiation Statement Formula</div>
+          <div class="ds-sub">Fill in the blanks using your competitive gap research, this becomes the foundation of every marketing message you produce</div>
+        </div>
+        <div class="ds-template">
+          <p class="ds-sentence">We're the gym for <span class="ds-blank">specific type of person</span> in <span class="ds-blank">your city</span> who wants <span class="ds-blank">specific outcome</span> but has struggled to find a gym that <span class="ds-blank">specific gap competitors don't fill</span>. Unlike <span class="ds-blank">competitor category</span>, we <span class="ds-blank">specific differentiator backed by your research</span>.</p>
+        </div>
+        <div class="ds-examples">
+          <div class="ds-example">
+            <div class="ds-ex-label weak">❌ Weak</div>
+            <div>
+              <div class="ds-ex-text">"We're the best CrossFit gym in [City]. Our experienced coaches help members of all fitness levels achieve their goals in a welcoming community environment."</div>
+              <div class="ds-ex-why">Generic. Could be any gym. Makes no specific claim that research supports. Gives a prospect no reason to choose you over any competitor.</div>
+            </div>
+          </div>
+          <div class="ds-example">
+            <div class="ds-ex-label strong">✓ Strong</div>
+            <div>
+              <div class="ds-ex-text strong">"We're the CrossFit gym in Austin for people who've tried and quit other gyms, the ones who need to feel known by name before they'll commit to showing up. We're the only box in the city with a structured 30-day beginner pathway, a dedicated nutrition coaching track, and a coach who reviews your progress with you at the end of every month."</div>
+              <div class="ds-ex-why">Specific audience. Specific gap (feeling unknown). Three specific differentiators backed by competitive research. A competitor reading this knows exactly what you're competing on, and can't easily copy it overnight.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="staying-current">Staying Current: The Quarterly Intel Review</h2>
+      <p>Competitive landscapes change. A new studio opens. A competitor starts running ads aggressively. A local gym closes and its members are suddenly available. A competitor raises their prices and leaves a gap in the budget segment. The gym owners who catch these changes first are the ones who've built a recurring competitive monitoring habit, not an annual deep-dive, but a light quarterly check that keeps their intelligence current with minimal effort.</p>
+
+      <div class="intel-calendar">
+        <div class="ic-header">
+          <div class="ic-title">Quarterly Competitive Intelligence Calendar</div>
+          <div class="ic-sub">Spread across the year, never more than 2–3 hours per quarter</div>
+        </div>
+        <div class="ic-quarters">
+          <div class="ic-q">
+            <span class="ic-q-label">Q1</span>
+            <span class="ic-q-name">January, March</span>
+            <ul class="ic-q-tasks">
+              <li class="ic-q-task">Annual full competitive audit, all competitor types mapped and scored</li>
+              <li class="ic-q-task">Google Review sweep, read all new reviews posted since Q4</li>
+              <li class="ic-q-task">Pricing check, have any competitors changed their rates?</li>
+              <li class="ic-q-task">New entrants scan, any new studios or gyms opened in your radius?</li>
+            </ul>
+          </div>
+          <div class="ic-q">
+            <span class="ic-q-label">Q2</span>
+            <span class="ic-q-name">April, June</span>
+            <ul class="ic-q-tasks">
+              <li class="ic-q-task">Meta Ad Library check, what are competitors advertising for summer?</li>
+              <li class="ic-q-task">Website audit, have any competitors improved their site or offer?</li>
+              <li class="ic-q-task">Social content audit, any competitors starting to do storytelling well?</li>
+              <li class="ic-q-task">Google ranking check, are competitors gaining or losing local search positions?</li>
+            </ul>
+          </div>
+          <div class="ic-q">
+            <span class="ic-q-label">Q3</span>
+            <span class="ic-q-name">July, September</span>
+            <ul class="ic-q-tasks">
+              <li class="ic-q-task">Review new member intake feedback, where did they come from and why did they choose you?</li>
+              <li class="ic-q-task">Check if any competitors have closed, merged, or launched new locations</li>
+              <li class="ic-q-task">Mystery shop: have someone call a competitor as a prospect, note their sales process</li>
+              <li class="ic-q-task">Update gap finder table with any changes to competitor offerings</li>
+            </ul>
+          </div>
+          <div class="ic-q">
+            <span class="ic-q-label">Q4</span>
+            <span class="ic-q-name">Oct, December</span>
+            <ul class="ic-q-tasks">
+              <li class="ic-q-task">January campaign intelligence, what are competitors planning for New Year?</li>
+              <li class="ic-q-task">Annual pricing review, informed by what competitors are charging</li>
+              <li class="ic-q-task">Positioning review, has anything changed that requires updating your differentiation statement?</li>
+              <li class="ic-q-task">Brief coaching team on competitive landscape going into January</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="build-it">Build Your Competitive Intelligence File This Week</h2>
+
+      <div class="checklist">
+        <div class="checklist-title">The Initial Audit, Do This in One Session</div>
+        <ul>
+          <li><span class="check-box"></span>List every competitor in your radius across all six types, CrossFit boxes, boutiques, commercial gyms, personal trainers, specialty gyms. This is your full landscape map.</li>
+          <li><span class="check-box"></span>Identify your top 3 direct competitors (other CrossFit or HIIT boxes attracting the same demographic). These get the full intelligence treatment.</li>
+          <li><span class="check-box"></span>Read every Google review for each of the top 3, document recurring themes in both positive and negative reviews in a shared document</li>
+          <li><span class="check-box"></span>Visit each competitor's website as a new prospect: time how long it takes to find pricing, evaluate their CTA, note their photography quality</li>
+          <li><span class="check-box"></span>Open the Meta Ad Library and search each competitor, screenshot their current ads, note what offers they're running and how long each ad has been active</li>
+          <li><span class="check-box"></span>Fill out the Gap Finder table above for your gym vs. your top 3 competitors, be ruthlessly honest about where you score a ✕</li>
+        </ul>
+      </div>
+      <div class="checklist" style="margin-top:16px">
+        <div class="checklist-title">Turning Intelligence Into Strategy</div>
+        <ul>
+          <li><span class="check-box"></span>Identify your top 3 genuine competitive advantages, things you do that none of your top competitors do at the same quality level. These become your marketing pillars.</li>
+          <li><span class="check-box"></span>Identify the biggest gap in your market, a dimension where all your competitors score ✕ and you could realistically score ✓ within 90 days</li>
+          <li><span class="check-box"></span>Write your Differentiation Statement using the formula above, share it with your head coach and refine until both of you can say it naturally in a conversation</li>
+          <li><span class="check-box"></span>Update your website homepage to reflect your differentiation, the positioning should be visible within 10 seconds of landing on the page</li>
+          <li><span class="check-box"></span>Set a quarterly calendar reminder for the intel review schedule above, treat it as a recurring operational task, not a one-time project</li>
+        </ul>
+      </div>
+
+      <hr class="article-divider" />
+      <h2 id="bottom-line">The Bottom Line</h2>
+      <p>The gym owner who knows their market wins their market. Not because knowing is enough on its own, but because the intelligence leads to better decisions at every level: what to charge, how to position, where to invest in marketing, what to improve operationally, and which gaps to claim before anyone else notices they exist.</p>
+      <p>The gym owners who don't do this work aren't making strategic decisions. They're making guesses, some of them educated, all of them based on incomplete information. They're competing on instinct in a market where some of their competitors are competing on intelligence. That's a disadvantage that compounds over time just as surely as good strategy does.</p>
+      <p>You don't need expensive tools or a strategy consultant. You need a few hours, a structured approach, a shared document to capture what you learn, and the discipline to repeat the process every 90 days. The competitive landscape in your market is knowable. The gaps in it are visible. The position available to you is waiting.</p>
+      <p><strong>Go find it before someone else does.</strong></p>
+
+      <div class="cta-block">
+        <h2>Get Your Free Competitive Analysis</h2>
+        <p>We'll research your top 5 local competitors, their pricing, reviews, ads, SEO, and positioning, and show you exactly where the market gap is that you should be claiming right now.</p>
+        <a href="contact.html" class="cta-btn">Book My Free Strategy Call</a>
+        <span class="cta-sub">30 minutes. No obligation. We'll come with your competitive landscape already mapped.</span>
+      </div>
+        </article>
+
+    <aside class="article-sidebar">
+        <div class="sidebar-sticky">
+            <div class="sidebar-card">
+                <h4>In This Article</h4>
+                <nav class="toc-list">
+                    <a href="#map-the-landscape">Map Your Full Landscape</a>
+                    <a href="#intel-gathering">Intelligence Gathering</a>
+                    <a href="#the-gap-finder">The Competitive Gap Finder</a>
+                    <a href="#the-position">Turning Research Into Positioning</a>
+                    <a href="#staying-current">The Quarterly Intel Review</a>
+                    <a href="#build-it">Build It This Week</a>
+                </nav>
+            </div>
+            <div class="cta-card">
+                <h4>FREE COMPETITIVE ANALYSIS</h4>
+                <p>We'll research your local competitive landscape and show you exactly where the positioning gap is, the space no competitor is currently claiming.</p>
+                <a href="contact.html" class="btn-primary">
+                    <span>GET MY FREE ANALYSIS</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- RELATED ARTICLES -->
+<section class="author-bio-section">
+    <div class="author-bio-inner">
+        <div class="author-bio-card">
+            <div class="author-bio-img">
+                <picture>
+                    <source srcset="collin-charles.avif" type="image/avif">
+                    <img src="collin-charles.png" alt="Collin Charles, founder of Enoch Marketing" loading="lazy" width="72" height="96">
+                </picture>
+            </div>
+            <div class="author-bio-content">
+                <p class="author-bio-name">COLLIN CHARLES</p>
+                <p class="author-bio-role">Founder, Enoch Marketing</p>
+                <p class="author-bio-body">Collin Charles is the founder of Enoch Marketing, a veteran, and a longtime CrossFit athlete. He has spent years inside the boxes and gyms he now helps grow. Every framework on this blog comes from real campaigns run for real gym owners. <a href="contact.html">Book a free gym audit</a> to see what your gym is leaving on the table.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="related-section">
+    <div class="related-inner">
+        <div class="related-header reveal">
+            <h2>KEEP READING</h2>
+            <p>More strategies for growing your CrossFit gym</p>
+        </div>
+        <div class="related-grid">
+            <a href="gym-membership-pricing-strategy.html" class="related-card reveal reveal-delay-1">
+                <p class="related-cat">Pricing Strategy</p>
+                <h3 class="related-title">HOW TO PRICE YOUR GYM MEMBERSHIPS</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="blog-branding.html" class="related-card reveal reveal-delay-2">
+                <p class="related-cat">Branding</p>
+                <h3 class="related-title">PROFITABLE GYMS DO NOT COMPETE ON PRICE</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+            <a href="blog-local-seo.html" class="related-card reveal reveal-delay-3">
+                <p class="related-cat">Local SEO</p>
+                <h3 class="related-title">THE GYM OWNER'S LOCAL SEO PLAYBOOK</h3>
+                <span class="related-link">Read Article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid-bg"></div>
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350" loading="lazy">
+                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
+                <div class="footer-email-group">
+                    <input type="email" placeholder="Enter your email...">
+                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+            <div><h4>Navigation</h4><ul>
+                <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
+                <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
+                <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
+                <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
+                <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+            </ul></div>
+            <div><h4>Services</h4><ul>
+                <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
+                <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
+                <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
+                <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
+                <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+            </ul></div>
+            <div><h4>Connect</h4><ul>
+                <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
+                <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
+            </ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-bottom-right">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                    <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                    <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+                </div>
+                <div class="footer-status"><div class="footer-status-dot"></div><span>Accepting New Clients</span></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    function closeMobile() { mobileMenu.classList.remove('active'); }
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObs.observe(el));
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, { passive: true });
+    }
+</script>
+</body>
+</html>

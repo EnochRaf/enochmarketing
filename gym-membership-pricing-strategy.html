@@ -289,6 +289,22 @@
         @media (max-width: 1024px) { .article-layout { grid-template-columns: 1fr; gap: 3rem; } .sidebar-sticky { position: static; } .related-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 768px) { .nav { padding: 0.75rem 1.5rem; } .nav-logo img { height: 120px; } .nav.scrolled .nav-logo img { height: 100px; } .nav-links { display: none; } .nav-hamburger { display: flex; } .article-hero { padding: 10rem 1.5rem 5rem; } .article-layout { padding: 4rem 1.5rem 5rem; } .stat-row { grid-template-columns: 1fr; } .ps-markers { grid-template-columns: 1fr 1fr; } .package-grid { grid-template-columns: 1fr; } .pm-wrap { height: auto; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; } .pm-axis-left { display: none; } .pm-axis-bottom { display: none; } .ad-row { grid-template-columns: 1fr; } .pos-formula { flex-direction: column; } .pos-example { grid-template-columns: 1fr; } .related-section { padding: 4rem 1.5rem 5rem; } .related-grid { grid-template-columns: 1fr; } .footer { padding: 4rem 1.5rem 2rem; } .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
         @media (max-width: 480px) { .nav-logo img { height: 110px; } .nav.scrolled .nav-logo img { height: 92px; } }
+    
+        /* Client Login: secondary pill button beside the Book Free Call CTA */
+        .nav-links a.nav-login {
+            color: var(--gold);
+            padding: 0.55rem 1.4rem;
+            border: 1px solid rgba(221, 205, 156, 0.35);
+            border-radius: 9999px;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-links a.nav-login::after { display: none; }
+        .nav-links a.nav-login:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.55);
+            color: var(--gold-light);
+            transform: translateY(-1px);
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -396,7 +412,7 @@
         <a href="pricing.html">Pricing</a>
         <a href="about.html">About Us</a>
         <a href="blog.html" class="active">Blog</a>
-        <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener">Client Login</a>
+        <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener" class="nav-login">Client Login</a>
         <a href="contact.html" class="nav-cta">Book Free Call</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">

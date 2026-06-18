@@ -1094,6 +1094,22 @@
             .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
             .final-cta { padding: 4rem 1.25rem; }
         }
+    
+        /* Client Login: secondary pill button beside the Book Free Call CTA */
+        .nav-links a.nav-login {
+            color: var(--gold);
+            padding: 0.55rem 1.4rem;
+            border: 1px solid rgba(221, 205, 156, 0.35);
+            border-radius: 9999px;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-links a.nav-login::after { display: none; }
+        .nav-links a.nav-login:hover {
+            background: rgba(221, 205, 156, 0.12);
+            border-color: rgba(221, 205, 156, 0.55);
+            color: var(--gold-light);
+            transform: translateY(-1px);
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -1191,7 +1207,7 @@
         <a href="pricing.html" class="active">Pricing</a>
         <a href="about.html">About Us</a>
         <a href="blog.html">Blog</a>
-        <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener">Client Login</a>
+        <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener" class="nav-login">Client Login</a>
         <a href="contact.html" class="nav-cta">Book Free Call</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">

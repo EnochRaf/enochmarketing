@@ -24,12 +24,12 @@
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/pricing.html">
     <meta property="og:title" content="Pricing | Enoch Marketing">
-    <meta property="og:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back guarantee.">
+    <meta property="og:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back promise.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pricing | Enoch Marketing">
-    <meta name="twitter:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back guarantee.">
+    <meta name="twitter:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back promise.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -607,8 +607,8 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
             align-items: stretch;
         }
 
@@ -687,7 +687,7 @@
         .pkg-inner {
             position: relative;
             z-index: 10;
-            padding: 2.5rem;
+            padding: 2rem 1.75rem;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -731,10 +731,41 @@
             color: rgba(255,255,255,0.4);
             margin-bottom: 2rem;
         }
+        .package-tagline {
+            font-size: 0.85rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--white-muted);
+            margin-bottom: 0.9rem;
+        }
+        .package-whofor {
+            font-size: 0.78rem;
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--white-dim);
+            margin-bottom: 0.9rem;
+        }
+        .package-payback {
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--gold-dark);
+            margin-bottom: 0.25rem;
+        }
+        .package-plus-label {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 0.65rem 0 0.25rem;
+        }
+        .package-feature.star { color: var(--white); font-weight: 500; }
         .package-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(221,205,156,0.18), transparent);
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
         .package-features {
             display: flex;
@@ -773,6 +804,11 @@
             background: rgba(248,113,113,0.08);
             border: 1px solid rgba(248,113,113,0.2);
             color: rgba(248,113,113,0.5);
+        }
+        .feat-icon.starred {
+            background: rgba(221,205,156,0.14);
+            border: 1px solid rgba(221,205,156,0.4);
+            color: var(--gold);
         }
 
         .package-cta {
@@ -1049,7 +1085,7 @@
         @media (max-width: 1024px) {
             .nav { padding: 0.75rem 2rem; }
             .nav-links { gap: 1.75rem; }
-            .packages-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .packages-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
             .intro-inner { grid-template-columns: 1fr; gap: 2rem; }
             .notes-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1095,6 +1131,223 @@
             .final-cta { padding: 4rem 1.25rem; }
         }
     
+        /* ===== ADD-ONS / SECTION INTRO LEAD ===== */
+        .section-lead {
+            max-width: 1200px;
+            margin: 1.25rem auto 2.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        .section-lead.narrow { max-width: 760px; }
+
+        /* ===== PREPAY & SAVE (reuses three-stat style) ===== */
+        .prepay-section { padding: 7rem 3rem; background: var(--black-soft); }
+        .prepay-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+        .prepay-card {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 12px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s ease, transform 0.4s var(--ease-out-quart);
+        }
+        .prepay-card:hover { border-color: rgba(221,205,156,0.18); transform: translateY(-4px); }
+        .prepay-card .intro-stat-num { font-size: 2.8rem; margin-bottom: 0.6rem; }
+        .prepay-card .intro-stat-label { margin-top: 0; }
+
+        /* ===== COMPARISON MATRIX (built from existing table colors) ===== */
+        .matrix-section { padding: 7rem 3rem; }
+        .matrix-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 12px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--black);
+        }
+        .matrix-table { width: 100%; min-width: 820px; border-collapse: collapse; }
+        .matrix-table th, .matrix-table td {
+            padding: 1rem 1.1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-right: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--white-muted);
+        }
+        .matrix-table thead th {
+            background: rgba(221,205,156,0.06);
+            border-bottom: 1px solid rgba(221,205,156,0.1);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .matrix-table tbody th {
+            text-align: left;
+            font-family: var(--font-body);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--white-muted);
+            white-space: nowrap;
+        }
+        .matrix-table th:first-child { position: sticky; left: 0; background: var(--black); z-index: 1; }
+        .matrix-table thead th:first-child { background: rgba(221,205,156,0.06); }
+        .matrix-table tbody tr:hover th:first-child { background: var(--black-soft); }
+        .matrix-table tbody tr:hover td { background: rgba(221,205,156,0.03); }
+        .matrix-table tr:last-child th, .matrix-table tr:last-child td { border-bottom: none; }
+        .matrix-table th:last-child, .matrix-table td:last-child { border-right: none; }
+        .matrix-table .matrix-featured { background: rgba(221,205,156,0.045); }
+        .matrix-table thead th.matrix-featured { background: rgba(221,205,156,0.1); }
+        .matrix-price { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); letter-spacing: 0.03em; }
+        .matrix-table .feat-icon { margin: 0 auto; }
+        .matrix-hint {
+            max-width: 1200px;
+            margin: 1rem auto 0;
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            display: none;
+        }
+
+        /* ===== PERFORMANCE CAMPAIGN ===== */
+        .perf-section { padding: 7rem 3rem; position: relative; background: var(--black-soft); }
+        .perf-bg {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black, transparent);
+            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black, transparent);
+            pointer-events: none;
+        }
+        .perf-wrap { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+        .perf-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin: 3rem 0;
+        }
+        .perf-step {
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: border-color 0.3s ease;
+        }
+        .perf-step:hover { border-color: rgba(221,205,156,0.18); }
+        .perf-step-num {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.85rem;
+        }
+        .perf-step-body { font-size: 0.875rem; line-height: 1.7; color: var(--white-dim); }
+        .perf-fee-card {
+            position: relative;
+            border-radius: 1.75rem;
+            background: #000;
+            border: 1px solid rgba(221,205,156,0.2);
+            box-shadow: 0 -10px 80px 5px rgba(221,205,156,0.12), 0 20px 60px rgba(0,0,0,0.5);
+            padding: 3rem 2.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+        .perf-hero-num {
+            font-family: var(--font-display);
+            font-size: clamp(4.5rem, 10vw, 7rem);
+            line-height: 0.9;
+            color: var(--gold);
+            letter-spacing: 0.01em;
+        }
+        .perf-hero-sub {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.12em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+        .perf-hero-line {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--white-muted);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+        }
+        .perf-fee-list {
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            text-align: left;
+        }
+        .perf-fee-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--white-muted);
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .perf-fee-list li:last-child { border-bottom: none; }
+        .perf-promise {
+            max-width: 760px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--white-dim);
+        }
+        .perf-promise strong { color: var(--gold); font-weight: 600; }
+
+        /* ===== PROOF ===== */
+        .proof-section { padding: 7rem 3rem; }
+        .proof-placeholder {
+            max-width: 760px;
+            margin: 3rem auto 0;
+            background: var(--black-card);
+            border: 1px dashed rgba(221,205,156,0.2);
+            border-radius: 12px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+        }
+        .proof-placeholder .proof-title {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        .proof-placeholder p { font-size: 0.9rem; color: var(--white-dim); line-height: 1.7; }
+
+        /* ===== NEW SECTION RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .prepay-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .perf-steps { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .prepay-section { padding: 5rem 1.5rem; }
+            .matrix-section { padding: 5rem 1.5rem; }
+            .perf-section { padding: 5rem 1.5rem; }
+            .proof-section { padding: 5rem 1.5rem; }
+            .perf-fee-card { padding: 2.5rem 1.25rem; }
+            .matrix-hint { display: block; }
+        }
+
         /* Client Login: secondary pill button beside the Book Free Call CTA */
         .nav-links a.nav-login {
             color: var(--gold);
@@ -1147,7 +1400,7 @@
             "name": "Is ad spend included in the management fee?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "All paid advertising management fees are separate from the actual ad spend budget, which is paid directly to the advertising platform (Google, Meta, TikTok, etc.). You always own your ad accounts."
+                "text": "All paid advertising management fees are separate from the ad budget, which you pay directly to Google, Meta, or TikTok. You always own your ad accounts."
             }
         },
         {
@@ -1155,7 +1408,7 @@
             "name": "Is there a free onboarding session?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "All new partnerships include a complimentary onboarding session to align on goals, brand voice, target demographics, and KPIs. We come prepared. You don't need to explain CrossFit to us."
+                "text": "Every new partnership starts with a free onboarding session to lock in goals, brand voice, target athletes, and the numbers we will hit. We come prepared. You never have to explain CrossFit to us."
             }
         },
         {
@@ -1163,15 +1416,15 @@
             "name": "Do you require long-term contracts or retainers?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We don't lock you into long-term retainers or binding contracts. You pay only for the time and services you want, when you want them. Our goal is to earn your business every single month through results, not fine print."
+                "text": "No long-term lock-in. You pay for the services you want, when you want them. We earn your business every month with results, not fine print."
             }
         },
         {
             "@type": "Question",
-            "name": "What is your money-back guarantee?",
+            "name": "What is your money-back promise?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We stand behind our work completely. If you are not satisfied with the results of any service we deliver, we offer a full 100% money-back guarantee, no questions asked. Your trust means everything to us."
+                "text": "Run with us for 30 days. If we do not deliver what we committed to in your onboarding plan, you get back 100% of your management fee for that month. Ad spend is excluded, because that money goes straight to the platform and never touches our hands."
             }
         }
     ]
@@ -1235,7 +1488,13 @@
             REAL PRICING.<br>
             <span class="line2">ZERO SURPRISES.</span>
         </h1>
-        <p class="page-hero-desc">No hidden fees. No lock-in contracts. Pricing that flexes to what your gym actually needs, and a full money-back guarantee backing every dollar you invest.</p>
+        <p class="page-hero-desc">One clear price. No lock-in contracts. Every dollar backed by our money-back promise, and pricing that scales to what your box can actually pack in.</p>
+        <div style="margin-top:2.25rem;">
+            <a href="/contact.html" class="btn-primary">
+                <span>Book Your Free Gym Audit</span>
+                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
     </div>
     <div class="page-hero-divider"></div>
 </section>
@@ -1245,14 +1504,14 @@
     <div class="intro-inner">
         <div class="intro-left reveal">
             <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Who We Are</span></div>
-            <h2 class="section-title">WE'RE NOT HERE<br>TO SELL YOU <span class="gold">FLUFF.</span></h2>
+            <h2 class="section-title">WE DON'T SELL FLUFF.<br>WE <span class="gold">PACK GYMS.</span></h2>
         </div>
         <div class="intro-right reveal reveal-delay-2">
-            <p>Enoch Marketing exists to help CrossFit affiliates get more athletes through the door, keep them coming back, and build a brand that owns your local market. Pricing below is real, it flexes based on what your box actually needs. Running multiple locations? Let's talk volume.</p>
+            <p>Enoch Marketing exists to get more athletes through your door, keep them coming back, and build a brand that owns your local market. We are veteran-owned and run by people who know the floor, not just the funnel. Six services live under one roof, paid ads, lead gen, local search, social, web design, and brand, so you run one growth engine instead of a patchwork of freelancers. The pricing below is real and it flexes to what your box actually needs. Running multiple locations? Let's talk volume.</p>
             <div class="intro-stats">
                 <div>
                     <div class="intro-stat-num">100%</div>
-                    <div class="intro-stat-label">Money-Back Guarantee</div>
+                    <div class="intro-stat-label">Money-Back Promise</div>
                 </div>
                 <div>
                     <div class="intro-stat-num">$0</div>
@@ -1267,6 +1526,402 @@
     </div>
 </section>
 
+<!-- PACKAGES (four tiers) -->
+<section class="packages-section" id="packages">
+    <div class="packages-bg"></div>
+    <div class="packages-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Bundled Packages</span></div>
+        <h2 class="section-title">ONE GROWTH ENGINE.<br><span class="gold">PICK YOUR LEVEL.</span></h2>
+        <p class="section-subtitle">Built for boxes that want a cohesive, fully-managed marketing system, not a patchwork of freelancers. Every tier is month-to-month with no contracts.</p>
+    </div>
+    <div class="packages-grid">
+
+        <!-- GET FOUND -->
+        <div class="package-card reveal reveal-delay-1">
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge-placeholder"></div>
+                <div class="package-name">GET FOUND</div>
+                <div class="package-price">$1,000</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <p class="package-tagline">Get found. Look legit. Own your reputation before you spend a dollar on ads.</p>
+                <p class="package-whofor">For a box that needs a consistent, professional presence dialed in before turning on paid traffic.</p>
+                <p class="package-payback">Pays for itself at about 6 new members, roughly what 6 members' monthly dues bring in.</p>
+                <div class="package-divider"></div>
+                <ul class="package-features">
+                    <li class="package-feature included star">
+                        <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                        One dashboard for your whole gym. Revenue, new members this month, and everything we are working on, in one login, updated live. You always know exactly what you are paying for.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Your social, handled (Instagram and Facebook). We write, design, and schedule [X] <!-- TODO: Rafael to set --> posts a month so your feed looks active and pro without you touching it.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Every comment and DM answered. We reply to prospects fast and grow your following, so nobody who reaches out slips away.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Show up on Google Search and Maps. We build and clean up your Google Business Profile so your box appears correctly the second a local searches "CrossFit near me."
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        More 5-star reviews, on repeat. A system that steadily brings in new reviews and replies to every one, so you are the obvious choice in town.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        A plain-English report every month. What we did, what it produced, what is next. Real numbers, zero vanity metrics.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        A monthly strategy call. We review results together and lock next month's plan. You are never guessing.
+                    </li>
+                </ul>
+                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
+            </div>
+        </div>
+
+        <!-- FILL THE FLOOR (Most Popular) -->
+        <div class="package-card featured reveal reveal-delay-2">
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge">
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Most Popular
+                </div>
+                <div class="package-name">FILL THE FLOOR</div>
+                <div class="package-price">$2,000</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <p class="package-tagline">Turn on lead flow and start filling trials.</p>
+                <p class="package-whofor">For a box ready to drive new athletes through the door with paid traffic and automated follow-up.</p>
+                <p class="package-payback">Pays for itself at about 12 new members, and most boxes clear that in month one.</p>
+                <div class="package-divider"></div>
+                <div class="package-plus-label">Everything in Get Found, plus:</div>
+                <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Now on 4 platforms, adds TikTok and YouTube. We put your box in front of more locals who are ready to walk in, where they already spend their time.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Climb the Google map pack. Ongoing local SEO to push you into the top 3 map results, so you are the first box they see, not the fourth.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Leads followed up automatically. Email automation turns website visitors and trial sign-ups into paying members, without you chasing anyone.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Paid ads on one channel (Meta or Google). We build, run, and refine ads aimed at locals ready to join. (Ad budget is separate, paid straight to the platform, and you always own the account.)
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Content creation. Scroll-stopping Reels and short-form video, the format driving the most local gym discovery right now.
+                    </li>
+                </ul>
+                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
+            </div>
+        </div>
+
+        <!-- OWN YOUR MARKET -->
+        <div class="package-card reveal reveal-delay-3">
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge-placeholder"></div>
+                <div class="package-name">OWN YOUR MARKET</div>
+                <div class="package-price">$3,500</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <p class="package-tagline">Own your local market across every channel at once.</p>
+                <p class="package-whofor">For an established box that wants to dominate local search, social, and paid traffic together.</p>
+                <p class="package-payback">Pays for itself at about 21 new members, and one member you keep is worth about $2,000 a year to you.</p>
+                <div class="package-divider"></div>
+                <div class="package-plus-label">Everything in Fill the Floor, plus:</div>
+                <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        All 5 platforms covered. Wherever your local athletes scroll, your box is there. Impossible to miss.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Paid ads across Google, Meta, and TikTok. Three channels run as one connected system that feed each other, more reach per dollar. (Ad budget separate.)
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Email and SMS follow-up. We add texts to your email flow (reminders, offers, win-backs) to reach leads where they actually read.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Expanded content creation. A bigger, steadier stream of fresh creative that keeps all your channels and ads working week after week.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        A complete lead-to-member funnel. Every lead walks an automated path from first click to signed member. Nothing slips through the cracks.
+                    </li>
+                </ul>
+                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
+            </div>
+        </div>
+
+        <!-- RULE EVERY MARKET -->
+        <div class="package-card reveal reveal-delay-4">
+            <div class="pc-noise"></div>
+            <div class="pc-glow"></div>
+            <div class="pc-glow-center"></div>
+            <div class="pc-reflection"></div>
+            <div class="pc-edge"></div>
+            <div class="pc-edge-l"></div>
+            <div class="pc-edge-r"></div>
+            <div class="pkg-inner">
+                <div class="package-badge-placeholder"></div>
+                <div class="package-name">RULE EVERY MARKET</div>
+                <div class="package-price"><span style="font-size:1.2rem;color:var(--white-dim);letter-spacing:0;">from </span>$6,500</div>
+                <div class="package-price-note">per month &nbsp;·&nbsp; custom-quoted</div>
+                <p class="package-tagline">Multiple locations. One growth engine.</p>
+                <p class="package-whofor">For multi-location owners and boxes scaling aggressively who want a senior team on call. Built around your locations and goals. Running multiple boxes? Let's talk volume.</p>
+                <div class="package-divider"></div>
+                <div class="package-plus-label">Everything in Own Your Market, plus:</div>
+                <ul class="package-features">
+                    <li class="package-feature included star">
+                        <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                        Every location, side by side. One dashboard showing revenue, members, and ad performance for each box at a glance.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        The full engine, run across every box. We manage all of it, every location, kept consistent under one brand.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Your own strategist and front-of-line turnaround. A named expert who knows your business and moves your requests to the top of the queue.
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        A quarterly domination roadmap. A rolling plan to take and hold the number-one spot in every market you operate in.
+                    </li>
+                </ul>
+                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="section" id="add-ons">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Add-Ons</span></div>
+        <h2 class="section-title">BOLT ONTO <span class="gold">ANY PACKAGE.</span></h2>
+        <p class="section-lead">Want premium service without jumping to a multi-location plan? Add exactly what you need to any tier.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Add-On</span>
+            <span>Price</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Dedicated strategist and priority turnaround</div>
+            <div class="pricing-row-amount">from [$X]/mo <!-- TODO: Rafael to set --></div>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Extra ad channel (add Google, Meta, or TikTok)</div>
+            <div class="pricing-row-amount">from $1,125/mo</div>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Extra short-form videos</div>
+            <div class="pricing-row-amount">from $250 each</div>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">On-site photo and video shoot (half day)</div>
+            <div class="pricing-row-amount">from $1,000</div>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Quarterly strategy intensive and roadmap</div>
+            <div class="pricing-row-amount">from [$X]/quarter <!-- TODO: Rafael to set --></div>
+        </div>
+    </div>
+</section>
+
+<!-- PREPAY & SAVE -->
+<section class="prepay-section">
+    <div class="packages-header reveal" style="text-align:center;">
+        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Prepay &amp; Save</span></div>
+        <h2 class="section-title">STAY FLEXIBLE, OR<br><span class="gold">PAY AHEAD AND SAVE.</span></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Stay month-to-month, or prepay and save. No lock-in either way, just a discount for paying ahead.</p>
+    </div>
+    <div class="prepay-grid">
+        <div class="prepay-card reveal reveal-delay-1">
+            <div class="intro-stat-num">save [10%]</div> <!-- TODO: Rafael to set -->
+            <div class="intro-stat-label">Pay Quarterly</div>
+        </div>
+        <div class="prepay-card reveal reveal-delay-2">
+            <div class="intro-stat-num">save [12%]</div> <!-- TODO: Rafael to set -->
+            <div class="intro-stat-label">Pay 6 Months Up Front</div>
+        </div>
+        <div class="prepay-card reveal reveal-delay-3">
+            <div class="intro-stat-num">save [15%]</div> <!-- TODO: Rafael to set -->
+            <div class="intro-stat-label">Pay Annually</div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON MATRIX -->
+<section class="matrix-section">
+    <div class="packages-header reveal" style="text-align:center;">
+        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Compare Tiers</span></div>
+        <h2 class="section-title">EVERYTHING, <span class="gold">SIDE BY SIDE.</span></h2>
+    </div>
+    <div class="matrix-wrap reveal reveal-delay-1">
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Get Found</th>
+                    <th class="matrix-featured">Fill the Floor</th>
+                    <th>Own Your Market</th>
+                    <th>Rule Every Market</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Price / month</th>
+                    <td><span class="matrix-price">$1,000</span></td>
+                    <td class="matrix-featured"><span class="matrix-price">$2,000</span></td>
+                    <td><span class="matrix-price">$3,500</span></td>
+                    <td><span class="matrix-price">from $6,500</span></td>
+                </tr>
+                <tr>
+                    <th>Live dashboard</th>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td>Multi-location</td>
+                </tr>
+                <tr>
+                    <th>Done-for-you social</th>
+                    <td>2 platforms</td>
+                    <td class="matrix-featured">4 platforms</td>
+                    <td>5 platforms</td>
+                    <td>5 plus</td>
+                </tr>
+                <tr>
+                    <th>Community management</th>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Google Business Profile</th>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Review growth</th>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Monthly report and strategy call</th>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Local SEO and map rankings</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Email automation</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Paid ads</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured">1 channel</td>
+                    <td>3 channels</td>
+                    <td>3 channels</td>
+                </tr>
+                <tr>
+                    <th>Content creation</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td>Expanded</td>
+                    <td>Custom</td>
+                </tr>
+                <tr>
+                    <th>SMS marketing</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Lead-to-member funnel</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Dedicated strategist</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+                <tr>
+                    <th>Multi-location management</th>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="matrix-hint">Swipe the table sideways to compare all four tiers.</p>
+</section>
+
+<!-- INDIVIDUAL SERVICES (a la carte menu, tabbed) -->
+<section class="section" id="individual-services" style="padding-bottom:2rem;">
+    <div class="pricing-header reveal" style="margin-bottom:0;">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>A La Carte</span></div>
+        <h2 class="section-title">INDIVIDUAL SERVICES.<br><span class="gold">BUILD YOUR OWN.</span></h2>
+        <p class="section-lead">Prefer to pick and choose? Every service is available on its own. Tap a category to see pricing.</p>
+    </div>
+</section>
+
+<!-- INDIVIDUAL SERVICES SCOPE (bounds the sticky filter bar to this block) -->
+<div class="services-scope">
 <!-- FILTER TABS -->
 <div class="filter-bar-wrap" id="filterBar">
     <div class="filter-bar">
@@ -1275,7 +1930,6 @@
         <button class="filter-tab" data-target="website-seo">Website &amp; SEO</button>
         <button class="filter-tab" data-target="email-sms">Email &amp; SMS</button>
         <button class="filter-tab" data-target="branding">Branding &amp; Creative</button>
-        <button class="filter-tab" data-target="packages">Packages</button>
     </div>
 </div>
 
@@ -1293,23 +1947,23 @@
             <span>Frequency</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Social Media Strategy Development</div>
-            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <div class="pricing-row-name">Social Media Strategy Build</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Content Creation &amp; Posting</div>
-            <div class="pricing-row-amount">$750 – $1,500</div>
+            <div class="pricing-row-name">Content Creation and Posting</div>
+            <div class="pricing-row-amount">from $750</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Community Management &amp; Engagement</div>
-            <div class="pricing-row-amount">$750 – $1,875</div>
+            <div class="pricing-row-name">Community Management and Growth</div>
+            <div class="pricing-row-amount">from $750</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Social Media Analytics &amp; Reporting</div>
-            <div class="pricing-row-amount">$375 – $750</div>
+            <div class="pricing-row-name">Social Analytics and Reporting</div>
+            <div class="pricing-row-amount">from $375</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
     </div>
@@ -1330,23 +1984,23 @@
         </div>
         <div class="pricing-row">
             <div class="pricing-row-name">Google Ads Management</div>
-            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Facebook &amp; Instagram Ads Management</div>
-            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <div class="pricing-row-name">Meta Ads Management <span style="color:var(--white-dim);font-size:0.8em;">(Facebook and Instagram)</span></div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
             <div class="pricing-row-name">TikTok Ads Management</div>
-            <div class="pricing-row-amount">$1,125 – $1,500</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Ad Creative Design <span style="color:var(--white-dim);font-size:0.8em;">(per set of 5)</span></div>
-            <div class="pricing-row-amount">$565 – $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
+            <div class="pricing-row-name">Ad Creative Design <span style="color:var(--white-dim);font-size:0.8em;">(set of 5)</span></div>
+            <div class="pricing-row-amount">from $565</div>
+            <span class="pricing-badge per-piece">Per Set</span>
         </div>
     </div>
     <p style="max-width:1200px;margin:1rem auto 0;font-size:0.75rem;color:var(--white-dim);padding-left:0.25rem;">
@@ -1368,18 +2022,18 @@
             <span>Frequency</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Website Design &amp; Development</div>
-            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <div class="pricing-row-name">Website Design and Build</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Local SEO Optimization</div>
-            <div class="pricing-row-amount">$1,125 – $2,250</div>
+            <div class="pricing-row-name">Local SEO and Map Rankings</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge monthly">Monthly</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Google Business Profile Optimization</div>
-            <div class="pricing-row-amount">$375 – $750</div>
+            <div class="pricing-row-name">Google Business Profile Setup</div>
+            <div class="pricing-row-amount">from $375</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
     </div>
@@ -1399,13 +2053,13 @@
             <span>Frequency</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Email Marketing Setup &amp; Automation</div>
-            <div class="pricing-row-amount">$1,125 – $1,875</div>
+            <div class="pricing-row-name">Email Marketing Setup and Automation</div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">SMS Marketing Setup &amp; Campaigns</div>
-            <div class="pricing-row-amount">$750 – $1,500</div>
+            <div class="pricing-row-name">SMS Marketing Setup and Campaigns</div>
+            <div class="pricing-row-amount">from $750</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
     </div>
@@ -1425,40 +2079,53 @@
             <span>Frequency</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Brand Identity Package <span style="color:var(--white-dim);font-size:0.8em;">(logo, colors, fonts)</span></div>
-            <div class="pricing-row-amount">$1,125 – $1,875</div>
+            <div class="pricing-row-name">Brand Identity Pack <span style="color:var(--white-dim);font-size:0.8em;">(logo, colors, fonts)</span></div>
+            <div class="pricing-row-amount">from $1,125</div>
             <span class="pricing-badge one-time">One-Time</span>
         </div>
         <div class="pricing-row">
             <div class="pricing-row-name">Graphic Design <span style="color:var(--white-dim);font-size:0.8em;">(per piece)</span></div>
-            <div class="pricing-row-amount">$200 – $563</div>
+            <div class="pricing-row-amount">from $200</div>
             <span class="pricing-badge per-piece">Per Piece</span>
         </div>
         <div class="pricing-row">
-            <div class="pricing-row-name">Video Production <span style="color:var(--white-dim);font-size:0.8em;">(short-form)</span></div>
-            <div class="pricing-row-amount">$250 – $750</div>
+            <div class="pricing-row-name">Short-Form Video Production <span style="color:var(--white-dim);font-size:0.8em;">(per video)</span></div>
+            <div class="pricing-row-amount">from $250</div>
             <span class="pricing-badge per-piece">Per Video</span>
         </div>
         <div class="pricing-row">
             <div class="pricing-row-name">Photography <span style="color:var(--white-dim);font-size:0.8em;">(half-day session)</span></div>
-            <div class="pricing-row-amount">$1,000 – $2,500</div>
+            <div class="pricing-row-amount">from $1,000</div>
             <span class="pricing-badge per-piece">Per Session</span>
         </div>
     </div>
 </section>
+</div><!-- /.services-scope -->
 
-<!-- PACKAGES -->
-<section class="packages-section" id="packages">
-    <div class="packages-bg"></div>
-    <div class="packages-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Bundled Packages</span></div>
-        <h2 class="section-title">TURNKEY GROWTH.<br><span class="gold">PICK YOUR LEVEL.</span></h2>
-        <p class="section-subtitle">Built for gyms that want a cohesive, fully-managed marketing system, not a patchwork of freelancers. Significant savings over individual service pricing.</p>
-    </div>
-    <div class="packages-grid">
-
-        <!-- STARTER -->
-        <div class="package-card reveal reveal-delay-1">
+<!-- PERFORMANCE CAMPAIGN -->
+<section class="perf-section">
+    <div class="perf-bg"></div>
+    <div class="perf-wrap">
+        <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+            <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Performance Campaign</span></div>
+            <h2 class="section-title">ONLY PAY WHEN<br><span class="gold">WE PACK YOUR GYM.</span></h2>
+            <p class="section-subtitle" style="margin:0 auto;">A focused 90-day push built for one thing: signing new members. This is separate from the monthly packages above.</p>
+        </div>
+        <div class="perf-steps">
+            <div class="perf-step reveal reveal-delay-1">
+                <div class="perf-step-num">01</div>
+                <p class="perf-step-body">We build your funnel. A landing page where Collin walks your prospects through exactly how we fill your box, plus the ad creative that drives traffic to it. This is your one-time build fee.</p>
+            </div>
+            <div class="perf-step reveal reveal-delay-2">
+                <div class="perf-step-num">02</div>
+                <p class="perf-step-body">We launch and run your ads. You cover ad spend directly and always own the ad account. Your build fee does not include ad spend.</p>
+            </div>
+            <div class="perf-step reveal reveal-delay-3">
+                <div class="perf-step-num">03</div>
+                <p class="perf-step-body">You only pay for members. Every new member is tracked through one booking link and a member code, so attribution stays clean and fair to both sides.</p>
+            </div>
+        </div>
+        <div class="perf-fee-card reveal reveal-delay-1">
             <div class="pc-noise"></div>
             <div class="pc-glow"></div>
             <div class="pc-glow-center"></div>
@@ -1466,171 +2133,23 @@
             <div class="pc-edge"></div>
             <div class="pc-edge-l"></div>
             <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge-placeholder"></div>
-                <div class="package-name">STARTER</div>
-                <div class="package-price">$1,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="package-divider"></div>
-                <ul class="package-features">
-                    <li class="package-feature included">
+            <div style="position:relative;z-index:10;">
+                <div class="perf-hero-num">$200</div>
+                <div class="perf-hero-sub">per new member</div>
+                <p class="perf-hero-line">Sign 8, pay for 8. Sign 40, pay for 40. Your cost always matches your result. No ongoing retainer, ever.</p>
+                <ul class="perf-fee-list">
+                    <li>
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Social media content: 2 platforms
+                        One-time build fee: from [$X] <!-- TODO: Rafael to set -->, covering your funnel and creative. Charged once, never recurring.
                     </li>
-                    <li class="package-feature included">
+                    <li>
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Google Business Profile optimization
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Email marketing &amp; automation
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Monthly performance report
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Paid ads management
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Local SEO &amp; competitor rankings
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Reputation &amp; review growth
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Short-form video production
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Monthly strategy call
+                        Ad spend is separate: paid by you straight to Google, Meta, or TikTok. It is never part of our fee, and you always own the account.
                     </li>
                 </ul>
-                <a href="contact.html" class="package-cta">GET STARTED</a>
             </div>
         </div>
-
-        <!-- GROWTH (Featured) -->
-        <div class="package-card featured reveal reveal-delay-2">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge">
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    Most Popular
-                </div>
-                <div class="package-name">GROWTH</div>
-                <div class="package-price">$2,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="package-divider"></div>
-                <ul class="package-features">
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Social media content: 3–4 platforms
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Google Business Profile optimization
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Email marketing &amp; automation
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Monthly performance report
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads: 1 channel (Meta or Google)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Local SEO &amp; competitor rankings
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Reputation &amp; review growth
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Short-form video production
-                    </li>
-                    <li class="package-feature excluded">
-                        <span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
-                        Monthly strategy call
-                    </li>
-                </ul>
-                <a href="contact.html" class="package-cta">GET STARTED</a>
-            </div>
-        </div>
-
-        <!-- PREMIUM -->
-        <div class="package-card reveal reveal-delay-3">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge-placeholder"></div>
-                <div class="package-name">PREMIUM</div>
-                <div class="package-price">$3,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="package-divider"></div>
-                <ul class="package-features">
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Social media content: 5 platforms
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Google Business Profile optimization
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Email &amp; SMS marketing + automation
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Monthly performance report
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Multi-channel paid ads (Google + Meta + TikTok)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Local SEO &amp; competitor rankings
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Reputation &amp; review growth
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Short-form video production
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Monthly strategy call
-                    </li>
-                </ul>
-                <a href="contact.html" class="package-cta">GET STARTED</a>
-            </div>
-        </div>
-
+        <p class="perf-promise reveal">Our promise: if the campaign does not sign at least [8] <!-- TODO: Rafael to set --> new members in 90 days, we refund your build fee in full. The refund covers the build fee only. Ad spend is never refundable, because that money goes straight to the ad platform and never touches our hands.</p>
     </div>
 </section>
 
@@ -1648,7 +2167,7 @@
                 </div>
                 <div>
                     <div class="note-title">AD SPEND IS SEPARATE</div>
-                    <p class="note-body">All paid advertising management fees are separate from the actual ad spend budget, which is paid directly to the advertising platform (Google, Meta, TikTok, etc.). You always own your ad accounts.</p>
+                    <p class="note-body">All paid advertising management fees are separate from the ad budget, which you pay directly to Google, Meta, or TikTok. You always own your ad accounts.</p>
                 </div>
             </div>
             <div class="note-card reveal reveal-delay-2">
@@ -1657,7 +2176,7 @@
                 </div>
                 <div>
                     <div class="note-title">FREE ONBOARDING</div>
-                    <p class="note-body">All new partnerships include a complimentary onboarding session to align on goals, brand voice, target demographics, and KPIs. We come prepared. You don't need to explain CrossFit to us.</p>
+                    <p class="note-body">Every new partnership starts with a free onboarding session to lock in goals, brand voice, target athletes, and the numbers we will hit. We come prepared. You never have to explain CrossFit to us.</p>
                 </div>
             </div>
             <div class="note-card reveal reveal-delay-3">
@@ -1666,7 +2185,7 @@
                 </div>
                 <div>
                     <div class="note-title">NO CONTRACTS. NO RETAINERS.</div>
-                    <p class="note-body">We don't lock you into long-term retainers or binding contracts. You pay only for the time and services you want, when you want them. Our goal is to earn your business every single month through results, not fine print.</p>
+                    <p class="note-body">No long-term lock-in. You pay for the services you want, when you want them. We earn your business every month with results, not fine print.</p>
                 </div>
             </div>
             <div class="note-card reveal reveal-delay-4">
@@ -1674,11 +2193,24 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div>
-                    <div class="note-title">100% MONEY-BACK GUARANTEE</div>
-                    <p class="note-body">We stand behind our work completely. If you are not satisfied with the results of any service we deliver, we offer a full 100% money-back guarantee, no questions asked. Your trust means everything to us.</p>
+                    <div class="note-title">100% MONEY-BACK PROMISE</div>
+                    <p class="note-body">Run with us for 30 days. If we do not deliver what we committed to in your onboarding plan, you get back 100% of your management fee for that month. Ad spend is excluded, because that money goes straight to the platform and never touches our hands.</p>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section">
+    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
+        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Proof</span></div>
+        <h2 class="section-title">RESULTS FROM<br><span class="gold">REAL BOXES.</span></h2>
+    </div>
+    <!-- TODO: Rafael to drop in real client results, names, and numbers here when available. Do not fabricate. -->
+    <div class="proof-placeholder reveal reveal-delay-1">
+        <div class="proof-title">Client results coming soon</div>
+        <p>We are gathering verified numbers and stories from the boxes we work with. Real results will live here.</p>
     </div>
 </section>
 
@@ -1687,14 +2219,14 @@
     <div class="final-cta-bg"></div>
     <div class="final-cta-content reveal">
         <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
-        <h2 class="section-title">LET'S BUILD YOUR<br><span class="gold">GROWTH ENGINE.</span></h2>
-        <p class="section-subtitle">Book a free 30-minute marketing audit. We'll review your gym's online presence and hand you a specific plan, no pitch, no fluff.</p>
+        <h2 class="section-title">READY TO<br><span class="gold">PACK YOUR BOX?</span></h2>
+        <p class="section-subtitle">Book a free 30-minute gym audit. We review what is holding your box back and hand you a specific plan. No pitch, no fluff. We onboard a limited number of boxes each month so every client gets senior attention.</p>
         <div class="cta-actions">
-            <a href="contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
-                <span>BOOK YOUR FREE MARKETING AUDIT</span>
+            <a href="/contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
+                <span>Book Your Free Gym Audit</span>
                 <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <p style="font-size:13px;color:rgba(255,255,255,0.35);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;margin-top:4px;">30 minutes. We review what's holding your gym back and hand you a plan to fix it.</p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.35);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;margin-top:4px;">30 minutes. We review what is holding your box back and hand you a plan to fix it.</p>
         </div>
     </div>
 </section>

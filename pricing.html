@@ -341,94 +341,247 @@
         /* ===== HERO ===== */
         .page-hero {
             position: relative;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
             overflow: hidden;
             background: var(--black);
-            padding-bottom: 6rem;
+            padding: 14rem 3rem 6rem;
         }
         .page-hero-bg {
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 80% 60% at 50% 100%, rgba(221,205,156,0.05) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 40% at 80% 20%, rgba(221,205,156,0.03) 0%, transparent 50%);
+                radial-gradient(ellipse 70% 55% at 78% 42%, rgba(221,205,156,0.10) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 70% at 25% 110%, rgba(221,205,156,0.05) 0%, transparent 60%);
         }
         .page-hero-grid {
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 70% 80% at 50% 100%, black 30%, transparent 80%);
-            -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 100%, black 30%, transparent 80%);
+                linear-gradient(rgba(221,205,156,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.035) 1px, transparent 1px);
+            background-size: 64px 64px;
+            mask-image: radial-gradient(ellipse 75% 75% at 70% 45%, black 25%, transparent 78%);
+            -webkit-mask-image: radial-gradient(ellipse 75% 75% at 70% 45%, black 25%, transparent 78%);
         }
-        .page-hero-diamonds {
+        /* Top scrim: gives the fixed nav a base so it never floats over empty black */
+        .page-hero-scrim {
             position: absolute;
-            inset: 0;
-            overflow: hidden;
+            top: 0; left: 0; right: 0;
+            height: 240px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 45%, transparent 100%);
             pointer-events: none;
+            z-index: 1;
         }
-        .page-hero-diamonds .d {
-            position: absolute;
-            border: 1px solid rgba(221,205,156,0.07);
-            transform: rotate(45deg);
-            animation: float-d 18s ease-in-out infinite;
-        }
-        @keyframes float-d {
-            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.7; }
-            50% { transform: rotate(45deg) translateY(-18px); opacity: 0.3; }
-        }
-        .page-hero-content {
+        .page-hero-inner {
             position: relative;
             z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10rem 3rem 0;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 4.5rem;
+            align-items: center;
             width: 100%;
         }
         .page-hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
             font-family: var(--font-body);
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
             opacity: 0;
-            animation: fade-up 0.8s var(--ease-out-expo) 0.2s forwards;
+            animation: fade-up 0.8s var(--ease-out-expo) 0.15s forwards;
+        }
+        .page-hero-eyebrow::before {
+            content: '';
+            width: 28px; height: 1px;
+            background: var(--gold);
         }
         .page-hero-title {
             font-family: var(--font-display);
-            font-size: clamp(4rem, 9vw, 8rem);
-            line-height: 0.92;
+            font-size: clamp(3.4rem, 6.5vw, 6.5rem);
+            line-height: 0.9;
             letter-spacing: 0.01em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             opacity: 0;
-            animation: fade-up 0.9s var(--ease-out-expo) 0.35s forwards;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.3s forwards;
         }
         .page-hero-title .line2 { color: var(--gold); }
         .page-hero-desc {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 400;
-            line-height: 1.75;
-            color: rgba(255,255,255,0.5);
-            max-width: 560px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.55);
+            max-width: 480px;
+            margin-bottom: 2.25rem;
             opacity: 0;
-            animation: fade-up 0.9s var(--ease-out-expo) 0.5s forwards;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.45s forwards;
+        }
+        .page-hero-actions {
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease-out-expo) 0.6s forwards;
+        }
+        .page-hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem 1.4rem;
+            margin-top: 1.75rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .page-hero-trust span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .page-hero-trust span::before {
+            content: '';
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
         }
         @keyframes fade-up {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* ── Signature: transparent price ledger ── */
+        .price-ledger {
+            position: relative;
+            border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 1.25rem;
+            background:
+                linear-gradient(180deg, rgba(221,205,156,0.06) 0%, rgba(221,205,156,0) 55%),
+                rgba(10,10,10,0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 1.75rem 1.85rem 1.6rem;
+            box-shadow: 0 -6px 60px rgba(221,205,156,0.08), 0 30px 70px rgba(0,0,0,0.55);
+            opacity: 0;
+            animation: ledger-in 1s var(--ease-out-expo) 0.55s forwards;
+        }
+        @keyframes ledger-in {
+            from { opacity: 0; transform: translateY(28px) scale(0.985); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .ledger-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.35rem;
+        }
+        .ledger-label {
+            font-family: var(--font-body);
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .ledger-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-body);
+            font-size: 0.56rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .ledger-pill .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 8px rgba(74,222,128,0.6);
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+        .ledger-sub {
+            font-size: 0.78rem;
+            color: var(--white-dim);
+            margin-bottom: 1.1rem;
+        }
+        .ledger-rows { display: flex; flex-direction: column; }
+        .ledger-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.85rem 0.6rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            transition: background 0.25s ease;
+        }
+        .ledger-row:last-of-type { border-bottom: none; }
+        .ledger-row:hover { background: rgba(221,205,156,0.05); }
+        .ledger-row.is-popular {
+            background: rgba(221,205,156,0.07);
+            box-shadow: inset 2px 0 0 var(--gold);
+        }
+        .ledger-name {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-family: var(--font-body);
+            font-size: 0.86rem;
+            font-weight: 500;
+            color: var(--white-muted);
+        }
+        .ledger-tag {
+            font-size: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--black);
+            background: var(--gold);
+            padding: 0.18rem 0.4rem;
+            border-radius: 9999px;
+        }
+        .ledger-price {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .ledger-price small {
+            font-family: var(--font-body);
+            font-size: 0.62rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--white-dim);
+        }
+        .ledger-price .from {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--white-dim);
+            margin-right: 0.15rem;
+            letter-spacing: 0;
+        }
+        .ledger-foot {
+            margin-top: 1.1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(221,205,156,0.22);
+            font-size: 0.76rem;
+            line-height: 1.5;
+            color: var(--white-dim);
+        }
+        .ledger-foot strong { color: var(--gold); font-weight: 600; }
         .page-hero-divider {
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(221,205,156,0.15), transparent);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .page-hero-eyebrow, .page-hero-title, .page-hero-desc,
+            .page-hero-actions, .price-ledger { animation: none; opacity: 1; }
         }
 
         /* ===== CATEGORY FILTER TABS ===== */
@@ -731,41 +884,51 @@
             color: rgba(255,255,255,0.4);
             margin-bottom: 2rem;
         }
+        /* Meta block (tagline + who-for + payback) kept a consistent height so the
+           divider and feature lists line up across all four cards. */
+        .package-meta {
+            min-height: 7.5rem;
+            margin-bottom: 0.25rem;
+        }
         .package-tagline {
             font-size: 0.85rem;
             font-weight: 500;
             line-height: 1.5;
             color: var(--white-muted);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.7rem;
         }
         .package-whofor {
             font-size: 0.78rem;
             font-weight: 400;
-            line-height: 1.55;
+            line-height: 1.5;
             color: var(--white-dim);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.5rem;
         }
         .package-payback {
             font-size: 0.78rem;
             font-weight: 500;
-            line-height: 1.5;
+            line-height: 1.45;
             color: var(--gold-dark);
-            margin-bottom: 0.25rem;
         }
+        .package-meta .label { color: var(--white-muted); font-weight: 600; }
+        /* Label sits above the included-list on every card. Fixed height so the
+           lists begin on the same line whether the label is one or two rows. */
         .package-plus-label {
             font-family: var(--font-body);
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 0.08em;
+            line-height: 1.4;
             text-transform: uppercase;
             color: var(--gold);
-            padding: 0.65rem 0 0.25rem;
+            min-height: 2.5rem;
+            padding-bottom: 0.5rem;
         }
-        .package-feature.star { color: var(--white); font-weight: 500; }
+        .package-feature.star { color: var(--white); font-weight: 600; }
         .package-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(221,205,156,0.18), transparent);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         .package-features {
             display: flex;
@@ -896,22 +1059,66 @@
 
         /* ===== CTA SECTION ===== */
         .final-cta {
-            padding: 8rem 3rem;
+            padding: 8rem 3rem 9rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221,205,156,0.12);
+        }
+        .final-cta-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.03) 1px, transparent 1px);
+            background-size: 54px 54px;
+            mask-image: radial-gradient(ellipse 65% 75% at 50% 42%, black 10%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 42%, black 10%, transparent 75%);
+            pointer-events: none;
         }
         .final-cta-bg {
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 60% 70% at 50% 50%, rgba(221,205,156,0.05) 0%, transparent 60%);
+                radial-gradient(ellipse 55% 60% at 50% 42%, rgba(221,205,156,0.11) 0%, transparent 62%);
             pointer-events: none;
         }
-        .final-cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-        .final-cta .section-title { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1rem; }
-        .final-cta .section-subtitle { margin: 0 auto 2.5rem; }
-        .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+        /* Contained, glowing CTA panel (shares the package/perf glow language) */
+        .final-cta-panel {
+            position: relative;
+            z-index: 1;
+            max-width: 740px;
+            margin: 0 auto;
+            border: 1px solid rgba(221,205,156,0.22);
+            border-radius: 1.75rem;
+            background: #000;
+            box-shadow: 0 -10px 90px 6px rgba(221,205,156,0.12), 0 30px 80px rgba(0,0,0,0.55);
+            padding: 4rem 3rem 3.5rem;
+            overflow: hidden;
+        }
+        .final-cta-inner { position: relative; z-index: 10; }
+        .final-cta .section-title { font-size: clamp(2.6rem, 5vw, 4.5rem); margin-bottom: 1rem; }
+        .final-cta .section-subtitle { margin: 0 auto 2.25rem; }
+        .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+        .final-cta-trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+        .final-cta-trust span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .final-cta-trust span::before {
+            content: '';
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -1086,6 +1293,8 @@
             .nav { padding: 0.75rem 2rem; }
             .nav-links { gap: 1.75rem; }
             .packages-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; }
+            .page-hero { padding: 13rem 2rem 5rem; }
+            .page-hero-inner { gap: 2.75rem; }
             .intro-inner { grid-template-columns: 1fr; gap: 2rem; }
             .notes-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1098,7 +1307,9 @@
             .nav-hamburger { display: flex; }
             .section { padding: 5rem 1.5rem; }
             .section-large { padding: 6rem 1.5rem; }
-            .page-hero-content { padding: 8rem 1.5rem 0; }
+            .page-hero { padding: 9.5rem 1.5rem 4.5rem; }
+            .page-hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .page-hero-scrim { height: 180px; }
             .pricing-section { padding: 4rem 1.5rem 3rem; }
             .pricing-table-head { padding: 0.75rem 1.25rem; }
             .pricing-row { padding: 1.1rem 1.25rem; grid-template-columns: 1fr auto; }
@@ -1120,6 +1331,8 @@
             .nav-logo img { height: 110px; }
             .nav.scrolled .nav-logo img { height: 92px; }
             .packages-grid { grid-template-columns: 1fr; max-width: 100%; }
+            .package-meta { min-height: 0; }
+            .package-plus-label { min-height: 0; }
             .package-card { padding: 2rem 1.25rem; }
             .package-price { font-size: clamp(2.5rem, 10vw, 3.5rem); }
             .pricing-table-head,
@@ -1141,27 +1354,6 @@
             color: var(--white-muted);
         }
         .section-lead.narrow { max-width: 760px; }
-
-        /* ===== PREPAY & SAVE (reuses three-stat style) ===== */
-        .prepay-section { padding: 7rem 3rem; background: var(--black-soft); }
-        .prepay-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-        }
-        .prepay-card {
-            background: var(--black-card);
-            border: 1px solid rgba(221,205,156,0.08);
-            border-radius: 12px;
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            transition: border-color 0.3s ease, transform 0.4s var(--ease-out-quart);
-        }
-        .prepay-card:hover { border-color: rgba(221,205,156,0.18); transform: translateY(-4px); }
-        .prepay-card .intro-stat-num { font-size: 2.8rem; margin-bottom: 0.6rem; }
-        .prepay-card .intro-stat-label { margin-top: 0; }
 
         /* ===== COMPARISON MATRIX (built from existing table colors) ===== */
         .matrix-section { padding: 7rem 3rem; }
@@ -1314,36 +1506,13 @@
         }
         .perf-promise strong { color: var(--gold); font-weight: 600; }
 
-        /* ===== PROOF ===== */
-        .proof-section { padding: 7rem 3rem; }
-        .proof-placeholder {
-            max-width: 760px;
-            margin: 3rem auto 0;
-            background: var(--black-card);
-            border: 1px dashed rgba(221,205,156,0.2);
-            border-radius: 12px;
-            padding: 3.5rem 2rem;
-            text-align: center;
-        }
-        .proof-placeholder .proof-title {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            letter-spacing: 0.06em;
-            color: var(--gold);
-            margin-bottom: 0.75rem;
-        }
-        .proof-placeholder p { font-size: 0.9rem; color: var(--white-dim); line-height: 1.7; }
-
         /* ===== NEW SECTION RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .prepay-grid { grid-template-columns: 1fr; max-width: 480px; }
             .perf-steps { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            .prepay-section { padding: 5rem 1.5rem; }
             .matrix-section { padding: 5rem 1.5rem; }
             .perf-section { padding: 5rem 1.5rem; }
-            .proof-section { padding: 5rem 1.5rem; }
             .perf-fee-card { padding: 2.5rem 1.25rem; }
             .matrix-hint { display: block; }
         }
@@ -1473,28 +1642,55 @@
 <section class="page-hero">
     <div class="page-hero-bg"></div>
     <div class="page-hero-grid"></div>
-    <div class="page-hero-diamonds" aria-hidden="true">
-        <div class="d" style="width:80px;height:80px;top:15%;left:8%;animation-delay:0s;animation-duration:20s;"></div>
-        <div class="d" style="width:40px;height:40px;top:30%;left:20%;animation-delay:3s;animation-duration:16s;opacity:0.4;"></div>
-        <div class="d" style="width:120px;height:120px;top:10%;right:12%;animation-delay:6s;animation-duration:24s;"></div>
-        <div class="d" style="width:55px;height:55px;top:55%;right:22%;animation-delay:2s;animation-duration:18s;opacity:0.5;"></div>
-        <div class="d" style="width:30px;height:30px;top:70%;left:35%;animation-delay:8s;animation-duration:14s;opacity:0.35;"></div>
-        <div class="d" style="width:90px;height:90px;bottom:15%;right:5%;animation-delay:4s;animation-duration:22s;opacity:0.3;"></div>
-    </div>
+    <div class="page-hero-scrim"></div>
 
-    <div class="page-hero-content">
-        <p class="page-hero-eyebrow">Enoch Marketing | 2026 Pricing Guide</p>
-        <h1 class="page-hero-title">
-            REAL PRICING.<br>
-            <span class="line2">ZERO SURPRISES.</span>
-        </h1>
-        <p class="page-hero-desc">One clear price. No lock-in contracts. Every dollar backed by our money-back promise, and pricing that scales to what your box can actually pack in.</p>
-        <div style="margin-top:2.25rem;">
-            <a href="/contact.html" class="btn-primary">
-                <span>Book Your Free Gym Audit</span>
-                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+    <div class="page-hero-inner">
+        <div class="page-hero-copy">
+            <p class="page-hero-eyebrow">Enoch Marketing &middot; 2026 Pricing</p>
+            <h1 class="page-hero-title">
+                REAL PRICING.<br>
+                <span class="line2">ZERO SURPRISES.</span>
+            </h1>
+            <p class="page-hero-desc">One clear price. No lock-in contracts. Every dollar backed by our money-back promise.</p>
+            <div class="page-hero-actions">
+                <a href="/contact.html" class="btn-primary">
+                    <span>Book Your Free Gym Audit</span>
+                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <div class="page-hero-trust">
+                    <span>Money-back promise</span>
+                    <span>No contracts</span>
+                    <span>$0 hidden fees</span>
+                </div>
+            </div>
         </div>
+
+        <aside class="price-ledger" aria-label="Plans and starting prices">
+            <div class="ledger-head">
+                <span class="ledger-label">What you'll pay</span>
+                <span class="ledger-pill"><span class="dot"></span>No quotes needed</span>
+            </div>
+            <p class="ledger-sub">Monthly. No contracts. Cancel anytime.</p>
+            <div class="ledger-rows">
+                <a href="#packages" class="ledger-row">
+                    <span class="ledger-name">Get Found</span>
+                    <span class="ledger-price">$1,000<small>&nbsp;/mo</small></span>
+                </a>
+                <a href="#packages" class="ledger-row is-popular">
+                    <span class="ledger-name">Fill the Floor <span class="ledger-tag">Popular</span></span>
+                    <span class="ledger-price">$2,000<small>&nbsp;/mo</small></span>
+                </a>
+                <a href="#packages" class="ledger-row">
+                    <span class="ledger-name">Own Your Market</span>
+                    <span class="ledger-price">$3,500<small>&nbsp;/mo</small></span>
+                </a>
+                <a href="#packages" class="ledger-row">
+                    <span class="ledger-name">Rule Every Market</span>
+                    <span class="ledger-price"><span class="from">from</span>$6,500</span>
+                </a>
+            </div>
+            <p class="ledger-foot">Every price, right here. No <strong>"request a quote"</strong> runaround, and no surprises on the invoice.</p>
+        </aside>
     </div>
     <div class="page-hero-divider"></div>
 </section>
@@ -1550,41 +1746,43 @@
                 <div class="package-name">GET FOUND</div>
                 <div class="package-price">$1,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <p class="package-tagline">Get found. Look legit. Own your reputation before you spend a dollar on ads.</p>
-                <p class="package-whofor">For a box that needs a consistent, professional presence dialed in before turning on paid traffic.</p>
-                <p class="package-payback">Pays for itself at about 6 new members, roughly what 6 members' monthly dues bring in.</p>
+                <div class="package-meta">
+                    <p class="package-tagline">Get found and look legit before you spend on ads.</p>
+                    <p class="package-whofor"><span class="label">For:</span> a box dialing in a pro presence before paid traffic.</p>
+                    <p class="package-payback"><span class="label">Payback:</span> about 6 new members.</p>
+                </div>
                 <div class="package-divider"></div>
+                <div class="package-plus-label">Everything you get:</div>
                 <ul class="package-features">
                     <li class="package-feature included star">
                         <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                        One dashboard for your whole gym. Revenue, new members this month, and everything we are working on, in one login, updated live. You always know exactly what you are paying for.
+                        Live gym dashboard, one login, updated live
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Your social, handled (Instagram and Facebook). We write, design, and schedule [X] <!-- TODO: Rafael to set --> posts a month so your feed looks active and pro without you touching it.
+                        Social handled: Instagram and Facebook, 12 posts a month
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Every comment and DM answered. We reply to prospects fast and grow your following, so nobody who reaches out slips away.
+                        Every comment and DM answered
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Show up on Google Search and Maps. We build and clean up your Google Business Profile so your box appears correctly the second a local searches "CrossFit near me."
+                        Google Search and Maps presence (Business Profile)
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        More 5-star reviews, on repeat. A system that steadily brings in new reviews and replies to every one, so you are the obvious choice in town.
+                        More 5-star reviews, on repeat
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        A plain-English report every month. What we did, what it produced, what is next. Real numbers, zero vanity metrics.
+                        Plain-English monthly report
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        A monthly strategy call. We review results together and lock next month's plan. You are never guessing.
+                        Monthly strategy call
                     </li>
                 </ul>
-                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
             </div>
         </div>
 
@@ -1605,34 +1803,35 @@
                 <div class="package-name">FILL THE FLOOR</div>
                 <div class="package-price">$2,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <p class="package-tagline">Turn on lead flow and start filling trials.</p>
-                <p class="package-whofor">For a box ready to drive new athletes through the door with paid traffic and automated follow-up.</p>
-                <p class="package-payback">Pays for itself at about 12 new members, and most boxes clear that in month one.</p>
+                <div class="package-meta">
+                    <p class="package-tagline">Turn on lead flow and start filling trials.</p>
+                    <p class="package-whofor"><span class="label">For:</span> a box ready to drive athletes in with paid traffic.</p>
+                    <p class="package-payback"><span class="label">Payback:</span> about 12 new members.</p>
+                </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Get Found, plus:</div>
                 <ul class="package-features">
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Now on 4 platforms, adds TikTok and YouTube. We put your box in front of more locals who are ready to walk in, where they already spend their time.
+                        4 platforms, adds TikTok and YouTube
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Climb the Google map pack. Ongoing local SEO to push you into the top 3 map results, so you are the first box they see, not the fourth.
+                        Top-3 Google map pack (ongoing local SEO)
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Leads followed up automatically. Email automation turns website visitors and trial sign-ups into paying members, without you chasing anyone.
+                        Automated email lead follow-up
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads on one channel (Meta or Google). We build, run, and refine ads aimed at locals ready to join. (Ad budget is separate, paid straight to the platform, and you always own the account.)
+                        Paid ads, 1 channel (Meta or Google)
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Content creation. Scroll-stopping Reels and short-form video, the format driving the most local gym discovery right now.
+                        Content creation: Reels and short-form video
                     </li>
                 </ul>
-                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
             </div>
         </div>
 
@@ -1650,34 +1849,35 @@
                 <div class="package-name">OWN YOUR MARKET</div>
                 <div class="package-price">$3,500</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <p class="package-tagline">Own your local market across every channel at once.</p>
-                <p class="package-whofor">For an established box that wants to dominate local search, social, and paid traffic together.</p>
-                <p class="package-payback">Pays for itself at about 21 new members, and one member you keep is worth about $2,000 a year to you.</p>
+                <div class="package-meta">
+                    <p class="package-tagline">Own your local market across every channel.</p>
+                    <p class="package-whofor"><span class="label">For:</span> an established box that wants to dominate locally.</p>
+                    <p class="package-payback"><span class="label">Payback:</span> about 21 new members.</p>
+                </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Fill the Floor, plus:</div>
                 <ul class="package-features">
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        All 5 platforms covered. Wherever your local athletes scroll, your box is there. Impossible to miss.
+                        All 5 platforms covered
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads across Google, Meta, and TikTok. Three channels run as one connected system that feed each other, more reach per dollar. (Ad budget separate.)
+                        Paid ads across Google, Meta, and TikTok
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Email and SMS follow-up. We add texts to your email flow (reminders, offers, win-backs) to reach leads where they actually read.
+                        Email and SMS follow-up
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Expanded content creation. A bigger, steadier stream of fresh creative that keeps all your channels and ads working week after week.
+                        Expanded content creation
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        A complete lead-to-member funnel. Every lead walks an automated path from first click to signed member. Nothing slips through the cracks.
+                        Complete lead-to-member funnel
                     </li>
                 </ul>
-                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
             </div>
         </div>
 
@@ -1693,92 +1893,36 @@
             <div class="pkg-inner">
                 <div class="package-badge-placeholder"></div>
                 <div class="package-name">RULE EVERY MARKET</div>
-                <div class="package-price"><span style="font-size:1.2rem;color:var(--white-dim);letter-spacing:0;">from </span>$6,500</div>
+                <div class="package-price">$6,500</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; custom-quoted</div>
-                <p class="package-tagline">Multiple locations. One growth engine.</p>
-                <p class="package-whofor">For multi-location owners and boxes scaling aggressively who want a senior team on call. Built around your locations and goals. Running multiple boxes? Let's talk volume.</p>
+                <div class="package-meta">
+                    <p class="package-tagline">Multiple locations. One growth engine.</p>
+                    <p class="package-whofor"><span class="label">For:</span> multi-location owners scaling with a senior team on call.</p>
+                    <p class="package-payback"><span class="label">Volume pricing:</span> let's talk.</p>
+                </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Own Your Market, plus:</div>
                 <ul class="package-features">
                     <li class="package-feature included star">
                         <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                        Every location, side by side. One dashboard showing revenue, members, and ad performance for each box at a glance.
+                        Every location, side by side, in one dashboard
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        The full engine, run across every box. We manage all of it, every location, kept consistent under one brand.
+                        The full engine, run across every box
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Your own strategist and front-of-line turnaround. A named expert who knows your business and moves your requests to the top of the queue.
+                        Your own strategist, front-of-line turnaround
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        A quarterly domination roadmap. A rolling plan to take and hold the number-one spot in every market you operate in.
+                        Quarterly domination roadmap
                     </li>
                 </ul>
-                <a href="/contact.html" class="package-cta">Book Your Free Gym Audit</a>
             </div>
         </div>
 
-    </div>
-</section>
-
-<!-- ADD-ONS -->
-<section class="section" id="add-ons">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Add-Ons</span></div>
-        <h2 class="section-title">BOLT ONTO <span class="gold">ANY PACKAGE.</span></h2>
-        <p class="section-lead">Want premium service without jumping to a multi-location plan? Add exactly what you need to any tier.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Add-On</span>
-            <span>Price</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Dedicated strategist and priority turnaround</div>
-            <div class="pricing-row-amount">from [$X]/mo <!-- TODO: Rafael to set --></div>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Extra ad channel (add Google, Meta, or TikTok)</div>
-            <div class="pricing-row-amount">from $1,125/mo</div>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Extra short-form videos</div>
-            <div class="pricing-row-amount">from $250 each</div>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">On-site photo and video shoot (half day)</div>
-            <div class="pricing-row-amount">from $1,000</div>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Quarterly strategy intensive and roadmap</div>
-            <div class="pricing-row-amount">from [$X]/quarter <!-- TODO: Rafael to set --></div>
-        </div>
-    </div>
-</section>
-
-<!-- PREPAY & SAVE -->
-<section class="prepay-section">
-    <div class="packages-header reveal" style="text-align:center;">
-        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Prepay &amp; Save</span></div>
-        <h2 class="section-title">STAY FLEXIBLE, OR<br><span class="gold">PAY AHEAD AND SAVE.</span></h2>
-        <p class="section-subtitle" style="margin:0 auto;">Stay month-to-month, or prepay and save. No lock-in either way, just a discount for paying ahead.</p>
-    </div>
-    <div class="prepay-grid">
-        <div class="prepay-card reveal reveal-delay-1">
-            <div class="intro-stat-num">save [10%]</div> <!-- TODO: Rafael to set -->
-            <div class="intro-stat-label">Pay Quarterly</div>
-        </div>
-        <div class="prepay-card reveal reveal-delay-2">
-            <div class="intro-stat-num">save [12%]</div> <!-- TODO: Rafael to set -->
-            <div class="intro-stat-label">Pay 6 Months Up Front</div>
-        </div>
-        <div class="prepay-card reveal reveal-delay-3">
-            <div class="intro-stat-num">save [15%]</div> <!-- TODO: Rafael to set -->
-            <div class="intro-stat-label">Pay Annually</div>
-        </div>
     </div>
 </section>
 
@@ -1916,7 +2060,7 @@
     <div class="pricing-header reveal" style="margin-bottom:0;">
         <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>A La Carte</span></div>
         <h2 class="section-title">INDIVIDUAL SERVICES.<br><span class="gold">BUILD YOUR OWN.</span></h2>
-        <p class="section-lead">Prefer to pick and choose? Every service is available on its own. Tap a category to see pricing.</p>
+        <p class="section-lead">Prefer to pick and choose? Buy any service on its own, or bolt an extra onto a package. Tap a category to see pricing.</p>
     </div>
 </section>
 
@@ -1930,6 +2074,7 @@
         <button class="filter-tab" data-target="website-seo">Website &amp; SEO</button>
         <button class="filter-tab" data-target="email-sms">Email &amp; SMS</button>
         <button class="filter-tab" data-target="branding">Branding &amp; Creative</button>
+        <button class="filter-tab" data-target="add-ons">Add-Ons</button>
     </div>
 </div>
 
@@ -2100,6 +2245,42 @@
         </div>
     </div>
 </section>
+
+<!-- ADD-ONS -->
+<section class="pricing-section" id="add-ons">
+    <div class="pricing-header reveal">
+        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Optional Extras</span></div>
+        <h2 class="pricing-category-label">Add-Ons</h2>
+        <p class="pricing-category-sub">Bolt premium service onto any package. Pay only for the extras you want.</p>
+    </div>
+    <div class="pricing-table reveal reveal-delay-1">
+        <div class="pricing-table-head">
+            <span>Service</span>
+            <span>Investment</span>
+            <span>Frequency</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Dedicated strategist <span style="color:var(--white-dim);font-size:0.8em;">(priority turnaround)</span></div>
+            <div class="pricing-row-amount">from $750</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Extra ad channel <span style="color:var(--white-dim);font-size:0.8em;">(Google, Meta, or TikTok)</span></div>
+            <div class="pricing-row-amount">from $1,125</div>
+            <span class="pricing-badge monthly">Monthly</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Extra short-form videos</div>
+            <div class="pricing-row-amount">from $250</div>
+            <span class="pricing-badge per-piece">Per Video</span>
+        </div>
+        <div class="pricing-row">
+            <div class="pricing-row-name">Quarterly strategy intensive <span style="color:var(--white-dim);font-size:0.8em;">(and roadmap)</span></div>
+            <div class="pricing-row-amount">from $1,500</div>
+            <span class="pricing-badge per-piece">Per Quarter</span>
+        </div>
+    </div>
+</section>
 </div><!-- /.services-scope -->
 
 <!-- PERFORMANCE CAMPAIGN -->
@@ -2140,7 +2321,7 @@
                 <ul class="perf-fee-list">
                     <li>
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        One-time build fee: from [$X] <!-- TODO: Rafael to set -->, covering your funnel and creative. Charged once, never recurring.
+                        One-time build fee: from $1,500, covering your funnel and creative. Charged once, never recurring.
                     </li>
                     <li>
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -2149,7 +2330,7 @@
                 </ul>
             </div>
         </div>
-        <p class="perf-promise reveal">Our promise: if the campaign does not sign at least [8] <!-- TODO: Rafael to set --> new members in 90 days, we refund your build fee in full. The refund covers the build fee only. Ad spend is never refundable, because that money goes straight to the ad platform and never touches our hands.</p>
+        <p class="perf-promise reveal">Our promise: if the campaign does not sign at least 5 new members in 90 days, we refund your build fee in full. The refund covers the build fee only. Ad spend is never refundable, because that money goes straight to the ad platform and never touches our hands.</p>
     </div>
 </section>
 
@@ -2201,32 +2382,33 @@
     </div>
 </section>
 
-<!-- PROOF -->
-<section class="proof-section">
-    <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
-        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Proof</span></div>
-        <h2 class="section-title">RESULTS FROM<br><span class="gold">REAL BOXES.</span></h2>
-    </div>
-    <!-- TODO: Rafael to drop in real client results, names, and numbers here when available. Do not fabricate. -->
-    <div class="proof-placeholder reveal reveal-delay-1">
-        <div class="proof-title">Client results coming soon</div>
-        <p>We are gathering verified numbers and stories from the boxes we work with. Real results will live here.</p>
-    </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="final-cta">
+    <div class="final-cta-grid"></div>
     <div class="final-cta-bg"></div>
-    <div class="final-cta-content reveal">
-        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
-        <h2 class="section-title">READY TO<br><span class="gold">PACK YOUR BOX?</span></h2>
-        <p class="section-subtitle">Book a free 30-minute gym audit. We review what is holding your box back and hand you a specific plan. No pitch, no fluff. We onboard a limited number of boxes each month so every client gets senior attention.</p>
-        <div class="cta-actions">
-            <a href="/contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
-                <span>Book Your Free Gym Audit</span>
-                <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <p style="font-size:13px;color:rgba(255,255,255,0.35);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;margin-top:4px;">30 minutes. We review what is holding your box back and hand you a plan to fix it.</p>
+    <div class="final-cta-panel reveal">
+        <div class="pc-noise"></div>
+        <div class="pc-glow"></div>
+        <div class="pc-glow-center"></div>
+        <div class="pc-reflection"></div>
+        <div class="pc-edge"></div>
+        <div class="pc-edge-l"></div>
+        <div class="pc-edge-r"></div>
+        <div class="final-cta-inner">
+            <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
+            <h2 class="section-title">READY TO<br><span class="gold">PACK YOUR BOX?</span></h2>
+            <p class="section-subtitle">Book a free 30-minute gym audit. We review what is holding your box back and hand you a specific plan to fix it. No pitch, no fluff, and we only take a few new boxes a month.</p>
+            <div class="cta-actions">
+                <a href="/contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
+                    <span>Book Your Free Gym Audit</span>
+                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <div class="final-cta-trust">
+                    <span>30-minute call</span>
+                    <span>A plan to fix it</span>
+                    <span>No pitch, ever</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

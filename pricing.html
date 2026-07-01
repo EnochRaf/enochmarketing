@@ -46,7 +46,7 @@
             --black-elevated: #1A1A1A;
             --white: #FFFFFF;
             --white-muted: #E0E0E0;
-            --white-dim: #666666;
+            --white-dim: #B4B4B4;
             --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
             --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -415,7 +415,7 @@
             font-size: 1.05rem;
             font-weight: 400;
             line-height: 1.7;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.8);
             max-width: 480px;
             margin-bottom: 2.25rem;
             opacity: 0;
@@ -881,13 +881,58 @@
         .package-price-note {
             font-size: 0.75rem;
             font-weight: 400;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.7);
             margin-bottom: 2rem;
         }
-        /* Meta block (tagline + who-for + payback) kept a consistent height so the
-           divider and feature lists line up across all four cards. */
+        /* Ad-spend callout: prominent, present on every tier so the blocks below
+           it line up across all four cards. */
+        .pkg-adspend {
+            border-radius: 0.85rem;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1.5rem;
+            min-height: 10.5rem;
+        }
+        .pkg-adspend.included {
+            background: rgba(221,205,156,0.08);
+            border: 1px solid rgba(221,205,156,0.3);
+        }
+        .pkg-adspend.separate {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.09);
+        }
+        .pkg-adspend-head {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.45rem;
+        }
+        .pkg-adspend.separate .pkg-adspend-head { color: var(--white-muted); }
+        .pkg-adspend-head .chk {
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.22);
+            display: inline-flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .pkg-adspend-note { font-size: 0.72rem; line-height: 1.5; color: var(--white-muted); }
+        .pkg-adspend-over {
+            font-size: 0.68rem;
+            line-height: 1.45;
+            color: var(--white-dim);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed rgba(221,205,156,0.2);
+        }
+        .pkg-adspend.separate .pkg-adspend-over { border-top-color: rgba(255,255,255,0.08); }
+
+        /* Meta block (tagline + who-for) kept a consistent height so the divider
+           and feature lists line up across all four cards. */
         .package-meta {
-            min-height: 7.5rem;
+            min-height: 6rem;
             margin-bottom: 0.25rem;
         }
         .package-tagline {
@@ -902,15 +947,18 @@
             font-weight: 400;
             line-height: 1.5;
             color: var(--white-dim);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
         }
+        /* Payback: a closing ROI line pinned to the bottom of every card. */
         .package-payback {
             font-size: 0.78rem;
             font-weight: 500;
-            line-height: 1.45;
+            line-height: 1.5;
             color: var(--gold-dark);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
-        .package-meta .label { color: var(--white-muted); font-weight: 600; }
+        .package-whofor .label, .package-payback .label { color: var(--white-muted); font-weight: 600; }
         /* Label sits above the included-list on every card. Fixed height so the
            lists begin on the same line whether the label is one or two rows. */
         .package-plus-label {
@@ -934,7 +982,7 @@
             display: flex;
             flex-direction: column;
             gap: 0;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             flex: 1;
         }
         .package-feature {
@@ -949,7 +997,7 @@
         }
         .package-feature:last-child { border-bottom: none; }
         .package-feature.included { color: var(--white-muted); }
-        .package-feature.excluded { color: rgba(255,255,255,0.3); }
+        .package-feature.excluded { color: rgba(255,255,255,0.55); }
 
         /* Check / X icons */
         .feat-icon {
@@ -964,9 +1012,9 @@
             color: #4ade80;
         }
         .feat-icon.no {
-            background: rgba(248,113,113,0.08);
-            border: 1px solid rgba(248,113,113,0.2);
-            color: rgba(248,113,113,0.5);
+            background: rgba(248,113,113,0.12);
+            border: 1px solid rgba(248,113,113,0.35);
+            color: rgba(248,113,113,0.85);
         }
         .feat-icon.starred {
             background: rgba(221,205,156,0.14);
@@ -1266,7 +1314,7 @@
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.8;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.8);
         }
         .intro-stats {
             display: flex;
@@ -1333,6 +1381,7 @@
             .packages-grid { grid-template-columns: 1fr; max-width: 100%; }
             .package-meta { min-height: 0; }
             .package-plus-label { min-height: 0; }
+            .pkg-adspend { min-height: 0; }
             .package-card { padding: 2rem 1.25rem; }
             .package-price { font-size: clamp(2.5rem, 10vw, 3.5rem); }
             .pricing-table-head,
@@ -1678,18 +1727,18 @@
                 </a>
                 <a href="#packages" class="ledger-row is-popular">
                     <span class="ledger-name">Fill the Floor <span class="ledger-tag">Popular</span></span>
-                    <span class="ledger-price">$2,000<small>&nbsp;/mo</small></span>
+                    <span class="ledger-price">$4,000<small>&nbsp;/mo</small></span>
                 </a>
                 <a href="#packages" class="ledger-row">
                     <span class="ledger-name">Own Your Market</span>
-                    <span class="ledger-price">$3,500<small>&nbsp;/mo</small></span>
+                    <span class="ledger-price">$7,000<small>&nbsp;/mo</small></span>
                 </a>
                 <a href="#packages" class="ledger-row">
                     <span class="ledger-name">Rule Every Market</span>
-                    <span class="ledger-price"><span class="from">from</span>$6,500</span>
+                    <span class="ledger-price"><span class="from">from</span>$15,000</span>
                 </a>
             </div>
-            <p class="ledger-foot">Every price, right here. No <strong>"request a quote"</strong> runaround, and no surprises on the invoice.</p>
+            <p class="ledger-foot">Fill the Floor and up <strong>include your ad spend</strong>. Every price is right here, with no surprises on the invoice.</p>
         </aside>
     </div>
     <div class="page-hero-divider"></div>
@@ -1746,10 +1795,14 @@
                 <div class="package-name">GET FOUND</div>
                 <div class="package-price">$1,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="pkg-adspend separate">
+                    <div class="pkg-adspend-head">Ad spend: funded by you</div>
+                    <p class="pkg-adspend-note">You fund your one paid channel's budget directly and always own the account.</p>
+                    <p class="pkg-adspend-over">Ad spend is included on Fill the Floor and up.</p>
+                </div>
                 <div class="package-meta">
-                    <p class="package-tagline">Get found and look legit before you spend on ads.</p>
-                    <p class="package-whofor"><span class="label">For:</span> a box dialing in a pro presence before paid traffic.</p>
-                    <p class="package-payback"><span class="label">Payback:</span> about 6 new members.</p>
+                    <p class="package-tagline">Get found, look legit, and turn on your first paid leads.</p>
+                    <p class="package-whofor"><span class="label">For:</span> a box that wants a pro presence plus its first managed ad channel, funding its own budget.</p>
                 </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything you get:</div>
@@ -1757,6 +1810,10 @@
                     <li class="package-feature included star">
                         <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
                         Live gym dashboard, one login, updated live
+                    </li>
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Paid ads on 1 channel (Meta or Google)
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -1783,6 +1840,7 @@
                         Monthly strategy call
                     </li>
                 </ul>
+                <p class="package-payback"><span class="label">Payback:</span> about 6 new members.</p>
             </div>
         </div>
 
@@ -1801,16 +1859,24 @@
                     Most Popular
                 </div>
                 <div class="package-name">FILL THE FLOOR</div>
-                <div class="package-price">$2,000</div>
+                <div class="package-price">$4,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="pkg-adspend included">
+                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$1,500/mo ad spend included</div>
+                    <p class="pkg-adspend-note">About $50/day, run inside your own ad account. Unspent rolls over; any balance is refunded.</p>
+                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
+                </div>
                 <div class="package-meta">
                     <p class="package-tagline">Turn on lead flow and start filling trials.</p>
                     <p class="package-whofor"><span class="label">For:</span> a box ready to drive athletes in with paid traffic.</p>
-                    <p class="package-payback"><span class="label">Payback:</span> about 12 new members.</p>
                 </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Get Found, plus:</div>
                 <ul class="package-features">
+                    <li class="package-feature included">
+                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Paid ads fully managed, budget on us
+                    </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
                         4 platforms, adds TikTok and YouTube
@@ -1825,13 +1891,10 @@
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads, 1 channel (Meta or Google)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
                         Content creation: Reels and short-form video
                     </li>
                 </ul>
+                <p class="package-payback">One member you keep is worth about $2,000 a year, so a handful of signups puts this in the green.</p>
             </div>
         </div>
 
@@ -1847,23 +1910,27 @@
             <div class="pkg-inner">
                 <div class="package-badge-placeholder"></div>
                 <div class="package-name">OWN YOUR MARKET</div>
-                <div class="package-price">$3,500</div>
+                <div class="package-price">$7,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
+                <div class="pkg-adspend included">
+                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$3,000/mo ad spend included</div>
+                    <p class="pkg-adspend-note">About $100/day, run inside your own accounts. Unspent rolls over; any balance is refunded.</p>
+                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
+                </div>
                 <div class="package-meta">
                     <p class="package-tagline">Own your local market across every channel.</p>
                     <p class="package-whofor"><span class="label">For:</span> an established box that wants to dominate locally.</p>
-                    <p class="package-payback"><span class="label">Payback:</span> about 21 new members.</p>
                 </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Fill the Floor, plus:</div>
                 <ul class="package-features">
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        All 5 platforms covered
+                        Paid ads across Google, Meta, and TikTok, budget on us
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads across Google, Meta, and TikTok
+                        All 5 platforms covered
                     </li>
                     <li class="package-feature included">
                         <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -1878,6 +1945,7 @@
                         Complete lead-to-member funnel
                     </li>
                 </ul>
+                <p class="package-payback">One member you keep is worth about $2,000 a year. This tier is built to bring in well more than it costs.</p>
             </div>
         </div>
 
@@ -1893,12 +1961,16 @@
             <div class="pkg-inner">
                 <div class="package-badge-placeholder"></div>
                 <div class="package-name">RULE EVERY MARKET</div>
-                <div class="package-price">$6,500</div>
+                <div class="package-price"><span style="font-size:1.2rem;color:var(--white-dim);letter-spacing:0;">from </span>$15,000</div>
                 <div class="package-price-note">per month &nbsp;·&nbsp; custom-quoted</div>
+                <div class="pkg-adspend included">
+                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$6,000/mo ad spend included</div>
+                    <p class="pkg-adspend-note">About $200/day across locations, in your own accounts. Unspent rolls over; any balance is refunded.</p>
+                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
+                </div>
                 <div class="package-meta">
                     <p class="package-tagline">Multiple locations. One growth engine.</p>
                     <p class="package-whofor"><span class="label">For:</span> multi-location owners scaling with a senior team on call.</p>
-                    <p class="package-payback"><span class="label">Volume pricing:</span> let's talk.</p>
                 </div>
                 <div class="package-divider"></div>
                 <div class="package-plus-label">Everything in Own Your Market, plus:</div>
@@ -1920,6 +1992,7 @@
                         Quarterly domination roadmap
                     </li>
                 </ul>
+                <p class="package-payback">Priced for multi-location scale. The members this adds across your boxes are worth far more than the monthly cost.</p>
             </div>
         </div>
 
@@ -1947,9 +2020,9 @@
                 <tr>
                     <th>Price / month</th>
                     <td><span class="matrix-price">$1,000</span></td>
-                    <td class="matrix-featured"><span class="matrix-price">$2,000</span></td>
-                    <td><span class="matrix-price">$3,500</span></td>
-                    <td><span class="matrix-price">from $6,500</span></td>
+                    <td class="matrix-featured"><span class="matrix-price">$4,000</span></td>
+                    <td><span class="matrix-price">$7,000</span></td>
+                    <td><span class="matrix-price">from $15,000</span></td>
                 </tr>
                 <tr>
                     <th>Live dashboard</th>
@@ -2009,10 +2082,17 @@
                 </tr>
                 <tr>
                     <th>Paid ads</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+                    <td>1 channel</td>
                     <td class="matrix-featured">1 channel</td>
                     <td>3 channels</td>
                     <td>3 channels</td>
+                </tr>
+                <tr>
+                    <th>Ad spend</th>
+                    <td>You fund it</td>
+                    <td class="matrix-featured">$1,500/mo included</td>
+                    <td>$3,000/mo included</td>
+                    <td>$6,000/mo included</td>
                 </tr>
                 <tr>
                     <th>Content creation</th>
@@ -2347,8 +2427,8 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                 </div>
                 <div>
-                    <div class="note-title">AD SPEND IS SEPARATE</div>
-                    <p class="note-body">All paid advertising management fees are separate from the ad budget, which you pay directly to Google, Meta, or TikTok. You always own your ad accounts.</p>
+                    <div class="note-title">HOW AD SPEND WORKS</div>
+                    <p class="note-body">On Fill the Floor and up, your ad spend is included in your monthly price. We fund it, pace it, and run it inside your own ad accounts, which you always own. Anything unspent rolls over, and any balance left at the end is refunded. On Get Found, the performance campaign, and individual services, ad spend is billed separately and paid directly to the platform. Either way, you always own your ad accounts.</p>
                 </div>
             </div>
             <div class="note-card reveal reveal-delay-2">

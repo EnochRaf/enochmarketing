@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://www.enochmarketing.com/blog-meta-ads.html" />
-    <meta name="description" content="The five-step Meta Ads framework CrossFit gyms use to add 20+ new members per month, covering audiences, creative, landing pages, follow-up, and retargeting.">
+    <meta name="description" content="The 2026 Meta Ads playbook CrossFit gyms use to add 20+ members per month: offer design, audiences, creative, landing pages, speed-to-lead, and retargeting. Includes a free ROI calculator and a 10-point self-audit scorecard.">
     <meta property="og:type" content="article">
     <meta property="og:title" content="How CrossFit Gyms Are Adding 20+ Members Per Month With Meta Ads">
     <meta property="og:description" content="The exact Meta Ads framework our clients use to sign 20+ new members per month on autopilot.">
@@ -400,6 +400,126 @@
             color: var(--gold-light);
             transform: translateY(-1px);
         }
+
+        /* ── READING PROGRESS BAR ── */
+        #readProgress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(to right, var(--gold-dark), var(--gold)); z-index: 1001; }
+
+        /* ── TOC ACTIVE STATE ── */
+        .toc-list a.active { color: var(--gold); }
+        .toc-list a.active::before { background: var(--gold); }
+
+        /* ── INTERACTIVE TOOL BLOCKS ── */
+        .tool-block { border: 1px solid rgba(221,205,156,0.18); border-radius: 1.25rem; background: linear-gradient(160deg, var(--black-card) 0%, #0c0b07 100%); padding: 2.25rem; margin: 2.5rem 0; position: relative; overflow: hidden; }
+        .tool-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, rgba(221,205,156,0.45), transparent); }
+        .tool-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); background: rgba(221,205,156,0.08); border: 1px solid rgba(221,205,156,0.25); border-radius: 9999px; padding: 0.35rem 0.9rem; margin-bottom: 1.25rem; }
+        .tool-block h3 { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.04em; color: var(--white); margin: 0 0 0.5rem; }
+        .tool-block .tool-sub { font-size: 0.9rem; color: var(--white-dim); margin-bottom: 1.75rem; line-height: 1.6; }
+
+        /* ── ROI CALCULATOR ── */
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+        .calc-field label { display: flex; justify-content: space-between; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-muted); margin-bottom: 0.5rem; }
+        .calc-field label .calc-val { color: var(--gold); font-weight: 700; }
+        .calc-field input[type="number"] { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(221,205,156,0.2); border-radius: 10px; padding: 0.7rem 1rem; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--gold); outline: none; transition: border-color 0.3s ease; }
+        .calc-field input[type="number"]:focus { border-color: rgba(221,205,156,0.5); }
+        input[type="range"].calc-range { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 2px; background: rgba(221,205,156,0.15); outline: none; margin-top: 0.9rem; cursor: pointer; }
+        input[type="range"].calc-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--gold); cursor: pointer; border: 2px solid var(--black); box-shadow: 0 0 10px rgba(221,205,156,0.4); }
+        input[type="range"].calc-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--gold); cursor: pointer; border: 2px solid var(--black); }
+        .calc-results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(221,205,156,0.12); border: 1px solid rgba(221,205,156,0.12); border-radius: 0.9rem; overflow: hidden; margin-bottom: 1.25rem; }
+        .calc-result { background: var(--black-soft); padding: 1.1rem 1rem; text-align: center; }
+        .calc-result-num { font-family: var(--font-display); font-size: 1.9rem; color: var(--gold); line-height: 1.1; }
+        .calc-result-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); margin-top: 0.3rem; }
+        .calc-highlight { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 1px solid rgba(221,205,156,0.25); background: rgba(221,205,156,0.05); border-radius: 0.9rem; padding: 1.1rem 1.5rem; flex-wrap: wrap; }
+        .calc-highlight-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white-muted); }
+        .calc-highlight-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--gold); line-height: 1; }
+        .calc-note { font-size: 0.72rem !important; color: var(--white-dim) !important; line-height: 1.6 !important; margin: 1.1rem 0 0 !important; }
+
+        /* ── SELF-AUDIT SCORECARD ── */
+        .audit-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.75rem; }
+        .audit-item { display: flex; align-items: flex-start; gap: 0.9rem; border: 1px solid rgba(221,205,156,0.12); border-radius: 0.75rem; background: rgba(255,255,255,0.02); padding: 0.95rem 1.15rem; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease; user-select: none; -webkit-user-select: none; }
+        .audit-item:hover { border-color: rgba(221,205,156,0.3); }
+        .audit-check { width: 22px; height: 22px; min-width: 22px; border-radius: 6px; border: 1.5px solid rgba(221,205,156,0.35); display: flex; align-items: center; justify-content: center; transition: all 0.25s ease; margin-top: 1px; color: var(--black); }
+        .audit-check svg { opacity: 0; transform: scale(0.5); transition: all 0.25s ease; }
+        .audit-item.checked { border-color: rgba(221,205,156,0.45); background: rgba(221,205,156,0.06); }
+        .audit-item.checked .audit-check { background: var(--gold); border-color: var(--gold); }
+        .audit-item.checked .audit-check svg { opacity: 1; transform: scale(1); }
+        .audit-text { font-size: 0.9rem; line-height: 1.55; color: rgba(255,255,255,0.75); }
+        .audit-step-tag { display: block; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.2rem; }
+        .audit-result { border-top: 1px solid rgba(221,205,156,0.12); padding-top: 1.5rem; }
+        .audit-score-row { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .audit-score-num { font-family: var(--font-display); font-size: 3rem; color: var(--gold); line-height: 1; }
+        .audit-score-total { font-family: var(--font-display); font-size: 1.3rem; color: var(--white-dim); }
+        .audit-bar { height: 6px; border-radius: 3px; background: rgba(221,205,156,0.1); overflow: hidden; margin-bottom: 1rem; }
+        .audit-bar-fill { height: 100%; width: 0%; border-radius: 3px; background: linear-gradient(to right, var(--gold-dark), var(--gold)); transition: width 0.5s var(--ease-out-expo); }
+        .audit-verdict { font-size: 0.95rem !important; line-height: 1.7 !important; color: rgba(255,255,255,0.8) !important; margin-bottom: 1.25rem !important; }
+        .audit-verdict strong { color: var(--gold); }
+
+        /* ── BUDGET TIER SELECTOR ── */
+        .tier-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 1.5rem; }
+        .tier-tab { font-family: var(--font-display); font-size: 1.05rem; letter-spacing: 0.06em; padding: 0.85rem 0.5rem; border-radius: 0.75rem; background: rgba(255,255,255,0.03); color: var(--white-dim); border: 1px solid rgba(221,205,156,0.12); transition: all 0.3s ease; text-align: center; }
+        .tier-tab:hover { border-color: rgba(221,205,156,0.35); color: var(--white-muted); }
+        .tier-tab.active { background: rgba(221,205,156,0.1); color: var(--gold); border-color: rgba(221,205,156,0.45); }
+        .tier-tab small { display: block; font-family: var(--font-body); font-size: 0.55rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.15rem; }
+        .tier-panel { display: none; }
+        .tier-panel.active { display: block; animation: fade-up 0.5s var(--ease-out-expo); }
+        .tier-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+        .tier-stat { border: 1px solid rgba(221,205,156,0.12); border-radius: 0.75rem; padding: 1rem; background: var(--black-soft); }
+        .tier-stat-num { font-family: var(--font-display); font-size: 1.7rem; color: var(--gold); line-height: 1.1; }
+        .tier-stat-label { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); margin-top: 0.25rem; }
+        .tier-panel p { font-size: 0.92rem !important; margin-bottom: 0.9rem !important; }
+        .tier-panel p:last-child { margin-bottom: 0 !important; }
+
+        /* ── OFFER COMPARISON ── */
+        .offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0 2.5rem; }
+        .offer-card { border: 1px solid rgba(221,205,156,0.12); border-radius: 1rem; background: var(--black-card); padding: 1.5rem; }
+        .offer-card h4 { font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.75rem; }
+        .offer-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.78rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .offer-row:last-of-type { border-bottom: none; }
+        .offer-row span:first-child { color: var(--white-dim); }
+        .offer-row span:last-child { color: var(--white-muted); font-weight: 600; text-align: right; }
+        .offer-fit { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.6; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(221,205,156,0.1); }
+        .offer-fit strong { color: var(--gold); font-weight: 600; }
+
+        /* ── SMS TIMELINE ── */
+        .sms-timeline { display: flex; flex-direction: column; gap: 0.9rem; margin: 2rem 0 2.5rem; }
+        .sms-touch { display: flex; gap: 1rem; align-items: flex-start; }
+        .sms-when { min-width: 74px; font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.05em; color: var(--gold); padding-top: 0.55rem; text-align: right; }
+        .sms-bubble { flex: 1; background: rgba(221,205,156,0.05); border: 1px solid rgba(221,205,156,0.15); border-radius: 1rem 1rem 1rem 0.25rem; padding: 0.85rem 1.15rem; font-size: 0.85rem; line-height: 1.6; color: rgba(255,255,255,0.78); }
+        .sms-bubble .sms-type { display: block; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.3rem; }
+
+        /* ── BENCHMARK TABLE ── */
+        .bench-table { border: 1px solid rgba(221,205,156,0.12); border-radius: 1rem; overflow: hidden; margin: 2rem 0 2.5rem; }
+        .bench-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.4fr; }
+        .bench-row > div { padding: 0.9rem 1.1rem; font-size: 0.82rem; line-height: 1.5; color: rgba(255,255,255,0.72); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .bench-row:last-child > div { border-bottom: none; }
+        .bench-head > div { background: rgba(221,205,156,0.06); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+        .bench-metric { color: var(--white) !important; font-weight: 600; }
+        .bench-good { color: #4ade80 !important; }
+        .bench-bad { color: #f87171 !important; }
+
+        /* ── FAQ ACCORDION ── */
+        .faq-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 2rem 0 2.5rem; }
+        .faq-item { border: 1px solid rgba(221,205,156,0.12); border-radius: 0.9rem; background: var(--black-card); overflow: hidden; }
+        .faq-item summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.15rem 1.4rem; cursor: pointer; font-size: 0.95rem; font-weight: 600; color: var(--white-muted); transition: color 0.3s ease; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-chevron { min-width: 16px; transition: transform 0.3s var(--ease-out-expo); color: var(--gold); }
+        .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+        .faq-item[open] summary { color: var(--gold); }
+        .faq-answer { padding: 0 1.4rem 1.25rem; }
+        .faq-answer p { font-size: 0.9rem !important; line-height: 1.75 !important; margin-bottom: 0.75rem !important; color: rgba(255,255,255,0.65) !important; }
+        .faq-answer p:last-child { margin-bottom: 0 !important; }
+
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            .calc-results { grid-template-columns: 1fr 1fr; }
+            .offer-grid { grid-template-columns: 1fr; }
+            .tier-tabs { grid-template-columns: 1fr; }
+            .tier-stats { grid-template-columns: 1fr; }
+            .bench-row { grid-template-columns: 1fr 1fr; }
+            .bench-row > div:nth-child(4) { grid-column: 1 / -1; }
+            .sms-when { min-width: 56px; font-size: 0.8rem; }
+            .tool-block { padding: 1.5rem; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -433,6 +553,7 @@
     "@type": "Article",
     "headline": "How CrossFit Gyms Are Adding 20+ Members Per Month With Meta Ads",
     "datePublished": "2026-05-08",
+    "dateModified": "2026-07-10",
     "author": {
         "@type": "Person",
         "name": "Collin Charles",
@@ -479,6 +600,39 @@
     ]
 }
     </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How long before Meta ads start producing new gym members?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Expect a 2 to 4 week learning phase while Meta's delivery system finds your buyers. Leads usually arrive in the first week, but cost per lead stabilizes around week 3. Judge the campaign on a 90-day window, not the first 10 days." }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I just boost my gym's posts instead of running campaigns?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Boosting pays for likes and reach, not leads. A real campaign built on a Leads objective with a dedicated form or landing page is what produces booked visits. Boosted posts are the most common way gyms waste ad budget." }
+        },
+        {
+            "@type": "Question",
+            "name": "Do Meta ads work for gyms in small towns?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, with adjustments: widen the radius to 15 to 25 miles, run a lower budget of $500 to $800 per month, and refresh creative more often because a small audience sees your ads repeatedly." }
+        },
+        {
+            "@type": "Question",
+            "name": "Did iOS privacy changes kill Meta ads for local businesses?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No, but they changed the setup. The browser pixel alone now misses a meaningful share of conversions. Running the Conversions API through your CRM or website restores that signal so Meta learns from real booked visits instead of clicks." }
+        },
+        {
+            "@type": "Question",
+            "name": "Can a gym owner run this system without an agency?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Everything in the framework is doable in-house if you have 5 to 8 hours per week for campaign management, creative production, and follow-up systems. Most owners hand it off because coaching and operations already fill their week." }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -487,6 +641,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
 <div id="cursorGlow"></div>
+<div id="readProgress"></div>
 
 <div class="mobile-menu" id="mobileMenu">
     <a href="/" onclick="closeMobile()">Home</a>
@@ -536,9 +691,9 @@
             WITH META ADS
         </h1>
         <div class="article-meta">
-            <span>May 8, 2026</span>
+            <span>Updated July 10, 2026</span>
             <div class="article-meta-dot"></div>
-            <span>8 min read</span>
+            <span>14 min read</span>
             <div class="article-meta-dot"></div>
             <span>By Collin Charles</span>
         </div>
@@ -550,13 +705,13 @@
 <div class="article-layout">
 
     <!-- Main Content -->
-    <article class="article-body reveal">
+    <article class="article-body">
 
         <p>Most CrossFit gym owners try Meta ads at some point. They run a boosted post or throw together a campaign, spend $300–$500, get a handful of clicks, and zero new members. They conclude that "Meta ads don't work for gyms," and go back to relying on referrals.</p>
 
         <p>The problem isn't Meta. The problem is the approach. Meta advertising is the single most scalable paid channel available to gym owners, but only when the five core components are built correctly and working together.</p>
 
-        <p>This article breaks down exactly what those five components are, what the most common mistakes look like at each stage, and what the gyms adding 20+ members per month are doing differently.</p>
+        <p>This article breaks down all five components, the mistakes that kill most gym campaigns at each stage, and what the gyms adding 20+ members per month do differently. You'll also find two tools built into the page: a <a href="#scorecard" style="color:var(--gold); border-bottom: 1px solid rgba(221,205,156,0.3);">10-point scorecard</a> to grade your current setup, and a <a href="#calculator" style="color:var(--gold); border-bottom: 1px solid rgba(221,205,156,0.3);">calculator</a> that projects what a working funnel returns at your budget.</p>
 
         <div class="stat-row">
             <div class="stat-box">
@@ -573,76 +728,326 @@
             </div>
         </div>
 
-        <h2>WHY META WORKS FOR CROSSFIT: WHEN DONE RIGHT</h2>
+        <h2 id="why-meta">WHY META WORKS FOR CROSSFIT: WHEN DONE RIGHT</h2>
 
-        <p>CrossFit memberships solve a real, emotional problem: people feel stuck, unmotivated, or out of shape and want accountability and results. That emotional urgency is exactly what Meta's targeting tools are designed to find.</p>
+        <p>CrossFit memberships solve a real, emotional problem: people feel stuck, unmotivated, or out of shape and want accountability and results. That emotional urgency is exactly what Meta's ad system is designed to find.</p>
 
         <p>Unlike Google, which captures people already searching for a gym, Meta lets you find people <strong>before</strong> they know they're ready, and convince them. That's a much bigger pool. It's also why creative quality matters so much more on Meta than on Google: you're interrupting a scroll, not answering a search query.</p>
 
+        <p>One thing has changed since gym owners first heard "just run Facebook ads": in 2026, Meta's delivery system handles most of the targeting for you. The old game of stacking interests and micro-managing audiences is over. Your leverage points now are the <strong>offer</strong>, the <strong>creative</strong>, and the <strong>follow-up system</strong>. That's where this framework focuses.</p>
+
         <p>Done right, a Meta campaign for a CrossFit gym should produce cost-per-lead between $15–$35 for qualified prospects in most US markets, with a show-up rate of 40–60% for scheduled visits.</p>
 
-        <h2>THE FIVE-STEP META ADS FRAMEWORK</h2>
+        <h2 id="offer">BEFORE THE ADS: YOUR OFFER DECIDES YOUR RESULTS</h2>
 
-        <div class="step-block">
-            <div class="step-num">01</div>
-            <h3>AUDIENCE ARCHITECTURE</h3>
-            <p>The most common mistake: targeting "fitness" or "CrossFit" interests and calling it a day. Broad interest targeting produces cheap clicks and expensive leads because you're showing ads to fitness enthusiasts with no buying intent, people who love working out but already have a gym. The fix is audience stacking: layer your zip code, age bracket (25–45), income signals, and 2–3 specific behavioral triggers (marathon runners, people who recently moved, parents of young children). Then build a Lookalike audience from your current member list. This is almost always your best-performing cold audience because Meta is matching actual buying patterns, not self-reported interests.</p>
-        </div>
+        <p>Most articles about gym ads skip this, and it's the single biggest lever you have. The same campaign, same budget, same creative can produce triple the cost per member depending on what you put in front of cold traffic. "Join now" is not an offer. An offer gives a stranger a specific, low-risk first step with a reason to take it this week.</p>
 
-        <div class="step-block">
-            <div class="step-num">02</div>
-            <h3>CREATIVE THAT CONVERTS</h3>
-            <p>Fitness ads are crowded. Every gym in your city is running "transformation" photos and generic "Join Now" CTAs. The creative that outperforms everything else in gym marketing is authentic video, specifically, 15–30 second clips that lead with a problem statement the viewer already feels. "Tired of working out alone and never seeing results?" beats "Join CrossFit [X] today!" every single time. Real member testimonial clips (shot on an iPhone, not a professional camera) consistently outperform polished studio content because they feel genuine. Test at minimum 3–4 creative variants per audience and let Meta's algorithm find the winner.</p>
-        </div>
+        <p>Here's how the four front-end offers we run for gyms actually compare:</p>
 
-        <div class="step-block">
-            <div class="step-num">03</div>
-            <h3>THE LANDING PAGE FORMULA</h3>
-            <p>Sending ad traffic to your gym's homepage is one of the most expensive mistakes in gym marketing. Your homepage has a nav bar, multiple service pages, social proof, a contact form, and a dozen other distractions. A landing page built for conversion has one job: capture a lead. The formula that works: a single headline mirroring your ad's message, a 3-bullet outcome statement, a short form (name + email + phone, nothing more), and a trust signal below the fold (member count, Google review score, or a short testimonial). No menu. No exit points. Single CTA. Conversion rates jump from 8–15% (homepage) to 25–45% (dedicated landing page).</p>
-        </div>
-
-        <div class="step-block">
-            <div class="step-num">04</div>
-            <h3>SPEED-TO-LEAD FOLLOW-UP</h3>
-            <p>This is where most gym owners lose. The average gym takes 47 hours to follow up with a new lead. The data is unambiguous: <strong>responding within 5 minutes increases conversion rates by 800%</strong> compared to responding after an hour. Set up an automated SMS the moment someone submits the form. This can be done with simple tools like Zapier + Twilio or any gym CRM. The first text should be personal, not corporate: "Hey [name], this is [coach], I just saw your form come through, any questions before booking your first class?" That warm, human touchpoint converts at dramatically higher rates than a generic confirmation email.</p>
-        </div>
-
-        <div class="step-block">
-            <div class="step-num">05</div>
-            <h3>RETARGETING SEQUENCES</h3>
-            <p>Not every lead converts on the first visit. A retargeting sequence shows ads to people who visited your landing page but didn't submit, people who submitted but didn't book, and people who booked but didn't show. Each of these audiences needs different messaging. Visitors get a social proof ad ("1,200 members in Frisco trust us"). Form submitters get an urgency ad ("Your free week expires Friday"). No-shows get a re-engagement ad with a different offer ("Try us with zero commitment, come to one class free"). This three-layer retargeting system alone can recover 15–25% of leads that would otherwise go cold.</p>
+        <div class="offer-grid">
+            <div class="offer-card">
+                <h4>FREE WEEK</h4>
+                <div class="offer-row"><span>Lead volume</span><span>Highest</span></div>
+                <div class="offer-row"><span>Lead quality</span><span>Lowest</span></div>
+                <div class="offer-row"><span>Typical show rate</span><span>30–40%</span></div>
+                <p class="offer-fit"><strong>Right for:</strong> newer gyms that need bodies in the door fast and have coach capacity to sort serious prospects from tourists.</p>
+            </div>
+            <div class="offer-card">
+                <h4>6-WEEK CHALLENGE</h4>
+                <div class="offer-row"><span>Lead volume</span><span>High</span></div>
+                <div class="offer-row"><span>Lead quality</span><span>Good</span></div>
+                <div class="offer-row"><span>Typical show rate</span><span>50–70%</span></div>
+                <p class="offer-fit"><strong>Right for:</strong> most CrossFit boxes. The commitment device plus a hard deadline is the best all-around performer we've tested. Build the exit ramp into full membership from day one.</p>
+            </div>
+            <div class="offer-card">
+                <h4>PAID TRIAL ($29–$49)</h4>
+                <div class="offer-row"><span>Lead volume</span><span>Lower</span></div>
+                <div class="offer-row"><span>Lead quality</span><span>Highest</span></div>
+                <div class="offer-row"><span>Typical show rate</span><span>70%+</span></div>
+                <p class="offer-fit"><strong>Right for:</strong> established gyms protecting coach time. Fewer leads, but the people who pay $39 to try you show up and join at the highest rate of any offer.</p>
+            </div>
+            <div class="offer-card">
+                <h4>FREE INTRO SESSION</h4>
+                <div class="offer-row"><span>Lead volume</span><span>Moderate</span></div>
+                <div class="offer-row"><span>Lead quality</span><span>Good</span></div>
+                <div class="offer-row"><span>Typical show rate</span><span>45–60%</span></div>
+                <p class="offer-fit"><strong>Right for:</strong> gyms with a strong 1-on-1 sales process. Converts well in person but is the hardest offer to make exciting in an ad to cold traffic.</p>
+            </div>
         </div>
 
         <div class="callout">
-            <p><strong>The 48-Hour Rule:</strong> If a lead hasn't booked within 48 hours of submitting the form, they almost certainly won't book without a second prompt. Build a 2-touch follow-up sequence into your CRM, a text at 24 hours and a call attempt at 48 hours, and watch your booked visit rate double.</p>
+            <p><strong>Anchor everything to the real price.</strong> Whatever offer you run, name the full value in the ad and on the page ("your first week, normally $65, free through Friday"). An unanchored freebie attracts people shopping for free things. An anchored one attracts people shopping for a gym.</p>
         </div>
 
-        <h2>BUDGET: WHAT TO EXPECT AT EACH TIER</h2>
+        <h2 id="framework">THE FIVE-STEP META ADS FRAMEWORK</h2>
 
-        <p>One of the most common questions is: "How much should I spend?" The honest answer is that the right budget is whatever allows you to collect enough data, fast enough, to optimize. That typically means:</p>
+        <div class="step-block" id="audiences">
+            <div class="step-num">01</div>
+            <h3>AUDIENCE ARCHITECTURE</h3>
+            <p>The 2022 playbook said to stack interests: "CrossFit" plus "HIIT" plus income brackets. In 2026 that advice actively hurts you. Meta's delivery system (Advantage+ audience) finds buyers better than manual interest stacking ever did, but only if you feed it the right signals and guardrails. Set a radius (5–8 miles urban, 12–15 suburban), an age floor of 25, and let delivery go broad. Then feed the machine: upload your member list as a custom audience, use the Lookalike it generates as an audience suggestion, and exclude current members so you never pay to reach people already paying you. Structure stays simple: one Leads campaign, two ad sets (broad and lookalike-seeded), 3–4 ads each, budget set at the campaign level. Then leave it alone. Editing the campaign every two days resets the learning phase and is the most common self-inflicted wound we see in gym ad accounts.</p>
+        </div>
 
-        <ul>
-            <li><strong>$500–$800/month:</strong> Enough to generate 15–30 leads in a mid-sized market. You'll find out what works, but optimization is slow. Right for a gym just getting started with paid ads.</li>
-            <li><strong>$1,000–$1,500/month:</strong> The sweet spot for most gyms. Enough volume to A/B test audiences and creatives simultaneously and optimize faster. Most gyms at this level see 20–40 leads per month.</li>
-            <li><strong>$2,000–$3,000/month:</strong> Scaling territory. At this level you can run separate campaigns for acquisition, retargeting, and reactivation. Gyms here typically see 50–80+ leads per month with optimized funnels.</li>
-        </ul>
+        <div class="step-block" id="creative">
+            <div class="step-num">02</div>
+            <h3>CREATIVE THAT CONVERTS</h3>
+            <p>When targeting went broad, creative became the targeting. The video decides who stops scrolling, so the first 3 seconds do all the work. Three hooks that consistently win for gyms: the <strong>callout hook</strong> ("If you live in [city] and you're paying for a gym you haven't visited since February..."), the <strong>proof hook</strong>, a real member on camera ("I joined 6 months ago. Down 30 pounds, and I look forward to 5am now"), and the <strong>contrarian hook</strong> ("Stop signing up for challenges. Here's what actually keeps people in shape after week 7"). Shoot 15–30 second clips vertical (9:16) and 4:5, on a phone, with captions burned in since most people watch muted. iPhone member testimonials beat polished studio content every time because they read as real. Run 3–4 creatives per ad set, kill anything running above twice your target cost per lead after $50 of spend, and iterate winners by swapping the hook and keeping the body.</p>
+        </div>
 
-        <p>Important note: budget without a conversion system is waste. If your landing page converts at 10% and your follow-up response time is 2 days, doubling your ad spend will double your wasted money, not your membership sales. Fix the funnel before scaling the budget.</p>
+        <div class="step-block" id="landing">
+            <div class="step-num">03</div>
+            <h3>THE LANDING PAGE FORMULA</h3>
+            <p>Sending ad traffic to your gym's homepage is one of the most expensive mistakes in gym marketing. Your homepage has a nav bar, service pages, and a dozen exits. A page built for conversion has one job: capture the lead. The formula: a headline that mirrors the ad's message, a 3-bullet outcome statement, a short form (name, email, phone, nothing more), and a trust signal below the fold (member count, Google review score, or one testimonial). No menu. Single CTA. Conversion rates jump from 8–15% on a homepage to 25–45% on a dedicated page. One honest 2026 nuance: Meta's <strong>instant forms</strong> (leads never leave the app) produce 30–50% cheaper leads at lower intent. If you don't have landing page infrastructure yet, start with an instant form and add two qualifying questions ("What's your #1 fitness goal?" and "When can you come in this week?"). Graduate to a landing page when you're ready to trade some volume for better show rates.</p>
+        </div>
 
-        <h2>WHAT TO TRACK WEEKLY</h2>
+        <div class="step-block" id="followup">
+            <div class="step-num">04</div>
+            <h3>SPEED-TO-LEAD FOLLOW-UP</h3>
+            <p>This is where most gym owners lose. The average gym takes 47 hours to follow up with a new lead. The data is unambiguous: <strong>responding within 5 minutes increases conversion rates by 800%</strong> compared to responding after an hour. A lead who filled out your form is also sitting in two other gyms' funnels, and the first human voice usually wins. Automate the first text through your gym CRM (or Zapier plus a texting tool) and make it personal, not corporate. Here's the exact 5-touch sequence we install:</p>
+        </div>
 
-        <p>Most gym owners track the wrong things. They look at clicks and impressions, which feel good but have no direct relationship to new members. The only metrics that matter at each stage:</p>
+        <div class="sms-timeline">
+            <div class="sms-touch">
+                <div class="sms-when">0 MIN</div>
+                <div class="sms-bubble"><span class="sms-type">Auto text</span>"Hey [name], this is [coach] at [gym]. Just saw your form come through. Any questions before I get you booked for your first session?"</div>
+            </div>
+            <div class="sms-touch">
+                <div class="sms-when">1 HOUR</div>
+                <div class="sms-bubble"><span class="sms-type">Call #1 + voicemail</span>A real phone call. If no answer: "Hey [name], it's [coach], just tried you about your visit. I'll text you some times."</div>
+            </div>
+            <div class="sms-touch">
+                <div class="sms-when">24 HRS</div>
+                <div class="sms-bubble"><span class="sms-type">Value text</span>"Quick heads up, our 6pm classes fill first. Want me to hold you a spot Thursday or Saturday? [booking link]"</div>
+            </div>
+            <div class="sms-touch">
+                <div class="sms-when">48 HRS</div>
+                <div class="sms-bubble"><span class="sms-type">Call #2</span>Second call attempt, different time of day than the first.</div>
+            </div>
+            <div class="sms-touch">
+                <div class="sms-when">DAY 5</div>
+                <div class="sms-bubble"><span class="sms-type">Breakup text</span>"Hey [name], I don't want to keep bugging you. Should I close your spot out, or is this week just hectic?" This one alone revives 10–15% of cold leads.</div>
+            </div>
+        </div>
 
-        <ul>
-            <li><strong>Cost Per Lead (CPL):</strong> Target under $35 in most US markets. If CPL is above $50, your audience or creative needs work.</li>
-            <li><strong>Lead-to-Book Rate:</strong> What percentage of leads schedule a visit? Anything below 25% signals a problem with your follow-up speed or messaging.</li>
-            <li><strong>Show Rate:</strong> What percentage of booked visits actually show? Below 40% means your confirmation and reminder sequence needs work.</li>
-            <li><strong>Visits-to-Member Rate:</strong> What percentage of visitors become paying members? Below 60% means your intro class or sales conversation needs attention.</li>
-        </ul>
+        <div class="step-block" id="retargeting">
+            <div class="step-num">05</div>
+            <h3>RETARGETING SEQUENCES</h3>
+            <p>Not every lead converts on the first pass. A retargeting system shows different ads to three groups: people who visited your page but didn't submit (social proof ad: "1,200 members in Frisco trust us"), people who submitted but didn't book (urgency ad: "Your free week expires Friday"), and people who booked but didn't show (new-offer ad: "Come to one class, zero commitment"). This three-layer system alone recovers 15–25% of leads that would otherwise go cold. One technical must in 2026: run the <strong>Conversions API</strong> alongside your pixel. Since the iOS privacy changes, the browser pixel misses a meaningful share of conversions, and a campaign that can't see its own results can't improve. Connect CAPI through your CRM or website so Meta learns from actual booked visits, not just clicks.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>The 48-Hour Rule:</strong> If a lead hasn't booked within 48 hours of submitting the form, they almost certainly won't book without a second prompt. The sequence above builds those prompts in, a text at 24 hours and a call at 48, and gyms that add them typically double their booked visit rate.</p>
+        </div>
+
+        <div class="tool-block" id="scorecard">
+            <div class="tool-label">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                Interactive Tool
+            </div>
+            <h3>SCORE YOUR CURRENT SETUP</h3>
+            <p class="tool-sub">Tap every statement that's true for your gym right now. Be honest, nobody's watching.</p>
+            <div class="audit-list" id="auditList">
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Offer</span>My front-end offer is specific and has a deadline, not just "join now"</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 01</span>I exclude current members from my cold campaigns</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 01</span>I've uploaded my member list and built a Lookalike audience from it</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 02</span>I'm testing at least 3 video creatives per ad set</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 02</span>My ads open with a problem or a member story, not my logo or gym name</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 03</span>Ad traffic goes to a dedicated landing page or instant form, never my homepage</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 04</span>Every new lead gets a text within 5 minutes, automatically</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 04</span>Leads that don't book get at least 4 more follow-up touches</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Step 05</span>I run retargeting ads to page visitors and non-booked leads</div>
+                </div>
+                <div class="audit-item" tabindex="0" role="checkbox" aria-checked="false">
+                    <div class="audit-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <div class="audit-text"><span class="audit-step-tag">Tracking</span>I know my exact cost per lead and cost per new member from last month</div>
+                </div>
+            </div>
+            <div class="audit-result">
+                <div class="audit-score-row">
+                    <span class="audit-score-num" id="auditScore">0</span>
+                    <span class="audit-score-total">/ 10</span>
+                </div>
+                <div class="audit-bar"><div class="audit-bar-fill" id="auditBarFill"></div></div>
+                <p class="audit-verdict" id="auditVerdict">Check off what's true above and we'll tell you where your money is leaking.</p>
+                <a href="free-audit.html" class="btn-primary" style="font-size:0.9rem; padding:0.85rem 1.6rem;">
+                    <span>GET THE FULL FREE AUDIT</span>
+                    <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <h2 id="budget">BUDGET: WHAT TO EXPECT AT EACH TIER</h2>
+
+        <p>One of the most common questions is: "How much should I spend?" The honest answer is that the right budget is whatever collects enough data, fast enough, to make decisions. Pick your tier below to see what it realistically buys you:</p>
+
+        <div class="tool-block" style="margin-top:1.5rem;">
+            <div class="tier-tabs" role="tablist">
+                <button class="tier-tab active" data-tier="0" role="tab">$500–800<small>Starter</small></button>
+                <button class="tier-tab" data-tier="1" role="tab">$1,000–1,500<small>Sweet Spot</small></button>
+                <button class="tier-tab" data-tier="2" role="tab">$2,000–3,000<small>Scale</small></button>
+            </div>
+            <div class="tier-panel active" data-tier="0">
+                <div class="tier-stats">
+                    <div class="tier-stat"><div class="tier-stat-num">15–30</div><div class="tier-stat-label">Leads / month</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">3–6</div><div class="tier-stat-label">New members / month*</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">1</div><div class="tier-stat-label">Offer you can test</div></div>
+                </div>
+                <p>Enough to prove the channel in a mid-sized market. Run one offer, one broad ad set, and 3–4 creatives. Right for a gym's first 60 days of paid ads.</p>
+                <p><strong>Watch out for:</strong> slow data. At this spend you cannot judge anything in week one. Give every creative $50 of spend before you call it.</p>
+            </div>
+            <div class="tier-panel" data-tier="1">
+                <div class="tier-stats">
+                    <div class="tier-stat"><div class="tier-stat-num">25–45</div><div class="tier-stat-label">Leads / month</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">6–12</div><div class="tier-stat-label">New members / month*</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">2</div><div class="tier-stat-label">Offers you can test</div></div>
+                </div>
+                <p>The sweet spot for most gyms. Enough volume to test two offers head to head, run broad and lookalike ad sets at the same time, and rotate creative weekly.</p>
+                <p><strong>Watch out for:</strong> follow-up capacity. At 30+ leads a month, manual follow-up breaks. The automation in Step 04 stops being optional here.</p>
+            </div>
+            <div class="tier-panel" data-tier="2">
+                <div class="tier-stats">
+                    <div class="tier-stat"><div class="tier-stat-num">50–80+</div><div class="tier-stat-label">Leads / month</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">12–25</div><div class="tier-stat-label">New members / month*</div></div>
+                    <div class="tier-stat"><div class="tier-stat-num">3</div><div class="tier-stat-label">Campaigns running</div></div>
+                </div>
+                <p>Scaling territory. Separate campaigns for acquisition, retargeting, and reactivating old leads and past members. This is where the compounding starts.</p>
+                <p><strong>Watch out for:</strong> capacity planning. Popular class times fill fast at this pace. Know which classes can absorb new athletes before you turn the dial up.</p>
+            </div>
+            <p class="calc-note">*Member estimates assume the funnel from this article is in place. Budget without a conversion system is waste: if your page converts at 10% and follow-up takes 2 days, doubling spend doubles the waste, not the memberships.</p>
+        </div>
+
+        <div class="tool-block" id="calculator">
+            <div class="tool-label">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h2M14 10h2M8 14h2M14 14h2M8 18h2M14 18h2"/></svg>
+                Interactive Tool
+            </div>
+            <h3>RUN YOUR OWN NUMBERS</h3>
+            <p class="tool-sub">Enter your budget and membership price, then drag the sliders to match your funnel. Defaults are our client averages.</p>
+            <div class="calc-grid">
+                <div class="calc-field">
+                    <label for="calcSpend">Monthly ad spend ($)</label>
+                    <input type="number" id="calcSpend" value="1000" min="100" step="100" inputmode="numeric">
+                </div>
+                <div class="calc-field">
+                    <label for="calcPrice">Monthly membership price ($)</label>
+                    <input type="number" id="calcPrice" value="165" min="20" step="5" inputmode="numeric">
+                </div>
+                <div class="calc-field">
+                    <label for="calcCpl">Cost per lead <span class="calc-val" id="calcCplVal">$30</span></label>
+                    <input type="range" class="calc-range" id="calcCpl" min="15" max="60" value="30" step="1">
+                </div>
+                <div class="calc-field">
+                    <label for="calcBook">Lead-to-book rate <span class="calc-val" id="calcBookVal">40%</span></label>
+                    <input type="range" class="calc-range" id="calcBook" min="10" max="70" value="40" step="1">
+                </div>
+                <div class="calc-field">
+                    <label for="calcShow">Show rate <span class="calc-val" id="calcShowVal">50%</span></label>
+                    <input type="range" class="calc-range" id="calcShow" min="20" max="90" value="50" step="1">
+                </div>
+                <div class="calc-field">
+                    <label for="calcClose">Visit-to-member rate <span class="calc-val" id="calcCloseVal">60%</span></label>
+                    <input type="range" class="calc-range" id="calcClose" min="20" max="90" value="60" step="1">
+                </div>
+            </div>
+            <div class="calc-results">
+                <div class="calc-result"><div class="calc-result-num" id="outLeads">33</div><div class="calc-result-label">Leads / mo</div></div>
+                <div class="calc-result"><div class="calc-result-num" id="outBooked">13</div><div class="calc-result-label">Booked visits</div></div>
+                <div class="calc-result"><div class="calc-result-num" id="outMembers">4</div><div class="calc-result-label">New members</div></div>
+                <div class="calc-result"><div class="calc-result-num" id="outCostPer">$250</div><div class="calc-result-label">Cost / member</div></div>
+            </div>
+            <div class="calc-highlight">
+                <div>
+                    <div class="calc-highlight-label">New monthly recurring revenue</div>
+                    <div class="calc-highlight-num" id="outRevenue">$660</div>
+                </div>
+                <div style="text-align:right;">
+                    <div class="calc-highlight-label">Return per $1 spent*</div>
+                    <div class="calc-highlight-num" id="outReturn">$3.96</div>
+                </div>
+            </div>
+            <p class="calc-note">*Assumes a new member stays 6 months on average (most CrossFit gyms retain longer). Every new member also compounds: month two's members stack on top of month one's.</p>
+        </div>
+
+        <h2 id="metrics">WHAT TO TRACK WEEKLY</h2>
+
+        <p>Most gym owners track the wrong things. Clicks and reach feel good but have no direct relationship to new members. Four numbers tell you everything, and each one points at exactly what to fix:</p>
+
+        <div class="bench-table">
+            <div class="bench-row bench-head"><div>Metric</div><div>Healthy</div><div>Red flag</div><div>First thing to fix</div></div>
+            <div class="bench-row"><div class="bench-metric">Cost per lead</div><div class="bench-good">Under $35</div><div class="bench-bad">Over $50</div><div>Creative or offer, in that order</div></div>
+            <div class="bench-row"><div class="bench-metric">Lead-to-book rate</div><div class="bench-good">30%+</div><div class="bench-bad">Under 25%</div><div>Follow-up speed (Step 04)</div></div>
+            <div class="bench-row"><div class="bench-metric">Show rate</div><div class="bench-good">50%+</div><div class="bench-bad">Under 40%</div><div>Confirmation and reminder sequence</div></div>
+            <div class="bench-row"><div class="bench-metric">Visit-to-member rate</div><div class="bench-good">60%+</div><div class="bench-bad">Under 50%</div><div>The intro experience and your pitch</div></div>
+        </div>
+
+        <p>Review these every Friday, same time, same spreadsheet. Weekly cadence is fast enough to catch problems and slow enough to avoid reacting to noise.</p>
+
+        <h2 id="faq">QUESTIONS GYM OWNERS ACTUALLY ASK US</h2>
+
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>How long before Meta ads start producing members?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">
+                    <p>Expect a 2–4 week learning phase while Meta's system finds your buyers. Leads usually show up in the first week, but cost per lead doesn't stabilize until around week three.</p>
+                    <p>Judge the campaign on a 90-day window. Gyms that shut everything off in day 10 because "it's not working" pay for the learning phase and never collect the payoff.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Should I just boost my posts instead?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">
+                    <p>No. Boosting pays for likes and reach, not leads. A real Leads-objective campaign with a form or landing page is what produces booked visits. Boosted posts are the single most common way gyms burn ad budget with nothing to show for it.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Do Meta ads work in a small town?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">
+                    <p>Yes, with three adjustments: widen the radius to 15–25 miles, run the starter budget ($500–800), and refresh creative more often, because a small audience sees the same ad repeatedly and burns out faster.</p>
+                    <p>The upside: in small markets you're often the only gym running a real system, so the leads you do get face zero competition for attention.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Didn't iPhone privacy changes break Meta ads?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">
+                    <p>They broke the old setup, not the channel. The browser pixel alone now misses a meaningful share of conversions. Running the Conversions API through your CRM or website (Step 05) restores that signal, so Meta learns from real booked visits instead of guessing from clicks.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I run all of this myself?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+                <div class="faq-answer">
+                    <p>Yes. Nothing in this article requires an agency, just 5–8 hours a week for campaign management, creative production, and follow-up systems, plus the patience to test for 90 days.</p>
+                    <p>Most owners hand it off because coaching and operations already fill their week. If that's you, that's what the <a href="free-audit.html" style="color:var(--gold); border-bottom:1px solid rgba(221,205,156,0.3);">free audit</a> is for.</p>
+                </div>
+            </details>
+        </div>
 
         <div class="article-divider"></div>
 
-        <h2>THE SHORTCUT: WORKING WITH A SPECIALIST</h2>
+        <h2 id="shortcut">THE SHORTCUT: WORKING WITH A SPECIALIST</h2>
 
         <p>Everything in this article is doable without an agency. But it requires building and managing the technical pieces (campaign structure, landing pages, CRM automations, retargeting pixels), which takes time most gym owners don't have on top of running their facility and coaching classes.</p>
 
@@ -657,16 +1062,20 @@
         <div class="sidebar-sticky">
             <div class="sidebar-card">
                 <h4>In This Article</h4>
-                <nav class="toc-list">
+                <nav class="toc-list" id="tocList">
                     <a href="#why-meta">Why Meta Works for CrossFit</a>
+                    <a href="#offer">Your Offer Decides Your Results</a>
                     <a href="#framework">The 5-Step Framework</a>
                     <a href="#audiences">01: Audience Architecture</a>
                     <a href="#creative">02: Creative That Converts</a>
                     <a href="#landing">03: Landing Page Formula</a>
                     <a href="#followup">04: Speed-to-Lead Follow-Up</a>
                     <a href="#retargeting">05: Retargeting Sequences</a>
+                    <a href="#scorecard">Score Your Setup</a>
                     <a href="#budget">Budget by Tier</a>
+                    <a href="#calculator">ROI Calculator</a>
                     <a href="#metrics">What to Track Weekly</a>
+                    <a href="#faq">FAQ</a>
                 </nav>
             </div>
             <div class="cta-card">
@@ -800,12 +1209,95 @@
     const revealEls = document.querySelectorAll('.reveal');
     const revealObs = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObs.observe(el));
     if (window.matchMedia('(pointer: fine)').matches) {
         const glow = document.getElementById('cursorGlow');
         document.addEventListener('mousemove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; }, { passive: true });
     }
+
+    // ── Reading progress bar ──
+    const progressBar = document.getElementById('readProgress');
+    window.addEventListener('scroll', () => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (window.scrollY / total) * 100 : 0) + '%';
+    }, { passive: true });
+
+    // ── TOC scrollspy ──
+    const tocLinks = Array.from(document.querySelectorAll('#tocList a'));
+    const tocSections = tocLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function updateToc() {
+        let current = null;
+        for (const sec of tocSections) {
+            if (sec.getBoundingClientRect().top <= 140) current = sec;
+        }
+        tocLinks.forEach(a => a.classList.toggle('active', current && a.getAttribute('href') === '#' + current.id));
+    }
+    window.addEventListener('scroll', updateToc, { passive: true });
+    updateToc();
+
+    // ── ROI calculator ──
+    const calcIds = ['calcSpend', 'calcPrice', 'calcCpl', 'calcBook', 'calcShow', 'calcClose'];
+    const calcEls = {};
+    calcIds.forEach(id => calcEls[id] = document.getElementById(id));
+    const fmtMoney = n => '$' + Math.round(n).toLocaleString('en-US');
+    function runCalc() {
+        const spend = Math.max(parseFloat(calcEls.calcSpend.value) || 0, 0);
+        const price = Math.max(parseFloat(calcEls.calcPrice.value) || 0, 0);
+        const cpl = parseFloat(calcEls.calcCpl.value);
+        const book = parseFloat(calcEls.calcBook.value) / 100;
+        const show = parseFloat(calcEls.calcShow.value) / 100;
+        const close = parseFloat(calcEls.calcClose.value) / 100;
+        document.getElementById('calcCplVal').textContent = '$' + cpl;
+        document.getElementById('calcBookVal').textContent = calcEls.calcBook.value + '%';
+        document.getElementById('calcShowVal').textContent = calcEls.calcShow.value + '%';
+        document.getElementById('calcCloseVal').textContent = calcEls.calcClose.value + '%';
+        const leads = cpl > 0 ? spend / cpl : 0;
+        const booked = leads * book;
+        const members = booked * show * close;
+        const revenue = members * price;
+        document.getElementById('outLeads').textContent = Math.round(leads);
+        document.getElementById('outBooked').textContent = Math.round(booked);
+        document.getElementById('outMembers').textContent = (members >= 10 ? Math.round(members) : Math.round(members * 10) / 10);
+        document.getElementById('outCostPer').textContent = members > 0 ? fmtMoney(spend / members) : '–';
+        document.getElementById('outRevenue').textContent = fmtMoney(revenue);
+        document.getElementById('outReturn').textContent = spend > 0 ? '$' + ((revenue * 6) / spend).toFixed(2) : '–';
+    }
+    calcIds.forEach(id => calcEls[id].addEventListener('input', runCalc));
+    runCalc();
+
+    // ── Self-audit scorecard ──
+    const auditItems = Array.from(document.querySelectorAll('.audit-item'));
+    const verdicts = [
+        [3, 'Score 0–3: <strong>Your ads are leaking money at almost every stage.</strong> The good news: you have the most upside in this room. Start with the offer and speed-to-lead, those two alone change everything.'],
+        [6, 'Score 4–6: <strong>The foundation is there, but the funnel has holes.</strong> You\'re likely paying healthy costs per lead and losing them after the form. Steps 04 and 05 are where your next members are hiding.'],
+        [8, 'Score 7–8: <strong>Solid system. You\'re ahead of most gyms already.</strong> At this level, growth comes from creative iteration and dialing in show rates, small percentage gains that compound monthly.'],
+        [10, 'Score 9–10: <strong>You\'re running a tighter system than 95% of gyms.</strong> The question now is scale: more budget, reactivation campaigns, and capacity planning.']
+    ];
+    function updateAudit() {
+        const score = auditItems.filter(i => i.classList.contains('checked')).length;
+        document.getElementById('auditScore').textContent = score;
+        document.getElementById('auditBarFill').style.width = (score * 10) + '%';
+        const v = verdicts.find(([max]) => score <= max);
+        document.getElementById('auditVerdict').innerHTML = v[1];
+    }
+    auditItems.forEach(item => {
+        const toggle = () => {
+            item.classList.toggle('checked');
+            item.setAttribute('aria-checked', item.classList.contains('checked'));
+            updateAudit();
+        };
+        item.addEventListener('click', toggle);
+        item.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); } });
+    });
+
+    // ── Budget tier selector ──
+    const tierTabs = Array.from(document.querySelectorAll('.tier-tab'));
+    const tierPanels = Array.from(document.querySelectorAll('.tier-panel'));
+    tierTabs.forEach(tab => tab.addEventListener('click', () => {
+        tierTabs.forEach(t => t.classList.toggle('active', t === tab));
+        tierPanels.forEach(p => p.classList.toggle('active', p.dataset.tier === tab.dataset.tier));
+    }));
 </script>
 </body>
 </html>

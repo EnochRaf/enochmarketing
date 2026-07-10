@@ -208,6 +208,9 @@
         }
         .step-block h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin: 0 0 0.75rem; }
         .step-block p { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 0; }
+        .step-block p + ul { margin: 1rem 0; }
+        .step-block ul li { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+        .step-block ul + p { margin-top: 0; }
         .article-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(221,205,156,0.12), transparent); margin: 3rem 0; }
 
         /* ── SIDEBAR ── */
@@ -432,6 +435,8 @@
         .calc-highlight-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white-muted); }
         .calc-highlight-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--gold); line-height: 1; }
         .calc-note { font-size: 0.72rem !important; color: var(--white-dim) !important; line-height: 1.6 !important; margin: 1.1rem 0 0 !important; }
+        .calc-help { display: block; font-size: 0.7rem; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--white-dim); line-height: 1.55; margin-top: 0.5rem; }
+        .calc-help strong { color: var(--gold-dark); font-weight: 600; }
 
         /* ── SELF-AUDIT SCORECARD ── */
         .audit-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.75rem; }
@@ -693,7 +698,7 @@
         <div class="article-meta">
             <span>Updated July 10, 2026</span>
             <div class="article-meta-dot"></div>
-            <span>14 min read</span>
+            <span>16 min read</span>
             <div class="article-meta-dot"></div>
             <span>By Collin Charles</span>
         </div>
@@ -734,7 +739,7 @@
 
         <p>Unlike Google, which captures people already searching for a gym, Meta lets you find people <strong>before</strong> they know they're ready, and convince them. That's a much bigger pool. It's also why creative quality matters so much more on Meta than on Google: you're interrupting a scroll, not answering a search query.</p>
 
-        <p>One thing has changed since gym owners first heard "just run Facebook ads": in 2026, Meta's delivery system handles most of the targeting for you. The old game of stacking interests and micro-managing audiences is over. Your leverage points now are the <strong>offer</strong>, the <strong>creative</strong>, and the <strong>follow-up system</strong>. That's where this framework focuses.</p>
+        <p>One thing has changed since gym owners first heard "just run Facebook ads": in 2026, Meta's delivery system handles most of the targeting for you. The old game of stacking interests and micro-managing audiences is over. Your leverage points now are the <strong>offer</strong>, the <strong>creative</strong>, and the <strong>follow-up system</strong>. That's where this checklist focuses.</p>
 
         <p>Done right, a Meta campaign for a CrossFit gym should produce cost-per-lead between $15–$35 for qualified prospects in most US markets, with a show-up rate of 40–60% for scheduled visits.</p>
 
@@ -779,7 +784,9 @@
             <p><strong>Anchor everything to the real price.</strong> Whatever offer you run, name the full value in the ad and on the page ("your first week, normally $65, free through Friday"). An unanchored freebie attracts people shopping for free things. An anchored one attracts people shopping for a gym.</p>
         </div>
 
-        <h2 id="framework">THE FIVE-STEP META ADS FRAMEWORK</h2>
+        <h2 id="framework">THE FIVE-PART META ADS CHECKLIST</h2>
+
+        <p>To be clear about what this is: doing these five things does not guarantee your ads print members. Think of it as a pre-flight checklist. Every part below has to be in place before your campaign is ready to spend real money, and a weakness in any one of them quietly drains the other four. Run through each part and check your own setup against it.</p>
 
         <div class="step-block" id="audiences">
             <div class="step-num">01</div>
@@ -796,7 +803,7 @@
         <div class="step-block" id="landing">
             <div class="step-num">03</div>
             <h3>THE LANDING PAGE FORMULA</h3>
-            <p>Sending ad traffic to your gym's homepage is one of the most expensive mistakes in gym marketing. Your homepage has a nav bar, service pages, and a dozen exits. A page built for conversion has one job: capture the lead. The formula: a headline that mirrors the ad's message, a 3-bullet outcome statement, a short form (name, email, phone, nothing more), and a trust signal below the fold (member count, Google review score, or one testimonial). No menu. Single CTA. Conversion rates jump from 8–15% on a homepage to 25–45% on a dedicated page. One honest 2026 nuance: Meta's <strong>instant forms</strong> (leads never leave the app) produce 30–50% cheaper leads at lower intent. If you don't have landing page infrastructure yet, start with an instant form and add two qualifying questions ("What's your #1 fitness goal?" and "When can you come in this week?"). Graduate to a landing page when you're ready to trade some volume for better show rates.</p>
+            <p>Sending ad traffic to your gym's homepage is one of the most expensive mistakes in gym marketing. Your homepage has a navigation bar, service pages, and a dozen exits. A page built for conversion has one job: capture the lead. The formula: a headline that mirrors the ad's message, a 3-bullet outcome statement, a short form (name, email, phone, nothing more), and a trust signal below the fold (member count, Google review score, or one testimonial). No menu. Single CTA. Conversion rates jump from 8–15% on a homepage to 25–45% on a dedicated page. One honest 2026 nuance: Meta's <strong>instant forms</strong> (leads never leave the app) produce 30–50% cheaper leads at lower intent. If you don't have landing page infrastructure yet, start with an instant form and add two qualifying questions ("What's your #1 fitness goal?" and "When can you come in this week?"). Graduate to a landing page when you're ready to trade some volume for better show rates.</p>
         </div>
 
         <div class="step-block" id="followup">
@@ -831,12 +838,31 @@
         <div class="step-block" id="retargeting">
             <div class="step-num">05</div>
             <h3>RETARGETING SEQUENCES</h3>
-            <p>Not every lead converts on the first pass. A retargeting system shows different ads to three groups: people who visited your page but didn't submit (social proof ad: "1,200 members in Frisco trust us"), people who submitted but didn't book (urgency ad: "Your free week expires Friday"), and people who booked but didn't show (new-offer ad: "Come to one class, zero commitment"). This three-layer system alone recovers 15–25% of leads that would otherwise go cold. One technical must in 2026: run the <strong>Conversions API</strong> alongside your pixel. Since the iOS privacy changes, the browser pixel misses a meaningful share of conversions, and a campaign that can't see its own results can't improve. Connect CAPI through your CRM or website so Meta learns from actual booked visits, not just clicks.</p>
+            <p>Not every lead converts on the first pass. A retargeting system shows a different ad to each of three groups:</p>
+            <ul>
+                <li><strong>Visited your page, didn't submit:</strong> a social proof ad. "1,200 members in Frisco trust us."</li>
+                <li><strong>Submitted, didn't book:</strong> an urgency ad. "Your free week expires Friday."</li>
+                <li><strong>Booked, didn't show:</strong> a new-offer ad. "Come to one class, zero commitment."</li>
+            </ul>
+            <p>This three-layer system alone recovers 15–25% of leads that would otherwise go cold. There is also one technical must in 2026: you need to run the <strong>Conversions API</strong> alongside your pixel. Since the iOS privacy changes, the browser pixel misses a meaningful share of conversions, and a campaign that can't see its own results can't improve. Connect CAPI through your CRM or website so Meta learns from actual booked visits, not just clicks.</p>
         </div>
 
         <div class="callout">
             <p><strong>The 48-Hour Rule:</strong> If a lead hasn't booked within 48 hours of submitting the form, they almost certainly won't book without a second prompt. The sequence above builds those prompts in, a text at 24 hours and a call at 48, and gyms that add them typically double their booked visit rate.</p>
         </div>
+
+        <h2 id="pro-details">THE DETAILS THAT SEPARATE PRO ACCOUNTS FROM AMATEUR ONES</h2>
+
+        <p>The checklist above gets a campaign ready to launch. What decides whether your cost per member drifts down or up over the next twelve months is a set of smaller operating decisions that never make it into beginner guides. These are the ones we check first when we open a gym's ad account:</p>
+
+        <ol>
+            <li><strong>"Learning Limited" is normal at gym budgets. Don't chase the green checkmark.</strong> Meta wants roughly 50 conversion events per ad set per week to fully exit the learning phase. At a $30 cost per lead, that's $1,500 a week per ad set, more than most gyms spend in a month. The pro move is to consolidate: fewer ad sets so events pool together, and judge the account on cost per member, not on Meta's status labels.</li>
+            <li><strong>Never delete campaigns. Pause them.</strong> Deleting throws away the conversion history your account learns from. A paused winner can be relaunched with its track record intact; a deleted one starts from zero.</li>
+            <li><strong>Watch frequency before it shows up in your costs.</strong> When your cold audience sees your ads more than about 2.5 times a week, fatigue has started even if cost per lead hasn't moved yet. Refresh creative on a schedule, not in a panic after costs spike.</li>
+            <li><strong>January and September are harvest months. Prepare in December and July.</strong> Gym demand spikes from January 2 to mid-February and again from late August through September, and cost per lead drops 20–30%. Amateurs scramble to write ads in the first week of January. Pros walk into peak season with creative already tested.</li>
+            <li><strong>Your ex-member list is the cheapest audience you will ever run.</strong> Upload past members as a custom audience and run a dedicated "things have changed, come see" offer. They already know you, the trust is built, and they convert at a fraction of cold-traffic cost. Almost no gym does this.</li>
+            <li><strong>The comment section is part of the ad.</strong> Prospects read comments before they click. Reply to every comment within the hour, pin a positive member comment to the top, and hide spam fast. An ad with active, warm comments outperforms the identical ad with a dead comment section.</li>
+        </ol>
 
         <div class="tool-block" id="scorecard">
             <div class="tool-label">
@@ -960,18 +986,22 @@
                 <div class="calc-field">
                     <label for="calcCpl">Cost per lead <span class="calc-val" id="calcCplVal">$30</span></label>
                     <input type="range" class="calc-range" id="calcCpl" min="15" max="60" value="30" step="1">
+                    <span class="calc-help">What you pay in ad spend for each person who submits your form. <strong>Typical gym range: $15–$35.</strong> Above $50 means your creative or offer needs work.</span>
                 </div>
                 <div class="calc-field">
                     <label for="calcBook">Lead-to-book rate <span class="calc-val" id="calcBookVal">40%</span></label>
                     <input type="range" class="calc-range" id="calcBook" min="10" max="70" value="40" step="1">
+                    <span class="calc-help">The share of leads who actually schedule a visit. <strong>With 5-minute follow-up: 30–45%.</strong> Without it, most gyms sit under 20%.</span>
                 </div>
                 <div class="calc-field">
                     <label for="calcShow">Show rate <span class="calc-val" id="calcShowVal">50%</span></label>
                     <input type="range" class="calc-range" id="calcShow" min="20" max="90" value="50" step="1">
+                    <span class="calc-help">The share of booked visits who walk through the door. <strong>Typical range: 40–60%.</strong> Reminder texts are what move this number.</span>
                 </div>
                 <div class="calc-field">
                     <label for="calcClose">Visit-to-member rate <span class="calc-val" id="calcCloseVal">60%</span></label>
                     <input type="range" class="calc-range" id="calcClose" min="20" max="90" value="60" step="1">
+                    <span class="calc-help">The share of visitors who become paying members. <strong>A strong intro experience closes 60%+.</strong> Below 50% points at the pitch, not the ads.</span>
                 </div>
             </div>
             <div class="calc-results">
@@ -1065,12 +1095,13 @@
                 <nav class="toc-list" id="tocList">
                     <a href="#why-meta">Why Meta Works for CrossFit</a>
                     <a href="#offer">Your Offer Decides Your Results</a>
-                    <a href="#framework">The 5-Step Framework</a>
+                    <a href="#framework">The 5-Part Checklist</a>
                     <a href="#audiences">01: Audience Architecture</a>
                     <a href="#creative">02: Creative That Converts</a>
                     <a href="#landing">03: Landing Page Formula</a>
                     <a href="#followup">04: Speed-to-Lead Follow-Up</a>
                     <a href="#retargeting">05: Retargeting Sequences</a>
+                    <a href="#pro-details">The Pro-Level Details</a>
                     <a href="#scorecard">Score Your Setup</a>
                     <a href="#budget">Budget by Tier</a>
                     <a href="#calculator">ROI Calculator</a>

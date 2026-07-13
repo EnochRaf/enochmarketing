@@ -257,7 +257,7 @@
         .filter-btn {
             font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
             letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim);
-            padding: 1.1rem 1.5rem; white-space: nowrap; cursor: pointer;
+            padding: 1.1rem 1.05rem; white-space: nowrap; cursor: pointer;
             border: none; border-bottom: 2px solid transparent;
             background: none; transition: all 0.3s ease;
         }
@@ -433,6 +433,8 @@
         .cv-retention { background: linear-gradient(135deg, #080d0d 0%, #081212 50%, #0a0a0a 100%); }
         .cv-branding { background: linear-gradient(135deg, #0d0d08 0%, #141208 50%, #0a0a0a 100%); }
         .cv-analytics { background: linear-gradient(135deg, #0a0a0d 0%, #090c12 50%, #0a0a0a 100%); }
+        .cv-revenue { background: linear-gradient(135deg, #0d0c08 0%, #17130a 50%, #0a0a0a 100%); }
+        .cv-events { background: linear-gradient(135deg, #0c0908 0%, #170d0a 50%, #0a0a0a 100%); }
 
         /* Additional visual glow per card */
         .card-visual::after {
@@ -534,6 +536,7 @@
             .blog-hero-content { padding: 8rem 1.5rem 0; }
             .featured-section, .blog-section { padding-left: 1.5rem; padding-right: 1.5rem; }
             .filter-bar { padding: 0 1.5rem; }
+            .filter-btn { padding-left: 1.35rem; padding-right: 1.35rem; }
             .featured-body { padding: 2rem 1.75rem; }
             .featured-title { font-size: 1.9rem; }
             .blog-grid { grid-template-columns: 1fr; }
@@ -700,6 +703,8 @@
         <button class="filter-btn" data-filter="retention">Retention</button>
         <button class="filter-btn" data-filter="branding">Branding</button>
         <button class="filter-btn" data-filter="analytics">Analytics</button>
+        <button class="filter-btn" data-filter="revenue">Revenue</button>
+        <button class="filter-btn" data-filter="events">Events</button>
     </div>
 </div>
 
@@ -745,9 +750,55 @@
     <div class="container">
         <div class="blog-section-header">
             <h2>ALL ARTICLES</h2>
-            <span class="blog-count" id="articleCount">16 Articles</span>
+            <span class="blog-count" id="articleCount">18 Articles</span>
         </div>
         <div class="blog-grid" id="blogGrid">
+
+            <!-- Article: Second Revenue Streams -->
+            <a href="crossfit-gym-second-revenue-streams.html" class="article-card reveal reveal-delay-1" data-category="revenue">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-revenue"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/><path d="M4 16l-2 2 2 2M20 8l2-2-2-2"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Revenue Strategy</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">SECOND REVENUE STREAMS FOR CROSSFIT GYMS</h3>
+                    <p class="card-excerpt">Compare six adjacent offers, model the real contribution margin, validate demand, and launch one focused 90-day pilot without weakening the core member experience.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">July 13, 2026 &nbsp;·&nbsp; 18 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article: In-House Competition Marketing -->
+            <a href="crossfit-in-house-competition-marketing.html" class="article-card reveal reveal-delay-2" data-category="events">
+                <div class="card-visual">
+                    <div class="card-visual-bg cv-events"></div>
+                    <div class="card-visual-icon">
+                        <div class="card-icon-circle">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4z"/><path d="M7 6H3v2a4 4 0 0 0 4 4M17 6h4v2a4 4 0 0 1-4 4"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-cat-badge">Events &amp; Community</div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">THE IN-HOUSE COMPETITION MARKETING PLAYBOOK</h3>
+                    <p class="card-excerpt">Plan a safer, profitable competition with a 12-week timeline, sponsor budget, content system, consent-based follow-up, and lead-to-revenue attribution.</p>
+                    <div class="card-footer">
+                        <span class="card-meta">July 13, 2026 &nbsp;·&nbsp; 17 Min</span>
+                        <div class="card-arrow">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
             <!-- Article: Coach Hiring & Retention -->
             <a href="crossfit-gym-coach-hiring-retention.html" class="article-card reveal reveal-delay-1" data-category="retention">

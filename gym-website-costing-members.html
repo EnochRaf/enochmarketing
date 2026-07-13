@@ -16,19 +16,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://www.enochmarketing.com/gym-website-costing-members.html" />
-    <meta name="description" content="Most gym websites look fine but convert terribly. Here's the exact audit framework to find the leaks and fix them without rebuilding your site from scratch.">
+    <meta name="description" content="Audit your gym website for conversion leaks, Core Web Vitals, mobile UX, GA4 key events, and lead-to-member attribution with this practical guide.">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Why Your Gym's Website Is Costing You Members (And How to Fix It)">
-    <meta property="og:description" content="Most gym websites look fine but convert terribly. Here's the exact audit framework to find the leaks and fix them, without rebuilding from scratch.">
+    <meta property="og:description" content="Audit your gym website for conversion leaks, Core Web Vitals, mobile UX, GA4 key events, and lead-to-member attribution.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <meta property="og:url" content="https://www.enochmarketing.com/gym-website-costing-members.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Why Your Gym's Website Is Costing You Members (And How to Fix It)">
-    <meta name="twitter:description" content="Most gym websites look fine but convert terribly. Here's the exact audit framework to find the leaks and fix them, without rebuilding from scratch.">
+    <meta name="twitter:description" content="Audit your gym website for conversion leaks, Core Web Vitals, mobile UX, GA4 key events, and lead-to-member attribution.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #DDCD9C;
@@ -545,6 +545,44 @@
             color: var(--gold-light);
             transform: translateY(-1px);
         }
+
+        /* ── DECISION TABLES AND SOURCES ── */
+        .decision-table-wrap {
+            margin: 2rem 0 2.5rem;
+            overflow-x: auto;
+            border: 1px solid rgba(221,205,156,0.14);
+            border-radius: 1rem;
+            background: var(--black-card);
+            scrollbar-color: var(--gold-dark) var(--black-card);
+        }
+        .decision-table { width: 100%; min-width: 700px; border-collapse: collapse; }
+        .decision-table caption {
+            padding: 1rem 1.25rem; text-align: left; color: var(--white-dim);
+            font-size: 0.76rem; line-height: 1.55; border-bottom: 1px solid rgba(221,205,156,0.08);
+        }
+        .decision-table th {
+            padding: 0.9rem 1rem; text-align: left; background: rgba(221,205,156,0.07);
+            color: var(--gold); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+            border-bottom: 1px solid rgba(221,205,156,0.16);
+        }
+        .decision-table td {
+            padding: 0.95rem 1rem; color: rgba(255,255,255,0.7); font-size: 0.82rem;
+            line-height: 1.55; vertical-align: top; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .decision-table tbody tr:last-child td { border-bottom: 0; }
+        .decision-table td strong { display: block; margin-bottom: 0.15rem; }
+        .decision-table code { color: var(--gold-light); font-size: 0.8rem; }
+        .article-body > p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+        .source-list { margin: 1.25rem 0 0; display: grid; gap: 0.75rem; }
+        .source-list li { color: rgba(255,255,255,0.67); font-size: 0.9rem; line-height: 1.65; }
+        .source-list a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+        a:focus-visible, button:focus-visible, .decision-table-wrap:focus-visible {
+            outline: 3px solid var(--gold); outline-offset: 4px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -559,9 +597,6 @@
     fbq('init', '2151580048923147');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2151580048923147&ev=PageView&noscript=1" alt=""
-    /></noscript>
     <!-- End Meta Pixel Code -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-85XT8T4WZ8"></script>
@@ -578,6 +613,7 @@
     "@type": "Article",
     "headline": "Why Your Gym's Website Is Costing You Members",
     "datePublished": "2026-05-01",
+    "dateModified": "2026-07-13",
     "author": {
         "@type": "Person",
         "name": "Collin Charles",
@@ -630,6 +666,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHK9XF2Z"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2151580048923147&amp;ev=PageView&amp;noscript=1" alt=""
+    /></noscript>
 
 <div id="cursorGlow"></div>
 
@@ -680,27 +719,27 @@
             <span class="line2">COSTING YOU MEMBERS</span>
         </h1>
         <div class="article-meta">
-            <span>May 2026</span>
+            <span>Updated July 13, 2026</span>
             <div class="article-meta-dot"></div>
-            <span>8 min read</span>
+            <span>12 min read</span>
             <div class="article-meta-dot"></div>
             <span>By Collin Charles</span>
         </div>
         <p class="article-hero-intro">
-            Most gym websites look fine. That's the problem. "Fine" doesn't convert. "Fine" doesn't make a stranger pull out their credit card at 11pm on a Tuesday. Here's the uncomfortable audit most gym owners never do, and the fixes that actually move the needle.
+            A gym website should do more than look credible. It should help the right prospect understand the offer, take one clear next step, and remain measurable all the way from first visit to retained member.
         </p>
         <div class="stat-row">
             <div class="stat-box">
-                <div class="stat-box-num">94%</div>
-                <div class="stat-box-label">Of first impressions are design-related, visitors decide in under 3 seconds</div>
+                <div class="stat-box-num">1</div>
+                <div class="stat-box-label">Primary action for each landing page, supported by secondary navigation</div>
             </div>
             <div class="stat-box">
-                <div class="stat-box-num">3S</div>
-                <div class="stat-box-label">Is all you get before a prospect bounces if your page hasn't loaded or hooked them</div>
+                <div class="stat-box-num">3</div>
+                <div class="stat-box-label">Core Web Vitals to monitor: LCP, INP, and CLS</div>
             </div>
             <div class="stat-box">
-                <div class="stat-box-num">70%</div>
-                <div class="stat-box-label">Of small business websites have no clear call to action above the fold</div>
+                <div class="stat-box-num">5</div>
+                <div class="stat-box-label">Funnel stages to connect: visit, lead, qualified lead, intro, and member</div>
             </div>
         </div>
     </div>
@@ -713,30 +752,30 @@
 
         <p>Every month, gym owners spend money driving people to their website. Google Ads. Instagram posts. Boosted Facebook content. Word-of-mouth that sends someone to search your name. All roads eventually lead to one place: your website. And if that website isn't doing its job, every dollar you spend on marketing before it is money you're lighting on fire.</p>
 
-        <p>Here's the thing about a bad gym website, it doesn't look bad. Not usually. It has photos. It has a logo. It has a contact page and maybe a class schedule. It exists. And because it exists, most gym owners check "website" off their mental list and never think about it again.</p>
+        <p>Here's the thing about a weak gym website: it may not look broken. It has photos, a logo, a contact page, and maybe a class schedule. The real problem appears in the customer journey and the data. Prospects cannot find the next step, the form fails on mobile, or leads disappear between analytics and the CRM.</p>
 
         <p>But existing and <strong>converting</strong> are completely different things. A website that exists says "we're here." A website that converts says "this is the gym for you, here's exactly what to do next." The gap between those two things is costing you members every single month, silently, invisibly, with no alarm going off.</p>
 
         <div class="callout">
             <span class="callout-label">The Real Cost</span>
-            <p>"If your website converts at 2% and a modest fix gets it to 4%, you haven't tweaked a website, you've doubled the output of every marketing dollar you'll ever spend."</p>
+            <p>"A conversion lift only becomes a business win when lead quality, show rate, close rate, and retained-member value hold up after the change."</p>
         </div>
 
         <h2 id="why-it-matters">THE MATH NOBODY IS RUNNING</h2>
 
         <p>Let's get specific, because vague advice about "improving your website" is useless without understanding what it's actually worth to fix it.</p>
 
-        <p>Say your website gets 400 visitors a month. That's modest, entirely achievable with basic SEO and a small paid budget. At a 2% conversion rate (meaning 2% of visitors fill out a contact form or book a trial), you're generating 8 leads a month. Close half of them, that's 4 new members. At $150/month that's $600 MRR from your website. Fine.</p>
+        <p>Use a worked scenario, not an industry promise. If a site receives 400 qualified visits in a month and 2% become leads, that produces 8 leads. If half become members at $150 per month, the model attributes $600 in new monthly recurring revenue to that cohort. Those percentages are assumptions for the example. Replace them with your own analytics and CRM data.</p>
 
-        <p>Now fix the conversion rate to 4%, a completely achievable improvement with the changes outlined below. Same 400 visitors. Now you have 16 leads, 8 closes, and $1,200 MRR. <strong>Same traffic. Double the revenue output.</strong> Forever. Every month. From one round of focused improvements to a page you already own.</p>
+        <p>If a controlled page test lifts the lead rate to 4% while traffic quality and close rate stay constant, the same model produces 16 leads, 8 members, and $1,200 in new monthly recurring revenue. That is the upside case. In practice, verify the downstream numbers before declaring a winner, because a shorter form can create more leads while producing fewer qualified members.</p>
 
-        <p>That is the math nobody is running. Not because it's complicated, but because most gym owners are so focused on getting more traffic that they never stop to ask whether the traffic they already have is being used efficiently. It almost never is.</p>
+        <p>That is the math worth running before buying more traffic. The purpose is not to assume a 4% lead rate. It is to quantify the current funnel, test a focused change, and measure whether retained-member contribution improves.</p>
 
         <hr class="article-divider">
 
         <h2 id="six-killers">THE 6 WEBSITE KILLERS</h2>
 
-        <p>After reviewing hundreds of gym and CrossFit websites, the same problems appear over and over. These aren't obscure technical issues, they're visible the moment you land on the page. Here they are, in order of how badly they hurt you.</p>
+        <p>These six issues are a practical diagnostic sequence. Their impact varies by traffic source, offer, and audience, so establish a baseline and change one major variable at a time.</p>
 
         <div class="problem-list">
 
@@ -744,7 +783,7 @@
                 <div class="problem-num">01</div>
                 <div>
                     <div class="problem-title">No Clear CTA Above the Fold</div>
-                    <p class="problem-body">The "fold" is everything a visitor sees before they scroll. On most gym websites, that space is occupied by a hero image (often stock), a tagline that says something like "The Best CrossFit in [City]," and a nav bar. What it doesn't have is a single, obvious answer to the question every visitor is silently asking: <em>what should I do right now?</em> If your answer to that question is buried below a scroll, most visitors will never find it. Your CTA, whether that's "Book a Free Class," "Claim Your Free Trial," or "Schedule a Call", needs to be impossible to miss before anyone touches their scroll wheel.</p>
+                    <p class="problem-body">The "fold" is what a visitor sees before scrolling. That space should quickly answer what the gym offers, who it serves, and what the prospect can do next. Choose one primary CTA, such as "Book an Intro," and make it easy to see and use without turning the header into a wall of competing actions.</p>
                 </div>
             </div>
 
@@ -752,7 +791,7 @@
                 <div class="problem-num">02</div>
                 <div>
                     <div class="problem-title">Slow Load Speed</div>
-                    <p class="problem-body">Google's own data shows that <strong>53% of mobile visitors abandon a page that takes longer than 3 seconds to load.</strong> Most gym websites, loaded with uncompressed hero images, bloated WordPress plugins, and no caching strategy, load in 6, 7, sometimes 10+ seconds. You're losing more than half your mobile traffic before anyone reads a single word. Speed isn't a technical nice-to-have. It's the first conversion factor on your entire site. If your page doesn't load fast, nothing else on it matters.</p>
+                    <p class="problem-body">Heavy hero images, third-party scripts, and unused plugins can delay the moment a prospect sees useful content or can interact with the page. Test real-user Core Web Vitals and the actual booking path on mobile. Lab scores help diagnose issues, but field data and completed actions reveal whether the experience is working for prospects.</p>
                 </div>
             </div>
 
@@ -760,7 +799,7 @@
                 <div class="problem-num">03</div>
                 <div>
                     <div class="problem-title">Stock Photos and Zero Real People</div>
-                    <p class="problem-body">A website full of stock photos of athletes who don't go to your gym is a trust killer. It signals, subconsciously, that there's nothing real here worth showing. The gyms that convert best are the ones that feel like a living, breathing community, real members, real coaches, real moments. A smartphone photo of your actual 6am class doing a workout is worth ten times the high-gloss stock image of a person who has never touched a barbell. People are buying community. If your website doesn't show them the community, you're selling them nothing.</p>
+                    <p class="problem-body">Stock photography cannot prove what a class, coach, or facility actually feels like. With written permission, use clear images of real coaches, real classes, and the real first-visit experience. Test those assets against the existing creative instead of assuming any photo will win.</p>
                 </div>
             </div>
 
@@ -768,7 +807,7 @@
                 <div class="problem-num">04</div>
                 <div>
                     <div class="problem-title">Buried or Missing Pricing</div>
-                    <p class="problem-body">This is the one gym owners argue about most. "We don't want to put pricing on the site because we want to talk to people first." Understandable instinct, wrong outcome. When a prospect can't find your pricing, they don't call to ask, they leave and check a competitor who made it easy. Hiding pricing doesn't create conversations; it creates exits. You don't have to list every tier with a comparison table. But you need something, a range, a starting point, a "memberships from $X", that tells a stranger they're in the right ballpark before they invest time in a conversation.</p>
+                    <p class="problem-body">Some gyms avoid publishing pricing because the service needs explanation. That can also create uncertainty for prospects. Test a format that fits your sales process, such as a starting price, an honest range, or clearly defined packages, and measure qualified bookings and closes rather than relying on preference alone.</p>
                 </div>
             </div>
 
@@ -776,7 +815,7 @@
                 <div class="problem-num">05</div>
                 <div>
                     <div class="problem-title">No Social Proof Where It Counts</div>
-                    <p class="problem-body">Most gyms have testimonials. They're usually in a slider at the bottom of the homepage that 80% of visitors never reach, or on a dedicated "Testimonials" page nobody navigates to. Social proof doesn't work when it's hidden, it works when it's <em>placed strategically next to the moments of highest doubt.</em> Right next to your pricing. Right next to your sign-up form. Right after your bold claim about what makes you different. That's where a real member saying "this changed my life" does actual conversion work. Move the proof to where the doubt lives.</p>
+                    <p class="problem-body">Testimonials often sit far away from the decision they are meant to support. Place specific, permissioned proof near pricing, the booking form, and important claims. Keep the member's words accurate, disclose any material incentive, and avoid presenting exceptional outcomes as typical.</p>
                 </div>
             </div>
 
@@ -784,7 +823,7 @@
                 <div class="problem-num">06</div>
                 <div>
                     <div class="problem-title">Not Built for Mobile</div>
-                    <p class="problem-body">Over 60% of local search traffic happens on mobile devices. Someone drives past your gym, searches your name, and pulls up your website on their phone while sitting at a red light. If that experience involves pinching to zoom, tiny navigation links, a form that's impossible to fill out with thumbs, or images that don't load, that's your first impression. Not your gym. Not your coaches. Your broken mobile experience. A website that isn't genuinely optimized for mobile isn't a gym website in 2026, it's a liability.</p>
+                    <p class="problem-body">Prospects may discover your gym and complete the booking path on a phone. Test navigation, tap targets, form fields, autofill, error messages, and confirmation screens on multiple devices. A responsive layout is not enough if the action itself is difficult to complete.</p>
                 </div>
             </div>
 
@@ -792,41 +831,25 @@
 
         <hr class="article-divider">
 
-        <h2 id="speed-test">THE SPEED PROBLEM IN NUMBERS</h2>
+        <h2 id="speed-test">THE CURRENT CORE WEB VITALS SCORECARD</h2>
 
-        <p>Let's make the load speed issue concrete. These are benchmarks that separate the gyms quietly winning organic traffic from the ones hemorrhaging it.</p>
+        <p>Google's current Core Web Vitals are Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift. The thresholds below are Google's "good" targets, assessed at the 75th percentile of page loads and segmented by mobile and desktop.</p>
 
-        <div class="benchmark-bar">
-            <div class="bm-row">
-                <span class="bm-label">Target load time</span>
-                <div class="bm-track"><div class="bm-fill good" style="width: 20%;"></div></div>
-                <span class="bm-value good">&lt; 2s</span>
-            </div>
-            <div class="bm-row">
-                <span class="bm-label">Average gym site</span>
-                <div class="bm-track"><div class="bm-fill bad" style="width: 65%;"></div></div>
-                <span class="bm-value bad">5–8s</span>
-            </div>
-            <div class="bm-row">
-                <span class="bm-label">Bounce rate at 1s</span>
-                <div class="bm-track"><div class="bm-fill good" style="width: 20%;"></div></div>
-                <span class="bm-value good">9%</span>
-            </div>
-            <div class="bm-row">
-                <span class="bm-label">Bounce rate at 5s</span>
-                <div class="bm-track"><div class="bm-fill bad" style="width: 76%;"></div></div>
-                <span class="bm-value bad">38%</span>
-            </div>
-            <div class="bm-row">
-                <span class="bm-label">Google ranking impact</span>
-                <div class="bm-track"><div class="bm-fill bad" style="width: 88%;"></div></div>
-                <span class="bm-value bad">Major</span>
-            </div>
+        <div class="decision-table-wrap" tabindex="0" role="region" aria-label="Core Web Vitals scorecard. Scroll horizontally on small screens.">
+            <table class="decision-table">
+                <caption>Use field data when available. PageSpeed Insights can show field data and lab diagnostics, but a Lighthouse score is not a substitute for real-user measurement.</caption>
+                <thead>
+                    <tr><th scope="col">Metric</th><th scope="col">Good threshold</th><th scope="col">What it reveals</th><th scope="col">Common gym-site fix</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>LCP</strong>Largest Contentful Paint</td><td>2.5 seconds or less</td><td>How quickly the main content becomes visible</td><td>Right-size the hero image, preload the critical asset, and reduce render-blocking code</td></tr>
+                    <tr><td><strong>INP</strong>Interaction to Next Paint</td><td>200 milliseconds or less</td><td>How responsive the page feels after a click, tap, or key press</td><td>Reduce long JavaScript tasks and audit scheduling, chat, and tracking scripts</td></tr>
+                    <tr><td><strong>CLS</strong>Cumulative Layout Shift</td><td>0.1 or less</td><td>How visually stable the page remains while loading</td><td>Set image dimensions and reserve space for embeds, forms, and banners</td></tr>
+                </tbody>
+            </table>
         </div>
 
-        <p>Your load speed doesn't just affect whether visitors stay, it directly affects where Google ranks you in local search. Core Web Vitals (Google's speed and experience metrics) are now a confirmed ranking factor. A slow gym website isn't just annoying visitors; it's actively suppressing the traffic you'd otherwise be getting for free.</p>
-
-        <p>Check your own site right now at <strong>PageSpeed Insights</strong> (pagespeed.web.dev). Enter your URL. If your mobile score is under 70, you have a problem that is costing you rankings and leads every single day.</p>
+        <p>Core Web Vitals are part of Google's page-experience guidance, but Google explicitly says good scores do not guarantee top rankings. Treat speed as one part of a useful page. Run <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>, fix the largest diagnosed constraints, and then verify whether booking completion and qualified-lead rate improve.</p>
 
         <hr class="article-divider">
 
@@ -836,36 +859,63 @@
 
         <div class="compare-grid">
             <div class="compare-col bad">
-                <div class="compare-heading">Most Gym Websites</div>
+                <div class="compare-heading">Common Conversion Friction</div>
                 <ul>
                     <li>Generic tagline, no clear value proposition</li>
                     <li>Stock hero image, no real community shown</li>
                     <li>CTA buried below two scrolls</li>
                     <li>No pricing or vague "contact us for rates"</li>
                     <li>Testimonials hidden at page bottom</li>
-                    <li>5–8 second load time</li>
+                    <li>No field-data review of LCP, INP, or CLS</li>
                     <li>Mobile experience broken or awkward</li>
                     <li>No tracking, no idea what's working</li>
                 </ul>
             </div>
             <div class="compare-col good">
-                <div class="compare-heading">Websites That Actually Convert</div>
+                <div class="compare-heading">Stronger Operating Standard</div>
                 <ul>
                     <li>Specific, outcome-focused headline ("Get your first class free")</li>
                     <li>Real member and coach photos above the fold</li>
                     <li>One clear CTA visible immediately on load</li>
                     <li>Pricing range or starting point visible</li>
                     <li>Testimonials placed next to sign-up and pricing</li>
-                    <li>Under 2.5 second load time</li>
+                    <li>Core Web Vitals monitored by device and template</li>
                     <li>Mobile-first design, thumb-friendly forms</li>
-                    <li>Google Analytics + conversion tracking installed</li>
+                    <li>GA4 key events connected to CRM outcomes</li>
                 </ul>
             </div>
         </div>
 
         <div class="callout">
             <span class="callout-label">The One Rule</span>
-            <p>"A stranger who has never heard of your gym should be able to land on your homepage and answer three questions in under 10 seconds: What is this place? Is it for someone like me? What do I do next? If your website can't answer all three without scrolling, it's not done yet."</p>
+            <p>"A stranger should be able to answer three questions without hunting: What is this place? Is it for someone like me? What do I do next? If the first screen creates more questions than clarity, test a simpler message hierarchy."</p>
+        </div>
+
+        <hr class="article-divider">
+
+        <h2 id="measurement">MEASURE THE PATH FROM VISIT TO RETAINED MEMBER</h2>
+
+        <p>A form submission is not the final outcome. GA4 now uses <strong>key events</strong> for interactions that matter to the business. Marking an event as a key event helps reporting, but the gym still needs CRM stages to connect the original session to revenue and retention.</p>
+
+        <div class="decision-table-wrap" tabindex="0" role="region" aria-label="Gym website conversion and attribution plan. Scroll horizontally on small screens.">
+            <table class="decision-table">
+                <caption>Recommended event names are examples. Document your exact definitions so the website, analytics, ad platforms, and CRM use the same funnel language.</caption>
+                <thead>
+                    <tr><th scope="col">Stage</th><th scope="col">Capture</th><th scope="col">Quality check</th><th scope="col">Decision it supports</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Qualified visit</strong>Landing page, source, medium, campaign, device, and location</td><td>Preserve UTMs and the landing-page URL in the lead record</td><td>Exclude staff, spam, and irrelevant geography</td><td>Which traffic deserves more budget?</td></tr>
+                    <tr><td><strong>Lead</strong><code>generate_lead</code> or a documented custom event</td><td>Mark the confirmed completion as a GA4 key event</td><td>Count successful submissions, not button clicks</td><td>Which page and offer earn inquiries?</td></tr>
+                    <tr><td><strong>Qualified lead</strong>CRM status plus reason</td><td>Use consistent criteria such as service fit, location, and valid contact details</td><td>Track disqualification reasons</td><td>Is higher form volume actually useful?</td></tr>
+                    <tr><td><strong>Intro attended</strong>Scheduled and attended timestamps</td><td>Connect attendance to the original lead ID</td><td>Separate booked, canceled, no-show, and attended</td><td>Does the page attract people who show up?</td></tr>
+                    <tr><td><strong>Member retained</strong>Join date, plan, collected revenue, and 90-day status</td><td>Join CRM and billing data using a privacy-conscious identifier</td><td>Use collected contribution, not projected gross revenue alone</td><td>Which source produces durable member value?</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout">
+            <span class="callout-label">Attribution Rule</span>
+            <p>Keep first-touch and latest non-direct campaign fields, but also preserve the full lead history. A member may discover the gym through search, return through Instagram, and finally book after an email. One report should not erase that path.</p>
         </div>
 
         <hr class="article-divider">
@@ -878,13 +928,13 @@
 
             <div class="audit-step">
                 <div class="audit-step-title">Open your site on your phone, cold, as a stranger would</div>
-                <p>Not on your laptop where you know where everything is. On your phone, fresh tab. Start the clock. Ask yourself: within 3 seconds, do I know what this place is and what I should do? If the answer is no, start there.</p>
+                <p>Not on your laptop where you know where everything is. On your phone, in a fresh tab, ask whether the first screen explains the gym and presents one usable next step. If it does not, start with the message hierarchy and primary CTA.</p>
                 <span class="audit-step-action">→ What to fix: Hero section, CTA placement, headline clarity</span>
             </div>
 
             <div class="audit-step">
                 <div class="audit-step-title">Run PageSpeed Insights on mobile</div>
-                <p>Go to pagespeed.web.dev, paste your URL, and run the mobile test. If your score is below 70, note the top 3 opportunities it flags. Image compression and removing unused plugins/scripts fix 80% of speed issues on most gym sites.</p>
+                <p>Go to pagespeed.web.dev, paste your URL, and run the mobile test. Review field data first when it is available, then use the lab diagnostics to identify likely causes. Prioritize the constraints affecting LCP, INP, and CLS on the templates prospects actually use.</p>
                 <span class="audit-step-action">→ What to fix: Image compression, plugin audit, caching</span>
             </div>
 
@@ -896,13 +946,13 @@
 
             <div class="audit-step">
                 <div class="audit-step-title">Find your testimonials, note exactly where they are</div>
-                <p>On most gym sites, testimonials live on page 3 of a slider at the very bottom of the homepage. They're doing no conversion work there. Pick your two best testimonials and move them to: (a) directly below your pricing, and (b) directly above your contact form. That's where doubt lives. That's where proof belongs.</p>
+                <p>Identify where testimonials currently appear and whether prospects can see relevant proof near a decision. Test permissioned, specific testimonials near pricing and the contact form. Do not edit the member's meaning or imply that an exceptional result is typical.</p>
                 <span class="audit-step-action">→ What to fix: Testimonial placement, proximity to conversion points</span>
             </div>
 
             <div class="audit-step">
                 <div class="audit-step-title">Check your contact form, fill it out yourself</div>
-                <p>How many fields? How long does it take? Can you complete it comfortably with one thumb on a phone? Every extra field you ask for reduces completion rates by 10–15%. Name, email, and one qualifying question is all you need to start a conversation. The rest can come later.</p>
+                <p>How many fields are necessary for the next step? Can you complete the form comfortably with one thumb on a phone? Remove fields that nobody uses, keep the consent language clear, and test the shorter version against lead quality rather than assuming fewer fields always perform better.</p>
                 <span class="audit-step-action">→ What to fix: Form length, mobile UX, confirmation message</span>
             </div>
 
@@ -914,7 +964,7 @@
 
             <div class="audit-step">
                 <div class="audit-step-title">Audit your photos, count how many show real members</div>
-                <p>Go through every image on your homepage. How many show your actual facility, your actual coaches, your actual members? If more than half are stock images, you have a trust problem. Even imperfect real photos outperform perfect stock images every single time. Schedule a 30-minute phone photo session after your next busy class and replace them.</p>
+                <p>Go through every image on your homepage. How many accurately show your facility, coaches, first-visit process, and members who have approved marketing use? Build a simple shot list, secure written permission, and test the real imagery against the current assets.</p>
                 <span class="audit-step-action">→ What to fix: Replace stock photos with real community imagery</span>
             </div>
 
@@ -924,16 +974,16 @@
 
         <h2 id="quick-wins">THE QUICK WINS VS THE REBUILDS</h2>
 
-        <p>Not everything on your website needs a full rebuild. Some fixes take 20 minutes and move the needle immediately. Others require a more deliberate approach. Here's how to triage.</p>
+        <p>Not every website issue needs a full rebuild. Triage changes by customer impact, implementation risk, and the evidence available to measure the result.</p>
 
         <div class="checklist">
             <div class="checklist-title">Do This Week (Low Effort, High Impact)</div>
             <ul>
                 <li><span class="check-box"></span>Add a single, specific CTA button above the fold: "Book Your Free Class" or "Claim Your Free Trial"</li>
-                <li><span class="check-box"></span>Compress every image on your homepage using TinyPNG or Squoosh (free, takes 10 minutes)</li>
+                <li><span class="check-box"></span>Right-size and compress homepage images, then verify visual quality and LCP on mobile</li>
                 <li><span class="check-box"></span>Move your two best testimonials to sit directly above your contact form and next to your pricing</li>
                 <li><span class="check-box"></span>Replace the hero stock photo with a real photo of your gym during a busy class</li>
-                <li><span class="check-box"></span>Reduce your contact form to 3 fields maximum: name, email or phone, and one qualifying question</li>
+                <li><span class="check-box"></span>Remove contact-form fields that are not required for the next step, then monitor both completion rate and lead quality</li>
                 <li><span class="check-box"></span>Add your membership starting price or range somewhere visible within 2 clicks of the homepage</li>
             </ul>
         </div>
@@ -941,14 +991,27 @@
         <div class="checklist">
             <div class="checklist-title">Plan For Next Month (Medium Effort, Structural)</div>
             <ul>
-                <li><span class="check-box"></span>Install Google Analytics 4 and set up a conversion goal for form completions (if not already done)</li>
+                <li><span class="check-box"></span>Configure GA4, record confirmed form completions or bookings, and mark the documented action as a key event</li>
                 <li><span class="check-box"></span>Run a full mobile UX review, test on iOS and Android, identify anything that requires pinching or horizontal scrolling</li>
                 <li><span class="check-box"></span>Build a dedicated landing page for your free trial offer (separate from your homepage)</li>
-                <li><span class="check-box"></span>Add a Google Review widget or real-screenshot testimonials to your homepage</li>
-                <li><span class="check-box"></span>Create a simple "What to Expect on Day 1" page, one of the most searched queries for any gym</li>
-                <li><span class="check-box"></span>Set up basic conversion tracking so you know which pages visitors leave from</li>
+                <li><span class="check-box"></span>Add permissioned testimonials near high-consideration sections and verify any review embed follows platform terms</li>
+                <li><span class="check-box"></span>Create a simple "What to Expect on Day 1" page that answers real prospect questions from calls, forms, and search data</li>
+                <li><span class="check-box"></span>Preserve landing-page and UTM fields in the CRM, then connect leads to intro, sale, and retention outcomes</li>
             </ul>
         </div>
+
+        <hr class="article-divider">
+
+        <h2 id="sources">SOURCES AND IMPLEMENTATION REFERENCES</h2>
+
+        <p>Platform definitions and thresholds change. These primary references support the technical standards used in this guide and should be checked during implementation.</p>
+
+        <ul class="source-list">
+            <li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev: Web Vitals</a>, current metric definitions, thresholds, and 75th-percentile assessment.</li>
+            <li><a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener">Google Search Central: Core Web Vitals report</a>, how Search Console evaluates real-world performance and page groups.</li>
+            <li><a href="https://support.google.com/analytics/answer/9267568?hl=en" target="_blank" rel="noopener">Google Analytics Help: Mark events as key events</a>, the current GA4 terminology and configuration flow.</li>
+            <li><a href="https://support.google.com/analytics/answer/10917952?hl=en" target="_blank" rel="noopener">Google Analytics Help: Collect campaign data with custom URLs</a>, UTM parameters and campaign attribution inputs.</li>
+        </ul>
 
         <hr class="article-divider">
 
@@ -956,9 +1019,9 @@
 
         <p>Your website isn't a brochure. It's not a business card. It's not something you build once and forget. It's your 24/7 sales rep, the one that talks to every person who searches for a gym in your city at midnight, on a Sunday, on a holiday, during the hour you're coaching a class and can't answer the phone.</p>
 
-        <p>That rep is either closing leads or losing them. And right now, for most gym owners, it's losing them, quietly, constantly, and completely invisibly because there's no alarm that goes off when someone bounces. There's just a slow, invisible leak in a bucket you're working hard to fill.</p>
+        <p>Without a connected measurement plan, a gym cannot tell whether the site is creating qualified members or quietly losing prospects. Analytics, CRM stages, and billing outcomes turn that invisible leak into a diagnosable funnel.</p>
 
-        <p>The fixes aren't magic. They're not expensive. Most of them can be done without a developer. But they require you to look at your website the way a stranger sees it, not with the eyes of someone who knows where the schedule is and what makes your gym great, but with the eyes of someone who is deciding in 10 seconds whether your gym is even worth a phone call.</p>
+        <p>Some fixes are content changes, while others require design or development support. Prioritize the next constraint in the customer journey, view it through a new prospect's eyes, and verify the result in the funnel data.</p>
 
         <p><strong>Look at it that way. Then fix what you see.</strong></p>
 
@@ -984,8 +1047,10 @@
                     <a href="#six-killers">The 6 Website Killers</a>
                     <a href="#speed-test">The Speed Problem</a>
                     <a href="#what-good-looks-like">What Good Looks Like</a>
+                    <a href="#measurement">Lead-to-Member Measurement</a>
                     <a href="#the-audit">The 20-Min Audit</a>
                     <a href="#quick-wins">Quick Wins vs Rebuilds</a>
+                    <a href="#sources">Sources</a>
                     <a href="#the-bottom-line">The Bottom Line</a>
                 </nav>
             </div>

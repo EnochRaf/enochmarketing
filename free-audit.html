@@ -1006,16 +1006,318 @@
             text-transform: uppercase; color: rgba(74,222,128,0.7);
         }
 
+        /* ===== BOOKING CLAIM SECTION ===== */
+        .form-section {
+            position: relative;
+            overflow: hidden;
+            scroll-margin-top: 72px;
+            padding: clamp(5rem, 9vw, 8rem) 3rem;
+        }
+        .form-section-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 83% 20%, rgba(221,205,156,0.13), transparent 28%),
+                radial-gradient(circle at 15% 82%, rgba(184,167,108,0.08), transparent 32%),
+                #050505;
+            pointer-events: none;
+        }
+        .form-section-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.035) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+            pointer-events: none;
+        }
+        .claim-shell {
+            position: relative;
+            z-index: 2;
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+            border: 1px solid rgba(221,205,156,0.18);
+            border-radius: 28px;
+            overflow: hidden;
+            background: rgba(7,7,7,0.92);
+            box-shadow: 0 35px 100px rgba(0,0,0,0.55);
+        }
+        .claim-shell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 58%;
+            height: 2px;
+            z-index: 4;
+            background: linear-gradient(90deg, var(--gold), rgba(221,205,156,0));
+        }
+        .claim-copy { padding: clamp(2.25rem, 5vw, 4.5rem); }
+        .claim-reference {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .claim-reference-label,
+        .claim-reference-code {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.17em;
+            text-transform: uppercase;
+        }
+        .claim-reference-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--gold);
+        }
+        .claim-reference-label::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 5px rgba(74,222,128,0.08);
+        }
+        .claim-reference-code { color: rgba(255,255,255,0.28); }
+        .claim-title {
+            max-width: 620px;
+            font-family: var(--font-display);
+            font-size: clamp(3.1rem, 6vw, 5.4rem);
+            line-height: 0.91;
+            letter-spacing: 0.01em;
+        }
+        .claim-title .gold { color: var(--gold); }
+        .claim-lede {
+            max-width: 610px;
+            margin-top: 1.5rem;
+            color: var(--white-muted);
+            font-size: clamp(0.93rem, 1.25vw, 1.02rem);
+            line-height: 1.8;
+        }
+        .claim-promise {
+            margin-top: 1.75rem;
+            padding: 1rem 1.1rem;
+            border-left: 2px solid var(--gold);
+            background: rgba(221,205,156,0.045);
+            color: rgba(255,255,255,0.72);
+            font-size: 0.82rem;
+            line-height: 1.7;
+        }
+        .claim-route {
+            display: grid;
+            gap: 0;
+            margin-top: 2.1rem;
+        }
+        .claim-route-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 0.8rem;
+            padding-bottom: 1.35rem;
+        }
+        .claim-route-step:last-child { padding-bottom: 0; }
+        .claim-route-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 29px;
+            left: 14px;
+            width: 1px;
+            height: calc(100% - 20px);
+            background: linear-gradient(var(--gold-dark), rgba(221,205,156,0.08));
+        }
+        .claim-route-number {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            width: 29px;
+            height: 29px;
+            border: 1px solid rgba(221,205,156,0.35);
+            border-radius: 50%;
+            background: #0a0a0a;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+        }
+        .claim-route-step strong {
+            display: block;
+            margin-bottom: 0.28rem;
+            color: var(--white);
+            font-size: 0.78rem;
+            font-weight: 650;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .claim-route-step p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+        .claim-ticket {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: clamp(2.25rem, 4.5vw, 4rem);
+            background: var(--gold);
+            color: var(--black);
+        }
+        .claim-ticket::before,
+        .claim-ticket::after {
+            content: '';
+            position: absolute;
+            left: -11px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #050505;
+        }
+        .claim-ticket::before { top: 30%; }
+        .claim-ticket::after { bottom: 30%; }
+        .claim-ticket-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+        .claim-ticket-kicker,
+        .claim-ticket-status {
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .claim-ticket-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            white-space: nowrap;
+        }
+        .claim-ticket-status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #166534;
+        }
+        .claim-ticket h3 {
+            margin-top: 2.1rem;
+            font-family: var(--font-display);
+            font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+            line-height: 0.95;
+            letter-spacing: 0.01em;
+        }
+        .claim-ticket-intro {
+            margin-top: 1rem;
+            color: rgba(0,0,0,0.67);
+            font-size: 0.86rem;
+            line-height: 1.65;
+        }
+        .claim-ticket-meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.18);
+            border-bottom: 1px solid rgba(0,0,0,0.18);
+        }
+        .claim-ticket-meta div {
+            min-width: 0;
+            padding: 1rem 0.6rem;
+            border-right: 1px solid rgba(0,0,0,0.18);
+        }
+        .claim-ticket-meta div:first-child { padding-left: 0; }
+        .claim-ticket-meta div:last-child { border-right: 0; }
+        .claim-ticket-meta dt {
+            margin-bottom: 0.3rem;
+            color: rgba(0,0,0,0.48);
+            font-size: 0.56rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .claim-ticket-meta dd {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+        }
+        .claim-ticket-outcome { margin: 1.75rem 0; }
+        .claim-ticket-outcome span {
+            display: block;
+            margin-bottom: 0.55rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .claim-ticket-outcome p {
+            font-family: var(--font-display);
+            font-size: 1.18rem;
+            line-height: 1.25;
+            letter-spacing: 0.025em;
+        }
+        .claim-calendar-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+            margin-top: auto;
+            padding: 1.05rem 1.15rem 1.05rem 1.35rem;
+            border: 1px solid var(--black);
+            border-radius: 999px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 1.12rem;
+            letter-spacing: 0.09em;
+            transition: transform 0.3s var(--ease-out-expo), background 0.3s ease, color 0.3s ease;
+        }
+        .claim-calendar-cta svg {
+            flex-shrink: 0;
+            transition: transform 0.3s var(--ease-out-expo);
+        }
+        .claim-calendar-cta:hover {
+            transform: translateY(-2px);
+            background: var(--white);
+            color: var(--black);
+        }
+        .claim-calendar-cta:hover svg { transform: translateX(4px); }
+        .claim-calendar-cta:focus-visible {
+            outline: 3px solid var(--white);
+            outline-offset: 4px;
+        }
+        .claim-calendar-note {
+            margin-top: 0.85rem;
+            color: rgba(0,0,0,0.55);
+            font-size: 0.65rem;
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 860px) {
-            .form-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
-            .form-header { position: static; }
+            .claim-shell { grid-template-columns: 1fr; }
+            .claim-ticket::before,
+            .claim-ticket::after { display: none; }
         }
         @media (max-width: 768px) {
-            .form-row-2 { grid-template-columns: 1fr; }
             .lp-header { padding: 0 1.5rem; }
             .lp-header-logo img { height: 120px; width: auto; max-width: none; }
             .lp-header.scrolled .lp-header-logo img { height: 100px; }
@@ -1026,11 +1328,26 @@
             .form-section { padding: 5rem 1.5rem; }
             .get-grid { grid-template-columns: 1fr; }
             .proof-grid { grid-template-columns: 1fr; }
-            .form-card { padding: 2rem 1.5rem; }
             .scarcity-bar { padding: 1rem 1.5rem; }
             .btn-gold { font-size: 1.1rem; padding: 1rem 2rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
             .get-card-body { font-size: 1rem; }
+        }
+        @media (max-width: 520px) {
+            .form-section { padding: 4rem 1rem; }
+            .claim-shell { border-radius: 20px; }
+            .claim-copy,
+            .claim-ticket { padding: 2rem 1.4rem; }
+            .claim-reference-code { display: none; }
+            .claim-title { font-size: clamp(2.8rem, 15vw, 4rem); }
+            .claim-ticket-meta div { padding: 0.85rem 0.35rem; }
+            .claim-ticket-meta dd { font-size: 0.93rem; }
+            .claim-calendar-cta { font-size: 1rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .claim-calendar-cta,
+            .claim-calendar-cta svg { transition: none; }
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -1109,7 +1426,7 @@
     <a href="/" class="lp-header-logo">
         <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350">
     </a>
-    <a href="#claim" class="lp-header-cta">CLAIM YOUR FREE AUDIT</a>
+    <a href="#claim" class="lp-header-cta">BOOK YOUR FREE CALL</a>
 </header>
 
 <!-- HERO -->
@@ -1137,7 +1454,7 @@
 
             <!-- CTA button, scrolls to claim form -->
             <a href="#claim" class="hero-cta-btn">
-                GET MY FREE AUDIT
+                BOOK MY FREE CALL
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
 
@@ -1153,7 +1470,7 @@
                 </li>
                 <li>
                     <span class="hero-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    No sales call. No credit card. No strings.
+                    No high-pressure pitch. No credit card. No obligation.
                 </li>
             </ul>
         </div>
@@ -1357,118 +1674,83 @@
 </section>
 
 
-<!-- FORM + FINAL CTA -->
-<section class="form-section" id="claim">
+<!-- BOOKING + FINAL CTA -->
+<section class="form-section" id="claim" aria-labelledby="claim-title">
     <div class="form-section-bg"></div>
     <div class="form-section-grid"></div>
 
-    <div class="form-wrap">
+    <div class="claim-shell">
+        <div class="claim-copy reveal">
+            <div class="claim-reference">
+                <span class="claim-reference-label">Live booking open</span>
+                <span class="claim-reference-code">Audit briefing / 01</span>
+            </div>
 
-        <!-- LEFT: Text -->
-        <div class="form-header reveal">
-            <p class="eyebrow">Claim Your Spot</p>
-            <h2 class="section-title">READY TO SEE WHAT IS<br><span class="gold">HOLDING YOUR GYM BACK?</span></h2>
-            <div class="section-divider" style="margin-top:1.5rem;"></div>
-            <p style="font-size:0.9rem;color:var(--white-muted);line-height:1.85;margin-top:1.25rem;">Fill out the short form. Takes 90 seconds. I will review your gym's marketing before recording, so the feedback is specific to you, not a template.</p>
-            <ul style="margin-top:1.75rem;display:flex;flex-direction:column;gap:0.75rem;">
-                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
-                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
-                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    Personal Loom, not a generic PDF
-                </li>
-                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
-                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
-                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    Delivered within 48 hours
-                </li>
-                <li style="display:flex;align-items:center;gap:0.65rem;font-size:0.82rem;font-weight:500;color:var(--white-muted);">
-                    <span style="width:18px;height:18px;border-radius:50%;background:rgba(221,205,156,0.08);border:1px solid rgba(221,205,156,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);">
-                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    </span>
-                    No sales call · No credit card · No strings
-                </li>
-            </ul>
-            <p style="margin-top:2rem;font-size:0.72rem;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;">10 spots available this month</p>
-        </div>
+            <h2 class="claim-title" id="claim-title">BOOK THE CALL.<br><span class="gold">GET A BETTER AUDIT.</span></h2>
+            <p class="claim-lede">Choose a time on our live calendar so we can understand your gym before we review it. We will use the conversation to find the issue that deserves the closest look, answer your biggest growth question, and give you a clear next move.</p>
 
-        <!-- RIGHT: Form -->
-        <div>
+            <p class="claim-promise"><strong>Useful, even if we never work together.</strong> This is a focused strategy conversation with no obligation and no high-pressure pitch.</p>
 
-        <div class="form-card reveal">
-            <div class="fc-noise"></div>
-            <div class="fc-glow"></div>
-            <div class="fc-glow-center"></div>
-            <div class="fc-reflection"></div>
-            <div class="fc-edge"></div>
-            <div class="fc-edge-left"></div>
-            <div class="fc-edge-right"></div>
-
-            <div class="form-inner">
-                <form id="auditForm" onsubmit="handleAuditSubmit(event)">
-                    <input type="hidden" name="_subject" value="Free Gym Audit Request | Enoch Marketing">
-                    <input type="hidden" name="_replyto" id="auditReplyTo" value="">
-                    <input type="hidden" name="Running Paid Ads" id="hiddenAds" value="Not answered">
-
-                    <!-- Row: Name + Gym -->
-                    <div class="form-row-2">
-                        <div class="form-group">
-                            <label for="auditFirstName">First Name <span class="req">*</span></label>
-                            <input type="text" id="auditFirstName" name="First Name" placeholder="John" required>
-                            <span class="field-error" id="errFirstName"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="auditGymName">Gym Name <span class="req">*</span></label>
-                            <input type="text" id="auditGymName" name="Gym Name" placeholder="Iron Republic CrossFit" required>
-                            <span class="field-error" id="errGymName"></span>
-                        </div>
+            <div class="claim-route" aria-label="What happens next">
+                <div class="claim-route-step">
+                    <span class="claim-route-number">01</span>
+                    <div>
+                        <strong>Choose your time</strong>
+                        <p>Book the slot that works for you on Enoch's live Cal.com calendar.</p>
                     </div>
-
-                    <div class="form-group">
-                        <label for="auditEmail">Email Address <span class="req">*</span></label>
-                        <input type="email" id="auditEmail" name="Email" placeholder="john@yourgym.com" required>
-                        <span class="field-error" id="errEmail"></span>
+                </div>
+                <div class="claim-route-step">
+                    <span class="claim-route-number">02</span>
+                    <div>
+                        <strong>Diagnose the bottleneck</strong>
+                        <p>We look at your website, offer, lead flow, and follow-up through the lens of your actual gym.</p>
                     </div>
-
-                    <div class="form-group">
-                        <label for="auditWebsite">Gym Website <span class="req">*</span></label>
-                        <input type="url" id="auditWebsite" name="Website URL" placeholder="https://yourgym.com" required>
-                        <span class="field-error" id="errWebsite"></span>
+                </div>
+                <div class="claim-route-step">
+                    <span class="claim-route-number">03</span>
+                    <div>
+                        <strong>Receive your action plan</strong>
+                        <p>You leave with a prioritized next step, followed by your personal video audit within 48 hours.</p>
                     </div>
-
-                    <div class="form-group">
-                        <label>Running Paid Ads?</label>
-                        <div class="ads-toggle">
-                            <button type="button" class="ads-btn" id="adsYes" onclick="selectAds('Yes')">YES</button>
-                            <button type="button" class="ads-btn" id="adsNo" onclick="selectAds('No')">NO</button>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="auditChallenge">Biggest Marketing Challenge <span class="form-optional">(optional)</span></label>
-                        <textarea id="auditChallenge" name="Biggest Marketing Challenge" placeholder="What's not working right now? Ads, foot traffic, website, social, anything goes."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit-gold" id="auditSubmitBtn">
-                        SEND ME MY FREE AUDIT
-                        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </button>
-
-                    <!-- Privacy disclaimer -->
-                    <div class="form-disclaimer">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;color:rgba(221,205,156,0.5);margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <p>Your information is 100% private. We never share, sell, or distribute your data to any third party, ever. This audit is between you and us.</p>
-                    </div>
-
-                    <p class="form-fine">
-                        10 spots available this month. Once claimed, this page closes.
-                    </p>
-                    <p class="form-required-note"><span style="color:#f87171;">*</span> Required fields</p>
-                </form>
+                </div>
             </div>
         </div>
-        </div><!-- /right col -->
+
+        <aside class="claim-ticket reveal reveal-delay-1" aria-label="Free gym growth call booking details">
+            <div class="claim-ticket-top">
+                <span class="claim-ticket-kicker">Enoch Growth Consult</span>
+                <span class="claim-ticket-status">Calendar live</span>
+            </div>
+
+            <h3>FREE GYM<br>GROWTH CALL</h3>
+            <p class="claim-ticket-intro">Built for gym and CrossFit owners who want a sharper view of what is slowing down leads, conversions, or membership growth.</p>
+
+            <dl class="claim-ticket-meta">
+                <div>
+                    <dt>Duration</dt>
+                    <dd>30 MIN</dd>
+                </div>
+                <div>
+                    <dt>Format</dt>
+                    <dd>VIDEO</dd>
+                </div>
+                <div>
+                    <dt>Cost</dt>
+                    <dd>$0</dd>
+                </div>
+            </dl>
+
+            <div class="claim-ticket-outcome">
+                <span>Your outcome</span>
+                <p>ONE CLEAR PRIORITY FOR YOUR NEXT GROWTH MOVE.</p>
+            </div>
+
+            <a class="claim-calendar-cta" id="bookFreeCallCta" href="https://enochmarketing.cal.com/team/enoch/strategy-call?utm_source=enochmarketing.com&amp;utm_medium=landing_page&amp;utm_campaign=free_audit&amp;utm_content=claim_section" aria-label="Book your free gym growth call on Cal.com">
+                <span>BOOK MY FREE CALL</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p class="claim-calendar-note">Instant access to available times. No credit card. No obligation.</p>
+        </aside>
     </div>
 </section>
 
@@ -1556,114 +1838,18 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(el => revealObs.observe(el));
 
-    // ADS TOGGLE
-    function selectAds(val) {
-        document.getElementById('adsYes').classList.toggle('active', val === 'Yes');
-        document.getElementById('adsNo').classList.toggle('active', val === 'No');
-        document.getElementById('hiddenAds').value = val;
-    }
-
-    // FIELD HELPERS
-    function setErr(inputId, errId, msg) {
-        document.getElementById(inputId).classList.add('error-state');
-        const el = document.getElementById(errId);
-        el.textContent = msg; el.classList.add('visible');
-    }
-    function clearErr(inputId, errId) {
-        document.getElementById(inputId).classList.remove('error-state');
-        document.getElementById(errId).classList.remove('visible');
-    }
-
-    ['auditFirstName','auditGymName','auditEmail','auditWebsite'].forEach(id => {
-        const errMap = { auditFirstName:'errFirstName', auditGymName:'errGymName', auditEmail:'errEmail', auditWebsite:'errWebsite' };
-        document.getElementById(id).addEventListener('input', () => clearErr(id, errMap[id]));
-    });
-
-    // ── TELEGRAM CONFIG ───────────────────────────────────────────────────────
-    // SETUP (takes ~3 minutes):
-    //  1. Open Telegram → search @BotFather → send /newbot → follow prompts
-    //     Copy the token it gives you (looks like: 7812345678:AABbCcDdEeFf...)
-    //  2. Open a chat with your new bot and send any message (e.g. "hello")
-    //  3. Visit: https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates
-    //     Find "chat":{"id": XXXXXXXXX}, that number is your chat ID
-    //  4. Paste both values below and you're done.
-    const TELEGRAM_BOT_TOKEN = '8614798353:AAEH8RluMWKEAWvKKMHUD1cUE7-FBAPJO2I';
-    const TELEGRAM_CHAT_ID   = '6526007854';
-    // ─────────────────────────────────────────────────────────────────────────
-
-    async function handleAuditSubmit(e) {
-        e.preventDefault();
-
-        if (TELEGRAM_BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
-            alert('Telegram not connected yet, see setup instructions in the script.');
-            return;
-        }
-
-        const firstName = document.getElementById('auditFirstName').value.trim();
-        const gymName   = document.getElementById('auditGymName').value.trim();
-        const email     = document.getElementById('auditEmail').value.trim();
-        const website   = document.getElementById('auditWebsite').value.trim();
-        const challenge = document.getElementById('auditChallenge').value.trim();
-        const ads       = document.getElementById('hiddenAds').value;
-
-        let valid = true;
-        if (!firstName) { setErr('auditFirstName','errFirstName','Please enter your first name.'); valid = false; }
-        if (!gymName)   { setErr('auditGymName','errGymName','Please enter your gym name.'); valid = false; }
-        if (!email)     { setErr('auditEmail','errEmail','Please enter your email address.'); valid = false; }
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('auditEmail','errEmail','Please enter a valid email.'); valid = false; }
-        if (!website)   { setErr('auditWebsite','errWebsite','Please enter your gym website URL.'); valid = false; }
-        if (!valid) {
-            const firstErr = document.querySelector('.form-group input.error-state');
-            if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
-
-        const btn = document.getElementById('auditSubmitBtn');
-        btn.innerHTML = 'SENDING...';
-        btn.disabled = true;
-
-        const now = new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', dateStyle: 'medium', timeStyle: 'short' });
-
-        const message =
-`🏋️ <b>NEW GYM AUDIT REQUEST</b>
-━━━━━━━━━━━━━━━━━━━━
-👤 <b>Name:</b> ${firstName}
-🏟 <b>Gym:</b> ${gymName}
-📧 <b>Email:</b> ${email}
-🌐 <b>Website:</b> ${website}
-📣 <b>Running Ads:</b> ${ads}${challenge ? `\n💬 <b>Challenge:</b>\n<i>${challenge}</i>` : ''}
-━━━━━━━━━━━━━━━━━━━━
-🕐 ${now} CT`;
-
-        try {
-            const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: message,
-                    parse_mode: 'HTML',
-                    disable_web_page_preview: true
-                })
-            });
-            const data = await res.json();
-            if (data.ok) {
-                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> REQUEST SENT. WE\'LL BE IN TOUCH';
-                btn.style.background = 'rgba(74,222,128,0.12)';
-                btn.style.borderColor = 'rgba(74,222,128,0.3)';
-                btn.style.color = '#4ade80';
-                e.target.reset();
-                document.getElementById('adsYes').classList.remove('active');
-                document.getElementById('adsNo').classList.remove('active');
-                document.getElementById('hiddenAds').value = 'Not answered';
-            } else {
-                throw new Error(data.description || 'Telegram error');
+    // ATTRIBUTE CALENDAR CLICKS WITHOUT BLOCKING NAVIGATION
+    const bookFreeCallCta = document.getElementById('bookFreeCallCta');
+    if (bookFreeCallCta) {
+        bookFreeCallCta.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'book_free_call_click', {
+                    page_location: window.location.href,
+                    link_url: bookFreeCallCta.href,
+                    cta_location: 'free_audit_claim'
+                });
             }
-        } catch (err) {
-            btn.innerHTML = 'ERROR: PLEASE TRY AGAIN';
-            btn.style.color = '#f87171';
-            btn.disabled = false;
-        }
+        });
     }
 </script>
 

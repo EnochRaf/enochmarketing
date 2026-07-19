@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 CrossFit Gym Growth Playbook | Enoch Marketing</title>
+    <meta name="description" content="Access the 2026 CrossFit Gym Growth Playbook from Enoch Marketing.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="playbook-config.js"></script>
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --black: #000000;
+            --black-card: #111111;
+            --white: #FFFFFF;
+            --gray: #AAAAAA;
+            --line: rgba(221, 205, 156, 0.18);
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            color: var(--white);
+            background:
+                linear-gradient(rgba(221,205,156,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.035) 1px, transparent 1px),
+                radial-gradient(circle at 50% 25%, rgba(221,205,156,0.1), transparent 38%),
+                var(--black);
+            background-size: 48px 48px, 48px 48px, auto, auto;
+            font-family: var(--font-body);
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        header {
+            min-height: 110px;
+            padding: 0 5vw;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+        }
+
+        header img { width: 88px; height: auto; display: block; }
+
+        main {
+            width: min(760px, calc(100% - 40px));
+            margin: auto;
+            padding: 72px 0;
+            text-align: center;
+        }
+
+        .status-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .status-label::before {
+            content: '';
+            width: 38px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        h1 {
+            margin: 22px 0 18px;
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 8vw, 6.4rem);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: 0.012em;
+        }
+
+        h1 span { color: var(--gold); }
+
+        .message {
+            max-width: 610px;
+            margin: 0 auto;
+            color: var(--gray);
+            font-size: clamp(0.98rem, 2vw, 1.08rem);
+            line-height: 1.8;
+        }
+
+        .status-card {
+            margin: 36px auto 0;
+            padding: 26px 28px;
+            max-width: 590px;
+            background: linear-gradient(135deg, rgba(221,205,156,0.09), rgba(17,17,17,0.94) 45%);
+            border: 1px solid var(--line);
+            text-align: left;
+        }
+
+        .status-card strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .status-card p { color: #D3D3D3; font-size: 0.9rem; line-height: 1.7; }
+
+        .download-link {
+            display: none;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 16px 28px;
+            color: #080808;
+            background: var(--gold);
+            border: 1px solid var(--gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 180ms ease, transform 180ms ease;
+        }
+
+        .download-link:hover { background: var(--gold-light); transform: translateY(-2px); }
+        .download-link:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+
+        footer {
+            padding: 24px;
+            border-top: 1px solid var(--line);
+            color: #666666;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        footer a { color: var(--gray); }
+
+        @media (max-width: 600px) {
+            header { min-height: 88px; }
+            header img { width: 70px; }
+            main { padding: 52px 0; }
+            .status-card { padding: 22px 20px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .download-link { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" aria-label="Enoch Marketing home">
+            <img src="enoch-logo.png" alt="Enoch Marketing">
+        </a>
+    </header>
+
+    <main>
+        <p class="status-label" id="statusLabel">Playbook release status</p>
+        <h1 id="statusTitle">THE FINAL EDIT IS<br><span>IN PROGRESS.</span></h1>
+        <p class="message" id="statusMessage">The 2026 CrossFit Gym Growth Playbook is being finalized. If you already joined the list, your download link will be sent to the email address you provided as soon as it is ready.</p>
+
+        <div class="status-card" id="statusCard">
+            <strong>What happens next</strong>
+            <p>Watch for an email from Collin at Enoch Marketing. Add the sender to your contacts so the delivery message does not get buried in spam or promotions.</p>
+        </div>
+
+        <a class="download-link" id="driveFallback" href="#" rel="noopener">OPEN THE PLAYBOOK</a>
+    </main>
+
+    <footer>
+        &copy; 2026 Enoch Marketing. Veteran owned. <a href="https://www.enochmarketing.com">enochmarketing.com</a>
+    </footer>
+
+    <script>
+        (function () {
+            var config = window.ENOCH_PLAYBOOK || {};
+            var url = typeof config.googleDriveUrl === 'string' ? config.googleDriveUrl.trim() : '';
+            var ready = config.status === 'ready' && /^https:\/\//i.test(url);
+
+            if (!ready) return;
+
+            var fallback = document.getElementById('driveFallback');
+            document.getElementById('statusLabel').textContent = 'Your playbook is ready';
+            document.getElementById('statusTitle').innerHTML = 'OPENING YOUR<br><span>PLAYBOOK.</span>';
+            document.getElementById('statusMessage').textContent = 'Your Google Drive download should open automatically. If it does not, use the button below.';
+            document.getElementById('statusCard').style.display = 'none';
+            fallback.href = url;
+            fallback.style.display = 'inline-flex';
+            window.location.replace(url);
+        })();
+    </script>
+</body>
+</html>

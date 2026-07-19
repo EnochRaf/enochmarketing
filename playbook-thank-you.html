@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    // Only MailerLite's confirmed-success redirect may open this page.
+    // This prevents direct visits from generating false lead conversions.
+    (function () {
+        var params = new URLSearchParams(window.location.search);
+        window.playbookSignupConfirmed = params.get('signup') === 'confirmed';
+        if (!window.playbookSignupConfirmed) {
+            window.location.replace('free-playbook.html#get');
+        }
+    })();
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHK9XF2Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Playbook Copy Is Reserved | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Download your 2026 CrossFit Gym Growth Playbook.">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    if (window.playbookSignupConfirmed) {
+      fbq('init', '2151580048923147');
+      fbq('track', 'PageView');
+      fbq('track', 'Lead', {
+        content_name: '2026 CrossFit Gym Growth Playbook',
+        content_category: 'Lead Magnet'
+      });
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2151580048923147&ev=PageView&noscript=1" alt=""
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-85XT8T4WZ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      if (window.playbookSignupConfirmed) {
+        gtag('js', new Date());
+        gtag('config', 'G-85XT8T4WZ8');
+        gtag('event', 'generate_lead', {
+          lead_source: 'playbook_optin',
+          content_name: '2026 CrossFit Gym Growth Playbook'
+        });
+      }
+    </script>
+    <script src="playbook-config.js"></script>
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --white: #FFFFFF;
+            --white-muted: #E0E0E0;
+            --white-dim: #666666;
+            --gray: #AAAAAA;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            font-family: var(--font-body);
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--gold); color: var(--black); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .lp-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 0 3rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .lp-header-logo img { height: 150px; width: auto; }
+
+        .ty-hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 1.5rem 5rem;
+        }
+        .ty-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 35%, rgba(221,205,156,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .ty-grid-bg {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 75%);
+            pointer-events: none;
+        }
+        .ty-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            text-align: center;
+        }
+        .ty-check {
+            width: 72px; height: 72px;
+            margin: 0 auto 1.75rem;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.1);
+            border: 1px solid rgba(221,205,156,0.4);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fade-up 0.7s var(--ease-out-expo) both;
+        }
+        .ty-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 7vw, 4.8rem);
+            line-height: 0.98;
+            margin-bottom: 1.25rem;
+            animation: fade-up 0.7s 0.1s var(--ease-out-expo) both;
+        }
+        .ty-title .gold { color: var(--gold); }
+        .ty-sub {
+            font-size: 1rem;
+            color: var(--white-muted);
+            line-height: 1.8;
+            max-width: 560px;
+            margin: 0 auto 2.25rem;
+            animation: fade-up 0.7s 0.2s var(--ease-out-expo) both;
+        }
+        .ty-sub strong { color: var(--gold); font-weight: 600; }
+        .btn-gold-lg {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            padding: 1.2rem 3rem;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 9999px;
+            transition: all 0.4s ease;
+            animation: fade-up 0.7s 0.3s var(--ease-out-expo) both;
+        }
+        .btn-gold-lg:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(221,205,156,0.35);
+        }
+        .ty-email-note {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--gray);
+            line-height: 1.7;
+            animation: fade-up 0.7s 0.4s var(--ease-out-expo) both;
+        }
+        .ty-email-note strong { color: var(--white-muted); }
+
+        /* NEXT STEP CARD */
+        .next-section {
+            padding: 5.5rem 1.5rem 6.5rem;
+            display: flex;
+            justify-content: center;
+            background: var(--black-soft);
+            border-top: 1px solid rgba(221,205,156,0.08);
+        }
+        .next-card {
+            max-width: 720px;
+            width: 100%;
+            background: var(--black-card);
+            border: 1px solid rgba(221,205,156,0.15);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+        }
+        .next-kicker {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            letter-spacing: 0.25em;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        .next-card h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4.5vw, 2.9rem);
+            line-height: 1.02;
+            margin-bottom: 1rem;
+        }
+        .next-card h2 .gold { color: var(--gold); }
+        .next-card > p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.8;
+            max-width: 540px;
+            margin: 0 auto 1.75rem;
+        }
+        .next-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 420px;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+        .next-list li {
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            font-size: 0.85rem;
+            color: var(--white-muted);
+            line-height: 1.6;
+        }
+        .next-check {
+            flex-shrink: 0;
+            width: 18px; height: 18px;
+            margin-top: 2px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.12);
+            border: 1px solid rgba(221,205,156,0.35);
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-outline-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            padding: 1rem 2.5rem;
+            background: rgba(221,205,156,0.06);
+            color: var(--gold);
+            border: 1px solid rgba(221,205,156,0.3);
+            border-radius: 9999px;
+            transition: all 0.4s ease;
+        }
+        .btn-outline-gold:hover {
+            background: rgba(221,205,156,0.12);
+            border-color: rgba(221,205,156,0.55);
+            box-shadow: 0 0 25px rgba(221,205,156,0.2);
+        }
+
+        .lp-footer {
+            border-top: 1px solid rgba(221,205,156,0.1);
+            padding: 3rem;
+            text-align: center;
+        }
+        .lp-footer img { height: 120px; width: auto; margin: 0 auto 1rem; }
+        .lp-footer p { font-size: 0.72rem; color: var(--white-dim); line-height: 1.8; }
+        .lp-footer a { color: var(--gray); transition: color 0.3s ease; }
+        .lp-footer a:hover { color: var(--gold); }
+
+        @media (max-width: 900px) {
+            .lp-header { padding: 0 1.5rem; }
+            .lp-header-logo img { height: 110px; }
+            .next-card { padding: 2.25rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHK9XF2Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<header class="lp-header">
+    <a href="/" class="lp-header-logo">
+        <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350">
+    </a>
+</header>
+
+<!-- THANK YOU HERO -->
+<section class="ty-hero">
+    <div class="ty-bg"></div>
+    <div class="ty-grid-bg"></div>
+    <div class="ty-inner">
+        <div class="ty-check">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h1 class="ty-title" id="thankYouTitle">YOU'RE IN.<br><span class="gold">YOUR COPY IS RESERVED.</span></h1>
+        <p class="ty-sub" id="thankYouCopy">The final <strong>2026 CrossFit Gym Growth Playbook</strong> is being prepared. We'll send the access link to your inbox as soon as it is ready.</p>
+        <a href="playbook-download.html" class="btn-gold-lg" id="downloadBtn">
+            <span id="downloadLabel">CHECK PLAYBOOK STATUS</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+        <p class="ty-email-note" id="emailNote">Watch for an email from Collin at Enoch Marketing. <strong>Add him to your contacts</strong> so the delivery message does not get buried in spam or promotions.</p>
+    </div>
+</section>
+
+<!-- NEXT STEP -->
+<section class="next-section">
+    <div class="next-card">
+        <p class="next-kicker">WANT IT DONE FOR YOU?</p>
+        <h2>GET A FREE VIDEO AUDIT<br><span class="gold">OF YOUR GYM'S MARKETING</span></h2>
+        <p>The playbook shows you the levers. If you want to know exactly which one is costing your box the most money right now, we'll record a personal video audit of your website, ads, and online presence.</p>
+        <ul class="next-list">
+            <li><span class="next-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Personal Loom walkthrough, not a PDF template</li>
+            <li><span class="next-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Delivered within 48 hours</li>
+            <li><span class="next-check"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>No sales call. No credit card. No strings.</li>
+        </ul>
+        <a href="free-audit.html" class="btn-outline-gold">
+            CLAIM MY FREE AUDIT
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<footer class="lp-footer">
+    <img src="enoch-logo.png" alt="Enoch Marketing" loading="lazy">
+    <p>&copy; 2026 Enoch Marketing. All rights reserved. · <a href="https://www.enochmarketing.com">enochmarketing.com</a></p>
+</footer>
+
+<script>
+    (function () {
+        var config = window.ENOCH_PLAYBOOK || {};
+        var url = typeof config.googleDriveUrl === 'string' ? config.googleDriveUrl.trim() : '';
+        var ready = config.status === 'ready' && /^https:\/\//i.test(url);
+
+        if (!ready) return;
+
+        document.title = 'Your Playbook Is Ready | Enoch Marketing';
+        document.getElementById('thankYouTitle').innerHTML = 'YOU\'RE IN.<br><span class="gold">GRAB YOUR PLAYBOOK.</span>';
+        document.getElementById('thankYouCopy').innerHTML = 'Your <strong>2026 CrossFit Gym Growth Playbook</strong> is ready. Open it now, then set aside 20 minutes this week to compare Lever 1 with your gym\'s actual retention numbers.';
+        document.getElementById('downloadLabel').textContent = 'DOWNLOAD THE PLAYBOOK';
+        document.getElementById('emailNote').innerHTML = 'We also sent the access link to your inbox. <strong>Can\'t find it?</strong> Check your spam or promotions tab and move it to your inbox.';
+    })();
+</script>
+
+</body>
+</html>

@@ -954,20 +954,25 @@
                 <li>Install each system with a clear 30-60-90 day plan</li>
             </ul>
 
-            <form class="hero-form" id="get" novalidate>
+            <div id="mlb2-43899959" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-43899959">
+            <form class="hero-form ml-block-form" id="get"
+                  action="https://assets.mailerlite.com/jsonp/2514776/forms/193430676982203978/subscribe"
+                  data-code="" method="post" target="_blank" novalidate>
                 <div class="hero-form-row">
-                    <input type="text" id="plName" name="name" placeholder="First name" autocomplete="given-name" required aria-label="First name">
-                    <input type="email" id="plEmail" name="email" placeholder="Your best email" autocomplete="email" required aria-label="Email">
+                    <input type="text" id="plName" name="fields[name]" placeholder="First name" autocomplete="given-name" required aria-label="First name">
+                    <input type="email" id="plEmail" name="fields[email]" placeholder="Your best email" autocomplete="email" required aria-label="Email">
                 </div>
                 <span class="field-error" id="errName">Please enter your first name.</span>
                 <span class="field-error" id="errEmail">Please enter a valid email address.</span>
+                <input type="hidden" name="ml-submit" value="1">
+                <input type="hidden" name="anticsrf" value="true">
                 <button type="submit" class="btn-submit-gold" id="plSubmit">
                     SEND ME THE FREE PLAYBOOK
                     <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
-                <p class="form-preview-status" id="previewStatus" role="status" aria-live="polite"><strong>Preview mode:</strong> Email delivery is being connected. No information was submitted.</p>
-                <p class="form-fine"><strong>100% free. Instant download.</strong> No spam, ever. Unsubscribe with one click.</p>
+                <p class="form-fine"><strong>100% free. Access delivered by email.</strong> No spam, ever. Unsubscribe with one click.</p>
             </form>
+            </div>
         </div>
 
         <!-- RIGHT: Book cover -->
@@ -1173,7 +1178,7 @@
                     GET THE FREE PLAYBOOK
                     <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <p class="final-fine">Instant download. No credit card. No sales call.</p>
+                <p class="final-fine">Sent to your inbox. No credit card. No sales call.</p>
             </div>
         </div>
     </div>
@@ -1232,17 +1237,6 @@
 </footer>
 
 <script>
-    // ===== MAILERLITE CONFIG =====
-    // Paste your IDs from MailerLite (see PLAYBOOK_FUNNEL_SETUP_GUIDE.md, Step 4).
-    // They live inside the embed code MailerLite gives you for your form:
-    // action="https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe"
-    const ML_ACCOUNT_ID = 'PASTE_YOUR_ACCOUNT_ID';
-    const ML_FORM_ID = 'PASTE_YOUR_FORM_ID';
-
-    // TEMPORARY INTERNAL REVIEW SAFEGUARD
-    // Change this to false only after MailerLite is connected and the full funnel is tested.
-    const PREVIEW_MODE = true;
-
     // Header scroll state
     const lpHeader = document.getElementById('lpHeader');
     window.addEventListener('scroll', () => {
@@ -1260,65 +1254,40 @@
     const nameInput = document.getElementById('plName');
     const emailInput = document.getElementById('plEmail');
     const submitBtn = document.getElementById('plSubmit');
-    const previewStatus = document.getElementById('previewStatus');
 
     function setError(input, errId, show) {
         input.classList.toggle('error-state', show);
         document.getElementById(errId).classList.toggle('visible', show);
     }
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
+    form.addEventListener('submit', (e) => {
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
         setError(nameInput, 'errName', !name);
         setError(emailInput, 'errEmail', !emailOk);
-        if (!name || !emailOk) return;
-
-        if (PREVIEW_MODE) {
-            nameInput.value = '';
-            emailInput.value = '';
-            submitBtn.disabled = true;
-            submitBtn.firstChild.textContent = 'PREVIEW MODE ';
-            previewStatus.classList.add('visible');
+        if (!name || !emailOk) {
+            e.preventDefault();
             return;
         }
 
         submitBtn.disabled = true;
         submitBtn.firstChild.textContent = 'SENDING... ';
-
-        // Track lead event before redirect
-        try {
-            if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: '2026 CrossFit Gym Growth Playbook' });
-            if (typeof gtag === 'function') gtag('event', 'generate_lead', { lead_source: 'playbook_optin' });
-        } catch (err) { /* tracking must never block the lead */ }
-
-        // Subscribe via MailerLite
-        try {
-            if (ML_ACCOUNT_ID.indexOf('PASTE') === -1) {
-                const body = new URLSearchParams();
-                body.append('fields[name]', name);
-                body.append('fields[email]', email);
-                body.append('ml-submit', '1');
-                body.append('anti_spam', '');
-                await fetch('https://assets.mailerlite.com/jsonp/' + ML_ACCOUNT_ID + '/forms/' + ML_FORM_ID + '/subscribe', {
-                    method: 'POST',
-                    body: body,
-                    mode: 'no-cors'
-                });
-            } else {
-                console.warn('MailerLite IDs not configured yet. Lead was NOT captured. See PLAYBOOK_FUNNEL_SETUP_GUIDE.md');
-            }
-        } catch (err) {
-            console.error('MailerLite submit failed:', err);
-        }
-
-        // Always deliver the goods
-        window.location.href = 'playbook-thank-you.html';
     });
+
+    // MailerLite calls this only after it confirms a successful subscription.
+    function ml_webform_success_43899959() {
+        try {
+            window.top.location.href = 'https://www.enochmarketing.com/playbook-thank-you.html?signup=confirmed';
+        } catch (e) {
+            window.location.href = 'https://www.enochmarketing.com/playbook-thank-you.html?signup=confirmed';
+        }
+    }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+<script>
+    fetch('https://assets.mailerlite.com/jsonp/2514776/forms/193430676982203978/takel');
 </script>
 
 </body>

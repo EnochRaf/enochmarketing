@@ -490,85 +490,116 @@
         }
         .section-sub strong { color: var(--gold); font-weight: 600; }
 
-        /* ===== MONEY MATH ===== */
-        .model-assumptions {
+        /* ===== OPERATOR FIT ===== */
+        .operator-fit { overflow: hidden; }
+        .operator-fit__head {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1px;
-            margin-top: 2.25rem;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.55fr);
+            gap: clamp(2.5rem, 7vw, 6rem);
+            align-items: end;
+        }
+        .operator-fit__head .section-title { max-width: 760px; margin-bottom: 0; }
+        .operator-fit__intro {
+            max-width: 460px;
+            padding-left: 1.5rem;
+            border-left: 1px solid rgba(221,205,156,0.35);
+            color: var(--white-muted);
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+        .operator-fit__grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+            margin-top: clamp(2.75rem, 5vw, 4rem);
             overflow: hidden;
-            background: rgba(221,205,156,0.16);
             border: 1px solid rgba(221,205,156,0.16);
-            border-radius: 1.1rem;
-        }
-        .model-assumption {
-            padding: 1.25rem 1.15rem;
-            background: #0B0B0B;
-        }
-        .model-assumption span {
-            display: block;
-            margin-bottom: 0.45rem;
-            color: var(--gray);
-            font-size: 0.66rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-        .model-assumption strong {
-            color: var(--gold-light);
-            font-size: 0.86rem;
-            line-height: 1.45;
-        }
-        .money-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            margin-top: 3rem;
-        }
-        .money-card {
-            background: var(--black-card);
-            border: 1px solid rgba(221,205,156,0.12);
             border-radius: 1.25rem;
-            padding: 2rem 1.5rem;
-            transition: border-color 0.35s ease, transform 0.35s ease;
+            background:
+                linear-gradient(135deg, rgba(221,205,156,0.045), transparent 48%),
+                var(--black-card);
         }
-        .money-card:hover {
-            border-color: rgba(221,205,156,0.35);
-            transform: translateY(-4px);
+        .operator-fit__panel { padding: clamp(2rem, 4vw, 3.2rem); }
+        .operator-fit__panel + .operator-fit__panel {
+            border-left: 1px solid rgba(221,205,156,0.14);
+            background: rgba(255,255,255,0.012);
         }
-        .money-card .num {
-            font-family: var(--font-display);
-            font-size: 2.4rem;
+        .operator-fit__label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
             color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 0.82rem;
+            letter-spacing: 0.2em;
+        }
+        .operator-fit__label::before {
+            content: '';
+            width: 2rem;
+            height: 1px;
+            background: currentColor;
+        }
+        .operator-fit__panel--skip .operator-fit__label { color: var(--gray); }
+        .operator-fit__panel h3 {
+            max-width: 18ch;
+            margin-bottom: 1.7rem;
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.2vw, 2.55rem);
+            font-weight: 400;
             line-height: 1;
-            margin-bottom: 0.6rem;
         }
-        .money-card h4 {
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--white);
-            margin-bottom: 0.5rem;
+        .operator-fit__list {
+            display: grid;
+            gap: 1.25rem;
+            padding: 0;
+            list-style: none;
         }
-        .money-card p { font-size: 0.76rem; color: var(--gray); line-height: 1.6; }
-        .money-note {
-            margin-top: 2rem;
+        .operator-fit__list li {
+            display: grid;
+            grid-template-columns: 28px minmax(0, 1fr);
+            gap: 0.85rem;
+            align-items: start;
+            color: var(--white-muted);
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+        .operator-fit__mark {
+            display: grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            margin-top: 0.05rem;
+            border: 1px solid rgba(221,205,156,0.32);
+            border-radius: 50%;
+            color: var(--gold-light);
+            font-family: var(--font-display);
+            font-size: 0.86rem;
+            line-height: 1;
+        }
+        .operator-fit__panel--skip .operator-fit__mark {
+            border-color: rgba(174,174,174,0.2);
+            color: var(--gray);
+        }
+        .operator-fit__outcome {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: clamp(1.5rem, 4vw, 3.5rem);
+            align-items: center;
+            padding: 1.35rem clamp(1.5rem, 4vw, 3rem);
+            border: 1px solid rgba(221,205,156,0.16);
+            border-top: 0;
+            border-radius: 0 0 1.25rem 1.25rem;
+            background: rgba(221,205,156,0.035);
+        }
+        .operator-fit__outcome strong {
+            color: var(--gold);
+            font-family: var(--font-display);
             font-size: 0.8rem;
-            color: var(--gray);
-            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            white-space: nowrap;
         }
-        .money-note strong { color: var(--gold); }
-        .model-disclaimer {
-            margin-top: 1.25rem;
-            padding: 1rem 1.15rem;
-            border-left: 2px solid rgba(221,205,156,0.55);
-            background: rgba(221,205,156,0.04);
-            color: var(--gray);
-            font-size: 0.72rem;
-            line-height: 1.7;
-        }
-        .model-disclaimer strong { color: var(--white-muted); }
+        .operator-fit__outcome p { color: var(--white-muted); font-size: 0.84rem; line-height: 1.65; }
 
         /* ===== LOOK INSIDE ===== */
         .inside-section {
@@ -896,8 +927,11 @@
             }
             .churn-equation__arrow svg { transform: rotate(90deg); }
             .section { padding: 4.5rem 1.5rem; }
-            .model-assumptions { grid-template-columns: 1fr 1fr; }
-            .money-grid { grid-template-columns: 1fr 1fr; }
+            .operator-fit__head { grid-template-columns: 1fr; gap: 1.5rem; }
+            .operator-fit__intro { max-width: 680px; }
+            .operator-fit__grid { grid-template-columns: 1fr; }
+            .operator-fit__panel + .operator-fit__panel { border-top: 1px solid rgba(221,205,156,0.14); border-left: 0; }
+            .operator-fit__outcome { grid-template-columns: 1fr; gap: 0.35rem; }
             .inside-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
             .levers-grid { grid-template-columns: 1fr; }
             .who-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -909,8 +943,9 @@
             .hero-benefits { gap: 0.5rem; margin-bottom: 1.3rem; }
             .hero-benefits li { font-size: 0.82rem; line-height: 1.45; }
             .hero-book img { max-width: 270px; }
-            .model-assumptions { grid-template-columns: 1fr; }
-            .money-grid { grid-template-columns: 1fr; }
+            .operator-fit__intro { padding-left: 1rem; }
+            .operator-fit__panel { padding: 2rem 1.4rem; }
+            .operator-fit__outcome { padding: 1.25rem 1.4rem; }
         }
     </style>
 </head>
@@ -996,74 +1031,46 @@
             <p>Then it slides back. Acquisition can grow your gym, but when churn stays unmanaged, more of your budget has to <span class="hurt">replace members who leave</span> before it can create net growth.</p>
             <p><strong>The opportunity is to make acquisition and retention work together.</strong> This playbook gives you practical systems for protecting member value, testing additional services, and building a more intentional referral process.</p>
         </div>
-        <div class="churn-equation reveal" aria-label="Illustrative churn replacement cost calculation">
-            <div class="churn-equation__header">
-                <p class="churn-equation__title">THE COST OF STAYING EVEN</p>
-                <p class="churn-equation__context">Based on a stable 100-member gym with 5% monthly churn</p>
-            </div>
-            <div class="churn-equation__flow">
-                <div class="churn-equation__step">
-                    <strong>5</strong>
-                    <span>members leave each month</span>
-                </div>
-                <span class="churn-equation__arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-                <div class="churn-equation__step">
-                    <strong>60</strong>
-                    <span>members must be replaced each year</span>
-                </div>
-                <span class="churn-equation__arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </span>
-                <div class="churn-equation__step churn-equation__step--cost">
-                    <strong>$9K-$21K</strong>
-                    <span>illustrative annual acquisition cost to refill the roster</span>
-                </div>
-            </div>
-            <p class="churn-equation__note"><strong>Illustrative calculation:</strong> 60 replacements x $150-$350 estimated acquisition cost per member. This is not a forecast. Replace these assumptions with your gym's actual figures.</p>
-        </div>
     </div>
 </section>
 
-<!-- MONEY MATH -->
-<section class="section">
+<!-- OPERATOR FIT -->
+<section class="section operator-fit">
     <div class="section-inner">
-        <p class="section-kicker reveal">THE PLANNING MODEL</p>
-        <h2 class="section-title reveal">MODEL THE UPSIDE<br><span class="gold">FOR A 100-MEMBER GYM</span></h2>
-        <p class="section-sub reveal">The figures below are <strong>illustrative planning scenarios, not revenue promises</strong>. The playbook shows the formulas so you can replace every assumption with your gym's actual pricing, retention, capacity, and conversion data.</p>
-
-        <div class="model-assumptions reveal" aria-label="Planning model assumptions">
-            <div class="model-assumption"><span>Base roster</span><strong>100 active members</strong></div>
-            <div class="model-assumption"><span>Membership rate</span><strong>$185 per month</strong></div>
-            <div class="model-assumption"><span>Retention examples</span><strong>2 and 8 additional months</strong></div>
-            <div class="model-assumption"><span>Variables to replace</span><strong>Demand, capacity, close rate, and costs</strong></div>
+        <div class="operator-fit__head">
+            <div>
+                <p class="section-kicker reveal">BUILT FOR OPERATORS</p>
+                <h2 class="section-title reveal">NOT ANOTHER HACK.<br><span class="gold">A BETTER WAY TO READ YOUR GYM.</span></h2>
+            </div>
+            <p class="operator-fit__intro reveal">This playbook is for owners who want to understand where growth is getting stuck before they spend more money creating demand.</p>
         </div>
 
-        <div class="money-grid">
-            <div class="money-card reveal">
-                <div class="num">$37,000</div>
-                <h4>2-month retention scenario</h4>
-                <p>Modeled cohort lifetime value: 100 members x $185 x 2 additional months. This is not necessarily cash collected within one year.</p>
-            </div>
-            <div class="money-card reveal">
-                <div class="num">$148,000</div>
-                <h4>8-month retention scenario</h4>
-                <p>Modeled cohort lifetime value: 100 members x $185 x 8 additional months. Your actual result depends on the retention improvement achieved.</p>
-            </div>
-            <div class="money-card reveal">
-                <div class="num">$10,016/mo</div>
-                <h4>Five-stream monthly scenario</h4>
-                <p>A composite gross-revenue model using the pricing and participation assumptions shown in the playbook. Treat it as a scenario to test, not an expected result.</p>
-            </div>
-            <div class="money-card reveal">
-                <div class="num">$171,950</div>
-                <h4>Community lifetime-value scenario</h4>
-                <p>Modeled annual referral activity translated into projected member lifetime value. It is not the same as cash collected in one year.</p>
-            </div>
+        <div class="operator-fit__grid reveal">
+            <article class="operator-fit__panel">
+                <p class="operator-fit__label">A GOOD FIT</p>
+                <h3>Use this if your gym feels busier than it grows.</h3>
+                <ul class="operator-fit__list">
+                    <li><span class="operator-fit__mark" aria-hidden="true">+</span><span>Your member count jumps after a challenge or promotion, then slowly slides back.</span></li>
+                    <li><span class="operator-fit__mark" aria-hidden="true">+</span><span>Member check-ins, specialty offers, and referral asks depend on whoever remembers.</span></li>
+                    <li><span class="operator-fit__mark" aria-hidden="true">+</span><span>You want practical systems you can test against your actual roster, coaching capacity, and local market.</span></li>
+                </ul>
+            </article>
+
+            <article class="operator-fit__panel operator-fit__panel--skip">
+                <p class="operator-fit__label">SKIP THIS IF</p>
+                <h3>You are looking for a shortcut instead of a system.</h3>
+                <ul class="operator-fit__list">
+                    <li><span class="operator-fit__mark" aria-hidden="true">&times;</span><span>You want a guaranteed revenue number or a one-size-fits-all forecast.</span></li>
+                    <li><span class="operator-fit__mark" aria-hidden="true">&times;</span><span>You believe buying more traffic is the only lever available to the gym.</span></li>
+                    <li><span class="operator-fit__mark" aria-hidden="true">&times;</span><span>You want a strategy that requires no measurement, team follow-through, or adjustment.</span></li>
+                </ul>
+            </article>
         </div>
-        <p class="money-note reveal"><strong>How to read the numbers:</strong> the retention figures represent modeled cohort lifetime value, the Revenue Stack is a monthly gross-revenue scenario, and the Community Flywheel translates projected referrals into lifetime value. These measures should not be added together.</p>
-        <div class="model-disclaimer reveal" role="note"><strong>Illustrative estimates only.</strong> These figures are not Enoch client averages, guarantees, or forecasts. Actual results depend on your pricing, capacity, retention, local demand, sales execution, operating costs, and implementation.</div>
+
+        <div class="operator-fit__outcome reveal">
+            <strong>THE POINT</strong>
+            <p>Find the first operating gap worth fixing before you spend more money creating demand.</p>
+        </div>
     </div>
 </section>
 

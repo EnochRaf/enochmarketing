@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Enoch Marketing | CrossFit Gym Growth Partner</title>
-    <meta name="description" content="Watch Enoch founder Collin Charles explain how our AI-augmented marketing team helps CrossFit gym owners build a clearer path to member growth.">
+    <meta name="description" content="Meet Enoch founder and CrossFit coach Collin Charles, then see how our team helps gym owners build a clearer, more accountable path to member growth.">
     <meta name="robots" content="noindex,follow">
     <link rel="canonical" href="https://www.enochmarketing.com/vsl-funnel-page.html">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -22,18 +22,20 @@
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/vsl-funnel-page.html">
     <meta property="og:title" content="Meet Enoch Marketing | CrossFit Gym Growth Partner">
-    <meta property="og:description" content="A 10-minute founder briefing for CrossFit gym owners who want a clearer, more accountable marketing system.">
-    <meta property="og:image" content="https://i.ytimg.com/vi/F0Rzw0D5sHc/maxresdefault.jpg">
+    <meta property="og:description" content="A founder briefing for CrossFit gym owners who want a clearer, more accountable marketing system.">
+    <meta property="og:image" content="https://i.ytimg.com/vi/qz9wyfh9cQU/maxresdefault.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Meet Enoch Marketing | CrossFit Gym Growth Partner">
     <meta name="twitter:description" content="Watch Collin Charles explain why Enoch was built for CrossFit gym owners.">
-    <meta name="twitter:image" content="https://i.ytimg.com/vi/F0Rzw0D5sHc/maxresdefault.jpg">
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/qz9wyfh9cQU/maxresdefault.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.youtube.com">
     <link rel="preconnect" href="https://i.ytimg.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=JetBrains+Mono:wght@500;600;700&amp;family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="campaign-pathways.css">
+    <script src="campaign-pathways.js" defer></script>
 
     <style>
         :root {
@@ -179,7 +181,7 @@
             border-radius: 10px;
             background:
                 linear-gradient(rgba(7,7,6,0.12), rgba(7,7,6,0.12)),
-                url('https://i.ytimg.com/vi/F0Rzw0D5sHc/maxresdefault.jpg') center / cover no-repeat,
+                url('https://i.ytimg.com/vi/qz9wyfh9cQU/maxresdefault.jpg') center / cover no-repeat,
                 #020202;
             box-shadow: 0 42px 120px rgba(0,0,0,0.62), 0 0 0 1px rgba(255,255,255,0.025) inset;
         }
@@ -682,6 +684,70 @@
         .final-action .primary-button { width: 100%; padding-inline: 1.25rem; text-align: center; }
         .final-action-note { margin-top: 14px; color: var(--dim); font-size: 0.72rem; line-height: 1.5; text-align: center; }
 
+        .founder-channel {
+            width: min(1080px, calc(100% - 40px));
+            margin-inline: auto;
+            padding: clamp(48px, 5.5vw, 76px) 0 clamp(56px, 7vw, 92px);
+        }
+        .founder-channel__inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr) minmax(220px, auto);
+            align-items: center;
+            gap: clamp(22px, 3vw, 38px);
+            overflow: hidden;
+            padding: clamp(28px, 3.5vw, 40px);
+            border: 1px solid var(--line-soft);
+            border-radius: 10px;
+            background:
+                linear-gradient(115deg, rgba(221, 205, 156, 0.055), transparent 46%),
+                rgba(13, 13, 11, 0.78);
+            box-shadow: 0 22px 68px rgba(0, 0, 0, 0.24);
+        }
+        .founder-channel__inner::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, var(--gold), transparent);
+            opacity: 0.72;
+        }
+        .founder-channel__icon {
+            display: grid;
+            place-items: center;
+            width: 56px;
+            aspect-ratio: 1;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            color: var(--gold-light);
+            background: rgba(221, 205, 156, 0.06);
+        }
+        .founder-channel__copy .mono { margin-bottom: 6px; color: var(--gold); }
+        .founder-channel__copy h2 { max-width: 18ch; font-size: clamp(1.9rem, 3.2vw, 3rem); line-height: 1; }
+        .founder-channel__copy p { max-width: 620px; margin-top: 8px; color: var(--stone); font-size: 0.9rem; }
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            width: 100%;
+            max-width: 260px;
+            padding: 0 1.35rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--gold-light);
+            font-family: var(--utility);
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.35;
+            text-align: center;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+        .secondary-button:hover { border-color: var(--gold); background: rgba(221, 205, 156, 0.08); transform: translateY(-1px); }
+
         footer { padding: 28px 0; border-top: 1px solid var(--line-soft); color: var(--dim); font-size: 0.72rem; }
         .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
         .footer-inner a:hover { color: var(--gold); }
@@ -701,6 +767,8 @@
             .faq-intro > p { max-width: 680px; }
             .faq-map { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
             .final-panel { grid-template-columns: 1fr; }
+            .founder-channel__inner { grid-template-columns: 56px minmax(0, 1fr); }
+            .founder-channel__inner .secondary-button { grid-column: 2; justify-self: start; }
             .reason-copy { padding-top: 0; }
             .founder-grid { width: min(760px, 100%); }
             .founder-image { width: min(560px, 100%); }
@@ -747,6 +815,12 @@
             .final-panel { gap: 30px; padding: 38px 24px 30px; }
             .final-copy h2 { font-size: clamp(2.75rem, 13vw, 3.75rem); line-height: 0.91; }
             .final-action .primary-button { font-size: 0.96rem; }
+            .founder-channel { width: min(100% - 28px, 1080px); padding: 42px 0 58px; }
+            .founder-channel__inner { grid-template-columns: 1fr; gap: 18px; padding: 28px 20px; text-align: center; }
+            .founder-channel__icon { margin-inline: auto; }
+            .founder-channel__copy h2 { margin-inline: auto; font-size: clamp(2rem, 10vw, 2.75rem); }
+            .founder-channel__copy p { font-size: 0.86rem; }
+            .founder-channel__inner .secondary-button { grid-column: 1; justify-self: stretch; width: 100%; max-width: none; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -768,15 +842,15 @@
 
     <main>
         <section class="hero container">
-            <p class="hero-kicker mono">A clearer path to member growth</p>
+            <p class="hero-kicker mono">Meet the founder // See the system</p>
             <h1>You didn&rsquo;t open a CrossFit gym to become a <span class="gold">full-time marketer.</span></h1>
-            <p class="hero-copy">Watch Enoch founder and CrossFit coach Collin Charles explain how Enoch brings paid ads, local search, content, web, and follow-up into one accountable system built around your gym's growth.</p>
+            <p class="hero-copy">Meet Enoch founder and CrossFit coach Collin Charles, hear why he built the company for gym owners, and see how Enoch connects paid ads, local search, content, web, and follow-up into one accountable growth system.</p>
         </section>
 
         <section class="briefing-stage container" aria-label="Founder video">
             <div class="stage-label mono">Enoch Marketing // Episode 01</div>
             <div class="video-shell" id="videoShell">
-                <div id="youtube-player" aria-label="Episode 1: Who We Are and Why We're Here"></div>
+                <div id="youtube-player" aria-label="Founder briefing: Meet Enoch Marketing and how we help CrossFit gyms"></div>
 
                 <button class="sound-gate" id="soundGate" type="button" aria-label="Turn on video sound">
                     <span class="sound-icon" aria-hidden="true">
@@ -1053,6 +1127,61 @@
                 </aside>
             </div>
         </section>
+
+        <section class="campaign-pathways" data-pathway-source="vsl" aria-labelledby="vsl-pathway-title">
+            <div class="campaign-pathways__inner">
+                <div class="campaign-pathways__header">
+                    <div>
+                        <p class="campaign-pathways__kicker">Keep exploring</p>
+                        <h2 class="campaign-pathways__title" id="vsl-pathway-title">NOT READY TO <span>BOOK A CALL?</span></h2>
+                    </div>
+                    <p class="campaign-pathways__intro"><strong>No pressure.</strong> Choose another way to understand what is holding your box back and what to fix next.</p>
+                </div>
+
+                <div class="campaign-pathways__grid">
+                    <a class="campaign-pathways__card" href="blog-meta-ads.html" data-campaign-pathway-link data-pathway-destination="meta_ads_article" data-pathway-format="read">
+                        <span class="campaign-pathways__meta">
+                            <span class="campaign-pathways__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/></svg>
+                            </span>
+                            Read · Practical guide
+                        </span>
+                        <h3>BUILD A META ADS SYSTEM THAT MEASURES MEMBERS, NOT CLICKS</h3>
+                        <p>See the offer, creative, follow-up, and 90-day attribution framework before you increase ad spend.</p>
+                        <span class="campaign-pathways__action">Read the Meta Ads Playbook <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    </a>
+
+                    <a class="campaign-pathways__card" href="free-playbook.html" data-campaign-pathway-link data-pathway-destination="growth_playbook" data-pathway-format="download">
+                        <span class="campaign-pathways__meta">
+                            <span class="campaign-pathways__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+                            </span>
+                            Download · Free playbook
+                        </span>
+                        <h3>FIND THE REVENUE ALREADY HIDING INSIDE YOUR GYM</h3>
+                        <p>Use the retention, service, and referral models to pressure-test opportunities with your own numbers.</p>
+                        <span class="campaign-pathways__action">Get the Free Growth Playbook <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="founder-channel container" aria-labelledby="founder-channel-title">
+            <div class="founder-channel__inner reveal">
+                <div class="founder-channel__icon" aria-hidden="true">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+                </div>
+                <div class="founder-channel__copy">
+                    <p class="mono">More from Collin</p>
+                    <h2 id="founder-channel-title">Want to hear more from Collin?</h2>
+                    <p>Watch more founder briefings and practical gym-marketing videos on the Enoch Marketing YouTube channel.</p>
+                </div>
+                <a class="secondary-button youtube-channel-link" data-placement="bottom_channel" href="https://www.youtube.com/@EnochMarketingYT" target="_blank" rel="noopener">
+                    Watch Collin on YouTube
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -1064,13 +1193,13 @@
 
     <noscript>
         <div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:30;padding:14px;background:#11110E;border:1px solid rgba(221,205,156,.3);color:#F3F0E8;text-align:center;font-family:Montserrat,sans-serif;font-size:14px;">
-            JavaScript is required for the embedded video controls. <a href="https://www.youtube.com/watch?v=F0Rzw0D5sHc" style="color:#DDCD9C;text-decoration:underline;">Watch the founder video on YouTube.</a>
+            JavaScript is required for the embedded video controls. <a href="https://www.youtube.com/watch?v=qz9wyfh9cQU" style="color:#DDCD9C;text-decoration:underline;">Watch the founder video on YouTube.</a>
         </div>
     </noscript>
 
     <script>
-        const VIDEO_ID = 'F0Rzw0D5sHc';
-        const VIDEO_FALLBACK_DURATION = 621;
+        const VIDEO_ID = 'qz9wyfh9cQU';
+        const VIDEO_FALLBACK_DURATION = 485;
         const videoShell = document.getElementById('videoShell');
         const soundGate = document.getElementById('soundGate');
         const soundTitle = document.getElementById('soundTitle');
@@ -1113,19 +1242,38 @@
             playPauseIcon.innerHTML = isPlaying ? PAUSE_ICON : PLAY_ICON;
         }
 
+        function shapeVisualProgress(actualProgress) {
+            const progress = Math.max(0, Math.min(1, actualProgress));
+
+            if (progress <= 0.18) {
+                return (progress / 0.18) * 0.36;
+            }
+
+            if (progress <= 0.62) {
+                const middleProgress = (progress - 0.18) / 0.44;
+                const easedMiddle = 1 - Math.pow(1 - middleProgress, 1.35);
+                return 0.36 + easedMiddle * 0.34;
+            }
+
+            return 0.70 + ((progress - 0.62) / 0.38) * 0.30;
+        }
+
         function updateProgress() {
             if (!player || typeof player.getCurrentTime !== 'function') return;
             const current = player.getCurrentTime() || 0;
             const duration = player.getDuration() || VIDEO_FALLBACK_DURATION;
-            const percent = duration > 0 ? Math.min(100, (current / duration) * 100) : 0;
-            progressFill.style.inset = '0 ' + (100 - percent) + '% 0 0';
-            progressFill.style.setProperty('--signal-speed', (0.72 + (percent / 100) * 1.78).toFixed(2) + 's');
-            progressTrack.setAttribute('aria-valuenow', String(Math.round(percent)));
+            const actualProgress = duration > 0 ? Math.min(1, current / duration) : 0;
+            const actualPercent = actualProgress * 100;
+            const visualPercent = shapeVisualProgress(actualProgress) * 100;
+            progressFill.style.inset = '0 ' + (100 - visualPercent) + '% 0 0';
+            progressFill.style.setProperty('--signal-speed', (0.72 + actualProgress * 1.78).toFixed(2) + 's');
+            progressTrack.setAttribute('aria-valuenow', String(Math.round(actualPercent)));
+            progressTrack.setAttribute('aria-valuetext', Math.round(actualPercent) + '% watched');
 
             [25, 50, 75].forEach((milestone) => {
-                if (percent >= milestone && !watchedMilestones.has(milestone)) {
+                if (actualPercent >= milestone && !watchedMilestones.has(milestone)) {
                     watchedMilestones.add(milestone);
-                    pushEvent('vsl_progress', { milestone: milestone });
+                    pushEvent('vsl_progress', { video_id: VIDEO_ID, milestone: milestone });
                 }
             });
         }
@@ -1262,6 +1410,12 @@
         document.querySelectorAll('.booking-link').forEach((link) => {
             link.addEventListener('click', function() {
                 pushEvent('vsl_strategy_call_click', { placement: link.dataset.placement || 'unknown' });
+            });
+        });
+
+        document.querySelectorAll('.youtube-channel-link').forEach((link) => {
+            link.addEventListener('click', function() {
+                pushEvent('vsl_youtube_channel_click', { placement: link.dataset.placement || 'unknown' });
             });
         });
 

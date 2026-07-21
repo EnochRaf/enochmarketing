@@ -7,6 +7,6 @@
  * 3. Publish this file. No other page or MailerLite email needs editing.
  */
 window.ENOCH_PLAYBOOK = Object.freeze({
-    status: 'ready',
-    googleDriveUrl: 'https://www.enochmarketing.com/playbook-draft-test.pdf'
+    status: 'prelaunch',
+    googleDriveUrl: ''
 });

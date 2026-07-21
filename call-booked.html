@@ -111,6 +111,12 @@
                 lead_type: 'strategy_call',
                 booking_id: window.enochBookingConfirmation.bookingId
             });
+            gtag('event', 'conversion', {
+                send_to: 'AW-17757220945/2tOJCIGfstQcENHgppNC',
+                value: 1.0,
+                currency: 'USD',
+                transaction_id: window.enochBookingConfirmation.bookingId
+            });
         }
     }
     </script>
@@ -411,15 +417,6 @@
     (function () {
         var confirmation = window.enochBookingConfirmation;
         if (!confirmation) return;
-
-        if (confirmation.shouldTrack) {
-            window.dataLayer.push({
-                event: 'call_booking_confirmed',
-                booking_id: confirmation.bookingId,
-                event_id: confirmation.eventId,
-                lead_type: 'strategy_call'
-            });
-        }
 
         if (!confirmation.startTime) return;
 

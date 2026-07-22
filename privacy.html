@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Enoch Marketing</title>
+    <meta name="description" content="Learn how Enoch Marketing collects, uses, and protects information submitted through our website and email forms.">
+    <link rel="canonical" href="https://www.enochmarketing.com/privacy.html">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --black: #000000;
+            --black-soft: #0A0A0A;
+            --black-card: #111111;
+            --white: #FFFFFF;
+            --white-muted: #D8D8D8;
+            --white-dim: #8A8A8A;
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            background:
+                radial-gradient(circle at 85% 10%, rgba(221,205,156,0.08), transparent 30rem),
+                var(--black);
+            color: var(--white);
+            font-family: var(--font-body);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        a { color: var(--gold); text-underline-offset: 0.22em; }
+        a:hover { color: var(--gold-light); }
+        .site-header {
+            min-height: 76px;
+            padding: 0 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(221,205,156,0.12);
+            background: rgba(0,0,0,0.92);
+        }
+        .site-header img { display: block; width: 92px; height: auto; }
+        .back-link {
+            font-size: 0.73rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .policy-shell { width: 1100px; max-width: calc(100% - 3rem); margin: 0 auto; }
+        .policy-hero { padding: 6rem 0 3.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .eyebrow {
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        h1, h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.035em; }
+        h1 { font-size: clamp(3.4rem, 8vw, 6.8rem); line-height: 0.94; }
+        .hero-intro { max-width: 760px; margin-top: 1.5rem; color: var(--white-muted); font-size: 1rem; }
+        .effective { margin-top: 1.4rem; color: var(--white-dim); font-size: 0.76rem; }
+        .at-a-glance {
+            margin: 2.5rem 0 0;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid rgba(221,205,156,0.22);
+            border-radius: 1rem;
+            background: rgba(221,205,156,0.055);
+            color: var(--white-muted);
+        }
+        .at-a-glance strong { color: var(--gold-light); }
+        .policy-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 4.5rem; min-width: 0; padding: 4rem 0 6rem; }
+        .policy-nav { position: sticky; top: 2rem; align-self: start; }
+        .policy-nav p {
+            color: var(--white-dim);
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .policy-nav a {
+            display: block;
+            padding: 0.48rem 0;
+            color: var(--white-dim);
+            font-size: 0.76rem;
+            text-decoration: none;
+        }
+        .policy-nav a:hover { color: var(--gold); }
+        .policy-content { min-width: 0; }
+        .policy-content section { padding: 0 0 2.6rem; margin-bottom: 2.6rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .policy-content section:last-child { border-bottom: 0; margin-bottom: 0; }
+        h2 { color: var(--gold-light); font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1; margin-bottom: 1rem; }
+        h3 { color: var(--white); font-size: 0.95rem; margin: 1.4rem 0 0.5rem; }
+        .policy-content p, .policy-content li { color: var(--white-muted); font-size: 0.9rem; }
+        .policy-content p + p { margin-top: 0.9rem; }
+        .policy-content ul { padding-left: 1.2rem; margin-top: 0.8rem; }
+        .policy-content li + li { margin-top: 0.6rem; }
+        .contact-card {
+            padding: 1.5rem;
+            border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 1rem;
+            background: var(--black-card);
+        }
+        .site-footer {
+            padding: 2.2rem 1.5rem;
+            border-top: 1px solid rgba(221,205,156,0.12);
+            color: var(--white-dim);
+            font-size: 0.72rem;
+            text-align: center;
+        }
+        .site-footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin-bottom: 0.7rem; }
+        .site-footer a { color: var(--white-dim); text-decoration: none; }
+        .site-footer a:hover { color: var(--gold); }
+
+        @media (max-width: 780px) {
+            .site-header { gap: 1rem; padding: 0 1rem; }
+            .site-header img { width: 76px; }
+            .back-link { max-width: 150px; font-size: 0.62rem; line-height: 1.35; text-align: right; }
+            .policy-shell { width: auto; max-width: none; margin: 0 1rem; }
+            .policy-hero { padding-top: 4.5rem; }
+            h1 { font-size: clamp(3rem, 14vw, 3.6rem); overflow-wrap: anywhere; }
+            .policy-layout { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.75rem; }
+            .policy-nav { position: static; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .policy-nav a { display: block; margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="/" aria-label="Enoch Marketing home"><img src="enoch-logo.png" alt="Enoch Marketing"></a>
+        <a class="back-link" href="/">Back to Enoch Marketing</a>
+    </header>
+
+    <main class="policy-shell">
+        <header class="policy-hero">
+            <p class="eyebrow">Your information. Clearly explained.</p>
+            <h1>Privacy Policy</h1>
+            <p class="hero-intro">This policy explains what information Enoch Marketing collects through our website, why we use it, the service providers involved, and the choices available to you.</p>
+            <p class="effective">Effective and last updated: July 21, 2026</p>
+            <p class="at-a-glance"><strong>At a glance:</strong> We collect the information you choose to provide and limited website activity data. We use it to deliver requested resources, respond to inquiries, improve our marketing, and send relevant emails when you have requested or agreed to them. We do not sell personal information for money.</p>
+        </header>
+
+        <div class="policy-layout">
+            <nav class="policy-nav" aria-label="Privacy policy sections">
+                <p>On this page</p>
+                <a href="#information">Information we collect</a>
+                <a href="#use">How we use information</a>
+                <a href="#email">Email communications</a>
+                <a href="#cookies">Cookies and tracking</a>
+                <a href="#disclosure">How we disclose information</a>
+                <a href="#choices">Your choices</a>
+                <a href="#retention">Data retention</a>
+                <a href="#contact">Contact us</a>
+            </nav>
+
+            <article class="policy-content">
+                <section id="information">
+                    <h2>Information We Collect</h2>
+                    <h3>Information you provide</h3>
+                    <p>We may collect your first and last name, email address, phone number, gym or business name, website, appointment details, form responses, and any information you include in a message to us. When you request the CrossFit Gym Growth Playbook, we collect your first name and email address so we can deliver the book and send the related emails described beside the form.</p>
+                    <h3>Information collected automatically</h3>
+                    <p>When you visit our website, we and our service providers may collect your IP address, browser and device type, general location derived from your IP address, pages viewed, links clicked, referring page, campaign parameters, and dates and times of activity. This information may be collected through cookies, pixels, tags, and similar technologies.</p>
+                </section>
+
+                <section id="use">
+                    <h2>How We Use Information</h2>
+                    <ul>
+                        <li>Deliver resources, including the CrossFit Gym Growth Playbook.</li>
+                        <li>Send requested and related marketing emails, subject to your choices.</li>
+                        <li>Respond to questions, booking requests, and service inquiries.</li>
+                        <li>Operate, secure, troubleshoot, and improve our website and services.</li>
+                        <li>Measure website performance, campaign results, and audience engagement.</li>
+                        <li>Prevent fraud, enforce our terms, and comply with legal obligations.</li>
+                    </ul>
+                </section>
+
+                <section id="email">
+                    <h2>Email Communications</h2>
+                    <p>When you submit the playbook form, you ask us to email you access to the book and agree that we may send related marketing emails about gym growth, Enoch Marketing resources, and our services. Every marketing email identifies Enoch Marketing as the sender and includes a way to unsubscribe.</p>
+                    <p>You can unsubscribe at any time by using the link in any marketing email. We may retain a limited suppression record so we can honor your request and avoid sending marketing emails to that address again.</p>
+                </section>
+
+                <section id="cookies">
+                    <h2>Cookies, Analytics, and Advertising</h2>
+                    <p>Our website uses services such as Google Analytics, Google Tag Manager, and the Meta Pixel to understand traffic, measure conversions, and improve advertising. Embedded services such as YouTube and scheduling tools such as Cal.com may also receive information when you interact with their content.</p>
+                    <p>These providers may use cookies and similar technologies under their own privacy policies. You can limit cookies through your browser settings and use the privacy controls offered by Google, Meta, and other providers. Browser-based Do Not Track signals are not governed by one uniform standard, so our website does not currently respond to every Do Not Track signal.</p>
+                </section>
+
+                <section id="disclosure">
+                    <h2>How We Disclose Information</h2>
+                    <p>We may disclose information to service providers that help us operate our business, including website hosting, email delivery, analytics, advertising, scheduling, form processing, security, and professional services. These providers include MailerLite, Google, Meta, YouTube, Cal.com, and our website hosting providers.</p>
+                    <p>We may also disclose information when required by law, to protect rights or safety, or as part of a merger, financing, acquisition, or sale of business assets. We do not sell personal information for money. Some analytics or advertising disclosures may be considered targeted advertising or "sharing" under certain state privacy laws.</p>
+                </section>
+
+                <section id="choices">
+                    <h2>Your Privacy Choices</h2>
+                    <p>You may ask to access, correct, or delete personal information you provided to us, or ask questions about our privacy practices, by emailing <a href="mailto:rafael@enochmarketing.com">rafael@enochmarketing.com</a>. We may need to verify your request and may retain information where permitted or required by law.</p>
+                    <p>You can opt out of marketing emails through the unsubscribe link in each message. You can also manage cookies through your browser and use provider-specific privacy controls. We will not discriminate against you for making a privacy request.</p>
+                </section>
+
+                <section id="retention">
+                    <h2>Data Retention and Security</h2>
+                    <p>We keep personal information only for as long as reasonably necessary for the purposes described in this policy, to maintain business and compliance records, and to resolve disputes. Retention periods vary based on the type of information and why it was collected.</p>
+                    <p>We use reasonable administrative, technical, and organizational safeguards. No website, transmission, or storage system can be guaranteed to be completely secure.</p>
+                </section>
+
+                <section id="children">
+                    <h2>Children and Third-Party Links</h2>
+                    <p>Our website and services are intended for business owners and adults. They are not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
+                    <p>Our website may link to third-party websites. Their privacy practices are governed by their own policies, not this policy.</p>
+                </section>
+
+                <section id="changes">
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update this policy when our practices or legal obligations change. The date at the top of the page shows when the policy was last updated. Material changes will be posted on this page.</p>
+                </section>
+
+                <section id="contact">
+                    <h2>Contact Us</h2>
+                    <div class="contact-card">
+                        <p><strong>Enoch Marketing</strong><br>10601 Clarence Dr, Suite 250<br>Frisco, TX 75033<br>United States</p>
+                        <p>Email: <a href="mailto:rafael@enochmarketing.com">rafael@enochmarketing.com</a><br>Phone: <a href="tel:+18337832361">+1 (833) 783-2361</a></p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html" aria-current="page">Privacy</a>
+        </nav>
+        <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+    </footer>
+</body>
+</html>

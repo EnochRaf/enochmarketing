@@ -9,16 +9,26 @@
         window.playbookSignupConfirmed = params.get('signup') === 'confirmed';
         if (!window.playbookSignupConfirmed) {
             window.location.replace('free-playbook.html#get');
+            return;
+        }
+        // Fire the Lead / generate_lead conversion at most once per browser session
+        // so a page refresh cannot double-count the same lead.
+        window.playbookConversionShouldFire = false;
+        try {
+            if (!sessionStorage.getItem('enochPlaybookLeadFired')) {
+                window.playbookConversionShouldFire = true;
+                sessionStorage.setItem('enochPlaybookLeadFired', '1');
+            }
+        } catch (e) {
+            window.playbookConversionShouldFire = true;
         }
     })();
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MHK9XF2Z');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager removed 2026-07-22: container GTM-MHK9XF2Z is paused
+         (Google malware review). Meta Pixel + GA4 fire directly below as the sole
+         event owner, preventing duplicate events and a dataLayer conflict. Re-add
+         only after the container is healthy and confirmed not to also fire the
+         Lead / generate_lead events. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Playbook Copy Is Reserved | Enoch Marketing</title>
@@ -44,10 +54,12 @@
     if (window.playbookSignupConfirmed) {
       fbq('init', '2151580048923147');
       fbq('track', 'PageView');
-      fbq('track', 'Lead', {
-        content_name: '2026 CrossFit Gym Growth Playbook',
-        content_category: 'Lead Magnet'
-      });
+      if (window.playbookConversionShouldFire) {
+        fbq('track', 'Lead', {
+          content_name: '2026 CrossFit Gym Growth Playbook',
+          content_category: 'Lead Magnet'
+        });
+      }
     }
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -62,10 +74,12 @@
       if (window.playbookSignupConfirmed) {
         gtag('js', new Date());
         gtag('config', 'G-85XT8T4WZ8');
-        gtag('event', 'generate_lead', {
-          lead_source: 'playbook_optin',
-          content_name: '2026 CrossFit Gym Growth Playbook'
-        });
+        if (window.playbookConversionShouldFire) {
+          gtag('event', 'generate_lead', {
+            lead_source: 'playbook_optin',
+            content_name: '2026 CrossFit Gym Growth Playbook'
+          });
+        }
       }
     </script>
     <script src="playbook-config.js"></script>
@@ -307,10 +321,7 @@
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHK9XF2Z"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) removed 2026-07-22 alongside the GTM head tag. -->
 
 <header class="lp-header">
     <a href="/" class="lp-header-logo">

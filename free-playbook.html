@@ -1284,6 +1284,22 @@
 
     // MailerLite calls this only after it confirms a successful subscription.
     function ml_webform_success_43899959() {
+        // Create a short-lived, first-party confirmation marker before leaving
+        // the form page. The thank-you page consumes this marker before it fires
+        // Meta Lead or GA4 generate_lead, which prevents direct URL visits from
+        // creating false conversions.
+        var leadEventId = 'playbook_' + (
+            window.crypto && typeof window.crypto.randomUUID === 'function'
+                ? window.crypto.randomUUID()
+                : Date.now().toString(36) + '_' + Math.random().toString(36).slice(2)
+        );
+        var confirmation = JSON.stringify({
+            eventId: leadEventId,
+            createdAt: Date.now()
+        });
+        try { window.localStorage.setItem('enochPlaybookSignupPending', confirmation); } catch (e) {}
+        try { window.sessionStorage.setItem('enochPlaybookSignupPending', confirmation); } catch (e) {}
+
         try {
             window.top.location.href = 'https://www.enochmarketing.com/playbook-thank-you.html?signup=confirmed';
         } catch (e) {

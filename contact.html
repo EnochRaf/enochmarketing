@@ -1997,6 +1997,43 @@
         // Step 1 values, stored for Cal.com prefill in Step 2.
         const bookingData = {};
 
+        function createTrackingEventId(prefix) {
+            return prefix + '_' + (
+                window.crypto && typeof window.crypto.randomUUID === 'function'
+                    ? window.crypto.randomUUID()
+                    : Date.now().toString(36) + '_' + Math.random().toString(36).slice(2)
+            );
+        }
+
+        function trackSuccessfulInquiryLead() {
+            var storageKey = 'enochInquiryLeadEventId';
+            var eventId = '';
+            try { eventId = window.sessionStorage.getItem(storageKey) || ''; } catch (e) {}
+            if (eventId) return eventId;
+
+            eventId = createTrackingEventId('inquiry');
+            try { window.sessionStorage.setItem(storageKey, eventId); } catch (e) {}
+
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Lead', {
+                    content_name: 'Free Gym Growth Strategy Call Inquiry',
+                    content_category: 'Strategy Call Lead Form',
+                    lead_type: 'strategy_call_inquiry'
+                }, {
+                    eventID: eventId
+                });
+            }
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'lead_form_submit',
+                event_id: eventId,
+                lead_source: 'strategy_call_inquiry',
+                lead_type: 'strategy_call'
+            });
+            return eventId;
+        }
+
         // ---- Validation helpers ----
         function setFieldError(inputId, errorId, message) {
             var field = document.getElementById(inputId);
@@ -2101,6 +2138,12 @@
                         message: document.getElementById('message').value.trim()
                     });
 
+                    // Formspree has accepted the inquiry, so this is the first
+                    // verified point at which Meta should receive a Lead event.
+                    // The session event ID prevents a back-button resubmit from
+                    // counting the same inquiry twice.
+                    trackSuccessfulInquiryLead();
+
                     // Telegram notification to Tala via Cloudflare Worker (fires as before;
                     // date/time stay "Not selected" since Cal.com now handles scheduling)
                     fetch('https://bold-cell-f211.tala-ocevents.workers.dev', {
@@ -2175,12 +2218,30 @@
             layout: "month_view"
         });
 
-        // Advance to Step 3 once the prospect completes a booking.
-        // To redirect to a dedicated page instead, swap the callback for:
-        //   function () { window.location.href = 'thank-you.html'; }
+        // Redirect confirmed fresh bookings to the protected conversion page.
+        // bookingSuccessfulV2 supplies Cal.com's unique booking UID and replaces
+        // the deprecated bookingSuccessful event.
         Cal.ns["strategy-call"]("on", {
-            action: "bookingSuccessful",
-            callback: function () { goToStep(3); }
+            action: "bookingSuccessfulV2",
+            callback: function (event) {
+                var detail = event && event.detail ? event.detail : {};
+                var data = detail.data || {};
+                var uid = typeof data.uid === 'string' ? data.uid : '';
+
+                if (!/^[A-Za-z0-9_-]{6,128}$/.test(uid)) {
+                    // A dry run or incomplete booking must never create a
+                    // completed-booking conversion.
+                    goToStep(3);
+                    return;
+                }
+
+                var query = new URLSearchParams();
+                query.set('uid', uid);
+                if (typeof data.startTime === 'string' && data.startTime) {
+                    query.set('startTime', data.startTime);
+                }
+                window.location.assign('/call-booked.html?' + query.toString());
+            }
         });
 
         // Lazily mount the calendar into the Step 2 container — only once, after goToStep(2),

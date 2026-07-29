@@ -6,21 +6,79 @@
     // This prevents direct visits from generating false lead conversions.
     (function () {
         var params = new URLSearchParams(window.location.search);
-        window.playbookSignupConfirmed = params.get('signup') === 'confirmed';
+        var queryConfirmed = params.get('signup') === 'confirmed';
+        var pendingKey = 'enochPlaybookSignupPending';
+        var seenKey = 'enochPlaybookConfirmationSeen';
+        var maxConfirmationAge = 30 * 60 * 1000;
+        var pending = null;
+        var seen = null;
+
+        function readRecord(storageName, key) {
+            try {
+                var storage = window[storageName];
+                var value = storage.getItem(key);
+                return value ? JSON.parse(value) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        pending = readRecord('localStorage', pendingKey) ||
+            readRecord('sessionStorage', pendingKey);
+        seen = readRecord('sessionStorage', seenKey);
+
+        var pendingIsValid = pending &&
+            typeof pending.eventId === 'string' &&
+            pending.eventId.length >= 12 &&
+            Number.isFinite(Number(pending.createdAt)) &&
+            Date.now() - Number(pending.createdAt) >= 0 &&
+            Date.now() - Number(pending.createdAt) <= maxConfirmationAge;
+        var seenIsValid = seen &&
+            typeof seen.eventId === 'string' &&
+            seen.eventId.length >= 12;
+        var cameFromPlaybook = false;
+        try {
+            var referrer = new URL(document.referrer);
+            cameFromPlaybook = referrer.origin === window.location.origin &&
+                /\/free-playbook\.html$/.test(referrer.pathname);
+        } catch (e) {}
+
+        window.playbookSignupConfirmed = queryConfirmed &&
+            (pendingIsValid || seenIsValid || cameFromPlaybook);
         if (!window.playbookSignupConfirmed) {
             window.location.replace('free-playbook.html#get');
             return;
         }
-        // Fire the Lead / generate_lead conversion at most once per browser session
-        // so a page refresh cannot double-count the same lead.
-        window.playbookConversionShouldFire = false;
-        try {
-            if (!sessionStorage.getItem('enochPlaybookLeadFired')) {
-                window.playbookConversionShouldFire = true;
-                sessionStorage.setItem('enochPlaybookLeadFired', '1');
-            }
-        } catch (e) {
+
+        if (pendingIsValid) {
+            window.playbookLeadEventId = pending.eventId;
             window.playbookConversionShouldFire = true;
+            try {
+                window.sessionStorage.setItem(seenKey, JSON.stringify({
+                    eventId: pending.eventId,
+                    createdAt: Date.now()
+                }));
+                window.sessionStorage.removeItem(pendingKey);
+                window.localStorage.removeItem(pendingKey);
+            } catch (e) {}
+        } else if (seenIsValid) {
+            window.playbookLeadEventId = seen.eventId;
+            window.playbookConversionShouldFire = false;
+        } else {
+            // Compatibility fallback for a visitor who submitted the form from
+            // a page loaded immediately before this release was deployed.
+            window.playbookLeadEventId = 'playbook_' + (
+                window.crypto && typeof window.crypto.randomUUID === 'function'
+                    ? window.crypto.randomUUID()
+                    : Date.now().toString(36) + '_' + Math.random().toString(36).slice(2)
+            );
+            window.playbookConversionShouldFire = true;
+            try {
+                window.sessionStorage.setItem(seenKey, JSON.stringify({
+                    eventId: window.playbookLeadEventId,
+                    createdAt: Date.now()
+                }));
+            } catch (e) {}
         }
     })();
     </script>
@@ -57,7 +115,10 @@
       if (window.playbookConversionShouldFire) {
         fbq('track', 'Lead', {
           content_name: '2026 CrossFit Gym Growth Playbook',
-          content_category: 'Lead Magnet'
+          content_category: 'Lead Magnet',
+          lead_type: 'playbook_optin'
+        }, {
+          eventID: window.playbookLeadEventId
         });
       }
     }
@@ -76,6 +137,7 @@
         gtag('config', 'G-LS4R3RQVST');
         if (window.playbookConversionShouldFire) {
           gtag('event', 'generate_lead', {
+            event_id: window.playbookLeadEventId,
             lead_source: 'playbook_optin',
             content_name: '2026 CrossFit Gym Growth Playbook'
           });

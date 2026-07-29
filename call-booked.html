@@ -92,18 +92,11 @@
     </script>
     <!-- End Meta Pixel -->
 
-    <!-- Google Analytics and Google Ads base tag -->
+    <!-- Google Analytics and Google Ads are delivered by GTM-MHK9XF2Z. -->
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     if (window.enochBookingConfirmation && window.enochBookingConfirmation.isProductionHost) {
-        var googleTagScript = document.createElement('script');
-        googleTagScript.async = true;
-        googleTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-85XT8T4WZ8';
-        document.head.appendChild(googleTagScript);
-        gtag('js', new Date());
-        gtag('config', 'G-85XT8T4WZ8');
-        gtag('config', 'AW-17757220945');
         if (window.enochBookingConfirmation.shouldTrack) {
             gtag('event', 'generate_lead', {
                 event_id: window.enochBookingConfirmation.eventId,

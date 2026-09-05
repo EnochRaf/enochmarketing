@@ -1,0 +1,21 @@
+name: Verify Gym Recon marketing release
+on:
+  push:
+    branches: [release/gym-recon-launch-scope]
+  pull_request:
+    paths:
+      - gym-recon-software.html
+      - gym-recon-paid-mvp-social.png
+      - tools/verify-gym-recon-release.mjs
+      - .github/workflows/gym-recon-release.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node tools/verify-gym-recon-release.mjs

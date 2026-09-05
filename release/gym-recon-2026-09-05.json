@@ -1,0 +1,9 @@
+{
+  "baselineDeployment": "dpl_2uuRifRcP1zYFKPMC3v7s4od17ui",
+  "sourceBaseCommit": "ef31d53ef798417d4129707fb924e5ccdc5cbf80",
+  "preservedFiles": 154,
+  "changes": [
+    "static/gym-recon-software.html"
+  ],
+  "note": "Existing production config, functions and unrelated static files matched deployment SHA1 identifiers before copying. Only marketing HTML changed. Diagnostics are not runtime artifacts. Deploy this preserved artifact, not the older repository root."
+}

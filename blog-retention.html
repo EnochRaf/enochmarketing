@@ -304,6 +304,10 @@
 .source-list a{color:var(--gold);border-bottom:1px solid rgba(221,205,156,.28)}
 .inline-link{color:var(--gold);border-bottom:1px solid rgba(221,205,156,.28)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.trust-nav{text-align:center;padding:1.25rem 3rem;background:var(--black-soft);border-top:1px solid rgba(221,205,156,0.06)}
+.trust-nav a{font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-dim);margin:0 1.25rem;transition:color 0.3s ease}
+.trust-nav a:hover{color:var(--gold)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important;transition:none!important}.article-hero-title,.article-meta{opacity:1!important;animation:none!important}}
 @media(max-width:1024px){
   .article-layout{grid-template-columns:minmax(0,1fr);gap:3rem}
@@ -384,6 +388,25 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
         }
     ]
 }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Enoch Marketing",
+      "url": "https://www.enochmarketing.com",
+      "logo": "https://www.enochmarketing.com/images/logo.webp",
+      "description": "CrossFit gym marketing agency specializing in member retention, lead generation, and growth systems.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://www.enochmarketing.com/contact"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/enoch-marketing",
+        "https://www.facebook.com/enochmarketing"
+      ]
+    }
     </script>
 </head>
 <body>
@@ -664,6 +687,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     </div>
 </section>
 
+<nav class="trust-nav" aria-label="Trust Navigation">
+    <a href="about.html">About Enoch Marketing</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
 <footer class="footer">
     <div class="footer-grid-bg"></div>
     <div class="footer-inner">
@@ -673,7 +701,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
                 <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
                 <div class="footer-email-group">
                     <input type="email" placeholder="Enter your email...">
-                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <a href="contact.html" class="footer-email-btn" aria-label="Learn more about our gym retention services"><span class="sr-only">Learn more about our gym retention services</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                 </div>
             </div>
             <div><h4>Navigation</h4><ul>

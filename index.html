@@ -605,6 +605,17 @@
             transform: translateX(4px);
         }
 
+        /* Hero caption note */
+        .hero-caption {
+            margin-top: 9px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.42);
+            font-family: var(--font-body);
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.5;
+        }
+
         /* Secondary link */
         .btn-secondary {
             font-size: 0.85rem;
@@ -1164,6 +1175,33 @@
             border-radius: 9999px;
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* ========================================
+           RESULTS STATS PARAGRAPH BLOCK
+           ======================================== */
+        .results-stats {
+            margin-top: 3rem;
+            padding: 2rem 2.5rem;
+            background: var(--black-card);
+            border: 1px solid rgba(221, 205, 156, 0.08);
+            border-radius: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem 3rem;
+        }
+
+        .results-stats p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--white-muted);
+            line-height: 1.7;
+            flex: 1 1 280px;
+        }
+
+        .results-stats p strong {
+            color: var(--gold);
+            font-weight: 700;
         }
 
         /* ========================================
@@ -2105,7 +2143,6 @@
 
     <!-- HERO -->
     <section class="hero">
-        <!-- Add poster="hero-poster.jpg" once a static frame export is available -->
         <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg">
             <source src="hero-bg-new.mp4" type="video/mp4">
         </video>
@@ -2137,7 +2174,7 @@
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                 </a>
             </div>
-            <p style="margin-top:9px;font-size:13px;color:rgba(255,255,255,0.42);font-family:var(--font-body);font-weight:400;text-align:center;line-height:1.5;">30 minutes. We review what's holding your gym back and hand you a plan to fix it.</p>
+            <p class="hero-caption">30 minutes. We review what's holding your gym back and hand you a plan to fix it.</p>
         </div>
 
     </section>
@@ -2249,7 +2286,7 @@
                         </div>
                         <span class="service-badge">Branding</span>
                         <h3>BRAND STRATEGY</h3>
-                        <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships.</p>
+                        <p>Position your gym as the premium choice. We craft brand identities that command higher prices and fiercely loyal memberships. From naming and visual identity to messaging frameworks, every element is built to attract athletes who stay — and refer others. A strong brand is the foundation every other marketing channel builds on.</p>
                     </div>
                 </a>
 
@@ -2261,7 +2298,7 @@
                         </div>
                         <span class="service-badge">Paid Media</span>
                         <h3>PAID ADVERTISING</h3>
-                        <p>Meta and Google campaigns engineered for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups.</p>
+                        <p>Meta and Google campaigns engineered for gym membership sales. We know the exact hooks, creatives, and audience segments that drive sign-ups. Every campaign includes zip-code audience segmentation, offer testing, and weekly performance reviews — so your ad spend produces booked consultations, not just clicks. Average cost-per-lead across our gym portfolio runs $12–$18.</p>
                     </div>
                 </a>
 
@@ -2273,7 +2310,7 @@
                         </div>
                         <span class="service-badge">Funnels</span>
                         <h3>LEAD GENERATION</h3>
-                        <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk.</p>
+                        <p>Custom funnels that turn cold traffic into booked tours and trial sessions. We build the entire pipeline from first click to front desk. Automated follow-up sequences, SMS reminders, and conversion-optimized landing pages keep your calendar full without manual effort. Most gyms we work with see a 40–60% increase in lead-to-trial conversion within the first 30 days.</p>
                     </div>
                 </a>
 
@@ -2285,7 +2322,7 @@
                         </div>
                         <span class="service-badge">Content</span>
                         <h3>SOCIAL MEDIA</h3>
-                        <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood.</p>
+                        <p>Content that builds authority and community. We create scroll-stopping posts that make your gym the go-to brand in your neighborhood. Consistent publishing across Instagram, Facebook, and TikTok keeps your existing members engaged while attracting prospects who already feel like they belong. We handle strategy, creative, and posting — you stay focused on coaching.</p>
                     </div>
                 </a>
 
@@ -2297,7 +2334,7 @@
                         </div>
                         <span class="service-badge">Search</span>
                         <h3>LOCAL SEO</h3>
-                        <p>Dominate "gym near me" searches in your area. We optimize your digital presence so you're the first gym people find in your city.</p>
+                        <p>Dominate "gym near me" searches in your area. We optimize your digital presence so you're the first gym people find in your city. Google Business Profile optimization, local citation building, and review management turn organic search into a steady stream of new member inquiries — at zero cost-per-click. Most clients appear in the local 3-pack within 60–90 days.</p>
                     </div>
                 </a>
 
@@ -2309,7 +2346,7 @@
                         </div>
                         <span class="service-badge">Design</span>
                         <h3>WEB DESIGN</h3>
-                        <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are.</p>
+                        <p>Conversion-focused websites that look premium and sell memberships 24/7. Mobile-first design because that's where your prospects are. Clear calls-to-action, fast load times, and integrated booking systems remove every barrier between a visitor and their first class. We've seen conversion rates jump from under 2% to over 7% with the right site structure.</p>
                     </div>
                 </a>
 
@@ -2317,6 +2354,44 @@
         </div>
     </section>
 
+
+    <!-- RESULTS -->
+    <section class="section results" id="results">
+        <div class="container">
+            <div class="results-header reveal">
+                <div>
+                    <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Proven Results</span></div>
+                    <h2 class="section-title">NUMBERS THAT PROVE<br><span class="gold">OUR SYSTEM WORKS</span></h2>
+                </div>
+                <p class="section-subtitle">We measure success in new members, not vanity metrics. Here's what gym owners across the US see within 90 days of working with us.</p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card reveal reveal-delay-1">
+                    <div class="result-number" data-count="23" data-suffix="+">0+</div>
+                    <div class="result-label">New Members Per Month</div>
+                </div>
+                <div class="result-card reveal reveal-delay-2">
+                    <div class="result-number" data-prefix="$" data-count="18" data-suffix=" CPL">$0</div>
+                    <div class="result-label">Average Cost Per Lead</div>
+                </div>
+                <div class="result-card reveal reveal-delay-3">
+                    <div class="result-number" data-count="90" data-suffix=" Days">0 Days</div>
+                    <div class="result-label">Time to Measurable Growth</div>
+                </div>
+                <div class="result-card reveal reveal-delay-4">
+                    <div class="result-number" data-count="7" data-suffix="x">0x</div>
+                    <div class="result-label">Average Return on Ad Spend</div>
+                </div>
+            </div>
+
+            <div class="results-stats reveal">
+                <p>Our CrossFit gym clients see an average of <strong>23 new members per month</strong> within the first 90 days of launch — without relying on referrals or walk-ins.</p>
+                <p>Average cost-per-lead across our gym marketing portfolio runs <strong>$12–$18</strong>, compared to the industry average of $35–$60 with non-specialist agencies.</p>
+                <p>Gyms that add our full-stack growth engine — paid ads, local SEO, and conversion-optimized web — consistently achieve <strong>7x return on ad spend</strong> within six months.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- PROCESS -->
     <section class="section section-large process" id="process">

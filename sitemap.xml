@@ -211,4 +211,11 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.enochmarketing.com/enoch-marketing-pricing.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

@@ -14,6 +14,45 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/the-gym-owners-reckoning",
+      "destination": "/the-gym-owners-reckoning/",
+      "permanent": true
+    },
+    {
+      "source": "/gym-recon/",
+      "destination": "/gym-recon",
+      "permanent": true
+    },
+    {
+      "source": "/gym-recon.html",
+      "destination": "/gym-recon",
+      "permanent": true
+    },
+    {
+      "source": "/gym-recon-v2.html",
+      "destination": "/gym-recon",
+      "permanent": true
+    },
+    {
+      "source": "/gym-recon-software.html",
+      "destination": "/gym-recon",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/gym-recon",
+      "destination": "/gym-recon-software.html"
+    },
+    {
+      "source": "/the-gym-owners-reckoning/",
+      "destination": "https://gym-recon-graphic-novel.vercel.app/"
+    },
+    {
+      "source": "/the-gym-owners-reckoning/:path*",
+      "destination": "https://gym-recon-graphic-novel.vercel.app/:path*"
     }
   ]
 }

@@ -1,0 +1,48 @@
+name: Verify release safety
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '17 14 * * *'
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Deployment URL to smoke-test
+        required: false
+        default: https://www.enochmarketing.com
+
+permissions:
+  contents: read
+
+jobs:
+  validate-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run verify:release-config
+
+  smoke-production:
+    if: github.event_name != 'pull_request'
+    needs: validate-source
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Verify public routes
+        env:
+          BASE_URL: ${{ inputs.base_url || 'https://www.enochmarketing.com' }}
+        run: npm run verify:routes -- "$BASE_URL"

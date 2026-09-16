@@ -3,210 +3,294 @@
 
   <url>
     <loc>https://www.enochmarketing.com/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/services.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-local-seo.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-paid-advertising.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-lead-generation.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-website-design.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-app-development.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-social-media-marketing.html</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/pricing.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.enochmarketing.com/free-audit.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.enochmarketing.com/gym-recon</loc>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.enochmarketing.com/gym-recon.html</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://www.enochmarketing.com/intelligence.html</loc>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/about.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/contact.html</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/privacy.html</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/terms.html</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://www.enochmarketing.com/gym-leads-not-converting-2026.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/gym-marketing-agency-pricing.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/best-marketing-agencies-independent-gyms-crossfit.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/best-full-funnel-member-acquisition-services-gym-owners.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.enochmarketing.com/enoch-vs-gym-launch-two-brain-upswell.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.enochmarketing.com/crossfit-gym-second-revenue-streams.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-in-house-competition-marketing.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-analytics.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-branding.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-google-ads.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-lead-gen.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-local-seo.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-meta-ads.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-retention.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/blog-social-media.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-30-day-new-member-experience.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/email-marketing-for-gyms.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/gym-membership-pricing-strategy.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/gym-referral-programs-that-actually-work.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/gym-website-costing-members.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-gym-google-business-profile.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-gym-coach-hiring-retention.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/gym-owner-competitor-analysis-guide.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/gym-member-milestones-storytelling-marketing.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-gym-corporate-wellness-b2b.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.enochmarketing.com/crossfit-gym-sms-marketing-playbook.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHK9XF2Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Recon | Market Intelligence Software for Gym Owners | Enoch Marketing</title>
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="description" content="Gym Recon watches your gym's market 24/7: competitors, their ads, your rankings, your revenue gap. Live dashboard, weekly briefs, $99/month with a 7-day 100% refund promise.">
+    <link rel="canonical" href="https://www.enochmarketing.com/gym-recon.html" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enoch Marketing">
+    <meta property="og:url" content="https://www.enochmarketing.com/gym-recon.html">
+    <meta property="og:title" content="Gym Recon | Market Intelligence Software for Gym Owners | Enoch Marketing">
+    <meta property="og:description" content="Gym Recon watches your gym's market 24/7: competitors, their ads, your rankings, your revenue gap. Live dashboard, weekly briefs, $99/month with a 7-day 100% refund promise.">
+    <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gym Recon | Market Intelligence Software for Gym Owners | Enoch Marketing">
+    <meta name="twitter:description" content="Gym Recon watches your gym's market 24/7: competitors, their ads, your rankings, your revenue gap. Live dashboard, weekly briefs, $99/month with a 7-day 100% refund promise.">
+    <meta name="twitter:image" content="https://www.enochmarketing.com/logo-enoch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #DDCD9C;
+            --gold-light: #EDE3C4;
+            --gold-dark: #B8A76C;
+            --bg: #070706;
+            --bg-panel: #0D0D0B;
+            --bg-raise: #131311;
+            --white: #F4F2EC;
+            --white-muted: #C9C6BC;
+            --white-dim: #8A877D;
+            --line: rgba(221,205,156,0.16);
+            --line-soft: rgba(221,205,156,0.09);
+            --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
+            --font-body: 'Montserrat', 'Helvetica Neue', sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold-dark) var(--bg);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--gold); color: #0A0A08; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        button { font-family: inherit; }
+
+        /* Shape rule: pills for interactive elements (buttons, badges, chips),
+           14-16px soft corners for cards and panels. Printed-paper mockups
+           (the sample spread) stay sharp because paper is sharp. */
+
+        /* ===== SCAN REVEAL ===== */
+        .rv {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+        }
+        .rv.on { opacity: 1; transform: translateY(0); }
+        .rv-1 { transition-delay: 0.08s; }
+        .rv-2 { transition-delay: 0.16s; }
+        .rv-3 { transition-delay: 0.24s; }
+        .rv-4 { transition-delay: 0.32s; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Redaction wipe: money numbers start as a solid gold bar, then the bar
+           slides away to "declassify" the figure once it scrolls into view. */
+        .redact {
+            position: relative;
+            display: inline-block;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .redact::after {
+            content: '';
+            position: absolute;
+            inset: 0.06em -0.08em;
+            background: var(--gold);
+            transform-origin: right;
+            transition: transform 0.8s var(--ease) 0.25s;
+        }
+        .redact.on::after { transform: scaleX(0); }
+
+        /* ===== HEADER ===== */
+        .hd {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            height: 76px;
+            padding: 0 clamp(1.25rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid transparent;
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+        .hd.scrolled {
+            background: rgba(7,7,6,0.92);
+            backdrop-filter: blur(18px);
+            border-bottom-color: var(--line-soft);
+        }
+        .hd-logo img {
+            height: 170px; width: auto;
+            transition: height 0.4s var(--ease);
+        }
+        .hd.scrolled .hd-logo img { height: 128px; }
+        .hd-cta {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            padding: 0.8rem 1.5rem;
+            background: var(--gold);
+            color: #0A0A08;
+            transition: background 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+        .hd-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+        @media (max-width: 720px) {
+            .hd-logo img { height: 120px; }
+            .hd.scrolled .hd-logo img { height: 100px; }
+        }
+
+        /* ===== HERO: centered stack over an animated perspective grid,
+           radar as the hero's bottom visual ===== */
+        .hero {
+            position: relative;
+            padding: 8rem clamp(1.25rem, 4vw, 3rem) 4.5rem;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -12%; left: 50%;
+            transform: translateX(-50%);
+            width: 110vw; height: 75vh;
+            background: radial-gradient(ellipse 42% 62% at 50% 18%, rgba(221,205,156,0.13), transparent 72%);
+            pointer-events: none;
+        }
+        /* Retro grid floor: tilted plane crawling toward the viewer.
+           Loop displacement equals one cell, so the cycle is seamless. */
+        .retro-grid {
+            position: absolute; inset: 0;
+            overflow: hidden;
+            perspective: 220px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .rg-tilt {
+            position: absolute; inset: 0;
+            transform: rotateX(63deg);
+        }
+        .rg-plane {
+            position: absolute;
+            top: -60%; left: -200%;
+            width: 600vw; height: 320vh;
+            background-image:
+                linear-gradient(to right, rgba(221,205,156,0.3) 1px, transparent 0),
+                linear-gradient(to bottom, rgba(221,205,156,0.3) 1px, transparent 0);
+            background-size: 62px 62px;
+            animation: rg-move 3.2s linear infinite;
+        }
+        @keyframes rg-move {
+            from { transform: translateY(0); }
+            to   { transform: translateY(62px); }
+        }
+        .rg-fade {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, var(--bg) 8%, transparent 55%, rgba(7,7,6,0.55) 100%);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 840px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            border: 1px solid var(--line);
+            border-radius: 9999px;
+            background: linear-gradient(to top right, rgba(221,205,156,0.08), rgba(221,205,156,0.02), transparent);
+            padding: 0.45rem 1.1rem 0.45rem 0.45rem;
+            margin-bottom: 1.75rem;
+            opacity: 0;
+            animation: fade-up 0.7s var(--ease) 0.1s forwards;
+        }
+        .hero-badge:hover .hero-badge-chev { transform: translateX(3px); }
+        .hero-badge-chev { color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; }
+        .hero-badge-tag {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            background: var(--gold);
+            color: #0A0A08;
+            border-radius: 9999px;
+            padding: 0.28rem 0.65rem;
+        }
+        .hero-badge-txt {
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.05em;
+            color: var(--white-muted);
+        }
+        .hero-badge-txt b { color: var(--gold); font-weight: 600; }
+
+        .hero-h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3.2rem, 6.4vw, 5.6rem);
+            line-height: 0.94;
+            letter-spacing: 0.012em;
+            margin-bottom: 1.2rem;
+            background-image: linear-gradient(180deg, #FFFDF7 20%, rgba(244,242,236,0.5) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease) 0.22s forwards;
+        }
+        .hero-h1 .gold {
+            background-image: linear-gradient(90deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--white-muted);
+            max-width: 560px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease) 0.38s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fade-up 0.9s var(--ease) 0.52s forwards;
+        }
+        /* Spinning conic border around the primary CTA */
+        .cta-ring {
+            position: relative;
+            display: inline-flex;
+            padding: 2px;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .cta-ring::before {
+            content: '';
+            position: absolute;
+            inset: -1000%;
+            background: conic-gradient(from 90deg at 50% 50%, var(--gold-light) 0%, rgba(184,167,108,0.1) 50%, var(--gold-light) 100%);
+            animation: cta-spin 2.6s linear infinite;
+        }
+        @keyframes cta-spin { to { transform: rotate(360deg); } }
+        .btn-primary {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            padding: 1.05rem 2.5rem;
+            background: var(--gold);
+            color: #0A0A08;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 14px 44px rgba(221,205,156,0.2);
+        }
+        .btn-primary svg { transition: transform 0.3s ease; }
+        .btn-primary:hover svg { transform: translateX(4px); }
+        .hero-radar-slot {
+            position: relative;
+            z-index: 2;
+            margin: 4.5rem auto 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Right: recon radar. Your gym sits at the center; the seven report
+           modules ping into view as targets each time the sweep passes them.
+           Sweep period and blip delays share the same 8s clock to stay in phase. */
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fade-up 1s var(--ease) 0.45s forwards;
+        }
+        .radar {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: radial-gradient(circle, rgba(221,205,156,0.07) 0%, rgba(221,205,156,0.02) 45%, transparent 68%);
+        }
+        .radar .ring {
+            position: absolute;
+            border: 1px solid var(--line-soft);
+            border-radius: 50%;
+        }
+        .radar .ring-1 { inset: 12.5%; }
+        .radar .ring-2 { inset: 25%; }
+        .radar .ring-3 { inset: 37.5%; }
+        .radar .ring-dash { inset: 4.5%; border-style: dashed; border-color: rgba(221,205,156,0.15); }
+        .radar .axis-h { position: absolute; left: 2%; right: 2%; top: 50%; height: 1px; background: var(--line-soft); }
+        .radar .axis-v { position: absolute; top: 2%; bottom: 2%; left: 50%; width: 1px; background: var(--line-soft); }
+
+        .radar-sweep {
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            background: conic-gradient(transparent 0deg, transparent 262deg, rgba(221,205,156,0.16) 330deg, rgba(221,205,156,0.55) 358deg, var(--gold) 360deg);
+            animation: sweep 8s linear infinite;
+        }
+        @keyframes sweep { to { transform: rotate(360deg); } }
+
+        .radar-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.55rem;
+            z-index: 5;
+        }
+        .radar-center .c-dot {
+            width: 11px; height: 11px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 18px rgba(221,205,156,0.55);
+        }
+        .radar-center .c-tag {
+            font-family: var(--font-mono);
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: #0A0A08;
+            background: var(--gold);
+            padding: 0.26rem 0.55rem;
+            white-space: nowrap;
+        }
+
+        /* Blips: precomputed polar coordinates as percentages of the radar,
+           so the whole graphic scales fluidly. --d is the moment the sweep
+           hand crosses this blip's bearing within the shared 8s cycle.
+           Six targets sit on a hexagonal spread so nothing collides. */
+        .blip {
+            position: absolute;
+            left: var(--x); top: var(--y);
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            width: max-content;
+            z-index: 4;
+            opacity: 0;
+            animation: blip-in 0.45s var(--ease) forwards var(--d);
+        }
+        .blip-icon {
+            width: 46px; height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            background: linear-gradient(to bottom, rgba(221,205,156,0.12), rgba(221,205,156,0.03)), rgba(7,7,6,0.9);
+            border: 1px solid rgba(221,205,156,0.4);
+            animation: blip-ping 8s linear infinite var(--d);
+        }
+        .blip-label {
+            white-space: nowrap;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            color: var(--white);
+            background: rgba(7,7,6,0.9);
+            border: 1px solid var(--line);
+            padding: 0.32rem 0.6rem;
+        }
+        .blip-label b { color: var(--gold); font-weight: 700; margin-right: 0.45rem; }
+        @keyframes blip-in {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.55); }
+            to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        @keyframes blip-ping {
+            0%   { box-shadow: 0 0 0 0 rgba(221,205,156,0.5); border-color: var(--gold); }
+            8%   { box-shadow: 0 0 0 18px rgba(221,205,156,0); border-color: rgba(221,205,156,0.4); }
+            100% { box-shadow: 0 0 0 0 rgba(221,205,156,0); border-color: rgba(221,205,156,0.4); }
+        }
+
+        @media (max-width: 960px) {
+            .hero { padding-top: 8.5rem; }
+            .hero-radar-slot { margin-top: 3rem; }
+            .radar { max-width: min(88vw, 470px); }
+            .blip-icon { width: 38px; height: 38px; }
+            .blip-label { font-size: 0.54rem; padding: 0.26rem 0.5rem; }
+        }
+
+        /* ===== VALUE STRIP (under hero) ===== */
+        .strip {
+            border-top: 1px solid var(--line-soft);
+            border-bottom: 1px solid var(--line-soft);
+            background: var(--bg-panel);
+        }
+        .strip-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .strip-cell {
+            padding: 1.6rem clamp(1.25rem, 3vw, 2.5rem);
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+        }
+        .strip-cell + .strip-cell { border-left: 1px solid var(--line-soft); }
+        .strip-num {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            line-height: 1;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+        .strip-txt {
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--white-muted);
+        }
+        @media (max-width: 820px) {
+            .strip-inner { grid-template-columns: 1fr; }
+            .strip-cell + .strip-cell { border-left: none; border-top: 1px solid var(--line-soft); }
+        }
+
+        /* ===== SECTION SCAFFOLD ===== */
+        .sec { padding: clamp(5.5rem, 9vw, 8.5rem) clamp(1.25rem, 4vw, 3rem); }
+        .sec-tight { padding-top: clamp(4rem, 7vw, 6rem); padding-bottom: clamp(4rem, 7vw, 6rem); }
+        .wrap { max-width: 1100px; margin: 0 auto; }
+        .wrap-narrow { max-width: 780px; margin: 0 auto; }
+        .eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+        .h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.7rem, 5.4vw, 4.6rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
+        .h2 .gold { color: var(--gold); }
+        .lede {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--white-muted);
+            max-width: 640px;
+        }
+        .lede p + p { margin-top: 1.25em; }
+        .lede strong { color: var(--white); font-weight: 600; }
+        .inline-link {
+            color: var(--gold);
+            text-decoration: underline;
+            text-decoration-color: rgba(221,205,156,0.35);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s ease;
+        }
+        .inline-link:hover { text-decoration-color: var(--gold); }
+
+        /* ===== PROBLEM ===== */
+        .problem { border-top: 1px solid var(--line-soft); }
+        .problem-accent {
+            font-family: var(--font-display);
+            font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+            line-height: 1.08;
+            letter-spacing: 0.02em;
+            margin-bottom: 2.5rem;
+        }
+        .problem-accent .gold { color: var(--gold); }
+
+        /* ===== SAMPLE SPREAD: two redacted report pages ===== */
+        .spread-wrap { max-width: 900px; margin: 4rem auto 0; }
+        .spread {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.1rem;
+            user-select: none;
+        }
+        .page {
+            background: linear-gradient(to bottom, #F0EDE4, #E7E3D7);
+            color: #1C1A14;
+            padding: 1.9rem 1.7rem;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+        }
+        .page-1 { transform: rotate(-0.7deg); }
+        .page-2 { transform: rotate(0.6deg); }
+        .pg-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.52rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: rgba(28,26,20,0.55);
+            border-bottom: 1px solid rgba(28,26,20,0.3);
+            padding-bottom: 0.6rem;
+            margin-bottom: 1.2rem;
+        }
+        .pg-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            color: #14120D;
+            margin-bottom: 0.25rem;
+        }
+        .pg-sub {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: #8A7B4A;
+            margin-bottom: 1.2rem;
+        }
+        /* redaction bar: identity data blacked out */
+        .rdx {
+            display: inline-block;
+            height: 0.78em;
+            background: #211F18;
+            vertical-align: baseline;
+            transform: translateY(0.08em);
+        }
+        .blurred { filter: blur(4px); }
+        .pg-gap-num.blurred { filter: blur(9px); }
+        .sg-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.56rem;
+            letter-spacing: 0.02em;
+        }
+        .sg-table th {
+            text-align: left;
+            font-weight: 700;
+            color: rgba(28,26,20,0.6);
+            border-bottom: 1.5px solid rgba(28,26,20,0.55);
+            padding: 0.4rem 0.4rem 0.35rem 0;
+        }
+        .sg-table td {
+            border-bottom: 1px solid rgba(28,26,20,0.18);
+            padding: 0.5rem 0.4rem 0.5rem 0;
+            color: #24211A;
+            white-space: nowrap;
+        }
+        .pg-note {
+            margin-top: 1.1rem;
+            font-family: var(--font-mono);
+            font-size: 0.52rem;
+            line-height: 1.7;
+            letter-spacing: 0.04em;
+            color: rgba(28,26,20,0.55);
+        }
+        .pg-gap-label {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: rgba(28,26,20,0.6);
+            margin: 1.4rem 0 0.4rem;
+        }
+        .pg-gap-num {
+            font-family: var(--font-display);
+            font-size: 3.4rem;
+            line-height: 1;
+            color: #14120D;
+            margin-bottom: 1.2rem;
+        }
+        .pg-lines { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.3rem; }
+        .pg-lines span {
+            font-size: 0.62rem;
+            line-height: 1.5;
+            color: #2A271F;
+        }
+        .pg-box {
+            border: 1.5px solid rgba(28,26,20,0.5);
+            padding: 0.9rem 1rem;
+        }
+        .pg-box .bx-t {
+            font-family: var(--font-mono);
+            font-size: 0.54rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #8A7B4A;
+            margin-bottom: 0.6rem;
+        }
+        .pg-box ol {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            font-family: var(--font-mono);
+            font-size: 0.56rem;
+            color: #24211A;
+        }
+        .pg-box ol b { color: #8A7B4A; margin-right: 0.4rem; }
+        .spread-stamp {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-7deg);
+            z-index: 5;
+            border: 2.5px solid rgba(138,123,74,0.95);
+            color: #8A7B4A;
+            background: rgba(240,237,228,0.18);
+            backdrop-filter: blur(1px);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.7;
+            padding: 0.8rem 1.6rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .spread-cap {
+            margin-top: 1.6rem;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.05em;
+            line-height: 1.7;
+            color: var(--white-dim);
+        }
+        .spread-cap b { color: var(--gold); font-weight: 600; }
+        @media (max-width: 760px) {
+            .spread { grid-template-columns: 1fr; }
+            .page-1, .page-2 { transform: none; }
+            .spread-stamp { font-size: 0.64rem; padding: 0.6rem 1rem; }
+        }
+
+        /* ===== MODULES: sticky rail + panels ===== */
+        .mods { border-top: 1px solid var(--line-soft); background: var(--bg-panel); }
+        .mods-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: clamp(2rem, 5vw, 4.5rem);
+            margin-top: 3.5rem;
+            align-items: start;
+        }
+        .mods-rail {
+            position: sticky;
+            top: 110px;
+            display: flex;
+            flex-direction: column;
+        }
+        .mods-rail a {
+            display: flex;
+            align-items: baseline;
+            gap: 0.8rem;
+            padding: 0.65rem 0.9rem;
+            border-left: 2px solid rgba(221,205,156,0.1);
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .mods-rail a .n {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--white-dim);
+            transition: color 0.3s ease;
+        }
+        .mods-rail a .t {
+            font-family: var(--font-display);
+            font-size: 0.98rem;
+            letter-spacing: 0.07em;
+            color: var(--white-dim);
+            transition: color 0.3s ease;
+        }
+        .mods-rail a.active { border-left-color: var(--gold); background: rgba(221,205,156,0.04); }
+        .mods-rail a.active .t { color: var(--gold-light); }
+        .mods-rail a.active .n { color: var(--gold); }
+        .mods-rail a:hover .t { color: var(--white); }
+
+        .mods-panels { display: flex; flex-direction: column; gap: 1.1rem; }
+        .mod {
+            border: 1px solid var(--line-soft);
+            background: var(--bg);
+            padding: 2.1rem 2.2rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.6rem;
+            scroll-margin-top: 110px;
+            transition: border-color 0.35s ease;
+        }
+        .mod:hover { border-color: var(--line); }
+        .mod-num {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            border: 1px solid var(--line);
+            width: 44px; height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .mod-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            letter-spacing: 0.05em;
+            color: var(--gold-light);
+            margin-bottom: 0.55rem;
+        }
+        .mod-body {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: var(--white-muted);
+        }
+        .mod-worth {
+            margin-top: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.04em;
+            color: var(--gold);
+            border-top: 1px solid var(--line-soft);
+            padding-top: 0.85rem;
+        }
+        .mod-plus {
+            border-color: rgba(221,205,156,0.3);
+            background: rgba(221,205,156,0.045);
+        }
+        .mod-plus .mod-num { background: var(--gold); color: #0A0A08; border-color: var(--gold); }
+        .mods-callout {
+            margin-top: 2.25rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--gold);
+            background: rgba(221,205,156,0.04);
+            padding: 1.5rem 1.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        .mods-callout strong { color: var(--gold); }
+        @media (max-width: 900px) {
+            .mods-layout { grid-template-columns: 1fr; }
+            .mods-rail { display: none; }
+            .mod { padding: 1.6rem 1.4rem; gap: 1.1rem; }
+        }
+
+        /* ===== HOW IT WORKS: timeline ===== */
+        .steps { margin-top: 3.5rem; position: relative; }
+        .steps-line {
+            position: absolute;
+            top: 22px; left: 0;
+            height: 1px; width: 100%;
+            background: var(--line-soft);
+        }
+        .steps-line i {
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 1.4s var(--ease) 0.2s;
+        }
+        .steps.on .steps-line i { transform: scaleX(1); }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 4vw, 3rem);
+        }
+        .step { position: relative; padding-top: 3.4rem; }
+        .step-dot {
+            position: absolute;
+            top: 14px; left: 0;
+            width: 17px; height: 17px;
+            background: var(--bg);
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+        .step-dot i {
+            position: absolute; inset: 4px;
+            background: var(--gold);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .steps.on .step-dot i { opacity: 1; }
+        .step-k {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--gold);
+            margin-bottom: 0.7rem;
+        }
+        .step-t {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.6rem;
+        }
+        .step-b {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        @media (max-width: 760px) {
+            .steps-line { top: 0; left: 8px; width: 1px; height: 100%; }
+            .steps-line i { transform: scaleY(0); transform-origin: top; }
+            .steps.on .steps-line i { transform: scaleY(1); }
+            .steps-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .step { padding-top: 0; padding-left: 2.6rem; }
+            .step-dot { top: 2px; }
+        }
+
+        /* ===== THE MATH ===== */
+        .math { border-top: 1px solid var(--line-soft); background: var(--bg-panel); }
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            gap: 1.1rem;
+            margin-top: 3.5rem;
+        }
+        .math-cell {
+            border: 1px solid var(--line-soft);
+            background: var(--bg);
+            padding: 2.2rem 2rem;
+        }
+        .math-cell.hot { border-color: rgba(221,205,156,0.35); }
+        .math-big {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 5.5vw, 4.4rem);
+            line-height: 1;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .math-t {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.55rem;
+        }
+        .math-b {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        @media (max-width: 860px) { .math-grid { grid-template-columns: 1fr; } }
+
+        /* ===== OFFER ===== */
+        .offer { position: relative; overflow: hidden; }
+        .offer-topo {
+            position: absolute; inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.02) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black 25%, transparent 72%);
+            -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black 25%, transparent 72%);
+        }
+        .offer-wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2.5rem, 5vw, 4.5rem);
+            align-items: start;
+        }
+        .offer-copy p {
+            font-size: 0.92rem;
+            line-height: 1.85;
+            color: var(--white-muted);
+            margin-top: 1.25rem;
+        }
+        .offer-copy strong { color: var(--white); font-weight: 600; }
+        .offer-cap {
+            margin-top: 2rem;
+            border: 1px solid var(--line-soft);
+            background: var(--bg-panel);
+            padding: 1.2rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+        .offer-cap .pulse {
+            width: 8px; height: 8px;
+            background: var(--gold);
+            flex-shrink: 0;
+            animation: cap-pulse 2s ease-in-out infinite;
+        }
+        @keyframes cap-pulse { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+        .offer-cap p {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            line-height: 1.6;
+            letter-spacing: 0.03em;
+            color: var(--white-muted);
+            margin: 0;
+        }
+        .offer-cap b { color: var(--gold); font-weight: 600; }
+
+        .offer-card {
+            border: 1px solid var(--line);
+            background:
+                linear-gradient(to bottom, rgba(221,205,156,0.05), transparent 35%),
+                var(--bg-panel);
+            padding: 2.6rem 2.4rem 2.4rem;
+            text-align: center;
+        }
+        .offer-card-label {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.4rem;
+        }
+        .offer-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        .offer-main {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 7vw, 5.6rem);
+            line-height: 1;
+            color: var(--gold);
+        }
+        .offer-note {
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+        }
+        .offer-includes {
+            text-align: left;
+            max-width: 360px;
+            margin: 0 auto 2.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .offer-includes li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--white-muted);
+            padding: 0.7rem 0;
+        }
+        .offer-includes li + li { border-top: 1px solid var(--line-soft); }
+        .tick {
+            width: 18px; height: 18px;
+            border: 1px solid var(--line);
+            background: rgba(221,205,156,0.07);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+        .offer-card .btn-primary { width: 100%; justify-content: center; }
+        .offer-fine {
+            margin-top: 1.1rem;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.03em;
+            color: var(--white-dim);
+        }
+        .guarantee {
+            margin-top: 1.1rem;
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--gold);
+            background: rgba(221,205,156,0.04);
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            gap: 1.1rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .guarantee svg { flex-shrink: 0; color: var(--gold); margin-top: 2px; }
+        .guarantee p { font-size: 0.88rem; font-weight: 500; line-height: 1.7; color: var(--white-muted); }
+        .guarantee strong { color: var(--gold); }
+        @media (max-width: 900px) { .offer-wrap { grid-template-columns: 1fr; } }
+
+        /* ===== FOUNDER ===== */
+        .founder { border-top: 1px solid var(--line-soft); background: var(--bg-panel); }
+        .founder-photo { aspect-ratio: 1 / 1; max-width: 440px; }
+        .founder-photo img { filter: none; }
+        .founder-sig {
+            margin-top: 1.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* ===== COMPARISON LEDGER ===== */
+        .cmp { border-top: 1px solid var(--line-soft); }
+        .cmp-table {
+            margin-top: 3rem;
+            border: 1px solid var(--line-soft);
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1.25fr;
+        }
+        .cmp-cell {
+            padding: 1.15rem 1.4rem;
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: var(--white-muted);
+            border-top: 1px solid var(--line-soft);
+        }
+        .cmp-cell:nth-child(-n+3) { border-top: none; }
+        .cmp-cell:nth-child(3n+2) { border-left: 1px solid var(--line-soft); }
+        .cmp-cell:nth-child(3n) {
+            border-left: 1px solid rgba(221,205,156,0.3);
+            background: rgba(221,205,156,0.045);
+            color: var(--white);
+        }
+        .cmp-head {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.07em;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .cmp-cell:nth-child(3).cmp-head { color: var(--gold); }
+        .cmp-badge {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            background: var(--gold);
+            color: #0A0A08;
+            padding: 0.22rem 0.5rem;
+        }
+        .cmp-k {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            display: flex;
+            align-items: center;
+        }
+        .cmp-cta {
+            margin-top: 2.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            text-align: center;
+        }
+        .cmp-cta p {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--white-muted);
+        }
+        @media (max-width: 760px) {
+            .cmp-table { grid-template-columns: 1fr; }
+            .cmp-cell { border-left: none !important; }
+            .cmp-k { padding-bottom: 0.2rem; border-top: 1px solid var(--line); background: var(--bg-panel); }
+            .cmp-cell:nth-child(-n+3) { border-top: 1px solid var(--line-soft); }
+            .cmp-cell:first-child { border-top: none; }
+        }
+
+        /* ===== WHO IT'S FOR ===== */
+        .who { border-top: 1px solid var(--line-soft); background: var(--bg-panel); }
+        .who-grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: clamp(2rem, 5vw, 4rem);
+            align-items: center;
+        }
+        .who-photo {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--line);
+            overflow: hidden;
+        }
+        .who-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.55) contrast(1.05) brightness(0.8);
+        }
+        .who-photo::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(7,7,6,0.7), transparent 50%);
+        }
+        .who-list { display: flex; flex-direction: column; margin: 2.25rem 0; }
+        .who-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.2rem 0;
+        }
+        .who-item + .who-item { border-top: 1px solid var(--line-soft); }
+        .who-item p { font-size: 0.95rem; line-height: 1.65; color: var(--white); }
+        .who-not {
+            border: 1px solid var(--line-soft);
+            background: rgba(255,255,255,0.02);
+            padding: 1.4rem 1.6rem;
+            font-size: 0.88rem;
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--white-muted);
+        }
+        @media (max-width: 860px) {
+            .who-grid { grid-template-columns: 1fr; }
+            .who-photo { max-width: 420px; }
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list { margin-top: 3rem; border-top: 1px solid var(--line-soft); }
+        .faq-item { border-bottom: 1px solid var(--line-soft); }
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            padding: 1.5rem 0.25rem;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            transition: color 0.25s ease;
+        }
+        .faq-item summary:hover { color: var(--gold-light); }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-plus { color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; }
+        .faq-item[open] .faq-plus { transform: rotate(45deg); }
+        .faq-item p {
+            padding: 0 0.25rem 1.6rem;
+            max-width: 640px;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: var(--white-muted);
+        }
+
+        /* ===== ORDER FORM ===== */
+        .order { border-top: 1px solid var(--line-soft); position: relative; overflow: hidden; }
+        .order-wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: clamp(2.5rem, 5vw, 4.5rem);
+            align-items: start;
+        }
+        .order-points { margin-top: 2rem; display: flex; flex-direction: column; }
+        .order-points li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--white-muted);
+            padding: 0.85rem 0;
+        }
+        .order-points li + li { border-top: 1px solid var(--line-soft); }
+
+        .form-card {
+            border: 1px solid var(--line);
+            background:
+                linear-gradient(to bottom, rgba(221,205,156,0.045), transparent 30%),
+                var(--bg-panel);
+            padding: 2.4rem 2.2rem;
+        }
+        .form-card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.9rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid var(--line-soft);
+        }
+        .form-card-head .t {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            color: var(--gold-light);
+        }
+        .form-card-head .p {
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.05em;
+            color: var(--white-dim);
+        }
+        .form-card-head .p b { color: var(--gold); font-weight: 600; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--line);
+            padding: 0.9rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: rgba(244,242,236,0.4); }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: rgba(221,205,156,0.55);
+            box-shadow: 0 0 0 3px rgba(221,205,156,0.08);
+        }
+        .form-group textarea { resize: vertical; min-height: 104px; }
+        .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+        .req { color: #f28b82; }
+        .field-error { display: none; color: #f28b82; font-size: 0.7rem; font-weight: 500; margin-top: 0.35rem; }
+        .field-error.visible { display: block; }
+        .form-group input.error-state,
+        .form-group textarea.error-state { border-color: rgba(242,139,130,0.55); }
+        .ads-toggle { display: flex; gap: 0.75rem; }
+        .ads-btn {
+            flex: 1; padding: 0.85rem;
+            font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.1em;
+            text-align: center; background: rgba(255,255,255,0.04);
+            border: 1px solid var(--line);
+            color: var(--white-muted); cursor: pointer; transition: all 0.25s ease;
+        }
+        .ads-btn:hover { border-color: rgba(221,205,156,0.45); color: var(--white); }
+        .ads-btn.active { background: rgba(221,205,156,0.12); border-color: rgba(221,205,156,0.55); color: var(--gold); }
+        .btn-submit {
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            gap: 0.75rem; width: 100%;
+            font-family: var(--font-display);
+            font-size: 1.2rem; letter-spacing: 0.1em;
+            padding: 1.1rem 2rem;
+            margin-top: 0.5rem;
+            background: var(--gold);
+            color: #0A0A08;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-submit:hover:not(:disabled) {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 36px rgba(221,205,156,0.18);
+        }
+        .btn-submit .arrow { transition: transform 0.3s ease; }
+        .btn-submit:hover:not(:disabled) .arrow { transform: translateX(4px); }
+        .form-disclaimer {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+            padding: 0.9rem 1rem;
+            background: rgba(221,205,156,0.03);
+            border: 1px solid var(--line-soft);
+        }
+        .form-disclaimer p {
+            font-size: 0.72rem;
+            line-height: 1.65;
+            color: rgba(244,242,236,0.6);
+        }
+        .form-fine {
+            text-align: center; margin-top: 1rem;
+            font-size: 0.72rem; color: rgba(244,242,236,0.6); line-height: 1.6;
+        }
+        .form-fine strong { color: rgba(221,205,156,0.9); }
+        .form-required-note {
+            font-size: 0.66rem;
+            color: rgba(244,242,236,0.45);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .order-wrap { grid-template-columns: 1fr; }
+            .form-row-2 { grid-template-columns: 1fr; }
+        }
+
+        /* ===== STICKY CTA BAR ===== */
+        .bar {
+            position: fixed;
+            left: 0; right: 0; bottom: 0;
+            z-index: 90;
+            background: rgba(10,10,8,0.94);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--line);
+            transform: translateY(100%);
+            transition: transform 0.5s var(--ease);
+        }
+        .bar.show { transform: translateY(0); }
+        .bar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.8rem clamp(1.25rem, 4vw, 3rem);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .bar-txt {
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.04em;
+            color: var(--white-muted);
+        }
+        .bar-txt b { color: var(--gold); font-weight: 600; }
+        .bar .btn-primary { font-size: 1rem; padding: 0.75rem 1.6rem; }
+        @media (max-width: 560px) {
+            .bar-txt .bar-long { display: none; }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            border-top: 1px solid var(--line-soft);
+            padding: 5rem clamp(1.25rem, 4vw, 3rem) 2.5rem;
+            overflow: hidden;
+        }
+        .footer-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 5fr 2fr 2fr 2fr;
+            gap: 3rem; margin-bottom: 3.5rem; align-items: start;
+        }
+        .footer-brand { display: flex; flex-direction: column; gap: 1.25rem; }
+        .footer-brand img {
+            height: 170px; width: auto;
+            align-self: flex-start; margin-left: -15px; margin-top: -20px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: var(--white-muted); line-height: 1.7; max-width: 340px;
+        }
+        .footer h4 {
+            font-family: var(--font-display); font-size: 0.85rem;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 1.25rem;
+        }
+        .footer ul { display: flex; flex-direction: column; gap: 0.85rem; }
+        .footer ul li a {
+            font-size: 0.85rem; color: var(--white-dim);
+            transition: color 0.3s ease;
+        }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);
+            flex-wrap: wrap; gap: 1rem;
+        }
+        .footer-bottom p { font-size: 0.7rem; color: var(--white-dim); letter-spacing: 0.05em; }
+        .footer-socials { display: flex; gap: 1rem; }
+        .footer-socials a { color: var(--white-dim); transition: color 0.3s ease; display: flex; align-items: center; }
+        .footer-socials a:hover { color: var(--white); }
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 620px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+        /* ===== V2 DESIGN DIRECTION: gradient display type + soft geometry
+           so the whole page matches the hero's language ===== */
+        .h2 {
+            background-image: linear-gradient(180deg, #FFFDF7 20%, rgba(244,242,236,0.55) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .h2 .gold {
+            background-image: linear-gradient(90deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hd-cta, .btn-submit, .ads-btn { border-radius: 9999px; }
+
+        /* Golden CTA treatment, matched to the site's glowing gold buttons:
+           metallic gradient fill, a traveling gloss sweep, layered glow on hover. */
+        .btn-primary, .hd-cta, .btn-submit {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 48%, var(--gold-dark) 100%);
+            color: #0A0A08;
+            box-shadow:
+                0 4px 18px rgba(221,205,156,0.16),
+                inset 0 1px 0 rgba(255,255,255,0.4),
+                inset 0 -1px 0 rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.3s ease;
+        }
+        .btn-primary::after, .hd-cta::after, .btn-submit::after {
+            content: '';
+            position: absolute;
+            top: -30%; bottom: -30%;
+            left: 0;
+            width: 30%;
+            background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
+            transform: skewX(-20deg) translateX(-220%);
+            animation: btn-shine 3.4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes btn-shine {
+            0%        { transform: skewX(-20deg) translateX(-220%); }
+            48%, 100% { transform: skewX(-20deg) translateX(480%); }
+        }
+        .btn-primary:hover, .hd-cta:hover, .btn-submit:hover:not(:disabled) {
+            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 48%, var(--gold-dark) 100%);
+            filter: brightness(1.07);
+            transform: translateY(-2px);
+            box-shadow:
+                0 0 25px rgba(221,205,156,0.35),
+                0 10px 45px rgba(221,205,156,0.22),
+                inset 0 1px 0 rgba(255,255,255,0.45);
+        }
+        .btn-primary > *, .hd-cta > *, .btn-submit > * { position: relative; z-index: 1; }
+
+        .blip-icon, .mod-num { border-radius: 12px; }
+        .blip-label, .cmp-badge, .c-tag { border-radius: 9999px; }
+        .tick { border-radius: 6px; }
+        .mod, .math-cell, .mods-callout, .guarantee, .offer-cap, .who-not,
+        .form-disclaimer, .strip-inner { border-radius: 14px; }
+        .offer-card, .form-card, .who-photo, .cmp-table { border-radius: 18px; overflow: hidden; }
+        .form-group input, .form-group textarea { border-radius: 12px; }
+        .guarantee, .mods-callout { border-left-width: 3px; }
+        .strip { border-top: none; border-bottom: none; background: transparent; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+        .strip-inner { border: 1px solid var(--line-soft); background: var(--bg-panel); overflow: hidden; }
+
+        /* Keyboard focus: same gold language as hover */
+        a:focus-visible, button:focus-visible, summary:focus-visible,
+        input:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+        .faq-item summary:focus-visible { outline-offset: -2px; border-radius: 8px; }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .rv, .hero-badge, .hero-h1, .hero-sub, .hero-actions, .hero-visual { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
+            .redact::after { display: none; }
+            .rg-plane { animation: none; }
+            .cta-ring::before { animation: none; }
+            .btn-primary::after, .hd-cta::after, .btn-submit::after { animation: none; opacity: 0; }
+            .radar-sweep { display: none; }
+            .blip { opacity: 1; animation: none; }
+            .blip-icon { animation: none; }
+            .offer-cap .pulse { animation: none; }
+            .steps .steps-line i { transform: none; transition: none; }
+            .steps .step-dot i { opacity: 1; transition: none; }
+            .bar { transition: none; }
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2151580048923147');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2151580048923147&ev=PageView&noscript=1" alt=""
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-85XT8T4WZ8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-85XT8T4WZ8');
+      gtag('config', 'AW-17757220945');
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Gym Recon",
+    "description": "Market intelligence software for gym owners: a live dashboard tracking territory demographics, competitors, their ads, local search rankings, and your revenue gap, updated weekly with a Monday intelligence brief. Month one includes a complete Recon report and founder video walkthrough.",
+    "url": "https://www.enochmarketing.com/gym-recon.html",
+    "brand": { "@type": "Organization", "name": "Enoch Marketing" },
+    "offers": {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.enochmarketing.com/gym-recon.html"
+    }
+}
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.enochmarketing.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Gym Recon", "item": "https://www.enochmarketing.com/gym-recon.html" }
+    ]
+}
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHK9XF2Z"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<!-- header scroll-state sentinel -->
+<div id="topSentinel" style="position:absolute;top:60px;height:1px;width:1px;"></div>
+
+<!-- HEADER -->
+<header class="hd" id="lpHeader">
+    <a href="/" class="hd-logo">
+        <img src="enoch-logo.png" alt="Enoch Marketing, gym marketing agency" width="1080" height="1350">
+    </a>
+    <a href="#order" class="hd-cta buy-link">GET YOUR GYM RECON</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="retro-grid" aria-hidden="true">
+        <div class="rg-tilt"><div class="rg-plane"></div></div>
+        <div class="rg-fade"></div>
+    </div>
+
+    <div class="hero-inner">
+        <a href="#modules" class="hero-badge">
+            <span class="hero-badge-tag">NEW</span>
+            <span class="hero-badge-txt">MARKET INTELLIGENCE SOFTWARE FOR <b>GYM OWNERS</b></span>
+            <svg class="hero-badge-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+
+        <h1 class="hero-h1">
+            THE GYM DOWN THE STREET IS <span class="gold">TAKING YOUR ATHLETES.</span>
+        </h1>
+
+        <p class="hero-sub">Gym Recon watches your territory, your competitors, their winning ads, and your Google rankings 24/7, then tells you every Monday what changed and what to do about it. One live dashboard. Yours within 72 hours.</p>
+
+        <div class="hero-actions">
+            <span class="cta-ring">
+                <a href="#order" class="btn-primary buy-link">
+                    START YOUR RECON
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </span>
+        </div>
+        <p style="margin-top:0.9rem;font-size:0.76rem;letter-spacing:0.09em;text-transform:uppercase;color:rgba(255,255,255,0.5);"><b style="color:var(--gold);font-weight:600;">$99/mo</b> · 7-day 100% refund promise · Cancel anytime</p>
+    </div>
+
+    <div class="hero-radar-slot">
+        <div class="hero-visual" aria-hidden="true">
+            <div class="radar">
+                <span class="ring ring-dash"></span>
+                <span class="ring ring-1"></span>
+                <span class="ring ring-2"></span>
+                <span class="ring ring-3"></span>
+                <span class="axis-h"></span>
+                <span class="axis-v"></span>
+                <div class="radar-sweep"></div>
+
+                <div class="radar-center">
+                    <span class="c-dot"></span>
+                    <span class="c-tag">YOUR GYM</span>
+                </div>
+
+                <div class="blip" style="--x:68.5%; --y:18%; --d:0.67s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                    <span class="blip-label"><b>01</b>TERRITORY INTEL</span>
+                </div>
+                <div class="blip" style="--x:86.6%; --y:44.5%; --d:1.81s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+                    <span class="blip-label"><b>02</b>COMPETITOR GRID</span>
+                </div>
+                <div class="blip" style="--x:77.1%; --y:75.2%; --d:2.95s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></span>
+                    <span class="blip-label"><b>03</b>AD INTELLIGENCE</span>
+                </div>
+                <div class="blip" style="--x:47.2%; --y:86.9%; --d:4.1s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+                    <span class="blip-label"><b>04</b>WEBSITE TEARDOWN</span>
+                </div>
+                <div class="blip" style="--x:19.4%; --y:70.8%; --d:5.24s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></span>
+                    <span class="blip-label"><b>05</b>SEARCH SCORECARD</span>
+                </div>
+                <div class="blip" style="--x:14.6%; --y:39.1%; --d:6.38s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
+                    <span class="blip-label"><b>06</b>REVENUE GAP</span>
+                </div>
+                <div class="blip" style="--x:36.5%; --y:15.6%; --d:7.52s">
+                    <span class="blip-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+                    <span class="blip-label"><b>07</b>BATTLE PLAN</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUE STRIP -->
+<div class="strip">
+    <div class="strip-inner">
+        <div class="strip-cell rv">
+            <span class="strip-num">MONDAYS</span>
+            <span class="strip-txt"><b>Your market, briefed.</b> The Weekly Recon Brief lands every Monday: what changed in your market this week and the one move to make</span>
+        </div>
+        <div class="strip-cell rv rv-1">
+            <span class="strip-num">$3,600</span>
+            <span class="strip-txt"><b>Money on the table.</b> What one athlete is worth over a two-year stay. Your report counts how many your market still holds for you</span>
+        </div>
+        <div class="strip-cell rv rv-2">
+            <span class="strip-num">7 DAYS</span>
+            <span class="strip-txt"><b>Zero risk.</b> Try Recon for a full week. Not convinced, one click refunds every dollar. No calls, no questions, no hard feelings</span>
+        </div>
+    </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec problem">
+    <div class="wrap-narrow">
+        <div class="problem-accent rv">
+            Somewhere within ten minutes of your front door, athletes are signing up at another gym. And you have no idea <span class="gold">why they picked them.</span>
+        </div>
+        <div class="lede rv rv-1">
+            <p>Run the math on what that actually costs you. If your membership is $150 a month and your average athlete stays two years, every athlete who picks the other gym walks away with <span class="redact rv-redact">$3,600</span> of your revenue. Lose three a month to a competitor with better marketing and you are quietly handing them over <span class="redact rv-redact">$10,000</span> in lifetime value, every month, while your product is better than theirs.</p>
+            <p>You know your gym. You do not know your market. Not really. You do not know which competitor ads have been running for six months straight, which means they are printing members. You do not know how many potential athletes actually live in your territory or what they can afford to pay. You do not know where your own website quietly loses the leads you already paid for.</p>
+            <p>Gym Recon is the intelligence system that settles it: everything happening in your market, everything broken in your funnel, what each problem costs you per month, and the exact order to fix it in so the biggest dollars come back first. <strong>Your dashboard goes live within 72 hours, verified by a human strategist, and it keeps watching every week after.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULES -->
+<section class="sec mods" id="modules">
+    <div class="wrap">
+        <div class="rv">
+            <p class="eyebrow">What's Inside</p>
+            <h2 class="h2">SEVEN LIVE MODULES. <span class="gold">ONE COMPLETE PICTURE.</span></h2>
+        </div>
+        <p class="lede rv rv-1">This is not an AI printout and it is not a static report. Month one delivers your complete Recon; every week after, the dashboard refreshes with what changed. Every claim is verified by a human strategist before it reaches you.</p>
+
+        <!-- TODO: once report #1 exists, replace this mockup spread with a
+             photographed/scanned 2-page spread of the real report (redacted). -->
+        <div class="spread-wrap rv rv-2">
+            <div class="spread" aria-label="Redacted sample pages from a Gym Recon report">
+                <div class="page page-1" aria-hidden="true">
+                    <div class="pg-head">
+                        <span>GYM RECON / ENOCH MARKETING</span>
+                        <span>PAGE 09 / 31</span>
+                    </div>
+                    <div class="pg-title">THE COMPETITOR GRID</div>
+                    <div class="pg-sub">MODULE 02 / 10-MINUTE RADIUS</div>
+                    <table class="sg-table">
+                        <thead>
+                            <tr><th>COMPETITOR</th><th>PRICE</th><th>RATING</th><th>ADS LIVE</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><span class="rdx" style="width:78px"></span></td><td class="blurred">$149/mo</td><td>4.8</td><td>6 MO+</td></tr>
+                            <tr><td><span class="rdx" style="width:56px"></span></td><td class="blurred">$185/mo</td><td>4.6</td><td>NO</td></tr>
+                            <tr><td><span class="rdx" style="width:92px"></span></td><td class="blurred">$119/mo</td><td>4.2</td><td>3 MO</td></tr>
+                            <tr><td><span class="rdx" style="width:64px"></span></td><td class="blurred">$210/mo</td><td>4.9</td><td>YES</td></tr>
+                            <tr><td><span class="rdx" style="width:84px"></span></td><td class="blurred">$95/mo</td><td>3.9</td><td>NO</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="pg-note">CURRENT INTRO OFFERS AND REVIEW VELOCITY CONTINUE ON PAGE 10. EVERY ROW VERIFIED BY A HUMAN STRATEGIST.</p>
+                </div>
+                <div class="page page-2" aria-hidden="true">
+                    <div class="pg-head">
+                        <span>GYM RECON / ENOCH MARKETING</span>
+                        <span>PAGE 24 / 31</span>
+                    </div>
+                    <div class="pg-title">THE REVENUE GAP</div>
+                    <div class="pg-sub">MODULE 06 / CALCULATED FROM YOUR NUMBERS</div>
+                    <p class="pg-gap-label">ESTIMATED GAP PER MONTH</p>
+                    <div class="pg-gap-num blurred">$7,420</div>
+                    <div class="pg-lines">
+                        <span class="blurred">Your largest single leak is the booking step: mobile visitors reach the schedule page and stall at a form that asks for eleven fields.</span>
+                        <span class="blurred">Second is local search: two competitors outrank you for the three highest-volume searches in your radius.</span>
+                    </div>
+                    <div class="pg-box">
+                        <div class="bx-t">FIX ORDER / FIRST 30 DAYS</div>
+                        <ol>
+                            <li><b>1.</b><span class="blurred">Cut booking form to four fields</span></li>
+                            <li><b>2.</b><span class="blurred">Rebuild Google profile categories</span></li>
+                            <li><b>3.</b><span class="blurred">Counter the $99 intro offer</span></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="spread-stamp">SAMPLE SPREAD<br>CLIENT DATA REDACTED</div>
+            </div>
+            <p class="spread-cap">Two pages from the report format: the Competitor Grid and your Revenue Gap.<br><b>Unredacted when it is built from your market.</b></p>
+        </div>
+
+        <div class="mods-layout">
+            <nav class="mods-rail" id="modsRail" aria-label="Report modules">
+                <a href="#mod-1"><span class="n">01</span><span class="t">TERRITORY INTEL</span></a>
+                <a href="#mod-2"><span class="n">02</span><span class="t">COMPETITOR GRID</span></a>
+                <a href="#mod-3"><span class="n">03</span><span class="t">AD INTELLIGENCE</span></a>
+                <a href="#mod-4"><span class="n">04</span><span class="t">WEBSITE TEARDOWN</span></a>
+                <a href="#mod-5"><span class="n">05</span><span class="t">SEARCH SCORECARD</span></a>
+                <a href="#mod-6"><span class="n">06</span><span class="t">THE REVENUE GAP</span></a>
+                <a href="#mod-7"><span class="n">07</span><span class="t">90-DAY BATTLE PLAN</span></a>
+                <a href="#mod-8"><span class="n">+</span><span class="t">FOUNDER WALKTHROUGH</span></a>
+                <a href="#mod-9"><span class="n">+</span><span class="t">WEEKLY RECON BRIEF</span></a>
+            </nav>
+
+            <div class="mods-panels">
+                <article class="mod rv" id="mod-1">
+                    <div class="mod-num">01</div>
+                    <div>
+                        <h3 class="mod-title">TERRITORY INTEL</h3>
+                        <p class="mod-body">Who actually lives within 10 minutes of your door: population, income, age bands, and your realistic member headroom. Most owners discover hundreds of potential members they never knew were in reach, and what those households can afford to pay tells you if you are underpricing.</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-2">
+                    <div class="mod-num">02</div>
+                    <div>
+                        <h3 class="mod-title">THE COMPETITOR GRID</h3>
+                        <p class="mod-body">Every gym and studio in your radius mapped in one table: pricing, ratings, review velocity, and current promotions. Refreshed weekly, so you stop losing trials to offers you did not know existed and price with confidence instead of guessing.</p>
+                        <p class="mod-worth">A $10 PRICE CORRECTION ACROSS 100 MEMBERS IS $12,000 A YEAR</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-3">
+                    <div class="mod-num">03</div>
+                    <div>
+                        <h3 class="mod-title">AD INTELLIGENCE</h3>
+                        <p class="mod-body">Which competitors are running ads right now, the hooks they lead with, and which ads have survived for months. Long-running ads are winning ads. Recon checks weekly and flags new competitor ads, so you start from what your market already buys instead of burning $1,000 testing hooks a competitor tested for you.</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-4">
+                    <div class="mod-num">04</div>
+                    <div>
+                        <h3 class="mod-title">WEBSITE TEARDOWN</h3>
+                        <p class="mod-body">Your path from stranger to booked visit, graded step by step: mobile speed, offer clarity, lead capture, booking friction. Every leak comes with its specific fix. These are leads you already paid for.</p>
+                        <p class="mod-worth">ONE PLUGGED LEAK THAT RECOVERS 2 MEMBERS = $7,200 IN LIFETIME VALUE</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-5">
+                    <div class="mod-num">05</div>
+                    <div>
+                        <h3 class="mod-title">LOCAL SEARCH SCORECARD</h3>
+                        <p class="mod-body">Where you rank on Google Maps for the searches that fill gyms, versus your top three competitors, tracked week over week so you see movement, not snapshots. People searching "gym near me" are the cheapest members you will ever acquire. Every week you rank below a competitor, they collect those members instead.</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-6">
+                    <div class="mod-num">06</div>
+                    <div>
+                        <h3 class="mod-title">THE REVENUE GAP</h3>
+                        <p class="mod-body">The headline number of the whole dashboard: what your current setup costs you every month, in dollars, calculated from your membership price, your member count, and your territory headroom. It updates as your numbers change, so you watch the gap close as you execute. Most owners have never seen this number.</p>
+                    </div>
+                </article>
+                <article class="mod rv" id="mod-7">
+                    <div class="mod-num">07</div>
+                    <div>
+                        <h3 class="mod-title">THE 90-DAY BATTLE PLAN</h3>
+                        <p class="mod-body">Every finding converted into a week-by-week plan, sequenced by revenue impact: the fixes worth the most money come first, and week one costs nothing but an afternoon. Then each month, This Month's 3 Moves refreshes the plan around what changed in your market. No agency required.</p>
+                    </div>
+                </article>
+                <article class="mod mod-plus rv" id="mod-8">
+                    <div class="mod-num">+</div>
+                    <div>
+                        <h3 class="mod-title" style="color:var(--gold);">FOUNDER VIDEO WALKTHROUGH</h3>
+                        <p class="mod-body">Collin records a personal video over your month-one Recon: your top three findings, your revenue gap number, and the first move to make this week. Your gym, his eyes on it.</p>
+                    </div>
+                </article>
+                <article class="mod mod-plus rv" id="mod-9">
+                    <div class="mod-num">+</div>
+                    <div>
+                        <h3 class="mod-title" style="color:var(--gold);">THE WEEKLY RECON BRIEF</h3>
+                        <p class="mod-body">Every Monday, five bullets in your inbox: what changed in your market this week, which competitor made a move, and the one action worth taking. You get value from Recon without ever logging in.</p>
+                    </div>
+                </article>
+
+                <div class="mods-callout rv">
+                    Everything in your dashboard is verified by a human strategist before it reaches you. If a finding is not backed by data we can show you, <strong>it does not go in.</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec">
+    <div class="wrap">
+        <h2 class="h2 rv">ORDER TODAY. <span class="gold">KNOW YOUR MARKET IN 72 HOURS.</span></h2>
+
+        <div class="steps" id="stepsTimeline">
+            <div class="steps-line" aria-hidden="true"><i></i></div>
+            <div class="steps-grid">
+                <div class="step rv">
+                    <span class="step-dot" aria-hidden="true"><i></i></span>
+                    <p class="step-k">T-0H</p>
+                    <h3 class="step-t">ORDER + INTAKE</h3>
+                    <p class="step-b">Checkout takes two minutes. Then a short intake form asks about your gym, your numbers, and your biggest frustration. Five minutes, total.</p>
+                </div>
+                <div class="step rv rv-1">
+                    <span class="step-dot" aria-hidden="true"><i></i></span>
+                    <p class="step-k">T-24H TO T-60H</p>
+                    <h3 class="step-t">WE RUN RECON</h3>
+                    <p class="step-b">Our intelligence pipeline sweeps your territory, your competitors, and their ads. A human strategist verifies every finding. Nothing generic survives.</p>
+                </div>
+                <div class="step rv rv-2">
+                    <span class="step-dot" aria-hidden="true"><i></i></span>
+                    <p class="step-k">T-72H</p>
+                    <h3 class="step-t">DASHBOARD GOES LIVE</h3>
+                    <p class="step-b">Within 72 hours your dashboard goes live with your complete month-one Recon and Collin's personal walkthrough. From then on, Recon watches your market every week.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- THE MATH -->
+<section class="sec math">
+    <div class="wrap">
+        <h2 class="h2 rv">ONE NEW ATHLETE PAYS FOR <span class="gold">THREE YEARS OF RECON.</span></h2>
+        <div class="math-grid">
+            <div class="math-cell rv">
+                <div class="math-big"><span class="count" data-prefix="$" data-count="3600">$0</span></div>
+                <h3 class="math-t">WHAT ONE ATHLETE IS WORTH</h3>
+                <p class="math-b">At $150 a month with a two-year average stay, a single new member is worth $3,600 to your gym. Your numbers may be higher. That is one athlete.</p>
+            </div>
+            <div class="math-cell rv rv-1">
+                <div class="math-big"><span class="count" data-prefix="$" data-count="99" data-suffix="/MO">$0</span></div>
+                <h3 class="math-t">WHAT RECON COSTS</h3>
+                <p class="math-b">One member's dues. Less than most gyms spend on ads in a single week, and you can cancel anytime with two clicks.</p>
+            </div>
+            <div class="math-cell hot rv rv-2">
+                <div class="math-big"><span class="count" data-count="36" data-suffix=" MONTHS">0 MONTHS</span></div>
+                <h3 class="math-t">YOUR BREAK-EVEN</h3>
+                <p class="math-b">One new athlete is worth $3,600. That covers three full years of Recon. If it brings you a single member a year, it returns triple what you pay for it.</p>
+            </div>
+        </div>
+        <div class="mods-callout rv" style="margin-top:1.1rem;">
+            This is why your dashboard leads with the Revenue Gap: <strong>a number in dollars, from your own figures, updated as your market moves.</strong> You will know exactly what fixing your marketing is worth before you spend anything fixing it.
+        </div>
+    </div>
+</section>
+
+<!-- OFFER / PRICING -->
+<section class="sec offer" id="pricing">
+    <div class="offer-topo" aria-hidden="true"></div>
+    <div class="offer-wrap">
+        <div class="offer-copy rv">
+            <p class="eyebrow">The Offer</p>
+            <h2 class="h2">ONE DASHBOARD.<br><span class="gold">EVERY ANSWER, EVERY WEEK.</span></h2>
+            <p>Agencies charge $1,500 and up for a one-time market audit. Recon gives you that depth in month one, then keeps watching your market every week for less than one member's dues.</p>
+            <p>And if you decide you want us to run the plan for you, <strong>your Recon payments are credited to your first month</strong> when you upgrade to a retainer within 60 days.</p>
+            <div class="offer-cap">
+                <span class="pulse" aria-hidden="true"></span>
+                <p><b>WE ONBOARD 10 GYMS PER WEEK.</b> EVERY NEW DASHBOARD IS HUMAN-VERIFIED BEFORE IT GOES LIVE. THAT DOES NOT SCALE, SO WHEN THE WEEK IS FULL, YOU WAIT.</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="offer-card rv rv-1">
+                <p class="offer-card-label">Gym Recon</p>
+                <div class="offer-price">
+                    <span style="font-family:var(--font-display);font-size:1.7rem;color:var(--white-dim);text-decoration:line-through;margin-right:0.6rem;">$99</span><span class="offer-main">$79/MO</span>
+                </div>
+                <p class="offer-note">Founding rate for the first 20 gyms, locked for life. Then $99/month. Cancel anytime, online, two clicks.</p>
+                <ul class="offer-includes">
+                    <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Live 7-module market dashboard, updated weekly</li>
+                    <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Weekly Recon Brief in your inbox every Monday</li>
+                    <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Month one: complete Recon + founder video walkthrough</li>
+                    <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Payments credited if we run the plan for you</li>
+                </ul>
+                <span class="cta-ring" style="width:100%;">
+                    <a href="#order" class="btn-primary buy-link">
+                        GET YOUR GYM RECON
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </span>
+                <p class="offer-fine">SECURE CHECKOUT · 7-DAY 100% REFUND PROMISE · CANCEL ANYTIME.</p>
+            </div>
+            <div class="guarantee rv rv-2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                <p><strong>Our promise:</strong> try Recon for 7 full days. If your dashboard has not shown you at least three opportunities worth 10x a month of Recon, one email refunds every dollar, same day. You keep everything you learned.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="sec founder">
+    <div class="wrap">
+        <div class="who-grid">
+            <div class="who-photo founder-photo rv">
+                <picture>
+                    <source srcset="collin-charles.avif" type="image/avif">
+                    <img src="collin-charles.png" alt="Collin Charles, founder of Enoch Marketing" width="798" height="802" loading="lazy">
+                </picture>
+            </div>
+            <div>
+                <p class="eyebrow rv">Who Is Behind This</p>
+                <h2 class="h2 rv rv-1">EVERY DASHBOARD CROSSES ONE DESK. <span class="gold">HIS.</span></h2>
+                <p class="lede rv rv-2">Collin Charles is a veteran and a CrossFit athlete who works with gyms and nothing else. He is the human strategist who verifies every finding before your dashboard goes live, and the voice on the video walking you through month one. No account managers, no hand-offs, no template narration. Your market, his eyes on it.</p>
+                <p class="founder-sig rv rv-3">Founder, Enoch Marketing · Veteran owned</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FREE AUDIT VS RECON -->
+<section class="sec cmp">
+    <div class="wrap">
+        <h2 class="h2 rv">FREE AUDIT VS <span class="gold">GYM RECON</span></h2>
+        <p class="lede rv rv-1">Our <a href="contact.html" class="inline-link">free audit</a> is a quick outside look: a personal video with your 3 highest-impact fixes. Gym Recon is the full intelligence operation, watching your market every week. Start free if you want a taste. Start Recon if you want the whole map, monitored.</p>
+
+        <div class="cmp-table rv rv-2">
+            <div class="cmp-cell cmp-k" aria-hidden="true"></div>
+            <div class="cmp-cell cmp-head">FREE AUDIT</div>
+            <div class="cmp-cell cmp-head">GYM RECON <span class="cmp-badge">THE FULL MAP</span></div>
+
+            <div class="cmp-cell cmp-k">Format</div>
+            <div class="cmp-cell">Personal video review of your website, ads, and Google presence</div>
+            <div class="cmp-cell">Live dashboard updated weekly, plus your complete month-one Recon and founder video walkthrough</div>
+
+            <div class="cmp-cell cmp-k">Depth</div>
+            <div class="cmp-cell">Your 3 highest-impact fixes</div>
+            <div class="cmp-cell">Territory demographics, competitor grid, ad intelligence, website teardown, local search scorecard</div>
+
+            <div class="cmp-cell cmp-k">The numbers</div>
+            <div class="cmp-cell">Directional pointers</div>
+            <div class="cmp-cell">Your revenue gap in dollars per month, plus a battle plan refreshed monthly</div>
+
+            <div class="cmp-cell cmp-k">Delivery</div>
+            <div class="cmp-cell">One video, 48 hours</div>
+            <div class="cmp-cell">Dashboard live in 72 hours, then updated weekly</div>
+
+            <div class="cmp-cell cmp-k">Price</div>
+            <div class="cmp-cell">Free</div>
+            <div class="cmp-cell">$99/month · founding $79 · 7-day full refund</div>
+        </div>
+
+        <div class="cmp-cta rv">
+            <p>Already had your free audit? Recon is what watches your market after the snapshot.</p>
+            <a href="#order" class="btn-primary buy-link">
+                GET YOUR GYM RECON
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="sec who">
+    <div class="wrap">
+        <div class="who-grid">
+            <div class="who-photo rv" aria-hidden="true">
+                <img src="story-img-7.jpg" alt="" width="960" height="640" loading="lazy">
+            </div>
+            <div>
+                <h2 class="h2 rv">WHO THIS <span class="gold">IS FOR</span></h2>
+                <ul class="who-list">
+                    <li class="who-item rv rv-1">
+                        <span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <p>Gym owners competing against other gyms within a 10 to 15 minute drive and losing trials they should be winning</p>
+                    </li>
+                    <li class="who-item rv rv-2">
+                        <span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <p>Owners spending on ads or considering it, who want to see what already works in their market before spending another dollar</p>
+                    </li>
+                    <li class="who-item rv rv-3">
+                        <span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        <p>Do-it-yourself operators who want the map and the plan, without committing to an agency retainer</p>
+                    </li>
+                </ul>
+                <div class="who-not rv rv-3">
+                    If you want someone to tell you everything is fine, this is not for you. Recon reports what is actually happening in your market, including the parts that sting.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+    <div class="wrap-narrow">
+        <h2 class="h2 rv">BEFORE YOU <span class="gold">ORDER</span></h2>
+        <div class="faq-list rv rv-1">
+            <details class="faq-item">
+                <summary>How does Recon make me money?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>The dashboard does not make you money. Acting on it does, through three mechanisms: recovering leads you already pay for but currently lose to website and follow-up leaks, winning trials from competitors by countering the exact offers and ads they run, and capturing the free high-intent members searching Google for a gym near you right now. Each mechanism ends in the same place: members on your floor paying monthly. Your plan sequences all three by dollar impact, and the weekly brief tells you the moment something changes.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is this just AI-generated data?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>The pipeline uses serious tooling, and then a human strategist verifies every finding before your dashboard goes live. If a claim is not backed by data we can show you, it does not go in. That is the difference between Recon and the free AI printouts flooding inboxes right now: software watches, a human verifies.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What do you need from me?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>About five minutes after checkout: your address, website, membership price, rough member count, and your biggest frustration in your own words. If you run ads, screenshots or view access help us go deeper, but they are optional.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do I need to hire you afterward?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>No. The plan is written so you can execute it yourself, and most of the quick wins cost nothing but time. If you do want us to run it, your Recon payments are credited to your first month when you upgrade to a retainer within 60 days.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Why 72 hours and not instant?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>Machine research is fast. Human verification and a personally recorded walkthrough are not. Both are why your dashboard is worth paying for, and why we onboard 10 gyms per week, no more.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can I cancel online?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>Yes. One message cancels it, no call, no retention rep, and inside your first 7 days the same message gets you a full refund the same day. We keep the exit this easy on purpose: software that has to lock the door is software that is not working.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What happens to my data if I cancel?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>You keep every brief and every report we ever sent you. Dashboard access ends at the close of your billing period, and we delete your market data on request. Nothing is held hostage.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What if I am in a small town?<svg class="faq-plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></summary>
+                <p>Smaller markets are where Recon pays off fastest. Fewer competitors means each fix moves you up the rankings further, ad intelligence covers everyone in one sweep, and the territory math tells you exactly how many members your area can realistically support, so you can plan revenue around reality instead of guessing.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="sec order" id="order">
+    <div class="order-wrap">
+        <div class="rv">
+            <p class="eyebrow">Start Your Recon</p>
+            <h2 class="h2">READY TO SEE YOUR<br><span class="gold">WHOLE MARKET?</span></h2>
+            <p class="lede" id="orderLede">Fill out the short form and we send your secure checkout link within 2 hours, usually much faster. Your dashboard goes live within 72 hours of payment and intake, and your first 7 days are covered by the 100% refund promise. Three days from now your market is being watched.</p>
+            <ul class="order-points">
+                <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$99 a month. Founding rate $79 locked for life for the first 20 gyms</li>
+                <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>7-day 100% refund promise: one click, every dollar back</li>
+                <li><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>Cancel anytime online. Payments credited if you upgrade to a retainer within 60 days</li>
+            </ul>
+        </div>
+
+        <div class="form-card rv rv-1">
+            <div class="form-card-head">
+                <span class="t">ORDER FORM</span>
+                <span class="p">FOUNDING RATE: <b>$79/MO</b></span>
+            </div>
+            <form id="reconForm" onsubmit="handleReconSubmit(event)">
+                <input type="hidden" name="Running Paid Ads" id="hiddenAds" value="Not answered">
+                <input type="text" id="reconCompanyUrl" name="Company URL" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;">
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="reconFirstName">First Name <span class="req">*</span></label>
+                        <input type="text" id="reconFirstName" name="First Name" placeholder="John" required>
+                        <span class="field-error" id="errFirstName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reconGymName">Gym Name <span class="req">*</span></label>
+                        <input type="text" id="reconGymName" name="Gym Name" placeholder="Iron Republic CrossFit" required>
+                        <span class="field-error" id="errGymName"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reconEmail">Email Address <span class="req">*</span></label>
+                    <input type="email" id="reconEmail" name="Email" placeholder="john@yourgym.com" required>
+                    <span class="field-error" id="errEmail"></span>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="reconWebsite">Gym Website <span class="req">*</span></label>
+                        <input type="url" id="reconWebsite" name="Website URL" placeholder="https://yourgym.com" required>
+                        <span class="field-error" id="errWebsite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reconCity">City + State <span class="req">*</span></label>
+                        <input type="text" id="reconCity" name="City" placeholder="Frisco, TX" required>
+                        <span class="field-error" id="errCity"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Running Paid Ads?</label>
+                    <div class="ads-toggle">
+                        <button type="button" class="ads-btn" id="adsYes" onclick="selectAds('Yes')">YES</button>
+                        <button type="button" class="ads-btn" id="adsNo" onclick="selectAds('No')">NO</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reconFrustration">Your #1 Frustration Right Now <span class="req">*</span></label>
+                    <textarea id="reconFrustration" name="Frustration" placeholder="Leads ghost me after the first message. Trials never convert. The gym down the road undercuts us. Whatever it is, say it straight." required></textarea>
+                    <span class="field-error" id="errFrustration"></span>
+                </div>
+
+                <button type="submit" class="btn-submit" id="reconSubmitBtn">
+                    START MY RECON
+                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+
+                <p id="reconFormStatus" role="status" aria-live="polite" hidden style="margin-top:12px;color:#f28b82;font-size:0.82rem;line-height:1.5;"></p>
+
+                <div class="form-disclaimer">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;color:rgba(221,205,156,0.5);margin-top:1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <p id="orderPrivacy">We use your information only to respond to your Gym Recon request and process it through trusted service providers under our <a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a>. Nothing is charged until you complete secure checkout.</p>
+                </div>
+
+                <p class="form-fine">
+                    We onboard <strong>10 gyms per week</strong>, and the $79 founding rate covers only the first 20. Your spot is held from the moment this form lands.
+                </p>
+                <p class="form-required-note"><span style="color:#f28b82;">*</span> Required fields</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- STICKY CTA BAR -->
+<div class="bar" id="ctaBar" aria-hidden="true">
+    <div class="bar-inner">
+        <span class="bar-txt"><b>$99/MO</b><span class="bar-long"> YOUR MARKET, WATCHED WEEKLY. LIVE IN 72 HOURS.</span></span>
+        <a href="#order" class="btn-primary buy-link">
+            GET YOUR GYM RECON
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="enoch-logo.png" alt="Enoch Marketing, gym marketing agency" width="1080" height="1350" loading="lazy">
+                <p>Practical growth systems for independent gyms, studios, and fitness brands across the US.</p>
+            </div>
+
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Book a Call</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#paid-advertising">Paid Advertising</a></li>
+                    <li><a href="services.html#lead-generation">Lead Generation</a></li>
+                    <li><a href="services.html#social-media">Social Media</a></li>
+                    <li><a href="services.html#local-seo">Local SEO</a></li>
+                    <li><a href="services.html#web-design">Web Design</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://x.com/enochmkt" target="_blank" rel="noopener">X</a></li>
+                    <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Enoch Marketing. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                <a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+                <a href="https://x.com/enochmkt" target="_blank" rel="noopener" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.189L24 22.847h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.901 1.153Zm-1.29 19.493h2.039L6.486 3.24H4.298L17.61 20.646Z"/></svg></a>
+                <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ── CHECKOUT CONFIG ─────────────────────────────────────────────────────
+    // When your Stripe Payment Link is ready, paste it here. Buy buttons keep
+    // pointing at the intake form (#order) so every order still captures the
+    // lead through the protected site endpoint; after a successful submit the page
+    // redirects straight to Stripe checkout instead of the 2-hour email wait.
+    // Create one at: Stripe Dashboard → Payment Links → New
+    // (product: Gym Recon Founding, $79/month RECURRING subscription)
+    const STRIPE_PAYMENT_LINK = '';
+    // ────────────────────────────────────────────────────────────────────────
+    if (STRIPE_PAYMENT_LINK) {
+        document.getElementById('orderLede').textContent = 'Fill out the short form and you go straight to secure checkout. Your 72-hour delivery clock starts the moment payment and intake are complete. Three days from now you can know exactly where the money is leaking, what it adds up to per month, and which fix pays you back first.';
+        document.getElementById('orderPrivacy').innerHTML = 'We use your information only to respond to your Gym Recon request and process it through trusted service providers under our <a href="privacy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a>. Nothing is charged until you complete secure checkout.';
+    }
+
+    // Every buy CTA click = checkout intent. Builds the retargeting audience
+    // of almost-buyers even when they never reach the form. Fired once per load.
+    const isProductionAnalyticsHost = ['enochmarketing.com', 'www.enochmarketing.com'].includes(window.location.hostname);
+    let checkoutIntentFired = false;
+    document.querySelectorAll('.buy-link').forEach(a => {
+        a.addEventListener('click', () => {
+            if (!isProductionAnalyticsHost || checkoutIntentFired || typeof fbq !== 'function') return;
+            checkoutIntentFired = true;
+            fbq('track', 'InitiateCheckout', { content_name: 'Gym Recon', value: 99, currency: 'USD' });
+        });
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // HEADER STATE via sentinel (no scroll listener)
+    const lpHeader = document.getElementById('lpHeader');
+    new IntersectionObserver(([e]) => {
+        lpHeader.classList.toggle('scrolled', !e.isIntersecting);
+    }).observe(document.getElementById('topSentinel'));
+
+    // REVEAL ON SCROLL
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('on'); revealObs.unobserve(e.target); }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.rv, .redact').forEach(el => revealObs.observe(el));
+
+    // TIMELINE DRAW
+    const steps = document.getElementById('stepsTimeline');
+    new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => { if (e.isIntersecting) { steps.classList.add('on'); obs.disconnect(); } });
+    }, { threshold: 0.35 }).observe(steps);
+
+    // COUNT-UP NUMBERS
+    function runCount(el) {
+        const target = parseInt(el.dataset.count, 10);
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        if (reduceMotion) { el.textContent = prefix + target.toLocaleString('en-US') + suffix; return; }
+        const dur = 1300;
+        const t0 = performance.now();
+        function tick(t) {
+            const p = Math.min((t - t0) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 4);
+            el.textContent = prefix + Math.round(target * eased).toLocaleString('en-US') + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+    const countObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { runCount(e.target); countObs.unobserve(e.target); } });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.count').forEach(el => countObs.observe(el));
+
+    // MODULE RAIL ACTIVE STATE
+    const railLinks = Array.from(document.querySelectorAll('#modsRail a'));
+    const railFor = id => railLinks.find(a => a.getAttribute('href') === '#' + id);
+    const modObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                railLinks.forEach(a => a.classList.remove('active'));
+                const link = railFor(e.target.id);
+                if (link) link.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    document.querySelectorAll('.mod').forEach(m => modObs.observe(m));
+
+    // STICKY CTA BAR: appears after the hero, hides while the order form is on screen
+    const ctaBar = document.getElementById('ctaBar');
+    let pastHero = false, orderVisible = false;
+    function syncBar() { ctaBar.classList.toggle('show', pastHero && !orderVisible); }
+    new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; syncBar(); }, { threshold: 0.15 })
+        .observe(document.querySelector('.hero'));
+    new IntersectionObserver(([e]) => { orderVisible = e.isIntersecting; syncBar(); }, { threshold: 0.05 })
+        .observe(document.getElementById('order'));
+
+    // ADS TOGGLE
+    function selectAds(val) {
+        document.getElementById('adsYes').classList.toggle('active', val === 'Yes');
+        document.getElementById('adsNo').classList.toggle('active', val === 'No');
+        document.getElementById('hiddenAds').value = val;
+    }
+
+    // FIELD HELPERS
+    function setErr(inputId, errId, msg) {
+        document.getElementById(inputId).classList.add('error-state');
+        const el = document.getElementById(errId);
+        el.textContent = msg; el.classList.add('visible');
+    }
+    function clearErr(inputId, errId) {
+        document.getElementById(inputId).classList.remove('error-state');
+        document.getElementById(errId).classList.remove('visible');
+    }
+    const errMap = { reconFirstName:'errFirstName', reconGymName:'errGymName', reconEmail:'errEmail', reconWebsite:'errWebsite', reconCity:'errCity', reconFrustration:'errFrustration' };
+    Object.keys(errMap).forEach(id => {
+        document.getElementById(id).addEventListener('input', () => clearErr(id, errMap[id]));
+    });
+
+    async function handleReconSubmit(e) {
+        e.preventDefault();
+
+        const firstName   = document.getElementById('reconFirstName').value.trim();
+        const gymName     = document.getElementById('reconGymName').value.trim();
+        const email       = document.getElementById('reconEmail').value.trim();
+        const website     = document.getElementById('reconWebsite').value.trim();
+        const city        = document.getElementById('reconCity').value.trim();
+        const frustration = document.getElementById('reconFrustration').value.trim();
+        const ads         = document.getElementById('hiddenAds').value;
+        const companyUrl  = document.getElementById('reconCompanyUrl').value.trim();
+
+        let valid = true;
+        if (!firstName) { setErr('reconFirstName','errFirstName','Please enter your first name.'); valid = false; }
+        if (!gymName)   { setErr('reconGymName','errGymName','Please enter your gym name.'); valid = false; }
+        if (!email)     { setErr('reconEmail','errEmail','Please enter your email address.'); valid = false; }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('reconEmail','errEmail','Please enter a valid email.'); valid = false; }
+        if (!website)   { setErr('reconWebsite','errWebsite','Please enter your gym website URL.'); valid = false; }
+        if (!city)      { setErr('reconCity','errCity','Please enter your city and state.'); valid = false; }
+        if (!frustration || frustration.length < 20) { setErr('reconFrustration','errFrustration','Give us at least a sentence. This shapes your report.'); valid = false; }
+        if (!valid) {
+            const firstErr = document.querySelector('.form-group .error-state');
+            if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        const btn = document.getElementById('reconSubmitBtn');
+        const status = document.getElementById('reconFormStatus');
+        status.hidden = true;
+        status.textContent = '';
+        btn.innerHTML = 'SENDING...';
+        btn.disabled = true;
+
+        try {
+            const res = await fetch('/api/gym-recon-lead', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    firstName,
+                    gymName,
+                    email,
+                    website,
+                    city,
+                    frustration,
+                    ads,
+                    companyUrl,
+                    sourceUrl: window.location.href
+                })
+            });
+            const data = await res.json().catch(() => ({}));
+            if (res.ok && data.ok) {
+                if (isProductionAnalyticsHost && typeof fbq === 'function') fbq('track', 'Lead');
+                btn.style.background = 'rgba(74,222,128,0.12)';
+                btn.style.borderColor = 'rgba(74,222,128,0.4)';
+                btn.style.color = '#4ade80';
+                if (STRIPE_PAYMENT_LINK) {
+                    // Lead captured; hand straight off to secure checkout.
+                    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> REQUEST RECEIVED. TAKING YOU TO CHECKOUT...';
+                    setTimeout(() => { window.location.href = STRIPE_PAYMENT_LINK; }, 1200);
+                    return;
+                }
+                btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> REQUEST RECEIVED. CHECK YOUR INBOX SHORTLY';
+                e.target.reset();
+                document.getElementById('adsYes').classList.remove('active');
+                document.getElementById('adsNo').classList.remove('active');
+                document.getElementById('hiddenAds').value = 'Not answered';
+            } else {
+                throw new Error(data.error || 'Intake request failed');
+            }
+        } catch (err) {
+            btn.innerHTML = 'ERROR: PLEASE TRY AGAIN';
+            btn.style.color = '#f28b82';
+            btn.disabled = false;
+            status.textContent = 'We could not save your request. Please try again or email us directly.';
+            status.hidden = false;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="paid-agency-landing.js?v=20260908-2"></script>
     <script>
     (function () {
         var params = new URLSearchParams(window.location.search);
         var bookingId = params.get('uid') || '';
+        var demo = params.get('demo') === 'gym-recon' ? 'gym-recon' : '';
+        var service = /^(gym-local-seo|gym-paid-advertising|gym-lead-generation|gym-website-design|gym-app-development|gym-social-media-marketing)$/.test(params.get('service') || '')
+            ? params.get('service')
+            : '';
+        var leadId = /^[A-Za-z0-9_-]{8,160}$/.test(params.get('lead_id') || '')
+            ? params.get('lead_id')
+            : '';
+        var bookingIntent = params.get('gr_intent') || '';
         var validBookingId = /^[A-Za-z0-9_-]{6,128}$/.test(bookingId);
         var isProductionHost = window.location.hostname === 'www.enochmarketing.com' ||
             window.location.hostname === 'enochmarketing.com';
@@ -15,8 +24,39 @@
         }
 
         var eventId = 'cal_' + bookingId;
-        var shouldTrack = isProductionHost;
-        if (isProductionHost) {
+        var handoffKey = 'enoch_booking_handoff_' + bookingId;
+        var expectedHandoff = demo || 'strategy-call';
+        var hasEmbeddedHandoff = false;
+        try {
+            hasEmbeddedHandoff = window.sessionStorage.getItem(handoffKey) === expectedHandoff;
+            if (hasEmbeddedHandoff) window.sessionStorage.removeItem(handoffKey);
+        } catch (error) {
+            hasEmbeddedHandoff = false;
+        }
+
+        var hasDirectHandoff = false;
+        if (demo && /^[A-Za-z0-9_-]{16,128}$/.test(bookingIntent)) {
+            try {
+                var directIntentKey = 'enoch_gym_recon_booking_intent_v1';
+                var storedIntent = JSON.parse(window.localStorage.getItem(directIntentKey) || '{}');
+                var intentAge = Date.now() - Number(storedIntent.createdAt || 0);
+                hasDirectHandoff = storedIntent.token === bookingIntent &&
+                    intentAge >= 0 && intentAge <= 4 * 60 * 60 * 1000;
+                if (hasDirectHandoff) window.localStorage.removeItem(directIntentKey);
+            } catch (error) {
+                hasDirectHandoff = false;
+            }
+        }
+
+        var hasConfirmedHandoff = hasEmbeddedHandoff || hasDirectHandoff;
+        document.documentElement.setAttribute(
+            'data-booking-handoff',
+            hasDirectHandoff ? 'direct_cal_link' :
+                (hasEmbeddedHandoff ? 'embedded_cal' : 'unconfirmed')
+        );
+
+        var shouldTrack = isProductionHost && hasConfirmedHandoff;
+        if (shouldTrack) {
             try {
                 var storageKey = 'enoch_call_booking_' + bookingId;
                 shouldTrack = window.localStorage.getItem(storageKey) !== 'tracked';
@@ -32,6 +72,10 @@
             shouldTrack: shouldTrack,
             isProductionHost: isProductionHost,
             startTime: params.get('startTime') || '',
+            demo: demo,
+            service: service,
+            leadId: leadId,
+            bookingFlow: hasDirectHandoff ? 'direct_cal_link' : 'embedded_cal',
             attribution: {}
         };
 
@@ -42,27 +86,68 @@
         if (window.enochBookingConfirmation.startTime) {
             cleanQuery.set('startTime', window.enochBookingConfirmation.startTime);
         }
+        if (window.enochBookingConfirmation.demo) {
+            cleanQuery.set('demo', window.enochBookingConfirmation.demo);
+        }
+        if (window.enochBookingConfirmation.service) {
+            cleanQuery.set('service', window.enochBookingConfirmation.service);
+        }
+        if (window.enochBookingConfirmation.leadId) {
+            cleanQuery.set('lead_id', window.enochBookingConfirmation.leadId);
+        }
 
-        // Cal.com's confirmation redirect forwards campaign parameters. Keep
-        // only the attribution fields we need so the completed booking remains
-        // tied to its original campaign without retaining contact details.
+        // Both booking flows forward campaign parameters. If a provider strips
+        // them, fall back to the matching first-party attribution namespace.
+        var storedAttribution = {};
+        if (demo) {
+            try {
+                var parsedAttribution = JSON.parse(
+                    window.sessionStorage.getItem('enoch_gym_recon_attribution_v1') || '{}'
+                );
+                if (parsedAttribution && typeof parsedAttribution === 'object' && !Array.isArray(parsedAttribution)) {
+                    storedAttribution = parsedAttribution;
+                }
+            } catch (error) {}
+        } else if (window.enochAgencyAttribution && typeof window.enochAgencyAttribution === 'object') {
+            storedAttribution = window.enochAgencyAttribution;
+        }
+
         [
             'utm_source',
             'utm_medium',
             'utm_campaign',
+            'utm_id',
             'utm_content',
             'utm_term',
             'gclid',
             'gbraid',
             'wbraid',
-            'fbclid'
+            'dclid',
+            'msclkid',
+            'fbclid',
+            'device',
+            'network',
+            'matchtype',
+            'campaignid',
+            'adgroupid',
+            'creative',
+            'placement',
+            'targetid'
         ].forEach(function (key) {
-            var value = params.get(key);
+            var value = params.get(key) || storedAttribution[key];
             if (!value) return;
-            value = value.slice(0, 200);
+            value = String(value).trim().replace(/[\u0000-\u001F\u007F]/g, ' ').slice(0, 200);
+            if (!value) return;
             window.enochBookingConfirmation.attribution[key] = value;
             cleanQuery.set(key, value);
         });
+
+        window.enochBookingConfirmation.attributionFields =
+            Object.keys(window.enochBookingConfirmation.attribution).length;
+        document.documentElement.setAttribute(
+            'data-attribution-count',
+            String(window.enochBookingConfirmation.attributionFields)
+        );
 
         window.history.replaceState(null, '', '/call-booked.html?' + cleanQuery.toString());
     })();
@@ -104,9 +189,10 @@
         fbq('init', '2151580048923147');
         fbq('track', 'PageView');
         if (window.enochBookingConfirmation.shouldTrack) {
+            var isGymReconDemo = window.enochBookingConfirmation.demo === 'gym-recon';
             fbq('track', 'Schedule', {
-                content_name: 'Free Gym Growth Strategy Call',
-                content_category: 'Strategy Call'
+                content_name: isGymReconDemo ? 'Gym Recon 20-Minute Demo' : 'Free Gym Growth Strategy Call',
+                content_category: isGymReconDemo ? 'Product Demo' : 'Strategy Call'
             }, {
                 eventID: window.enochBookingConfirmation.eventId
             });
@@ -121,13 +207,18 @@
     function gtag(){dataLayer.push(arguments);}
     if (window.enochBookingConfirmation && window.enochBookingConfirmation.isProductionHost) {
         if (window.enochBookingConfirmation.shouldTrack) {
+            var isGymReconDemo = window.enochBookingConfirmation.demo === 'gym-recon';
             var bookingEventParameters = Object.assign({
                 event_id: window.enochBookingConfirmation.eventId,
                 lead_source: 'cal_com',
-                lead_type: 'strategy_call',
+                lead_type: isGymReconDemo ? 'product_demo' : 'strategy_call',
                 booking_provider: 'cal_com',
                 booking_id: window.enochBookingConfirmation.bookingId,
-                appointment_type: 'free_gym_growth_strategy_call'
+                lead_id: window.enochBookingConfirmation.leadId,
+                appointment_type: isGymReconDemo ? 'gym_recon_demo' : 'free_gym_growth_strategy_call',
+                booking_flow: window.enochBookingConfirmation.bookingFlow,
+                service_interest: window.enochBookingConfirmation.service,
+                attribution_fields: window.enochBookingConfirmation.attributionFields
             }, window.enochBookingConfirmation.attribution);
 
             if (window.enochBookingConfirmation.startTime) {
@@ -135,12 +226,23 @@
                     window.enochBookingConfirmation.startTime;
             }
 
+            if (isGymReconDemo) {
+                window.dataLayer.push(Object.assign({
+                    event: 'gym_recon_demo_booked',
+                    product: 'gym_recon',
+                    funnel: 'product_demo'
+                }, bookingEventParameters));
+                document.documentElement.setAttribute('data-last-tracking-event', 'gym_recon_demo_booked');
+            }
+
             gtag('event', 'book_appointment', Object.assign({
                 send_to: 'G-LS4R3RQVST'
             }, bookingEventParameters));
-            gtag('event', 'generate_lead', Object.assign({
-                send_to: 'G-LS4R3RQVST'
-            }, bookingEventParameters));
+            if (!isGymReconDemo) {
+                gtag('event', 'generate_lead', Object.assign({
+                    send_to: 'G-LS4R3RQVST'
+                }, bookingEventParameters));
+            }
             gtag('event', 'conversion', {
                 send_to: 'AW-17757220945/2tOJCIGfstQcENHgppNC',
                 transaction_id: window.enochBookingConfirmation.bookingId
@@ -384,15 +486,15 @@
             <a class="logo" href="/" aria-label="Enoch Marketing home">
                 <img src="enoch-logo-transparent.png" alt="Enoch Marketing" width="791" height="541">
             </a>
-            <div class="status-label">Booking confirmed</div>
+            <div class="status-label" id="bookingStatus">Booking confirmed</div>
         </header>
 
         <main>
             <section class="confirmation-grid" aria-labelledby="confirmation-title">
                 <div class="message-panel">
-                    <p class="eyebrow">Your call is locked in</p>
+                    <p class="eyebrow" id="bookingEyebrow">Your call is locked in</p>
                     <h1 id="confirmation-title">You’re <span>booked.</span></h1>
-                    <p class="intro">Your free Gym Growth Strategy Call is confirmed. Check your inbox for the calendar invitation and meeting link. We’ll come prepared to talk through your goals, current marketing, and clearest next step.</p>
+                    <p class="intro" id="bookingIntro">Your free Gym Growth Strategy Call is confirmed. Check your inbox for the calendar invitation and meeting link. We’ll come prepared to talk through your goals, current marketing, and clearest next step.</p>
 
                     <div class="booking-time" id="bookingTime" hidden>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
@@ -405,8 +507,8 @@
                         </div>
                     </div>
 
-                    <a class="primary-button" href="/vsl-funnel-page.html">
-                        Return to Enoch Marketing
+                    <a class="primary-button" id="bookingReturnLink" href="/vsl-funnel-page.html">
+                        <span id="bookingReturnText">Return to Enoch Marketing</span>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
                     </a>
                 </div>
@@ -423,7 +525,7 @@
                         </li>
                         <li>
                             <span class="step-number">02</span>
-                            <div><strong>Bring your priorities</strong><p>Think about where growth feels stuck and what a better next 90 days would look like.</p></div>
+                            <div><strong id="bookingPriorityTitle">Bring your priorities</strong><p id="bookingPriorityCopy">Think about where growth feels stuck and what a better next 90 days would look like.</p></div>
                         </li>
                         <li>
                             <span class="step-number">03</span>
@@ -437,7 +539,7 @@
 
         <footer>
             <span>© 2026 Enoch Marketing</span>
-            <span>Veteran owned · Built for gyms</span>
+            <span>Veteran owned · Built for gyms · <a href="https://x.com/enochmkt" target="_blank" rel="noopener">X</a></span>
         </footer>
     </div>
 
@@ -445,6 +547,20 @@
     (function () {
         var confirmation = window.enochBookingConfirmation;
         if (!confirmation) return;
+
+        if (confirmation.demo === 'gym-recon') {
+            document.title = 'Your Gym Recon Demo Is Booked | Enoch Marketing';
+            document.querySelector('meta[name="description"]').setAttribute('content', 'Your 20-minute Gym Recon demo is confirmed. Check your inbox for the calendar invitation and meeting details.');
+            document.getElementById('bookingStatus').textContent = 'Gym Recon demo confirmed';
+            document.getElementById('bookingEyebrow').textContent = 'Your 20-minute walkthrough is locked in';
+            document.getElementById('confirmation-title').innerHTML = 'Demo <span>booked.</span>';
+            document.getElementById('bookingIntro').textContent = 'Check your inbox for the calendar invitation and meeting link. On the call, we will walk through how Gym Recon identifies revenue at risk, creates prioritized Recon Missions, assigns team ownership, and tracks confirmed outcomes. Gym Recon launches September 2, 2026.';
+            document.getElementById('bookingReturnLink').href = '/gym-recon';
+            document.getElementById('bookingReturnText').textContent = 'Return to Gym Recon';
+            document.getElementById('next-title').textContent = 'Before your demo';
+            document.getElementById('bookingPriorityTitle').textContent = 'Choose your first revenue leak';
+            document.getElementById('bookingPriorityCopy').textContent = 'Bring the issue you want to investigate first, such as lead follow-up, failed payments, retention risk, or class capacity.';
+        }
 
         if (!confirmation.startTime) return;
 

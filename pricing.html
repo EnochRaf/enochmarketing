@@ -10,26 +10,26 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing for CrossFit Gym Marketing | Enoch Marketing</title>
+    <title>Gym Marketing Pricing and Plans | Enoch Marketing</title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <meta name="description" content="Transparent pricing for CrossFit gym marketing. Paid ads, social media, SEO, web design and more. No contracts, no retainers, and a money-back promise.">
+    <meta name="description" content="Compare Enoch gym marketing pricing: $1,500, $2,500, and $4,500 monthly plans, plus custom multi-location and special-project scopes.">
     <link rel="canonical" href="https://www.enochmarketing.com/pricing.html" />
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Enoch Marketing">
     <meta property="og:url" content="https://www.enochmarketing.com/pricing.html">
-    <meta property="og:title" content="Pricing | Enoch Marketing">
-    <meta property="og:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back promise.">
+    <meta property="og:title" content="Gym Marketing Pricing | Enoch Marketing">
+    <meta property="og:description" content="Compare three clear gym marketing plans from $1,500 per month, plus custom pricing for multi-location and special-project scopes.">
     <meta property="og:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pricing | Enoch Marketing">
-    <meta name="twitter:description" content="Transparent pricing for CrossFit gym marketing. No contracts, no retainers, 100% money-back promise.">
+    <meta name="twitter:title" content="Gym Marketing Pricing | Enoch Marketing">
+    <meta name="twitter:description" content="Compare three clear gym marketing plans from $1,500 per month, plus custom pricing for multi-location and special-project scopes.">
     <meta name="twitter:image" content="https://www.enochmarketing.com/logo-enoch.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,7 +106,7 @@
         .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
         .nav-logo img { height: 170px; width: auto; transition: height 0.5s var(--ease-out-expo); }
         .nav.scrolled .nav-logo img { height: 140px; }
-        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links { display: flex; align-items: center; gap: clamp(1.25rem, 1.8vw, 2rem); }
         .nav-links a {
             font-family: var(--font-body);
             font-size: 0.8rem;
@@ -1210,7 +1210,7 @@
             transition: background 0.3s ease;
         }
         .footer-email-btn:hover { background: var(--gold-light); }
-        .footer h4 {
+        .footer h3 {
             font-family: var(--font-display);
             font-size: 0.85rem;
             font-weight: 600;
@@ -1549,6 +1549,297 @@
             .matrix-hint { display: block; }
         }
 
+        /* ===== APPROVED PRICING SYSTEM ===== */
+        .packages-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.4rem;
+        }
+        .package-card {
+            background:
+                linear-gradient(180deg, rgba(221,205,156,0.035), transparent 34%),
+                #050505;
+        }
+        .package-card.featured {
+            transform: translateY(-10px);
+        }
+        .package-card.featured:hover {
+            transform: translateY(-15px);
+        }
+        .pkg-inner { padding: 2.25rem 2rem; }
+        .package-stage {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+        }
+        .package-stage::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(221,205,156,0.45), transparent);
+        }
+        .package-name {
+            font-size: clamp(2.1rem, 3vw, 2.75rem);
+            margin-bottom: 0.55rem;
+        }
+        .package-price { font-size: clamp(3.5rem, 5vw, 4.75rem); }
+        .package-price-note { margin-bottom: 1.4rem; }
+        .package-outcome {
+            min-height: 5.3rem;
+            font-size: 0.94rem;
+            font-weight: 500;
+            line-height: 1.65;
+            color: var(--white-muted);
+            margin-bottom: 1rem;
+        }
+        .package-fit {
+            min-height: 5.35rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.8rem;
+            background: rgba(255,255,255,0.025);
+            font-size: 0.74rem;
+            line-height: 1.55;
+            color: var(--white-dim);
+            margin-bottom: 1.5rem;
+        }
+        .package-fit strong {
+            display: block;
+            color: var(--gold);
+            font-size: 0.58rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
+        .package-plus-label {
+            min-height: 0;
+            padding: 0.7rem 0;
+            margin-bottom: 0.25rem;
+            border-top: 1px solid rgba(221,205,156,0.16);
+            border-bottom: 1px solid rgba(221,205,156,0.08);
+        }
+        .package-feature { padding: 0.72rem 0; }
+        .plan-check {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+            border-radius: 50%;
+            background: rgba(221,205,156,0.12);
+            border: 1px solid rgba(221,205,156,0.32);
+            color: var(--gold-light);
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+        .package-cta { margin-top: auto; }
+        .package-card.featured .package-cta {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        .package-card.featured .package-cta:hover {
+            background: var(--gold-light);
+            color: var(--black);
+        }
+        .value-ladder {
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid rgba(221,205,156,0.12);
+            border-radius: 1rem;
+            overflow: hidden;
+            background: rgba(0,0,0,0.55);
+        }
+        .value-step {
+            position: relative;
+            padding: 1rem 1.15rem;
+            border-right: 1px solid rgba(221,205,156,0.1);
+        }
+        .value-step:last-child { border-right: none; }
+        .value-step::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(var(--step-fill));
+            transform-origin: left;
+            opacity: 0.65;
+        }
+        .value-step small {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 0.3rem;
+        }
+        .value-step strong {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+        }
+        .pricing-disclosure {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            text-align: center;
+            font-size: 0.72rem;
+            line-height: 1.55;
+            color: var(--white-dim);
+        }
+        .enterprise-card {
+            position: relative;
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: 0.85fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(221,205,156,0.2);
+            border-radius: 1.5rem;
+            background:
+                linear-gradient(100deg, rgba(221,205,156,0.1), transparent 42%),
+                #050505;
+            box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+        }
+        .enterprise-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.025) 1px, transparent 1px);
+            background-size: 38px 38px;
+            mask-image: linear-gradient(to right, black, transparent 75%);
+        }
+        .enterprise-copy,
+        .enterprise-details { position: relative; z-index: 1; }
+        .enterprise-kicker {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.7rem;
+        }
+        .enterprise-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 4vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.75rem;
+        }
+        .enterprise-price {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .enterprise-copy p {
+            max-width: 430px;
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--white-dim);
+        }
+        .enterprise-plus {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .enterprise-features {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .enterprise-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--white-muted);
+        }
+        .enterprise-card .package-cta {
+            width: fit-content;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        .clarity-section {
+            padding: 6rem 3rem;
+            background: var(--black);
+        }
+        .clarity-inner { max-width: 1200px; margin: 0 auto; }
+        .clarity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .clarity-card {
+            padding: 1.65rem;
+            border: 1px solid rgba(221,205,156,0.1);
+            border-radius: 1rem;
+            background: rgba(255,255,255,0.018);
+        }
+        .clarity-card strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+            margin-bottom: 0.45rem;
+        }
+        .clarity-card p {
+            font-size: 0.8rem;
+            line-height: 1.65;
+            color: var(--white-dim);
+        }
+        @media (max-width: 980px) {
+            .packages-grid { grid-template-columns: 1fr; }
+            .package-card.featured,
+            .package-card.featured:hover { transform: none; }
+            .package-outcome,
+            .package-fit { min-height: 0; }
+            .enterprise-card { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .value-ladder { grid-template-columns: 1fr 1fr; }
+            .value-step:nth-child(2) { border-right: none; }
+            .value-step:nth-child(-n+2) { border-bottom: 1px solid rgba(221,205,156,0.1); }
+            .enterprise-features,
+            .clarity-grid { grid-template-columns: 1fr; }
+            .enterprise-card { padding: 2rem 1.25rem; }
+            .enterprise-card .package-cta { width: 100%; }
+            .clarity-section { padding: 4.5rem 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .value-ladder { grid-template-columns: 1fr; }
+            .value-step { border-right: none; border-bottom: 1px solid rgba(221,205,156,0.1); }
+            .value-step:last-child { border-bottom: none; }
+            .pkg-inner { padding: 1.8rem 1.35rem; }
+        }
+
         /* Client Login: secondary pill button beside the Book Free Call CTA */
         .nav-links a.nav-login {
             color: var(--gold);
@@ -1563,6 +1854,836 @@
             border-color: rgba(221, 205, 156, 0.55);
             color: var(--gold-light);
             transform: translateY(-1px);
+        }
+        /* ========================================
+           PRICING PLATFORM PAGE
+           Reference-led structure with original Enoch execution.
+           ======================================== */
+        :focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 4px;
+        }
+
+        .announcement-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 82% 50%, rgba(221,205,156,0.2), transparent 32%),
+                linear-gradient(90deg, #090909 0%, #14130f 58%, #252016 100%);
+            border-bottom: 1px solid rgba(221,205,156,0.24);
+            color: var(--white-muted);
+            transition: transform 0.45s var(--ease-out-expo), opacity 0.35s ease;
+        }
+
+        .announcement-inner {
+            width: 100%;
+            max-width: 1480px;
+            min-height: 50px;
+            margin: 0 auto;
+            padding: 0.4rem 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .announcement-message,
+        .announcement-actions { display: flex; align-items: center; }
+        .announcement-message { gap: 0.75rem; font-size: 0.74rem; font-weight: 700; line-height: 1.4; }
+        .announcement-actions { gap: 0.75rem; flex: 0 0 auto; }
+        .announcement-offer { color: var(--gold-light); font-weight: 800; }
+        .announcement-detail { color: rgba(255,255,255,0.74); font-weight: 600; }
+        .announcement-mark {
+            width: 8px;
+            height: 8px;
+            flex: 0 0 auto;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 16px rgba(221,205,156,0.55);
+        }
+        .announcement-cta {
+            min-height: 34px;
+            padding: 0.45rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            background: var(--gold-light);
+            border: 1px solid var(--gold-light);
+            color: var(--black);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+        .announcement-cta:hover { transform: translateY(-1px); background: #fff; }
+        .announcement-close {
+            width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: rgba(255,255,255,0.56);
+            font-size: 1.35rem;
+        }
+        .announcement-close:hover { color: #fff; background: rgba(255,255,255,0.07); }
+        body.announcement-dismissed .announcement-bar,
+        .paid-agency-landing .announcement-bar { display: none; }
+        body.announcement-dismissed .nav,
+        .paid-agency-landing .nav { top: 0; }
+
+        .nav {
+            top: 0;
+            min-height: 92px;
+            padding: 0;
+            background: rgba(0,0,0,0.46);
+            border-bottom: 1px solid rgba(221,205,156,0.08);
+            transition: top 0.45s var(--ease-out-expo), min-height 0.45s var(--ease-out-expo), background 0.45s ease;
+        }
+        .nav.scrolled { top: 0; min-height: 74px; padding: 0; border-bottom-color: rgba(221,205,156,0.16); }
+        .nav-inner {
+            width: 100%;
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 0.55rem 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+        }
+        .nav-logo {
+            width: 128px;
+            height: 74px;
+            overflow: hidden;
+            justify-content: center;
+        }
+        .nav-logo img,
+        .nav.scrolled .nav-logo img { width: 128px; max-width: none; height: auto; }
+        .nav.scrolled .nav-logo { height: 60px; }
+        .nav-links { justify-content: flex-end; gap: clamp(1.2rem, 2vw, 2.35rem); }
+        .nav-links a { font-size: 0.73rem; font-weight: 650; color: rgba(255,255,255,0.7); white-space: nowrap; }
+        .nav-links a::after { bottom: -10px; height: 2px; }
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--gold); }
+
+        .pricing-platform-page {
+            --pricing-paper: #F1EEE7;
+            --pricing-ink: #11110F;
+            --pricing-muted: #625F57;
+            --pricing-night: #050505;
+            --pricing-panel: #0C0C0C;
+            --pricing-gold: #9A884D;
+            --pricing-line: rgba(17,17,15,0.14);
+            background: var(--pricing-paper);
+            color: var(--pricing-ink);
+        }
+
+        .pricing-platform-shell {
+            width: min(100% - 7rem, 1480px);
+            margin-inline: auto;
+        }
+
+        .pricing-platform-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #6F612D;
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        .pricing-platform-kicker::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+        .pricing-platform-kicker-light { color: var(--gold); }
+
+        .pricing-platform-hero {
+            min-height: 720px;
+            padding: 14.5rem 0 6.5rem;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(17,17,15,0.055) 1px, transparent 1px),
+                var(--pricing-paper);
+            background-size: calc(100% / 12) 100%;
+        }
+        .pricing-platform-hero-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.62fr);
+            gap: clamp(3rem, 7vw, 7.5rem);
+            align-items: end;
+        }
+        .pricing-platform-hero h1 {
+            max-width: 880px;
+            margin-top: 1.6rem;
+            font-family: var(--font-display);
+            font-size: clamp(4.8rem, 7.2vw, 7.8rem);
+            font-weight: 400;
+            line-height: 0.88;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+        .pricing-platform-hero h1 span { color: var(--pricing-gold); }
+        .pricing-platform-hero-copy {
+            max-width: 720px;
+            margin-top: 2rem;
+            font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+            font-weight: 600;
+            line-height: 1.58;
+            letter-spacing: -0.02em;
+        }
+        .pricing-platform-hero-note {
+            max-width: 700px;
+            margin-top: 1.1rem;
+            color: var(--pricing-muted);
+            font-size: 0.86rem;
+            line-height: 1.8;
+        }
+        .pricing-platform-jump {
+            min-height: 52px;
+            margin-top: 2rem;
+            padding: 0.75rem 1.35rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            color: var(--pricing-paper);
+            background: var(--pricing-ink);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--pricing-ink);
+            border-radius: 10px;
+            transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        }
+        .pricing-platform-jump:hover { transform: translateY(-2px); background: var(--pricing-gold); border-color: var(--pricing-gold); color: #fff; }
+        .pricing-hero-secondary {
+            min-height: 52px;
+            margin-top: 2rem;
+            padding: 0.75rem 1.35rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pricing-ink);
+            border: 1px solid rgba(17,17,15,0.35);
+            border-radius: 10px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+        .pricing-hero-secondary:hover { transform: translateY(-2px); border-color: var(--pricing-gold); background: rgba(154,136,77,0.08); }
+        .pricing-hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .pricing-hero-selector {
+            position: relative;
+            overflow: hidden;
+            padding: 1.7rem;
+            background: var(--pricing-night);
+            color: #fff;
+            border: 1px solid rgba(221,205,156,0.3);
+            border-radius: 18px;
+            box-shadow: 0 28px 70px rgba(17,17,15,0.13);
+        }
+        .pricing-hero-selector::before {
+            content: '';
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            top: -170px;
+            right: -100px;
+            border: 1px solid rgba(221,205,156,0.14);
+            border-radius: 50%;
+            box-shadow: 0 0 0 36px rgba(221,205,156,0.025), 0 0 0 72px rgba(221,205,156,0.018);
+        }
+        .pricing-hero-selector > * { position: relative; z-index: 1; }
+        .pricing-hero-selector-label { color: var(--gold); font-size: 0.58rem; font-weight: 750; letter-spacing: 0.2em; text-transform: uppercase; }
+        .pricing-hero-selector h2 { margin-top: 0.85rem; font-family: var(--font-display); font-size: clamp(2.5rem, 3.3vw, 3.65rem); font-weight: 400; line-height: 0.94; text-transform: uppercase; }
+        .pricing-hero-selector-list { margin-top: 1.35rem; border-top: 1px solid rgba(221,205,156,0.16); }
+        .pricing-hero-selector-item {
+            min-height: 62px;
+            padding: 0.9rem 0;
+            display: grid;
+            grid-template-columns: 28px minmax(0,1fr) auto;
+            gap: 0.75rem;
+            align-items: center;
+            border-bottom: 1px solid rgba(221,205,156,0.12);
+            transition: color 0.25s ease, padding-left 0.25s ease;
+        }
+        .pricing-hero-selector-item:hover { color: var(--gold-light); padding-left: 0.3rem; }
+        .pricing-hero-selector-item > span:first-child { color: var(--gold); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.62rem; }
+        .pricing-hero-selector-item strong { display: block; font-size: 0.73rem; line-height: 1.4; }
+        .pricing-hero-selector-item small { display: block; margin-top: 0.2rem; color: rgba(255,255,255,0.45); font-size: 0.59rem; line-height: 1.45; }
+        .pricing-hero-selector-item > span:last-child { color: var(--gold); font-size: 1rem; }
+
+        .pricing-system-strip {
+            background: var(--pricing-night);
+            color: #fff;
+            border-top: 1px solid rgba(221,205,156,0.16);
+            border-bottom: 1px solid rgba(221,205,156,0.16);
+        }
+        .pricing-system-strip-inner {
+            min-height: 86px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .pricing-system-strip-inner::-webkit-scrollbar { display: none; }
+        .pricing-system-label {
+            flex: 0 0 auto;
+            color: var(--gold);
+            font-size: 0.61rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .pricing-system-chip {
+            flex: 0 0 auto;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid rgba(221,205,156,0.14);
+            color: rgba(255,255,255,0.55);
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .pricing-platform-plans {
+            padding: 8.5rem 0 2.75rem;
+            background:
+                linear-gradient(90deg, rgba(17,17,15,0.05) 1px, transparent 1px),
+                var(--pricing-paper);
+            background-size: calc(100% / 12) 100%;
+        }
+        .pricing-platform-rule { padding-top: 1.3rem; border-top: 1px solid var(--pricing-line); }
+        .pricing-platform-heading { max-width: 1150px; }
+        .pricing-platform-heading h2,
+        .pricing-decisions h2,
+        .pricing-platform-faq h2,
+        .pricing-platform-cta h2 {
+            margin-top: 1.45rem;
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 0.92;
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+        }
+        .pricing-platform-heading h2 { font-size: clamp(3.6rem, 5.2vw, 5.8rem); }
+        .pricing-platform-heading p {
+            max-width: 760px;
+            margin-top: 1.35rem;
+            color: var(--pricing-muted);
+            font-size: 0.96rem;
+            line-height: 1.8;
+        }
+
+        .pricing-cycle-control {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.85rem 1rem;
+        }
+        .pricing-cycle-toggle {
+            width: 64px;
+            height: 44px;
+            padding: 6px;
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
+            border: 1px solid rgba(17,17,15,0.24);
+            border-radius: 999px;
+            background: rgba(17,17,15,0.1);
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+        .pricing-cycle-toggle span {
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            background: var(--pricing-ink);
+            box-shadow: 0 3px 10px rgba(17,17,15,0.2);
+            transition: transform 0.25s var(--ease-out-expo), background 0.25s ease;
+        }
+        .pricing-cycle-toggle[aria-checked="true"] {
+            background: var(--pricing-gold);
+            border-color: var(--pricing-gold);
+        }
+        .pricing-cycle-toggle[aria-checked="true"] span {
+            transform: translateX(20px);
+            background: #fff;
+        }
+        .pricing-cycle-toggle:focus-visible {
+            outline: 3px solid rgba(154,136,77,0.32);
+            outline-offset: 4px;
+        }
+        .pricing-cycle-label {
+            color: rgba(17,17,15,0.46);
+            font-size: 0.72rem;
+            font-weight: 750;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+        }
+        .pricing-cycle-label.is-active { color: var(--pricing-ink); }
+        .pricing-cycle-help {
+            flex-basis: 100%;
+            margin-top: 0.1rem;
+            color: rgba(17,17,15,0.5);
+            font-size: 0.68rem;
+            line-height: 1.6;
+        }
+
+        .pricing-platform-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 0.9rem;
+            margin-top: 4.2rem;
+            align-items: stretch;
+        }
+        .pricing-platform-card {
+            min-height: 860px;
+            padding: 1.55rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background: var(--pricing-night);
+            color: #fff;
+            border: 1px solid rgba(221,205,156,0.18);
+            border-radius: 18px;
+            scroll-margin-top: 130px;
+            transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        .pricing-platform-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: inherit;
+            background: radial-gradient(440px circle at var(--card-x,50%) var(--card-y,0%), rgba(221,205,156,0.13), transparent 48%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .pricing-platform-card > * { position: relative; z-index: 1; }
+        .pricing-platform-card:hover,
+        .pricing-platform-card:focus-within {
+            transform: translateY(-8px);
+            border-color: rgba(221,205,156,0.54);
+            box-shadow: 0 26px 64px rgba(17,17,15,0.18);
+        }
+        .pricing-platform-card:hover::before,
+        .pricing-platform-card:focus-within::before { opacity: 1; }
+        .pricing-platform-card:focus-within { outline: 2px solid rgba(221,205,156,0.28); outline-offset: 3px; }
+        .pricing-card-icon {
+            width: 46px;
+            height: 46px;
+            margin-top: 1.25rem;
+            display: grid;
+            place-items: center;
+            color: var(--gold-light);
+            border: 1px solid rgba(221,205,156,0.24);
+            border-radius: 12px;
+            background: rgba(221,205,156,0.055);
+        }
+        .pricing-card-icon svg { width: 21px; height: 21px; }
+        .pricing-platform-card.featured .pricing-card-icon {
+            color: #050505;
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+        .pricing-platform-card.featured {
+            border-color: rgba(221,205,156,0.74);
+            box-shadow: 0 24px 60px rgba(17,17,15,0.14);
+        }
+        .pricing-card-badge {
+            min-height: 26px;
+            padding: 0.2rem 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gold);
+            color: #000;
+            border-radius: 999px;
+            font-size: 0.52rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .pricing-card-top { padding-top: 0.2rem; }
+        .pricing-card-level {
+            min-height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--gold-dark);
+            font-size: 0.58rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .pricing-progress {
+            height: 2px;
+            margin-top: 0.8rem;
+            background: rgba(255,255,255,0.08);
+        }
+        .pricing-progress span { display: block; width: var(--fill); height: 100%; background: var(--gold); }
+        .pricing-platform-card h3 {
+            margin-top: 1.15rem;
+            font-family: var(--font-display);
+            font-size: clamp(2.7rem, 3.15vw, 3.65rem);
+            font-weight: 400;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+        .pricing-card-price {
+            margin-top: 1rem;
+            font-family: var(--font-display);
+            font-size: clamp(3.3rem, 4vw, 4.45rem);
+            line-height: 0.92;
+            color: var(--gold-light);
+            transition: opacity 0.2s ease, transform 0.25s var(--ease-out-expo);
+        }
+        .pricing-card-price small { font-family: var(--font-body); font-size: 0.64rem; color: rgba(255,255,255,0.58); }
+        .pricing-card-price-prefix {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--gold);
+            font-family: var(--font-body);
+            font-size: 0.58rem;
+            font-weight: 750;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .pricing-card-price.is-custom { font-size: clamp(3.1rem, 3.7vw, 4.15rem); }
+        .pricing-card-price.is-changing { opacity: 0.45; transform: translateY(3px); }
+        .pricing-card-outcome {
+            min-height: 108px;
+            margin-top: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.84rem;
+            line-height: 1.72;
+        }
+        .pricing-card-fit {
+            margin-top: 1.25rem;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(221,205,156,0.16);
+            border-bottom: 1px solid rgba(221,205,156,0.16);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            line-height: 1.6;
+        }
+        .pricing-card-fit strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--gold);
+            font-size: 0.54rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .pricing-card-adds {
+            margin-top: 1.35rem;
+            color: var(--gold-light);
+            font-size: 0.59rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .pricing-card-features { margin-top: 0.8rem; }
+        .pricing-card-features li {
+            position: relative;
+            padding: 0.62rem 0 0.62rem 1.6rem;
+            color: rgba(255,255,255,0.74);
+            font-size: 0.75rem;
+            line-height: 1.55;
+            border-bottom: 1px solid rgba(255,255,255,0.055);
+        }
+        .pricing-card-features li::before {
+            content: '\2713';
+            position: absolute;
+            top: 0.63rem;
+            left: 0;
+            width: 17px;
+            height: 17px;
+            display: grid;
+            place-items: center;
+            color: #050505;
+            background: var(--gold);
+            border-radius: 50%;
+            font-size: 0.58rem;
+            font-weight: 900;
+        }
+        .pricing-platform-button {
+            min-height: 52px;
+            padding: 0.8rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: auto;
+            border: 1px solid rgba(221,205,156,0.55);
+            color: var(--gold-light);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.09em;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 10px;
+            transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+        .pricing-platform-card.featured .pricing-platform-button { background: var(--gold); color: #000; border-color: var(--gold); }
+        .pricing-platform-button:hover { transform: translateY(-2px); background: var(--gold-light); color: #000; }
+        .pricing-platform-card.featured .pricing-platform-button:hover { background: var(--gold-light); border-color: var(--gold-light); color: #000; }
+        .pricing-platform-button:focus-visible { outline: 3px solid rgba(221,205,156,0.38); outline-offset: 4px; }
+
+        .pricing-platform-disclosure {
+            margin: 1.4rem auto 0;
+            max-width: 940px;
+            color: rgba(17,17,15,0.55);
+            font-size: 0.69rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        .pricing-decisions {
+            padding: 3rem 0 5.5rem;
+            background: var(--pricing-paper);
+        }
+        .pricing-decisions h2 { max-width: 900px; font-size: clamp(3.7rem, 5.7vw, 6.1rem); }
+        .pricing-decisions-intro { max-width: 720px; margin-top: 1.35rem; color: var(--pricing-muted); font-size: 0.92rem; line-height: 1.8; }
+        .pricing-decision-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0.9rem; margin-top: 3.2rem; }
+        .pricing-decision-card {
+            min-height: 280px;
+            padding: 1.55rem;
+            display: flex;
+            flex-direction: column;
+            background: var(--pricing-night);
+            color: #fff;
+            border: 1px solid rgba(221,205,156,0.16);
+            border-radius: 14px;
+            transition: transform 0.3s var(--ease-out-expo), border-color 0.3s ease;
+        }
+        .pricing-decision-card:hover { transform: translateY(-6px); border-color: rgba(221,205,156,0.55); }
+        .pricing-decision-number { color: var(--gold); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.62rem; letter-spacing: 0.12em; }
+        .pricing-decision-card h3 { margin-top: 1rem; font-family: var(--font-display); font-size: clamp(1.9rem,2.4vw,2.65rem); font-weight: 400; line-height: 0.96; text-transform: uppercase; }
+        .pricing-decision-card p { margin-top: 1rem; color: rgba(255,255,255,0.58); font-size: 0.72rem; line-height: 1.72; }
+        .pricing-decision-plan { margin-top: auto; padding-top: 1.25rem; color: var(--gold-light); font-size: 0.58rem; font-weight: 750; letter-spacing: 0.16em; text-transform: uppercase; }
+
+        .pricing-clarity {
+            padding: 2rem 0 8rem;
+            background: var(--pricing-paper);
+        }
+        .pricing-clarity-panel {
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: minmax(280px,0.8fr) minmax(0,1.5fr);
+            background: #DDD0A6;
+            border: 1px solid rgba(17,17,15,0.13);
+            border-radius: 18px;
+        }
+        .pricing-clarity-heading { padding: clamp(2rem,4vw,3.6rem); border-right: 1px solid rgba(17,17,15,0.13); }
+        .pricing-clarity-heading h2 { margin-top: 1rem; font-family: var(--font-display); font-size: clamp(3.2rem,4.8vw,5.1rem); font-weight: 400; line-height: 0.9; text-transform: uppercase; }
+        .pricing-clarity-heading p { margin-top: 1.15rem; color: rgba(17,17,15,0.62); font-size: 0.8rem; line-height: 1.75; }
+        .pricing-clarity-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+        .pricing-clarity-item { min-height: 100%; padding: clamp(1.7rem,3vw,2.65rem); border-right: 1px solid rgba(17,17,15,0.13); }
+        .pricing-clarity-item:last-child { border-right: 0; }
+        .pricing-clarity-item span { color: rgba(17,17,15,0.52); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.6rem; letter-spacing: 0.12em; }
+        .pricing-clarity-item h3 { margin-top: 1rem; font-family: var(--font-display); font-size: 2rem; font-weight: 400; line-height: 0.95; text-transform: uppercase; }
+        .pricing-clarity-item p { margin-top: 0.9rem; color: rgba(17,17,15,0.62); font-size: 0.72rem; line-height: 1.7; }
+
+        .pricing-platform-faq {
+            position: relative;
+            padding: 8.5rem 0 9rem;
+            overflow: hidden;
+            background: var(--pricing-night);
+            color: #fff;
+        }
+        .pricing-platform-faq::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(221,205,156,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(221,205,156,0.035) 1px, transparent 1px);
+            background-size: 92px 92px;
+        }
+        .pricing-platform-faq .pricing-platform-shell { position: relative; }
+        .pricing-platform-faq-layout { display: grid; grid-template-columns: minmax(280px,0.72fr) minmax(0,1.28fr); gap: clamp(3.5rem,8vw,8rem); align-items: start; }
+        .pricing-platform-faq-intro { position: sticky; top: 120px; }
+        .pricing-platform-faq h2 { max-width: 660px; font-size: clamp(3.8rem, 5.4vw, 5.8rem); }
+        .pricing-platform-faq-intro p { max-width: 510px; margin-top: 1.3rem; color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.78; }
+        .pricing-platform-faq-list { border-top: 1px solid rgba(221,205,156,0.2); }
+        .pricing-platform-faq-item { border-bottom: 1px solid rgba(221,205,156,0.17); }
+        .pricing-platform-faq-item summary {
+            min-height: 76px;
+            padding: 1.2rem 3.5rem 1.2rem 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: rgba(255,255,255,0.88);
+            font-size: 0.88rem;
+            font-weight: 650;
+            line-height: 1.5;
+            cursor: pointer;
+            list-style: none;
+        }
+        .pricing-platform-faq-item summary::-webkit-details-marker { display: none; }
+        .pricing-platform-faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 0.25rem;
+            top: 50%;
+            color: var(--gold);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            transform: translateY(-50%);
+        }
+        .pricing-platform-faq-item[open] summary::after { content: '−'; }
+        .pricing-platform-faq-answer { max-width: 850px; padding: 0 0 1.7rem; color: rgba(255,255,255,0.6); font-size: 0.84rem; line-height: 1.8; }
+
+        .pricing-platform-cta {
+            padding: 8rem 0;
+            background:
+                linear-gradient(90deg, rgba(17,17,15,0.05) 1px, transparent 1px),
+                var(--pricing-paper);
+            background-size: calc(100% / 12) 100%;
+        }
+        .pricing-platform-cta-inner { display: grid; grid-template-columns: minmax(0,0.9fr) minmax(340px,0.6fr); gap: clamp(4rem,10vw,10rem); align-items: end; }
+        .pricing-platform-cta h2 { font-size: clamp(3.8rem,5.7vw,6.1rem); }
+        .pricing-platform-cta-copy p { color: var(--pricing-muted); font-size: 0.9rem; line-height: 1.8; }
+        .pricing-platform-cta-actions { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .pricing-light-button {
+            min-height: 54px;
+            padding: 0.8rem 1.6rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            border: 1px solid var(--pricing-ink);
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+        .pricing-light-button.primary { background: var(--pricing-ink); color: var(--pricing-paper); }
+        .pricing-light-button.secondary { color: var(--pricing-ink); }
+        .pricing-light-button:hover { transform: translateY(-2px); }
+        .pricing-light-button.primary:hover { background: var(--pricing-gold); border-color: var(--pricing-gold); color: #fff; }
+        .pricing-platform-small-note { margin-top: 1.1rem; color: rgba(17,17,15,0.47); font-size: 0.68rem; line-height: 1.6; }
+
+        .footer h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        .footer-direct-link { display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 1.35rem; color: var(--gold-light); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+        @media (max-width: 1180px) {
+            .nav-inner { padding-left: 2rem; padding-right: 2rem; gap: 1.5rem; }
+            .nav-links { gap: 1.15rem; }
+            .nav-links a { font-size: 0.66rem; }
+            .pricing-platform-card { padding: 1.6rem; }
+            .pricing-platform-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+            .pricing-platform-card { min-height: 820px; }
+            .pricing-decision-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width: 1020px) {
+            .announcement-inner { padding-left: 2rem; padding-right: 2rem; }
+            .announcement-detail { display: none; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .pricing-platform-grid { grid-template-columns: repeat(2, minmax(0,1fr)); max-width: none; }
+            .pricing-platform-card,
+            .pricing-platform-card.featured { min-height: auto; transform: none; }
+            .pricing-card-outcome { min-height: 0; }
+            .pricing-platform-hero-inner,
+            .pricing-clarity-panel,
+            .pricing-platform-faq-layout,
+            .pricing-platform-cta-inner { grid-template-columns: 1fr; }
+            .pricing-platform-hero-inner { align-items: start; }
+            .pricing-hero-selector { max-width: 720px; }
+            .pricing-clarity-heading { border-right: 0; border-bottom: 1px solid rgba(17,17,15,0.13); }
+            .pricing-platform-faq-intro { position: static; }
+            .pricing-decision-card { min-height: auto; }
+        }
+        @media (max-width: 720px) {
+            .announcement-inner { padding: 0.4rem 1rem; gap: 0.6rem; }
+            .announcement-message { font-size: 0.63rem; gap: 0.5rem; }
+            .announcement-cta { font-size: 0.76rem; padding: 0.4rem 0.6rem; }
+            .announcement-close { width: 30px; height: 32px; }
+            .nav-inner { padding: 0.4rem 1.25rem; }
+            .nav-logo { width: 104px; height: 60px; }
+            .nav-logo img,
+            .nav.scrolled .nav-logo img { width: 104px; }
+            .pricing-platform-shell { width: min(100% - 2.25rem, 1480px); }
+            .pricing-platform-hero { min-height: auto; padding: 11.75rem 0 5.25rem; background-size: 25% 100%; }
+            .pricing-platform-hero h1 { font-size: clamp(3.8rem,15vw,5.2rem); }
+            .pricing-platform-hero-copy { font-size: 1.04rem; line-height: 1.6; }
+            .pricing-hero-actions { flex-direction: column; }
+            .pricing-platform-jump,
+            .pricing-hero-secondary { width: 100%; margin-top: 0; }
+            .pricing-hero-actions { margin-top: 1.8rem; }
+            .pricing-hero-selector { padding: 1.4rem; }
+            .pricing-system-strip-inner { min-height: 74px; gap: 0.75rem; }
+            .pricing-platform-plans { padding: 5.5rem 0 2.5rem; }
+            .pricing-decisions { padding: 2.75rem 0 5.5rem; }
+            .pricing-platform-faq { padding: 5.5rem 0; }
+            .pricing-clarity { padding: 0 0 5.5rem; }
+            .pricing-platform-cta { padding: 5rem 0; }
+            .pricing-platform-heading h2,
+            .pricing-decisions h2,
+            .pricing-platform-faq h2,
+            .pricing-platform-cta h2 { font-size: clamp(3.35rem,15vw,5rem); }
+            .pricing-platform-heading h2 { font-size: clamp(3rem,12vw,4.25rem); }
+            .pricing-platform-grid { margin-top: 3rem; }
+            .pricing-platform-grid { grid-template-columns: 1fr; max-width: 620px; }
+            .pricing-platform-card { padding: 1.45rem; }
+            .pricing-platform-card h3 { font-size: 3.25rem; }
+            .pricing-card-price { font-size: 4rem; }
+            .pricing-card-outcome { font-size: 0.9rem; }
+            .pricing-card-fit { font-size: 0.8rem; }
+            .pricing-card-features li { font-size: 0.82rem; }
+            .pricing-decision-grid { grid-template-columns: 1fr; }
+            .pricing-clarity-grid { grid-template-columns: 1fr; }
+            .pricing-clarity-item { border-right: 0; border-bottom: 1px solid rgba(17,17,15,0.13); }
+            .pricing-clarity-item:last-child { border-bottom: 0; }
+            .pricing-platform-faq-list { margin-top: 2.6rem; }
+            .pricing-platform-faq-item summary { min-height: 70px; font-size: 0.82rem; }
+            .pricing-platform-cta-actions { flex-direction: column; }
+            .pricing-light-button { width: 100%; }
+        }
+        @media (max-width: 430px) {
+            .pricing-platform-shell { width: min(100% - 2rem,1480px); }
+            .pricing-platform-hero { padding-top: 11.25rem; }
+            .pricing-platform-hero h1 { font-size: clamp(3.4rem,16vw,4.4rem); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .pricing-platform-card,
+            .pricing-cycle-toggle,
+            .pricing-cycle-toggle span,
+            .pricing-card-price { transition: none; }
+            .pricing-platform-card:hover,
+            .pricing-platform-card:focus-within,
+            .pricing-platform-card.featured:hover,
+            .pricing-platform-card.featured:focus-within { transform: none; }
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -1584,44 +2705,91 @@
     <!-- End Meta Pixel Code -->
     <script type="application/ld+json">
     {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "Is ad spend included in the management fee?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "All paid advertising management fees are separate from the ad budget, which you pay directly to Google, Meta, or TikTok. You always own your ad accounts."
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Enoch Marketing Gym Growth Services",
+      "url": "https://www.enochmarketing.com/pricing.html",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.enochmarketing.com/#organization",
+        "name": "Enoch Marketing",
+        "url": "https://www.enochmarketing.com/"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Independent gyms, fitness studios, personal training facilities, and multi-location fitness brands"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Gym Marketing Plans",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Get Found",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1500",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
             }
-        },
-        {
-            "@type": "Question",
-            "name": "Is there a free onboarding session?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Every new partnership starts with a free onboarding session to lock in goals, brand voice, target athletes, and the numbers we will hit. We come prepared. You never have to explain CrossFit to us."
+          },
+          {
+            "@type": "Offer",
+            "name": "Fill the Floor",
+            "price": "2500",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2500",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
             }
-        },
-        {
-            "@type": "Question",
-            "name": "Do you require long-term contracts or retainers?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No long-term lock-in. You pay for the services you want, when you want them. We earn your business every month with results, not fine print."
+          },
+          {
+            "@type": "Offer",
+            "name": "Growth Engine",
+            "price": "4500",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "4500",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
             }
-        },
-        {
-            "@type": "Question",
-            "name": "What is your money-back promise?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Run with us for 30 days. If we do not deliver what we committed to in your onboarding plan, you get back 100% of your management fee for that month. Ad spend is excluded, because that money goes straight to the platform and never touches our hands."
-            }
-        }
-    ]
-}
+          },
+          {
+            "@type": "Offer",
+            "name": "Custom Growth",
+            "url": "https://www.enochmarketing.com/pricing.html#custom-growth",
+            "description": "Custom pricing for multi-location fitness brands, gym app development, custom websites, integrations, and special-project scopes."
+          }
+        ]
+      }
+    }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What does each plan cost?","acceptedAnswer":{"@type":"Answer","text":"Get Found is $1,500 per month, Fill the Floor is $2,500 per month, and Growth Engine is $4,500 per month. Custom Growth is priced after we confirm the locations, deliverables, integrations, production needs, and timeline."}},
+        {"@type":"Question","name":"Is this a long-term contract?","acceptedAnswer":{"@type":"Answer","text":"No. You can work with us month-to-month or choose a longer term that suits your plans. We agree on the scope, price, and terms upfront. The timing of results depends on your goals, starting point, and the work involved."}},
+        {"@type":"Question","name":"Are advertising costs included in the monthly plan?","acceptedAnswer":{"@type":"Answer","text":"No. Advertising costs are billed separately. Your plan price covers the agreed strategy, management, creative, conversion, follow-up, content, and reporting scope listed for that level."}},
+        {"@type":"Question","name":"How much advertising budget will we need?","acceptedAnswer":{"@type":"Answer","text":"The right budget depends on your market, offer, capacity, channel, and acquisition economics. Enoch recommends a starting range only after reviewing those factors. Your media budget remains separate from the management plan and is approved by you."}},
+        {"@type":"Question","name":"Are there setup fees or other costs?","acceptedAnswer":{"@type":"Answer","text":"The prices shown are recurring monthly plan fees. If your recommended scope requires a one-time setup, outside software, media spend, or another third-party cost, it will be identified in the proposal before you sign. We do not want hidden costs to appear after work begins."}},
+        {"@type":"Question","name":"What happens when we get started?","acceptedAnswer":{"@type":"Answer","text":"We clarify priorities, establish the agreed tracking and reporting, build the included campaigns and conversion assets, connect the required follow-up, and begin improving the system with real performance data."}},
+        {"@type":"Question","name":"Can we move to a different plan later?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the gym's constraint or goals change, we can recommend a different level and confirm the revised scope, timing, and price with you before anything changes."}},
+        {"@type":"Question","name":"Do we need every service at once?","acceptedAnswer":{"@type":"Answer","text":"No. The plans are designed to start with the support your gym needs now. We recommend the smallest plan that properly addresses the current constraint instead of adding work that is not yet useful."}},
+        {"@type":"Question","name":"What does our team remain responsible for?","acceptedAnswer":{"@type":"Answer","text":"Your team provides accurate information, timely access and approvals, and a clear owner for leads and sales conversations. Enoch can build response and nurture systems, but your staff remains responsible for judgment-heavy conversations, the final membership decision, and the in-gym experience."}},
+        {"@type":"Question","name":"Do the plans guarantee a specific number of members or amount of revenue?","acceptedAnswer":{"@type":"Answer","text":"No. Results also depend on your market, offer, capacity, reputation, advertising budget, response time, sales process, and member experience. Enoch commits to the agreed scope, transparent measurement, and disciplined improvement, not an invented outcome guarantee."}},
+        {"@type":"Question","name":"What kinds of gyms are these plans for?","acceptedAnswer":{"@type":"Answer","text":"The plans can support independent gyms, CrossFit affiliates, strength and conditioning facilities, boutique studios, personal training businesses, martial arts and boxing gyms, yoga and Pilates studios, and multi-location fitness brands."}},
+        {"@type":"Question","name":"When does a custom scope make more sense than a standard plan?","acceptedAnswer":{"@type":"Answer","text":"A custom scope makes sense when multiple locations, app development, a new website, complex integrations, expanded content production, or another special project materially changes the amount and type of work. We define the deliverables, timeline, responsibilities, and price before the engagement starts."}}
+      ]
+    }
+    </script>
+    <script src="paid-agency-landing.js?v=20260908-2"></script>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -1634,834 +2802,306 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="/" onclick="closeMobile()">Home</a>
+    <a href="intelligence.html" onclick="closeMobile()">Intelligence</a>
     <a href="services.html" onclick="closeMobile()">Services</a>
     <a href="pricing.html" onclick="closeMobile()" style="color:var(--gold);">Pricing</a>
-    <a href="about.html" onclick="closeMobile()">About Us</a>
+    <a href="about.html" onclick="closeMobile()">About</a>
     <a href="blog.html" onclick="closeMobile()">Blog</a>
     <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener" onclick="closeMobile()">Client Login</a>
-    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Call</a>
+    <a href="contact.html" onclick="closeMobile()" class="nav-cta" style="font-family:var(--font-display);font-size:1.2rem;">Book Free Growth Call</a>
 </div>
 
 <!-- Navigation -->
 <nav class="nav" id="nav">
-    <a href="/" class="nav-logo">
-        <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350">
-    </a>
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html" class="active">Pricing</a>
-        <a href="about.html">About Us</a>
-        <a href="blog.html">Blog</a>
-        <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener" class="nav-login">Client Login</a>
-        <a href="contact.html" class="nav-cta">Book Free Call</a>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <img src="enoch-logo.png" alt="Enoch Marketing, gym marketing agency" width="1080" height="1350">
+        </a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="intelligence.html">Intelligence</a>
+            <a href="services.html">Services</a>
+            <a href="pricing.html" class="active">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="https://portal.enochmarketing.com" target="_blank" rel="noopener" class="nav-login">Client Login</a>
+            <a href="contact.html" class="nav-cta">Book Free Growth Call</a>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-    </button>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-grid"></div>
-    <div class="page-hero-scrim"></div>
+<!-- PRICING PAGE -->
+<main class="pricing-platform-page" id="main-content">
+    <section class="pricing-platform-hero" aria-labelledby="pricing-title">
+        <div class="pricing-platform-shell pricing-platform-hero-inner">
+            <div>
+                <span class="pricing-platform-kicker">Gym Marketing Pricing</span>
+                <h1 id="pricing-title">GYM MARKETING PRICING.<br><span>BUILT AROUND THE BOTTLENECK.</span></h1>
+                <p class="pricing-platform-hero-copy">Start with the smallest plan that fixes what is holding growth back. As the work expands, the scope and price stay clear.</p>
+                <p class="pricing-platform-hero-note">No bundled ad spend. No hidden software fees. Work with us month-to-month, or choose a longer term that suits your plans.</p>
+                <div class="pricing-hero-actions">
+                    <a href="#packages" class="pricing-platform-jump">Compare the four plans <span aria-hidden="true">&#8595;</span></a>
+                    <a href="contact.html" class="pricing-hero-secondary">Book a Free Growth Call</a>
+                </div>
+            </div>
+            <aside class="pricing-hero-selector" aria-label="Find the plan that matches your growth constraint">
+                <p class="pricing-hero-selector-label">Which problem are you solving?</p>
+                <h2>Start where growth is stuck.</h2>
+                <div class="pricing-hero-selector-list">
+                    <a href="#get-found" class="pricing-hero-selector-item"><span>01</span><span><strong>Invisible locally</strong><small>Build search visibility and trust</small></span><span aria-hidden="true">&#8594;</span></a>
+                    <a href="#fill-the-floor" class="pricing-hero-selector-item"><span>02</span><span><strong>Need qualified inquiries</strong><small>Add paid demand and faster booking</small></span><span aria-hidden="true">&#8594;</span></a>
+                    <a href="#growth-engine" class="pricing-hero-selector-item"><span>03</span><span><strong>Leads leak between channels</strong><small>Connect the full member journey</small></span><span aria-hidden="true">&#8594;</span></a>
+                    <a href="#custom-growth" class="pricing-hero-selector-item"><span>04</span><span><strong>Multi-location or special build</strong><small>Create a custom operating scope</small></span><span aria-hidden="true">&#8594;</span></a>
+                </div>
+            </aside>
+        </div>
+    </section>
 
-    <div class="page-hero-inner">
-        <div class="page-hero-copy">
-            <p class="page-hero-eyebrow">Enoch Marketing &middot; 2026 Pricing</p>
-            <h1 class="page-hero-title">
-                REAL PRICING.<br>
-                <span class="line2">ZERO SURPRISES.</span>
-            </h1>
-            <p class="page-hero-desc">One clear price. No lock-in contracts. Every dollar backed by our money-back promise.</p>
-            <div class="page-hero-actions">
-                <a href="/contact.html" class="btn-primary">
-                    <span>Book Your Free Gym Audit</span>
-                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <div class="page-hero-trust">
-                    <span>Money-back promise</span>
-                    <span>No contracts</span>
-                    <span>$0 hidden fees</span>
+    <section class="pricing-system-strip" aria-label="Connected gym marketing capabilities">
+        <div class="pricing-platform-shell pricing-system-strip-inner">
+            <span class="pricing-system-label">The Enoch system can connect</span>
+            <span class="pricing-system-chip">Local SEO</span>
+            <span class="pricing-system-chip">Paid Advertising</span>
+            <span class="pricing-system-chip">Landing Pages</span>
+            <span class="pricing-system-chip">Lead Follow-Up</span>
+            <span class="pricing-system-chip">Content</span>
+            <span class="pricing-system-chip">Strategy and Reporting</span>
+        </div>
+    </section>
+
+    <section class="pricing-platform-plans" id="packages" aria-labelledby="plans-title">
+        <div class="pricing-platform-shell pricing-platform-rule">
+            <header class="pricing-platform-heading">
+                <span class="pricing-platform-kicker">Choose by Constraint</span>
+                <h2 id="plans-title">START WHERE GROWTH IS STUCK.</h2>
+                <p>You do not need every service at once. Choose the level that fixes the first bottleneck, then expand only when the numbers justify it.</p>
+                <div class="pricing-cycle-control" aria-label="Choose how prices are displayed">
+                    <span class="pricing-cycle-label is-active" data-pricing-label="monthly">Monthly plan</span>
+                    <button class="pricing-cycle-toggle" id="pricingCycleToggle" type="button" role="switch" aria-checked="false" aria-label="Include estimated monthly ad spend">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <span class="pricing-cycle-label" data-pricing-label="cycle">With ad spend</span>
+                </div>
+            </header>
+
+            <div class="pricing-platform-grid">
+                <article class="pricing-platform-card" id="get-found" aria-labelledby="get-found-title">
+                    <div class="pricing-card-top">
+                        <div class="pricing-card-level"><span>Plan 01</span><span>Visibility</span></div>
+                        <div class="pricing-progress" aria-hidden="true"><span style="--fill:25%;"></span></div>
+                        <div class="pricing-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6"></circle><path d="m16 16 4 4"></path><path d="M11 8v6M8 11h6"></path></svg>
+                        </div>
+                        <h3 id="get-found-title">Get Found</h3>
+                        <div class="pricing-card-price" data-plan-price data-label-monthly="$1,500 per month" data-label-cycle="$2,500 per month including $1,000 estimated ad spend" aria-live="polite" aria-label="$1,500 per month"><span data-monthly="$1,500" data-cycle="$2,500">$1,500</span> <small data-price-period data-monthly-period="/ month" data-cycle-period="/ month est.">/ month</small></div>
+                        <p class="pricing-card-outcome">Build the local visibility and trust your gym needs before paying for more lead volume.</p>
+                        <p class="pricing-card-fit"><strong>Best for</strong>Gyms that need to rank locally, strengthen credibility, and convert more nearby searches into inquiries.</p>
+                        <div class="pricing-card-adds">Included in Get Found</div>
+                        <ul class="pricing-card-features">
+                            <li>Google Business Profile management</li>
+                            <li>Local SEO and priority page improvements</li>
+                            <li>Keyword and page opportunity map</li>
+                            <li>Review request and reputation workflow</li>
+                            <li>Website conversion review</li>
+                            <li>Monthly performance dashboard</li>
+                            <li>Monthly growth strategy call</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?service=gym-local-seo" class="pricing-platform-button">Choose Get Found</a>
+                </article>
+
+                <article class="pricing-platform-card featured" id="fill-the-floor" aria-labelledby="fill-floor-title">
+                    <div class="pricing-card-top">
+                        <div class="pricing-card-level"><span>Plan 02</span><span class="pricing-card-badge">Most Popular</span></div>
+                        <div class="pricing-progress" aria-hidden="true"><span style="--fill:50%;"></span></div>
+                        <div class="pricing-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path></svg>
+                        </div>
+                        <h3 id="fill-floor-title">Fill the Floor</h3>
+                        <div class="pricing-card-price" data-plan-price data-label-monthly="$2,500 per month" data-label-cycle="$4,000 per month including $1,500 estimated ad spend" aria-live="polite" aria-label="$2,500 per month"><span data-monthly="$2,500" data-cycle="$4,000">$2,500</span> <small data-price-period data-monthly-period="/ month" data-cycle-period="/ month est.">/ month</small></div>
+                        <p class="pricing-card-outcome">Create measurable demand and give every paid inquiry a faster, clearer path to book.</p>
+                        <p class="pricing-card-fit"><strong>Best for</strong>Gyms with a clear offer and capacity goal that need more qualified inquiries and fewer leads lost after the click.</p>
+                        <div class="pricing-card-adds">Everything in Get Found, plus</div>
+                        <ul class="pricing-card-features">
+                            <li>Paid advertising on one platform</li>
+                            <li>Offer, campaign, and audience strategy</li>
+                            <li>One conversion-focused campaign page</li>
+                            <li>Lead tracking and attribution</li>
+                            <li>Immediate email and SMS lead response</li>
+                            <li>Monthly ad creative testing</li>
+                            <li>Lead-to-booking performance reporting</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?service=gym-paid-advertising" class="pricing-platform-button">Choose Fill the Floor</a>
+                </article>
+
+                <article class="pricing-platform-card" id="growth-engine" aria-labelledby="growth-engine-title">
+                    <div class="pricing-card-top">
+                        <div class="pricing-card-level"><span>Plan 03</span><span>Full System</span></div>
+                        <div class="pricing-progress" aria-hidden="true"><span style="--fill:75%;"></span></div>
+                        <div class="pricing-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="5" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="19" r="2"></circle><path d="m6.5 10.5 4-4M13.5 6.5l4 4M17.5 13.5l-4 4M10.5 17.5l-4-4"></path></svg>
+                        </div>
+                        <h3 id="growth-engine-title">Growth Engine</h3>
+                        <div class="pricing-card-price" data-plan-price data-label-monthly="$4,500 per month" data-label-cycle="$6,500 per month including $2,000 estimated ad spend" aria-live="polite" aria-label="$4,500 per month"><span data-monthly="$4,500" data-cycle="$6,500">$4,500</span> <small data-price-period data-monthly-period="/ month" data-cycle-period="/ month est.">/ month</small></div>
+                        <p class="pricing-card-outcome">Connect acquisition, follow-up, content, retention, and sales support around one growth target.</p>
+                        <p class="pricing-card-fit"><strong>Best for</strong>Established gyms ready to move beyond lead generation and strengthen the full path from attention to membership.</p>
+                        <div class="pricing-card-adds">Everything in Fill the Floor, plus</div>
+                        <ul class="pricing-card-features">
+                            <li>Paid advertising on two platforms</li>
+                            <li>Full email and SMS nurture sequences</li>
+                            <li>Ongoing website conversion optimization</li>
+                            <li>12 monthly social content assets</li>
+                            <li>Referral and former-member reactivation campaigns</li>
+                            <li>Sales follow-up coaching</li>
+                            <li>Two strategy meetings per month</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html" class="pricing-platform-button">Choose Growth Engine</a>
+                </article>
+
+                <article class="pricing-platform-card" id="custom-growth" aria-labelledby="custom-growth-title">
+                    <div class="pricing-card-top">
+                        <div class="pricing-card-level"><span>Plan 04</span><span>Custom Scope</span></div>
+                        <div class="pricing-progress" aria-hidden="true"><span style="--fill:100%;"></span></div>
+                        <div class="pricing-card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3 8 4-8 4-8-4 8-4Z"></path><path d="m4 12 8 4 8-4M4 17l8 4 8-4"></path></svg>
+                        </div>
+                        <h3 id="custom-growth-title">Custom Growth</h3>
+                        <div class="pricing-card-price is-custom" data-plan-price data-label-monthly="Custom pricing based on scope" data-label-cycle="Custom pricing and ad budget based on scope" aria-live="polite" aria-label="Custom pricing based on scope"><span data-monthly="Custom" data-cycle="Custom">Custom</span> <small data-price-period data-monthly-period="scoped proposal" data-cycle-period="scope + ad budget">scoped proposal</small></div>
+                        <p class="pricing-card-outcome">Build the right scope for multiple locations, a special project, or an operating model that does not fit a standard plan.</p>
+                        <p class="pricing-card-fit"><strong>Best for</strong>Multi-location fitness brands and gyms that need custom websites, app development, integrations, or expanded production.</p>
+                        <div class="pricing-card-adds">Scope can include</div>
+                        <ul class="pricing-card-features">
+                            <li>Multi-location growth strategy</li>
+                            <li>Location-specific SEO and campaigns</li>
+                            <li>Custom website or gym app development</li>
+                            <li>Advanced CRM and data integrations</li>
+                            <li>Expanded creative and content production</li>
+                            <li>Location-level reporting and attribution</li>
+                            <li>Scope, timeline, and price agreed upfront</li>
+                        </ul>
+                    </div>
+                    <a href="contact.html?service=custom-growth" class="pricing-platform-button">Build a Custom Scope</a>
+                </article>
+            </div>
+
+            <p class="pricing-platform-disclosure">The “With ad spend” view adds an estimated monthly ad budget: $1,000 for Get Found, $1,500 for Fill the Floor, and $2,000 for Growth Engine. These budgets are illustrative and paid separately from your service fee. Paid campaign management is included from Fill the Floor. Third-party software and any work outside the listed scope are separate and approved upfront.</p>
+
+        </div>
+    </section>
+
+    <section class="pricing-decisions" aria-labelledby="decisions-title">
+        <div class="pricing-platform-shell pricing-platform-rule">
+            <span class="pricing-platform-kicker">Match the Constraint</span>
+            <h2 id="decisions-title">THE RIGHT PLAN STARTS WITH WHAT IS BREAKING.</h2>
+            <p class="pricing-decisions-intro">The plan names matter less than the job they need to do. Use the first visible bottleneck to choose a sensible starting point.</p>
+            <div class="pricing-decision-grid">
+                <a href="#get-found" class="pricing-decision-card"><span class="pricing-decision-number">01 / VISIBILITY</span><h3>Nearby prospects cannot find or trust the gym.</h3><p>Strengthen local search, reputation, priority pages, and the path from discovery to inquiry.</p><span class="pricing-decision-plan">Start with Get Found &#8594;</span></a>
+                <a href="#fill-the-floor" class="pricing-decision-card"><span class="pricing-decision-number">02 / DEMAND</span><h3>You need more qualified inquiries and faster booking.</h3><p>Add one paid channel, a focused landing page, immediate response, and lead-to-booking reporting.</p><span class="pricing-decision-plan">Start with Fill the Floor &#8594;</span></a>
+                <a href="#growth-engine" class="pricing-decision-card"><span class="pricing-decision-number">03 / FULL SYSTEM</span><h3>Marketing works in pieces but leaks between channels.</h3><p>Connect Google, Meta, nurture, conversion, content, reactivation, and sales support around one target.</p><span class="pricing-decision-plan">Start with Growth Engine &#8594;</span></a>
+                <a href="#custom-growth" class="pricing-decision-card"><span class="pricing-decision-number">04 / CUSTOM</span><h3>You have multiple locations or need a special build.</h3><p>Create a tailored scope for local execution, custom technology, integrations, or expanded production.</p><span class="pricing-decision-plan">Build a Custom Scope &#8594;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-clarity" aria-labelledby="pricing-clarity-title">
+        <div class="pricing-platform-shell pricing-clarity-panel">
+            <div class="pricing-clarity-heading">
+                <span class="pricing-platform-kicker">Pricing Clarity</span>
+                <h2 id="pricing-clarity-title">KNOW WHAT YOU ARE PAYING FOR.</h2>
+                <p>Every proposal should make the working scope, outside costs, and commitment clear before you sign.</p>
+            </div>
+            <div class="pricing-clarity-grid">
+                <article class="pricing-clarity-item"><span>01 / INCLUDED</span><h3>Enoch's agreed work</h3><p>Strategy, management, production, conversion work, follow-up, reporting, and meetings listed in your selected plan or custom scope.</p></article>
+                <article class="pricing-clarity-item"><span>02 / SEPARATE</span><h3>Costs you control</h3><p>Advertising spend and third-party software stay separate. You approve them before Enoch commits your budget.</p></article>
+                <article class="pricing-clarity-item"><span>03 / TERMS</span><h3>Month-to-month. Your choice.</h3><p>Start month-to-month or choose the number of months that works for you. Your scope, price, and terms are agreed upfront, with no required multi-month commitment.</p></article>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-platform-faq" aria-labelledby="pricing-faq-title">
+        <div class="pricing-platform-shell pricing-platform-rule">
+            <div class="pricing-platform-faq-layout">
+                <header class="pricing-platform-faq-intro">
+                    <span class="pricing-platform-kicker pricing-platform-kicker-light">Straight Answers</span>
+                    <h2 id="pricing-faq-title">CLEAR ANSWERS BEFORE THE CALL.</h2>
+                    <p>These are the questions that usually determine the real budget, the right starting plan, and whether Enoch is a good fit.</p>
+                </header>
+                <div class="pricing-platform-faq-list">
+                <details class="pricing-platform-faq-item">
+                    <summary>What does each plan cost?</summary>
+                    <div class="pricing-platform-faq-answer">Get Found is $1,500 per month, Fill the Floor is $2,500 per month, and Growth Engine is $4,500 per month. Custom Growth is priced after we confirm the locations, deliverables, integrations, production needs, and timeline.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Is this a long-term contract?</summary>
+                    <div class="pricing-platform-faq-answer">No. You can work with us month-to-month or choose a longer term that suits your plans. We agree on the scope, price, and terms upfront. The timing of results depends on your goals, starting point, and the work involved.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Are advertising costs included in the monthly plan?</summary>
+                    <div class="pricing-platform-faq-answer">No. Advertising costs are billed separately. Your plan price covers the agreed strategy, management, creative, conversion, follow-up, content, and reporting scope listed for that level.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>How much advertising budget will we need?</summary>
+                    <div class="pricing-platform-faq-answer">The right budget depends on your market, offer, capacity, channel, and acquisition economics. Enoch recommends a starting range only after reviewing those factors. Your media budget remains separate from the management plan and is approved by you.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Are there setup fees or other costs?</summary>
+                    <div class="pricing-platform-faq-answer">The prices shown are recurring monthly plan fees. If your recommended scope requires a one-time setup, outside software, media spend, or another third-party cost, it will be identified in the proposal before you sign. We do not want hidden costs to appear after work begins.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>What happens when we get started?</summary>
+                    <div class="pricing-platform-faq-answer">We clarify priorities, establish the agreed tracking and reporting, build the included campaigns and conversion assets, connect the required follow-up, and begin improving the system with real performance data.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Can we move to a different plan later?</summary>
+                    <div class="pricing-platform-faq-answer">Yes. If the gym's constraint or goals change, we can recommend a different level and confirm the revised scope, timing, and price with you before anything changes.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Do we need every service at once?</summary>
+                    <div class="pricing-platform-faq-answer">No. The plans are designed to start with the support your gym needs now. We recommend the smallest plan that properly addresses the current constraint instead of adding work that is not yet useful.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>What does our team remain responsible for?</summary>
+                    <div class="pricing-platform-faq-answer">Your team provides accurate information, timely access and approvals, and a clear owner for leads and sales conversations. Enoch can build response and nurture systems, but your staff remains responsible for judgment-heavy conversations, the final membership decision, and the in-gym experience.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>Do the plans guarantee a specific number of members or amount of revenue?</summary>
+                    <div class="pricing-platform-faq-answer">No. Results also depend on your market, offer, capacity, reputation, advertising budget, response time, sales process, and member experience. Enoch commits to the agreed scope, transparent measurement, and disciplined improvement, not an invented outcome guarantee.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>What kinds of gyms are these plans for?</summary>
+                    <div class="pricing-platform-faq-answer">The plans can support independent gyms, CrossFit affiliates, strength and conditioning facilities, boutique studios, personal training businesses, martial arts and boxing gyms, yoga and Pilates studios, and multi-location fitness brands.</div>
+                </details>
+                <details class="pricing-platform-faq-item">
+                    <summary>When does a custom scope make more sense than a standard plan?</summary>
+                    <div class="pricing-platform-faq-answer">A custom scope makes sense when multiple locations, app development, a new website, complex integrations, expanded content production, or another special project materially changes the amount and type of work. We define the deliverables, timeline, responsibilities, and price before the engagement starts.</div>
+                </details>
                 </div>
             </div>
         </div>
+    </section>
 
-        <aside class="price-ledger" aria-label="Plans and starting prices">
-            <div class="ledger-head">
-                <span class="ledger-label">What you'll pay</span>
-                <span class="ledger-pill"><span class="dot"></span>No quotes needed</span>
+    <section class="pricing-platform-cta" aria-labelledby="pricing-cta-title">
+        <div class="pricing-platform-shell pricing-platform-cta-inner">
+            <div>
+                <span class="pricing-platform-kicker">Choose With Confidence</span>
+                <h2 id="pricing-cta-title">FIND THE SMALLEST PLAN THAT CAN FIX THE BIGGEST LEAK.</h2>
             </div>
-            <p class="ledger-sub">Monthly. No contracts. Cancel anytime.</p>
-            <div class="ledger-rows">
-                <a href="#packages" class="ledger-row">
-                    <span class="ledger-name">Get Found</span>
-                    <span class="ledger-price">$1,000<small>&nbsp;/mo</small></span>
-                </a>
-                <a href="#packages" class="ledger-row is-popular">
-                    <span class="ledger-name">Fill the Floor <span class="ledger-tag">Popular</span></span>
-                    <span class="ledger-price">$4,000<small>&nbsp;/mo</small></span>
-                </a>
-                <a href="#packages" class="ledger-row">
-                    <span class="ledger-name">Own Your Market</span>
-                    <span class="ledger-price">$7,000<small>&nbsp;/mo</small></span>
-                </a>
-                <a href="#packages" class="ledger-row">
-                    <span class="ledger-name">Rule Every Market</span>
-                    <span class="ledger-price">$15,000</span>
-                </a>
-            </div>
-            <p class="ledger-foot">Fill the Floor and up <strong>include your ad spend</strong>. Every price is right here, with no surprises on the invoice.</p>
-        </aside>
-    </div>
-    <div class="page-hero-divider"></div>
-</section>
-
-<!-- INTRO -->
-<section class="intro-section">
-    <div class="intro-inner">
-        <div class="intro-left reveal">
-            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Who We Are</span></div>
-            <h2 class="section-title">WE DON'T SELL FLUFF.<br>WE <span class="gold">PACK GYMS.</span></h2>
-        </div>
-        <div class="intro-right reveal reveal-delay-2">
-            <p>Enoch Marketing exists to get more athletes through your door, keep them coming back, and build a brand that owns your local market. We are veteran-owned and run by people who know the floor, not just the funnel. Six services live under one roof, paid ads, lead gen, local search, social, web design, and brand, so you run one growth engine instead of a patchwork of freelancers. The pricing below is real and it flexes to what your box actually needs. Running multiple locations? Let's talk volume.</p>
-            <div class="intro-stats">
-                <div>
-                    <div class="intro-stat-num">100%</div>
-                    <div class="intro-stat-label">Money-Back Promise</div>
+            <div class="pricing-platform-cta-copy">
+                <p>Bring your current numbers, biggest bottleneck, and growth goal. We will trace the member journey, recommend the right starting level, and tell you when Enoch is not the right fit.</p>
+                <div class="pricing-platform-cta-actions">
+                    <a href="contact.html" class="pricing-light-button primary">Book Your Free Gym Growth Call <span aria-hidden="true">&#8594;</span></a>
+                    <a href="services.html" class="pricing-light-button secondary">Explore the Services</a>
                 </div>
-                <div>
-                    <div class="intro-stat-num">$0</div>
-                    <div class="intro-stat-label">Hidden Fees</div>
-                </div>
-                <div>
-                    <div class="intro-stat-num">0</div>
-                    <div class="intro-stat-label">Long-Term Contracts</div>
-                </div>
+                <p class="pricing-platform-small-note">30 minutes. No credit card. No pressure. One prioritized next step.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- PACKAGES (four tiers) -->
-<section class="packages-section" id="packages">
-    <div class="packages-bg"></div>
-    <div class="packages-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Bundled Packages</span></div>
-        <h2 class="section-title">ONE GROWTH ENGINE.<br><span class="gold">PICK YOUR LEVEL.</span></h2>
-        <p class="section-subtitle">Built for boxes that want a cohesive, fully-managed marketing system, not a patchwork of freelancers. Every tier is month-to-month with no contracts.</p>
-    </div>
-    <div class="packages-grid">
-
-        <!-- GET FOUND -->
-        <div class="package-card reveal reveal-delay-1">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge-placeholder"></div>
-                <div class="package-name">GET FOUND</div>
-                <div class="package-price">$1,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="pkg-adspend separate">
-                    <div class="pkg-adspend-head">Ad spend: funded by you</div>
-                    <p class="pkg-adspend-note">You fund your one paid channel's budget directly and always own the account.</p>
-                    <p class="pkg-adspend-over">Ad spend is included on Fill the Floor and up.</p>
-                </div>
-                <div class="package-meta">
-                    <p class="package-tagline">Get found, look legit, and turn on your first paid leads.</p>
-                    <p class="package-whofor"><span class="label">For:</span> a box that wants a pro presence plus its first managed ad channel, funding its own budget.</p>
-                </div>
-                <div class="package-divider"></div>
-                <div class="package-plus-label">Everything you get:</div>
-                <ul class="package-features">
-                    <li class="package-feature included star">
-                        <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                        Live gym dashboard, one login, updated live
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads on 1 channel (Meta or Google)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Social handled: Instagram and Facebook, 12 posts a month
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Every comment and DM answered
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Google Search and Maps presence (Business Profile)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        More 5-star reviews, on repeat
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Plain-English monthly report
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Monthly strategy call
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FILL THE FLOOR (Most Popular) -->
-        <div class="package-card featured reveal reveal-delay-2">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge">
-                    <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    Most Popular
-                </div>
-                <div class="package-name">FILL THE FLOOR</div>
-                <div class="package-price">$4,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="pkg-adspend included">
-                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$1,500/mo ad spend included</div>
-                    <p class="pkg-adspend-note">About $50/day, run inside your own ad account. Unspent rolls over; any balance is refunded.</p>
-                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
-                </div>
-                <div class="package-meta">
-                    <p class="package-tagline">Turn on lead flow and start filling trials.</p>
-                    <p class="package-whofor"><span class="label">For:</span> a box ready to drive athletes in with paid traffic.</p>
-                </div>
-                <div class="package-divider"></div>
-                <div class="package-plus-label">Everything in Get Found, plus:</div>
-                <ul class="package-features">
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads fully managed, budget on us
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        4 platforms, adds TikTok and YouTube
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Top-3 Google map pack (ongoing local SEO)
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Automated email lead follow-up
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Content creation: Reels and short-form video
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- OWN YOUR MARKET -->
-        <div class="package-card reveal reveal-delay-3">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge-placeholder"></div>
-                <div class="package-name">OWN YOUR MARKET</div>
-                <div class="package-price">$7,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; no contracts</div>
-                <div class="pkg-adspend included">
-                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$3,000/mo ad spend included</div>
-                    <p class="pkg-adspend-note">About $100/day, run inside your own accounts. Unspent rolls over; any balance is refunded.</p>
-                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
-                </div>
-                <div class="package-meta">
-                    <p class="package-tagline">Own your local market across every channel.</p>
-                    <p class="package-whofor"><span class="label">For:</span> an established box that wants to dominate locally.</p>
-                </div>
-                <div class="package-divider"></div>
-                <div class="package-plus-label">Everything in Fill the Floor, plus:</div>
-                <ul class="package-features">
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Paid ads across Google, Meta, and TikTok, budget on us
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        All 5 platforms covered
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Email and SMS follow-up
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Expanded content creation
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Complete lead-to-member funnel
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- RULE EVERY MARKET -->
-        <div class="package-card reveal reveal-delay-4">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div class="pkg-inner">
-                <div class="package-badge-placeholder"></div>
-                <div class="package-name">RULE EVERY MARKET</div>
-                <div class="package-price">$15,000</div>
-                <div class="package-price-note">per month &nbsp;·&nbsp; custom-quoted</div>
-                <div class="pkg-adspend included">
-                    <div class="pkg-adspend-head"><span class="chk"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>$6,000/mo ad spend included</div>
-                    <p class="pkg-adspend-note">About $200/day across locations, in your own accounts. Unspent rolls over; any balance is refunded.</p>
-                    <p class="pkg-adspend-over">Want to spend more? Add budget anytime, at cost, no markup.</p>
-                </div>
-                <div class="package-meta">
-                    <p class="package-tagline">Multiple locations. One growth engine.</p>
-                    <p class="package-whofor"><span class="label">For:</span> multi-location owners scaling with a senior team on call.</p>
-                </div>
-                <div class="package-divider"></div>
-                <div class="package-plus-label">Everything in Own Your Market, plus:</div>
-                <ul class="package-features">
-                    <li class="package-feature included star">
-                        <span class="feat-icon starred"><svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
-                        Every location, side by side, in one dashboard
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        The full engine, run across every box
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Your own strategist, front-of-line turnaround
-                    </li>
-                    <li class="package-feature included">
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Quarterly domination roadmap
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- COMPARISON MATRIX -->
-<section class="matrix-section">
-    <div class="packages-header reveal" style="text-align:center;">
-        <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Compare Tiers</span></div>
-        <h2 class="section-title">EVERYTHING, <span class="gold">SIDE BY SIDE.</span></h2>
-    </div>
-    <div class="matrix-wrap reveal reveal-delay-1">
-        <table class="matrix-table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Get Found</th>
-                    <th class="matrix-featured">Fill the Floor</th>
-                    <th>Own Your Market</th>
-                    <th>Rule Every Market</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Price / month</th>
-                    <td><span class="matrix-price">$1,000</span></td>
-                    <td class="matrix-featured"><span class="matrix-price">$4,000</span></td>
-                    <td><span class="matrix-price">$7,000</span></td>
-                    <td><span class="matrix-price">$15,000</span></td>
-                </tr>
-                <tr>
-                    <th>Live dashboard</th>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td>Multi-location</td>
-                </tr>
-                <tr>
-                    <th>Done-for-you social</th>
-                    <td>2 platforms</td>
-                    <td class="matrix-featured">4 platforms</td>
-                    <td>5 platforms</td>
-                    <td>5 plus</td>
-                </tr>
-                <tr>
-                    <th>Community management</th>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Google Business Profile</th>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Review growth</th>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Monthly report and strategy call</th>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Local SEO and map rankings</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Email automation</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Paid ads</th>
-                    <td>1 channel</td>
-                    <td class="matrix-featured">2 channels</td>
-                    <td>3 channels</td>
-                    <td>3 channels +</td>
-                </tr>
-                <tr>
-                    <th>Ad spend</th>
-                    <td>You fund it</td>
-                    <td class="matrix-featured">$1,500/mo included</td>
-                    <td>$3,000/mo included</td>
-                    <td>$6,000/mo included</td>
-                </tr>
-                <tr>
-                    <th>Content creation</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td>Expanded</td>
-                    <td>Custom</td>
-                </tr>
-                <tr>
-                    <th>SMS marketing</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Lead-to-member funnel</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Dedicated strategist</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-                <tr>
-                    <th>Multi-location management</th>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td class="matrix-featured"><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon no"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
-                    <td><span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <p class="matrix-hint">Swipe the table sideways to compare all four tiers.</p>
-</section>
-
-<!-- INDIVIDUAL SERVICES (a la carte menu, tabbed) -->
-<section class="section" id="individual-services" style="padding-bottom:2rem;">
-    <div class="pricing-header reveal" style="margin-bottom:0;">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>A La Carte</span></div>
-        <h2 class="section-title">INDIVIDUAL SERVICES.<br><span class="gold">BUILD YOUR OWN.</span></h2>
-        <p class="section-lead">Prefer to pick and choose? Buy any service on its own, or bolt an extra onto a package. Tap a category to see pricing.</p>
-    </div>
-</section>
-
-<!-- INDIVIDUAL SERVICES SCOPE (bounds the sticky filter bar to this block) -->
-<div class="services-scope">
-<!-- FILTER TABS -->
-<div class="filter-bar-wrap" id="filterBar">
-    <div class="filter-bar">
-        <button class="filter-tab active" data-target="social-media">Social Media</button>
-        <button class="filter-tab" data-target="paid-advertising">Paid Advertising</button>
-        <button class="filter-tab" data-target="website-seo">Website &amp; SEO</button>
-        <button class="filter-tab" data-target="email-sms">Email &amp; SMS</button>
-        <button class="filter-tab" data-target="branding">Branding &amp; Creative</button>
-        <button class="filter-tab" data-target="add-ons">Add-Ons</button>
-    </div>
-</div>
-
-<!-- SOCIAL MEDIA -->
-<section class="pricing-section active" id="social-media">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 01</span></div>
-        <h2 class="pricing-category-label">Social Media Management</h2>
-        <p class="pricing-category-sub">Content that builds your community, not just your follower count.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Social Media Strategy Build</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Content Creation and Posting</div>
-            <div class="pricing-row-amount">from $750</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Community Management and Growth</div>
-            <div class="pricing-row-amount">from $750</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Social Analytics and Reporting</div>
-            <div class="pricing-row-amount">from $375</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-    </div>
-</section>
-
-<!-- PAID ADVERTISING -->
-<section class="pricing-section" id="paid-advertising">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 02</span></div>
-        <h2 class="pricing-category-label">Paid Advertising</h2>
-        <p class="pricing-category-sub">Every dollar tracked. Every campaign built to fill your gym with athletes, not clicks.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Google Ads Management</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Meta Ads Management <span style="color:var(--white-dim);font-size:0.8em;">(Facebook and Instagram)</span></div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">TikTok Ads Management</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Ad Creative Design <span style="color:var(--white-dim);font-size:0.8em;">(set of 5)</span></div>
-            <div class="pricing-row-amount">from $565</div>
-            <span class="pricing-badge per-piece">Per Set</span>
-        </div>
-    </div>
-    <p style="max-width:1200px;margin:1rem auto 0;font-size:0.75rem;color:var(--white-dim);padding-left:0.25rem;">
-        * Management fees are separate from ad spend paid directly to Google, Meta, or TikTok.
-    </p>
-</section>
-
-<!-- WEBSITE & SEO -->
-<section class="pricing-section" id="website-seo">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 03</span></div>
-        <h2 class="pricing-category-label">Website &amp; SEO</h2>
-        <p class="pricing-category-sub">Own your local search rankings so athletes find you before they find anyone else.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Website Design and Build</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Local SEO and Map Rankings</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Google Business Profile Setup</div>
-            <div class="pricing-row-amount">from $375</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-    </div>
-</section>
-
-<!-- EMAIL & SMS -->
-<section class="pricing-section" id="email-sms">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 04</span></div>
-        <h2 class="pricing-category-label">Email &amp; SMS Marketing</h2>
-        <p class="pricing-category-sub">Automated follow-up that keeps leads warm and turns trials into long-term members.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Email Marketing Setup and Automation</div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">SMS Marketing Setup and Campaigns</div>
-            <div class="pricing-row-amount">from $750</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-    </div>
-</section>
-
-<!-- BRANDING & CREATIVE -->
-<section class="pricing-section" id="branding">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Channel 05</span></div>
-        <h2 class="pricing-category-label">Branding &amp; Creative</h2>
-        <p class="pricing-category-sub">A brand athletes trust before they ever walk through your door.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Brand Identity Pack <span style="color:var(--white-dim);font-size:0.8em;">(logo, colors, fonts)</span></div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge one-time">One-Time</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Graphic Design <span style="color:var(--white-dim);font-size:0.8em;">(per piece)</span></div>
-            <div class="pricing-row-amount">from $200</div>
-            <span class="pricing-badge per-piece">Per Piece</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Short-Form Video Production <span style="color:var(--white-dim);font-size:0.8em;">(per video)</span></div>
-            <div class="pricing-row-amount">from $250</div>
-            <span class="pricing-badge per-piece">Per Video</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Photography <span style="color:var(--white-dim);font-size:0.8em;">(half-day session)</span></div>
-            <div class="pricing-row-amount">from $1,000</div>
-            <span class="pricing-badge per-piece">Per Session</span>
-        </div>
-    </div>
-</section>
-
-<!-- ADD-ONS -->
-<section class="pricing-section" id="add-ons">
-    <div class="pricing-header reveal">
-        <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Optional Extras</span></div>
-        <h2 class="pricing-category-label">Add-Ons</h2>
-        <p class="pricing-category-sub">Bolt premium service onto any package. Pay only for the extras you want.</p>
-    </div>
-    <div class="pricing-table reveal reveal-delay-1">
-        <div class="pricing-table-head">
-            <span>Service</span>
-            <span>Investment</span>
-            <span>Frequency</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Dedicated strategist <span style="color:var(--white-dim);font-size:0.8em;">(priority turnaround)</span></div>
-            <div class="pricing-row-amount">from $750</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Extra ad channel <span style="color:var(--white-dim);font-size:0.8em;">(Google, Meta, or TikTok)</span></div>
-            <div class="pricing-row-amount">from $1,125</div>
-            <span class="pricing-badge monthly">Monthly</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Extra short-form videos</div>
-            <div class="pricing-row-amount">from $250</div>
-            <span class="pricing-badge per-piece">Per Video</span>
-        </div>
-        <div class="pricing-row">
-            <div class="pricing-row-name">Quarterly strategy intensive <span style="color:var(--white-dim);font-size:0.8em;">(and roadmap)</span></div>
-            <div class="pricing-row-amount">from $1,500</div>
-            <span class="pricing-badge per-piece">Per Quarter</span>
-        </div>
-    </div>
-</section>
-</div><!-- /.services-scope -->
-
-<!-- PERFORMANCE CAMPAIGN -->
-<section class="perf-section">
-    <div class="perf-bg"></div>
-    <div class="perf-wrap">
-        <div class="reveal" style="text-align:center;max-width:760px;margin:0 auto;">
-            <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Performance Campaign</span></div>
-            <h2 class="section-title">ONLY PAY WHEN<br><span class="gold">WE PACK YOUR GYM.</span></h2>
-            <p class="section-subtitle" style="margin:0 auto;">A focused 90-day push built for one thing: signing new members. This is separate from the monthly packages above.</p>
-        </div>
-        <div class="perf-steps">
-            <div class="perf-step reveal reveal-delay-1">
-                <div class="perf-step-num">01</div>
-                <p class="perf-step-body">We build your funnel. A landing page where Collin walks your prospects through exactly how we fill your box, plus the ad creative that drives traffic to it. This is your one-time build fee.</p>
-            </div>
-            <div class="perf-step reveal reveal-delay-2">
-                <div class="perf-step-num">02</div>
-                <p class="perf-step-body">We launch and run your ads. You cover ad spend directly and always own the ad account. Your build fee does not include ad spend.</p>
-            </div>
-            <div class="perf-step reveal reveal-delay-3">
-                <div class="perf-step-num">03</div>
-                <p class="perf-step-body">You only pay for members. Every new member is tracked through one booking link and a member code, so attribution stays clean and fair to both sides.</p>
-            </div>
-        </div>
-        <div class="perf-fee-card reveal reveal-delay-1">
-            <div class="pc-noise"></div>
-            <div class="pc-glow"></div>
-            <div class="pc-glow-center"></div>
-            <div class="pc-reflection"></div>
-            <div class="pc-edge"></div>
-            <div class="pc-edge-l"></div>
-            <div class="pc-edge-r"></div>
-            <div style="position:relative;z-index:10;">
-                <div class="perf-hero-num">$200</div>
-                <div class="perf-hero-sub">per new member</div>
-                <p class="perf-hero-line">Sign 8, pay for 8. Sign 40, pay for 40. Your cost always matches your result. No ongoing retainer, ever.</p>
-                <ul class="perf-fee-list">
-                    <li>
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        One-time build fee: from $1,500, covering your funnel and creative. Charged once, never recurring.
-                    </li>
-                    <li>
-                        <span class="feat-icon yes"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span>
-                        Ad spend is separate: paid by you straight to Google, Meta, or TikTok. It is never part of our fee, and you always own the account.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <p class="perf-promise reveal">Our promise: if the campaign does not sign at least 5 new members in 90 days, we refund your build fee in full. The refund covers the build fee only. Ad spend is never refundable, because that money goes straight to the ad platform and never touches our hands.</p>
-    </div>
-</section>
-
-<!-- IMPORTANT NOTES -->
-<section class="notes-section">
-    <div class="container">
-        <div class="reveal">
-            <div class="section-tag"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Important Notes</span></div>
-            <h2 class="section-title">HOW WE WORK<br><span class="gold">WITH YOU.</span></h2>
-        </div>
-        <div class="notes-grid">
-            <div class="note-card reveal reveal-delay-1">
-                <div class="note-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                </div>
-                <div>
-                    <div class="note-title">HOW AD SPEND WORKS</div>
-                    <p class="note-body">On Fill the Floor and up, your ad spend is included in your monthly price. We fund it, pace it, and run it inside your own ad accounts, which you always own. Anything unspent rolls over, and any balance left at the end is refunded. On Get Found, the performance campaign, and individual services, ad spend is billed separately and paid directly to the platform. Either way, you always own your ad accounts.</p>
-                </div>
-            </div>
-            <div class="note-card reveal reveal-delay-2">
-                <div class="note-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-                </div>
-                <div>
-                    <div class="note-title">FREE ONBOARDING</div>
-                    <p class="note-body">Every new partnership starts with a free onboarding session to lock in goals, brand voice, target athletes, and the numbers we will hit. We come prepared. You never have to explain CrossFit to us.</p>
-                </div>
-            </div>
-            <div class="note-card reveal reveal-delay-3">
-                <div class="note-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-                </div>
-                <div>
-                    <div class="note-title">NO CONTRACTS. NO RETAINERS.</div>
-                    <p class="note-body">No long-term lock-in. You pay for the services you want, when you want them. We earn your business every month with results, not fine print.</p>
-                </div>
-            </div>
-            <div class="note-card reveal reveal-delay-4">
-                <div class="note-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div>
-                    <div class="note-title">100% MONEY-BACK PROMISE</div>
-                    <p class="note-body">Run with us for 30 days. If we do not deliver what we committed to in your onboarding plan, you get back 100% of your management fee for that month. Ad spend is excluded, because that money goes straight to the platform and never touches our hands.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-    <div class="final-cta-grid"></div>
-    <div class="final-cta-bg"></div>
-    <div class="final-cta-panel reveal">
-        <div class="pc-noise"></div>
-        <div class="pc-glow"></div>
-        <div class="pc-glow-center"></div>
-        <div class="pc-reflection"></div>
-        <div class="pc-edge"></div>
-        <div class="pc-edge-l"></div>
-        <div class="pc-edge-r"></div>
-        <div class="final-cta-inner">
-            <div class="section-tag" style="margin:0 auto 1.5rem;"><div class="stag-bloom"></div><div class="stag-border"></div><div class="stag-glow"></div><span>Ready to Grow?</span></div>
-            <h2 class="section-title">READY TO<br><span class="gold">PACK YOUR BOX?</span></h2>
-            <p class="section-subtitle">Book a free 30-minute gym audit. We review what is holding your box back and hand you a specific plan to fix it. No pitch, no fluff, and we only take a few new boxes a month.</p>
-            <div class="cta-actions">
-                <a href="/contact.html" class="btn-primary" style="font-size:1.3rem;padding:1.3rem 3rem;">
-                    <span>Book Your Free Gym Audit</span>
-                    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <div class="final-cta-trust">
-                    <span>30-minute call</span>
-                    <span>A plan to fix it</span>
-                    <span>No pitch, ever</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -2469,41 +3109,38 @@
     <div class="footer-inner">
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="enoch-logo.png" alt="Enoch Marketing, CrossFit gym marketing agency" width="1080" height="1350" loading="lazy">
-                <p>Next-generation marketing for gyms and fitness brands across the US. Built for growth, designed to dominate.</p>
-                <div class="footer-email-group">
-                    <input type="email" placeholder="Enter your email">
-                    <a href="contact.html" class="footer-email-btn" aria-label="Subscribe">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
+                <img src="enoch-logo.png" alt="Enoch Marketing, gym marketing agency" width="1080" height="1350" loading="lazy">
+                <p>One connected growth system for independent gyms, studios, and fitness brands. Clear plans, measurable handoffs, and one accountable partner.</p>
+                <a href="contact.html" class="footer-direct-link">Book Your Free Gym Growth Call <span aria-hidden="true">&#8594;</span></a>
             </div>
             <div>
-                <h4>Navigation</h4>
+                <h3>Navigation</h3>
                 <ul>
                     <li><a href="services.html"><span class="link-dot"></span>Services</a></li>
                     <li><a href="pricing.html"><span class="link-dot"></span>Pricing</a></li>
                     <li><a href="about.html"><span class="link-dot"></span>About Us</a></li>
                     <li><a href="blog.html"><span class="link-dot"></span>Blog</a></li>
-                    <li><a href="contact.html"><span class="link-dot"></span>Book a Call</a></li>
+                    <li><a href="contact.html"><span class="link-dot"></span>Book Your Free Gym Growth Call</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Services</h4>
+                <h3>Services</h3>
                 <ul>
+                    <li><a href="services.html#brand-strategy"><span class="link-dot"></span>Strategy &amp; Positioning</a></li>
+                    <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO &amp; Reputation</a></li>
                     <li><a href="services.html#paid-advertising"><span class="link-dot"></span>Paid Advertising</a></li>
-                    <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Generation</a></li>
-                    <li><a href="services.html#social-media"><span class="link-dot"></span>Social Media</a></li>
-                    <li><a href="services.html#local-seo"><span class="link-dot"></span>Local SEO</a></li>
-                    <li><a href="services.html#web-design"><span class="link-dot"></span>Web Design</a></li>
+                    <li><a href="services.html#web-design"><span class="link-dot"></span>Websites &amp; Landing Pages</a></li>
+                    <li><a href="services.html#lead-generation"><span class="link-dot"></span>Lead Follow-Up</a></li>
+                    <li><a href="services.html#social-media"><span class="link-dot"></span>Social Content &amp; Retention</a></li>
                 </ul>
             </div>
             <div>
-                <h4>Connect</h4>
+                <h3>Connect</h3>
                 <ul>
                     <li><a href="https://www.instagram.com/enoch_marketing/" target="_blank" rel="noopener"><span class="link-dot"></span>Instagram</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61583880196964" target="_blank" rel="noopener"><span class="link-dot"></span>Facebook</a></li>
                     <li><a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener"><span class="link-dot"></span>LinkedIn</a></li>
+                    <li><a href="https://x.com/enochmkt" target="_blank" rel="noopener"><span class="link-dot"></span>X</a></li>
                     <li><a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener"><span class="link-dot"></span>TikTok</a></li>
                 </ul>
             </div>
@@ -2521,6 +3158,7 @@
                     <a href="https://www.linkedin.com/company/enochmarketing" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
                     </a>
+                    <a href="https://x.com/enochmkt" target="_blank" rel="noopener" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.189L24 22.847h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.153h7.594l5.243 6.932L18.901 1.153Zm-1.29 19.493h2.039L6.486 3.24H4.298L17.61 20.646Z"/></svg></a>
                     <a href="https://www.tiktok.com/@enoch_marketing" target="_blank" rel="noopener" aria-label="TikTok">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
                     </a>
@@ -2544,8 +3182,14 @@
     // MOBILE MENU
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('active'));
-    function closeMobile() { mobileMenu.classList.remove('active'); }
+    hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    function closeMobile() {
+        mobileMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
 
     // REVEAL ON SCROLL
     const revealEls = document.querySelectorAll('.reveal');
@@ -2555,6 +3199,51 @@
         });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObs.observe(el));
+
+    // PRICING VIEW: SERVICE FEE OR SERVICE FEE PLUS ESTIMATED AD SPEND
+    const pricingCycleToggle = document.getElementById('pricingCycleToggle');
+    const pricingPlanPrices = document.querySelectorAll('[data-plan-price]');
+    const pricingViewLabels = document.querySelectorAll('[data-pricing-label]');
+
+    function updatePricingView(showCycle) {
+        pricingCycleToggle.setAttribute('aria-checked', String(showCycle));
+        pricingCycleToggle.setAttribute(
+            'aria-label',
+            'Include estimated monthly ad spend'
+        );
+
+        pricingViewLabels.forEach(label => {
+            const isActive = showCycle
+                ? label.dataset.pricingLabel === 'cycle'
+                : label.dataset.pricingLabel === 'monthly';
+            label.classList.toggle('is-active', isActive);
+        });
+
+        pricingPlanPrices.forEach(price => {
+            const value = price.querySelector('[data-monthly]');
+            const period = price.querySelector('[data-price-period]');
+            price.classList.add('is-changing');
+            value.textContent = showCycle ? value.dataset.cycle : value.dataset.monthly;
+            period.textContent = showCycle ? period.dataset.cyclePeriod : period.dataset.monthlyPeriod;
+            price.setAttribute('aria-label', showCycle ? price.dataset.labelCycle : price.dataset.labelMonthly);
+            window.setTimeout(() => price.classList.remove('is-changing'), 140);
+        });
+    }
+
+    if (pricingCycleToggle) {
+        pricingCycleToggle.addEventListener('click', () => {
+            updatePricingView(pricingCycleToggle.getAttribute('aria-checked') !== 'true');
+        });
+    }
+
+    // CARD SPOTLIGHT
+    document.querySelectorAll('.pricing-platform-card').forEach(card => {
+        card.addEventListener('pointermove', event => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--card-x', (event.clientX - rect.left) + 'px');
+            card.style.setProperty('--card-y', (event.clientY - rect.top) + 'px');
+        }, { passive: true });
+    });
 
     // SECTION TAG MOUSE GLOW
     document.querySelectorAll('.section-tag').forEach(tag => {

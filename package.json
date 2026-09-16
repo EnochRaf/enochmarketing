@@ -1,4 +1,10 @@
 {
+  "name": "website-gym-enoch",
+  "private": true,
+  "scripts": {
+    "verify:release-config": "node scripts/verify-release-config.mjs",
+    "verify:routes": "node scripts/verify-routes.mjs"
+  },
   "devDependencies": {
     "vercel": "^53.3.2"
   }

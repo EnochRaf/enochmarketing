@@ -6,19 +6,30 @@ node_modules
 package.json
 package-lock.json
 .claude
+.agents
+.github
 tools
+scripts
 .tmp
+tmp
+_to_delete
+output
 
 # Internal docs, not for the public site
 CLAUDE.md
+AGENTS.md
 SEO_AUDIT_RESULTS.md
 MANUAL_TODO.md
+PLAYBOOK_FUNNEL_SETUP_GUIDE.md
+skills-lock.json
 audit_landing_page_copy.md
 SERVICE & PRICING GUIDE 1.pdf
 downloads/2026-crossfit-gym-growth-playbook.pdf
+downloads/_t
 
 # Secrets and system files
 .env
+.env.example
 credentials.json
 token.json
 .DS_Store
